@@ -1,0 +1,60 @@
+# Secrets / local env
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+backend/.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+*.db
+
+# NLP model artifacts
+backend/app/nlp/artifacts/*.joblib
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Local tooling caches
+.impeccable/
+
+# Accidental archives / dumps (do not upload)
+zi16z9bu
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# Flutter / Dart
+mobile_web/.dart_tool/
+mobile_web/.flutter-plugins
+mobile_web/.flutter-plugins-dependencies
+mobile_web/.packages
+mobile_web/.pub-cache/
+mobile_web/.pub/
+mobile_web/build/
+mobile_web/coverage/
+mobile_web/android/.gradle/
+mobile_web/android/local.properties
+mobile_web/android/app/debug/
+mobile_web/android/app/profile/
+mobile_web/android/app/release/
+mobile_web/ios/Pods/
+mobile_web/ios/Flutter/ephemeral/
+mobile_web/ios/Flutter/Generated.xcconfig
+mobile_web/ios/Flutter/flutter_export_environment.sh

@@ -1,0 +1,10 @@
+{
+  "messages": [
+    "Maybe an NLP-based phishing detector.",
+    "And let's add facial recognition."
+  ],
+  "expect": {
+    "drift": true,
+    "domain": "Computer Vision"
+  }
+}

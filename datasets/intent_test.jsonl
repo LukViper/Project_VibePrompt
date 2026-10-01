@@ -1,0 +1,28 @@
+{"text": "I need a project for NLP. I am working alone and have five weeks.", "intent": "PROJECT_DESCRIPTION"}
+{"text": "Our professor expects a software project in computer networks.", "intent": "PROJECT_DESCRIPTION"}
+{"text": "Let's add a browser extension.", "intent": "ADD_REQUIREMENT"}
+{"text": "Also include a confusion-matrix page.", "intent": "ADD_REQUIREMENT"}
+{"text": "Let's remove the mobile application.", "intent": "REMOVE_REQUIREMENT"}
+{"text": "Remove facial recognition.", "intent": "REMOVE_REQUIREMENT"}
+{"text": "Change the result page to show the confidence score first.", "intent": "MODIFY_REQUIREMENT"}
+{"text": "Update the existing login requirement.", "intent": "MODIFY_REQUIREMENT"}
+{"text": "What database did we already choose?", "intent": "ASK_QUESTION"}
+{"text": "How many requirements are active?", "intent": "ASK_QUESTION"}
+{"text": "Is it feasible to add a browser extension in five weeks?", "intent": "ASK_FEASIBILITY"}
+{"text": "Can we actually evaluate the model this term?", "intent": "ASK_FEASIBILITY"}
+{"text": "Select idea 1.", "intent": "SELECT_IDEA"}
+{"text": "I will take the phishing analyzer.", "intent": "SELECT_IDEA"}
+{"text": "Reject idea 5.", "intent": "REJECT_IDEA"}
+{"text": "I don't like idea 2.", "intent": "REJECT_IDEA"}
+{"text": "Grill mode.", "intent": "REQUEST_GRILL"}
+{"text": "Find the weaknesses.", "intent": "REQUEST_GRILL"}
+{"text": "Professional review.", "intent": "REQUEST_PROFESSIONAL_REVIEW"}
+{"text": "Review this as a supervisor.", "intent": "REQUEST_PROFESSIONAL_REVIEW"}
+{"text": "Use BERT and PostgreSQL.", "intent": "CHANGE_TECHNOLOGY"}
+{"text": "Switch the backend to Java.", "intent": "CHANGE_TECHNOLOGY"}
+{"text": "I want something related to cybersecurity.", "intent": "CHANGE_SCOPE"}
+{"text": "Narrow the scope to classification only.", "intent": "CHANGE_SCOPE"}
+{"text": "Finalize the project.", "intent": "FINALIZE_PROJECT"}
+{"text": "Lock the spec.", "intent": "FINALIZE_PROJECT"}
+{"text": "Generate the prompt.", "intent": "GENERATE_PROMPT"}
+{"text": "Compile the final prompt.", "intent": "GENERATE_PROMPT"}

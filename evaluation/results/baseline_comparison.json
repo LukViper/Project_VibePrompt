@@ -1,0 +1,10 @@
+[
+  {
+    "case": "10_final_specification.json",
+    "baseline_coverage": 0.0,
+    "vibeprompt_coverage": 1.0,
+    "baseline_has_placeholders_ban": false,
+    "vibeprompt_has_placeholders_ban": true,
+    "requirement_count": 2
+  }
+]

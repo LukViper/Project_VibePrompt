@@ -1,0 +1,9 @@
+{
+  "messages": [
+    "Let's add a mobile application.",
+    "Let's remove the mobile application."
+  ],
+  "expect": {
+    "removed": "mobile"
+  }
+}

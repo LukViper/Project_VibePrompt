@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VibePrompt Pitch</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #000000;
+      color: #ffffff;
+      font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      line-height: 1.55;
+    }
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      background: #ffffff;
+      z-index: 5;
+    }
+    .slide {
+      display: none;
+      min-height: 100%;
+      padding: 3rem 3rem 5rem;
+      box-sizing: border-box;
+      background: #000000;
+      color: #ffffff;
+    }
+    .slide.active { display: block; }
+    .slide.light {
+      background: #ffffff;
+      color: #000000;
+    }
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.2;
+      margin: 0 0 1rem;
+      max-width: 14ch;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.3;
+      margin: 0 0 1.25rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      margin: 0 0 0.5rem;
+      font-family: "Courier New", Courier, monospace;
+    }
+    .eyebrow {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    p, li, td, th, span, .tagline, .lede {
+      font-size: 1.125rem;
+      line-height: 1.55;
+      color: inherit;
+    }
+    .tagline { max-width: 38rem; margin: 1rem 0 0; }
+    .lede { max-width: 40rem; margin-top: 1.25rem; }
+    .quote {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      line-height: 1.4;
+      max-width: 28ch;
+      margin: 0.5rem 0 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .card {
+      border: 2px solid currentColor;
+      padding: 1rem 1.1rem;
+    }
+    .vs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 720px) { .vs { grid-template-columns: 1fr; } }
+    ul { margin: 0.4rem 0 0 1.1rem; padding: 0; }
+    .pipe {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1.5rem;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+    .pipe span {
+      border: 2px solid currentColor;
+      padding: 0.35rem 0.65rem;
+    }
+    .pipe .arrow { border: none; padding: 0 0.15rem; }
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .stats strong {
+      display: block;
+      font-size: 2.2rem;
+      line-height: 1.25;
+    }
+    .journey { margin-top: 1.25rem; max-width: 42rem; }
+    .journey div { margin: 0.55rem 0; line-height: 1.55; }
+    .journey b {
+      font-family: "Courier New", Courier, monospace;
+      margin-right: 0.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.25rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.65rem 0.5rem;
+      border-bottom: 2px solid currentColor;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+    th {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.95rem;
+    }
+    .mono {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 1rem;
+      line-height: 1.65;
+      white-space: pre-wrap;
+      border: 2px solid currentColor;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+    .chip {
+      display: inline-block;
+      border: 2px solid currentColor;
+      padding: 0.25rem 0.6rem;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .nav {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.25rem;
+      background: #000000;
+      color: #ffffff;
+      border-top: 2px solid #ffffff;
+      font-family: "Courier New", Courier, monospace;
+      z-index: 10;
+    }
+    .nav button {
+      background: #ffffff;
+      color: #000000;
+      border: 2px solid #ffffff;
+      padding: 0.45rem 0.9rem;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <section class="slide active" data-title="Title">
+    <div class="eyebrow">Pitch · Conversational project architect</div>
+    <h1>VibePrompt</h1>
+    <p class="tagline">From vague student intent to a validated, agent-executable development prompt — without dumping chat into Cursor.</p>
+    <div class="stats">
+      <div><strong>Spec-first</strong><span>Prompt is the artifact</span></div>
+      <div><strong>Hybrid</strong><span>NLP + LLM + rules</span></div>
+      <div><strong>Built</strong><span>Phases 0–14 complete</span></div>
+    </div>
+  </section>
+
+  <section class="slide light" data-title="Problem">
+    <div class="eyebrow">The problem</div>
+    <h2>Students don’t fail at coding first — they fail at specifying.</h2>
+    <div class="grid">
+      <div class="card"><h3>Vague briefs</h3><p>“NLP + cybersecurity, five weeks, no idea…” becomes unstructured chat that evaporates.</p></div>
+      <div class="card"><h3>Pivots and creep</h3><p>React becomes Flutter. Facial recognition sneaks into a phishing detector. Nothing tracks breakage.</p></div>
+      <div class="card"><h3>Prompt dumping</h3><p>Whole transcripts pasted into Cursor. Agents get filler, contradictions, missing acceptance criteria.</p></div>
+      <div class="card"><h3>No adversarial check</h3><p>Friendly chatbots agree. Feasibility, datasets, and AI necessity never get grilled.</p></div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Insight">
+    <div class="eyebrow">Insight</div>
+    <p class="quote">The structured project specification is the product. The Cursor prompt is a compiled export.</p>
+    <p class="lede">If conversation is the source of truth, every agent run inherits chaos. If ProjectState is the source of truth, every prompt is measurable, coverable, and repairable.</p>
+  </section>
+
+  <section class="slide light" data-title="Positioning">
+    <div class="eyebrow">Positioning</div>
+    <h2>A conversational project architect — not another chatbot.</h2>
+    <div class="vs">
+      <div class="card">
+        <h3>Is</h3>
+        <ul>
+          <li>Requirements + research + grill + architecture engine</li>
+          <li>Hybrid NLP + LLM system</li>
+          <li>Mentor + engineer + adversarial reviewer</li>
+          <li>One chat workspace with internal capabilities</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Is not</h3>
+        <ul>
+          <li>Generic ChatGPT wrapper</li>
+          <li>Prompt generator alone</li>
+          <li>Form wizard with mandatory steps</li>
+          <li>Autonomous coder of the student project</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Audience">
+    <div class="eyebrow">Audience</div>
+    <h2>Who we serve first</h2>
+    <div class="grid">
+      <div class="card"><h3>Primary</h3><p>Students building academic software under time and team constraints.</p></div>
+      <div class="card"><h3>Next</h3><p>Hackathon teams, research-minded builders, developers preparing agentic sessions.</p></div>
+      <div class="card"><h3>Entry</h3><p><span class="chip">Continue as Guest</span> or <span class="chip">Login / Create Account</span></p></div>
+    </div>
+  </section>
+
+  <section class="slide light" data-title="Pipeline">
+    <div class="eyebrow">Canonical pipeline</div>
+    <h2>One continuous transformation</h2>
+    <div class="pipe">
+      <span>Intent</span><span class="arrow">→</span>
+      <span>Discovery</span><span class="arrow">→</span>
+      <span>Ideation</span><span class="arrow">→</span>
+      <span>Customize</span><span class="arrow">→</span>
+      <span>Research</span><span class="arrow">→</span>
+      <span>Requirements</span><span class="arrow">→</span>
+      <span>Grill</span><span class="arrow">→</span>
+      <span>Architecture</span><span class="arrow">→</span>
+      <span>ProjectState</span><span class="arrow">→</span>
+      <span>Compile</span><span class="arrow">→</span>
+      <span>Validate</span><span class="arrow">→</span>
+      <span>Agent prompt</span>
+    </div>
+    <p class="lede">Chat is the interface. Engines are the intelligence. ProjectState is durable memory.</p>
+  </section>
+
+  <section class="slide" data-title="Philosophy">
+    <div class="eyebrow">Product philosophy</div>
+    <h2>Eight non-negotiables</h2>
+    <div class="grid">
+      <div class="card"><h3>1. One workspace</h3><p>Capabilities, not mandatory tabs.</p></div>
+      <div class="card"><h3>2. ProjectState wins</h3><p>Conversation is input, never authority.</p></div>
+      <div class="card"><h3>3. Compile from state</h3><p>Never dump raw chat into the final prompt.</p></div>
+      <div class="card"><h3>4. Research on demand</h3><p>Provenance; no invented papers or URLs.</p></div>
+      <div class="card"><h3>5. Grill is adversarial</h3><p>Weaknesses and must-resolve questions — no vanity score.</p></div>
+      <div class="card"><h3>6. Provenance</h3><p>USER / RESEARCH / AI_RECOMMENDATION / SYSTEM_DEFAULT / INFERRED.</p></div>
+      <div class="card"><h3>7. Hybrid NLP</h3><p>Rules and embeddings where measurable; LLM where generative.</p></div>
+      <div class="card"><h3>8. Do not over-engineer</h3><p>One app, clear services, justified models.</p></div>
+    </div>
+  </section>
+
+  <section class="slide light" data-title="Demo">
+    <div class="eyebrow">Demo narrative · A1</div>
+    <h2>“I need an NLP cybersecurity project… I don’t know what.”</h2>
+    <div class="journey">
+      <div><b>01</b>Guest starts. Subject, solo, five weeks → ProjectState.</div>
+      <div><b>02</b>Ideation produces detailed cards — not titles.</div>
+      <div><b>03</b>Select phishing detector; lock core idea.</div>
+      <div><b>04</b>“Existing systems?” → research with RESEARCH provenance.</div>
+      <div><b>05</b>Facial recognition added → drift + grill must-resolve.</div>
+      <div><b>06</b>Architecture + tech with purpose / reason / alternative / trade-off.</div>
+      <div><b>07</b>Compile from state → validator repairs → dense agent prompt.</div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Engines">
+    <div class="eyebrow">Capability engines</div>
+    <h2>What runs under the chat</h2>
+    <div class="grid">
+      <div class="card"><h3>Ideation</h3><p>Why it matters, solution, AI/NLP, data, risks, research extension.</p></div>
+      <div class="card"><h3>Requirements</h3><p>Actor / capability / acceptance; progressive questions; no silent overwrite.</p></div>
+      <div class="card"><h3>Research</h3><p>On-demand findings; apply into requirements on request.</p></div>
+      <div class="card"><h3>Grill</h3><p>Eleven adversarial dimensions including dataset, AI necessity, timeline.</p></div>
+      <div class="card"><h3>Architecture</h3><p>Layers, tech trade-offs, entities, justified APIs.</p></div>
+      <div class="card"><h3>Compile + Validate</h3><p>Gate, coverage metrics, redundancy/ambiguity, repair loop.</p></div>
+    </div>
+  </section>
+
+  <section class="slide light" data-title="Differentiation">
+    <div class="eyebrow">Why we win</div>
+    <h2>Vs “just use ChatGPT”</h2>
+    <table>
+      <thead><tr><th>Dimension</th><th>Generic LLM chat</th><th>VibePrompt</th></tr></thead>
+      <tbody>
+        <tr><td>Memory</td><td>Transcript</td><td>Versioned ProjectState</td></tr>
+        <tr><td>Conflicts</td><td>Often silent merge</td><td>Surface and ask</td></tr>
+        <tr><td>Pivots</td><td>Lost context</td><td>Dependency notices</td></tr>
+        <tr><td>Research</td><td>Often hallucinated</td><td>Provenance + no-fabricate</td></tr>
+        <tr><td>Quality</td><td>Vibes</td><td>Grill + prompt metrics</td></tr>
+        <tr><td>Agent handoff</td><td>Paste chat</td><td>Compiled, validated prompt</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="slide" data-title="Tech">
+    <div class="eyebrow">Technology</div>
+    <h2>Stack that matches the philosophy</h2>
+    <div class="grid">
+      <div class="card"><h3>Backend</h3><p>FastAPI, SQLAlchemy, PostgreSQL/SQLite, spaCy, scikit-learn, Sentence Transformers, optional NLI, Gemini via routed providers.</p></div>
+      <div class="card"><h3>Frontend</h3><p>Flutter web/mobile, chat-first AppShell, guest/login, capability bar (not mode tabs).</p></div>
+      <div class="card"><h3>Routing</h3><p>Chat/extraction → fast · Grill/architecture/compile → reasoning · Research → research slot. Keys never reach Flutter.</p></div>
+    </div>
+  </section>
+
+  <section class="slide light" data-title="Architecture">
+    <div class="eyebrow">System shape</div>
+    <h2>Simple architecture, deep workflow</h2>
+    <pre class="mono">Flutter chat
+  → REST + Bearer auth
+  → Conversation Manager (stages)
+  → NLP intent / extract / conflict / drift
+  → Engines (ideas, research, grill, architecture)
+  → ProjectState + versions + provenance
+  → Prompt compiler → Validator → Agent prompt</pre>
+  </section>
+
+  <section class="slide" data-title="Traction">
+    <div class="eyebrow">Execution status</div>
+    <h2>Plan shipped: phases 0–14</h2>
+    <div class="stats">
+      <div><strong>63</strong><span>backend tests passing</span></div>
+      <div><strong>A1–A7</strong><span>acceptance journeys</span></div>
+      <div><strong>14</strong><span>phases complete</span></div>
+    </div>
+    <div class="grid" style="margin-top:2rem">
+      <div class="card"><h3>Includes</h3><p>State, routing, manager, ideation, research, requirements, grill, architecture, auth, compiler, validator, unified UI, e2e, audit.</p></div>
+      <div class="card"><h3>Honest limits</h3><p>Research quality depends on Gemini config; streaming not in V1; production needs a strong AUTH_SECRET.</p></div>
+    </div>
+  </section>
+
+  <section class="slide light" data-title="Market">
+    <div class="eyebrow">Opportunity</div>
+    <h2>Where this sits</h2>
+    <div class="grid">
+      <div class="card"><h3>Agentic coding boom</h3><p>Cursor and Codex amplify bad specs as fast as good ones.</p></div>
+      <div class="card"><h3>Education gap</h3><p>Courses teach features, not requirements discipline under AI pressure.</p></div>
+      <div class="card"><h3>Trust layer</h3><p>Provenance + adversarial grill create auditability generic chats lack.</p></div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="GTM">
+    <div class="eyebrow">Go-to-market sketch</div>
+    <h2>How it can grow</h2>
+    <div class="grid">
+      <div class="card"><h3>Wedge</h3><p>Course and lab deployments: guest for sessions, login for portfolios.</p></div>
+      <div class="card"><h3>Expansion</h3><p>Hackathons → indie builders → shared ProjectState teams.</p></div>
+      <div class="card"><h3>Monetization</h3><p>Hosted seats, campus licenses, grounded research, IDE export packs.</p></div>
+      <div class="card"><h3>Moat</h3><p>Workflow + state schema + evaluation harness — not a prompt template.</p></div>
+    </div>
+  </section>
+
+  <section class="slide light" data-title="Ask">
+    <div class="eyebrow">The ask</div>
+    <h2>What we want next</h2>
+    <div class="grid">
+      <div class="card"><h3>Design partners</h3><p>One or two courses or labs with real student briefs.</p></div>
+      <div class="card"><h3>Grounded research</h3><p>Verified search APIs for higher-confidence citations.</p></div>
+      <div class="card"><h3>Agent IDE pilots</h3><p>One-click export into Cursor/Codex with coverage report.</p></div>
+      <div class="card"><h3>Support</h3><p>UX polish, evaluation datasets, campus distribution.</p></div>
+    </div>
+  </section>
+
+  <section class="slide" data-title="Close">
+    <div class="eyebrow">Closing</div>
+    <h1>VibePrompt</h1>
+    <p class="quote">Build the project in conversation. Ship the prompt from truth.</p>
+    <p class="lede">Project mentor + requirements engineer + research assistant + adversarial reviewer + system architect + NLP engine + prompt compiler + prompt validator.</p>
+    <p class="lede">Not merely: chatbot + LLM API + text generator.</p>
+    <p class="lede"><strong>Thank you — questions?</strong></p>
+  </section>
+
+  <div class="nav">
+    <button type="button" id="prev">Prev</button>
+    <span id="counter">1 / 1</span>
+    <button type="button" id="next">Next</button>
+  </div>
+
+  <script>
+    const slides = [...document.querySelectorAll(".slide")];
+    let i = 0;
+    function show(n) {
+      i = Math.max(0, Math.min(slides.length - 1, n));
+      slides.forEach((s, idx) => s.classList.toggle("active", idx === i));
+      document.getElementById("counter").textContent = (i + 1) + " / " + slides.length;
+      document.getElementById("progress").style.width = (((i + 1) / slides.length) * 100) + "%";
+      document.title = "VibePrompt Pitch — " + (slides[i].dataset.title || (i + 1));
+    }
+    document.getElementById("prev").onclick = () => show(i - 1);
+    document.getElementById("next").onclick = () => show(i + 1);
+    window.addEventListener("keydown", (e) => {
+      if (["ArrowRight", "PageDown", " ", "Enter"].includes(e.key)) { e.preventDefault(); show(i + 1); }
+      else if (["ArrowLeft", "PageUp", "Backspace"].includes(e.key)) { e.preventDefault(); show(i - 1); }
+      else if (e.key === "Home") show(0);
+      else if (e.key === "End") show(slides.length - 1);
+    });
+    show(0);
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{"objective": "Classify phishing emails", "requirement": "Identify malicious email messages", "drift": 0}
+{"objective": "Classify phishing emails", "requirement": "Provide a confidence score for the email label", "drift": 0}
+{"objective": "Classify phishing emails", "requirement": "Add a browser extension for the classifier", "drift": 0}
+{"objective": "Classify phishing emails", "requirement": "Add facial recognition", "drift": 1}
+{"objective": "Classify phishing emails", "requirement": "Control a drone from the dashboard", "drift": 1}
+{"objective": "Classify phishing emails", "requirement": "Add a blockchain payment system", "drift": 1}
+{"objective": "Extract requirements from a brief", "requirement": "Link duplicate requirements", "drift": 0}
+{"objective": "Extract requirements from a brief", "requirement": "Add object detection for classroom photos", "drift": 1}
+{"objective": "Analyze security logs", "requirement": "Rank suspicious log lines", "drift": 0}
+{"objective": "Analyze security logs", "requirement": "Build a social network", "drift": 1}
+{"objective": "Detect unsupported citations", "requirement": "Extract citation strings", "drift": 0}
+{"objective": "Detect unsupported citations", "requirement": "Add cryptocurrency mining", "drift": 1}

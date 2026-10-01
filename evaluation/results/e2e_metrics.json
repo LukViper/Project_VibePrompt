@@ -1,0 +1,73 @@
+{
+  "cases": 10,
+  "passed": 10,
+  "results": [
+    {
+      "case": "01_stable_project.json",
+      "checks": {
+        "subject": true,
+        "team_size": true,
+        "conflict": true
+      },
+      "passed": true
+    },
+    {
+      "case": "02_requirement_additions.json",
+      "checks": {},
+      "passed": true
+    },
+    {
+      "case": "03_requirement_removal.json",
+      "checks": {},
+      "passed": true
+    },
+    {
+      "case": "04_technology_replacement.json",
+      "checks": {},
+      "passed": true
+    },
+    {
+      "case": "05_explicit_contradiction.json",
+      "checks": {
+        "conflict": true
+      },
+      "passed": true
+    },
+    {
+      "case": "06_scope_creep.json",
+      "checks": {
+        "scope": true
+      },
+      "passed": true
+    },
+    {
+      "case": "07_project_drift.json",
+      "checks": {
+        "drift": true
+      },
+      "passed": true
+    },
+    {
+      "case": "08_related_changes.json",
+      "checks": {
+        "drift": true
+      },
+      "passed": true
+    },
+    {
+      "case": "09_conflicting_technical_requirements.json",
+      "checks": {
+        "conflict": true
+      },
+      "passed": true
+    },
+    {
+      "case": "10_final_specification.json",
+      "checks": {
+        "specification": true,
+        "prompt_coverage": true
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# Core API stack. Verified on Python 3.13.
+fastapi==0.141.1
+uvicorn[standard]==0.53.0
+pydantic==2.13.5
+pydantic-settings==2.15.0
+sqlalchemy==2.0.54
+alembic==1.20.0
+psycopg[binary]==3.3.5
+python-dotenv==1.2.3
+scikit-learn==1.9.1
+numpy==2.5.3
+joblib==1.6.0
+httpx==0.28.1
+pytest==9.1.1
+scipy==1.18.1
+
+# Optional, used when installed. See requirements-nlp.txt.
+# spaCy, Sentence Transformers, Hugging Face Transformers, and the Gemini SDK
+# are imported lazily so the classical baselines still run without them.

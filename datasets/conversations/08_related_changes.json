@@ -1,0 +1,10 @@
+{
+  "messages": [
+    "Classify phishing emails.",
+    "Let's add a confidence score.",
+    "Also include an explanation of the indicators."
+  ],
+  "expect": {
+    "drift": false
+  }
+}

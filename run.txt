@@ -1,0 +1,12 @@
+backend 
+
+cd /home/luk_viper/Prompting/backend
+source .venv/bin/activate
+uvicorn app.main:app --reload
+
+
+frontend
+
+cd /home/luk_viper/Prompting/mobile_web
+flutter pub get
+flutter run -d chrome

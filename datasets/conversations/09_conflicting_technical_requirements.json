@@ -1,0 +1,9 @@
+{
+  "messages": [
+    "Use PostgreSQL.",
+    "Use MySQL as the database."
+  ],
+  "expect": {
+    "conflict": true
+  }
+}

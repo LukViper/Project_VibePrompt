@@ -1,0 +1,112 @@
+{"text": "I need a project for NLP and I am working alone.", "intent": "PROJECT_DESCRIPTION"}
+{"text": "This is for a machine learning course lasting eight weeks.", "intent": "PROJECT_DESCRIPTION"}
+{"text": "I have to build something for my cybersecurity class.", "intent": "PROJECT_DESCRIPTION"}
+{"text": "We are a team of three and the deadline is one semester.", "intent": "PROJECT_DESCRIPTION"}
+{"text": "The professor wants a project that uses named entity recognition.", "intent": "PROJECT_DESCRIPTION"}
+{"text": "I am starting from a vague idea about student advising.", "intent": "PROJECT_DESCRIPTION"}
+{"text": "Our course project has to demonstrate text classification.", "intent": "PROJECT_DESCRIPTION"}
+{"text": "I have four weeks and I want an academic NLP project.", "intent": "PROJECT_DESCRIPTION"}
+{"text": "Let's add a browser extension.", "intent": "ADD_REQUIREMENT"}
+{"text": "Also include a confidence score.", "intent": "ADD_REQUIREMENT"}
+{"text": "We should also support export to CSV.", "intent": "ADD_REQUIREMENT"}
+{"text": "Add a dashboard for the results.", "intent": "ADD_REQUIREMENT"}
+{"text": "Please include an admin review screen.", "intent": "ADD_REQUIREMENT"}
+{"text": "And let's add email notifications.", "intent": "ADD_REQUIREMENT"}
+{"text": "Include a history of previous classifications.", "intent": "ADD_REQUIREMENT"}
+{"text": "Let's add a requirement for audit logs.", "intent": "ADD_REQUIREMENT"}
+{"text": "Let's remove the mobile application.", "intent": "REMOVE_REQUIREMENT"}
+{"text": "Remove facial recognition.", "intent": "REMOVE_REQUIREMENT"}
+{"text": "Drop the blockchain payment system.", "intent": "REMOVE_REQUIREMENT"}
+{"text": "Delete the admin panel.", "intent": "REMOVE_REQUIREMENT"}
+{"text": "Get rid of the real-time monitoring feature.", "intent": "REMOVE_REQUIREMENT"}
+{"text": "Scrap the drone control requirement.", "intent": "REMOVE_REQUIREMENT"}
+{"text": "Please remove the second database.", "intent": "REMOVE_REQUIREMENT"}
+{"text": "Remove the requirement for offline mode.", "intent": "REMOVE_REQUIREMENT"}
+{"text": "Change the confidence score to a percentage.", "intent": "MODIFY_REQUIREMENT"}
+{"text": "Modify the dashboard so it only shows flagged emails.", "intent": "MODIFY_REQUIREMENT"}
+{"text": "Update the report to include evidence sentences.", "intent": "MODIFY_REQUIREMENT"}
+{"text": "Instead of a graph, show a table of results.", "intent": "MODIFY_REQUIREMENT"}
+{"text": "Make the classifier explain its decision.", "intent": "MODIFY_REQUIREMENT"}
+{"text": "Change the login requirement to guest access.", "intent": "MODIFY_REQUIREMENT"}
+{"text": "Update the existing search requirement.", "intent": "MODIFY_REQUIREMENT"}
+{"text": "Modify the export requirement to use JSON.", "intent": "MODIFY_REQUIREMENT"}
+{"text": "What does the professor usually expect in the report?", "intent": "ASK_QUESTION"}
+{"text": "How should I cite the dataset?", "intent": "ASK_QUESTION"}
+{"text": "Which section of the spec describes testing?", "intent": "ASK_QUESTION"}
+{"text": "What is the difference between these two ideas?", "intent": "ASK_QUESTION"}
+{"text": "Where would the model run?", "intent": "ASK_QUESTION"}
+{"text": "Why is PostgreSQL suggested?", "intent": "ASK_QUESTION"}
+{"text": "When should I lock the core idea?", "intent": "ASK_QUESTION"}
+{"text": "What open questions are still missing?", "intent": "ASK_QUESTION"}
+{"text": "Is it feasible to fine-tune BERT in five weeks?", "intent": "ASK_FEASIBILITY"}
+{"text": "Can we actually train a model with this dataset size?", "intent": "ASK_FEASIBILITY"}
+{"text": "Is it possible to finish a browser extension and the API?", "intent": "ASK_FEASIBILITY"}
+{"text": "Will it fit in a six week solo project?", "intent": "ASK_FEASIBILITY"}
+{"text": "Can one student deploy both web and mobile?", "intent": "ASK_FEASIBILITY"}
+{"text": "Is real-time inference feasible on a laptop?", "intent": "ASK_FEASIBILITY"}
+{"text": "Can we actually test facial recognition without hardware?", "intent": "ASK_FEASIBILITY"}
+{"text": "Is it possible to complete the API and the tests?", "intent": "ASK_FEASIBILITY"}
+{"text": "I select idea 2.", "intent": "SELECT_IDEA"}
+{"text": "Let's go with the phishing detector.", "intent": "SELECT_IDEA"}
+{"text": "I will take idea 1.", "intent": "SELECT_IDEA"}
+{"text": "Choose idea 4.", "intent": "SELECT_IDEA"}
+{"text": "Select the academic requirement analyzer.", "intent": "SELECT_IDEA"}
+{"text": "I'll go with idea 3.", "intent": "SELECT_IDEA"}
+{"text": "Select idea 5.", "intent": "SELECT_IDEA"}
+{"text": "I choose the log analysis idea.", "intent": "SELECT_IDEA"}
+{"text": "Reject idea 2.", "intent": "REJECT_IDEA"}
+{"text": "I don't like idea 4.", "intent": "REJECT_IDEA"}
+{"text": "Skip idea 1.", "intent": "REJECT_IDEA"}
+{"text": "Reject the drone idea.", "intent": "REJECT_IDEA"}
+{"text": "I don't like idea 3.", "intent": "REJECT_IDEA"}
+{"text": "Skip idea 5.", "intent": "REJECT_IDEA"}
+{"text": "Reject idea 1.", "intent": "REJECT_IDEA"}
+{"text": "I don't like the citation detector idea.", "intent": "REJECT_IDEA"}
+{"text": "Grill me on this project.", "intent": "REQUEST_GRILL"}
+{"text": "Enter grill mode.", "intent": "REQUEST_GRILL"}
+{"text": "Find the weaknesses before we compile the prompt.", "intent": "REQUEST_GRILL"}
+{"text": "Tear this apart.", "intent": "REQUEST_GRILL"}
+{"text": "Grill mode please.", "intent": "REQUEST_GRILL"}
+{"text": "Find the weaknesses in the requirements.", "intent": "REQUEST_GRILL"}
+{"text": "Please grill this specification.", "intent": "REQUEST_GRILL"}
+{"text": "Look for weaknesses.", "intent": "REQUEST_GRILL"}
+{"text": "Give me a professional review.", "intent": "REQUEST_PROFESSIONAL_REVIEW"}
+{"text": "Professional mode please.", "intent": "REQUEST_PROFESSIONAL_REVIEW"}
+{"text": "Review this as a supervisor.", "intent": "REQUEST_PROFESSIONAL_REVIEW"}
+{"text": "I want a supervisor review.", "intent": "REQUEST_PROFESSIONAL_REVIEW"}
+{"text": "Professional review of the current state.", "intent": "REQUEST_PROFESSIONAL_REVIEW"}
+{"text": "Review this like a project supervisor.", "intent": "REQUEST_PROFESSIONAL_REVIEW"}
+{"text": "Please run professional mode.", "intent": "REQUEST_PROFESSIONAL_REVIEW"}
+{"text": "Supervisor review before we finalize.", "intent": "REQUEST_PROFESSIONAL_REVIEW"}
+{"text": "Use BERT and PostgreSQL.", "intent": "CHANGE_TECHNOLOGY"}
+{"text": "Switch the backend from Python to Java.", "intent": "CHANGE_TECHNOLOGY"}
+{"text": "Let's use React instead of Flutter.", "intent": "CHANGE_TECHNOLOGY"}
+{"text": "Replace MySQL with PostgreSQL.", "intent": "CHANGE_TECHNOLOGY"}
+{"text": "Use FastAPI for the backend.", "intent": "CHANGE_TECHNOLOGY"}
+{"text": "Change the model to DistilBERT.", "intent": "CHANGE_TECHNOLOGY"}
+{"text": "Switch to MongoDB.", "intent": "CHANGE_TECHNOLOGY"}
+{"text": "Use Python rather than Java.", "intent": "CHANGE_TECHNOLOGY"}
+{"text": "I want something related to cybersecurity.", "intent": "CHANGE_SCOPE"}
+{"text": "Narrow the scope to email classification only.", "intent": "CHANGE_SCOPE"}
+{"text": "Expand the scope to include a mobile client.", "intent": "CHANGE_SCOPE"}
+{"text": "Let's pivot toward education technology.", "intent": "CHANGE_SCOPE"}
+{"text": "Reduce the scope to a command-line tool.", "intent": "CHANGE_SCOPE"}
+{"text": "Change direction toward academic writing.", "intent": "CHANGE_SCOPE"}
+{"text": "Move toward a smaller prototype.", "intent": "CHANGE_SCOPE"}
+{"text": "Increase the scope of the evaluation.", "intent": "CHANGE_SCOPE"}
+{"text": "Finalize the project.", "intent": "FINALIZE_PROJECT"}
+{"text": "Lock the spec.", "intent": "FINALIZE_PROJECT"}
+{"text": "We are done with requirements.", "intent": "FINALIZE_PROJECT"}
+{"text": "Mark the project ready.", "intent": "FINALIZE_PROJECT"}
+{"text": "Finalize the requirements now.", "intent": "FINALIZE_PROJECT"}
+{"text": "Lock the project specification.", "intent": "FINALIZE_PROJECT"}
+{"text": "I want to finalize.", "intent": "FINALIZE_PROJECT"}
+{"text": "We are done. Finalize it.", "intent": "FINALIZE_PROJECT"}
+{"text": "Generate the prompt.", "intent": "GENERATE_PROMPT"}
+{"text": "Compile the final prompt.", "intent": "GENERATE_PROMPT"}
+{"text": "Export the agent prompt.", "intent": "GENERATE_PROMPT"}
+{"text": "Generate a prompt for Cursor.", "intent": "GENERATE_PROMPT"}
+{"text": "Compile the prompt from the specification.", "intent": "GENERATE_PROMPT"}
+{"text": "Create the final coding prompt.", "intent": "GENERATE_PROMPT"}
+{"text": "Generate the prompt now.", "intent": "GENERATE_PROMPT"}
+{"text": "Export the prompt for Codex.", "intent": "GENERATE_PROMPT"}

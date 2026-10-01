@@ -1,0 +1,9 @@
+{
+  "messages": [
+    "I need an NLP project. I am working alone and have five weeks. Maybe an NLP-based phishing detector. Use BERT and PostgreSQL."
+  ],
+  "expect": {
+    "specification": true,
+    "prompt": true
+  }
+}

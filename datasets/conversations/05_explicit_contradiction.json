@@ -1,0 +1,9 @@
+{
+  "messages": [
+    "The backend must use Python.",
+    "The backend must use Java."
+  ],
+  "expect": {
+    "conflict": true
+  }
+}

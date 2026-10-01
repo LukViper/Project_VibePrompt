@@ -1,0 +1,9 @@
+{
+  "messages": [
+    "The backend must use Python.",
+    "Switch the backend from Python to Java."
+  ],
+  "expect": {
+    "technology_change": "Java"
+  }
+}

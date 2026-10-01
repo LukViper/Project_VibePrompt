@@ -1,0 +1,9 @@
+{
+  "messages": [
+    "Build an NLP email classifier.",
+    "Let's add a confidence score."
+  ],
+  "expect": {
+    "added": "confidence score"
+  }
+}

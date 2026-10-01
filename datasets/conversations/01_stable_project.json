@@ -1,0 +1,10 @@
+{
+  "messages": [
+    "I need an NLP project. I am working alone for six weeks. Classify short reviews."
+  ],
+  "expect": {
+    "subject": "NLP",
+    "team_size": 1,
+    "conflict": false
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "messages": [
+    "Classify phishing emails with NLP.",
+    "Let's add a mobile app.",
+    "Also include a browser extension."
+  ],
+  "expect": {
+    "scope": true
+  }
+}

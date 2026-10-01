@@ -1,0 +1,20 @@
+{"text_a": "Detect phishing emails.", "text_b": "Identify malicious email messages.", "intent": "", "relationship": "SUPPORTS", "similarity": 3}
+{"text_a": "Provide a confidence score.", "text_b": "Show how sure the classifier is.", "intent": "", "relationship": "SUPPORTS", "similarity": 3}
+{"text_a": "The backend must use Python.", "text_b": "The server should be written in Python.", "intent": "", "relationship": "SUPPORTS", "similarity": 3}
+{"text_a": "Store results in PostgreSQL.", "text_b": "Use Postgres as the database.", "intent": "", "relationship": "SUPPORTS", "similarity": 3}
+{"text_a": "Add a browser extension.", "text_b": "Add a Chrome extension for Gmail.", "intent": "", "relationship": "EXTENDS", "similarity": 2}
+{"text_a": "Classify emails.", "text_b": "Build a web dashboard.", "intent": "", "relationship": "UNRELATED", "similarity": 1}
+{"text_a": "Detect phishing emails.", "text_b": "Add facial recognition.", "intent": "", "relationship": "UNRELATED", "similarity": 0}
+{"text_a": "The backend must use Python.", "text_b": "The backend must use Java.", "intent": "", "relationship": "CONTRADICTS", "similarity": 1}
+{"text_a": "Tokenize the email body.", "text_b": "Split the message into tokens.", "intent": "", "relationship": "SUPPORTS", "similarity": 3}
+{"text_a": "Named entity recognition on email headers.", "text_b": "Extract organizations from the header.", "intent": "", "relationship": "SUPPORTS", "similarity": 2}
+{"text_a": "Avoid a basic sentiment application.", "text_b": "Do not build a simple sentiment demo.", "intent": "", "relationship": "SUPPORTS", "similarity": 3}
+{"text_a": "Real-time email monitoring.", "text_b": "Batch classify a mailbox export.", "intent": "", "relationship": "MODIFIES", "similarity": 1}
+{"text_a": "Add blockchain payments.", "text_b": "Add a drone control panel.", "intent": "", "relationship": "UNRELATED", "similarity": 0}
+{"text_a": "Generate a specification.", "text_b": "Compile an agent-ready prompt.", "intent": "", "relationship": "EXTENDS", "similarity": 1}
+{"text_a": "Team of one.", "text_b": "I am working alone.", "intent": "", "relationship": "SUPPORTS", "similarity": 3}
+{"text_a": "Six week deadline.", "text_b": "The project lasts six weeks.", "intent": "", "relationship": "SUPPORTS", "similarity": 3}
+{"text_a": "Add a mobile application.", "text_b": "Add an Android and iOS client.", "intent": "", "relationship": "EXTENDS", "similarity": 2}
+{"text_a": "Explain the classification.", "text_b": "Show which tokens influenced the label.", "intent": "", "relationship": "SUPPORTS", "similarity": 2}
+{"text_a": "Use BERT.", "text_b": "Fine-tune a transformer encoder.", "intent": "", "relationship": "SUPPORTS", "similarity": 2}
+{"text_a": "Store users passwords in plain text.", "text_b": "Hash and salt credentials.", "intent": "", "relationship": "CONTRADICTS", "similarity": 0}

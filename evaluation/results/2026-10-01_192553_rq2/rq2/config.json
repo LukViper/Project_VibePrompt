@@ -1,0 +1,12 @@
+{
+  "experiment_id": "rq2_change_impact",
+  "experiment_version": "1.0.0",
+  "dataset_id": "vibeprompt-synthetic-bench/rq2",
+  "dataset_version": "1.0.0",
+  "random_seed": 42,
+  "model": "n/a",
+  "embedding_provider": "unavailable",
+  "embedding_model": "None",
+  "parameters": {},
+  "timestamp": "2026-10-01T19:25:53.503875+00:00"
+}

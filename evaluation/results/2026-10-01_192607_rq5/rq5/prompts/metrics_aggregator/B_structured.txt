@@ -1,0 +1,8 @@
+You are a senior software engineer.
+
+REQUIREMENTS
+- mean
+- count
+CONSTRAINTS
+- python 3.11+
+- no network in tests

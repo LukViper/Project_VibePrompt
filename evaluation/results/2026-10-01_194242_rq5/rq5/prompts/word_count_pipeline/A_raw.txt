@@ -1,0 +1,5 @@
+You are a senior software engineer.
+
+I need: Count words in a directory of texts
+Requirement: recursive read
+Requirement: sorted counts

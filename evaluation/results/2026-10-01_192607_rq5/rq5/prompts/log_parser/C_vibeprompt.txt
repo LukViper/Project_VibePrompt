@@ -1,0 +1,15 @@
+You are a senior software engineer.
+Build the following project completely.
+
+OBJECTIVE
+Parse syslog lines into JSON
+
+CONFIRMED REQUIREMENTS
+- parse severity
+- parse timestamp
+
+ACCEPTANCE CRITERIA
+[ ] parse severity
+[ ] parse timestamp
+
+Do not remove or silently alter required functionality.

@@ -1,0 +1,15 @@
+You are a senior software engineer.
+Build the following project completely.
+
+OBJECTIVE
+URL shortener service
+
+CONFIRMED REQUIREMENTS
+- create short url
+- redirect
+
+ACCEPTANCE CRITERIA
+[ ] create short url
+[ ] redirect
+
+Do not remove or silently alter required functionality.

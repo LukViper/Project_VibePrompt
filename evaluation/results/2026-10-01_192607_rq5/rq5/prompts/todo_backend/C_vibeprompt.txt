@@ -1,0 +1,15 @@
+You are a senior software engineer.
+Build the following project completely.
+
+OBJECTIVE
+Minimal todo backend
+
+CONFIRMED REQUIREMENTS
+- add todo
+- complete todo
+
+ACCEPTANCE CRITERIA
+[ ] add todo
+[ ] complete todo
+
+Do not remove or silently alter required functionality.

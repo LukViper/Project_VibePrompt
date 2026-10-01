@@ -1,0 +1,508 @@
+[
+  {
+    "id": "RQ3-001",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "feasibility",
+      "hardware"
+    ]
+  },
+  {
+    "id": "RQ3-002",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "latency",
+      "real-time"
+    ]
+  },
+  {
+    "id": "RQ3-003",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [
+      "evaluation",
+      "accuracy"
+    ],
+    "gold_issue_tags": [
+      "evaluation",
+      "accuracy"
+    ]
+  },
+  {
+    "id": "RQ3-004",
+    "n_attacks": 3,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "scope",
+      "timeline"
+    ]
+  },
+  {
+    "id": "RQ3-005",
+    "n_attacks": 3,
+    "blocking": 1,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "dataset"
+    ]
+  },
+  {
+    "id": "RQ3-006",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "RQ3-007",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "deployment",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "RQ3-008",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "architecture",
+      "availability"
+    ]
+  },
+  {
+    "id": "RQ3-009",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "feasibility",
+      "hardware"
+    ]
+  },
+  {
+    "id": "RQ3-010",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "latency",
+      "real-time"
+    ]
+  },
+  {
+    "id": "RQ3-011",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [
+      "evaluation",
+      "accuracy"
+    ],
+    "gold_issue_tags": [
+      "evaluation",
+      "accuracy"
+    ]
+  },
+  {
+    "id": "RQ3-012",
+    "n_attacks": 3,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "scope",
+      "timeline"
+    ]
+  },
+  {
+    "id": "RQ3-013",
+    "n_attacks": 3,
+    "blocking": 1,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "dataset"
+    ]
+  },
+  {
+    "id": "RQ3-014",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "RQ3-015",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "deployment",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "RQ3-016",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "architecture",
+      "availability"
+    ]
+  },
+  {
+    "id": "RQ3-017",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "feasibility",
+      "hardware"
+    ]
+  },
+  {
+    "id": "RQ3-018",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "latency",
+      "real-time"
+    ]
+  },
+  {
+    "id": "RQ3-019",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [
+      "evaluation",
+      "accuracy"
+    ],
+    "gold_issue_tags": [
+      "evaluation",
+      "accuracy"
+    ]
+  },
+  {
+    "id": "RQ3-020",
+    "n_attacks": 3,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "scope",
+      "timeline"
+    ]
+  },
+  {
+    "id": "RQ3-021",
+    "n_attacks": 3,
+    "blocking": 1,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "dataset"
+    ]
+  },
+  {
+    "id": "RQ3-022",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "RQ3-023",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "deployment",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "RQ3-024",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "architecture",
+      "availability"
+    ]
+  },
+  {
+    "id": "RQ3-025",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "feasibility",
+      "hardware"
+    ]
+  },
+  {
+    "id": "RQ3-026",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "latency",
+      "real-time"
+    ]
+  },
+  {
+    "id": "RQ3-027",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [
+      "evaluation",
+      "accuracy"
+    ],
+    "gold_issue_tags": [
+      "evaluation",
+      "accuracy"
+    ]
+  },
+  {
+    "id": "RQ3-028",
+    "n_attacks": 3,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "scope",
+      "timeline"
+    ]
+  },
+  {
+    "id": "RQ3-029",
+    "n_attacks": 3,
+    "blocking": 1,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "dataset"
+    ]
+  },
+  {
+    "id": "RQ3-030",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "RQ3-031",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "deployment",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "RQ3-032",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "architecture",
+      "availability"
+    ]
+  },
+  {
+    "id": "RQ3-033",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "feasibility",
+      "hardware"
+    ]
+  },
+  {
+    "id": "RQ3-034",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "latency",
+      "real-time"
+    ]
+  },
+  {
+    "id": "RQ3-035",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [
+      "evaluation",
+      "accuracy"
+    ],
+    "gold_issue_tags": [
+      "evaluation",
+      "accuracy"
+    ]
+  },
+  {
+    "id": "RQ3-036",
+    "n_attacks": 3,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "scope",
+      "timeline"
+    ]
+  },
+  {
+    "id": "RQ3-037",
+    "n_attacks": 3,
+    "blocking": 1,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "dataset"
+    ]
+  },
+  {
+    "id": "RQ3-038",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "RQ3-039",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "deployment",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "RQ3-040",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "architecture",
+      "availability"
+    ]
+  },
+  {
+    "id": "RQ3-041",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "feasibility",
+      "hardware"
+    ]
+  },
+  {
+    "id": "RQ3-042",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "latency",
+      "real-time"
+    ]
+  },
+  {
+    "id": "RQ3-043",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [
+      "evaluation",
+      "accuracy"
+    ],
+    "gold_issue_tags": [
+      "evaluation",
+      "accuracy"
+    ]
+  },
+  {
+    "id": "RQ3-044",
+    "n_attacks": 3,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "scope",
+      "timeline"
+    ]
+  },
+  {
+    "id": "RQ3-045",
+    "n_attacks": 3,
+    "blocking": 1,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "dataset"
+    ]
+  },
+  {
+    "id": "RQ3-046",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "RQ3-047",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "deployment",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "RQ3-048",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "architecture",
+      "availability"
+    ]
+  },
+  {
+    "id": "RQ3-049",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "feasibility",
+      "hardware"
+    ]
+  },
+  {
+    "id": "RQ3-050",
+    "n_attacks": 4,
+    "blocking": 2,
+    "detected_tags": [],
+    "gold_issue_tags": [
+      "latency",
+      "real-time"
+    ]
+  }
+]

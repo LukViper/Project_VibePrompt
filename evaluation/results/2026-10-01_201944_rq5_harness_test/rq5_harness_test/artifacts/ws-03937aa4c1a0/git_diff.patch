@@ -1,0 +1,121 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..e2ab814
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,95 @@
++You are a senior software engineer.
++
++Build the following project completely.
++
++ROLE
++You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
++
++PROJECT
++Untitled project
++
++OBJECTIVE
++See the specification.
++
++PROBLEM
++See the specification.
++
++REQUIREMENTS
++Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
++
++FUNCTIONAL REQUIREMENTS
++REQ-001:
++Support a health() function returning {'status': 'ok'}
++  Acceptance: Given a typical input, the system Support a health() function returning {'status': 'ok'}.
++REQ-002:
++Redis caching
++  Acceptance: Given a typical input, the system Redis caching.
++
++NON-FUNCTIONAL REQUIREMENTS
++REQ-003:
++Use Redis as the database
++REQ-004:
++The backend must use Python
++
++CONSTRAINTS
++- Team size: None
++- Duration: None
++- Budget: None
++- Avoid: Do not add Redis, Do not call external APIs
++
++TECH STACK
++Backend: Python
++Model: unspecified
++Database: Redis
++Frameworks: unspecified
++Hardware: none
++
++ARCHITECTURE
++Use a modular monolith unless ProjectState specifies otherwise.
++
++DATABASE
++Use the database named in TECH STACK.
++
++API
++Implement an operation for every functional requirement.
++
++SECURITY
++Keep secrets in environment variables. Validate input. Do not expose credentials.
++
++TESTING
++Write a test mapped from each requirement ID. Run the tests.
++
++ACCEPTANCE CRITERIA
++[ ] REQ-001: Given a typical input, the system Support a health() function returning {'status': 'ok'}.
++[ ] REQ-002: Given a typical input, the system Redis caching.
++[ ] REQ-003 implemented
++[ ] REQ-004 implemented
++[ ] Tests pass
++[ ] Application runs successfully
++
++IMPLEMENTATION PROCESS
++1. Inspect the existing repository.
++2. Understand the requirements.
++3. Create the required architecture.
++4. Implement the components.
++5. Configure dependencies.
++6. Implement database, API, and frontend components.
++7. Write tests.
++8. Run tests.
++9. Fix implementation errors.
++10. Verify every acceptance criterion.
++11. Provide setup instructions.
++
++DELIVERABLES
++- Working implementation of every requirement ID
++- Tests
++- Setup instructions
++- A short note mapping each acceptance criterion to evidence
++
++Do not remove or silently alter required functionality.
++Do not replace required functionality with placeholders.
++
++
++# COMPILATION GATE NOTES
++- project objective is missing
++Implement only CONFIRMED requirements listed above.
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..58a8075
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-03937aa4c1a0","task_id":"rest_echo_api","variant":"C_vibeprompt","seed_commit":"0eb45dad2d2719527c49bef9945ee8e561159ce9"}
+\ No newline at end of file
+diff --git a/app/echo_api.py b/app/echo_api.py
+index a994947..fa4e7d8 100644
+--- a/app/echo_api.py
++++ b/app/echo_api.py
+@@ -1,5 +1,5 @@
+ def echo(payload):
+-    raise NotImplementedError('implement echo')
++    return payload
+ 
+ def health():
+-    raise NotImplementedError('implement health')
++    return {'status': 'ok'}

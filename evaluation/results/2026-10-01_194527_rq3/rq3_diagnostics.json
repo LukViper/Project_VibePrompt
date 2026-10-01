@@ -1,0 +1,809 @@
+{
+  "n_misses": 36,
+  "misses": [
+    {
+      "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+      "id": "RQ3-003",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "EVALUATION",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "missing evaluation methodology",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Production deploy without monitoring.",
+      "id": "RQ3-007",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ARCHITECTURE"
+      ],
+      "gold_attack_type": "DEPLOYMENT",
+      "predicted_attack_type": [
+        "DEPLOYMENT"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "no observability",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+      "id": "RQ3-011",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "TIMELINE",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "timeline incompatible with scope",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Store PII in logs without retention or access controls.",
+      "id": "RQ3-012",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "SECURITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "PII handling gap",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Claim the model can be trained locally without measuring resources.",
+      "id": "RQ3-017",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "RESOURCE_FEASIBILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "unverified local training claim",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Assumption that public phishing corpora are legally usable without review.",
+      "id": "RQ3-020",
+      "gold_target": "ASSUMPTION",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "DATA_AVAILABILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "licensing assumption",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+      "id": "RQ3-023",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "EVALUATION",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "missing evaluation methodology",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Production deploy without monitoring.",
+      "id": "RQ3-027",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ARCHITECTURE"
+      ],
+      "gold_attack_type": "DEPLOYMENT",
+      "predicted_attack_type": [
+        "DEPLOYMENT"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "no observability",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+      "id": "RQ3-031",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "TIMELINE",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "timeline incompatible with scope",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Store PII in logs without retention or access controls.",
+      "id": "RQ3-032",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "SECURITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "PII handling gap",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Claim the model can be trained locally without measuring resources.",
+      "id": "RQ3-037",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "RESOURCE_FEASIBILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "unverified local training claim",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Assumption that public phishing corpora are legally usable without review.",
+      "id": "RQ3-040",
+      "gold_target": "ASSUMPTION",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "DATA_AVAILABILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "licensing assumption",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+      "id": "RQ3-043",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "EVALUATION",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "missing evaluation methodology",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Production deploy without monitoring.",
+      "id": "RQ3-047",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ARCHITECTURE"
+      ],
+      "gold_attack_type": "DEPLOYMENT",
+      "predicted_attack_type": [
+        "DEPLOYMENT"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "no observability",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+      "id": "RQ3-051",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "TIMELINE",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "timeline incompatible with scope",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Store PII in logs without retention or access controls.",
+      "id": "RQ3-052",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "SECURITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "PII handling gap",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Claim the model can be trained locally without measuring resources.",
+      "id": "RQ3-057",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "RESOURCE_FEASIBILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "unverified local training claim",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Assumption that public phishing corpora are legally usable without review.",
+      "id": "RQ3-060",
+      "gold_target": "ASSUMPTION",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "DATA_AVAILABILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "licensing assumption",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+      "id": "RQ3-063",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "EVALUATION",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "missing evaluation methodology",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Production deploy without monitoring.",
+      "id": "RQ3-067",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ARCHITECTURE"
+      ],
+      "gold_attack_type": "DEPLOYMENT",
+      "predicted_attack_type": [
+        "DEPLOYMENT"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "no observability",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+      "id": "RQ3-071",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "TIMELINE",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "timeline incompatible with scope",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Store PII in logs without retention or access controls.",
+      "id": "RQ3-072",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "SECURITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "PII handling gap",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Claim the model can be trained locally without measuring resources.",
+      "id": "RQ3-077",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "RESOURCE_FEASIBILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "unverified local training claim",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Assumption that public phishing corpora are legally usable without review.",
+      "id": "RQ3-080",
+      "gold_target": "ASSUMPTION",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "DATA_AVAILABILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "licensing assumption",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+      "id": "RQ3-083",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "EVALUATION",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "missing evaluation methodology",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Production deploy without monitoring.",
+      "id": "RQ3-087",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ARCHITECTURE"
+      ],
+      "gold_attack_type": "DEPLOYMENT",
+      "predicted_attack_type": [
+        "DEPLOYMENT"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "no observability",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+      "id": "RQ3-091",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "TIMELINE",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "timeline incompatible with scope",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Store PII in logs without retention or access controls.",
+      "id": "RQ3-092",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "SECURITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "PII handling gap",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Claim the model can be trained locally without measuring resources.",
+      "id": "RQ3-097",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "RESOURCE_FEASIBILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "unverified local training claim",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Assumption that public phishing corpora are legally usable without review.",
+      "id": "RQ3-100",
+      "gold_target": "ASSUMPTION",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "DATA_AVAILABILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "licensing assumption",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+      "id": "RQ3-103",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "EVALUATION",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "missing evaluation methodology",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Production deploy without monitoring.",
+      "id": "RQ3-107",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ARCHITECTURE"
+      ],
+      "gold_attack_type": "DEPLOYMENT",
+      "predicted_attack_type": [
+        "DEPLOYMENT"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "no observability",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+      "id": "RQ3-111",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "TIMELINE",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "timeline incompatible with scope",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Store PII in logs without retention or access controls.",
+      "id": "RQ3-112",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "SECURITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "PII handling gap",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Claim the model can be trained locally without measuring resources.",
+      "id": "RQ3-117",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "RESOURCE_FEASIBILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "unverified local training claim",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Assumption that public phishing corpora are legally usable without review.",
+      "id": "RQ3-120",
+      "gold_target": "ASSUMPTION",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "DATA_AVAILABILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "licensing assumption",
+      "n_attacks": 2
+    }
+  ],
+  "metrics_snapshot": {
+    "n_scenarios": 120,
+    "n_critical_scenarios": 84,
+    "attack_detection_precision": {
+      "n": 120,
+      "mean": 0.75,
+      "std": 0.4330127018922193,
+      "ci95_low": 0.6725241973258748,
+      "ci95_high": 0.8274758026741252,
+      "median": 1.0
+    },
+    "attack_detection_recall": {
+      "n": 120,
+      "mean": 0.75,
+      "std": 0.4330127018922193,
+      "ci95_low": 0.6725241973258748,
+      "ci95_high": 0.8274758026741252,
+      "median": 1.0
+    },
+    "attack_detection_f1": {
+      "n": 120,
+      "mean": 0.75
+    },
+    "critical_issue_detection_rate": {
+      "n": 84,
+      "mean": 0.7142857142857143,
+      "std": 0.45175395145262565,
+      "ci95_low": 0.6176765359777847,
+      "ci95_high": 0.8108948925936439,
+      "median": 1.0
+    },
+    "target_identification_accuracy": {
+      "n": 120,
+      "mean": 0.75,
+      "std": 0.4330127018922193,
+      "ci95_low": 0.6725241973258748,
+      "ci95_high": 0.8274758026741252,
+      "median": 1.0
+    },
+    "attack_type_accuracy": {
+      "n": 120,
+      "mean": 0.75,
+      "std": 0.4330127018922193,
+      "ci95_low": 0.6725241973258748,
+      "ci95_high": 0.8274758026741252,
+      "median": 1.0
+    },
+    "severity_accuracy": {
+      "n": 120,
+      "mean": 0.8,
+      "std": 0.4,
+      "ci95_low": 0.7284309191526583,
+      "ci95_high": 0.8715690808473417,
+      "median": 1.0
+    },
+    "false_positive_rate": {
+      "n": 120,
+      "mean": 0.25,
+      "std": 0.4330127018922193,
+      "ci95_low": 0.1725241973258747,
+      "ci95_high": 0.3274758026741253,
+      "median": 0.0
+    },
+    "resolution_rate": {
+      "n": 120,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    }
+  }
+}

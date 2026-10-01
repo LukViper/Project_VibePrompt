@@ -1,0 +1,38 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..5758ee8
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,7 @@
++You are a senior software engineer.
++
++Build a tiny auth helper.
++register(username, password) must store the user.
++login(username, password) must return a token string on success.
++Do not expose a DELETE user endpoint.
++No external database.
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..4ce3b08
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-aab5e4b91cb1","task_id":"auth_token_service","variant":"A_raw","seed_commit":"b97c254f8fb6d59e47884ea6b74fce22c23c88ec"}
+\ No newline at end of file
+diff --git a/app/auth.py b/app/auth.py
+index 53030ec..93bdc89 100644
+--- a/app/auth.py
++++ b/app/auth.py
+@@ -1,7 +1,9 @@
+ USERS = {}
+ 
+ def register(username, password):
+-    raise NotImplementedError
++    USERS[username] = password
+ 
+ def login(username, password):
+-    raise NotImplementedError
++    if USERS.get(username) != password:
++        raise ValueError('bad credentials')
++    return f'token-{username}'

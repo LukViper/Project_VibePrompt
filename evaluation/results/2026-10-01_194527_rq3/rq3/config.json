@@ -1,0 +1,19 @@
+{
+  "experiment_id": "rq3_grill",
+  "experiment_version": "2.0.0",
+  "dataset_id": "vibeprompt-synthetic-bench/rq3",
+  "dataset_version": "2.0.0",
+  "random_seed": 42,
+  "model": "n/a",
+  "embedding_provider": "LexicalFallback",
+  "embedding_model": "HashingVectorizer",
+  "parameters": {
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "systems": {
+      "A": "no_grill",
+      "B": "checklist_grill",
+      "C": "targeted_adversarial_grill"
+    }
+  },
+  "timestamp": "2026-10-01T19:45:27.844781+00:00"
+}

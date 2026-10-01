@@ -1,0 +1,17 @@
+You are a senior software engineer.
+Build the following project completely.
+
+OBJECTIVE
+CRUD notes API
+
+CONFIRMED REQUIREMENTS
+- create note
+- list notes
+- delete note
+
+ACCEPTANCE CRITERIA
+[ ] create note
+[ ] list notes
+[ ] delete note
+
+Do not remove or silently alter required functionality.

@@ -1,0 +1,12 @@
+{
+  "experiment_id": "rq4_evidence",
+  "experiment_version": "1.0.0",
+  "dataset_id": "vibeprompt-synthetic-bench/rq4",
+  "dataset_version": "1.0.0",
+  "random_seed": 42,
+  "model": "n/a",
+  "embedding_provider": "n/a",
+  "embedding_model": "n/a",
+  "parameters": {},
+  "timestamp": "2026-10-01T19:26:07.835789+00:00"
+}

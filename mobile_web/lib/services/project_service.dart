@@ -19,7 +19,11 @@ class SessionController extends ChangeNotifier {
   final List<ChatMessage> messages = [];
   List<ProjectIdea> ideas = [];
   Map<String, dynamic>? grillReport;
+  Map<String, dynamic>? grillListing;
+  Map<String, dynamic>? pendingGrillPreview;
+  String? selectedAttackId;
   Map<String, dynamic>? reviewReport;
+  Map<String, dynamic>? selectedLineage;
   String specification = '';
   String prompt = '';
   WorkspaceMode mode = WorkspaceMode.chat;
@@ -223,7 +227,78 @@ class SessionController extends ChangeNotifier {
     if (id == null) return;
     await _run(() async {
       grillReport = await api.grill(id);
+      grillListing = await api.listGrill(id);
+      if (grillReport?['state'] is Map) {
+        state = Map<String, dynamic>.from(grillReport!['state'] as Map);
+      } else {
+        state = await api.getState(id);
+      }
+      pendingGrillPreview = null;
+      selectedAttackId = null;
       mode = WorkspaceMode.grill;
+    });
+  }
+
+  Future<void> previewGrillResponse(String attackId, String responseText, String resolutionType) async {
+    final id = projectId;
+    if (id == null) return;
+    selectedAttackId = attackId;
+    // Preview only — do not persist. Show intended resolution locally.
+    pendingGrillPreview = {
+      'attack_id': attackId,
+      'response_text': responseText,
+      'resolution_type': resolutionType,
+      'note': 'Preview only — confirm to persist state changes.',
+    };
+    notifyListeners();
+  }
+
+  Future<void> confirmGrillResponse() async {
+    final id = projectId;
+    final preview = pendingGrillPreview;
+    if (id == null || preview == null) return;
+    await _run(() async {
+      final result = await api.respondGrill(
+        id,
+        preview['attack_id'].toString(),
+        responseText: preview['response_text']?.toString() ?? '',
+        resolutionType: preview['resolution_type']?.toString() ?? 'RESOLVED',
+        mutate: true,
+      );
+      if (result['state'] is Map) {
+        state = Map<String, dynamic>.from(result['state'] as Map);
+      }
+      grillListing = result['grill'] is Map
+          ? Map<String, dynamic>.from(result['grill'] as Map)
+          : await api.listGrill(id);
+      pendingGrillPreview = null;
+      selectedAttackId = null;
+    });
+  }
+
+  Future<void> attachEvidenceToRequirement(String requirementId, String claim) async {
+    final id = projectId;
+    if (id == null) return;
+    await _run(() async {
+      final result = await api.attachEvidence(
+        id,
+        claim: claim,
+        attachToType: 'requirement',
+        attachToId: requirementId,
+        verificationStatus: 'UNVERIFIED',
+      );
+      if (result['state'] is Map) {
+        state = Map<String, dynamic>.from(result['state'] as Map);
+      }
+    });
+  }
+
+  Future<void> loadRequirementLineage(String requirementId) async {
+    final id = projectId;
+    if (id == null) return;
+    await _run(() async {
+      selectedLineage = await api.getRequirementLineage(id, requirementId);
+      mode = WorkspaceMode.state;
     });
   }
 

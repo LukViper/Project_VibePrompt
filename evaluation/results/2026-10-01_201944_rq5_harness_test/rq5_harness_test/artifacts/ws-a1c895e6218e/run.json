@@ -1,0 +1,196 @@
+{
+  "workspace_id": "ws-a1c895e6218e",
+  "task_id": "crud_notes",
+  "system_variant": "C_vibeprompt",
+  "dataset_version": "2.0.0",
+  "seed_commit": "ab45b05b6eac429567a3ccd7e7b1c480a7a891b6",
+  "start_time": "2026-10-01T20:19:52.994452+00:00",
+  "end_time": "2026-10-01T20:19:53.018617+00:00",
+  "exit_code": 0,
+  "duration_seconds": 0.023964336000062758,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "vibeprompt_c_pipeline",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "extract_information",
+        "apply_analysis_to_state",
+        "ProjectState",
+        "grill_attacks",
+        "grill_resolution",
+        "compilation_gate",
+        "specification(_structured/_markdown)",
+        "render_prompt"
+      ],
+      "turns": [
+        {
+          "text": "Create an in-memory notes store.",
+          "intent": "PROJECT_DESCRIPTION",
+          "relationship": "UNRELATED",
+          "n_requirements_extracted": 0
+        },
+        {
+          "text": "create_note(text) returns an id.",
+          "intent": "PROJECT_DESCRIPTION",
+          "relationship": "UNRELATED",
+          "n_requirements_extracted": 0
+        },
+        {
+          "text": "list_notes() returns all notes.",
+          "intent": "PROJECT_DESCRIPTION",
+          "relationship": "UNRELATED",
+          "n_requirements_extracted": 0
+        },
+        {
+          "text": "Do not implement delete_note.",
+          "intent": "PROJECT_DESCRIPTION",
+          "relationship": "UNRELATED",
+          "n_requirements_extracted": 0
+        }
+      ],
+      "gate": {
+        "blocked": true,
+        "can_compile": false,
+        "reasons": [
+          "project objective is missing",
+          "no active requirements"
+        ],
+        "included_requirements": [],
+        "excluded_requirements": []
+      },
+      "compile_mode": "compilable_subset_with_gate_warnings",
+      "n_grill_attacks": 3,
+      "grill_resolved": [
+        {
+          "id": "ATTACK-001",
+          "resolution": "DEFERRED"
+        },
+        {
+          "id": "ATTACK-002",
+          "resolution": "DEFERRED"
+        }
+      ],
+      "n_active_requirements": 0,
+      "n_compilable_requirements": 0,
+      "excluded_non_compilable": [],
+      "assertion_origins": {}
+    },
+    "state_summary": {
+      "n_compilable": 0,
+      "gate": {
+        "blocked": true,
+        "can_compile": false,
+        "reasons": [
+          "project objective is missing",
+          "no active requirements"
+        ],
+        "included_requirements": [],
+        "excluded_requirements": []
+      },
+      "excluded": []
+    }
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-a1c895e6218e/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-a1c895e6218e/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-a1c895e6218e/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-a1c895e6218e/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-a1c895e6218e/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-a1c895e6218e/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-a1c895e6218e/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/workspaces/ws-a1c895e6218e"
+  },
+  "git": {
+    "commit_before": "ab45b05b6eac429567a3ccd7e7b1c480a7a891b6",
+    "seed_commit": "ab45b05b6eac429567a3ccd7e7b1c480a7a891b6",
+    "commit_after": "ab45b05b6eac429567a3ccd7e7b1c480a7a891b6",
+    "changed_files": [
+      "pp/notes.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json"
+    ],
+    "status_preview": "M app/notes.py\n?? TASK.md\n?? VIBEPROMPT_META.json"
+  },
+  "agent_run": {
+    "id": "RUN-4ae4ddd7f6e5",
+    "project_id": "crud_notes",
+    "prompt_id": null,
+    "agent": "external_cmd",
+    "model": null,
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_smoke_1nq6r3u_/ws-a1c895e6218e",
+    "commit_before": "ab45b05b6eac429567a3ccd7e7b1c480a7a891b6",
+    "commit_after": "ab45b05b6eac429567a3ccd7e7b1c480a7a891b6",
+    "started_at": "2026-10-01T20:19:52.994452+00:00",
+    "completed_at": "2026-10-01T20:19:53.018617+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "mock_agent completed task_id=crud_notes label=HARNESS_TEST\n",
+    "workspace_id": "ws-a1c895e6218e",
+    "task_id": "crud_notes",
+    "system_variant": "C_vibeprompt",
+    "exit_code": 0,
+    "duration_seconds": 0.023964336000062758,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-a1c895e6218e/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-a1c895e6218e/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-a1c895e6218e/git_diff.patch",
+    "label": "HARNESS TEST",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-7f43fb1dca93",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-4ae4ddd7f6e5",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_create_and_list",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "create_note(text) returns an id",
+        "acceptance_test": "test_create_and_list"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:19:53.344016+00:00",
+      "verification_method": "acceptance_test_marker"
+    },
+    {
+      "id": "VER-194737e6d8e0",
+      "requirement_id": "REQ-002",
+      "agent_run_id": "RUN-4ae4ddd7f6e5",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "test_results": {
+        "requirement_text": "list_notes() returns created notes",
+        "acceptance_test": null
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:19:53.344066+00:00",
+      "verification_method": "inconclusive"
+    }
+  ],
+  "unsupported_features": [
+    "Do not implement delete_note",
+    "Do not use Redis"
+  ],
+  "constraint_violations": [],
+  "scope_violations": [
+    "Do not implement delete_note",
+    "Do not use Redis"
+  ],
+  "label": "HARNESS TEST"
+}

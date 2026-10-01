@@ -1,0 +1,12 @@
+{
+  "experiment_id": "rq3_grill",
+  "experiment_version": "1.0.0",
+  "dataset_id": "vibeprompt-synthetic-bench/rq3",
+  "dataset_version": "1.0.0",
+  "random_seed": 42,
+  "model": "n/a",
+  "embedding_provider": "LexicalFallback",
+  "embedding_model": "HashingVectorizer",
+  "parameters": {},
+  "timestamp": "2026-10-01T19:26:07.475416+00:00"
+}

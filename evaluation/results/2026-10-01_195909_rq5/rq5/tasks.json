@@ -1,0 +1,148 @@
+[
+  {
+    "id": "RQ5-001",
+    "task_id": "rest_echo_api",
+    "gold_requirements": [
+      "POST /echo returns body",
+      "health endpoint"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-002",
+    "task_id": "auth_token_service",
+    "gold_requirements": [
+      "register user",
+      "login returns token",
+      "protected route"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-003",
+    "task_id": "crud_notes",
+    "gold_requirements": [
+      "create note",
+      "list notes",
+      "delete note"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-004",
+    "task_id": "log_parser",
+    "gold_requirements": [
+      "parse severity",
+      "parse timestamp"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-005",
+    "task_id": "csv_filter_cli",
+    "gold_requirements": [
+      "filter rows",
+      "write output file"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-006",
+    "task_id": "word_count_pipeline",
+    "gold_requirements": [
+      "recursive read",
+      "sorted counts"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-007",
+    "task_id": "todo_backend",
+    "gold_requirements": [
+      "add todo",
+      "complete todo"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-008",
+    "task_id": "url_shortener",
+    "gold_requirements": [
+      "create short url",
+      "redirect"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-009",
+    "task_id": "rate_limiter",
+    "gold_requirements": [
+      "limit per key",
+      "return 429"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-010",
+    "task_id": "file_checksum",
+    "gold_requirements": [
+      "sha256",
+      "report missing files"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-011",
+    "task_id": "json_schema_validator",
+    "gold_requirements": [
+      "accept valid",
+      "reject invalid"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-012",
+    "task_id": "metrics_aggregator",
+    "gold_requirements": [
+      "mean",
+      "count"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  }
+]

@@ -1,0 +1,5 @@
+You are a senior software engineer.
+
+I need: Minimal todo backend
+Requirement: add todo
+Requirement: complete todo

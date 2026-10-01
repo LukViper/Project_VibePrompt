@@ -1,0 +1,13 @@
+You are a senior software engineer.
+
+REQUIREMENTS
+- validate checks required keys
+
+CONSTRAINTS
+- pure function
+
+REJECTED / OUT OF SCOPE
+- Do not call a remote schema registry
+
+ACCEPTANCE CRITERIA
+- accepts valid rejects invalid

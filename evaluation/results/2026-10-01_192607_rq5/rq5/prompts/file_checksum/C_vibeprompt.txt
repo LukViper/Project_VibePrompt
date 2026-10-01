@@ -1,0 +1,15 @@
+You are a senior software engineer.
+Build the following project completely.
+
+OBJECTIVE
+Compute file checksums
+
+CONFIRMED REQUIREMENTS
+- sha256
+- report missing files
+
+ACCEPTANCE CRITERIA
+[ ] sha256
+[ ] report missing files
+
+Do not remove or silently alter required functionality.

@@ -1,0 +1,21 @@
+diff --git a/greet.py b/greet.py
+index 22179f2..07beca1 100644
+--- a/greet.py
++++ b/greet.py
+@@ -1,2 +1,4 @@
+-def greet(name):
++def greet(name, title=None):
++    if title:
++        return f'Hello, {title} {name}'
+     return f'Hello, {name}'
+diff --git a/test_greet.py b/test_greet.py
+index e6f78bc..f568a3f 100644
+--- a/test_greet.py
++++ b/test_greet.py
+@@ -2,3 +2,6 @@ from greet import greet
+ 
+ def test_greet_default():
+     assert greet('Ada') == 'Hello, Ada'
++
++def test_greet_title():
++    assert greet('Ada', title='Dr') == 'Hello, Dr Ada'

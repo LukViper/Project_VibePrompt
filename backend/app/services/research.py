@@ -20,7 +20,11 @@ from app.llm.router import get_provider
 from app.models import Project
 from app.schemas.provenance import ProvenanceSource, make_provenance
 from app.schemas.state import ConversationStage, migrate_state
+from app.schemas.assertions import AssertionStatus, ClaimSource, EvidenceType, VerificationStatus
+from app.services.integrity_store import add_claim, add_evidence
 from app.services.project_state import public_state, set_stage
+from app.services.traceability import add_trace_link
+from app.schemas.traceability import TraceEntityType, TraceRelationship
 from app.services.versioning import StateVersioning
 
 _URL_RE = re.compile(r"https?://\S+", re.I)
@@ -178,6 +182,42 @@ def run_research(session: Session, project: Project, query: str) -> dict:
 
     state.setdefault("research", [])
     state["research"].extend(cleaned)
+    for item in cleaned:
+        if item.get("source_type") == "system":
+            continue
+        evidence = add_evidence(
+            state,
+            evidence_type=EvidenceType.RESEARCH,
+            source=str(item.get("source") or ""),
+            source_url=str(item.get("source") or "") if _URL_RE.search(str(item.get("source") or "")) else "",
+            title="Research finding",
+            claim=str(item.get("finding") or ""),
+            content=str(item.get("project_impact") or item.get("finding") or ""),
+            confidence=item.get("confidence") if isinstance(item.get("confidence"), (int, float)) else None,
+            verification_status=VerificationStatus.UNVERIFIED,
+            retrieved_at=item.get("timestamp"),
+            reason=f"research query: {query}",
+        )
+        claim = add_claim(
+            state,
+            text=str(item.get("finding") or ""),
+            source=ClaimSource.RESEARCH,
+            source_reference=str(item.get("source") or ""),
+            status=AssertionStatus.MENTIONED,
+            confidence=item.get("confidence") if isinstance(item.get("confidence"), (int, float)) else None,
+            reason="research finding — not a requirement until validated",
+        )
+        add_trace_link(
+            state,
+            source_type=TraceEntityType.CLAIM,
+            source_id=claim["id"],
+            target_type=TraceEntityType.EVIDENCE,
+            target_id=evidence["id"],
+            relationship=TraceRelationship.SUPPORTED_BY,
+            provenance=evidence.get("provenance"),
+        )
+        item["evidence_id"] = evidence["id"]
+        item["claim_id"] = claim["id"]
     inconclusive = all(
         (item.get("confidence") in (None, 0, 0.0) or item.get("source_type") == "system")
         for item in cleaned

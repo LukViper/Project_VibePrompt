@@ -1,0 +1,4 @@
+You are a senior software engineer.
+
+Implement count_words(text) returning a dict of word→count.
+Do not download remote corpora.

@@ -1,0 +1,15 @@
+You are a senior software engineer.
+
+REQUIREMENTS
+- register user
+- login returns token
+- protected route
+
+CONSTRAINTS
+- python 3.11+
+- no network in tests
+
+ACCEPTANCE CRITERIA
+- register user
+- login returns token
+- protected route

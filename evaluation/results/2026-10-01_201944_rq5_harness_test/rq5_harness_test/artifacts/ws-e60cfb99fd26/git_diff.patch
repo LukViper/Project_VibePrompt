@@ -1,0 +1,34 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..b6e4a27
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,7 @@
++You are a senior software engineer.
++
++I need a simple echo API helper in Python.
++Implement echo(payload) that returns the same dict.
++Must support a health() function returning {'status': 'ok'}.
++Do not add Redis caching.
++Use only the Python standard library.
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..7ea799b
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-e60cfb99fd26","task_id":"rest_echo_api","variant":"A_raw","seed_commit":"983307257028c680eec853cd5cff8e7615bff86c"}
+\ No newline at end of file
+diff --git a/app/echo_api.py b/app/echo_api.py
+index a994947..fa4e7d8 100644
+--- a/app/echo_api.py
++++ b/app/echo_api.py
+@@ -1,5 +1,5 @@
+ def echo(payload):
+-    raise NotImplementedError('implement echo')
++    return payload
+ 
+ def health():
+-    raise NotImplementedError('implement health')
++    return {'status': 'ok'}

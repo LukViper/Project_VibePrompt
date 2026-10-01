@@ -1,0 +1,19 @@
+You are a senior software engineer.
+Build the following project from a validated VibePrompt specification.
+
+OBJECTIVE
+Count words in a directory of texts
+
+CONFIRMED REQUIREMENTS
+- recursive read
+- sorted counts
+
+CONSTRAINTS
+- python 3.11+
+- no network in tests
+
+ACCEPTANCE CRITERIA
+[ ] recursive read
+[ ] sorted counts
+Do not remove or silently alter required functionality.
+Evidence and grill validation are assumed upstream; implement only confirmed scope.

@@ -1,0 +1,48 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..39e4f75
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,17 @@
++You are a senior software engineer.
++
++REQUIREMENTS
++- register(username, password) stores the user
++- login(username, password) returns a token on success
++
++CONSTRAINTS
++- in-memory only
++- python 3.11+
++
++REJECTED / OUT OF SCOPE
++- Do not expose a DELETE user endpoint
++- Do not use an external database
++
++ACCEPTANCE CRITERIA
++- register then login returns a non-empty token
++- login with wrong password fails
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..715c781
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-32f8dd1d6ce8","task_id":"auth_token_service","variant":"B_structured","seed_commit":"0673e1cdaf4e3ee954b01c4fd5ffa37172e81c07"}
+\ No newline at end of file
+diff --git a/app/auth.py b/app/auth.py
+index 53030ec..93bdc89 100644
+--- a/app/auth.py
++++ b/app/auth.py
+@@ -1,7 +1,9 @@
+ USERS = {}
+ 
+ def register(username, password):
+-    raise NotImplementedError
++    USERS[username] = password
+ 
+ def login(username, password):
+-    raise NotImplementedError
++    if USERS.get(username) != password:
++        raise ValueError('bad credentials')
++    return f'token-{username}'

@@ -1,0 +1,2642 @@
+[
+  {
+    "id": "RQ3-001",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Train a 7B model locally on hardware with insufficient VRAM.",
+    "project_objective": "Train a 7B model locally on hardware with insufficient VRAM.",
+    "requirements": [
+      "Train a 7B model locally on hardware with insufficient VRAM."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "RESOURCE_FEASIBILITY",
+    "severity": "HIGH",
+    "expected_issue": "insufficient GPU memory",
+    "expected_evidence": "VRAM/hardware specification",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "resource_feasibility",
+      "insufficient"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 0
+  },
+  {
+    "id": "RQ3-002",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Real-time analytics dashboard with no latency requirement stated.",
+    "project_objective": "Real-time analytics dashboard with no latency requirement stated.",
+    "requirements": [
+      "Real-time analytics dashboard with no latency requirement stated."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "LATENCY",
+    "severity": "HIGH",
+    "expected_issue": "unspecified real-time latency",
+    "expected_evidence": "latency SLA",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "latency",
+      "unspecified"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 1
+  },
+  {
+    "id": "RQ3-003",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+    "project_objective": "Achieve 99.99% accuracy without an evaluation plan.",
+    "requirements": [
+      "Achieve 99.99% accuracy without an evaluation plan."
+    ],
+    "target_entity_type": "CLAIM",
+    "attack_type": "EVALUATION",
+    "severity": "HIGH",
+    "expected_issue": "missing evaluation methodology",
+    "expected_evidence": "metrics and validation set",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "evaluation",
+      "missing"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 2
+  },
+  {
+    "id": "RQ3-004",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "AI blockchain IoT mobile cloud product in four weeks solo.",
+    "project_objective": "AI blockchain IoT mobile cloud product in four weeks solo.",
+    "requirements": [
+      "AI blockchain IoT mobile cloud product in four weeks solo."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "SCOPE",
+    "severity": "HIGH",
+    "expected_issue": "scope exceeds timeline/staffing",
+    "expected_evidence": "MVP scope reduction",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "scope",
+      "scope"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 3
+  },
+  {
+    "id": "RQ3-005",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Deep learning classifier with no dataset identified.",
+    "project_objective": "Deep learning classifier with no dataset identified.",
+    "requirements": [
+      "Deep learning classifier with no dataset identified."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "DATA_AVAILABILITY",
+    "severity": "HIGH",
+    "expected_issue": "no concrete dataset",
+    "expected_evidence": "dataset name or collection plan",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "data_availability",
+      "no"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 4
+  },
+  {
+    "id": "RQ3-006",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Security monitoring without a threat model.",
+    "project_objective": "Security monitoring without a threat model.",
+    "requirements": [
+      "Security monitoring without a threat model."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "SECURITY",
+    "severity": "MEDIUM",
+    "expected_issue": "missing threat model",
+    "expected_evidence": "threat model document",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "security",
+      "missing"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 5
+  },
+  {
+    "id": "RQ3-007",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Production deploy without monitoring.",
+    "project_objective": "Production deploy without monitoring.",
+    "requirements": [
+      "Production deploy without monitoring."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "DEPLOYMENT",
+    "severity": "MEDIUM",
+    "expected_issue": "no observability",
+    "expected_evidence": "monitoring and rollback criteria",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "deployment",
+      "no"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 6
+  },
+  {
+    "id": "RQ3-008",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "High availability without redundancy.",
+    "project_objective": "High availability without redundancy.",
+    "requirements": [
+      "High availability without redundancy."
+    ],
+    "target_entity_type": "ARCHITECTURE",
+    "attack_type": "RELIABILITY",
+    "severity": "HIGH",
+    "expected_issue": "availability without failover",
+    "expected_evidence": "redundancy design",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "reliability",
+      "availability"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 7
+  },
+  {
+    "id": "RQ3-009",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Use Kafka because it is modern, with no throughput justification.",
+    "project_objective": "Use Kafka because it is modern, with no throughput justification.",
+    "requirements": [
+      "Use Kafka because it is modern, with no throughput justification."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "TECHNOLOGY_JUSTIFICATION",
+    "severity": "MEDIUM",
+    "expected_issue": "unjustified technology choice",
+    "expected_evidence": "load/throughput evidence",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "technology_justification",
+      "unjustified"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 8
+  },
+  {
+    "id": "RQ3-010",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "REST polling for a real-time collaborative editor.",
+    "project_objective": "REST polling for a real-time collaborative editor.",
+    "requirements": [
+      "REST polling for a real-time collaborative editor."
+    ],
+    "target_entity_type": "ARCHITECTURE",
+    "attack_type": "ARCHITECTURE_MISMATCH",
+    "severity": "HIGH",
+    "expected_issue": "transport mismatch for real-time",
+    "expected_evidence": "websocket or push design",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "architecture_mismatch",
+      "transport"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 9
+  },
+  {
+    "id": "RQ3-011",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+    "project_objective": "Enterprise multi-region system with a two-week solo deadline.",
+    "requirements": [
+      "Enterprise multi-region system with a two-week solo deadline."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "TIMELINE",
+    "severity": "HIGH",
+    "expected_issue": "timeline incompatible with scope",
+    "expected_evidence": "reduced MVP",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "timeline",
+      "timeline"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 10
+  },
+  {
+    "id": "RQ3-012",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Store PII in logs without retention or access controls.",
+    "project_objective": "Store PII in logs without retention or access controls.",
+    "requirements": [
+      "Store PII in logs without retention or access controls."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "SECURITY",
+    "severity": "HIGH",
+    "expected_issue": "PII handling gap",
+    "expected_evidence": "data handling policy",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "security",
+      "pii"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 11
+  },
+  {
+    "id": "RQ3-013",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Scale to millions of users on a single VM assumption.",
+    "project_objective": "Scale to millions of users on a single VM assumption.",
+    "requirements": [
+      "Scale to millions of users on a single VM assumption."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "SCALABILITY",
+    "severity": "HIGH",
+    "expected_issue": "single-node scale assumption",
+    "expected_evidence": "capacity plan",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "scalability",
+      "single-node"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 12
+  },
+  {
+    "id": "RQ3-014",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+    "project_objective": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+    "requirements": [
+      "Budget is $0 but plan includes managed Kubernetes and paid APIs."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "COST",
+    "severity": "HIGH",
+    "expected_issue": "cost contradiction",
+    "expected_evidence": "cost model",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "cost",
+      "cost"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 13
+  },
+  {
+    "id": "RQ3-015",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "System should somehow handle appropriate authentication etc.",
+    "project_objective": "System should somehow handle appropriate authentication etc.",
+    "requirements": [
+      "System should somehow handle appropriate authentication etc."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "REQUIREMENT_AMBIGUITY",
+    "severity": "MEDIUM",
+    "expected_issue": "vague acceptance criteria",
+    "expected_evidence": "measurable auth requirements",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "requirement_ambiguity",
+      "vague"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 14
+  },
+  {
+    "id": "RQ3-016",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Depend on an unmaintained GitHub library for core crypto.",
+    "project_objective": "Depend on an unmaintained GitHub library for core crypto.",
+    "requirements": [
+      "Depend on an unmaintained GitHub library for core crypto."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "DEPENDENCY",
+    "severity": "HIGH",
+    "expected_issue": "risky dependency",
+    "expected_evidence": "supported crypto library",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "dependency",
+      "risky"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 15
+  },
+  {
+    "id": "RQ3-017",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Claim the model can be trained locally without measuring resources.",
+    "project_objective": "Claim the model can be trained locally without measuring resources.",
+    "requirements": [
+      "Claim the model can be trained locally without measuring resources."
+    ],
+    "target_entity_type": "CLAIM",
+    "attack_type": "RESOURCE_FEASIBILITY",
+    "severity": "HIGH",
+    "expected_issue": "unverified local training claim",
+    "expected_evidence": "hardware benchmark",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "resource_feasibility",
+      "unverified"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 16
+  },
+  {
+    "id": "RQ3-018",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Contradiction: must be offline-only and also require live cloud APIs.",
+    "project_objective": "Contradiction: must be offline-only and also require live cloud APIs.",
+    "requirements": [
+      "Contradiction: must be offline-only and also require live cloud APIs."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "CONTRADICTION",
+    "severity": "HIGH",
+    "expected_issue": "offline vs cloud contradiction",
+    "expected_evidence": "resolved mode decision",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "contradiction",
+      "offline"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 17
+  },
+  {
+    "id": "RQ3-019",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Maintainability ignored: no tests, no CI, production launch next week.",
+    "project_objective": "Maintainability ignored: no tests, no CI, production launch next week.",
+    "requirements": [
+      "Maintainability ignored: no tests, no CI, production launch next week."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "MAINTAINABILITY",
+    "severity": "MEDIUM",
+    "expected_issue": "no maintainability plan",
+    "expected_evidence": "test/CI plan",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "maintainability",
+      "no"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 18
+  },
+  {
+    "id": "RQ3-020",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Assumption that public phishing corpora are legally usable without review.",
+    "project_objective": "Assumption that public phishing corpora are legally usable without review.",
+    "requirements": [
+      "Assumption that public phishing corpora are legally usable without review."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "DATA_AVAILABILITY",
+    "severity": "MEDIUM",
+    "expected_issue": "licensing assumption",
+    "expected_evidence": "license check",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "data_availability",
+      "licensing"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 19
+  },
+  {
+    "id": "RQ3-021",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Train a 7B model locally on hardware with insufficient VRAM.",
+    "project_objective": "Train a 7B model locally on hardware with insufficient VRAM.",
+    "requirements": [
+      "Train a 7B model locally on hardware with insufficient VRAM."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "RESOURCE_FEASIBILITY",
+    "severity": "HIGH",
+    "expected_issue": "insufficient GPU memory",
+    "expected_evidence": "VRAM/hardware specification",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "resource_feasibility",
+      "insufficient"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 0
+  },
+  {
+    "id": "RQ3-022",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Real-time analytics dashboard with no latency requirement stated.",
+    "project_objective": "Real-time analytics dashboard with no latency requirement stated.",
+    "requirements": [
+      "Real-time analytics dashboard with no latency requirement stated."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "LATENCY",
+    "severity": "HIGH",
+    "expected_issue": "unspecified real-time latency",
+    "expected_evidence": "latency SLA",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "latency",
+      "unspecified"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 1
+  },
+  {
+    "id": "RQ3-023",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+    "project_objective": "Achieve 99.99% accuracy without an evaluation plan.",
+    "requirements": [
+      "Achieve 99.99% accuracy without an evaluation plan."
+    ],
+    "target_entity_type": "CLAIM",
+    "attack_type": "EVALUATION",
+    "severity": "HIGH",
+    "expected_issue": "missing evaluation methodology",
+    "expected_evidence": "metrics and validation set",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "evaluation",
+      "missing"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 2
+  },
+  {
+    "id": "RQ3-024",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "AI blockchain IoT mobile cloud product in four weeks solo.",
+    "project_objective": "AI blockchain IoT mobile cloud product in four weeks solo.",
+    "requirements": [
+      "AI blockchain IoT mobile cloud product in four weeks solo."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "SCOPE",
+    "severity": "HIGH",
+    "expected_issue": "scope exceeds timeline/staffing",
+    "expected_evidence": "MVP scope reduction",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "scope",
+      "scope"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 3
+  },
+  {
+    "id": "RQ3-025",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Deep learning classifier with no dataset identified.",
+    "project_objective": "Deep learning classifier with no dataset identified.",
+    "requirements": [
+      "Deep learning classifier with no dataset identified."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "DATA_AVAILABILITY",
+    "severity": "HIGH",
+    "expected_issue": "no concrete dataset",
+    "expected_evidence": "dataset name or collection plan",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "data_availability",
+      "no"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 4
+  },
+  {
+    "id": "RQ3-026",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Security monitoring without a threat model.",
+    "project_objective": "Security monitoring without a threat model.",
+    "requirements": [
+      "Security monitoring without a threat model."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "SECURITY",
+    "severity": "MEDIUM",
+    "expected_issue": "missing threat model",
+    "expected_evidence": "threat model document",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "security",
+      "missing"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 5
+  },
+  {
+    "id": "RQ3-027",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Production deploy without monitoring.",
+    "project_objective": "Production deploy without monitoring.",
+    "requirements": [
+      "Production deploy without monitoring."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "DEPLOYMENT",
+    "severity": "MEDIUM",
+    "expected_issue": "no observability",
+    "expected_evidence": "monitoring and rollback criteria",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "deployment",
+      "no"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 6
+  },
+  {
+    "id": "RQ3-028",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "High availability without redundancy.",
+    "project_objective": "High availability without redundancy.",
+    "requirements": [
+      "High availability without redundancy."
+    ],
+    "target_entity_type": "ARCHITECTURE",
+    "attack_type": "RELIABILITY",
+    "severity": "HIGH",
+    "expected_issue": "availability without failover",
+    "expected_evidence": "redundancy design",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "reliability",
+      "availability"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 7
+  },
+  {
+    "id": "RQ3-029",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Use Kafka because it is modern, with no throughput justification.",
+    "project_objective": "Use Kafka because it is modern, with no throughput justification.",
+    "requirements": [
+      "Use Kafka because it is modern, with no throughput justification."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "TECHNOLOGY_JUSTIFICATION",
+    "severity": "MEDIUM",
+    "expected_issue": "unjustified technology choice",
+    "expected_evidence": "load/throughput evidence",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "technology_justification",
+      "unjustified"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 8
+  },
+  {
+    "id": "RQ3-030",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "REST polling for a real-time collaborative editor.",
+    "project_objective": "REST polling for a real-time collaborative editor.",
+    "requirements": [
+      "REST polling for a real-time collaborative editor."
+    ],
+    "target_entity_type": "ARCHITECTURE",
+    "attack_type": "ARCHITECTURE_MISMATCH",
+    "severity": "HIGH",
+    "expected_issue": "transport mismatch for real-time",
+    "expected_evidence": "websocket or push design",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "architecture_mismatch",
+      "transport"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 9
+  },
+  {
+    "id": "RQ3-031",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+    "project_objective": "Enterprise multi-region system with a two-week solo deadline.",
+    "requirements": [
+      "Enterprise multi-region system with a two-week solo deadline."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "TIMELINE",
+    "severity": "HIGH",
+    "expected_issue": "timeline incompatible with scope",
+    "expected_evidence": "reduced MVP",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "timeline",
+      "timeline"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 10
+  },
+  {
+    "id": "RQ3-032",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Store PII in logs without retention or access controls.",
+    "project_objective": "Store PII in logs without retention or access controls.",
+    "requirements": [
+      "Store PII in logs without retention or access controls."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "SECURITY",
+    "severity": "HIGH",
+    "expected_issue": "PII handling gap",
+    "expected_evidence": "data handling policy",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "security",
+      "pii"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 11
+  },
+  {
+    "id": "RQ3-033",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Scale to millions of users on a single VM assumption.",
+    "project_objective": "Scale to millions of users on a single VM assumption.",
+    "requirements": [
+      "Scale to millions of users on a single VM assumption."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "SCALABILITY",
+    "severity": "HIGH",
+    "expected_issue": "single-node scale assumption",
+    "expected_evidence": "capacity plan",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "scalability",
+      "single-node"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 12
+  },
+  {
+    "id": "RQ3-034",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+    "project_objective": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+    "requirements": [
+      "Budget is $0 but plan includes managed Kubernetes and paid APIs."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "COST",
+    "severity": "HIGH",
+    "expected_issue": "cost contradiction",
+    "expected_evidence": "cost model",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "cost",
+      "cost"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 13
+  },
+  {
+    "id": "RQ3-035",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "System should somehow handle appropriate authentication etc.",
+    "project_objective": "System should somehow handle appropriate authentication etc.",
+    "requirements": [
+      "System should somehow handle appropriate authentication etc."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "REQUIREMENT_AMBIGUITY",
+    "severity": "MEDIUM",
+    "expected_issue": "vague acceptance criteria",
+    "expected_evidence": "measurable auth requirements",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "requirement_ambiguity",
+      "vague"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 14
+  },
+  {
+    "id": "RQ3-036",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Depend on an unmaintained GitHub library for core crypto.",
+    "project_objective": "Depend on an unmaintained GitHub library for core crypto.",
+    "requirements": [
+      "Depend on an unmaintained GitHub library for core crypto."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "DEPENDENCY",
+    "severity": "HIGH",
+    "expected_issue": "risky dependency",
+    "expected_evidence": "supported crypto library",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "dependency",
+      "risky"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 15
+  },
+  {
+    "id": "RQ3-037",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Claim the model can be trained locally without measuring resources.",
+    "project_objective": "Claim the model can be trained locally without measuring resources.",
+    "requirements": [
+      "Claim the model can be trained locally without measuring resources."
+    ],
+    "target_entity_type": "CLAIM",
+    "attack_type": "RESOURCE_FEASIBILITY",
+    "severity": "HIGH",
+    "expected_issue": "unverified local training claim",
+    "expected_evidence": "hardware benchmark",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "resource_feasibility",
+      "unverified"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 16
+  },
+  {
+    "id": "RQ3-038",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Contradiction: must be offline-only and also require live cloud APIs.",
+    "project_objective": "Contradiction: must be offline-only and also require live cloud APIs.",
+    "requirements": [
+      "Contradiction: must be offline-only and also require live cloud APIs."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "CONTRADICTION",
+    "severity": "HIGH",
+    "expected_issue": "offline vs cloud contradiction",
+    "expected_evidence": "resolved mode decision",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "contradiction",
+      "offline"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 17
+  },
+  {
+    "id": "RQ3-039",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Maintainability ignored: no tests, no CI, production launch next week.",
+    "project_objective": "Maintainability ignored: no tests, no CI, production launch next week.",
+    "requirements": [
+      "Maintainability ignored: no tests, no CI, production launch next week."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "MAINTAINABILITY",
+    "severity": "MEDIUM",
+    "expected_issue": "no maintainability plan",
+    "expected_evidence": "test/CI plan",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "maintainability",
+      "no"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 18
+  },
+  {
+    "id": "RQ3-040",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Assumption that public phishing corpora are legally usable without review.",
+    "project_objective": "Assumption that public phishing corpora are legally usable without review.",
+    "requirements": [
+      "Assumption that public phishing corpora are legally usable without review."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "DATA_AVAILABILITY",
+    "severity": "MEDIUM",
+    "expected_issue": "licensing assumption",
+    "expected_evidence": "license check",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "data_availability",
+      "licensing"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 19
+  },
+  {
+    "id": "RQ3-041",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Train a 7B model locally on hardware with insufficient VRAM.",
+    "project_objective": "Train a 7B model locally on hardware with insufficient VRAM.",
+    "requirements": [
+      "Train a 7B model locally on hardware with insufficient VRAM."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "RESOURCE_FEASIBILITY",
+    "severity": "HIGH",
+    "expected_issue": "insufficient GPU memory",
+    "expected_evidence": "VRAM/hardware specification",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "resource_feasibility",
+      "insufficient"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 0
+  },
+  {
+    "id": "RQ3-042",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Real-time analytics dashboard with no latency requirement stated.",
+    "project_objective": "Real-time analytics dashboard with no latency requirement stated.",
+    "requirements": [
+      "Real-time analytics dashboard with no latency requirement stated."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "LATENCY",
+    "severity": "HIGH",
+    "expected_issue": "unspecified real-time latency",
+    "expected_evidence": "latency SLA",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "latency",
+      "unspecified"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 1
+  },
+  {
+    "id": "RQ3-043",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+    "project_objective": "Achieve 99.99% accuracy without an evaluation plan.",
+    "requirements": [
+      "Achieve 99.99% accuracy without an evaluation plan."
+    ],
+    "target_entity_type": "CLAIM",
+    "attack_type": "EVALUATION",
+    "severity": "HIGH",
+    "expected_issue": "missing evaluation methodology",
+    "expected_evidence": "metrics and validation set",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "evaluation",
+      "missing"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 2
+  },
+  {
+    "id": "RQ3-044",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "AI blockchain IoT mobile cloud product in four weeks solo.",
+    "project_objective": "AI blockchain IoT mobile cloud product in four weeks solo.",
+    "requirements": [
+      "AI blockchain IoT mobile cloud product in four weeks solo."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "SCOPE",
+    "severity": "HIGH",
+    "expected_issue": "scope exceeds timeline/staffing",
+    "expected_evidence": "MVP scope reduction",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "scope",
+      "scope"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 3
+  },
+  {
+    "id": "RQ3-045",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Deep learning classifier with no dataset identified.",
+    "project_objective": "Deep learning classifier with no dataset identified.",
+    "requirements": [
+      "Deep learning classifier with no dataset identified."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "DATA_AVAILABILITY",
+    "severity": "HIGH",
+    "expected_issue": "no concrete dataset",
+    "expected_evidence": "dataset name or collection plan",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "data_availability",
+      "no"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 4
+  },
+  {
+    "id": "RQ3-046",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Security monitoring without a threat model.",
+    "project_objective": "Security monitoring without a threat model.",
+    "requirements": [
+      "Security monitoring without a threat model."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "SECURITY",
+    "severity": "MEDIUM",
+    "expected_issue": "missing threat model",
+    "expected_evidence": "threat model document",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "security",
+      "missing"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 5
+  },
+  {
+    "id": "RQ3-047",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Production deploy without monitoring.",
+    "project_objective": "Production deploy without monitoring.",
+    "requirements": [
+      "Production deploy without monitoring."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "DEPLOYMENT",
+    "severity": "MEDIUM",
+    "expected_issue": "no observability",
+    "expected_evidence": "monitoring and rollback criteria",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "deployment",
+      "no"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 6
+  },
+  {
+    "id": "RQ3-048",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "High availability without redundancy.",
+    "project_objective": "High availability without redundancy.",
+    "requirements": [
+      "High availability without redundancy."
+    ],
+    "target_entity_type": "ARCHITECTURE",
+    "attack_type": "RELIABILITY",
+    "severity": "HIGH",
+    "expected_issue": "availability without failover",
+    "expected_evidence": "redundancy design",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "reliability",
+      "availability"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 7
+  },
+  {
+    "id": "RQ3-049",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Use Kafka because it is modern, with no throughput justification.",
+    "project_objective": "Use Kafka because it is modern, with no throughput justification.",
+    "requirements": [
+      "Use Kafka because it is modern, with no throughput justification."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "TECHNOLOGY_JUSTIFICATION",
+    "severity": "MEDIUM",
+    "expected_issue": "unjustified technology choice",
+    "expected_evidence": "load/throughput evidence",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "technology_justification",
+      "unjustified"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 8
+  },
+  {
+    "id": "RQ3-050",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "REST polling for a real-time collaborative editor.",
+    "project_objective": "REST polling for a real-time collaborative editor.",
+    "requirements": [
+      "REST polling for a real-time collaborative editor."
+    ],
+    "target_entity_type": "ARCHITECTURE",
+    "attack_type": "ARCHITECTURE_MISMATCH",
+    "severity": "HIGH",
+    "expected_issue": "transport mismatch for real-time",
+    "expected_evidence": "websocket or push design",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "architecture_mismatch",
+      "transport"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 9
+  },
+  {
+    "id": "RQ3-051",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+    "project_objective": "Enterprise multi-region system with a two-week solo deadline.",
+    "requirements": [
+      "Enterprise multi-region system with a two-week solo deadline."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "TIMELINE",
+    "severity": "HIGH",
+    "expected_issue": "timeline incompatible with scope",
+    "expected_evidence": "reduced MVP",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "timeline",
+      "timeline"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 10
+  },
+  {
+    "id": "RQ3-052",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Store PII in logs without retention or access controls.",
+    "project_objective": "Store PII in logs without retention or access controls.",
+    "requirements": [
+      "Store PII in logs without retention or access controls."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "SECURITY",
+    "severity": "HIGH",
+    "expected_issue": "PII handling gap",
+    "expected_evidence": "data handling policy",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "security",
+      "pii"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 11
+  },
+  {
+    "id": "RQ3-053",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Scale to millions of users on a single VM assumption.",
+    "project_objective": "Scale to millions of users on a single VM assumption.",
+    "requirements": [
+      "Scale to millions of users on a single VM assumption."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "SCALABILITY",
+    "severity": "HIGH",
+    "expected_issue": "single-node scale assumption",
+    "expected_evidence": "capacity plan",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "scalability",
+      "single-node"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 12
+  },
+  {
+    "id": "RQ3-054",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+    "project_objective": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+    "requirements": [
+      "Budget is $0 but plan includes managed Kubernetes and paid APIs."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "COST",
+    "severity": "HIGH",
+    "expected_issue": "cost contradiction",
+    "expected_evidence": "cost model",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "cost",
+      "cost"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 13
+  },
+  {
+    "id": "RQ3-055",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "System should somehow handle appropriate authentication etc.",
+    "project_objective": "System should somehow handle appropriate authentication etc.",
+    "requirements": [
+      "System should somehow handle appropriate authentication etc."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "REQUIREMENT_AMBIGUITY",
+    "severity": "MEDIUM",
+    "expected_issue": "vague acceptance criteria",
+    "expected_evidence": "measurable auth requirements",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "requirement_ambiguity",
+      "vague"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 14
+  },
+  {
+    "id": "RQ3-056",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Depend on an unmaintained GitHub library for core crypto.",
+    "project_objective": "Depend on an unmaintained GitHub library for core crypto.",
+    "requirements": [
+      "Depend on an unmaintained GitHub library for core crypto."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "DEPENDENCY",
+    "severity": "HIGH",
+    "expected_issue": "risky dependency",
+    "expected_evidence": "supported crypto library",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "dependency",
+      "risky"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 15
+  },
+  {
+    "id": "RQ3-057",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Claim the model can be trained locally without measuring resources.",
+    "project_objective": "Claim the model can be trained locally without measuring resources.",
+    "requirements": [
+      "Claim the model can be trained locally without measuring resources."
+    ],
+    "target_entity_type": "CLAIM",
+    "attack_type": "RESOURCE_FEASIBILITY",
+    "severity": "HIGH",
+    "expected_issue": "unverified local training claim",
+    "expected_evidence": "hardware benchmark",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "resource_feasibility",
+      "unverified"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 16
+  },
+  {
+    "id": "RQ3-058",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Contradiction: must be offline-only and also require live cloud APIs.",
+    "project_objective": "Contradiction: must be offline-only and also require live cloud APIs.",
+    "requirements": [
+      "Contradiction: must be offline-only and also require live cloud APIs."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "CONTRADICTION",
+    "severity": "HIGH",
+    "expected_issue": "offline vs cloud contradiction",
+    "expected_evidence": "resolved mode decision",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "contradiction",
+      "offline"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 17
+  },
+  {
+    "id": "RQ3-059",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Maintainability ignored: no tests, no CI, production launch next week.",
+    "project_objective": "Maintainability ignored: no tests, no CI, production launch next week.",
+    "requirements": [
+      "Maintainability ignored: no tests, no CI, production launch next week."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "MAINTAINABILITY",
+    "severity": "MEDIUM",
+    "expected_issue": "no maintainability plan",
+    "expected_evidence": "test/CI plan",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "maintainability",
+      "no"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 18
+  },
+  {
+    "id": "RQ3-060",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Assumption that public phishing corpora are legally usable without review.",
+    "project_objective": "Assumption that public phishing corpora are legally usable without review.",
+    "requirements": [
+      "Assumption that public phishing corpora are legally usable without review."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "DATA_AVAILABILITY",
+    "severity": "MEDIUM",
+    "expected_issue": "licensing assumption",
+    "expected_evidence": "license check",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "data_availability",
+      "licensing"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 19
+  },
+  {
+    "id": "RQ3-061",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Train a 7B model locally on hardware with insufficient VRAM.",
+    "project_objective": "Train a 7B model locally on hardware with insufficient VRAM.",
+    "requirements": [
+      "Train a 7B model locally on hardware with insufficient VRAM."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "RESOURCE_FEASIBILITY",
+    "severity": "HIGH",
+    "expected_issue": "insufficient GPU memory",
+    "expected_evidence": "VRAM/hardware specification",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "resource_feasibility",
+      "insufficient"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 0
+  },
+  {
+    "id": "RQ3-062",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Real-time analytics dashboard with no latency requirement stated.",
+    "project_objective": "Real-time analytics dashboard with no latency requirement stated.",
+    "requirements": [
+      "Real-time analytics dashboard with no latency requirement stated."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "LATENCY",
+    "severity": "HIGH",
+    "expected_issue": "unspecified real-time latency",
+    "expected_evidence": "latency SLA",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "latency",
+      "unspecified"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 1
+  },
+  {
+    "id": "RQ3-063",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+    "project_objective": "Achieve 99.99% accuracy without an evaluation plan.",
+    "requirements": [
+      "Achieve 99.99% accuracy without an evaluation plan."
+    ],
+    "target_entity_type": "CLAIM",
+    "attack_type": "EVALUATION",
+    "severity": "HIGH",
+    "expected_issue": "missing evaluation methodology",
+    "expected_evidence": "metrics and validation set",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "evaluation",
+      "missing"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 2
+  },
+  {
+    "id": "RQ3-064",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "AI blockchain IoT mobile cloud product in four weeks solo.",
+    "project_objective": "AI blockchain IoT mobile cloud product in four weeks solo.",
+    "requirements": [
+      "AI blockchain IoT mobile cloud product in four weeks solo."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "SCOPE",
+    "severity": "HIGH",
+    "expected_issue": "scope exceeds timeline/staffing",
+    "expected_evidence": "MVP scope reduction",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "scope",
+      "scope"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 3
+  },
+  {
+    "id": "RQ3-065",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Deep learning classifier with no dataset identified.",
+    "project_objective": "Deep learning classifier with no dataset identified.",
+    "requirements": [
+      "Deep learning classifier with no dataset identified."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "DATA_AVAILABILITY",
+    "severity": "HIGH",
+    "expected_issue": "no concrete dataset",
+    "expected_evidence": "dataset name or collection plan",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "data_availability",
+      "no"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 4
+  },
+  {
+    "id": "RQ3-066",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Security monitoring without a threat model.",
+    "project_objective": "Security monitoring without a threat model.",
+    "requirements": [
+      "Security monitoring without a threat model."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "SECURITY",
+    "severity": "MEDIUM",
+    "expected_issue": "missing threat model",
+    "expected_evidence": "threat model document",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "security",
+      "missing"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 5
+  },
+  {
+    "id": "RQ3-067",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Production deploy without monitoring.",
+    "project_objective": "Production deploy without monitoring.",
+    "requirements": [
+      "Production deploy without monitoring."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "DEPLOYMENT",
+    "severity": "MEDIUM",
+    "expected_issue": "no observability",
+    "expected_evidence": "monitoring and rollback criteria",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "deployment",
+      "no"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 6
+  },
+  {
+    "id": "RQ3-068",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "High availability without redundancy.",
+    "project_objective": "High availability without redundancy.",
+    "requirements": [
+      "High availability without redundancy."
+    ],
+    "target_entity_type": "ARCHITECTURE",
+    "attack_type": "RELIABILITY",
+    "severity": "HIGH",
+    "expected_issue": "availability without failover",
+    "expected_evidence": "redundancy design",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "reliability",
+      "availability"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 7
+  },
+  {
+    "id": "RQ3-069",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Use Kafka because it is modern, with no throughput justification.",
+    "project_objective": "Use Kafka because it is modern, with no throughput justification.",
+    "requirements": [
+      "Use Kafka because it is modern, with no throughput justification."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "TECHNOLOGY_JUSTIFICATION",
+    "severity": "MEDIUM",
+    "expected_issue": "unjustified technology choice",
+    "expected_evidence": "load/throughput evidence",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "technology_justification",
+      "unjustified"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 8
+  },
+  {
+    "id": "RQ3-070",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "REST polling for a real-time collaborative editor.",
+    "project_objective": "REST polling for a real-time collaborative editor.",
+    "requirements": [
+      "REST polling for a real-time collaborative editor."
+    ],
+    "target_entity_type": "ARCHITECTURE",
+    "attack_type": "ARCHITECTURE_MISMATCH",
+    "severity": "HIGH",
+    "expected_issue": "transport mismatch for real-time",
+    "expected_evidence": "websocket or push design",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "architecture_mismatch",
+      "transport"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 9
+  },
+  {
+    "id": "RQ3-071",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+    "project_objective": "Enterprise multi-region system with a two-week solo deadline.",
+    "requirements": [
+      "Enterprise multi-region system with a two-week solo deadline."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "TIMELINE",
+    "severity": "HIGH",
+    "expected_issue": "timeline incompatible with scope",
+    "expected_evidence": "reduced MVP",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "timeline",
+      "timeline"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 10
+  },
+  {
+    "id": "RQ3-072",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Store PII in logs without retention or access controls.",
+    "project_objective": "Store PII in logs without retention or access controls.",
+    "requirements": [
+      "Store PII in logs without retention or access controls."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "SECURITY",
+    "severity": "HIGH",
+    "expected_issue": "PII handling gap",
+    "expected_evidence": "data handling policy",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "security",
+      "pii"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 11
+  },
+  {
+    "id": "RQ3-073",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Scale to millions of users on a single VM assumption.",
+    "project_objective": "Scale to millions of users on a single VM assumption.",
+    "requirements": [
+      "Scale to millions of users on a single VM assumption."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "SCALABILITY",
+    "severity": "HIGH",
+    "expected_issue": "single-node scale assumption",
+    "expected_evidence": "capacity plan",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "scalability",
+      "single-node"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 12
+  },
+  {
+    "id": "RQ3-074",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+    "project_objective": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+    "requirements": [
+      "Budget is $0 but plan includes managed Kubernetes and paid APIs."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "COST",
+    "severity": "HIGH",
+    "expected_issue": "cost contradiction",
+    "expected_evidence": "cost model",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "cost",
+      "cost"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 13
+  },
+  {
+    "id": "RQ3-075",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "System should somehow handle appropriate authentication etc.",
+    "project_objective": "System should somehow handle appropriate authentication etc.",
+    "requirements": [
+      "System should somehow handle appropriate authentication etc."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "REQUIREMENT_AMBIGUITY",
+    "severity": "MEDIUM",
+    "expected_issue": "vague acceptance criteria",
+    "expected_evidence": "measurable auth requirements",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "requirement_ambiguity",
+      "vague"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 14
+  },
+  {
+    "id": "RQ3-076",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Depend on an unmaintained GitHub library for core crypto.",
+    "project_objective": "Depend on an unmaintained GitHub library for core crypto.",
+    "requirements": [
+      "Depend on an unmaintained GitHub library for core crypto."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "DEPENDENCY",
+    "severity": "HIGH",
+    "expected_issue": "risky dependency",
+    "expected_evidence": "supported crypto library",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "dependency",
+      "risky"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 15
+  },
+  {
+    "id": "RQ3-077",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Claim the model can be trained locally without measuring resources.",
+    "project_objective": "Claim the model can be trained locally without measuring resources.",
+    "requirements": [
+      "Claim the model can be trained locally without measuring resources."
+    ],
+    "target_entity_type": "CLAIM",
+    "attack_type": "RESOURCE_FEASIBILITY",
+    "severity": "HIGH",
+    "expected_issue": "unverified local training claim",
+    "expected_evidence": "hardware benchmark",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "resource_feasibility",
+      "unverified"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 16
+  },
+  {
+    "id": "RQ3-078",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Contradiction: must be offline-only and also require live cloud APIs.",
+    "project_objective": "Contradiction: must be offline-only and also require live cloud APIs.",
+    "requirements": [
+      "Contradiction: must be offline-only and also require live cloud APIs."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "CONTRADICTION",
+    "severity": "HIGH",
+    "expected_issue": "offline vs cloud contradiction",
+    "expected_evidence": "resolved mode decision",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "contradiction",
+      "offline"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 17
+  },
+  {
+    "id": "RQ3-079",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Maintainability ignored: no tests, no CI, production launch next week.",
+    "project_objective": "Maintainability ignored: no tests, no CI, production launch next week.",
+    "requirements": [
+      "Maintainability ignored: no tests, no CI, production launch next week."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "MAINTAINABILITY",
+    "severity": "MEDIUM",
+    "expected_issue": "no maintainability plan",
+    "expected_evidence": "test/CI plan",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "maintainability",
+      "no"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 18
+  },
+  {
+    "id": "RQ3-080",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Assumption that public phishing corpora are legally usable without review.",
+    "project_objective": "Assumption that public phishing corpora are legally usable without review.",
+    "requirements": [
+      "Assumption that public phishing corpora are legally usable without review."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "DATA_AVAILABILITY",
+    "severity": "MEDIUM",
+    "expected_issue": "licensing assumption",
+    "expected_evidence": "license check",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "data_availability",
+      "licensing"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 19
+  },
+  {
+    "id": "RQ3-081",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Train a 7B model locally on hardware with insufficient VRAM.",
+    "project_objective": "Train a 7B model locally on hardware with insufficient VRAM.",
+    "requirements": [
+      "Train a 7B model locally on hardware with insufficient VRAM."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "RESOURCE_FEASIBILITY",
+    "severity": "HIGH",
+    "expected_issue": "insufficient GPU memory",
+    "expected_evidence": "VRAM/hardware specification",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "resource_feasibility",
+      "insufficient"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 0
+  },
+  {
+    "id": "RQ3-082",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Real-time analytics dashboard with no latency requirement stated.",
+    "project_objective": "Real-time analytics dashboard with no latency requirement stated.",
+    "requirements": [
+      "Real-time analytics dashboard with no latency requirement stated."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "LATENCY",
+    "severity": "HIGH",
+    "expected_issue": "unspecified real-time latency",
+    "expected_evidence": "latency SLA",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "latency",
+      "unspecified"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 1
+  },
+  {
+    "id": "RQ3-083",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+    "project_objective": "Achieve 99.99% accuracy without an evaluation plan.",
+    "requirements": [
+      "Achieve 99.99% accuracy without an evaluation plan."
+    ],
+    "target_entity_type": "CLAIM",
+    "attack_type": "EVALUATION",
+    "severity": "HIGH",
+    "expected_issue": "missing evaluation methodology",
+    "expected_evidence": "metrics and validation set",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "evaluation",
+      "missing"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 2
+  },
+  {
+    "id": "RQ3-084",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "AI blockchain IoT mobile cloud product in four weeks solo.",
+    "project_objective": "AI blockchain IoT mobile cloud product in four weeks solo.",
+    "requirements": [
+      "AI blockchain IoT mobile cloud product in four weeks solo."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "SCOPE",
+    "severity": "HIGH",
+    "expected_issue": "scope exceeds timeline/staffing",
+    "expected_evidence": "MVP scope reduction",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "scope",
+      "scope"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 3
+  },
+  {
+    "id": "RQ3-085",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Deep learning classifier with no dataset identified.",
+    "project_objective": "Deep learning classifier with no dataset identified.",
+    "requirements": [
+      "Deep learning classifier with no dataset identified."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "DATA_AVAILABILITY",
+    "severity": "HIGH",
+    "expected_issue": "no concrete dataset",
+    "expected_evidence": "dataset name or collection plan",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "data_availability",
+      "no"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 4
+  },
+  {
+    "id": "RQ3-086",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Security monitoring without a threat model.",
+    "project_objective": "Security monitoring without a threat model.",
+    "requirements": [
+      "Security monitoring without a threat model."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "SECURITY",
+    "severity": "MEDIUM",
+    "expected_issue": "missing threat model",
+    "expected_evidence": "threat model document",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "security",
+      "missing"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 5
+  },
+  {
+    "id": "RQ3-087",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Production deploy without monitoring.",
+    "project_objective": "Production deploy without monitoring.",
+    "requirements": [
+      "Production deploy without monitoring."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "DEPLOYMENT",
+    "severity": "MEDIUM",
+    "expected_issue": "no observability",
+    "expected_evidence": "monitoring and rollback criteria",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "deployment",
+      "no"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 6
+  },
+  {
+    "id": "RQ3-088",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "High availability without redundancy.",
+    "project_objective": "High availability without redundancy.",
+    "requirements": [
+      "High availability without redundancy."
+    ],
+    "target_entity_type": "ARCHITECTURE",
+    "attack_type": "RELIABILITY",
+    "severity": "HIGH",
+    "expected_issue": "availability without failover",
+    "expected_evidence": "redundancy design",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "reliability",
+      "availability"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 7
+  },
+  {
+    "id": "RQ3-089",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Use Kafka because it is modern, with no throughput justification.",
+    "project_objective": "Use Kafka because it is modern, with no throughput justification.",
+    "requirements": [
+      "Use Kafka because it is modern, with no throughput justification."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "TECHNOLOGY_JUSTIFICATION",
+    "severity": "MEDIUM",
+    "expected_issue": "unjustified technology choice",
+    "expected_evidence": "load/throughput evidence",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "technology_justification",
+      "unjustified"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 8
+  },
+  {
+    "id": "RQ3-090",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "REST polling for a real-time collaborative editor.",
+    "project_objective": "REST polling for a real-time collaborative editor.",
+    "requirements": [
+      "REST polling for a real-time collaborative editor."
+    ],
+    "target_entity_type": "ARCHITECTURE",
+    "attack_type": "ARCHITECTURE_MISMATCH",
+    "severity": "HIGH",
+    "expected_issue": "transport mismatch for real-time",
+    "expected_evidence": "websocket or push design",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "architecture_mismatch",
+      "transport"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 9
+  },
+  {
+    "id": "RQ3-091",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+    "project_objective": "Enterprise multi-region system with a two-week solo deadline.",
+    "requirements": [
+      "Enterprise multi-region system with a two-week solo deadline."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "TIMELINE",
+    "severity": "HIGH",
+    "expected_issue": "timeline incompatible with scope",
+    "expected_evidence": "reduced MVP",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "timeline",
+      "timeline"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 10
+  },
+  {
+    "id": "RQ3-092",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Store PII in logs without retention or access controls.",
+    "project_objective": "Store PII in logs without retention or access controls.",
+    "requirements": [
+      "Store PII in logs without retention or access controls."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "SECURITY",
+    "severity": "HIGH",
+    "expected_issue": "PII handling gap",
+    "expected_evidence": "data handling policy",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "security",
+      "pii"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 11
+  },
+  {
+    "id": "RQ3-093",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Scale to millions of users on a single VM assumption.",
+    "project_objective": "Scale to millions of users on a single VM assumption.",
+    "requirements": [
+      "Scale to millions of users on a single VM assumption."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "SCALABILITY",
+    "severity": "HIGH",
+    "expected_issue": "single-node scale assumption",
+    "expected_evidence": "capacity plan",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "scalability",
+      "single-node"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 12
+  },
+  {
+    "id": "RQ3-094",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+    "project_objective": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+    "requirements": [
+      "Budget is $0 but plan includes managed Kubernetes and paid APIs."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "COST",
+    "severity": "HIGH",
+    "expected_issue": "cost contradiction",
+    "expected_evidence": "cost model",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "cost",
+      "cost"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 13
+  },
+  {
+    "id": "RQ3-095",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "System should somehow handle appropriate authentication etc.",
+    "project_objective": "System should somehow handle appropriate authentication etc.",
+    "requirements": [
+      "System should somehow handle appropriate authentication etc."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "REQUIREMENT_AMBIGUITY",
+    "severity": "MEDIUM",
+    "expected_issue": "vague acceptance criteria",
+    "expected_evidence": "measurable auth requirements",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "requirement_ambiguity",
+      "vague"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 14
+  },
+  {
+    "id": "RQ3-096",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Depend on an unmaintained GitHub library for core crypto.",
+    "project_objective": "Depend on an unmaintained GitHub library for core crypto.",
+    "requirements": [
+      "Depend on an unmaintained GitHub library for core crypto."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "DEPENDENCY",
+    "severity": "HIGH",
+    "expected_issue": "risky dependency",
+    "expected_evidence": "supported crypto library",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "dependency",
+      "risky"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 15
+  },
+  {
+    "id": "RQ3-097",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Claim the model can be trained locally without measuring resources.",
+    "project_objective": "Claim the model can be trained locally without measuring resources.",
+    "requirements": [
+      "Claim the model can be trained locally without measuring resources."
+    ],
+    "target_entity_type": "CLAIM",
+    "attack_type": "RESOURCE_FEASIBILITY",
+    "severity": "HIGH",
+    "expected_issue": "unverified local training claim",
+    "expected_evidence": "hardware benchmark",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "resource_feasibility",
+      "unverified"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 16
+  },
+  {
+    "id": "RQ3-098",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Contradiction: must be offline-only and also require live cloud APIs.",
+    "project_objective": "Contradiction: must be offline-only and also require live cloud APIs.",
+    "requirements": [
+      "Contradiction: must be offline-only and also require live cloud APIs."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "CONTRADICTION",
+    "severity": "HIGH",
+    "expected_issue": "offline vs cloud contradiction",
+    "expected_evidence": "resolved mode decision",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "contradiction",
+      "offline"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 17
+  },
+  {
+    "id": "RQ3-099",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Maintainability ignored: no tests, no CI, production launch next week.",
+    "project_objective": "Maintainability ignored: no tests, no CI, production launch next week.",
+    "requirements": [
+      "Maintainability ignored: no tests, no CI, production launch next week."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "MAINTAINABILITY",
+    "severity": "MEDIUM",
+    "expected_issue": "no maintainability plan",
+    "expected_evidence": "test/CI plan",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "maintainability",
+      "no"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 18
+  },
+  {
+    "id": "RQ3-100",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Assumption that public phishing corpora are legally usable without review.",
+    "project_objective": "Assumption that public phishing corpora are legally usable without review.",
+    "requirements": [
+      "Assumption that public phishing corpora are legally usable without review."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "DATA_AVAILABILITY",
+    "severity": "MEDIUM",
+    "expected_issue": "licensing assumption",
+    "expected_evidence": "license check",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "data_availability",
+      "licensing"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 19
+  },
+  {
+    "id": "RQ3-101",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Train a 7B model locally on hardware with insufficient VRAM.",
+    "project_objective": "Train a 7B model locally on hardware with insufficient VRAM.",
+    "requirements": [
+      "Train a 7B model locally on hardware with insufficient VRAM."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "RESOURCE_FEASIBILITY",
+    "severity": "HIGH",
+    "expected_issue": "insufficient GPU memory",
+    "expected_evidence": "VRAM/hardware specification",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "resource_feasibility",
+      "insufficient"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 0
+  },
+  {
+    "id": "RQ3-102",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Real-time analytics dashboard with no latency requirement stated.",
+    "project_objective": "Real-time analytics dashboard with no latency requirement stated.",
+    "requirements": [
+      "Real-time analytics dashboard with no latency requirement stated."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "LATENCY",
+    "severity": "HIGH",
+    "expected_issue": "unspecified real-time latency",
+    "expected_evidence": "latency SLA",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "latency",
+      "unspecified"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 1
+  },
+  {
+    "id": "RQ3-103",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+    "project_objective": "Achieve 99.99% accuracy without an evaluation plan.",
+    "requirements": [
+      "Achieve 99.99% accuracy without an evaluation plan."
+    ],
+    "target_entity_type": "CLAIM",
+    "attack_type": "EVALUATION",
+    "severity": "HIGH",
+    "expected_issue": "missing evaluation methodology",
+    "expected_evidence": "metrics and validation set",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "evaluation",
+      "missing"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 2
+  },
+  {
+    "id": "RQ3-104",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "AI blockchain IoT mobile cloud product in four weeks solo.",
+    "project_objective": "AI blockchain IoT mobile cloud product in four weeks solo.",
+    "requirements": [
+      "AI blockchain IoT mobile cloud product in four weeks solo."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "SCOPE",
+    "severity": "HIGH",
+    "expected_issue": "scope exceeds timeline/staffing",
+    "expected_evidence": "MVP scope reduction",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "scope",
+      "scope"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 3
+  },
+  {
+    "id": "RQ3-105",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Deep learning classifier with no dataset identified.",
+    "project_objective": "Deep learning classifier with no dataset identified.",
+    "requirements": [
+      "Deep learning classifier with no dataset identified."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "DATA_AVAILABILITY",
+    "severity": "HIGH",
+    "expected_issue": "no concrete dataset",
+    "expected_evidence": "dataset name or collection plan",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "data_availability",
+      "no"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 4
+  },
+  {
+    "id": "RQ3-106",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Security monitoring without a threat model.",
+    "project_objective": "Security monitoring without a threat model.",
+    "requirements": [
+      "Security monitoring without a threat model."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "SECURITY",
+    "severity": "MEDIUM",
+    "expected_issue": "missing threat model",
+    "expected_evidence": "threat model document",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "security",
+      "missing"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 5
+  },
+  {
+    "id": "RQ3-107",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Production deploy without monitoring.",
+    "project_objective": "Production deploy without monitoring.",
+    "requirements": [
+      "Production deploy without monitoring."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "DEPLOYMENT",
+    "severity": "MEDIUM",
+    "expected_issue": "no observability",
+    "expected_evidence": "monitoring and rollback criteria",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "deployment",
+      "no"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 6
+  },
+  {
+    "id": "RQ3-108",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "High availability without redundancy.",
+    "project_objective": "High availability without redundancy.",
+    "requirements": [
+      "High availability without redundancy."
+    ],
+    "target_entity_type": "ARCHITECTURE",
+    "attack_type": "RELIABILITY",
+    "severity": "HIGH",
+    "expected_issue": "availability without failover",
+    "expected_evidence": "redundancy design",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "reliability",
+      "availability"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 7
+  },
+  {
+    "id": "RQ3-109",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Use Kafka because it is modern, with no throughput justification.",
+    "project_objective": "Use Kafka because it is modern, with no throughput justification.",
+    "requirements": [
+      "Use Kafka because it is modern, with no throughput justification."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "TECHNOLOGY_JUSTIFICATION",
+    "severity": "MEDIUM",
+    "expected_issue": "unjustified technology choice",
+    "expected_evidence": "load/throughput evidence",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "technology_justification",
+      "unjustified"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 8
+  },
+  {
+    "id": "RQ3-110",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "REST polling for a real-time collaborative editor.",
+    "project_objective": "REST polling for a real-time collaborative editor.",
+    "requirements": [
+      "REST polling for a real-time collaborative editor."
+    ],
+    "target_entity_type": "ARCHITECTURE",
+    "attack_type": "ARCHITECTURE_MISMATCH",
+    "severity": "HIGH",
+    "expected_issue": "transport mismatch for real-time",
+    "expected_evidence": "websocket or push design",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "architecture_mismatch",
+      "transport"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 9
+  },
+  {
+    "id": "RQ3-111",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+    "project_objective": "Enterprise multi-region system with a two-week solo deadline.",
+    "requirements": [
+      "Enterprise multi-region system with a two-week solo deadline."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "TIMELINE",
+    "severity": "HIGH",
+    "expected_issue": "timeline incompatible with scope",
+    "expected_evidence": "reduced MVP",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "timeline",
+      "timeline"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 10
+  },
+  {
+    "id": "RQ3-112",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Store PII in logs without retention or access controls.",
+    "project_objective": "Store PII in logs without retention or access controls.",
+    "requirements": [
+      "Store PII in logs without retention or access controls."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "SECURITY",
+    "severity": "HIGH",
+    "expected_issue": "PII handling gap",
+    "expected_evidence": "data handling policy",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "security",
+      "pii"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 11
+  },
+  {
+    "id": "RQ3-113",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Scale to millions of users on a single VM assumption.",
+    "project_objective": "Scale to millions of users on a single VM assumption.",
+    "requirements": [
+      "Scale to millions of users on a single VM assumption."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "SCALABILITY",
+    "severity": "HIGH",
+    "expected_issue": "single-node scale assumption",
+    "expected_evidence": "capacity plan",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "scalability",
+      "single-node"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 12
+  },
+  {
+    "id": "RQ3-114",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+    "project_objective": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+    "requirements": [
+      "Budget is $0 but plan includes managed Kubernetes and paid APIs."
+    ],
+    "target_entity_type": "CONSTRAINT",
+    "attack_type": "COST",
+    "severity": "HIGH",
+    "expected_issue": "cost contradiction",
+    "expected_evidence": "cost model",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "cost",
+      "cost"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 13
+  },
+  {
+    "id": "RQ3-115",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "System should somehow handle appropriate authentication etc.",
+    "project_objective": "System should somehow handle appropriate authentication etc.",
+    "requirements": [
+      "System should somehow handle appropriate authentication etc."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "REQUIREMENT_AMBIGUITY",
+    "severity": "MEDIUM",
+    "expected_issue": "vague acceptance criteria",
+    "expected_evidence": "measurable auth requirements",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "requirement_ambiguity",
+      "vague"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 14
+  },
+  {
+    "id": "RQ3-116",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Depend on an unmaintained GitHub library for core crypto.",
+    "project_objective": "Depend on an unmaintained GitHub library for core crypto.",
+    "requirements": [
+      "Depend on an unmaintained GitHub library for core crypto."
+    ],
+    "target_entity_type": "DECISION",
+    "attack_type": "DEPENDENCY",
+    "severity": "HIGH",
+    "expected_issue": "risky dependency",
+    "expected_evidence": "supported crypto library",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "dependency",
+      "risky"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 15
+  },
+  {
+    "id": "RQ3-117",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Claim the model can be trained locally without measuring resources.",
+    "project_objective": "Claim the model can be trained locally without measuring resources.",
+    "requirements": [
+      "Claim the model can be trained locally without measuring resources."
+    ],
+    "target_entity_type": "CLAIM",
+    "attack_type": "RESOURCE_FEASIBILITY",
+    "severity": "HIGH",
+    "expected_issue": "unverified local training claim",
+    "expected_evidence": "hardware benchmark",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "resource_feasibility",
+      "unverified"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 16
+  },
+  {
+    "id": "RQ3-118",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Contradiction: must be offline-only and also require live cloud APIs.",
+    "project_objective": "Contradiction: must be offline-only and also require live cloud APIs.",
+    "requirements": [
+      "Contradiction: must be offline-only and also require live cloud APIs."
+    ],
+    "target_entity_type": "REQUIREMENT",
+    "attack_type": "CONTRADICTION",
+    "severity": "HIGH",
+    "expected_issue": "offline vs cloud contradiction",
+    "expected_evidence": "resolved mode decision",
+    "gold_should_block": true,
+    "gold_issue_tags": [
+      "contradiction",
+      "offline"
+    ],
+    "gold_severity": "HIGH",
+    "variant": 17
+  },
+  {
+    "id": "RQ3-119",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Maintainability ignored: no tests, no CI, production launch next week.",
+    "project_objective": "Maintainability ignored: no tests, no CI, production launch next week.",
+    "requirements": [
+      "Maintainability ignored: no tests, no CI, production launch next week."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "MAINTAINABILITY",
+    "severity": "MEDIUM",
+    "expected_issue": "no maintainability plan",
+    "expected_evidence": "test/CI plan",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "maintainability",
+      "no"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 18
+  },
+  {
+    "id": "RQ3-120",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "scenario": "Assumption that public phishing corpora are legally usable without review.",
+    "project_objective": "Assumption that public phishing corpora are legally usable without review.",
+    "requirements": [
+      "Assumption that public phishing corpora are legally usable without review."
+    ],
+    "target_entity_type": "ASSUMPTION",
+    "attack_type": "DATA_AVAILABILITY",
+    "severity": "MEDIUM",
+    "expected_issue": "licensing assumption",
+    "expected_evidence": "license check",
+    "gold_should_block": false,
+    "gold_issue_tags": [
+      "data_availability",
+      "licensing"
+    ],
+    "gold_severity": "MEDIUM",
+    "variant": 19
+  }
+]

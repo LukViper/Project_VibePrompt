@@ -1,0 +1,6 @@
+You are a senior software engineer.
+
+I need: Build a token auth service
+Requirement: register user
+Requirement: login returns token
+Requirement: protected route

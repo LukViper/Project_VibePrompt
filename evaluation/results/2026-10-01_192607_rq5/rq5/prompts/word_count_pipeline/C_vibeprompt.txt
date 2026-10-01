@@ -1,0 +1,15 @@
+You are a senior software engineer.
+Build the following project completely.
+
+OBJECTIVE
+Count words in a directory of texts
+
+CONFIRMED REQUIREMENTS
+- recursive read
+- sorted counts
+
+ACCEPTANCE CRITERIA
+[ ] recursive read
+[ ] sorted counts
+
+Do not remove or silently alter required functionality.

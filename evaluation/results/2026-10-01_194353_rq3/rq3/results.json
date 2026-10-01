@@ -1,0 +1,1838 @@
+[
+  {
+    "id": "RQ3-001",
+    "gold_attack_type": "RESOURCE_FEASIBILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "RESOURCE_FEASIBILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-002",
+    "gold_attack_type": "LATENCY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "LATENCY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-003",
+    "gold_attack_type": "EVALUATION",
+    "gold_target": "CLAIM",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-004",
+    "gold_attack_type": "SCOPE",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "SCOPE"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-005",
+    "gold_attack_type": "DATA_AVAILABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "DATA_AVAILABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-006",
+    "gold_attack_type": "SECURITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "SECURITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-007",
+    "gold_attack_type": "DEPLOYMENT",
+    "gold_target": "DECISION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "DEPLOYMENT"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-008",
+    "gold_attack_type": "RELIABILITY",
+    "gold_target": "ARCHITECTURE",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "RELIABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-009",
+    "gold_attack_type": "TECHNOLOGY_JUSTIFICATION",
+    "gold_target": "DECISION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "TECHNOLOGY_JUSTIFICATION"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-010",
+    "gold_attack_type": "ARCHITECTURE_MISMATCH",
+    "gold_target": "ARCHITECTURE",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "LATENCY",
+      "ARCHITECTURE_MISMATCH"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-011",
+    "gold_attack_type": "TIMELINE",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-012",
+    "gold_attack_type": "SECURITY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-013",
+    "gold_attack_type": "SCALABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "SCALABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-014",
+    "gold_attack_type": "COST",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "TECHNOLOGY_JUSTIFICATION",
+      "COST"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-015",
+    "gold_attack_type": "REQUIREMENT_AMBIGUITY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "REQUIREMENT_AMBIGUITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-016",
+    "gold_attack_type": "DEPENDENCY",
+    "gold_target": "DECISION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "DEPENDENCY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-017",
+    "gold_attack_type": "RESOURCE_FEASIBILITY",
+    "gold_target": "CLAIM",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-018",
+    "gold_attack_type": "CONTRADICTION",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "CONTRADICTION"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-019",
+    "gold_attack_type": "MAINTAINABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "MAINTAINABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-020",
+    "gold_attack_type": "DATA_AVAILABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-021",
+    "gold_attack_type": "RESOURCE_FEASIBILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "RESOURCE_FEASIBILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-022",
+    "gold_attack_type": "LATENCY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "LATENCY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-023",
+    "gold_attack_type": "EVALUATION",
+    "gold_target": "CLAIM",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-024",
+    "gold_attack_type": "SCOPE",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "SCOPE"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-025",
+    "gold_attack_type": "DATA_AVAILABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "DATA_AVAILABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-026",
+    "gold_attack_type": "SECURITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "SECURITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-027",
+    "gold_attack_type": "DEPLOYMENT",
+    "gold_target": "DECISION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "DEPLOYMENT"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-028",
+    "gold_attack_type": "RELIABILITY",
+    "gold_target": "ARCHITECTURE",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "RELIABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-029",
+    "gold_attack_type": "TECHNOLOGY_JUSTIFICATION",
+    "gold_target": "DECISION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "TECHNOLOGY_JUSTIFICATION"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-030",
+    "gold_attack_type": "ARCHITECTURE_MISMATCH",
+    "gold_target": "ARCHITECTURE",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "LATENCY",
+      "ARCHITECTURE_MISMATCH"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-031",
+    "gold_attack_type": "TIMELINE",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-032",
+    "gold_attack_type": "SECURITY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-033",
+    "gold_attack_type": "SCALABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "SCALABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-034",
+    "gold_attack_type": "COST",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "TECHNOLOGY_JUSTIFICATION",
+      "COST"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-035",
+    "gold_attack_type": "REQUIREMENT_AMBIGUITY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "REQUIREMENT_AMBIGUITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-036",
+    "gold_attack_type": "DEPENDENCY",
+    "gold_target": "DECISION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "DEPENDENCY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-037",
+    "gold_attack_type": "RESOURCE_FEASIBILITY",
+    "gold_target": "CLAIM",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-038",
+    "gold_attack_type": "CONTRADICTION",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "CONTRADICTION"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-039",
+    "gold_attack_type": "MAINTAINABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "MAINTAINABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-040",
+    "gold_attack_type": "DATA_AVAILABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-041",
+    "gold_attack_type": "RESOURCE_FEASIBILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "RESOURCE_FEASIBILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-042",
+    "gold_attack_type": "LATENCY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "LATENCY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-043",
+    "gold_attack_type": "EVALUATION",
+    "gold_target": "CLAIM",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-044",
+    "gold_attack_type": "SCOPE",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "SCOPE"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-045",
+    "gold_attack_type": "DATA_AVAILABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "DATA_AVAILABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-046",
+    "gold_attack_type": "SECURITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "SECURITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-047",
+    "gold_attack_type": "DEPLOYMENT",
+    "gold_target": "DECISION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "DEPLOYMENT"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-048",
+    "gold_attack_type": "RELIABILITY",
+    "gold_target": "ARCHITECTURE",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "RELIABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-049",
+    "gold_attack_type": "TECHNOLOGY_JUSTIFICATION",
+    "gold_target": "DECISION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "TECHNOLOGY_JUSTIFICATION"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-050",
+    "gold_attack_type": "ARCHITECTURE_MISMATCH",
+    "gold_target": "ARCHITECTURE",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "LATENCY",
+      "ARCHITECTURE_MISMATCH"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-051",
+    "gold_attack_type": "TIMELINE",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-052",
+    "gold_attack_type": "SECURITY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-053",
+    "gold_attack_type": "SCALABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "SCALABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-054",
+    "gold_attack_type": "COST",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "TECHNOLOGY_JUSTIFICATION",
+      "COST"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-055",
+    "gold_attack_type": "REQUIREMENT_AMBIGUITY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "REQUIREMENT_AMBIGUITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-056",
+    "gold_attack_type": "DEPENDENCY",
+    "gold_target": "DECISION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "DEPENDENCY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-057",
+    "gold_attack_type": "RESOURCE_FEASIBILITY",
+    "gold_target": "CLAIM",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-058",
+    "gold_attack_type": "CONTRADICTION",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "CONTRADICTION"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-059",
+    "gold_attack_type": "MAINTAINABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "MAINTAINABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-060",
+    "gold_attack_type": "DATA_AVAILABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-061",
+    "gold_attack_type": "RESOURCE_FEASIBILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "RESOURCE_FEASIBILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-062",
+    "gold_attack_type": "LATENCY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "LATENCY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-063",
+    "gold_attack_type": "EVALUATION",
+    "gold_target": "CLAIM",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-064",
+    "gold_attack_type": "SCOPE",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "SCOPE"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-065",
+    "gold_attack_type": "DATA_AVAILABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "DATA_AVAILABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-066",
+    "gold_attack_type": "SECURITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "SECURITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-067",
+    "gold_attack_type": "DEPLOYMENT",
+    "gold_target": "DECISION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "DEPLOYMENT"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-068",
+    "gold_attack_type": "RELIABILITY",
+    "gold_target": "ARCHITECTURE",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "RELIABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-069",
+    "gold_attack_type": "TECHNOLOGY_JUSTIFICATION",
+    "gold_target": "DECISION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "TECHNOLOGY_JUSTIFICATION"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-070",
+    "gold_attack_type": "ARCHITECTURE_MISMATCH",
+    "gold_target": "ARCHITECTURE",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "LATENCY",
+      "ARCHITECTURE_MISMATCH"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-071",
+    "gold_attack_type": "TIMELINE",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-072",
+    "gold_attack_type": "SECURITY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-073",
+    "gold_attack_type": "SCALABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "SCALABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-074",
+    "gold_attack_type": "COST",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "TECHNOLOGY_JUSTIFICATION",
+      "COST"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-075",
+    "gold_attack_type": "REQUIREMENT_AMBIGUITY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "REQUIREMENT_AMBIGUITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-076",
+    "gold_attack_type": "DEPENDENCY",
+    "gold_target": "DECISION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "DEPENDENCY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-077",
+    "gold_attack_type": "RESOURCE_FEASIBILITY",
+    "gold_target": "CLAIM",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-078",
+    "gold_attack_type": "CONTRADICTION",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "CONTRADICTION"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-079",
+    "gold_attack_type": "MAINTAINABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "MAINTAINABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-080",
+    "gold_attack_type": "DATA_AVAILABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-081",
+    "gold_attack_type": "RESOURCE_FEASIBILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "RESOURCE_FEASIBILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-082",
+    "gold_attack_type": "LATENCY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "LATENCY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-083",
+    "gold_attack_type": "EVALUATION",
+    "gold_target": "CLAIM",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-084",
+    "gold_attack_type": "SCOPE",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "SCOPE"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-085",
+    "gold_attack_type": "DATA_AVAILABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "DATA_AVAILABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-086",
+    "gold_attack_type": "SECURITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "SECURITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-087",
+    "gold_attack_type": "DEPLOYMENT",
+    "gold_target": "DECISION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "DEPLOYMENT"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-088",
+    "gold_attack_type": "RELIABILITY",
+    "gold_target": "ARCHITECTURE",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "RELIABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-089",
+    "gold_attack_type": "TECHNOLOGY_JUSTIFICATION",
+    "gold_target": "DECISION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "TECHNOLOGY_JUSTIFICATION"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-090",
+    "gold_attack_type": "ARCHITECTURE_MISMATCH",
+    "gold_target": "ARCHITECTURE",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "LATENCY",
+      "ARCHITECTURE_MISMATCH"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-091",
+    "gold_attack_type": "TIMELINE",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-092",
+    "gold_attack_type": "SECURITY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-093",
+    "gold_attack_type": "SCALABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "SCALABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-094",
+    "gold_attack_type": "COST",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "TECHNOLOGY_JUSTIFICATION",
+      "COST"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-095",
+    "gold_attack_type": "REQUIREMENT_AMBIGUITY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "REQUIREMENT_AMBIGUITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-096",
+    "gold_attack_type": "DEPENDENCY",
+    "gold_target": "DECISION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "DEPENDENCY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-097",
+    "gold_attack_type": "RESOURCE_FEASIBILITY",
+    "gold_target": "CLAIM",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-098",
+    "gold_attack_type": "CONTRADICTION",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "CONTRADICTION"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-099",
+    "gold_attack_type": "MAINTAINABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "MAINTAINABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-100",
+    "gold_attack_type": "DATA_AVAILABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-101",
+    "gold_attack_type": "RESOURCE_FEASIBILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "RESOURCE_FEASIBILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-102",
+    "gold_attack_type": "LATENCY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "LATENCY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-103",
+    "gold_attack_type": "EVALUATION",
+    "gold_target": "CLAIM",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-104",
+    "gold_attack_type": "SCOPE",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "SCOPE"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-105",
+    "gold_attack_type": "DATA_AVAILABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "DATA_AVAILABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-106",
+    "gold_attack_type": "SECURITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "SECURITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-107",
+    "gold_attack_type": "DEPLOYMENT",
+    "gold_target": "DECISION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "DEPLOYMENT"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-108",
+    "gold_attack_type": "RELIABILITY",
+    "gold_target": "ARCHITECTURE",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "RELIABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-109",
+    "gold_attack_type": "TECHNOLOGY_JUSTIFICATION",
+    "gold_target": "DECISION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "TECHNOLOGY_JUSTIFICATION"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-110",
+    "gold_attack_type": "ARCHITECTURE_MISMATCH",
+    "gold_target": "ARCHITECTURE",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "LATENCY",
+      "ARCHITECTURE_MISMATCH"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-111",
+    "gold_attack_type": "TIMELINE",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-112",
+    "gold_attack_type": "SECURITY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-113",
+    "gold_attack_type": "SCALABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "SCALABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-114",
+    "gold_attack_type": "COST",
+    "gold_target": "CONSTRAINT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "TECHNOLOGY_JUSTIFICATION",
+      "COST"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-115",
+    "gold_attack_type": "REQUIREMENT_AMBIGUITY",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "REQUIREMENT_AMBIGUITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-116",
+    "gold_attack_type": "DEPENDENCY",
+    "gold_target": "DECISION",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "DEPENDENCY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-117",
+    "gold_attack_type": "RESOURCE_FEASIBILITY",
+    "gold_target": "CLAIM",
+    "gold_severity": "HIGH",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  },
+  {
+    "id": "RQ3-118",
+    "gold_attack_type": "CONTRADICTION",
+    "gold_target": "REQUIREMENT",
+    "gold_severity": "HIGH",
+    "detected": true,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "CONTRADICTION"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-119",
+    "gold_attack_type": "MAINTAINABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": true,
+    "target_identified": true,
+    "predicted_attack_types": [
+      "MAINTAINABILITY"
+    ],
+    "predicted_target_types": [
+      "ASSUMPTION"
+    ],
+    "n_attacks": 1
+  },
+  {
+    "id": "RQ3-120",
+    "gold_attack_type": "DATA_AVAILABILITY",
+    "gold_target": "ASSUMPTION",
+    "gold_severity": "MEDIUM",
+    "detected": false,
+    "target_identified": false,
+    "predicted_attack_types": [
+      "EvaluationAttackGenerator",
+      "TimelineAttackGenerator"
+    ],
+    "predicted_target_types": [
+      "REQUIREMENT"
+    ],
+    "n_attacks": 2
+  }
+]

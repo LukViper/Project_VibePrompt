@@ -1,0 +1,5 @@
+You are a senior software engineer.
+
+Parse lines like: '2024-01-01T00:00:00Z INFO boot'.
+parse_log(line) returns dict with severity and timestamp.
+Do not call an external log API.

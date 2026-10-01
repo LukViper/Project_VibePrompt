@@ -1,0 +1,1472 @@
+[
+  {
+    "id": "RQ2-001",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "requirement_addition",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "add offline mode",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-002",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "requirement_modification",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "android and web application",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-003",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "requirement_removal",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "remove dashboard analytics",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-004",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "technology_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "replace react with flutter",
+    "gold_impact": {
+      "decisions": [
+        "react frontend"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-005",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "constraint_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "solo developer two weeks",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-006",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "architecture_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "move to modular monolith",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-007",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "scope_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "mvp only core alerts",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-008",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "dataset_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "use public phishing corpus",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-009",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "deployment_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "deploy to single vps",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-010",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "security_requirement_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "require oauth2 login",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-011",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "requirement_addition",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "add offline mode",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-012",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "requirement_modification",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "android and web application",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-013",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "requirement_removal",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "remove dashboard analytics",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-014",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "technology_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "replace react with flutter",
+    "gold_impact": {
+      "decisions": [
+        "react frontend"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-015",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "constraint_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "solo developer two weeks",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-016",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "architecture_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "move to modular monolith",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-017",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "scope_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "mvp only core alerts",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-018",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "dataset_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "use public phishing corpus",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-019",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "deployment_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "deploy to single vps",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-020",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "security_requirement_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "require oauth2 login",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-021",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "requirement_addition",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "add offline mode",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-022",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "requirement_modification",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "android and web application",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-023",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "requirement_removal",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "remove dashboard analytics",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-024",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "technology_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "replace react with flutter",
+    "gold_impact": {
+      "decisions": [
+        "react frontend"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-025",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "constraint_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "solo developer two weeks",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-026",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "architecture_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "move to modular monolith",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-027",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "scope_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "mvp only core alerts",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-028",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "dataset_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "use public phishing corpus",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-029",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "deployment_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "deploy to single vps",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-030",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "security_requirement_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "require oauth2 login",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-031",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "requirement_addition",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "add offline mode",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-032",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "requirement_modification",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "android and web application",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-033",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "requirement_removal",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "remove dashboard analytics",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-034",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "technology_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "replace react with flutter",
+    "gold_impact": {
+      "decisions": [
+        "react frontend"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-035",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "constraint_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "solo developer two weeks",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-036",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "architecture_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "move to modular monolith",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-037",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "scope_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "mvp only core alerts",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-038",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "dataset_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "use public phishing corpus",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-039",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "deployment_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "deploy to single vps",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-040",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "security_requirement_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "require oauth2 login",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-041",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "requirement_addition",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "add offline mode",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-042",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "requirement_modification",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "android and web application",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-043",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "requirement_removal",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "remove dashboard analytics",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-044",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "technology_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "replace react with flutter",
+    "gold_impact": {
+      "decisions": [
+        "react frontend"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-045",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "constraint_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "solo developer two weeks",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-046",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "architecture_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "move to modular monolith",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-047",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "scope_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "mvp only core alerts",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-048",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "dataset_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "use public phishing corpus",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-049",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "deployment_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "deploy to single vps",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  },
+  {
+    "id": "RQ2-050",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "change_type": "security_requirement_change",
+    "before": {
+      "requirements": [
+        "web application dashboard"
+      ],
+      "decisions": [
+        "react frontend",
+        "rest api"
+      ],
+      "architecture": [
+        "browser spa"
+      ],
+      "tests": [
+        "browser integration test"
+      ]
+    },
+    "change": "require oauth2 login",
+    "gold_impact": {
+      "decisions": [],
+      "architecture": [],
+      "tests": [],
+      "prompt": true
+    }
+  }
+]

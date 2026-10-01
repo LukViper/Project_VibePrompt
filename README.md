@@ -1,6 +1,6 @@
 # VibePrompt
 
-VibePrompt is a conversational project specification and agentic development planner. It turns vague project intent into structured ProjectState, then a validated agent-executable prompt for Cursor/Codex.
+VibePrompt is an evidence-tracked conversational requirements-engineering system for coding agents. It maintains auditable ProjectState (requirements, claims, assumptions, evidence, decisions, Grill attacks, trace links), validates it before compilation, and emits an agent-executable prompt as a compiled artifact.
 
 The **specification and reasoning workflow** are the product. The final prompt is a compiled artifact.
 
@@ -12,6 +12,12 @@ The **specification and reasoning workflow** are the product. The final prompt i
 | [progress.md](progress.md) | What was actually implemented and verified |
 | [docs/product_requirements.md](docs/product_requirements.md) | Product contract |
 | [docs/architecture.md](docs/architecture.md) | As-built vs target architecture |
+| [docs/ARCHITECTURE_AUDIT.md](docs/ARCHITECTURE_AUDIT.md) | Pre-transformation repository audit (baseline) |
+| [docs/GRILL.md](docs/GRILL.md) | Adversarial Grill attacks, responses, blocking |
+| [docs/TRACEABILITY.md](docs/TRACEABILITY.md) | TraceLink, lineage, validation |
+| [docs/EVALUATION.md](docs/EVALUATION.md) | RQ1–RQ5 experiments, metrics, limitations |
+| [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) | Seeds, configs, how to re-run |
+| [docs/RESEARCH_READINESS_REPORT.md](docs/RESEARCH_READINESS_REPORT.md) | Honest readiness checklist |
 | [docs/decisions.md](docs/decisions.md) | Architecture decision records |
 | [docs/security.md](docs/security.md) | Auth, secrets, readiness |
 | [docs/deployment.md](docs/deployment.md) | Local/Docker/production checklist |

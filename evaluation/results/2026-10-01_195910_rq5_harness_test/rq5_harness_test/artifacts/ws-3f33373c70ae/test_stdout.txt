@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python
+cachedir: .pytest_cache
+rootdir: /tmp/vibeprompt_rq5_smoke_tsgo506g/ws-3f33373c70ae
+plugins: anyio-4.13.0
+collecting ... collected 2 items
+
+test_greet.py::test_greet_default PASSED                                 [ 50%]
+test_greet.py::test_greet_title PASSED                                   [100%]
+
+- generated xml file: /tmp/vibeprompt_rq5_smoke_tsgo506g/ws-3f33373c70ae/junit.xml -
+============================== 2 passed in 0.02s ===============================

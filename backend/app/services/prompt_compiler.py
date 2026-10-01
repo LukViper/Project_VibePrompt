@@ -52,6 +52,7 @@ def compile_prompt(session, project, specification=None, *, force: bool = False)
 
     # Late import avoids circular dependency with validator ↔ compiler.
     from app.services.prompt_validator import validate_and_repair
+    from app.services.audit_log import append_audit_event
 
     validation = validate_and_repair(content, structured, state)
     content = validation["prompt"]
@@ -60,6 +61,10 @@ def compile_prompt(session, project, specification=None, *, force: bool = False)
         req["id"]
         for req in (structured.get("functional") or []) + (structured.get("nonfunctional") or [])
     ]
+    report = dict(gate)
+    report["compilation_mode"] = "forced compilation" if force else "normal compilation"
+    report["forced"] = bool(force)
+
     row = FinalPrompt(
         project_id=project.id,
         specification_id=specification.id,
@@ -67,7 +72,8 @@ def compile_prompt(session, project, specification=None, *, force: bool = False)
         details={
             "requirement_ids": req_ids,
             "source": "project_state",
-            "gate": gate,
+            "gate": report,
+            "compilation_report": report,
             "validation": validation["report"],
             "forced": force,
         },
@@ -75,9 +81,38 @@ def compile_prompt(session, project, specification=None, *, force: bool = False)
     session.add(row)
     session.flush()
 
+    if force:
+        append_audit_event(
+            state,
+            event_type="FORCED_COMPILATION",
+            entity_type="PROMPT",
+            entity_id=str(row.id),
+            actor="user",
+            before={
+                "blocking_issues": gate.get("blocking_issues") or [],
+                "reasons": gate.get("reasons") or [],
+                "can_compile": gate.get("can_compile"),
+            },
+            after={
+                "prompt_version": str(row.id),
+                "requirement_ids": req_ids,
+                "compilation_mode": "forced compilation",
+            },
+            reason="force=true bypassed compilation gate",
+        )
+    append_audit_event(
+        state,
+        event_type="PROMPT_COMPILED",
+        entity_type="PROMPT",
+        entity_id=str(row.id),
+        actor="system",
+        after={"requirement_ids": req_ids, "forced": force, "compilation_mode": report["compilation_mode"]},
+        reason="compile_prompt",
+    )
     state["prompt"] = {
         "content_preview": content[:500],
         "final_prompt_id": str(row.id),
+        "compilation_report": report,
     }
     state["prompt_metrics"] = validation["report"].get("metrics")
     state = set_stage(state, ConversationStage.PROMPT_GENERATION)
@@ -91,23 +126,73 @@ def compile_prompt(session, project, specification=None, *, force: bool = False)
 
 def compilation_gate(state: dict) -> dict:
     """Block compile when critical conflicts/gaps remain (unless force=True)."""
+    from app.services.assertion_lifecycle import requirement_is_compilable
+    from app.services.traceability import blocking_grill_attacks, validate_traceability
+
     open_conflicts = [c for c in (state.get("conflicts") or []) if c.get("status") == "open"]
     missing_objective = not (
         (state.get("project") or {}).get("objective")
         or (state.get("core_idea") or {}).get("primary_objective")
     )
-    active = [r for r in (state.get("requirements") or []) if r.get("status") == "active"]
+    all_reqs = list(state.get("requirements") or [])
+    active = [r for r in all_reqs if r.get("status") == "active"]
+    compilable = [r for r in active if requirement_is_compilable(r)]
+    excluded = []
+    for req in all_reqs:
+        if requirement_is_compilable(req):
+            continue
+        excluded.append({
+            "id": req.get("id"),
+            "text": req.get("text"),
+            "reason": _exclusion_reason(req),
+            "assertion_status": req.get("assertion_status"),
+            "status": req.get("status"),
+        })
+    trace = validate_traceability(state)
+    grill_attacks = list(state.get("grill_attacks") or [])
+    evidence = list(state.get("evidence") or [])
     reasons = []
+    blocking_issues = list(trace.get("blocking_issues") or [])
     if open_conflicts:
         reasons.append(f"{len(open_conflicts)} open conflict(s) must be resolved")
     if missing_objective:
         reasons.append("project objective is missing")
     if not active:
         reasons.append("no active requirements")
+    if active and not compilable:
+        reasons.append("no confirmed/locked requirements eligible for compilation")
+    for issue in blocking_issues:
+        if issue.get("type") == "UNRESOLVED_GRILL_ATTACK":
+            reasons.append(f"unresolved grill attack {issue.get('id')}")
     blocked = bool(reasons)
     return {
         "blocked": blocked,
+        "can_compile": not blocked,
         "reasons": reasons,
+        "blocking_issues": blocking_issues,
+        "warnings": trace.get("warnings") or [],
+        "included_requirements": [
+            {"id": r.get("id"), "text": r.get("text"), "assertion_status": r.get("assertion_status")}
+            for r in compilable
+        ],
+        "excluded_requirements": excluded,
+        "traceability_status": {
+            "valid": trace.get("valid"),
+            "blocking_issues": trace.get("blocking_issues") or [],
+            "warnings": trace.get("warnings") or [],
+            "link_count": len(state.get("trace_links") or []),
+        },
+        "grill_status": {
+            "open": sum(1 for a in grill_attacks if a.get("status") in {"OPEN", "UNRESOLVED", "RESPONDED"}),
+            "blocking": len(blocking_grill_attacks(state)),
+            "resolved": sum(1 for a in grill_attacks if a.get("status") == "RESOLVED"),
+            "deferred": sum(1 for a in grill_attacks if a.get("status") == "DEFERRED"),
+        },
+        "evidence_status": {
+            "total": len(evidence),
+            "unverified": sum(1 for e in evidence if e.get("verification_status") == "UNVERIFIED"),
+            "verified": sum(1 for e in evidence if e.get("verification_status") == "VERIFIED"),
+        },
         "message": (
             "Prompt compilation blocked: " + "; ".join(reasons) + ". Resolve these or compile with force=true."
             if blocked
@@ -115,6 +200,29 @@ def compilation_gate(state: dict) -> dict:
         ),
         "stage": state.get("conversation_stage"),
     }
+
+
+def _exclusion_reason(req: dict) -> str:
+    status = str(req.get("status") or "").lower()
+    assertion = str(req.get("assertion_status") or "")
+    if status == "superseded" or assertion == "SUPERSEDED":
+        superseded_by = req.get("superseded_by")
+        if superseded_by:
+            return f"SUPERSEDED by {superseded_by}"
+        return "SUPERSEDED"
+    if status in {"removed", "rejected"} or assertion == "REJECTED":
+        return "REJECTED"
+    if assertion == "INFERRED":
+        return "INFERRED — not user-confirmed"
+    if assertion == "PROPOSED":
+        return "PROPOSED but not user-confirmed"
+    if assertion == "MENTIONED":
+        return "MENTIONED — not promoted"
+    if status != "active":
+        return f"status={status}"
+    if not assertion:
+        return "missing assertion_status"
+    return f"assertion_status={assertion} is not compilable"
 
 
 def conversational_gate_message(state: dict) -> str:
@@ -184,9 +292,13 @@ def _normalize_from_state(state: dict, spec: dict) -> dict:
 
     active = [r for r in (state.get("requirements") or []) if r.get("status") == "active"]
     if active:
+        from app.services.assertion_lifecycle import requirement_is_compilable
+
         functional = []
         nonfunctional = []
         for req in active:
+            if not requirement_is_compilable(req):
+                continue
             item = {
                 "id": req.get("id"),
                 "text": req.get("text"),

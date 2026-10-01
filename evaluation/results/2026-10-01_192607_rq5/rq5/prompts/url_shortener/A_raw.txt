@@ -1,0 +1,5 @@
+You are a senior software engineer.
+
+I need: URL shortener service
+Requirement: create short url
+Requirement: redirect

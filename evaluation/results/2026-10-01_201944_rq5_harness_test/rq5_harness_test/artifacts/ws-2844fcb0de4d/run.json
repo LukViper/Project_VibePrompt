@@ -1,0 +1,124 @@
+{
+  "workspace_id": "ws-2844fcb0de4d",
+  "task_id": "crud_notes",
+  "system_variant": "B_structured",
+  "dataset_version": "2.0.0",
+  "seed_commit": "ab45b05b6eac429567a3ccd7e7b1c480a7a891b6",
+  "start_time": "2026-10-01T20:19:52.575423+00:00",
+  "end_time": "2026-10-01T20:19:52.599643+00:00",
+  "exit_code": 0,
+  "duration_seconds": 0.023997742000574362,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "structured_requirements",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "structured_requirements_prompt"
+      ]
+    },
+    "state_summary": null
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-2844fcb0de4d/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-2844fcb0de4d/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-2844fcb0de4d/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-2844fcb0de4d/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-2844fcb0de4d/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-2844fcb0de4d/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-2844fcb0de4d/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/workspaces/ws-2844fcb0de4d"
+  },
+  "git": {
+    "commit_before": "ab45b05b6eac429567a3ccd7e7b1c480a7a891b6",
+    "seed_commit": "ab45b05b6eac429567a3ccd7e7b1c480a7a891b6",
+    "commit_after": "ab45b05b6eac429567a3ccd7e7b1c480a7a891b6",
+    "changed_files": [
+      "pp/notes.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json"
+    ],
+    "status_preview": "M app/notes.py\n?? TASK.md\n?? VIBEPROMPT_META.json"
+  },
+  "agent_run": {
+    "id": "RUN-33c06ba7cd24",
+    "project_id": "crud_notes",
+    "prompt_id": null,
+    "agent": "external_cmd",
+    "model": null,
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_smoke_1nq6r3u_/ws-2844fcb0de4d",
+    "commit_before": "ab45b05b6eac429567a3ccd7e7b1c480a7a891b6",
+    "commit_after": "ab45b05b6eac429567a3ccd7e7b1c480a7a891b6",
+    "started_at": "2026-10-01T20:19:52.575423+00:00",
+    "completed_at": "2026-10-01T20:19:52.599643+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "mock_agent completed task_id=crud_notes label=HARNESS_TEST\n",
+    "workspace_id": "ws-2844fcb0de4d",
+    "task_id": "crud_notes",
+    "system_variant": "B_structured",
+    "exit_code": 0,
+    "duration_seconds": 0.023997742000574362,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-2844fcb0de4d/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-2844fcb0de4d/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-2844fcb0de4d/git_diff.patch",
+    "label": "HARNESS TEST",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-e6718fb3f259",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-33c06ba7cd24",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_create_and_list",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "create_note(text) returns an id",
+        "acceptance_test": "test_create_and_list"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:19:52.933577+00:00",
+      "verification_method": "acceptance_test_marker"
+    },
+    {
+      "id": "VER-37d576ff39f4",
+      "requirement_id": "REQ-002",
+      "agent_run_id": "RUN-33c06ba7cd24",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "test_results": {
+        "requirement_text": "list_notes() returns created notes",
+        "acceptance_test": null
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:19:52.933607+00:00",
+      "verification_method": "inconclusive"
+    }
+  ],
+  "unsupported_features": [
+    "Do not implement delete_note",
+    "Do not use Redis"
+  ],
+  "constraint_violations": [],
+  "scope_violations": [
+    "Do not implement delete_note",
+    "Do not use Redis"
+  ],
+  "label": "HARNESS TEST"
+}

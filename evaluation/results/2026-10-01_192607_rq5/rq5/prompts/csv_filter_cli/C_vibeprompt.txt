@@ -1,0 +1,15 @@
+You are a senior software engineer.
+Build the following project completely.
+
+OBJECTIVE
+CLI that filters CSV by column
+
+CONFIRMED REQUIREMENTS
+- filter rows
+- write output file
+
+ACCEPTANCE CRITERIA
+[ ] filter rows
+[ ] write output file
+
+Do not remove or silently alter required functionality.

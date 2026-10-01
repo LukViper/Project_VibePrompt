@@ -1,0 +1,733 @@
+{
+  "n": 9,
+  "n_planned": 9,
+  "successful_runs": 9,
+  "failed_runs": 0,
+  "unverified_runs": 0,
+  "full_execution_grid": {
+    "label": "full_grid_includes_infrastructure_failures",
+    "n": 9,
+    "requirement_coverage": {
+      "n": 9,
+      "mean": 0.8333333333333334,
+      "std": 0.23570226039551584,
+      "ci95_low": 0.6793411898749298,
+      "ci95_high": 0.987325476791737,
+      "median": 1.0
+    },
+    "constraint_preservation": {
+      "n": 9,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "acceptance_test_pass_rate": {
+      "n": 9,
+      "mean": 0.8333333333333334,
+      "std": 0.23570226039551584,
+      "ci95_low": 0.6793411898749298,
+      "ci95_high": 0.987325476791737,
+      "median": 1.0
+    },
+    "build_success_rate": {
+      "n": 9,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "test_success_rate": {
+      "n": 9,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "unsupported_feature_rate": {
+      "n": 9,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "scope_deviation": {
+      "n": 9,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    }
+  },
+  "completed_agent_quality": {
+    "label": "excludes_FAILED_INFRASTRUCTURE",
+    "n": 9,
+    "requirement_coverage": {
+      "n": 9,
+      "mean": 0.8333333333333334,
+      "std": 0.23570226039551584,
+      "ci95_low": 0.6793411898749298,
+      "ci95_high": 0.987325476791737,
+      "median": 1.0
+    },
+    "constraint_preservation": {
+      "n": 9,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "acceptance_test_pass_rate": {
+      "n": 9,
+      "mean": 0.8333333333333334,
+      "std": 0.23570226039551584,
+      "ci95_low": 0.6793411898749298,
+      "ci95_high": 0.987325476791737,
+      "median": 1.0
+    },
+    "build_success_rate": {
+      "n": 9,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "test_success_rate": {
+      "n": 9,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "unsupported_feature_rate": {
+      "n": 9,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "scope_deviation": {
+      "n": 9,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    }
+  },
+  "overall": {
+    "label": "alias_of_completed_agent_quality",
+    "n": 9,
+    "requirement_coverage": {
+      "n": 9,
+      "mean": 0.8333333333333334,
+      "std": 0.23570226039551584,
+      "ci95_low": 0.6793411898749298,
+      "ci95_high": 0.987325476791737,
+      "median": 1.0
+    },
+    "constraint_preservation": {
+      "n": 9,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "acceptance_test_pass_rate": {
+      "n": 9,
+      "mean": 0.8333333333333334,
+      "std": 0.23570226039551584,
+      "ci95_low": 0.6793411898749298,
+      "ci95_high": 0.987325476791737,
+      "median": 1.0
+    },
+    "build_success_rate": {
+      "n": 9,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "test_success_rate": {
+      "n": 9,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "unsupported_feature_rate": {
+      "n": 9,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "scope_deviation": {
+      "n": 9,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    }
+  },
+  "A_raw": {
+    "n_planned": 3,
+    "n_completed": 3,
+    "failed_runs": 0,
+    "full_execution_grid": {
+      "label": "variant_full",
+      "n": 3,
+      "requirement_coverage": {
+        "n": 3,
+        "mean": 0.8333333333333334,
+        "std": 0.23570226039551584,
+        "ci95_low": 0.5666111168969429,
+        "ci95_high": 1.1000555497697238,
+        "median": 1.0
+      },
+      "constraint_preservation": {
+        "n": 3,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "acceptance_test_pass_rate": {
+        "n": 3,
+        "mean": 0.8333333333333334,
+        "std": 0.23570226039551584,
+        "ci95_low": 0.5666111168969429,
+        "ci95_high": 1.1000555497697238,
+        "median": 1.0
+      },
+      "build_success_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "test_success_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "unsupported_feature_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "scope_deviation": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      }
+    },
+    "completed_agent_quality": {
+      "label": "variant_quality",
+      "n": 3,
+      "requirement_coverage": {
+        "n": 3,
+        "mean": 0.8333333333333334,
+        "std": 0.23570226039551584,
+        "ci95_low": 0.5666111168969429,
+        "ci95_high": 1.1000555497697238,
+        "median": 1.0
+      },
+      "constraint_preservation": {
+        "n": 3,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "acceptance_test_pass_rate": {
+        "n": 3,
+        "mean": 0.8333333333333334,
+        "std": 0.23570226039551584,
+        "ci95_low": 0.5666111168969429,
+        "ci95_high": 1.1000555497697238,
+        "median": 1.0
+      },
+      "build_success_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "test_success_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "unsupported_feature_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "scope_deviation": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      }
+    },
+    "requirement_coverage": {
+      "n": 3,
+      "mean": 0.8333333333333334,
+      "std": 0.23570226039551584,
+      "ci95_low": 0.5666111168969429,
+      "ci95_high": 1.1000555497697238,
+      "median": 1.0
+    },
+    "constraint_preservation": {
+      "n": 3,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "acceptance_test_pass_rate": {
+      "n": 3,
+      "mean": 0.8333333333333334,
+      "std": 0.23570226039551584,
+      "ci95_low": 0.5666111168969429,
+      "ci95_high": 1.1000555497697238,
+      "median": 1.0
+    },
+    "build_success_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "test_success_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "unsupported_feature_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "scope_deviation": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    }
+  },
+  "B_structured": {
+    "n_planned": 3,
+    "n_completed": 3,
+    "failed_runs": 0,
+    "full_execution_grid": {
+      "label": "variant_full",
+      "n": 3,
+      "requirement_coverage": {
+        "n": 3,
+        "mean": 0.8333333333333334,
+        "std": 0.23570226039551584,
+        "ci95_low": 0.5666111168969429,
+        "ci95_high": 1.1000555497697238,
+        "median": 1.0
+      },
+      "constraint_preservation": {
+        "n": 3,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "acceptance_test_pass_rate": {
+        "n": 3,
+        "mean": 0.8333333333333334,
+        "std": 0.23570226039551584,
+        "ci95_low": 0.5666111168969429,
+        "ci95_high": 1.1000555497697238,
+        "median": 1.0
+      },
+      "build_success_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "test_success_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "unsupported_feature_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "scope_deviation": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      }
+    },
+    "completed_agent_quality": {
+      "label": "variant_quality",
+      "n": 3,
+      "requirement_coverage": {
+        "n": 3,
+        "mean": 0.8333333333333334,
+        "std": 0.23570226039551584,
+        "ci95_low": 0.5666111168969429,
+        "ci95_high": 1.1000555497697238,
+        "median": 1.0
+      },
+      "constraint_preservation": {
+        "n": 3,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "acceptance_test_pass_rate": {
+        "n": 3,
+        "mean": 0.8333333333333334,
+        "std": 0.23570226039551584,
+        "ci95_low": 0.5666111168969429,
+        "ci95_high": 1.1000555497697238,
+        "median": 1.0
+      },
+      "build_success_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "test_success_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "unsupported_feature_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "scope_deviation": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      }
+    },
+    "requirement_coverage": {
+      "n": 3,
+      "mean": 0.8333333333333334,
+      "std": 0.23570226039551584,
+      "ci95_low": 0.5666111168969429,
+      "ci95_high": 1.1000555497697238,
+      "median": 1.0
+    },
+    "constraint_preservation": {
+      "n": 3,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "acceptance_test_pass_rate": {
+      "n": 3,
+      "mean": 0.8333333333333334,
+      "std": 0.23570226039551584,
+      "ci95_low": 0.5666111168969429,
+      "ci95_high": 1.1000555497697238,
+      "median": 1.0
+    },
+    "build_success_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "test_success_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "unsupported_feature_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "scope_deviation": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    }
+  },
+  "C_vibeprompt": {
+    "n_planned": 3,
+    "n_completed": 3,
+    "failed_runs": 0,
+    "full_execution_grid": {
+      "label": "variant_full",
+      "n": 3,
+      "requirement_coverage": {
+        "n": 3,
+        "mean": 0.8333333333333334,
+        "std": 0.23570226039551584,
+        "ci95_low": 0.5666111168969429,
+        "ci95_high": 1.1000555497697238,
+        "median": 1.0
+      },
+      "constraint_preservation": {
+        "n": 3,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "acceptance_test_pass_rate": {
+        "n": 3,
+        "mean": 0.8333333333333334,
+        "std": 0.23570226039551584,
+        "ci95_low": 0.5666111168969429,
+        "ci95_high": 1.1000555497697238,
+        "median": 1.0
+      },
+      "build_success_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "test_success_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "unsupported_feature_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "scope_deviation": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      }
+    },
+    "completed_agent_quality": {
+      "label": "variant_quality",
+      "n": 3,
+      "requirement_coverage": {
+        "n": 3,
+        "mean": 0.8333333333333334,
+        "std": 0.23570226039551584,
+        "ci95_low": 0.5666111168969429,
+        "ci95_high": 1.1000555497697238,
+        "median": 1.0
+      },
+      "constraint_preservation": {
+        "n": 3,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "acceptance_test_pass_rate": {
+        "n": 3,
+        "mean": 0.8333333333333334,
+        "std": 0.23570226039551584,
+        "ci95_low": 0.5666111168969429,
+        "ci95_high": 1.1000555497697238,
+        "median": 1.0
+      },
+      "build_success_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "test_success_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "unsupported_feature_rate": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "scope_deviation": {
+        "n": 3,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      }
+    },
+    "requirement_coverage": {
+      "n": 3,
+      "mean": 0.8333333333333334,
+      "std": 0.23570226039551584,
+      "ci95_low": 0.5666111168969429,
+      "ci95_high": 1.1000555497697238,
+      "median": 1.0
+    },
+    "constraint_preservation": {
+      "n": 3,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "acceptance_test_pass_rate": {
+      "n": 3,
+      "mean": 0.8333333333333334,
+      "std": 0.23570226039551584,
+      "ci95_low": 0.5666111168969429,
+      "ci95_high": 1.1000555497697238,
+      "median": 1.0
+    },
+    "build_success_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "test_success_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "unsupported_feature_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "scope_deviation": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    }
+  },
+  "label": "HARNESS TEST — not a scientific RQ5 result",
+  "scientific": false,
+  "dataset_hash": "sha256:3ef5210642376aab1e86b53660a130b92e76a938885e58ec6d638169ba8bfc87"
+}

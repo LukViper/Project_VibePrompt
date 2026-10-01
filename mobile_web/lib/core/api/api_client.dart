@@ -81,6 +81,43 @@ class ApiClient {
 
   Future<Map<String, dynamic>> grill(String id) => _map('POST', '/projects/$id/grill');
 
+  Future<Map<String, dynamic>> listGrill(String id) => _map('GET', '/projects/$id/grill');
+
+  Future<Map<String, dynamic>> respondGrill(
+    String id,
+    String attackId, {
+    required String responseText,
+    String resolutionType = 'RESOLVED',
+    bool mutate = true,
+  }) {
+    return _map('POST', '/projects/$id/grill/$attackId/respond', {
+      'response_text': responseText,
+      'resolution_type': resolutionType,
+      'mutate': mutate,
+    });
+  }
+
+  Future<Map<String, dynamic>> attachEvidence(
+    String id, {
+    required String claim,
+    String? attachToType,
+    String? attachToId,
+    String verificationStatus = 'UNVERIFIED',
+  }) {
+    return _map('POST', '/projects/$id/evidence', {
+      'claim': claim,
+      'attach_to_type': attachToType,
+      'attach_to_id': attachToId,
+      'verification_status': verificationStatus,
+    });
+  }
+
+  Future<Map<String, dynamic>> getIntegrity(String id) => _map('GET', '/projects/$id/integrity');
+
+  Future<Map<String, dynamic>> getRequirementLineage(String id, String requirementId) {
+    return _map('GET', '/projects/$id/requirements/$requirementId/lineage');
+  }
+
   Future<Map<String, dynamic>> review(String id) => _map('POST', '/projects/$id/review');
 
   Future<Map<String, dynamic>> specification(String id) => _map('POST', '/projects/$id/specification');

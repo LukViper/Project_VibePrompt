@@ -1,0 +1,116 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..0447d0a
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,84 @@
++You are a senior software engineer.
++
++Build the following project completely.
++
++ROLE
++You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
++
++PROJECT
++Untitled project
++
++OBJECTIVE
++See the specification.
++
++PROBLEM
++See the specification.
++
++REQUIREMENTS
++Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
++
++FUNCTIONAL REQUIREMENTS
++- None recorded.
++
++NON-FUNCTIONAL REQUIREMENTS
++- None recorded.
++
++CONSTRAINTS
++- Team size: None
++- Duration: None
++- Budget: None
++- Avoid: Do not implement delete_note, Do not use Redis
++
++TECH STACK
++Backend: unspecified
++Model: unspecified
++Database: unspecified
++Frameworks: unspecified
++Hardware: none
++
++ARCHITECTURE
++Use a modular monolith unless ProjectState specifies otherwise.
++
++DATABASE
++Use the database named in TECH STACK.
++
++API
++Implement an operation for every functional requirement.
++
++SECURITY
++Keep secrets in environment variables. Validate input. Do not expose credentials.
++
++TESTING
++Write a test mapped from each requirement ID. Run the tests.
++
++ACCEPTANCE CRITERIA
++[ ] Tests pass
++[ ] Application runs successfully
++
++IMPLEMENTATION PROCESS
++1. Inspect the existing repository.
++2. Understand the requirements.
++3. Create the required architecture.
++4. Implement the components.
++5. Configure dependencies.
++6. Implement database, API, and frontend components.
++7. Write tests.
++8. Run tests.
++9. Fix implementation errors.
++10. Verify every acceptance criterion.
++11. Provide setup instructions.
++
++DELIVERABLES
++- Working implementation of every requirement ID
++- Tests
++- Setup instructions
++- A short note mapping each acceptance criterion to evidence
++
++Do not remove or silently alter required functionality.
++Do not replace required functionality with placeholders.
++
++
++# COMPILATION GATE NOTES
++- project objective is missing
++- no active requirements
++Implement only CONFIRMED requirements listed above.
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..40b7a78
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-a1c895e6218e","task_id":"crud_notes","variant":"C_vibeprompt","seed_commit":"ab45b05b6eac429567a3ccd7e7b1c480a7a891b6"}
+\ No newline at end of file
+diff --git a/app/notes.py b/app/notes.py
+index beea953..a149eea 100644
+--- a/app/notes.py
++++ b/app/notes.py
+@@ -1,7 +1,11 @@
+ NOTES = {}
++_id = 0
+ 
+ def create_note(text):
+-    raise NotImplementedError
++    global _id
++    _id += 1
++    NOTES[_id] = {'id': _id, 'text': text}
++    return _id
+ 
+ def list_notes():
+-    raise NotImplementedError
++    return list(NOTES.values())

@@ -1,0 +1,1626 @@
+{
+  "label_agreement": [
+    {
+      "id": "RQ4-001",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-002",
+      "pred": "unsupported",
+      "gold": "unsupported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-003",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-004",
+      "pred": "unverified",
+      "gold": "unverified",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-005",
+      "pred": "contradicted",
+      "gold": "contradicted",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-006",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-007",
+      "pred": "unsupported",
+      "gold": "unsupported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-008",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-009",
+      "pred": "unverified",
+      "gold": "unverified",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-010",
+      "pred": "contradicted",
+      "gold": "contradicted",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-011",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-012",
+      "pred": "unsupported",
+      "gold": "unsupported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-013",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-014",
+      "pred": "unverified",
+      "gold": "unverified",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-015",
+      "pred": "contradicted",
+      "gold": "contradicted",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-016",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-017",
+      "pred": "unsupported",
+      "gold": "unsupported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-018",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-019",
+      "pred": "unverified",
+      "gold": "unverified",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-020",
+      "pred": "contradicted",
+      "gold": "contradicted",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-021",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-022",
+      "pred": "unsupported",
+      "gold": "unsupported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-023",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-024",
+      "pred": "unverified",
+      "gold": "unverified",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-025",
+      "pred": "contradicted",
+      "gold": "contradicted",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-026",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-027",
+      "pred": "unsupported",
+      "gold": "unsupported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-028",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-029",
+      "pred": "unverified",
+      "gold": "unverified",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-030",
+      "pred": "contradicted",
+      "gold": "contradicted",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-031",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-032",
+      "pred": "unsupported",
+      "gold": "unsupported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-033",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-034",
+      "pred": "unverified",
+      "gold": "unverified",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-035",
+      "pred": "contradicted",
+      "gold": "contradicted",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-036",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-037",
+      "pred": "unsupported",
+      "gold": "unsupported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-038",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-039",
+      "pred": "unverified",
+      "gold": "unverified",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-040",
+      "pred": "contradicted",
+      "gold": "contradicted",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-041",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-042",
+      "pred": "unsupported",
+      "gold": "unsupported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-043",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-044",
+      "pred": "unverified",
+      "gold": "unverified",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-045",
+      "pred": "contradicted",
+      "gold": "contradicted",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-046",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-047",
+      "pred": "unsupported",
+      "gold": "unsupported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-048",
+      "pred": "supported",
+      "gold": "supported",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-049",
+      "pred": "unverified",
+      "gold": "unverified",
+      "experiment": "label_agreement"
+    },
+    {
+      "id": "RQ4-050",
+      "pred": "contradicted",
+      "gold": "contradicted",
+      "experiment": "label_agreement"
+    }
+  ],
+  "evidence_ablation": [
+    {
+      "id": "RQ4-ABL-001",
+      "decision": "Use BERT",
+      "evidence_variant": "no_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unsupported",
+        "unsupported": true,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "gold_label": "unsupported"
+    },
+    {
+      "id": "RQ4-ABL-002",
+      "decision": "Use PostgreSQL",
+      "evidence_variant": "valid_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 1.0
+      },
+      "gold_label": "supported"
+    },
+    {
+      "id": "RQ4-ABL-003",
+      "decision": "Use WebSocket",
+      "evidence_variant": "weak_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-004",
+      "decision": "Use Kubernetes",
+      "evidence_variant": "contradictory_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "contradicted",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": true,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "contradicted"
+    },
+    {
+      "id": "RQ4-ABL-005",
+      "decision": "Use Redis",
+      "evidence_variant": "unverified_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-006",
+      "decision": "Use Kafka",
+      "evidence_variant": "no_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unsupported",
+        "unsupported": true,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "gold_label": "unsupported"
+    },
+    {
+      "id": "RQ4-ABL-007",
+      "decision": "Use BERT",
+      "evidence_variant": "valid_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 1.0
+      },
+      "gold_label": "supported"
+    },
+    {
+      "id": "RQ4-ABL-008",
+      "decision": "Use PostgreSQL",
+      "evidence_variant": "weak_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-009",
+      "decision": "Use WebSocket",
+      "evidence_variant": "contradictory_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "contradicted",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": true,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "contradicted"
+    },
+    {
+      "id": "RQ4-ABL-010",
+      "decision": "Use Kubernetes",
+      "evidence_variant": "unverified_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-011",
+      "decision": "Use Redis",
+      "evidence_variant": "no_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unsupported",
+        "unsupported": true,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "gold_label": "unsupported"
+    },
+    {
+      "id": "RQ4-ABL-012",
+      "decision": "Use Kafka",
+      "evidence_variant": "valid_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 1.0
+      },
+      "gold_label": "supported"
+    },
+    {
+      "id": "RQ4-ABL-013",
+      "decision": "Use BERT",
+      "evidence_variant": "weak_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-014",
+      "decision": "Use PostgreSQL",
+      "evidence_variant": "contradictory_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "contradicted",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": true,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "contradicted"
+    },
+    {
+      "id": "RQ4-ABL-015",
+      "decision": "Use WebSocket",
+      "evidence_variant": "unverified_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-016",
+      "decision": "Use Kubernetes",
+      "evidence_variant": "no_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unsupported",
+        "unsupported": true,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "gold_label": "unsupported"
+    },
+    {
+      "id": "RQ4-ABL-017",
+      "decision": "Use Redis",
+      "evidence_variant": "valid_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 1.0
+      },
+      "gold_label": "supported"
+    },
+    {
+      "id": "RQ4-ABL-018",
+      "decision": "Use Kafka",
+      "evidence_variant": "weak_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-019",
+      "decision": "Use BERT",
+      "evidence_variant": "contradictory_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "contradicted",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": true,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "contradicted"
+    },
+    {
+      "id": "RQ4-ABL-020",
+      "decision": "Use PostgreSQL",
+      "evidence_variant": "unverified_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-021",
+      "decision": "Use WebSocket",
+      "evidence_variant": "no_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unsupported",
+        "unsupported": true,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "gold_label": "unsupported"
+    },
+    {
+      "id": "RQ4-ABL-022",
+      "decision": "Use Kubernetes",
+      "evidence_variant": "valid_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 1.0
+      },
+      "gold_label": "supported"
+    },
+    {
+      "id": "RQ4-ABL-023",
+      "decision": "Use Redis",
+      "evidence_variant": "weak_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-024",
+      "decision": "Use Kafka",
+      "evidence_variant": "contradictory_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "contradicted",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": true,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "contradicted"
+    },
+    {
+      "id": "RQ4-ABL-025",
+      "decision": "Use BERT",
+      "evidence_variant": "unverified_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-026",
+      "decision": "Use PostgreSQL",
+      "evidence_variant": "no_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unsupported",
+        "unsupported": true,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "gold_label": "unsupported"
+    },
+    {
+      "id": "RQ4-ABL-027",
+      "decision": "Use WebSocket",
+      "evidence_variant": "valid_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 1.0
+      },
+      "gold_label": "supported"
+    },
+    {
+      "id": "RQ4-ABL-028",
+      "decision": "Use Kubernetes",
+      "evidence_variant": "weak_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-029",
+      "decision": "Use Redis",
+      "evidence_variant": "contradictory_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "contradicted",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": true,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "contradicted"
+    },
+    {
+      "id": "RQ4-ABL-030",
+      "decision": "Use Kafka",
+      "evidence_variant": "unverified_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-031",
+      "decision": "Use BERT",
+      "evidence_variant": "no_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unsupported",
+        "unsupported": true,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "gold_label": "unsupported"
+    },
+    {
+      "id": "RQ4-ABL-032",
+      "decision": "Use PostgreSQL",
+      "evidence_variant": "valid_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 1.0
+      },
+      "gold_label": "supported"
+    },
+    {
+      "id": "RQ4-ABL-033",
+      "decision": "Use WebSocket",
+      "evidence_variant": "weak_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-034",
+      "decision": "Use Kubernetes",
+      "evidence_variant": "contradictory_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "contradicted",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": true,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "contradicted"
+    },
+    {
+      "id": "RQ4-ABL-035",
+      "decision": "Use Redis",
+      "evidence_variant": "unverified_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-036",
+      "decision": "Use Kafka",
+      "evidence_variant": "no_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unsupported",
+        "unsupported": true,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "gold_label": "unsupported"
+    },
+    {
+      "id": "RQ4-ABL-037",
+      "decision": "Use BERT",
+      "evidence_variant": "valid_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 1.0
+      },
+      "gold_label": "supported"
+    },
+    {
+      "id": "RQ4-ABL-038",
+      "decision": "Use PostgreSQL",
+      "evidence_variant": "weak_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-039",
+      "decision": "Use WebSocket",
+      "evidence_variant": "contradictory_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "contradicted",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": true,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "contradicted"
+    },
+    {
+      "id": "RQ4-ABL-040",
+      "decision": "Use Kubernetes",
+      "evidence_variant": "unverified_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-041",
+      "decision": "Use Redis",
+      "evidence_variant": "no_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unsupported",
+        "unsupported": true,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "gold_label": "unsupported"
+    },
+    {
+      "id": "RQ4-ABL-042",
+      "decision": "Use Kafka",
+      "evidence_variant": "valid_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 1.0
+      },
+      "gold_label": "supported"
+    },
+    {
+      "id": "RQ4-ABL-043",
+      "decision": "Use BERT",
+      "evidence_variant": "weak_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-044",
+      "decision": "Use PostgreSQL",
+      "evidence_variant": "contradictory_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "contradicted",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": true,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "contradicted"
+    },
+    {
+      "id": "RQ4-ABL-045",
+      "decision": "Use WebSocket",
+      "evidence_variant": "unverified_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-046",
+      "decision": "Use Kubernetes",
+      "evidence_variant": "no_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unsupported",
+        "unsupported": true,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "gold_label": "unsupported"
+    },
+    {
+      "id": "RQ4-ABL-047",
+      "decision": "Use Redis",
+      "evidence_variant": "valid_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 1.0
+      },
+      "gold_label": "supported"
+    },
+    {
+      "id": "RQ4-ABL-048",
+      "decision": "Use Kafka",
+      "evidence_variant": "weak_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-049",
+      "decision": "Use BERT",
+      "evidence_variant": "contradictory_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "contradicted",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": true,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "contradicted"
+    },
+    {
+      "id": "RQ4-ABL-050",
+      "decision": "Use PostgreSQL",
+      "evidence_variant": "unverified_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-051",
+      "decision": "Use WebSocket",
+      "evidence_variant": "no_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unsupported",
+        "unsupported": true,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "gold_label": "unsupported"
+    },
+    {
+      "id": "RQ4-ABL-052",
+      "decision": "Use Kubernetes",
+      "evidence_variant": "valid_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 1.0
+      },
+      "gold_label": "supported"
+    },
+    {
+      "id": "RQ4-ABL-053",
+      "decision": "Use Redis",
+      "evidence_variant": "weak_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-054",
+      "decision": "Use Kafka",
+      "evidence_variant": "contradictory_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "contradicted",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": true,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "contradicted"
+    },
+    {
+      "id": "RQ4-ABL-055",
+      "decision": "Use BERT",
+      "evidence_variant": "unverified_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-056",
+      "decision": "Use PostgreSQL",
+      "evidence_variant": "no_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unsupported",
+        "unsupported": true,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "gold_label": "unsupported"
+    },
+    {
+      "id": "RQ4-ABL-057",
+      "decision": "Use WebSocket",
+      "evidence_variant": "valid_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 1.0
+      },
+      "gold_label": "supported"
+    },
+    {
+      "id": "RQ4-ABL-058",
+      "decision": "Use Kubernetes",
+      "evidence_variant": "weak_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    },
+    {
+      "id": "RQ4-ABL-059",
+      "decision": "Use Redis",
+      "evidence_variant": "contradictory_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "contradicted",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": true,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "contradicted"
+    },
+    {
+      "id": "RQ4-ABL-060",
+      "decision": "Use Kafka",
+      "evidence_variant": "unverified_evidence",
+      "no_tracking": {
+        "label": "supported",
+        "unsupported": false,
+        "unverified": false,
+        "contradicted": false,
+        "evidence_coverage": 0.0,
+        "provenance_completeness": 0.0
+      },
+      "with_tracking": {
+        "label": "unverified",
+        "unsupported": false,
+        "unverified": true,
+        "contradicted": false,
+        "evidence_coverage": 1.0,
+        "provenance_completeness": 0.5
+      },
+      "gold_label": "unverified"
+    }
+  ]
+}

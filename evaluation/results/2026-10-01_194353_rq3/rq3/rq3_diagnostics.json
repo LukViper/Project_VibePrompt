@@ -1,0 +1,1853 @@
+{
+  "n_misses": 90,
+  "misses": [
+    {
+      "scenario": "Real-time analytics dashboard with no latency requirement stated.",
+      "id": "RQ3-002",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "LATENCY",
+      "predicted_attack_type": [
+        "LATENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "unspecified real-time latency",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+      "id": "RQ3-003",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "EVALUATION",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "missing evaluation methodology",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "AI blockchain IoT mobile cloud product in four weeks solo.",
+      "id": "RQ3-004",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "SCOPE",
+      "predicted_attack_type": [
+        "SCOPE"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "scope exceeds timeline/staffing",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Production deploy without monitoring.",
+      "id": "RQ3-007",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "DEPLOYMENT",
+      "predicted_attack_type": [
+        "DEPLOYMENT"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "no observability",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "High availability without redundancy.",
+      "id": "RQ3-008",
+      "gold_target": "ARCHITECTURE",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "RELIABILITY",
+      "predicted_attack_type": [
+        "RELIABILITY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "availability without failover",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Use Kafka because it is modern, with no throughput justification.",
+      "id": "RQ3-009",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "TECHNOLOGY_JUSTIFICATION",
+      "predicted_attack_type": [
+        "TECHNOLOGY_JUSTIFICATION"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "unjustified technology choice",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "REST polling for a real-time collaborative editor.",
+      "id": "RQ3-010",
+      "gold_target": "ARCHITECTURE",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "ARCHITECTURE_MISMATCH",
+      "predicted_attack_type": [
+        "ARCHITECTURE_MISMATCH",
+        "LATENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "transport mismatch for real-time",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+      "id": "RQ3-011",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "TIMELINE",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "timeline incompatible with scope",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Store PII in logs without retention or access controls.",
+      "id": "RQ3-012",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "SECURITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "PII handling gap",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+      "id": "RQ3-014",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "COST",
+      "predicted_attack_type": [
+        "COST",
+        "TECHNOLOGY_JUSTIFICATION"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "cost contradiction",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "System should somehow handle appropriate authentication etc.",
+      "id": "RQ3-015",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "REQUIREMENT_AMBIGUITY",
+      "predicted_attack_type": [
+        "REQUIREMENT_AMBIGUITY"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "vague acceptance criteria",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Depend on an unmaintained GitHub library for core crypto.",
+      "id": "RQ3-016",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "DEPENDENCY",
+      "predicted_attack_type": [
+        "DEPENDENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "risky dependency",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Claim the model can be trained locally without measuring resources.",
+      "id": "RQ3-017",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "RESOURCE_FEASIBILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "unverified local training claim",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Contradiction: must be offline-only and also require live cloud APIs.",
+      "id": "RQ3-018",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "CONTRADICTION",
+      "predicted_attack_type": [
+        "CONTRADICTION"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "offline vs cloud contradiction",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Assumption that public phishing corpora are legally usable without review.",
+      "id": "RQ3-020",
+      "gold_target": "ASSUMPTION",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "DATA_AVAILABILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "licensing assumption",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Real-time analytics dashboard with no latency requirement stated.",
+      "id": "RQ3-022",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "LATENCY",
+      "predicted_attack_type": [
+        "LATENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "unspecified real-time latency",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+      "id": "RQ3-023",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "EVALUATION",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "missing evaluation methodology",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "AI blockchain IoT mobile cloud product in four weeks solo.",
+      "id": "RQ3-024",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "SCOPE",
+      "predicted_attack_type": [
+        "SCOPE"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "scope exceeds timeline/staffing",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Production deploy without monitoring.",
+      "id": "RQ3-027",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "DEPLOYMENT",
+      "predicted_attack_type": [
+        "DEPLOYMENT"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "no observability",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "High availability without redundancy.",
+      "id": "RQ3-028",
+      "gold_target": "ARCHITECTURE",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "RELIABILITY",
+      "predicted_attack_type": [
+        "RELIABILITY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "availability without failover",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Use Kafka because it is modern, with no throughput justification.",
+      "id": "RQ3-029",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "TECHNOLOGY_JUSTIFICATION",
+      "predicted_attack_type": [
+        "TECHNOLOGY_JUSTIFICATION"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "unjustified technology choice",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "REST polling for a real-time collaborative editor.",
+      "id": "RQ3-030",
+      "gold_target": "ARCHITECTURE",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "ARCHITECTURE_MISMATCH",
+      "predicted_attack_type": [
+        "ARCHITECTURE_MISMATCH",
+        "LATENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "transport mismatch for real-time",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+      "id": "RQ3-031",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "TIMELINE",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "timeline incompatible with scope",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Store PII in logs without retention or access controls.",
+      "id": "RQ3-032",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "SECURITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "PII handling gap",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+      "id": "RQ3-034",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "COST",
+      "predicted_attack_type": [
+        "COST",
+        "TECHNOLOGY_JUSTIFICATION"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "cost contradiction",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "System should somehow handle appropriate authentication etc.",
+      "id": "RQ3-035",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "REQUIREMENT_AMBIGUITY",
+      "predicted_attack_type": [
+        "REQUIREMENT_AMBIGUITY"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "vague acceptance criteria",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Depend on an unmaintained GitHub library for core crypto.",
+      "id": "RQ3-036",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "DEPENDENCY",
+      "predicted_attack_type": [
+        "DEPENDENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "risky dependency",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Claim the model can be trained locally without measuring resources.",
+      "id": "RQ3-037",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "RESOURCE_FEASIBILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "unverified local training claim",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Contradiction: must be offline-only and also require live cloud APIs.",
+      "id": "RQ3-038",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "CONTRADICTION",
+      "predicted_attack_type": [
+        "CONTRADICTION"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "offline vs cloud contradiction",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Assumption that public phishing corpora are legally usable without review.",
+      "id": "RQ3-040",
+      "gold_target": "ASSUMPTION",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "DATA_AVAILABILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "licensing assumption",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Real-time analytics dashboard with no latency requirement stated.",
+      "id": "RQ3-042",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "LATENCY",
+      "predicted_attack_type": [
+        "LATENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "unspecified real-time latency",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+      "id": "RQ3-043",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "EVALUATION",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "missing evaluation methodology",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "AI blockchain IoT mobile cloud product in four weeks solo.",
+      "id": "RQ3-044",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "SCOPE",
+      "predicted_attack_type": [
+        "SCOPE"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "scope exceeds timeline/staffing",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Production deploy without monitoring.",
+      "id": "RQ3-047",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "DEPLOYMENT",
+      "predicted_attack_type": [
+        "DEPLOYMENT"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "no observability",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "High availability without redundancy.",
+      "id": "RQ3-048",
+      "gold_target": "ARCHITECTURE",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "RELIABILITY",
+      "predicted_attack_type": [
+        "RELIABILITY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "availability without failover",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Use Kafka because it is modern, with no throughput justification.",
+      "id": "RQ3-049",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "TECHNOLOGY_JUSTIFICATION",
+      "predicted_attack_type": [
+        "TECHNOLOGY_JUSTIFICATION"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "unjustified technology choice",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "REST polling for a real-time collaborative editor.",
+      "id": "RQ3-050",
+      "gold_target": "ARCHITECTURE",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "ARCHITECTURE_MISMATCH",
+      "predicted_attack_type": [
+        "ARCHITECTURE_MISMATCH",
+        "LATENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "transport mismatch for real-time",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+      "id": "RQ3-051",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "TIMELINE",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "timeline incompatible with scope",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Store PII in logs without retention or access controls.",
+      "id": "RQ3-052",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "SECURITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "PII handling gap",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+      "id": "RQ3-054",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "COST",
+      "predicted_attack_type": [
+        "COST",
+        "TECHNOLOGY_JUSTIFICATION"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "cost contradiction",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "System should somehow handle appropriate authentication etc.",
+      "id": "RQ3-055",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "REQUIREMENT_AMBIGUITY",
+      "predicted_attack_type": [
+        "REQUIREMENT_AMBIGUITY"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "vague acceptance criteria",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Depend on an unmaintained GitHub library for core crypto.",
+      "id": "RQ3-056",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "DEPENDENCY",
+      "predicted_attack_type": [
+        "DEPENDENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "risky dependency",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Claim the model can be trained locally without measuring resources.",
+      "id": "RQ3-057",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "RESOURCE_FEASIBILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "unverified local training claim",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Contradiction: must be offline-only and also require live cloud APIs.",
+      "id": "RQ3-058",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "CONTRADICTION",
+      "predicted_attack_type": [
+        "CONTRADICTION"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "offline vs cloud contradiction",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Assumption that public phishing corpora are legally usable without review.",
+      "id": "RQ3-060",
+      "gold_target": "ASSUMPTION",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "DATA_AVAILABILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "licensing assumption",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Real-time analytics dashboard with no latency requirement stated.",
+      "id": "RQ3-062",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "LATENCY",
+      "predicted_attack_type": [
+        "LATENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "unspecified real-time latency",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+      "id": "RQ3-063",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "EVALUATION",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "missing evaluation methodology",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "AI blockchain IoT mobile cloud product in four weeks solo.",
+      "id": "RQ3-064",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "SCOPE",
+      "predicted_attack_type": [
+        "SCOPE"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "scope exceeds timeline/staffing",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Production deploy without monitoring.",
+      "id": "RQ3-067",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "DEPLOYMENT",
+      "predicted_attack_type": [
+        "DEPLOYMENT"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "no observability",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "High availability without redundancy.",
+      "id": "RQ3-068",
+      "gold_target": "ARCHITECTURE",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "RELIABILITY",
+      "predicted_attack_type": [
+        "RELIABILITY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "availability without failover",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Use Kafka because it is modern, with no throughput justification.",
+      "id": "RQ3-069",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "TECHNOLOGY_JUSTIFICATION",
+      "predicted_attack_type": [
+        "TECHNOLOGY_JUSTIFICATION"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "unjustified technology choice",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "REST polling for a real-time collaborative editor.",
+      "id": "RQ3-070",
+      "gold_target": "ARCHITECTURE",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "ARCHITECTURE_MISMATCH",
+      "predicted_attack_type": [
+        "ARCHITECTURE_MISMATCH",
+        "LATENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "transport mismatch for real-time",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+      "id": "RQ3-071",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "TIMELINE",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "timeline incompatible with scope",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Store PII in logs without retention or access controls.",
+      "id": "RQ3-072",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "SECURITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "PII handling gap",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+      "id": "RQ3-074",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "COST",
+      "predicted_attack_type": [
+        "COST",
+        "TECHNOLOGY_JUSTIFICATION"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "cost contradiction",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "System should somehow handle appropriate authentication etc.",
+      "id": "RQ3-075",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "REQUIREMENT_AMBIGUITY",
+      "predicted_attack_type": [
+        "REQUIREMENT_AMBIGUITY"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "vague acceptance criteria",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Depend on an unmaintained GitHub library for core crypto.",
+      "id": "RQ3-076",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "DEPENDENCY",
+      "predicted_attack_type": [
+        "DEPENDENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "risky dependency",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Claim the model can be trained locally without measuring resources.",
+      "id": "RQ3-077",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "RESOURCE_FEASIBILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "unverified local training claim",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Contradiction: must be offline-only and also require live cloud APIs.",
+      "id": "RQ3-078",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "CONTRADICTION",
+      "predicted_attack_type": [
+        "CONTRADICTION"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "offline vs cloud contradiction",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Assumption that public phishing corpora are legally usable without review.",
+      "id": "RQ3-080",
+      "gold_target": "ASSUMPTION",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "DATA_AVAILABILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "licensing assumption",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Real-time analytics dashboard with no latency requirement stated.",
+      "id": "RQ3-082",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "LATENCY",
+      "predicted_attack_type": [
+        "LATENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "unspecified real-time latency",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+      "id": "RQ3-083",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "EVALUATION",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "missing evaluation methodology",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "AI blockchain IoT mobile cloud product in four weeks solo.",
+      "id": "RQ3-084",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "SCOPE",
+      "predicted_attack_type": [
+        "SCOPE"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "scope exceeds timeline/staffing",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Production deploy without monitoring.",
+      "id": "RQ3-087",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "DEPLOYMENT",
+      "predicted_attack_type": [
+        "DEPLOYMENT"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "no observability",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "High availability without redundancy.",
+      "id": "RQ3-088",
+      "gold_target": "ARCHITECTURE",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "RELIABILITY",
+      "predicted_attack_type": [
+        "RELIABILITY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "availability without failover",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Use Kafka because it is modern, with no throughput justification.",
+      "id": "RQ3-089",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "TECHNOLOGY_JUSTIFICATION",
+      "predicted_attack_type": [
+        "TECHNOLOGY_JUSTIFICATION"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "unjustified technology choice",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "REST polling for a real-time collaborative editor.",
+      "id": "RQ3-090",
+      "gold_target": "ARCHITECTURE",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "ARCHITECTURE_MISMATCH",
+      "predicted_attack_type": [
+        "ARCHITECTURE_MISMATCH",
+        "LATENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "transport mismatch for real-time",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+      "id": "RQ3-091",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "TIMELINE",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "timeline incompatible with scope",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Store PII in logs without retention or access controls.",
+      "id": "RQ3-092",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "SECURITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "PII handling gap",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+      "id": "RQ3-094",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "COST",
+      "predicted_attack_type": [
+        "COST",
+        "TECHNOLOGY_JUSTIFICATION"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "cost contradiction",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "System should somehow handle appropriate authentication etc.",
+      "id": "RQ3-095",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "REQUIREMENT_AMBIGUITY",
+      "predicted_attack_type": [
+        "REQUIREMENT_AMBIGUITY"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "vague acceptance criteria",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Depend on an unmaintained GitHub library for core crypto.",
+      "id": "RQ3-096",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "DEPENDENCY",
+      "predicted_attack_type": [
+        "DEPENDENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "risky dependency",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Claim the model can be trained locally without measuring resources.",
+      "id": "RQ3-097",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "RESOURCE_FEASIBILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "unverified local training claim",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Contradiction: must be offline-only and also require live cloud APIs.",
+      "id": "RQ3-098",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "CONTRADICTION",
+      "predicted_attack_type": [
+        "CONTRADICTION"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "offline vs cloud contradiction",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Assumption that public phishing corpora are legally usable without review.",
+      "id": "RQ3-100",
+      "gold_target": "ASSUMPTION",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "DATA_AVAILABILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "licensing assumption",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Real-time analytics dashboard with no latency requirement stated.",
+      "id": "RQ3-102",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "LATENCY",
+      "predicted_attack_type": [
+        "LATENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "unspecified real-time latency",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Achieve 99.99% accuracy without an evaluation plan.",
+      "id": "RQ3-103",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "EVALUATION",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "missing evaluation methodology",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "AI blockchain IoT mobile cloud product in four weeks solo.",
+      "id": "RQ3-104",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "SCOPE",
+      "predicted_attack_type": [
+        "SCOPE"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "scope exceeds timeline/staffing",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Production deploy without monitoring.",
+      "id": "RQ3-107",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "DEPLOYMENT",
+      "predicted_attack_type": [
+        "DEPLOYMENT"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "no observability",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "High availability without redundancy.",
+      "id": "RQ3-108",
+      "gold_target": "ARCHITECTURE",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "RELIABILITY",
+      "predicted_attack_type": [
+        "RELIABILITY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "availability without failover",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Use Kafka because it is modern, with no throughput justification.",
+      "id": "RQ3-109",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "TECHNOLOGY_JUSTIFICATION",
+      "predicted_attack_type": [
+        "TECHNOLOGY_JUSTIFICATION"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "unjustified technology choice",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "REST polling for a real-time collaborative editor.",
+      "id": "RQ3-110",
+      "gold_target": "ARCHITECTURE",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "ARCHITECTURE_MISMATCH",
+      "predicted_attack_type": [
+        "ARCHITECTURE_MISMATCH",
+        "LATENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "transport mismatch for real-time",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Enterprise multi-region system with a two-week solo deadline.",
+      "id": "RQ3-111",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "TIMELINE",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "timeline incompatible with scope",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Store PII in logs without retention or access controls.",
+      "id": "RQ3-112",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "SECURITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "PII handling gap",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Budget is $0 but plan includes managed Kubernetes and paid APIs.",
+      "id": "RQ3-114",
+      "gold_target": "CONSTRAINT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "COST",
+      "predicted_attack_type": [
+        "COST",
+        "TECHNOLOGY_JUSTIFICATION"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "cost contradiction",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "System should somehow handle appropriate authentication etc.",
+      "id": "RQ3-115",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "REQUIREMENT_AMBIGUITY",
+      "predicted_attack_type": [
+        "REQUIREMENT_AMBIGUITY"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch",
+      "expected_issue": "vague acceptance criteria",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Depend on an unmaintained GitHub library for core crypto.",
+      "id": "RQ3-116",
+      "gold_target": "DECISION",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "DEPENDENCY",
+      "predicted_attack_type": [
+        "DEPENDENCY"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "risky dependency",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Claim the model can be trained locally without measuring resources.",
+      "id": "RQ3-117",
+      "gold_target": "CLAIM",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "RESOURCE_FEASIBILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "unverified local training claim",
+      "n_attacks": 2
+    },
+    {
+      "scenario": "Contradiction: must be offline-only and also require live cloud APIs.",
+      "id": "RQ3-118",
+      "gold_target": "REQUIREMENT",
+      "predicted_target": [
+        "ASSUMPTION"
+      ],
+      "gold_attack_type": "CONTRADICTION",
+      "predicted_attack_type": [
+        "CONTRADICTION"
+      ],
+      "gold_severity": "HIGH",
+      "predicted_severity": [
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "target_mismatch; severity_mismatch",
+      "expected_issue": "offline vs cloud contradiction",
+      "n_attacks": 1
+    },
+    {
+      "scenario": "Assumption that public phishing corpora are legally usable without review.",
+      "id": "RQ3-120",
+      "gold_target": "ASSUMPTION",
+      "predicted_target": [
+        "REQUIREMENT"
+      ],
+      "gold_attack_type": "DATA_AVAILABILITY",
+      "predicted_attack_type": [
+        "EvaluationAttackGenerator",
+        "TimelineAttackGenerator"
+      ],
+      "gold_severity": "MEDIUM",
+      "predicted_severity": [
+        "HIGH",
+        "MEDIUM"
+      ],
+      "reason_for_mismatch": "attack_not_detected",
+      "expected_issue": "licensing assumption",
+      "n_attacks": 2
+    }
+  ],
+  "metrics_snapshot": {
+    "n_scenarios": 120,
+    "n_critical_scenarios": 84,
+    "attack_detection_precision": {
+      "n": 120,
+      "mean": 0.75,
+      "std": 0.4330127018922193,
+      "ci95_low": 0.6725241973258748,
+      "ci95_high": 0.8274758026741252,
+      "median": 1.0
+    },
+    "attack_detection_recall": {
+      "n": 120,
+      "mean": 0.75,
+      "std": 0.4330127018922193,
+      "ci95_low": 0.6725241973258748,
+      "ci95_high": 0.8274758026741252,
+      "median": 1.0
+    },
+    "attack_detection_f1": {
+      "n": 120,
+      "mean": 0.75
+    },
+    "critical_issue_detection_rate": {
+      "n": 84,
+      "mean": 0.7142857142857143,
+      "std": 0.45175395145262565,
+      "ci95_low": 0.6176765359777847,
+      "ci95_high": 0.8108948925936439,
+      "median": 1.0
+    },
+    "target_identification_accuracy": {
+      "n": 120,
+      "mean": 0.3,
+      "std": 0.458257569495584,
+      "ci95_low": 0.2180073173996606,
+      "ci95_high": 0.38199268260033936,
+      "median": 0.0
+    },
+    "attack_type_accuracy": {
+      "n": 120,
+      "mean": 0.75,
+      "std": 0.4330127018922193,
+      "ci95_low": 0.6725241973258748,
+      "ci95_high": 0.8274758026741252,
+      "median": 1.0
+    },
+    "severity_accuracy": {
+      "n": 120,
+      "mean": 0.8,
+      "std": 0.4,
+      "ci95_low": 0.7284309191526583,
+      "ci95_high": 0.8715690808473417,
+      "median": 1.0
+    },
+    "false_positive_rate": {
+      "n": 120,
+      "mean": 0.25,
+      "std": 0.4330127018922193,
+      "ci95_low": 0.1725241973258747,
+      "ci95_high": 0.3274758026741253,
+      "median": 0.0
+    },
+    "resolution_rate": {
+      "n": 120,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    }
+  }
+}

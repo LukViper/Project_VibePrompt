@@ -1,0 +1,1 @@
+mock_agent completed task_id=auth_token_service label=HARNESS_TEST

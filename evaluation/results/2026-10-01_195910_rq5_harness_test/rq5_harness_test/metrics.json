@@ -1,0 +1,64 @@
+{
+  "n": 5,
+  "successful_runs": 5,
+  "failed_runs": 0,
+  "unverified_runs": 0,
+  "requirement_coverage": {
+    "n": 5,
+    "mean": 1.0,
+    "std": 0.0,
+    "ci95_low": 1.0,
+    "ci95_high": 1.0,
+    "median": 1.0
+  },
+  "constraint_preservation": {
+    "n": 5,
+    "mean": 1.0,
+    "std": 0.0,
+    "ci95_low": 1.0,
+    "ci95_high": 1.0,
+    "median": 1.0
+  },
+  "acceptance_test_pass_rate": {
+    "n": 5,
+    "mean": 1.0,
+    "std": 0.0,
+    "ci95_low": 1.0,
+    "ci95_high": 1.0,
+    "median": 1.0
+  },
+  "build_success_rate": {
+    "n": 5,
+    "mean": 1.0,
+    "std": 0.0,
+    "ci95_low": 1.0,
+    "ci95_high": 1.0,
+    "median": 1.0
+  },
+  "test_success_rate": {
+    "n": 5,
+    "mean": 1.0,
+    "std": 0.0,
+    "ci95_low": 1.0,
+    "ci95_high": 1.0,
+    "median": 1.0
+  },
+  "unsupported_feature_rate": {
+    "n": 5,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_low": 0.0,
+    "ci95_high": 0.0,
+    "median": 0.0
+  },
+  "scope_deviation": {
+    "n": 5,
+    "mean": 0.0,
+    "std": 0.0,
+    "ci95_low": 0.0,
+    "ci95_high": 0.0,
+    "median": 0.0
+  },
+  "label": "HARNESS TEST — not a scientific RQ5 result",
+  "scientific": false
+}

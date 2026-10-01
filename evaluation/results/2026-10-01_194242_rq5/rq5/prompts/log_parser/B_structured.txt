@@ -1,0 +1,8 @@
+You are a senior software engineer.
+
+REQUIREMENTS
+- parse severity
+- parse timestamp
+CONSTRAINTS
+- python 3.11+
+- no network in tests

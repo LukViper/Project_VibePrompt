@@ -1,0 +1,44 @@
+{
+  "label_accuracy": {
+    "n": 50,
+    "mean": 1.0,
+    "std": 0.0,
+    "ci95_low": 1.0,
+    "ci95_high": 1.0,
+    "median": 1.0
+  },
+  "unsupported_decision_rate": {
+    "n": 50,
+    "mean": 0.2,
+    "std": 0.4,
+    "ci95_low": 0.08912565670994936,
+    "ci95_high": 0.31087434329005065,
+    "median": 0.0
+  },
+  "contradicted_decision_rate": {
+    "n": 50,
+    "mean": 0.2,
+    "std": 0.4,
+    "ci95_low": 0.08912565670994936,
+    "ci95_high": 0.31087434329005065,
+    "median": 0.0
+  },
+  "unverified_decision_rate": {
+    "n": 50,
+    "mean": 0.2,
+    "std": 0.4,
+    "ci95_low": 0.08912565670994936,
+    "ci95_high": 0.31087434329005065,
+    "median": 0.0
+  },
+  "evidence_backed_agreement": {
+    "n": 50,
+    "mean": 1.0,
+    "std": 0.0,
+    "ci95_low": 1.0,
+    "ci95_high": 1.0,
+    "median": 1.0
+  },
+  "n_scenarios": 50,
+  "provenance_note": "URL alone never counts as verified"
+}

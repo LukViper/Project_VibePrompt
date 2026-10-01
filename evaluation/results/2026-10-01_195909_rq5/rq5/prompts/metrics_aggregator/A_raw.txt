@@ -1,0 +1,5 @@
+You are a senior software engineer.
+
+I need: Aggregate numeric metrics from JSONL
+Requirement: mean
+Requirement: count

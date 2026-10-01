@@ -1,0 +1,218 @@
+{
+  "A_no_grill": {
+    "n_scenarios": 120,
+    "n_critical_scenarios": 84,
+    "attack_detection_precision": {
+      "n": 120,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "attack_detection_recall": {
+      "n": 120,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "attack_detection_f1": {
+      "n": 120,
+      "mean": 0.0
+    },
+    "critical_issue_detection_rate": {
+      "n": 84,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "target_identification_accuracy": {
+      "n": 120,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "attack_type_accuracy": {
+      "n": 120,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "severity_accuracy": {
+      "n": 120,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "false_positive_rate": {
+      "n": 120,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "resolution_rate": {
+      "n": 120,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    }
+  },
+  "B_checklist_grill": {
+    "n_scenarios": 120,
+    "n_critical_scenarios": 84,
+    "attack_detection_precision": {
+      "n": 120,
+      "mean": 0.95,
+      "std": 0.21794494717703367,
+      "ci95_low": 0.9110047011380431,
+      "ci95_high": 0.9889952988619568,
+      "median": 1.0
+    },
+    "attack_detection_recall": {
+      "n": 120,
+      "mean": 0.95,
+      "std": 0.21794494717703367,
+      "ci95_low": 0.9110047011380431,
+      "ci95_high": 0.9889952988619568,
+      "median": 1.0
+    },
+    "attack_detection_f1": {
+      "n": 120,
+      "mean": 0.9500000000000001
+    },
+    "critical_issue_detection_rate": {
+      "n": 84,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "target_identification_accuracy": {
+      "n": 120,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "attack_type_accuracy": {
+      "n": 120,
+      "mean": 0.95,
+      "std": 0.21794494717703367,
+      "ci95_low": 0.9110047011380431,
+      "ci95_high": 0.9889952988619568,
+      "median": 1.0
+    },
+    "severity_accuracy": {
+      "n": 120,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "false_positive_rate": {
+      "n": 120,
+      "mean": 0.05,
+      "std": 0.21794494717703367,
+      "ci95_low": 0.011004701138043159,
+      "ci95_high": 0.08899529886195684,
+      "median": 0.0
+    },
+    "resolution_rate": {
+      "n": 120,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    }
+  },
+  "C_targeted_adversarial": {
+    "n_scenarios": 120,
+    "n_critical_scenarios": 84,
+    "attack_detection_precision": {
+      "n": 120,
+      "mean": 0.75,
+      "std": 0.4330127018922193,
+      "ci95_low": 0.6725241973258748,
+      "ci95_high": 0.8274758026741252,
+      "median": 1.0
+    },
+    "attack_detection_recall": {
+      "n": 120,
+      "mean": 0.75,
+      "std": 0.4330127018922193,
+      "ci95_low": 0.6725241973258748,
+      "ci95_high": 0.8274758026741252,
+      "median": 1.0
+    },
+    "attack_detection_f1": {
+      "n": 120,
+      "mean": 0.75
+    },
+    "critical_issue_detection_rate": {
+      "n": 84,
+      "mean": 0.7142857142857143,
+      "std": 0.45175395145262565,
+      "ci95_low": 0.6176765359777847,
+      "ci95_high": 0.8108948925936439,
+      "median": 1.0
+    },
+    "target_identification_accuracy": {
+      "n": 120,
+      "mean": 0.3,
+      "std": 0.458257569495584,
+      "ci95_low": 0.2180073173996606,
+      "ci95_high": 0.38199268260033936,
+      "median": 0.0
+    },
+    "attack_type_accuracy": {
+      "n": 120,
+      "mean": 0.75,
+      "std": 0.4330127018922193,
+      "ci95_low": 0.6725241973258748,
+      "ci95_high": 0.8274758026741252,
+      "median": 1.0
+    },
+    "severity_accuracy": {
+      "n": 120,
+      "mean": 0.8,
+      "std": 0.4,
+      "ci95_low": 0.7284309191526583,
+      "ci95_high": 0.8715690808473417,
+      "median": 1.0
+    },
+    "false_positive_rate": {
+      "n": 120,
+      "mean": 0.25,
+      "std": 0.4330127018922193,
+      "ci95_low": 0.1725241973258747,
+      "ci95_high": 0.3274758026741253,
+      "median": 0.0
+    },
+    "resolution_rate": {
+      "n": 120,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    }
+  }
+}

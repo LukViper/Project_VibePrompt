@@ -37,33 +37,84 @@ def _sentence_transformer():
     return _ST_MODEL
 
 
-class EmbeddingBackend:
+class LexicalFallbackProvider:
+    """Hashing vectorizer — availability fallback, not semantic equivalence."""
+
+    name = "LexicalFallback"
+    model = "HashingVectorizer"
+    model_version = "sklearn"
+    dimension = 512
+
     def __init__(self) -> None:
         self._hasher = HashingVectorizer(
-            n_features=512,
+            n_features=self.dimension,
             alternate_sign=False,
             norm="l2",
             ngram_range=(1, 2),
         )
 
+    def encode(self, texts: list[str]) -> np.ndarray:
+        prepared = [preprocess(text, for_transformer=True)["text"] for text in texts]
+        if not prepared:
+            return np.zeros((0, self.dimension))
+        return self._hasher.transform(prepared).toarray()
+
+
+class SentenceTransformerProvider:
+    name = "SentenceTransformerProvider"
+
+    def __init__(self, model) -> None:
+        self._model = model
+        settings = get_settings()
+        self.model = settings.embedding_model
+        self.model_version = getattr(model, "model_card", None) or self.model
+
     @property
-    def name(self) -> str:
-        return "sentence-transformers" if _sentence_transformer() is not None else "hashing-vectorizer"
+    def dimension(self) -> int:
+        return int(self._model.get_sentence_embedding_dimension())
 
     def encode(self, texts: list[str]) -> np.ndarray:
         prepared = [preprocess(text, for_transformer=True)["text"] for text in texts]
+        vectors = self._model.encode(prepared, normalize_embeddings=True)
+        return np.asarray(vectors, dtype=float)
+
+
+class EmbeddingBackend:
+    def __init__(self) -> None:
+        self._lexical = LexicalFallbackProvider()
+        self._provider = self._resolve_provider()
+
+    def _resolve_provider(self):
         model = _sentence_transformer()
         if model is not None:
-            vectors = model.encode(prepared, normalize_embeddings=True)
-            return np.asarray(vectors, dtype=float)
-        if not prepared:
-            return np.zeros((0, 512))
-        return self._hasher.transform(prepared).toarray()
+            return SentenceTransformerProvider(model)
+        return self._lexical
+
+    @property
+    def name(self) -> str:
+        return self._provider.name
+
+    def metadata(self) -> dict:
+        return {
+            "provider": self._provider.name,
+            "model": getattr(self._provider, "model", "unknown"),
+            "model_version": getattr(self._provider, "model_version", "unknown"),
+            "dimension": getattr(self._provider, "dimension", 512),
+            "is_lexical_fallback": self._provider.name == LexicalFallbackProvider.name,
+        }
+
+    def encode(self, texts: list[str]) -> np.ndarray:
+        prepared = [preprocess(text, for_transformer=True)["text"] for text in texts]
+        return self._provider.encode(prepared)
 
 
 @lru_cache
 def get_embedder() -> EmbeddingBackend:
     return EmbeddingBackend()
+
+
+def embedding_metadata() -> dict:
+    return get_embedder().metadata()
 
 
 def create_embedding(text: str) -> list[float]:

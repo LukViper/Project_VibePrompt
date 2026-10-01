@@ -1,0 +1,19 @@
+You are a senior software engineer.
+Build the following project from a validated VibePrompt specification.
+
+OBJECTIVE
+Minimal todo backend
+
+CONFIRMED REQUIREMENTS
+- add todo
+- complete todo
+
+CONSTRAINTS
+- python 3.11+
+- no network in tests
+
+ACCEPTANCE CRITERIA
+[ ] add todo
+[ ] complete todo
+Do not remove or silently alter required functionality.
+Evidence and grill validation are assumed upstream; implement only confirmed scope.

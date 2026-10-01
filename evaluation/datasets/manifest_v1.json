@@ -1,0 +1,23 @@
+[
+  {
+    "dataset_id": "vibeprompt-synthetic-bench",
+    "version": "2.0.0",
+    "creation_method": "programmatic_templates",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "paths": {
+      "rq1": "/home/luk_viper/Prompting/evaluation/datasets/rq1/scenarios_v1.json",
+      "rq2": "/home/luk_viper/Prompting/evaluation/datasets/rq2/scenarios_v1.json",
+      "rq3": "/home/luk_viper/Prompting/evaluation/datasets/rq3/scenarios_v1.json",
+      "rq4": "/home/luk_viper/Prompting/evaluation/datasets/rq4/scenarios_v1.json",
+      "rq5": "/home/luk_viper/Prompting/evaluation/datasets/rq5/tasks_v1.json"
+    },
+    "known_limitations": [
+      "SYNTHETIC CONTROLLED BENCHMARK \u2014 not a real-user corpus",
+      "Limited lexical diversity across template variants",
+      "No claim of real-world generalization",
+      "RQ5 tasks are harness-only until VIBEPROMPT_AGENT_CMD is set",
+      "Metric code accepts future real-world datasets with the same schema"
+    ]
+  }
+]

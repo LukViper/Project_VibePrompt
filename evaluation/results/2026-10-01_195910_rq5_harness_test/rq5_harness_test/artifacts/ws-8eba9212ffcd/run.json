@@ -1,0 +1,99 @@
+{
+  "workspace_id": "ws-8eba9212ffcd",
+  "task_id": "add_function",
+  "system_variant": "C_vibeprompt",
+  "start_time": "2026-10-01T19:59:10.101941+00:00",
+  "end_time": "2026-10-01T19:59:10.128527+00:00",
+  "exit_code": 0,
+  "duration_seconds": 0.02626413500001945,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/workspaces/ws-8eba9212ffcd"
+  },
+  "git": {
+    "commit_before": "752af9c7025fbcdcc0de0583bedab960366139e2",
+    "commit_after": "752af9c7025fbcdcc0de0583bedab960366139e2",
+    "changed_files": [],
+    "created_files": [
+      "add_mod.py",
+      "test_add.py"
+    ],
+    "deleted_files": [],
+    "status_preview": "?? add_mod.py\n?? test_add.py"
+  },
+  "agent_run": {
+    "id": "RUN-89cd6d1baa22",
+    "project_id": "add_function",
+    "prompt_id": null,
+    "agent": "external_cmd",
+    "model": null,
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_smoke_tsgo506g/ws-8eba9212ffcd",
+    "commit_before": "752af9c7025fbcdcc0de0583bedab960366139e2",
+    "commit_after": "752af9c7025fbcdcc0de0583bedab960366139e2",
+    "started_at": "2026-10-01T19:59:10.101941+00:00",
+    "completed_at": "2026-10-01T19:59:10.128527+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "mock_agent completed task_id=add_function label=HARNESS_TEST\n",
+    "workspace_id": "ws-8eba9212ffcd",
+    "task_id": "add_function",
+    "system_variant": "C_vibeprompt",
+    "exit_code": 0,
+    "duration_seconds": 0.02626413500001945,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/git_diff.patch",
+    "label": "HARNESS TEST",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-57621a61c709",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-89cd6d1baa22",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_add",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "implement add(a, b) returning a+b",
+        "acceptance_test": "test_add"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T19:59:10.705756+00:00",
+      "verification_method": "acceptance_test_marker"
+    },
+    {
+      "id": "VER-b3f2486bd83f",
+      "requirement_id": "REQ-002",
+      "agent_run_id": "RUN-89cd6d1baa22",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_add",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "include unit test for add",
+        "acceptance_test": "test_add"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T19:59:10.705786+00:00",
+      "verification_method": "acceptance_test_marker"
+    }
+  ],
+  "unsupported_features": [],
+  "label": "HARNESS TEST"
+}

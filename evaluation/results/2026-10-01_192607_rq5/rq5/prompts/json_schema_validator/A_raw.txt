@@ -1,0 +1,5 @@
+You are a senior software engineer.
+
+I need: Validate JSON against a schema
+Requirement: accept valid
+Requirement: reject invalid

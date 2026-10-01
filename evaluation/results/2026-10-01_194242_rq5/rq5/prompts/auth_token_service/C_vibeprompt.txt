@@ -1,0 +1,17 @@
+You are a senior software engineer.
+Build the following project completely.
+
+OBJECTIVE
+Build a token auth service
+
+CONFIRMED REQUIREMENTS
+- register user
+- login returns token
+- protected route
+
+ACCEPTANCE CRITERIA
+[ ] register user
+[ ] login returns token
+[ ] protected route
+
+Do not remove or silently alter required functionality.

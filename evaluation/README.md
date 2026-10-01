@@ -1,6 +1,14 @@
 # Evaluation
 
-These scripts compute metrics from `datasets/`. They do not embed assumed scores.
+Research evaluation for VibePrompt. Production code lives under `backend/`; this package is separate.
+
+```bash
+python -m evaluation.datasets.generate
+python -m evaluation.run_all
+python -m evaluation.generate_report
+```
+
+Legacy NLP scripts remain:
 
 ```bash
 python evaluation/run_nlp_eval.py
@@ -8,6 +16,4 @@ python evaluation/run_e2e_eval.py
 python evaluation/baseline_comparison.py
 ```
 
-`run_nlp_eval.py` reports cross-validated TF-IDF baselines, the held-out runtime classifier, Spearman and Pearson correlation for similarity, duplicate precision/recall, and held-out drift precision/recall. The embedding backend in the output is whichever backend actually loaded.
-
-`baseline_comparison.py` is the RQ5 comparison: a prompt built by concatenating the conversation versus a prompt compiled from the specification.
+See [docs/EVALUATION.md](../docs/EVALUATION.md).

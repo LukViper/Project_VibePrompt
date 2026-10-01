@@ -1,0 +1,15 @@
+You are a senior software engineer.
+Build the following project completely.
+
+OBJECTIVE
+In-memory rate limiter middleware
+
+CONFIRMED REQUIREMENTS
+- limit per key
+- return 429
+
+ACCEPTANCE CRITERIA
+[ ] limit per key
+[ ] return 429
+
+Do not remove or silently alter required functionality.

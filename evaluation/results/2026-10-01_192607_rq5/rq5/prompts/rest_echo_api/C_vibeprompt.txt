@@ -1,0 +1,15 @@
+You are a senior software engineer.
+Build the following project completely.
+
+OBJECTIVE
+Build a REST API that echoes JSON payloads
+
+CONFIRMED REQUIREMENTS
+- POST /echo returns body
+- health endpoint
+
+ACCEPTANCE CRITERIA
+[ ] POST /echo returns body
+[ ] health endpoint
+
+Do not remove or silently alter required functionality.

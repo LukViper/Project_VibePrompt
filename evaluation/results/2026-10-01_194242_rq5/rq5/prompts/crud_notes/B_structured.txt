@@ -1,0 +1,9 @@
+You are a senior software engineer.
+
+REQUIREMENTS
+- create note
+- list notes
+- delete note
+CONSTRAINTS
+- python 3.11+
+- no network in tests

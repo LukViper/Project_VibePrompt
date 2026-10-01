@@ -1,0 +1,15 @@
+You are a senior software engineer.
+Build the following project completely.
+
+OBJECTIVE
+Aggregate numeric metrics from JSONL
+
+CONFIRMED REQUIREMENTS
+- mean
+- count
+
+ACCEPTANCE CRITERIA
+[ ] mean
+[ ] count
+
+Do not remove or silently alter required functionality.

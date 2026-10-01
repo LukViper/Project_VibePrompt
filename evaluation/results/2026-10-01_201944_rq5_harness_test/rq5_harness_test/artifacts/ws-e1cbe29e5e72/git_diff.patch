@@ -1,0 +1,45 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..8670e3d
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,18 @@
++You are a senior software engineer.
++
++REQUIREMENTS
++- implement echo(payload) returning the same mapping
++- implement health() returning status ok
++
++CONSTRAINTS
++- python 3.11+
++- stdlib only
++- no network in tests
++
++REJECTED / OUT OF SCOPE
++- Do not add Redis
++- Do not call external APIs
++
++ACCEPTANCE CRITERIA
++- echo({'a': 1}) == {'a': 1}
++- health()['status'] == 'ok'
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..9b9c7f8
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-e1cbe29e5e72","task_id":"rest_echo_api","variant":"B_structured","seed_commit":"983307257028c680eec853cd5cff8e7615bff86c"}
+\ No newline at end of file
+diff --git a/app/echo_api.py b/app/echo_api.py
+index a994947..fa4e7d8 100644
+--- a/app/echo_api.py
++++ b/app/echo_api.py
+@@ -1,5 +1,5 @@
+ def echo(payload):
+-    raise NotImplementedError('implement echo')
++    return payload
+ 
+ def health():
+-    raise NotImplementedError('implement health')
++    return {'status': 'ok'}

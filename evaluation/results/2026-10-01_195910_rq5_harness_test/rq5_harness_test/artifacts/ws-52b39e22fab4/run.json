@@ -1,0 +1,82 @@
+{
+  "workspace_id": "ws-52b39e22fab4",
+  "task_id": "clamp_feature",
+  "system_variant": "C_vibeprompt",
+  "start_time": "2026-10-01T19:59:11.666833+00:00",
+  "end_time": "2026-10-01T19:59:11.694485+00:00",
+  "exit_code": 0,
+  "duration_seconds": 0.0273702360009338,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/workspaces/ws-52b39e22fab4"
+  },
+  "git": {
+    "commit_before": "781db19348a8e37c7333bef0b8b156b9faf6be5c",
+    "commit_after": "781db19348a8e37c7333bef0b8b156b9faf6be5c",
+    "changed_files": [],
+    "created_files": [
+      "clamp_mod.py",
+      "test_clamp.py"
+    ],
+    "deleted_files": [],
+    "status_preview": "?? clamp_mod.py\n?? test_clamp.py"
+  },
+  "agent_run": {
+    "id": "RUN-fb34bcaf722a",
+    "project_id": "clamp_feature",
+    "prompt_id": null,
+    "agent": "external_cmd",
+    "model": null,
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_smoke_tsgo506g/ws-52b39e22fab4",
+    "commit_before": "781db19348a8e37c7333bef0b8b156b9faf6be5c",
+    "commit_after": "781db19348a8e37c7333bef0b8b156b9faf6be5c",
+    "started_at": "2026-10-01T19:59:11.666833+00:00",
+    "completed_at": "2026-10-01T19:59:11.694485+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "mock_agent completed task_id=clamp_feature label=HARNESS_TEST\n",
+    "workspace_id": "ws-52b39e22fab4",
+    "task_id": "clamp_feature",
+    "system_variant": "C_vibeprompt",
+    "exit_code": 0,
+    "duration_seconds": 0.0273702360009338,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/git_diff.patch",
+    "label": "HARNESS TEST",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-8a70ddc61374",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-fb34bcaf722a",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_clamp",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "implement clamp(x, lo, hi)",
+        "acceptance_test": "test_clamp"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T19:59:12.066603+00:00",
+      "verification_method": "acceptance_test_marker"
+    }
+  ],
+  "unsupported_features": [],
+  "label": "HARNESS TEST"
+}

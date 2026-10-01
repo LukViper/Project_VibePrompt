@@ -1,0 +1,5 @@
+You are a senior software engineer.
+
+I need: Compute file checksums
+Requirement: sha256
+Requirement: report missing files

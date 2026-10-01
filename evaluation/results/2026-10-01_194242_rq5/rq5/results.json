@@ -1,0 +1,266 @@
+[
+  {
+    "id": "RQ5-001",
+    "task_id": "rest_echo_api",
+    "prompts": {
+      "A_raw": {
+        "chars": 153,
+        "preview": "You are a senior software engineer.\n\nI need: Build a REST API that echoes JSON payloads\nRequirement: POST /echo returns body\nRequirement: health endpoint"
+      },
+      "B_structured": {
+        "chars": 142,
+        "preview": "You are a senior software engineer.\n\nREQUIREMENTS\n- POST /echo returns body\n- health endpoint\nCONSTRAINTS\n- python 3.11+\n- no network in tests"
+      },
+      "C_vibeprompt": {
+        "chars": 324,
+        "preview": "You are a senior software engineer.\nBuild the following project completely.\n\nOBJECTIVE\nBuild a REST API that echoes JSON payloads\n\nCONFIRMED REQUIREMENTS\n- POST /echo returns body\n- health endpoint\n\nA"
+      }
+    },
+    "verification": {
+      "status": "NOT_TESTED"
+    },
+    "agent_run": null
+  },
+  {
+    "id": "RQ5-002",
+    "task_id": "auth_token_service",
+    "prompts": {
+      "A_raw": {
+        "chars": 160,
+        "preview": "You are a senior software engineer.\n\nI need: Build a token auth service\nRequirement: register user\nRequirement: login returns token\nRequirement: protected route"
+      },
+      "B_structured": {
+        "chars": 154,
+        "preview": "You are a senior software engineer.\n\nREQUIREMENTS\n- register user\n- login returns token\n- protected route\nCONSTRAINTS\n- python 3.11+\n- no network in tests"
+      },
+      "C_vibeprompt": {
+        "chars": 334,
+        "preview": "You are a senior software engineer.\nBuild the following project completely.\n\nOBJECTIVE\nBuild a token auth service\n\nCONFIRMED REQUIREMENTS\n- register user\n- login returns token\n- protected route\n\nACCEP"
+      }
+    },
+    "verification": {
+      "status": "NOT_TESTED"
+    },
+    "agent_run": null
+  },
+  {
+    "id": "RQ5-003",
+    "task_id": "crud_notes",
+    "prompts": {
+      "A_raw": {
+        "chars": 133,
+        "preview": "You are a senior software engineer.\n\nI need: CRUD notes API\nRequirement: create note\nRequirement: list notes\nRequirement: delete note"
+      },
+      "B_structured": {
+        "chars": 139,
+        "preview": "You are a senior software engineer.\n\nREQUIREMENTS\n- create note\n- list notes\n- delete note\nCONSTRAINTS\n- python 3.11+\n- no network in tests"
+      },
+      "C_vibeprompt": {
+        "chars": 292,
+        "preview": "You are a senior software engineer.\nBuild the following project completely.\n\nOBJECTIVE\nCRUD notes API\n\nCONFIRMED REQUIREMENTS\n- create note\n- list notes\n- delete note\n\nACCEPTANCE CRITERIA\n[ ] create n"
+      }
+    },
+    "verification": {
+      "status": "NOT_TESTED"
+    },
+    "agent_run": null
+  },
+  {
+    "id": "RQ5-004",
+    "task_id": "log_parser",
+    "prompts": {
+      "A_raw": {
+        "chars": 130,
+        "preview": "You are a senior software engineer.\n\nI need: Parse syslog lines into JSON\nRequirement: parse severity\nRequirement: parse timestamp"
+      },
+      "B_structured": {
+        "chars": 133,
+        "preview": "You are a senior software engineer.\n\nREQUIREMENTS\n- parse severity\n- parse timestamp\nCONSTRAINTS\n- python 3.11+\n- no network in tests"
+      },
+      "C_vibeprompt": {
+        "chars": 292,
+        "preview": "You are a senior software engineer.\nBuild the following project completely.\n\nOBJECTIVE\nParse syslog lines into JSON\n\nCONFIRMED REQUIREMENTS\n- parse severity\n- parse timestamp\n\nACCEPTANCE CRITERIA\n[ ] "
+      }
+    },
+    "verification": {
+      "status": "NOT_TESTED"
+    },
+    "agent_run": null
+  },
+  {
+    "id": "RQ5-005",
+    "task_id": "csv_filter_cli",
+    "prompts": {
+      "A_raw": {
+        "chars": 131,
+        "preview": "You are a senior software engineer.\n\nI need: CLI that filters CSV by column\nRequirement: filter rows\nRequirement: write output file"
+      },
+      "B_structured": {
+        "chars": 132,
+        "preview": "You are a senior software engineer.\n\nREQUIREMENTS\n- filter rows\n- write output file\nCONSTRAINTS\n- python 3.11+\n- no network in tests"
+      },
+      "C_vibeprompt": {
+        "chars": 292,
+        "preview": "You are a senior software engineer.\nBuild the following project completely.\n\nOBJECTIVE\nCLI that filters CSV by column\n\nCONFIRMED REQUIREMENTS\n- filter rows\n- write output file\n\nACCEPTANCE CRITERIA\n[ ]"
+      }
+    },
+    "verification": {
+      "status": "NOT_TESTED"
+    },
+    "agent_run": null
+  },
+  {
+    "id": "RQ5-006",
+    "task_id": "word_count_pipeline",
+    "prompts": {
+      "A_raw": {
+        "chars": 135,
+        "preview": "You are a senior software engineer.\n\nI need: Count words in a directory of texts\nRequirement: recursive read\nRequirement: sorted counts"
+      },
+      "B_structured": {
+        "chars": 131,
+        "preview": "You are a senior software engineer.\n\nREQUIREMENTS\n- recursive read\n- sorted counts\nCONSTRAINTS\n- python 3.11+\n- no network in tests"
+      },
+      "C_vibeprompt": {
+        "chars": 295,
+        "preview": "You are a senior software engineer.\nBuild the following project completely.\n\nOBJECTIVE\nCount words in a directory of texts\n\nCONFIRMED REQUIREMENTS\n- recursive read\n- sorted counts\n\nACCEPTANCE CRITERIA"
+      }
+    },
+    "verification": {
+      "status": "NOT_TESTED"
+    },
+    "agent_run": null
+  },
+  {
+    "id": "RQ5-007",
+    "task_id": "todo_backend",
+    "prompts": {
+      "A_raw": {
+        "chars": 114,
+        "preview": "You are a senior software engineer.\n\nI need: Minimal todo backend\nRequirement: add todo\nRequirement: complete todo"
+      },
+      "B_structured": {
+        "chars": 125,
+        "preview": "You are a senior software engineer.\n\nREQUIREMENTS\n- add todo\n- complete todo\nCONSTRAINTS\n- python 3.11+\n- no network in tests"
+      },
+      "C_vibeprompt": {
+        "chars": 268,
+        "preview": "You are a senior software engineer.\nBuild the following project completely.\n\nOBJECTIVE\nMinimal todo backend\n\nCONFIRMED REQUIREMENTS\n- add todo\n- complete todo\n\nACCEPTANCE CRITERIA\n[ ] add todo\n[ ] com"
+      }
+    },
+    "verification": {
+      "status": "NOT_TESTED"
+    },
+    "agent_run": null
+  },
+  {
+    "id": "RQ5-008",
+    "task_id": "url_shortener",
+    "prompts": {
+      "A_raw": {
+        "chars": 118,
+        "preview": "You are a senior software engineer.\n\nI need: URL shortener service\nRequirement: create short url\nRequirement: redirect"
+      },
+      "B_structured": {
+        "chars": 128,
+        "preview": "You are a senior software engineer.\n\nREQUIREMENTS\n- create short url\n- redirect\nCONSTRAINTS\n- python 3.11+\n- no network in tests"
+      },
+      "C_vibeprompt": {
+        "chars": 275,
+        "preview": "You are a senior software engineer.\nBuild the following project completely.\n\nOBJECTIVE\nURL shortener service\n\nCONFIRMED REQUIREMENTS\n- create short url\n- redirect\n\nACCEPTANCE CRITERIA\n[ ] create short"
+      }
+    },
+    "verification": {
+      "status": "NOT_TESTED"
+    },
+    "agent_run": null
+  },
+  {
+    "id": "RQ5-009",
+    "task_id": "rate_limiter",
+    "prompts": {
+      "A_raw": {
+        "chars": 129,
+        "preview": "You are a senior software engineer.\n\nI need: In-memory rate limiter middleware\nRequirement: limit per key\nRequirement: return 429"
+      },
+      "B_structured": {
+        "chars": 127,
+        "preview": "You are a senior software engineer.\n\nREQUIREMENTS\n- limit per key\n- return 429\nCONSTRAINTS\n- python 3.11+\n- no network in tests"
+      },
+      "C_vibeprompt": {
+        "chars": 285,
+        "preview": "You are a senior software engineer.\nBuild the following project completely.\n\nOBJECTIVE\nIn-memory rate limiter middleware\n\nCONFIRMED REQUIREMENTS\n- limit per key\n- return 429\n\nACCEPTANCE CRITERIA\n[ ] l"
+      }
+    },
+    "verification": {
+      "status": "NOT_TESTED"
+    },
+    "agent_run": null
+  },
+  {
+    "id": "RQ5-010",
+    "task_id": "file_checksum",
+    "prompts": {
+      "A_raw": {
+        "chars": 121,
+        "preview": "You are a senior software engineer.\n\nI need: Compute file checksums\nRequirement: sha256\nRequirement: report missing files"
+      },
+      "B_structured": {
+        "chars": 130,
+        "preview": "You are a senior software engineer.\n\nREQUIREMENTS\n- sha256\n- report missing files\nCONSTRAINTS\n- python 3.11+\n- no network in tests"
+      },
+      "C_vibeprompt": {
+        "chars": 280,
+        "preview": "You are a senior software engineer.\nBuild the following project completely.\n\nOBJECTIVE\nCompute file checksums\n\nCONFIRMED REQUIREMENTS\n- sha256\n- report missing files\n\nACCEPTANCE CRITERIA\n[ ] sha256\n[ "
+      }
+    },
+    "verification": {
+      "status": "NOT_TESTED"
+    },
+    "agent_run": null
+  },
+  {
+    "id": "RQ5-011",
+    "task_id": "json_schema_validator",
+    "prompts": {
+      "A_raw": {
+        "chars": 129,
+        "preview": "You are a senior software engineer.\n\nI need: Validate JSON against a schema\nRequirement: accept valid\nRequirement: reject invalid"
+      },
+      "B_structured": {
+        "chars": 130,
+        "preview": "You are a senior software engineer.\n\nREQUIREMENTS\n- accept valid\n- reject invalid\nCONSTRAINTS\n- python 3.11+\n- no network in tests"
+      },
+      "C_vibeprompt": {
+        "chars": 288,
+        "preview": "You are a senior software engineer.\nBuild the following project completely.\n\nOBJECTIVE\nValidate JSON against a schema\n\nCONFIRMED REQUIREMENTS\n- accept valid\n- reject invalid\n\nACCEPTANCE CRITERIA\n[ ] a"
+      }
+    },
+    "verification": {
+      "status": "NOT_TESTED"
+    },
+    "agent_run": null
+  },
+  {
+    "id": "RQ5-012",
+    "task_id": "metrics_aggregator",
+    "prompts": {
+      "A_raw": {
+        "chars": 118,
+        "preview": "You are a senior software engineer.\n\nI need: Aggregate numeric metrics from JSONL\nRequirement: mean\nRequirement: count"
+      },
+      "B_structured": {
+        "chars": 113,
+        "preview": "You are a senior software engineer.\n\nREQUIREMENTS\n- mean\n- count\nCONSTRAINTS\n- python 3.11+\n- no network in tests"
+      },
+      "C_vibeprompt": {
+        "chars": 260,
+        "preview": "You are a senior software engineer.\nBuild the following project completely.\n\nOBJECTIVE\nAggregate numeric metrics from JSONL\n\nCONFIRMED REQUIREMENTS\n- mean\n- count\n\nACCEPTANCE CRITERIA\n[ ] mean\n[ ] cou"
+      }
+    },
+    "verification": {
+      "status": "NOT_TESTED"
+    },
+    "agent_run": null
+  }
+]

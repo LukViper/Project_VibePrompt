@@ -1,0 +1,8 @@
+You are a senior software engineer.
+
+REQUIREMENTS
+- sha256
+- report missing files
+CONSTRAINTS
+- python 3.11+
+- no network in tests

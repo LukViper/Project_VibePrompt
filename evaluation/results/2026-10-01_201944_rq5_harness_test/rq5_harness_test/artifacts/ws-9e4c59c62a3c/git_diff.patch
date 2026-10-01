@@ -1,0 +1,120 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..95cc2d1
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,90 @@
++You are a senior software engineer.
++
++Build the following project completely.
++
++ROLE
++You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
++
++PROJECT
++Untitled project
++
++OBJECTIVE
++See the specification.
++
++PROBLEM
++See the specification.
++
++REQUIREMENTS
++Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
++
++FUNCTIONAL REQUIREMENTS
++REQ-001:
++Register(username, password) must store the user
++  Acceptance: Given a typical input, the system store the user.
++REQ-002:
++Login(username, password) must return a token string on success
++  Acceptance: Given a typical input, the system return a token string on success.
++
++NON-FUNCTIONAL REQUIREMENTS
++- None recorded.
++
++CONSTRAINTS
++- Team size: None
++- Duration: None
++- Budget: None
++- Avoid: Do not expose a DELETE user endpoint, Do not use an external database
++
++TECH STACK
++Backend: unspecified
++Model: unspecified
++Database: unspecified
++Frameworks: unspecified
++Hardware: none
++
++ARCHITECTURE
++Use a modular monolith unless ProjectState specifies otherwise.
++
++DATABASE
++Use the database named in TECH STACK.
++
++API
++Implement an operation for every functional requirement.
++
++SECURITY
++Keep secrets in environment variables. Validate input. Do not expose credentials.
++
++TESTING
++Write a test mapped from each requirement ID. Run the tests.
++
++ACCEPTANCE CRITERIA
++[ ] REQ-001: Given a typical input, the system store the user.
++[ ] REQ-002: Given a typical input, the system return a token string on success.
++[ ] Tests pass
++[ ] Application runs successfully
++
++IMPLEMENTATION PROCESS
++1. Inspect the existing repository.
++2. Understand the requirements.
++3. Create the required architecture.
++4. Implement the components.
++5. Configure dependencies.
++6. Implement database, API, and frontend components.
++7. Write tests.
++8. Run tests.
++9. Fix implementation errors.
++10. Verify every acceptance criterion.
++11. Provide setup instructions.
++
++DELIVERABLES
++- Working implementation of every requirement ID
++- Tests
++- Setup instructions
++- A short note mapping each acceptance criterion to evidence
++
++Do not remove or silently alter required functionality.
++Do not replace required functionality with placeholders.
++
++
++# COMPILATION GATE NOTES
++- project objective is missing
++Implement only CONFIRMED requirements listed above.
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..df197f9
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-9e4c59c62a3c","task_id":"auth_token_service","variant":"C_vibeprompt","seed_commit":"0673e1cdaf4e3ee954b01c4fd5ffa37172e81c07"}
+\ No newline at end of file
+diff --git a/app/auth.py b/app/auth.py
+index 53030ec..93bdc89 100644
+--- a/app/auth.py
++++ b/app/auth.py
+@@ -1,7 +1,9 @@
+ USERS = {}
+ 
+ def register(username, password):
+-    raise NotImplementedError
++    USERS[username] = password
+ 
+ def login(username, password):
+-    raise NotImplementedError
++    if USERS.get(username) != password:
++        raise ValueError('bad credentials')
++    return f'token-{username}'

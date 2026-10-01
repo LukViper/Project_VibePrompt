@@ -1,0 +1,19 @@
+You are a senior software engineer.
+Build the following project from a validated VibePrompt specification.
+
+OBJECTIVE
+Aggregate numeric metrics from JSONL
+
+CONFIRMED REQUIREMENTS
+- mean
+- count
+
+CONSTRAINTS
+- python 3.11+
+- no network in tests
+
+ACCEPTANCE CRITERIA
+[ ] mean
+[ ] count
+Do not remove or silently alter required functionality.
+Evidence and grill validation are assumed upstream; implement only confirmed scope.

@@ -1,0 +1,83 @@
+{
+  "no_grill": {
+    "critical_issue_detection_rate": {
+      "n": 50,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "attack_precision": {
+      "n": 50,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "false_positive_attack_rate": {
+      "n": 50,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "n_scenarios": 50
+  },
+  "checklist_grill": {
+    "critical_issue_detection_rate": {
+      "n": 50,
+      "mean": 0.62,
+      "std": 0.2135415650406262,
+      "ci95_low": 0.5608092980274774,
+      "ci95_high": 0.6791907019725226,
+      "median": 0.5
+    },
+    "attack_precision": {
+      "n": 50,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "false_positive_attack_rate": {
+      "n": 50,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "n_scenarios": 50
+  },
+  "adversarial_grill": {
+    "critical_issue_detection_rate": {
+      "n": 50,
+      "mean": 0.12,
+      "std": 0.32496153618543844,
+      "ci95_low": 0.0299252577022837,
+      "ci95_high": 0.21007474229771628,
+      "median": 0.0
+    },
+    "attack_precision": {
+      "n": 50,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "false_positive_attack_rate": {
+      "n": 50,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "n_scenarios": 50
+  }
+}

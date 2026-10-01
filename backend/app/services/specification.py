@@ -53,7 +53,13 @@ def build_specification(session, project) -> Specification:
 
 
 def _active(state: dict, kind: str | None = None) -> list[dict]:
-    rows = [req for req in state.get("requirements") or [] if req.get("status") == "active"]
+    from app.services.assertion_lifecycle import requirement_is_compilable
+
+    rows = [
+        req
+        for req in state.get("requirements") or []
+        if req.get("status") == "active" and requirement_is_compilable(req)
+    ]
     if kind:
         return [req for req in rows if req.get("type") == kind]
     return rows

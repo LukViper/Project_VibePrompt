@@ -8,7 +8,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from app.api import auth, chat, decisions, ideas, projects, prompts, requirements
+from app.api import auth, chat, decisions, ideas, projects, prompts, requirements, grill, assertions, evidence, integrity
 from app.config.settings import get_settings
 from app.database.base import Base
 from app.database.session import engine
@@ -59,6 +59,10 @@ app.include_router(requirements.router)
 app.include_router(ideas.router)
 app.include_router(prompts.router)
 app.include_router(decisions.router)
+app.include_router(grill.router)
+app.include_router(assertions.router)
+app.include_router(evidence.router)
+app.include_router(integrity.router)
 
 
 @app.middleware("http")

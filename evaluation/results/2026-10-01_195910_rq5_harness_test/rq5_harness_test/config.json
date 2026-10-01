@@ -1,0 +1,23 @@
+{
+  "label": "HARNESS TEST — not a scientific RQ5 result",
+  "mode": "HARNESS_TEST",
+  "scientific": false,
+  "rq5_config": {
+    "agent_cmd": "/home/luk_viper/Prompting/backend/.venv/bin/python -m evaluation.rq5_agent_execution.mock_agent",
+    "build_cmd": null,
+    "test_cmd": null,
+    "timeout_seconds": 600.0,
+    "retain_workspace": true,
+    "mode": "HARNESS_TEST",
+    "agent_model": null,
+    "agent_provider": null,
+    "agent_available": true,
+    "environment": {
+      "python": "3.13.14",
+      "platform": "Linux-7.1.8-200.fc44.x86_64-x86_64-with-glibc2.43",
+      "cwd_note": "each run uses an isolated temp workspace"
+    },
+    "scientific": false
+  },
+  "warning": "This is infrastructure validation only — not an RQ5 scientific result."
+}

@@ -1,0 +1,127 @@
+{
+  "workspace_id": "ws-e1cbe29e5e72",
+  "task_id": "rest_echo_api",
+  "system_variant": "B_structured",
+  "dataset_version": "2.0.0",
+  "seed_commit": "983307257028c680eec853cd5cff8e7615bff86c",
+  "start_time": "2026-10-01T20:19:49.994087+00:00",
+  "end_time": "2026-10-01T20:19:50.017853+00:00",
+  "exit_code": 0,
+  "duration_seconds": 0.023525085000073886,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "structured_requirements",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "structured_requirements_prompt"
+      ]
+    },
+    "state_summary": null
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-e1cbe29e5e72/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-e1cbe29e5e72/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-e1cbe29e5e72/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-e1cbe29e5e72/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-e1cbe29e5e72/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-e1cbe29e5e72/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-e1cbe29e5e72/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/workspaces/ws-e1cbe29e5e72"
+  },
+  "git": {
+    "commit_before": "983307257028c680eec853cd5cff8e7615bff86c",
+    "seed_commit": "983307257028c680eec853cd5cff8e7615bff86c",
+    "commit_after": "983307257028c680eec853cd5cff8e7615bff86c",
+    "changed_files": [
+      "pp/echo_api.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json"
+    ],
+    "status_preview": "M app/echo_api.py\n?? TASK.md\n?? VIBEPROMPT_META.json"
+  },
+  "agent_run": {
+    "id": "RUN-93c4c24c91a4",
+    "project_id": "rest_echo_api",
+    "prompt_id": null,
+    "agent": "external_cmd",
+    "model": null,
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_smoke_1nq6r3u_/ws-e1cbe29e5e72",
+    "commit_before": "983307257028c680eec853cd5cff8e7615bff86c",
+    "commit_after": "983307257028c680eec853cd5cff8e7615bff86c",
+    "started_at": "2026-10-01T20:19:49.994087+00:00",
+    "completed_at": "2026-10-01T20:19:50.017853+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "mock_agent completed task_id=rest_echo_api label=HARNESS_TEST\n",
+    "workspace_id": "ws-e1cbe29e5e72",
+    "task_id": "rest_echo_api",
+    "system_variant": "B_structured",
+    "exit_code": 0,
+    "duration_seconds": 0.023525085000073886,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-e1cbe29e5e72/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-e1cbe29e5e72/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-e1cbe29e5e72/git_diff.patch",
+    "label": "HARNESS TEST",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-c099897a1f03",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-93c4c24c91a4",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_echo_returns_payload",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "implement echo(payload) returning the same mapping",
+        "acceptance_test": "test_echo_returns_payload"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:19:50.357727+00:00",
+      "verification_method": "acceptance_test_marker"
+    },
+    {
+      "id": "VER-8e5a4266c85a",
+      "requirement_id": "REQ-002",
+      "agent_run_id": "RUN-93c4c24c91a4",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_health_ok",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "implement health() returning status ok",
+        "acceptance_test": "test_health_ok"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:19:50.357766+00:00",
+      "verification_method": "acceptance_test_marker"
+    }
+  ],
+  "unsupported_features": [
+    "Do not add Redis",
+    "Do not call external APIs"
+  ],
+  "constraint_violations": [],
+  "scope_violations": [
+    "Do not add Redis",
+    "Do not call external APIs"
+  ],
+  "label": "HARNESS TEST"
+}

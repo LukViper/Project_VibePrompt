@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python
+cachedir: .pytest_cache
+rootdir: /tmp/vibeprompt_rq5_smoke_1nq6r3u_/ws-aab5e4b91cb1
+plugins: anyio-4.13.0
+collecting ... collected 2 items
+
+tests/test_auth.py::test_register_and_login PASSED                       [ 50%]
+tests/test_auth.py::test_login_rejects_bad_password PASSED               [100%]
+
+- generated xml file: /tmp/vibeprompt_rq5_smoke_1nq6r3u_/ws-aab5e4b91cb1/junit.xml -
+============================== 2 passed in 0.02s ===============================

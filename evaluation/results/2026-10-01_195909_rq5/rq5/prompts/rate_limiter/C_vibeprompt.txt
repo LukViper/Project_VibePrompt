@@ -1,0 +1,19 @@
+You are a senior software engineer.
+Build the following project from a validated VibePrompt specification.
+
+OBJECTIVE
+In-memory rate limiter middleware
+
+CONFIRMED REQUIREMENTS
+- limit per key
+- return 429
+
+CONSTRAINTS
+- python 3.11+
+- no network in tests
+
+ACCEPTANCE CRITERIA
+[ ] limit per key
+[ ] return 429
+Do not remove or silently alter required functionality.
+Evidence and grill validation are assumed upstream; implement only confirmed scope.

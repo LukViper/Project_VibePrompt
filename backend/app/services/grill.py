@@ -134,6 +134,11 @@ def grill(state: dict, *, persist_on_project=None, session=None) -> dict:
     report["structured"] = _structured_grill_report(report)
     report["narrative"] = _narrate_structured(report)
 
+    from app.services.grill_attack_generators import generate_attacks_from_state
+
+    generate_attacks_from_state(state, replace_open=False)
+    report["attacks"] = list(state.get("grill_attacks") or [])
+
     if persist_on_project is not None and session is not None:
         updated = migrate_state(persist_on_project.state or {})
         updated["grill_findings"] = {
@@ -148,6 +153,7 @@ def grill(state: dict, *, persist_on_project=None, session=None) -> dict:
             "structured": report["structured"],
         }
         updated["grill_report"] = report["structured"]
+        updated["grill_attacks"] = state.get("grill_attacks") or []
         updated["open_questions"] = list(
             dict.fromkeys((updated.get("open_questions") or []) + report["structured"].get("open_questions", []))
         )

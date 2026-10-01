@@ -1,0 +1,19 @@
+You are a senior software engineer.
+Build the following project from a validated VibePrompt specification.
+
+OBJECTIVE
+URL shortener service
+
+CONFIRMED REQUIREMENTS
+- create short url
+- redirect
+
+CONSTRAINTS
+- python 3.11+
+- no network in tests
+
+ACCEPTANCE CRITERIA
+[ ] create short url
+[ ] redirect
+Do not remove or silently alter required functionality.
+Evidence and grill validation are assumed upstream; implement only confirmed scope.

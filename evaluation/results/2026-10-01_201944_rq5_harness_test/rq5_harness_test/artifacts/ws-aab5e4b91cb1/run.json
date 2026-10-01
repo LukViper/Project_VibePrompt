@@ -1,0 +1,127 @@
+{
+  "workspace_id": "ws-aab5e4b91cb1",
+  "task_id": "auth_token_service",
+  "system_variant": "A_raw",
+  "dataset_version": "2.0.0",
+  "seed_commit": "b97c254f8fb6d59e47884ea6b74fce22c23c88ec",
+  "start_time": "2026-10-01T20:19:50.872691+00:00",
+  "end_time": "2026-10-01T20:19:50.897705+00:00",
+  "exit_code": 0,
+  "duration_seconds": 0.024805056998957298,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "direct_conversation",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "direct_prompt"
+      ]
+    },
+    "state_summary": null
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-aab5e4b91cb1/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-aab5e4b91cb1/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-aab5e4b91cb1/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-aab5e4b91cb1/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-aab5e4b91cb1/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-aab5e4b91cb1/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-aab5e4b91cb1/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/workspaces/ws-aab5e4b91cb1"
+  },
+  "git": {
+    "commit_before": "b97c254f8fb6d59e47884ea6b74fce22c23c88ec",
+    "seed_commit": "b97c254f8fb6d59e47884ea6b74fce22c23c88ec",
+    "commit_after": "b97c254f8fb6d59e47884ea6b74fce22c23c88ec",
+    "changed_files": [
+      "pp/auth.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json"
+    ],
+    "status_preview": "M app/auth.py\n?? TASK.md\n?? VIBEPROMPT_META.json"
+  },
+  "agent_run": {
+    "id": "RUN-64ce2109e9e2",
+    "project_id": "auth_token_service",
+    "prompt_id": null,
+    "agent": "external_cmd",
+    "model": null,
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_smoke_1nq6r3u_/ws-aab5e4b91cb1",
+    "commit_before": "b97c254f8fb6d59e47884ea6b74fce22c23c88ec",
+    "commit_after": "b97c254f8fb6d59e47884ea6b74fce22c23c88ec",
+    "started_at": "2026-10-01T20:19:50.872691+00:00",
+    "completed_at": "2026-10-01T20:19:50.897705+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "mock_agent completed task_id=auth_token_service label=HARNESS_TEST\n",
+    "workspace_id": "ws-aab5e4b91cb1",
+    "task_id": "auth_token_service",
+    "system_variant": "A_raw",
+    "exit_code": 0,
+    "duration_seconds": 0.024805056998957298,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-aab5e4b91cb1/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-aab5e4b91cb1/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-aab5e4b91cb1/git_diff.patch",
+    "label": "HARNESS TEST",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-7d60697f99a8",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-64ce2109e9e2",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_register_and_login",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "register(username, password) stores the user",
+        "acceptance_test": "test_register_and_login"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:19:51.235201+00:00",
+      "verification_method": "acceptance_test_marker"
+    },
+    {
+      "id": "VER-2ce86b328703",
+      "requirement_id": "REQ-002",
+      "agent_run_id": "RUN-64ce2109e9e2",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_login_rejects_bad_password",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "login(username, password) returns a token on success",
+        "acceptance_test": "test_login_rejects_bad_password"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:19:51.235230+00:00",
+      "verification_method": "acceptance_test_marker"
+    }
+  ],
+  "unsupported_features": [
+    "Do not expose a DELETE user endpoint",
+    "Do not use an external database"
+  ],
+  "constraint_violations": [],
+  "scope_violations": [
+    "Do not expose a DELETE user endpoint",
+    "Do not use an external database"
+  ],
+  "label": "HARNESS TEST"
+}

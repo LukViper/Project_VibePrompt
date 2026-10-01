@@ -1,0 +1,15 @@
+You are a senior software engineer.
+Build the following project completely.
+
+OBJECTIVE
+Validate JSON against a schema
+
+CONFIRMED REQUIREMENTS
+- accept valid
+- reject invalid
+
+ACCEPTANCE CRITERIA
+[ ] accept valid
+[ ] reject invalid
+
+Do not remove or silently alter required functionality.

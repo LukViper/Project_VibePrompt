@@ -78,6 +78,7 @@ class RequirementRecord(BaseModel):
     type: str = "functional"
     text: str
     status: str = "active"
+    assertion_status: str | None = None
     version: int = 1
     slot: str | None = None
     slot_value: str | None = None
@@ -85,6 +86,7 @@ class RequirementRecord(BaseModel):
     origin: str = "added"
     provenance: Provenance = Field(default_factory=lambda: Provenance(source=ProvenanceSource.USER))
     versions: list[dict[str, Any]] = Field(default_factory=list)
+    lineage: list[dict[str, Any]] = Field(default_factory=list)
 
     model_config = {"extra": "allow"}
 
@@ -186,7 +188,7 @@ class ExplorationState(BaseModel):
 
 
 class ProjectStateModel(BaseModel):
-    schema_version: int = 2
+    schema_version: int = 3
     conversation_stage: ConversationStage = ConversationStage.DISCOVERY
     conversation_context: ConversationContext = Field(default_factory=ConversationContext)
     exploration: ExplorationState = Field(default_factory=ExplorationState)
@@ -194,6 +196,15 @@ class ProjectStateModel(BaseModel):
     academic: AcademicInfo = Field(default_factory=AcademicInfo)
     idea: IdeaBlock = Field(default_factory=IdeaBlock)
     requirements: list[dict[str, Any]] = Field(default_factory=list)
+    claims: list[dict[str, Any]] = Field(default_factory=list)
+    assumptions: list[dict[str, Any]] = Field(default_factory=list)
+    evidence: list[dict[str, Any]] = Field(default_factory=list)
+    grill_attacks: list[dict[str, Any]] = Field(default_factory=list)
+    grill_responses: list[dict[str, Any]] = Field(default_factory=list)
+    trace_links: list[dict[str, Any]] = Field(default_factory=list)
+    audit_events: list[dict[str, Any]] = Field(default_factory=list)
+    agent_runs: list[dict[str, Any]] = Field(default_factory=list)
+    requirement_verifications: list[dict[str, Any]] = Field(default_factory=list)
     features: list[str] = Field(default_factory=list)
     constraints: ConstraintInfo = Field(default_factory=ConstraintInfo)
     technology: dict[str, Any] = Field(default_factory=dict)
@@ -286,12 +297,16 @@ def migrate_state(raw: dict | None) -> dict[str, Any]:
     project = merged.setdefault("project", {})
     if isinstance(project, dict) and not project.get("subject") and academic.get("subject"):
         project["subject"] = academic["subject"]
+    from app.services.assertion_lifecycle import migrate_requirement_assertion_status
+
     for req in merged.get("requirements") or []:
         if isinstance(req, dict) and "provenance" not in req:
             req["provenance"] = make_provenance(
                 ProvenanceSource.USER if req.get("origin") != "original" else ProvenanceSource.USER,
                 reason="migrated from legacy requirement",
             )
+        if isinstance(req, dict):
+            migrate_requirement_assertion_status(req)
     for decision in merged.get("decisions") or []:
         if isinstance(decision, dict):
             # normalize_decision adds provenance + lifecycle fields
@@ -305,7 +320,19 @@ def migrate_state(raw: dict | None) -> dict[str, Any]:
     merged.setdefault("conversation_context", {})
     merged.setdefault("exploration", {})
     merged.setdefault("readiness_gaps", merged.get("readiness_gaps") or [])
-    merged["schema_version"] = 2
+    for key in (
+        "claims",
+        "assumptions",
+        "evidence",
+        "grill_attacks",
+        "grill_responses",
+        "trace_links",
+        "audit_events",
+        "agent_runs",
+        "requirement_verifications",
+    ):
+        merged.setdefault(key, merged.get(key) or [])
+    merged["schema_version"] = 3
     # Validate then dump to normalize enums/types.
     return ProjectStateModel.model_validate(merged).model_dump(mode="json")
 

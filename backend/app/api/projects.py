@@ -17,7 +17,7 @@ from app.schemas.state import ProjectStateModel
 from app.services.analytics import track
 from app.services.architecture import propose_architecture
 from app.services.conversation import ensure_conversation, post_message
-from app.services.grill import grill, professional_review
+from app.services.grill import professional_review
 from app.services.project_state import empty_state, public_state
 from app.services.summary import build_project_summary, format_summary_for_chat
 
@@ -205,20 +205,6 @@ def read_summary(
     project = get_project(project_id, db, auth)
     summary = build_project_summary(project.state or empty_state())
     return {"summary": summary, "narrative": format_summary_for_chat(summary)}
-
-
-@router.post("/projects/{project_id}/grill")
-def run_grill(
-    project_id: str,
-    db: Session = Depends(get_db),
-    auth: AuthContext = Depends(get_auth_context),
-):
-    project = get_project(project_id, db, auth)
-    track("grill_started")
-    report = grill(project.state or empty_state(), persist_on_project=project, session=db)
-    db.commit()
-    track("grill_completed")
-    return report
 
 
 @router.post("/projects/{project_id}/architecture")

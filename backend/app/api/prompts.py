@@ -63,6 +63,17 @@ def read_compile_gate(
     return compilation_gate(migrate_state(project.state or {}))
 
 
+@router.get("/projects/{project_id}/prompt/report")
+def read_compilation_report(
+    project_id: str,
+    db: Session = Depends(get_db),
+    auth: AuthContext = Depends(get_auth_context),
+):
+    """Full compilation diagnostics including included/excluded requirements."""
+    project = get_project(project_id, db, auth)
+    return compilation_gate(migrate_state(project.state or {}))
+
+
 @router.post("/projects/{project_id}/prompt")
 def create_prompt(
     project_id: str,
@@ -79,7 +90,9 @@ def create_prompt(
         raise HTTPException(status_code=409, detail=str(exc)) from exc
     db.commit()
     track("prompt_generated")
-    return _prompt_payload(row)
+    payload = _prompt_payload(row)
+    payload["compilation_report"] = (row.details or {}).get("compilation_report") or (row.details or {}).get("gate")
+    return payload
 
 
 @router.post("/projects/{project_id}/prompt/validate")

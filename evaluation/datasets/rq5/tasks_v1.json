@@ -1,0 +1,234 @@
+[
+  {
+    "id": "RQ5-001",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "task_id": "rest_echo_api",
+    "problem_statement": "Build a REST API that echoes JSON payloads",
+    "gold_requirements": [
+      "POST /echo returns body",
+      "health endpoint"
+    ],
+    "acceptance_tests": [
+      "test_rest_echo_api_0",
+      "test_rest_echo_api_1"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-002",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "task_id": "auth_token_service",
+    "problem_statement": "Build a token auth service",
+    "gold_requirements": [
+      "register user",
+      "login returns token",
+      "protected route"
+    ],
+    "acceptance_tests": [
+      "test_auth_token_service_0",
+      "test_auth_token_service_1",
+      "test_auth_token_service_2"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-003",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "task_id": "crud_notes",
+    "problem_statement": "CRUD notes API",
+    "gold_requirements": [
+      "create note",
+      "list notes",
+      "delete note"
+    ],
+    "acceptance_tests": [
+      "test_crud_notes_0",
+      "test_crud_notes_1",
+      "test_crud_notes_2"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-004",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "task_id": "log_parser",
+    "problem_statement": "Parse syslog lines into JSON",
+    "gold_requirements": [
+      "parse severity",
+      "parse timestamp"
+    ],
+    "acceptance_tests": [
+      "test_log_parser_0",
+      "test_log_parser_1"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-005",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "task_id": "csv_filter_cli",
+    "problem_statement": "CLI that filters CSV by column",
+    "gold_requirements": [
+      "filter rows",
+      "write output file"
+    ],
+    "acceptance_tests": [
+      "test_csv_filter_cli_0",
+      "test_csv_filter_cli_1"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-006",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "task_id": "word_count_pipeline",
+    "problem_statement": "Count words in a directory of texts",
+    "gold_requirements": [
+      "recursive read",
+      "sorted counts"
+    ],
+    "acceptance_tests": [
+      "test_word_count_pipeline_0",
+      "test_word_count_pipeline_1"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-007",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "task_id": "todo_backend",
+    "problem_statement": "Minimal todo backend",
+    "gold_requirements": [
+      "add todo",
+      "complete todo"
+    ],
+    "acceptance_tests": [
+      "test_todo_backend_0",
+      "test_todo_backend_1"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-008",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "task_id": "url_shortener",
+    "problem_statement": "URL shortener service",
+    "gold_requirements": [
+      "create short url",
+      "redirect"
+    ],
+    "acceptance_tests": [
+      "test_url_shortener_0",
+      "test_url_shortener_1"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-009",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "task_id": "rate_limiter",
+    "problem_statement": "In-memory rate limiter middleware",
+    "gold_requirements": [
+      "limit per key",
+      "return 429"
+    ],
+    "acceptance_tests": [
+      "test_rate_limiter_0",
+      "test_rate_limiter_1"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-010",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "task_id": "file_checksum",
+    "problem_statement": "Compute file checksums",
+    "gold_requirements": [
+      "sha256",
+      "report missing files"
+    ],
+    "acceptance_tests": [
+      "test_file_checksum_0",
+      "test_file_checksum_1"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-011",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "task_id": "json_schema_validator",
+    "problem_statement": "Validate JSON against a schema",
+    "gold_requirements": [
+      "accept valid",
+      "reject invalid"
+    ],
+    "acceptance_tests": [
+      "test_json_schema_validator_0",
+      "test_json_schema_validator_1"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  },
+  {
+    "id": "RQ5-012",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "task_id": "metrics_aggregator",
+    "problem_statement": "Aggregate numeric metrics from JSONL",
+    "gold_requirements": [
+      "mean",
+      "count"
+    ],
+    "acceptance_tests": [
+      "test_metrics_aggregator_0",
+      "test_metrics_aggregator_1"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "no network in tests"
+    ]
+  }
+]

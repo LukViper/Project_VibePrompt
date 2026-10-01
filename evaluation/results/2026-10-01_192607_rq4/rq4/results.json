@@ -1,0 +1,302 @@
+[
+  {
+    "id": "RQ4-001",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-002",
+    "pred": "unsupported",
+    "gold": "unsupported",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-003",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-004",
+    "pred": "unverified",
+    "gold": "unverified",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-005",
+    "pred": "contradicted",
+    "gold": "contradicted",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-006",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-007",
+    "pred": "unsupported",
+    "gold": "unsupported",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-008",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-009",
+    "pred": "unverified",
+    "gold": "unverified",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-010",
+    "pred": "contradicted",
+    "gold": "contradicted",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-011",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-012",
+    "pred": "unsupported",
+    "gold": "unsupported",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-013",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-014",
+    "pred": "unverified",
+    "gold": "unverified",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-015",
+    "pred": "contradicted",
+    "gold": "contradicted",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-016",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-017",
+    "pred": "unsupported",
+    "gold": "unsupported",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-018",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-019",
+    "pred": "unverified",
+    "gold": "unverified",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-020",
+    "pred": "contradicted",
+    "gold": "contradicted",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-021",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-022",
+    "pred": "unsupported",
+    "gold": "unsupported",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-023",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-024",
+    "pred": "unverified",
+    "gold": "unverified",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-025",
+    "pred": "contradicted",
+    "gold": "contradicted",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-026",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-027",
+    "pred": "unsupported",
+    "gold": "unsupported",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-028",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-029",
+    "pred": "unverified",
+    "gold": "unverified",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-030",
+    "pred": "contradicted",
+    "gold": "contradicted",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-031",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-032",
+    "pred": "unsupported",
+    "gold": "unsupported",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-033",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-034",
+    "pred": "unverified",
+    "gold": "unverified",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-035",
+    "pred": "contradicted",
+    "gold": "contradicted",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-036",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-037",
+    "pred": "unsupported",
+    "gold": "unsupported",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-038",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-039",
+    "pred": "unverified",
+    "gold": "unverified",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-040",
+    "pred": "contradicted",
+    "gold": "contradicted",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-041",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-042",
+    "pred": "unsupported",
+    "gold": "unsupported",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-043",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-044",
+    "pred": "unverified",
+    "gold": "unverified",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-045",
+    "pred": "contradicted",
+    "gold": "contradicted",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-046",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-047",
+    "pred": "unsupported",
+    "gold": "unsupported",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-048",
+    "pred": "supported",
+    "gold": "supported",
+    "evidence_backed_pred": true
+  },
+  {
+    "id": "RQ4-049",
+    "pred": "unverified",
+    "gold": "unverified",
+    "evidence_backed_pred": false
+  },
+  {
+    "id": "RQ4-050",
+    "pred": "contradicted",
+    "gold": "contradicted",
+    "evidence_backed_pred": false
+  }
+]

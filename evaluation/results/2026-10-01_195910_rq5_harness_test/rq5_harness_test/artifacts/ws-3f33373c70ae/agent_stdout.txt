@@ -1,0 +1,1 @@
+mock_agent completed task_id=preserve_behavior label=HARNESS_TEST

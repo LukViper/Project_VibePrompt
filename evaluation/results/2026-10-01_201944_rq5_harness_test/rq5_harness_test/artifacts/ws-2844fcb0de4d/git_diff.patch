@@ -1,0 +1,49 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..dd9ae16
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,16 @@
++You are a senior software engineer.
++
++REQUIREMENTS
++- create_note(text) returns an id
++- list_notes() returns created notes
++
++CONSTRAINTS
++- in-memory
++- python 3.11+
++
++REJECTED / OUT OF SCOPE
++- Do not implement delete_note
++- Do not use Redis
++
++ACCEPTANCE CRITERIA
++- create then list contains the note
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..f177c59
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-2844fcb0de4d","task_id":"crud_notes","variant":"B_structured","seed_commit":"ab45b05b6eac429567a3ccd7e7b1c480a7a891b6"}
+\ No newline at end of file
+diff --git a/app/notes.py b/app/notes.py
+index beea953..a149eea 100644
+--- a/app/notes.py
++++ b/app/notes.py
+@@ -1,7 +1,11 @@
+ NOTES = {}
++_id = 0
+ 
+ def create_note(text):
+-    raise NotImplementedError
++    global _id
++    _id += 1
++    NOTES[_id] = {'id': _id, 'text': text}
++    return _id
+ 
+ def list_notes():
+-    raise NotImplementedError
++    return list(NOTES.values())

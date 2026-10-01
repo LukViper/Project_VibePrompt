@@ -1,0 +1,136 @@
+{
+  "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+  "experiment_1_label_agreement": {
+    "label_accuracy": {
+      "n": 50,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "unsupported_decision_rate": {
+      "n": 50,
+      "mean": 0.2,
+      "std": 0.4,
+      "ci95_low": 0.08912565670994936,
+      "ci95_high": 0.31087434329005065,
+      "median": 0.0
+    },
+    "contradicted_decision_rate": {
+      "n": 50,
+      "mean": 0.2,
+      "std": 0.4,
+      "ci95_low": 0.08912565670994936,
+      "ci95_high": 0.31087434329005065,
+      "median": 0.0
+    },
+    "unverified_decision_rate": {
+      "n": 50,
+      "mean": 0.2,
+      "std": 0.4,
+      "ci95_low": 0.08912565670994936,
+      "ci95_high": 0.31087434329005065,
+      "median": 0.0
+    },
+    "evidence_backed_agreement": {
+      "n": 50,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "n_scenarios": 50
+  },
+  "experiment_2_evidence_tracking_ablation": {
+    "no_evidence_tracking": {
+      "n_scenarios": 60,
+      "unsupported_decision_rate": {
+        "n": 60,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "unverified_decision_rate": {
+        "n": 60,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "contradicted_decision_rate": {
+        "n": 60,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "evidence_coverage": {
+        "n": 60,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "provenance_completeness": {
+        "n": 60,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      }
+    },
+    "evidence_tracking": {
+      "n_scenarios": 60,
+      "unsupported_decision_rate": {
+        "n": 60,
+        "mean": 0.2,
+        "std": 0.4,
+        "ci95_low": 0.09878603521911285,
+        "ci95_high": 0.3012139647808872,
+        "median": 0.0
+      },
+      "unverified_decision_rate": {
+        "n": 60,
+        "mean": 0.4,
+        "std": 0.4898979485566356,
+        "ci95_low": 0.2760387157213996,
+        "ci95_high": 0.5239612842786004,
+        "median": 0.0
+      },
+      "contradicted_decision_rate": {
+        "n": 60,
+        "mean": 0.2,
+        "std": 0.4,
+        "ci95_low": 0.09878603521911285,
+        "ci95_high": 0.3012139647808872,
+        "median": 0.0
+      },
+      "evidence_coverage": {
+        "n": 60,
+        "mean": 0.8,
+        "std": 0.4,
+        "ci95_low": 0.6987860352191129,
+        "ci95_high": 0.9012139647808872,
+        "median": 1.0
+      },
+      "provenance_completeness": {
+        "n": 60,
+        "mean": 0.5,
+        "std": 0.31622776601683794,
+        "ci95_low": 0.41998333506908286,
+        "ci95_high": 0.5800166649309172,
+        "median": 0.5
+      }
+    },
+    "n_scenarios": 60
+  },
+  "provenance_note": "URL alone never counts as verified"
+}

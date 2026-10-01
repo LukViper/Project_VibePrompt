@@ -1,0 +1,127 @@
+{
+  "workspace_id": "ws-32f8dd1d6ce8",
+  "task_id": "auth_token_service",
+  "system_variant": "B_structured",
+  "dataset_version": "2.0.0",
+  "seed_commit": "0673e1cdaf4e3ee954b01c4fd5ffa37172e81c07",
+  "start_time": "2026-10-01T20:19:51.305480+00:00",
+  "end_time": "2026-10-01T20:19:51.329104+00:00",
+  "exit_code": 0,
+  "duration_seconds": 0.023350456000116537,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "structured_requirements",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "structured_requirements_prompt"
+      ]
+    },
+    "state_summary": null
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-32f8dd1d6ce8/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-32f8dd1d6ce8/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-32f8dd1d6ce8/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-32f8dd1d6ce8/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-32f8dd1d6ce8/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-32f8dd1d6ce8/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-32f8dd1d6ce8/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/workspaces/ws-32f8dd1d6ce8"
+  },
+  "git": {
+    "commit_before": "0673e1cdaf4e3ee954b01c4fd5ffa37172e81c07",
+    "seed_commit": "0673e1cdaf4e3ee954b01c4fd5ffa37172e81c07",
+    "commit_after": "0673e1cdaf4e3ee954b01c4fd5ffa37172e81c07",
+    "changed_files": [
+      "pp/auth.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json"
+    ],
+    "status_preview": "M app/auth.py\n?? TASK.md\n?? VIBEPROMPT_META.json"
+  },
+  "agent_run": {
+    "id": "RUN-28e6e6cfefbe",
+    "project_id": "auth_token_service",
+    "prompt_id": null,
+    "agent": "external_cmd",
+    "model": null,
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_smoke_1nq6r3u_/ws-32f8dd1d6ce8",
+    "commit_before": "0673e1cdaf4e3ee954b01c4fd5ffa37172e81c07",
+    "commit_after": "0673e1cdaf4e3ee954b01c4fd5ffa37172e81c07",
+    "started_at": "2026-10-01T20:19:51.305480+00:00",
+    "completed_at": "2026-10-01T20:19:51.329104+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "mock_agent completed task_id=auth_token_service label=HARNESS_TEST\n",
+    "workspace_id": "ws-32f8dd1d6ce8",
+    "task_id": "auth_token_service",
+    "system_variant": "B_structured",
+    "exit_code": 0,
+    "duration_seconds": 0.023350456000116537,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-32f8dd1d6ce8/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-32f8dd1d6ce8/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_201944_rq5_harness_test/rq5_harness_test/artifacts/ws-32f8dd1d6ce8/git_diff.patch",
+    "label": "HARNESS TEST",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-f7a23000ef27",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-28e6e6cfefbe",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_register_and_login",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "register(username, password) stores the user",
+        "acceptance_test": "test_register_and_login"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:19:51.665312+00:00",
+      "verification_method": "acceptance_test_marker"
+    },
+    {
+      "id": "VER-a77bdaffaf1d",
+      "requirement_id": "REQ-002",
+      "agent_run_id": "RUN-28e6e6cfefbe",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_login_rejects_bad_password",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "login(username, password) returns a token on success",
+        "acceptance_test": "test_login_rejects_bad_password"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:19:51.665341+00:00",
+      "verification_method": "acceptance_test_marker"
+    }
+  ],
+  "unsupported_features": [
+    "Do not expose a DELETE user endpoint",
+    "Do not use an external database"
+  ],
+  "constraint_violations": [],
+  "scope_violations": [
+    "Do not expose a DELETE user endpoint",
+    "Do not use an external database"
+  ],
+  "label": "HARNESS TEST"
+}

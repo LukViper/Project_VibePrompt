@@ -1,0 +1,446 @@
+[
+  {
+    "workspace_id": "ws-8eba9212ffcd",
+    "task_id": "add_function",
+    "system_variant": "C_vibeprompt",
+    "start_time": "2026-10-01T19:59:10.101941+00:00",
+    "end_time": "2026-10-01T19:59:10.128527+00:00",
+    "exit_code": 0,
+    "duration_seconds": 0.02626413500001945,
+    "execution_status": "EXECUTED_WITH_VALIDATION",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "build_exit_code": 0,
+    "test_exit_code": 0,
+    "artifacts": {
+      "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/agent_stdout.txt",
+      "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/agent_stderr.txt",
+      "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/git_diff.patch",
+      "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/build_stdout.txt",
+      "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/build_stderr.txt",
+      "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/test_stdout.txt",
+      "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/test_stderr.txt",
+      "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/workspaces/ws-8eba9212ffcd"
+    },
+    "git": {
+      "commit_before": "752af9c7025fbcdcc0de0583bedab960366139e2",
+      "commit_after": "752af9c7025fbcdcc0de0583bedab960366139e2",
+      "changed_files": [],
+      "created_files": [
+        "add_mod.py",
+        "test_add.py"
+      ],
+      "deleted_files": [],
+      "status_preview": "?? add_mod.py\n?? test_add.py"
+    },
+    "agent_run": {
+      "id": "RUN-89cd6d1baa22",
+      "project_id": "add_function",
+      "prompt_id": null,
+      "agent": "external_cmd",
+      "model": null,
+      "model_version": null,
+      "repository": "/tmp/vibeprompt_rq5_smoke_tsgo506g/ws-8eba9212ffcd",
+      "commit_before": "752af9c7025fbcdcc0de0583bedab960366139e2",
+      "commit_after": "752af9c7025fbcdcc0de0583bedab960366139e2",
+      "started_at": "2026-10-01T19:59:10.101941+00:00",
+      "completed_at": "2026-10-01T19:59:10.128527+00:00",
+      "build_status": "PASS",
+      "test_status": "PASS",
+      "output_summary": "mock_agent completed task_id=add_function label=HARNESS_TEST\n",
+      "workspace_id": "ws-8eba9212ffcd",
+      "task_id": "add_function",
+      "system_variant": "C_vibeprompt",
+      "exit_code": 0,
+      "duration_seconds": 0.02626413500001945,
+      "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/agent_stdout.txt",
+      "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/agent_stderr.txt",
+      "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-8eba9212ffcd/git_diff.patch",
+      "label": "HARNESS TEST",
+      "execution_status": "EXECUTED_WITH_VALIDATION"
+    },
+    "requirement_verifications": [
+      {
+        "id": "VER-57621a61c709",
+        "requirement_id": "REQ-001",
+        "agent_run_id": "RUN-89cd6d1baa22",
+        "status": "PASS",
+        "evidence": [
+          "acceptance_test:test_add",
+          "test_status:PASS"
+        ],
+        "test_results": {
+          "requirement_text": "implement add(a, b) returning a+b",
+          "acceptance_test": "test_add"
+        },
+        "confidence": null,
+        "verified_at": "2026-10-01T19:59:10.705756+00:00",
+        "verification_method": "acceptance_test_marker"
+      },
+      {
+        "id": "VER-b3f2486bd83f",
+        "requirement_id": "REQ-002",
+        "agent_run_id": "RUN-89cd6d1baa22",
+        "status": "PASS",
+        "evidence": [
+          "acceptance_test:test_add",
+          "test_status:PASS"
+        ],
+        "test_results": {
+          "requirement_text": "include unit test for add",
+          "acceptance_test": "test_add"
+        },
+        "confidence": null,
+        "verified_at": "2026-10-01T19:59:10.705786+00:00",
+        "verification_method": "acceptance_test_marker"
+      }
+    ],
+    "unsupported_features": [],
+    "label": "HARNESS TEST"
+  },
+  {
+    "workspace_id": "ws-2df26c93ad98",
+    "task_id": "echo_endpoint",
+    "system_variant": "C_vibeprompt",
+    "start_time": "2026-10-01T19:59:10.723294+00:00",
+    "end_time": "2026-10-01T19:59:10.753332+00:00",
+    "exit_code": 0,
+    "duration_seconds": 0.02970302099856781,
+    "execution_status": "EXECUTED_WITH_VALIDATION",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "build_exit_code": 0,
+    "test_exit_code": 0,
+    "artifacts": {
+      "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-2df26c93ad98/agent_stdout.txt",
+      "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-2df26c93ad98/agent_stderr.txt",
+      "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-2df26c93ad98/git_diff.patch",
+      "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-2df26c93ad98/build_stdout.txt",
+      "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-2df26c93ad98/build_stderr.txt",
+      "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-2df26c93ad98/test_stdout.txt",
+      "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-2df26c93ad98/test_stderr.txt",
+      "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/workspaces/ws-2df26c93ad98"
+    },
+    "git": {
+      "commit_before": "fe7c7bae2310e59d130f2bbe1439a1b457f10190",
+      "commit_after": "fe7c7bae2310e59d130f2bbe1439a1b457f10190",
+      "changed_files": [],
+      "created_files": [
+        "echo_mod.py",
+        "test_echo.py"
+      ],
+      "deleted_files": [],
+      "status_preview": "?? echo_mod.py\n?? test_echo.py"
+    },
+    "agent_run": {
+      "id": "RUN-2cdadad4a76b",
+      "project_id": "echo_endpoint",
+      "prompt_id": null,
+      "agent": "external_cmd",
+      "model": null,
+      "model_version": null,
+      "repository": "/tmp/vibeprompt_rq5_smoke_tsgo506g/ws-2df26c93ad98",
+      "commit_before": "fe7c7bae2310e59d130f2bbe1439a1b457f10190",
+      "commit_after": "fe7c7bae2310e59d130f2bbe1439a1b457f10190",
+      "started_at": "2026-10-01T19:59:10.723294+00:00",
+      "completed_at": "2026-10-01T19:59:10.753332+00:00",
+      "build_status": "PASS",
+      "test_status": "PASS",
+      "output_summary": "mock_agent completed task_id=echo_endpoint label=HARNESS_TEST\n",
+      "workspace_id": "ws-2df26c93ad98",
+      "task_id": "echo_endpoint",
+      "system_variant": "C_vibeprompt",
+      "exit_code": 0,
+      "duration_seconds": 0.02970302099856781,
+      "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-2df26c93ad98/agent_stdout.txt",
+      "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-2df26c93ad98/agent_stderr.txt",
+      "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-2df26c93ad98/git_diff.patch",
+      "label": "HARNESS TEST",
+      "execution_status": "EXECUTED_WITH_VALIDATION"
+    },
+    "requirement_verifications": [
+      {
+        "id": "VER-80deaab84bf2",
+        "requirement_id": "REQ-001",
+        "agent_run_id": "RUN-2cdadad4a76b",
+        "status": "PASS",
+        "evidence": [
+          "acceptance_test:test_echo",
+          "test_status:PASS"
+        ],
+        "test_results": {
+          "requirement_text": "implement echo(payload) returning payload",
+          "acceptance_test": "test_echo"
+        },
+        "confidence": null,
+        "verified_at": "2026-10-01T19:59:11.184432+00:00",
+        "verification_method": "acceptance_test_marker"
+      }
+    ],
+    "unsupported_features": [],
+    "label": "HARNESS TEST"
+  },
+  {
+    "workspace_id": "ws-3f33373c70ae",
+    "task_id": "preserve_behavior",
+    "system_variant": "C_vibeprompt",
+    "start_time": "2026-10-01T19:59:11.199287+00:00",
+    "end_time": "2026-10-01T19:59:11.225738+00:00",
+    "exit_code": 0,
+    "duration_seconds": 0.026247485000567394,
+    "execution_status": "EXECUTED_WITH_VALIDATION",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "build_exit_code": 0,
+    "test_exit_code": 0,
+    "artifacts": {
+      "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-3f33373c70ae/agent_stdout.txt",
+      "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-3f33373c70ae/agent_stderr.txt",
+      "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-3f33373c70ae/git_diff.patch",
+      "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-3f33373c70ae/build_stdout.txt",
+      "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-3f33373c70ae/build_stderr.txt",
+      "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-3f33373c70ae/test_stdout.txt",
+      "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-3f33373c70ae/test_stderr.txt",
+      "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/workspaces/ws-3f33373c70ae"
+    },
+    "git": {
+      "commit_before": "a2597b52fc48828d8e93fb4acc0eadcbfc56e216",
+      "commit_after": "a2597b52fc48828d8e93fb4acc0eadcbfc56e216",
+      "changed_files": [
+        "reet.py",
+        "test_greet.py"
+      ],
+      "created_files": [],
+      "deleted_files": [],
+      "status_preview": "M greet.py\n M test_greet.py"
+    },
+    "agent_run": {
+      "id": "RUN-beb6b94890b7",
+      "project_id": "preserve_behavior",
+      "prompt_id": null,
+      "agent": "external_cmd",
+      "model": null,
+      "model_version": null,
+      "repository": "/tmp/vibeprompt_rq5_smoke_tsgo506g/ws-3f33373c70ae",
+      "commit_before": "a2597b52fc48828d8e93fb4acc0eadcbfc56e216",
+      "commit_after": "a2597b52fc48828d8e93fb4acc0eadcbfc56e216",
+      "started_at": "2026-10-01T19:59:11.199287+00:00",
+      "completed_at": "2026-10-01T19:59:11.225738+00:00",
+      "build_status": "PASS",
+      "test_status": "PASS",
+      "output_summary": "mock_agent completed task_id=preserve_behavior label=HARNESS_TEST\n",
+      "workspace_id": "ws-3f33373c70ae",
+      "task_id": "preserve_behavior",
+      "system_variant": "C_vibeprompt",
+      "exit_code": 0,
+      "duration_seconds": 0.026247485000567394,
+      "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-3f33373c70ae/agent_stdout.txt",
+      "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-3f33373c70ae/agent_stderr.txt",
+      "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-3f33373c70ae/git_diff.patch",
+      "label": "HARNESS TEST",
+      "execution_status": "EXECUTED_WITH_VALIDATION"
+    },
+    "requirement_verifications": [
+      {
+        "id": "VER-c96bf610100e",
+        "requirement_id": "REQ-001",
+        "agent_run_id": "RUN-beb6b94890b7",
+        "status": "PASS",
+        "evidence": [
+          "acceptance_test:test_greet_default",
+          "test_status:PASS"
+        ],
+        "test_results": {
+          "requirement_text": "preserve greet('Ada') == 'Hello, Ada'",
+          "acceptance_test": "test_greet_default"
+        },
+        "confidence": null,
+        "verified_at": "2026-10-01T19:59:11.651102+00:00",
+        "verification_method": "acceptance_test_marker"
+      },
+      {
+        "id": "VER-b6bf4ddb4883",
+        "requirement_id": "REQ-002",
+        "agent_run_id": "RUN-beb6b94890b7",
+        "status": "PASS",
+        "evidence": [
+          "acceptance_test:test_greet_title",
+          "test_status:PASS"
+        ],
+        "test_results": {
+          "requirement_text": "support optional title argument",
+          "acceptance_test": "test_greet_title"
+        },
+        "confidence": null,
+        "verified_at": "2026-10-01T19:59:11.651129+00:00",
+        "verification_method": "acceptance_test_marker"
+      }
+    ],
+    "unsupported_features": [],
+    "label": "HARNESS TEST"
+  },
+  {
+    "workspace_id": "ws-52b39e22fab4",
+    "task_id": "clamp_feature",
+    "system_variant": "C_vibeprompt",
+    "start_time": "2026-10-01T19:59:11.666833+00:00",
+    "end_time": "2026-10-01T19:59:11.694485+00:00",
+    "exit_code": 0,
+    "duration_seconds": 0.0273702360009338,
+    "execution_status": "EXECUTED_WITH_VALIDATION",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "build_exit_code": 0,
+    "test_exit_code": 0,
+    "artifacts": {
+      "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/agent_stdout.txt",
+      "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/agent_stderr.txt",
+      "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/git_diff.patch",
+      "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/build_stdout.txt",
+      "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/build_stderr.txt",
+      "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/test_stdout.txt",
+      "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/test_stderr.txt",
+      "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/workspaces/ws-52b39e22fab4"
+    },
+    "git": {
+      "commit_before": "781db19348a8e37c7333bef0b8b156b9faf6be5c",
+      "commit_after": "781db19348a8e37c7333bef0b8b156b9faf6be5c",
+      "changed_files": [],
+      "created_files": [
+        "clamp_mod.py",
+        "test_clamp.py"
+      ],
+      "deleted_files": [],
+      "status_preview": "?? clamp_mod.py\n?? test_clamp.py"
+    },
+    "agent_run": {
+      "id": "RUN-fb34bcaf722a",
+      "project_id": "clamp_feature",
+      "prompt_id": null,
+      "agent": "external_cmd",
+      "model": null,
+      "model_version": null,
+      "repository": "/tmp/vibeprompt_rq5_smoke_tsgo506g/ws-52b39e22fab4",
+      "commit_before": "781db19348a8e37c7333bef0b8b156b9faf6be5c",
+      "commit_after": "781db19348a8e37c7333bef0b8b156b9faf6be5c",
+      "started_at": "2026-10-01T19:59:11.666833+00:00",
+      "completed_at": "2026-10-01T19:59:11.694485+00:00",
+      "build_status": "PASS",
+      "test_status": "PASS",
+      "output_summary": "mock_agent completed task_id=clamp_feature label=HARNESS_TEST\n",
+      "workspace_id": "ws-52b39e22fab4",
+      "task_id": "clamp_feature",
+      "system_variant": "C_vibeprompt",
+      "exit_code": 0,
+      "duration_seconds": 0.0273702360009338,
+      "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/agent_stdout.txt",
+      "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/agent_stderr.txt",
+      "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-52b39e22fab4/git_diff.patch",
+      "label": "HARNESS TEST",
+      "execution_status": "EXECUTED_WITH_VALIDATION"
+    },
+    "requirement_verifications": [
+      {
+        "id": "VER-8a70ddc61374",
+        "requirement_id": "REQ-001",
+        "agent_run_id": "RUN-fb34bcaf722a",
+        "status": "PASS",
+        "evidence": [
+          "acceptance_test:test_clamp",
+          "test_status:PASS"
+        ],
+        "test_results": {
+          "requirement_text": "implement clamp(x, lo, hi)",
+          "acceptance_test": "test_clamp"
+        },
+        "confidence": null,
+        "verified_at": "2026-10-01T19:59:12.066603+00:00",
+        "verification_method": "acceptance_test_marker"
+      }
+    ],
+    "unsupported_features": [],
+    "label": "HARNESS TEST"
+  },
+  {
+    "workspace_id": "ws-cd1425f846cd",
+    "task_id": "reject_logging",
+    "system_variant": "C_vibeprompt",
+    "start_time": "2026-10-01T19:59:12.080869+00:00",
+    "end_time": "2026-10-01T19:59:12.104860+00:00",
+    "exit_code": 0,
+    "duration_seconds": 0.023779668001225218,
+    "execution_status": "EXECUTED_WITH_VALIDATION",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "build_exit_code": 0,
+    "test_exit_code": 0,
+    "artifacts": {
+      "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-cd1425f846cd/agent_stdout.txt",
+      "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-cd1425f846cd/agent_stderr.txt",
+      "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-cd1425f846cd/git_diff.patch",
+      "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-cd1425f846cd/build_stdout.txt",
+      "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-cd1425f846cd/build_stderr.txt",
+      "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-cd1425f846cd/test_stdout.txt",
+      "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-cd1425f846cd/test_stderr.txt",
+      "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/workspaces/ws-cd1425f846cd"
+    },
+    "git": {
+      "commit_before": "bb2f631dbcc5154922e5776cf840cdd0864851a0",
+      "commit_after": "bb2f631dbcc5154922e5776cf840cdd0864851a0",
+      "changed_files": [],
+      "created_files": [
+        "multiply_mod.py",
+        "test_multiply.py"
+      ],
+      "deleted_files": [],
+      "status_preview": "?? multiply_mod.py\n?? test_multiply.py"
+    },
+    "agent_run": {
+      "id": "RUN-6ee8445e7c4d",
+      "project_id": "reject_logging",
+      "prompt_id": null,
+      "agent": "external_cmd",
+      "model": null,
+      "model_version": null,
+      "repository": "/tmp/vibeprompt_rq5_smoke_tsgo506g/ws-cd1425f846cd",
+      "commit_before": "bb2f631dbcc5154922e5776cf840cdd0864851a0",
+      "commit_after": "bb2f631dbcc5154922e5776cf840cdd0864851a0",
+      "started_at": "2026-10-01T19:59:12.080869+00:00",
+      "completed_at": "2026-10-01T19:59:12.104860+00:00",
+      "build_status": "PASS",
+      "test_status": "PASS",
+      "output_summary": "mock_agent completed task_id=reject_logging label=HARNESS_TEST\n",
+      "workspace_id": "ws-cd1425f846cd",
+      "task_id": "reject_logging",
+      "system_variant": "C_vibeprompt",
+      "exit_code": 0,
+      "duration_seconds": 0.023779668001225218,
+      "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-cd1425f846cd/agent_stdout.txt",
+      "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-cd1425f846cd/agent_stderr.txt",
+      "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_195910_rq5_harness_test/rq5_harness_test/artifacts/ws-cd1425f846cd/git_diff.patch",
+      "label": "HARNESS TEST",
+      "execution_status": "EXECUTED_WITH_VALIDATION"
+    },
+    "requirement_verifications": [
+      {
+        "id": "VER-e6be780e80b2",
+        "requirement_id": "REQ-001",
+        "agent_run_id": "RUN-6ee8445e7c4d",
+        "status": "PASS",
+        "evidence": [
+          "acceptance_test:test_multiply",
+          "test_status:PASS"
+        ],
+        "test_results": {
+          "requirement_text": "implement multiply(a, b)",
+          "acceptance_test": "test_multiply"
+        },
+        "confidence": null,
+        "verified_at": "2026-10-01T19:59:12.449612+00:00",
+        "verification_method": "acceptance_test_marker"
+      }
+    ],
+    "unsupported_features": [],
+    "label": "HARNESS TEST"
+  }
+]

@@ -21,6 +21,12 @@ from app.nlp.similarity import cosine_similarity
 from app.nlp.embeddings import create_embedding
 from app.schemas.provenance import ProvenanceSource, make_provenance
 from app.schemas.state import ConversationStage, empty_state_dict, migrate_state
+from app.services.assertion_lifecycle import (
+    default_requirement_assertion_status,
+    infer_origin_from_provenance,
+)
+from app.schemas.assertions import AssertionOrigin
+from app.services.traceability import record_requirement_version_lineage
 from app.services.versioning import StateVersioning
 
 
@@ -29,10 +35,13 @@ def empty_state() -> dict:
 
 
 def public_state(state: dict) -> dict:
+    from app.services.integrity_store import integrity_summary
+
     cloned = migrate_state(state or {})
     for req in cloned.get("requirements") or []:
         req.pop("embedding", None)
     cloned.pop("_last_version_reason", None)
+    cloned["integrity"] = integrity_summary(cloned)
     return cloned
 
 
@@ -263,6 +272,8 @@ def apply_research_findings(session: Session, project: Project, limit: int = 5) 
             reason=item.get("query") or "applied research finding",
             capability=impact,
             acceptance=f"Design and implementation reflect: {impact}",
+            origin=AssertionOrigin.RESEARCH_DERIVED,
+            explicit=False,
         )
         item["applied"] = True
         added.append(created["id"])
@@ -366,13 +377,38 @@ def _new_requirement(
     actor: str | None = None,
     acceptance: str | None = None,
     capability: str | None = None,
+    origin: AssertionOrigin | str | None = None,
+    explicit: bool = True,
 ) -> dict:
+    """Create a requirement with explicit AssertionOrigin semantics.
+
+    USER message extraction defaults to USER_EXPLICIT → CONFIRMED.
+    Callers that infer or derive requirements must pass origin/explicit accordingly.
+    """
     locked = bool((state.get("core_idea") or {}).get("locked") or state.get("core_idea"))
+    resolved_origin = infer_origin_from_provenance(
+        source,
+        explicit=explicit and origin is None,
+        origin_hint=origin,
+    )
+    # If caller passed origin explicitly, honor it; if source=USER and explicit=True → USER_EXPLICIT.
+    if origin is None and source == ProvenanceSource.USER and explicit:
+        resolved_origin = AssertionOrigin.USER_EXPLICIT
+    elif origin is None and source == ProvenanceSource.USER and not explicit:
+        resolved_origin = AssertionOrigin.USER_INFERRED
+    assertion = default_requirement_assertion_status(
+        provenance_source=source,
+        origin=resolved_origin,
+        explicit=resolved_origin == AssertionOrigin.USER_EXPLICIT,
+    )
+    user_approved = assertion.value in {"CONFIRMED", "LOCKED"}
     item = {
         "id": _next_code(state),
         "type": req_type,
         "text": text,
         "status": "active",
+        "assertion_status": assertion.value,
+        "assertion_origin": resolved_origin.value,
         "version": 1,
         "slot": slot,
         "slot_value": slot_value,
@@ -381,18 +417,24 @@ def _new_requirement(
         "acceptance": acceptance,
         "capability": capability,
         "origin": "original" if not locked else "added",
-        "provenance": make_provenance(source, reason=reason, user_approved=True),
+        "provenance": make_provenance(source, reason=reason, user_approved=user_approved),
         "versions": [{"version": 1, "text": text, "status": "active"}],
     }
     state["requirements"].append(item)
     return item
 
 
-def _revise(req: dict, text: str, status: str = "active") -> None:
-    req["version"] = int(req.get("version") or 1) + 1
+def _revise(req: dict, text: str, status: str = "active", *, changed_by: str = "user", change_reason: str = "") -> None:
+    previous = int(req.get("version") or 1)
+    req["version"] = previous + 1
     req["text"] = text
     req["status"] = status
     req.setdefault("versions", []).append({"version": req["version"], "text": text, "status": status})
+    record_requirement_version_lineage(
+        req,
+        changed_by=changed_by,
+        change_reason=change_reason or f"status={status}",
+    )
 
 
 def _remove_matching(state: dict, target: str) -> dict | None:
@@ -473,8 +515,12 @@ def _infer_stage(state: dict, intent: str) -> ConversationStage:
     return stage
 
 
-def apply_analysis(session: Session, project: Project, analysis: dict, reason: str = "message") -> dict:
-    state = migrate_state(project.state or {})
+def apply_analysis_to_state(state: dict, analysis: dict, reason: str = "message") -> dict:
+    """Apply extraction analysis to ProjectState without DB I/O.
+
+    Used by production apply_analysis and by RQ1 evaluation (no gold contamination).
+    """
+    state = migrate_state(state or {})
     extraction = analysis["extraction"]
     intent = analysis["intent"]["intent"]
     relationship = analysis["relationship"]["relationship"]
@@ -613,10 +659,8 @@ def apply_analysis(session: Session, project: Project, analysis: dict, reason: s
     state["drift"] = analysis.get("drift")
     state["scope"] = analysis.get("scope")
     state["conversation_stage"] = _infer_stage(state, intent).value
-    # Keep conversation/exploration layers in sync without promoting inferences to hard constraints.
     ctx = dict(state.get("conversation_context") or {})
     ctx["last_intent"] = intent
-    # Prefer extraction cues for topic when present.
     if extraction.problem or extraction.objective:
         focus = extraction.objective or extraction.problem
         ctx["topic"] = focus
@@ -645,7 +689,11 @@ def apply_analysis(session: Session, project: Project, analysis: dict, reason: s
             if notice not in notices:
                 notices.append(notice)
             state["notices"] = notices[-5:]
-    state = StateVersioning.bump(state, reason)
+    return StateVersioning.bump(state, reason)
+
+
+def apply_analysis(session: Session, project: Project, analysis: dict, reason: str = "message") -> dict:
+    state = apply_analysis_to_state(project.state or {}, analysis, reason=reason)
     project.state = public_state(state)
     project.title = state["project"]["title"] or project.title
     project.updated_at = utcnow()

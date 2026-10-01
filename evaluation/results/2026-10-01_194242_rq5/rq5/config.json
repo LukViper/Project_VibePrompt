@@ -1,0 +1,15 @@
+{
+  "experiment_id": "rq5_agent_execution",
+  "experiment_version": "2.0.0",
+  "dataset_id": "vibeprompt-synthetic-bench/rq5",
+  "dataset_version": "1.0.0",
+  "random_seed": 42,
+  "model": "n/a",
+  "embedding_provider": "n/a",
+  "embedding_model": "n/a",
+  "parameters": {
+    "agent_available": false,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK"
+  },
+  "timestamp": "2026-10-01T19:42:42.365007+00:00"
+}

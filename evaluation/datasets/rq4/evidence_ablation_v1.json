@@ -1,0 +1,602 @@
+[
+  {
+    "id": "RQ4-ABL-001",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use BERT",
+    "evidence_variant": "no_evidence",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported"
+  },
+  {
+    "id": "RQ4-ABL-002",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use PostgreSQL",
+    "evidence_variant": "valid_evidence",
+    "evidence_text": "Peer-reviewed comparison supports this choice for the stated workload.",
+    "evidence_verified": true,
+    "gold_label": "supported"
+  },
+  {
+    "id": "RQ4-ABL-003",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use WebSocket",
+    "evidence_variant": "weak_evidence",
+    "evidence_text": "A short blog mentions this stack casually.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-004",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kubernetes",
+    "evidence_variant": "contradictory_evidence",
+    "evidence_text": "Contradictory cost analysis opposing this choice under our constraints.",
+    "evidence_verified": false,
+    "gold_label": "contradicted"
+  },
+  {
+    "id": "RQ4-ABL-005",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Redis",
+    "evidence_variant": "unverified_evidence",
+    "evidence_text": "Unverified vendor whitepaper without independent replication.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-006",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kafka",
+    "evidence_variant": "no_evidence",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported"
+  },
+  {
+    "id": "RQ4-ABL-007",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use BERT",
+    "evidence_variant": "valid_evidence",
+    "evidence_text": "Peer-reviewed comparison supports this choice for the stated workload.",
+    "evidence_verified": true,
+    "gold_label": "supported"
+  },
+  {
+    "id": "RQ4-ABL-008",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use PostgreSQL",
+    "evidence_variant": "weak_evidence",
+    "evidence_text": "A short blog mentions this stack casually.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-009",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use WebSocket",
+    "evidence_variant": "contradictory_evidence",
+    "evidence_text": "Contradictory cost analysis opposing this choice under our constraints.",
+    "evidence_verified": false,
+    "gold_label": "contradicted"
+  },
+  {
+    "id": "RQ4-ABL-010",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kubernetes",
+    "evidence_variant": "unverified_evidence",
+    "evidence_text": "Unverified vendor whitepaper without independent replication.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-011",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Redis",
+    "evidence_variant": "no_evidence",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported"
+  },
+  {
+    "id": "RQ4-ABL-012",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kafka",
+    "evidence_variant": "valid_evidence",
+    "evidence_text": "Peer-reviewed comparison supports this choice for the stated workload.",
+    "evidence_verified": true,
+    "gold_label": "supported"
+  },
+  {
+    "id": "RQ4-ABL-013",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use BERT",
+    "evidence_variant": "weak_evidence",
+    "evidence_text": "A short blog mentions this stack casually.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-014",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use PostgreSQL",
+    "evidence_variant": "contradictory_evidence",
+    "evidence_text": "Contradictory cost analysis opposing this choice under our constraints.",
+    "evidence_verified": false,
+    "gold_label": "contradicted"
+  },
+  {
+    "id": "RQ4-ABL-015",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use WebSocket",
+    "evidence_variant": "unverified_evidence",
+    "evidence_text": "Unverified vendor whitepaper without independent replication.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-016",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kubernetes",
+    "evidence_variant": "no_evidence",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported"
+  },
+  {
+    "id": "RQ4-ABL-017",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Redis",
+    "evidence_variant": "valid_evidence",
+    "evidence_text": "Peer-reviewed comparison supports this choice for the stated workload.",
+    "evidence_verified": true,
+    "gold_label": "supported"
+  },
+  {
+    "id": "RQ4-ABL-018",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kafka",
+    "evidence_variant": "weak_evidence",
+    "evidence_text": "A short blog mentions this stack casually.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-019",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use BERT",
+    "evidence_variant": "contradictory_evidence",
+    "evidence_text": "Contradictory cost analysis opposing this choice under our constraints.",
+    "evidence_verified": false,
+    "gold_label": "contradicted"
+  },
+  {
+    "id": "RQ4-ABL-020",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use PostgreSQL",
+    "evidence_variant": "unverified_evidence",
+    "evidence_text": "Unverified vendor whitepaper without independent replication.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-021",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use WebSocket",
+    "evidence_variant": "no_evidence",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported"
+  },
+  {
+    "id": "RQ4-ABL-022",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kubernetes",
+    "evidence_variant": "valid_evidence",
+    "evidence_text": "Peer-reviewed comparison supports this choice for the stated workload.",
+    "evidence_verified": true,
+    "gold_label": "supported"
+  },
+  {
+    "id": "RQ4-ABL-023",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Redis",
+    "evidence_variant": "weak_evidence",
+    "evidence_text": "A short blog mentions this stack casually.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-024",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kafka",
+    "evidence_variant": "contradictory_evidence",
+    "evidence_text": "Contradictory cost analysis opposing this choice under our constraints.",
+    "evidence_verified": false,
+    "gold_label": "contradicted"
+  },
+  {
+    "id": "RQ4-ABL-025",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use BERT",
+    "evidence_variant": "unverified_evidence",
+    "evidence_text": "Unverified vendor whitepaper without independent replication.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-026",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use PostgreSQL",
+    "evidence_variant": "no_evidence",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported"
+  },
+  {
+    "id": "RQ4-ABL-027",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use WebSocket",
+    "evidence_variant": "valid_evidence",
+    "evidence_text": "Peer-reviewed comparison supports this choice for the stated workload.",
+    "evidence_verified": true,
+    "gold_label": "supported"
+  },
+  {
+    "id": "RQ4-ABL-028",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kubernetes",
+    "evidence_variant": "weak_evidence",
+    "evidence_text": "A short blog mentions this stack casually.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-029",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Redis",
+    "evidence_variant": "contradictory_evidence",
+    "evidence_text": "Contradictory cost analysis opposing this choice under our constraints.",
+    "evidence_verified": false,
+    "gold_label": "contradicted"
+  },
+  {
+    "id": "RQ4-ABL-030",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kafka",
+    "evidence_variant": "unverified_evidence",
+    "evidence_text": "Unverified vendor whitepaper without independent replication.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-031",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use BERT",
+    "evidence_variant": "no_evidence",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported"
+  },
+  {
+    "id": "RQ4-ABL-032",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use PostgreSQL",
+    "evidence_variant": "valid_evidence",
+    "evidence_text": "Peer-reviewed comparison supports this choice for the stated workload.",
+    "evidence_verified": true,
+    "gold_label": "supported"
+  },
+  {
+    "id": "RQ4-ABL-033",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use WebSocket",
+    "evidence_variant": "weak_evidence",
+    "evidence_text": "A short blog mentions this stack casually.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-034",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kubernetes",
+    "evidence_variant": "contradictory_evidence",
+    "evidence_text": "Contradictory cost analysis opposing this choice under our constraints.",
+    "evidence_verified": false,
+    "gold_label": "contradicted"
+  },
+  {
+    "id": "RQ4-ABL-035",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Redis",
+    "evidence_variant": "unverified_evidence",
+    "evidence_text": "Unverified vendor whitepaper without independent replication.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-036",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kafka",
+    "evidence_variant": "no_evidence",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported"
+  },
+  {
+    "id": "RQ4-ABL-037",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use BERT",
+    "evidence_variant": "valid_evidence",
+    "evidence_text": "Peer-reviewed comparison supports this choice for the stated workload.",
+    "evidence_verified": true,
+    "gold_label": "supported"
+  },
+  {
+    "id": "RQ4-ABL-038",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use PostgreSQL",
+    "evidence_variant": "weak_evidence",
+    "evidence_text": "A short blog mentions this stack casually.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-039",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use WebSocket",
+    "evidence_variant": "contradictory_evidence",
+    "evidence_text": "Contradictory cost analysis opposing this choice under our constraints.",
+    "evidence_verified": false,
+    "gold_label": "contradicted"
+  },
+  {
+    "id": "RQ4-ABL-040",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kubernetes",
+    "evidence_variant": "unverified_evidence",
+    "evidence_text": "Unverified vendor whitepaper without independent replication.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-041",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Redis",
+    "evidence_variant": "no_evidence",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported"
+  },
+  {
+    "id": "RQ4-ABL-042",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kafka",
+    "evidence_variant": "valid_evidence",
+    "evidence_text": "Peer-reviewed comparison supports this choice for the stated workload.",
+    "evidence_verified": true,
+    "gold_label": "supported"
+  },
+  {
+    "id": "RQ4-ABL-043",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use BERT",
+    "evidence_variant": "weak_evidence",
+    "evidence_text": "A short blog mentions this stack casually.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-044",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use PostgreSQL",
+    "evidence_variant": "contradictory_evidence",
+    "evidence_text": "Contradictory cost analysis opposing this choice under our constraints.",
+    "evidence_verified": false,
+    "gold_label": "contradicted"
+  },
+  {
+    "id": "RQ4-ABL-045",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use WebSocket",
+    "evidence_variant": "unverified_evidence",
+    "evidence_text": "Unverified vendor whitepaper without independent replication.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-046",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kubernetes",
+    "evidence_variant": "no_evidence",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported"
+  },
+  {
+    "id": "RQ4-ABL-047",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Redis",
+    "evidence_variant": "valid_evidence",
+    "evidence_text": "Peer-reviewed comparison supports this choice for the stated workload.",
+    "evidence_verified": true,
+    "gold_label": "supported"
+  },
+  {
+    "id": "RQ4-ABL-048",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kafka",
+    "evidence_variant": "weak_evidence",
+    "evidence_text": "A short blog mentions this stack casually.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-049",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use BERT",
+    "evidence_variant": "contradictory_evidence",
+    "evidence_text": "Contradictory cost analysis opposing this choice under our constraints.",
+    "evidence_verified": false,
+    "gold_label": "contradicted"
+  },
+  {
+    "id": "RQ4-ABL-050",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use PostgreSQL",
+    "evidence_variant": "unverified_evidence",
+    "evidence_text": "Unverified vendor whitepaper without independent replication.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-051",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use WebSocket",
+    "evidence_variant": "no_evidence",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported"
+  },
+  {
+    "id": "RQ4-ABL-052",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kubernetes",
+    "evidence_variant": "valid_evidence",
+    "evidence_text": "Peer-reviewed comparison supports this choice for the stated workload.",
+    "evidence_verified": true,
+    "gold_label": "supported"
+  },
+  {
+    "id": "RQ4-ABL-053",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Redis",
+    "evidence_variant": "weak_evidence",
+    "evidence_text": "A short blog mentions this stack casually.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-054",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kafka",
+    "evidence_variant": "contradictory_evidence",
+    "evidence_text": "Contradictory cost analysis opposing this choice under our constraints.",
+    "evidence_verified": false,
+    "gold_label": "contradicted"
+  },
+  {
+    "id": "RQ4-ABL-055",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use BERT",
+    "evidence_variant": "unverified_evidence",
+    "evidence_text": "Unverified vendor whitepaper without independent replication.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-056",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use PostgreSQL",
+    "evidence_variant": "no_evidence",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported"
+  },
+  {
+    "id": "RQ4-ABL-057",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use WebSocket",
+    "evidence_variant": "valid_evidence",
+    "evidence_text": "Peer-reviewed comparison supports this choice for the stated workload.",
+    "evidence_verified": true,
+    "gold_label": "supported"
+  },
+  {
+    "id": "RQ4-ABL-058",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kubernetes",
+    "evidence_variant": "weak_evidence",
+    "evidence_text": "A short blog mentions this stack casually.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  },
+  {
+    "id": "RQ4-ABL-059",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Redis",
+    "evidence_variant": "contradictory_evidence",
+    "evidence_text": "Contradictory cost analysis opposing this choice under our constraints.",
+    "evidence_verified": false,
+    "gold_label": "contradicted"
+  },
+  {
+    "id": "RQ4-ABL-060",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "decision": "Use Kafka",
+    "evidence_variant": "unverified_evidence",
+    "evidence_text": "Unverified vendor whitepaper without independent replication.",
+    "evidence_verified": false,
+    "gold_label": "unverified"
+  }
+]

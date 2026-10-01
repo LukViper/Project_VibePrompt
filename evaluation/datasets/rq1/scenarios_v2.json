@@ -1,0 +1,4870 @@
+[
+  {
+    "id": "RQ1-001",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I want a phishing detection system.",
+      "Use BERT.",
+      "Actually don't use BERT.",
+      "Response time must be below 500 ms.",
+      "Use PostgreSQL.",
+      "Actually PostgreSQL is unnecessary. Use SQLite."
+    ],
+    "tags": [
+      "explicit",
+      "technology",
+      "removal",
+      "replacement",
+      "constraint"
+    ],
+    "variant": 0,
+    "gold_requirements": [
+      "phishing detection system",
+      "response time below 500 ms"
+    ],
+    "gold_constraints": [
+      "use sqlite"
+    ],
+    "gold_technologies": [
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject bert",
+      "replace postgresql with sqlite"
+    ],
+    "rejected": [
+      "use bert",
+      "use postgresql"
+    ],
+    "superseded": [
+      "use postgresql"
+    ],
+    "assertion_origins": {
+      "phishing detection system": "USER_EXPLICIT",
+      "response time below 500 ms": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-002",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a log analyzer for security.",
+      "Include authentication.",
+      "No authentication after all.",
+      "Must support CSV export."
+    ],
+    "tags": [
+      "explicit",
+      "removal",
+      "multi_turn"
+    ],
+    "variant": 1,
+    "gold_requirements": [
+      "log analyzer for security",
+      "support csv export"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "remove authentication"
+    ],
+    "rejected": [
+      "authentication"
+    ],
+    "superseded": [],
+    "assertion_origins": {
+      "log analyzer for security": "USER_EXPLICIT",
+      "support csv export": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-003",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Student NLP project on spam classification.",
+      "Team of one, four weeks.",
+      "Use TF-IDF first, maybe deep learning later."
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 2,
+    "gold_requirements": [
+      "spam classification"
+    ],
+    "gold_constraints": [
+      "team of one",
+      "four weeks",
+      "tf-idf"
+    ],
+    "gold_technologies": [
+      "tf-idf"
+    ],
+    "gold_decisions": [
+      "prefer tf-idf initially"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "spam classification": "USER_EXPLICIT",
+      "tf-idf": "USER_EXPLICIT",
+      "deep learning later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-004",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "We need an inventory API.",
+      "It must support CRUD for products.",
+      "Add rate limiting under 100 requests per minute.",
+      "Wait \u2014 make the rate limit 1000 per minute instead."
+    ],
+    "tags": [
+      "modification",
+      "constraint",
+      "multi_turn"
+    ],
+    "variant": 3,
+    "gold_requirements": [
+      "inventory api",
+      "crud for products",
+      "rate limiting 1000 per minute"
+    ],
+    "gold_constraints": [
+      "1000 requests per minute"
+    ],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "raise rate limit to 1000"
+    ],
+    "rejected": [
+      "100 requests per minute"
+    ],
+    "superseded": [
+      "rate limiting under 100 requests per minute"
+    ],
+    "assertion_origins": {
+      "inventory api": "USER_EXPLICIT",
+      "crud for products": "USER_EXPLICIT",
+      "rate limiting 1000 per minute": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-005",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Mobile app for expense tracking.",
+      "Use Flutter.",
+      "Offline mode is required.",
+      "Actually drop offline mode; always-online is fine.",
+      "Sync to Firebase."
+    ],
+    "tags": [
+      "technology",
+      "removal",
+      "scope_change"
+    ],
+    "variant": 4,
+    "gold_requirements": [
+      "expense tracking",
+      "sync to firebase"
+    ],
+    "gold_constraints": [
+      "always-online"
+    ],
+    "gold_technologies": [
+      "flutter",
+      "firebase"
+    ],
+    "gold_decisions": [
+      "remove offline mode",
+      "use firebase"
+    ],
+    "rejected": [
+      "offline mode"
+    ],
+    "superseded": [
+      "offline mode"
+    ],
+    "assertion_origins": {
+      "expense tracking": "USER_EXPLICIT",
+      "flutter": "USER_EXPLICIT",
+      "sync to firebase": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-006",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Recommend something for document search.",
+      "Perhaps Elasticsearch would be appropriate.",
+      "Must handle PDFs and Word docs.",
+      "Budget is zero; prefer open source only."
+    ],
+    "tags": [
+      "inferred",
+      "ambiguous",
+      "constraint"
+    ],
+    "variant": 5,
+    "gold_requirements": [
+      "document search",
+      "handle pdfs and word docs"
+    ],
+    "gold_constraints": [
+      "budget zero",
+      "open source only"
+    ],
+    "gold_technologies": [
+      "elasticsearch"
+    ],
+    "gold_decisions": [
+      "prefer open source"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "document search": "USER_EXPLICIT",
+      "elasticsearch": "USER_INFERRED",
+      "handle pdfs and word docs": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-007",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a real-time chat backend.",
+      "Use WebSocket.",
+      "Also support REST polling.",
+      "No \u2014 drop REST polling; WebSocket only.",
+      "Messages must persist in Redis."
+    ],
+    "tags": [
+      "contradiction",
+      "technology",
+      "replacement"
+    ],
+    "variant": 6,
+    "gold_requirements": [
+      "real-time chat backend",
+      "messages persist in redis"
+    ],
+    "gold_constraints": [
+      "websocket only"
+    ],
+    "gold_technologies": [
+      "websocket",
+      "redis"
+    ],
+    "gold_decisions": [
+      "drop rest polling"
+    ],
+    "rejected": [
+      "rest polling"
+    ],
+    "superseded": [
+      "support rest polling"
+    ],
+    "assertion_origins": {
+      "real-time chat backend": "USER_EXPLICIT",
+      "websocket": "USER_EXPLICIT",
+      "messages persist in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-008",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Academic recommender system for courses.",
+      "Use collaborative filtering.",
+      "Dataset will somehow be collected later.",
+      "Team of three, one semester."
+    ],
+    "tags": [
+      "ambiguous",
+      "inferred",
+      "constraint"
+    ],
+    "variant": 7,
+    "gold_requirements": [
+      "course recommender system",
+      "collaborative filtering"
+    ],
+    "gold_constraints": [
+      "team of three",
+      "one semester"
+    ],
+    "gold_technologies": [
+      "collaborative filtering"
+    ],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "course recommender system": "USER_EXPLICIT",
+      "collaborative filtering": "USER_EXPLICIT",
+      "dataset collected later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-009",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I need Kubernetes for a student blog.",
+      "Actually Kubernetes is overkill. Use a single VPS.",
+      "Nginx + SQLite is enough.",
+      "Must support Markdown posts."
+    ],
+    "tags": [
+      "technology",
+      "scope_change",
+      "removal"
+    ],
+    "variant": 8,
+    "gold_requirements": [
+      "student blog",
+      "support markdown posts"
+    ],
+    "gold_constraints": [
+      "single vps"
+    ],
+    "gold_technologies": [
+      "nginx",
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject kubernetes",
+      "use single vps"
+    ],
+    "rejected": [
+      "kubernetes"
+    ],
+    "superseded": [
+      "kubernetes"
+    ],
+    "assertion_origins": {
+      "student blog": "USER_EXPLICIT",
+      "support markdown posts": "USER_EXPLICIT",
+      "nginx": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-010",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Fraud detection pipeline.",
+      "Latency must be under 200 ms.",
+      "Use Kafka for events.",
+      "Do not use Kafka; use a simple queue.",
+      "Store features in Redis."
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "replacement",
+      "contradiction"
+    ],
+    "variant": 9,
+    "gold_requirements": [
+      "fraud detection pipeline",
+      "latency under 200 ms",
+      "store features in redis"
+    ],
+    "gold_constraints": [
+      "latency under 200 ms"
+    ],
+    "gold_technologies": [
+      "redis",
+      "simple queue"
+    ],
+    "gold_decisions": [
+      "replace kafka with simple queue"
+    ],
+    "rejected": [
+      "kafka"
+    ],
+    "superseded": [
+      "use kafka for events"
+    ],
+    "assertion_origins": {
+      "fraud detection pipeline": "USER_EXPLICIT",
+      "latency under 200 ms": "USER_EXPLICIT",
+      "store features in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-011",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build an analytics dashboard.",
+      "Support dark mode maybe.",
+      "Must export CSV and PDF.",
+      "Auth is required."
+    ],
+    "tags": [
+      "explicit",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 10,
+    "gold_requirements": [
+      "analytics dashboard",
+      "export csv and pdf",
+      "auth is required"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "analytics dashboard": "USER_EXPLICIT",
+      "export csv and pdf": "USER_EXPLICIT",
+      "auth is required": "USER_EXPLICIT",
+      "dark mode": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-012",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Migrate from monolith to microservices.",
+      "Start with the billing module only.",
+      "Keep the monolith for everything else.",
+      "Use gRPC between services."
+    ],
+    "tags": [
+      "scope_change",
+      "technology",
+      "multi_turn"
+    ],
+    "variant": 11,
+    "gold_requirements": [
+      "migrate billing module to microservice",
+      "use grpc between services"
+    ],
+    "gold_constraints": [
+      "billing module only"
+    ],
+    "gold_technologies": [
+      "grpc"
+    ],
+    "gold_decisions": [
+      "partial migration"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "migrate billing module to microservice": "USER_EXPLICIT",
+      "use grpc between services": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-013",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I want a phishing detection system.",
+      "Use BERT.",
+      "Actually don't use BERT.",
+      "Response time must be below 500 ms.",
+      "Use PostgreSQL.",
+      "Actually PostgreSQL is unnecessary. Use SQLite.",
+      "(Follow-up note for variant 12: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "technology",
+      "removal",
+      "replacement",
+      "constraint"
+    ],
+    "variant": 0,
+    "gold_requirements": [
+      "phishing detection system",
+      "response time below 500 ms"
+    ],
+    "gold_constraints": [
+      "use sqlite"
+    ],
+    "gold_technologies": [
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject bert",
+      "replace postgresql with sqlite"
+    ],
+    "rejected": [
+      "use bert",
+      "use postgresql"
+    ],
+    "superseded": [
+      "use postgresql"
+    ],
+    "assertion_origins": {
+      "phishing detection system": "USER_EXPLICIT",
+      "response time below 500 ms": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-014",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a log analyzer for security.",
+      "Include authentication.",
+      "No authentication after all.",
+      "Must support CSV export.",
+      "(Follow-up note for variant 13: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "removal",
+      "multi_turn"
+    ],
+    "variant": 1,
+    "gold_requirements": [
+      "log analyzer for security",
+      "support csv export"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "remove authentication"
+    ],
+    "rejected": [
+      "authentication"
+    ],
+    "superseded": [],
+    "assertion_origins": {
+      "log analyzer for security": "USER_EXPLICIT",
+      "support csv export": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-015",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Student NLP project on spam classification.",
+      "Team of one, four weeks.",
+      "Use TF-IDF first, maybe deep learning later.",
+      "(Follow-up note for variant 14: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 2,
+    "gold_requirements": [
+      "spam classification"
+    ],
+    "gold_constraints": [
+      "team of one",
+      "four weeks",
+      "tf-idf"
+    ],
+    "gold_technologies": [
+      "tf-idf"
+    ],
+    "gold_decisions": [
+      "prefer tf-idf initially"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "spam classification": "USER_EXPLICIT",
+      "tf-idf": "USER_EXPLICIT",
+      "deep learning later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-016",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "We need an inventory API.",
+      "It must support CRUD for products.",
+      "Add rate limiting under 100 requests per minute.",
+      "Wait \u2014 make the rate limit 1000 per minute instead.",
+      "(Follow-up note for variant 15: keep prior decisions.)"
+    ],
+    "tags": [
+      "modification",
+      "constraint",
+      "multi_turn"
+    ],
+    "variant": 3,
+    "gold_requirements": [
+      "inventory api",
+      "crud for products",
+      "rate limiting 1000 per minute"
+    ],
+    "gold_constraints": [
+      "1000 requests per minute"
+    ],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "raise rate limit to 1000"
+    ],
+    "rejected": [
+      "100 requests per minute"
+    ],
+    "superseded": [
+      "rate limiting under 100 requests per minute"
+    ],
+    "assertion_origins": {
+      "inventory api": "USER_EXPLICIT",
+      "crud for products": "USER_EXPLICIT",
+      "rate limiting 1000 per minute": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-017",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Mobile app for expense tracking.",
+      "Use Flutter.",
+      "Offline mode is required.",
+      "Actually drop offline mode; always-online is fine.",
+      "Sync to Firebase.",
+      "(Follow-up note for variant 16: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "removal",
+      "scope_change"
+    ],
+    "variant": 4,
+    "gold_requirements": [
+      "expense tracking",
+      "sync to firebase"
+    ],
+    "gold_constraints": [
+      "always-online"
+    ],
+    "gold_technologies": [
+      "flutter",
+      "firebase"
+    ],
+    "gold_decisions": [
+      "remove offline mode",
+      "use firebase"
+    ],
+    "rejected": [
+      "offline mode"
+    ],
+    "superseded": [
+      "offline mode"
+    ],
+    "assertion_origins": {
+      "expense tracking": "USER_EXPLICIT",
+      "flutter": "USER_EXPLICIT",
+      "sync to firebase": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-018",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Recommend something for document search.",
+      "Perhaps Elasticsearch would be appropriate.",
+      "Must handle PDFs and Word docs.",
+      "Budget is zero; prefer open source only.",
+      "(Follow-up note for variant 17: keep prior decisions.)"
+    ],
+    "tags": [
+      "inferred",
+      "ambiguous",
+      "constraint"
+    ],
+    "variant": 5,
+    "gold_requirements": [
+      "document search",
+      "handle pdfs and word docs"
+    ],
+    "gold_constraints": [
+      "budget zero",
+      "open source only"
+    ],
+    "gold_technologies": [
+      "elasticsearch"
+    ],
+    "gold_decisions": [
+      "prefer open source"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "document search": "USER_EXPLICIT",
+      "elasticsearch": "USER_INFERRED",
+      "handle pdfs and word docs": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-019",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a real-time chat backend.",
+      "Use WebSocket.",
+      "Also support REST polling.",
+      "No \u2014 drop REST polling; WebSocket only.",
+      "Messages must persist in Redis.",
+      "(Follow-up note for variant 18: keep prior decisions.)"
+    ],
+    "tags": [
+      "contradiction",
+      "technology",
+      "replacement"
+    ],
+    "variant": 6,
+    "gold_requirements": [
+      "real-time chat backend",
+      "messages persist in redis"
+    ],
+    "gold_constraints": [
+      "websocket only"
+    ],
+    "gold_technologies": [
+      "websocket",
+      "redis"
+    ],
+    "gold_decisions": [
+      "drop rest polling"
+    ],
+    "rejected": [
+      "rest polling"
+    ],
+    "superseded": [
+      "support rest polling"
+    ],
+    "assertion_origins": {
+      "real-time chat backend": "USER_EXPLICIT",
+      "websocket": "USER_EXPLICIT",
+      "messages persist in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-020",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Academic recommender system for courses.",
+      "Use collaborative filtering.",
+      "Dataset will somehow be collected later.",
+      "Team of three, one semester.",
+      "(Follow-up note for variant 19: keep prior decisions.)"
+    ],
+    "tags": [
+      "ambiguous",
+      "inferred",
+      "constraint"
+    ],
+    "variant": 7,
+    "gold_requirements": [
+      "course recommender system",
+      "collaborative filtering"
+    ],
+    "gold_constraints": [
+      "team of three",
+      "one semester"
+    ],
+    "gold_technologies": [
+      "collaborative filtering"
+    ],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "course recommender system": "USER_EXPLICIT",
+      "collaborative filtering": "USER_EXPLICIT",
+      "dataset collected later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-021",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I need Kubernetes for a student blog.",
+      "Actually Kubernetes is overkill. Use a single VPS.",
+      "Nginx + SQLite is enough.",
+      "Must support Markdown posts.",
+      "(Follow-up note for variant 20: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "scope_change",
+      "removal"
+    ],
+    "variant": 8,
+    "gold_requirements": [
+      "student blog",
+      "support markdown posts"
+    ],
+    "gold_constraints": [
+      "single vps"
+    ],
+    "gold_technologies": [
+      "nginx",
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject kubernetes",
+      "use single vps"
+    ],
+    "rejected": [
+      "kubernetes"
+    ],
+    "superseded": [
+      "kubernetes"
+    ],
+    "assertion_origins": {
+      "student blog": "USER_EXPLICIT",
+      "support markdown posts": "USER_EXPLICIT",
+      "nginx": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-022",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Fraud detection pipeline.",
+      "Latency must be under 200 ms.",
+      "Use Kafka for events.",
+      "Do not use Kafka; use a simple queue.",
+      "Store features in Redis.",
+      "(Follow-up note for variant 21: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "replacement",
+      "contradiction"
+    ],
+    "variant": 9,
+    "gold_requirements": [
+      "fraud detection pipeline",
+      "latency under 200 ms",
+      "store features in redis"
+    ],
+    "gold_constraints": [
+      "latency under 200 ms"
+    ],
+    "gold_technologies": [
+      "redis",
+      "simple queue"
+    ],
+    "gold_decisions": [
+      "replace kafka with simple queue"
+    ],
+    "rejected": [
+      "kafka"
+    ],
+    "superseded": [
+      "use kafka for events"
+    ],
+    "assertion_origins": {
+      "fraud detection pipeline": "USER_EXPLICIT",
+      "latency under 200 ms": "USER_EXPLICIT",
+      "store features in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-023",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build an analytics dashboard.",
+      "Support dark mode maybe.",
+      "Must export CSV and PDF.",
+      "Auth is required.",
+      "(Follow-up note for variant 22: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 10,
+    "gold_requirements": [
+      "analytics dashboard",
+      "export csv and pdf",
+      "auth is required"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "analytics dashboard": "USER_EXPLICIT",
+      "export csv and pdf": "USER_EXPLICIT",
+      "auth is required": "USER_EXPLICIT",
+      "dark mode": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-024",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Migrate from monolith to microservices.",
+      "Start with the billing module only.",
+      "Keep the monolith for everything else.",
+      "Use gRPC between services.",
+      "(Follow-up note for variant 23: keep prior decisions.)"
+    ],
+    "tags": [
+      "scope_change",
+      "technology",
+      "multi_turn"
+    ],
+    "variant": 11,
+    "gold_requirements": [
+      "migrate billing module to microservice",
+      "use grpc between services"
+    ],
+    "gold_constraints": [
+      "billing module only"
+    ],
+    "gold_technologies": [
+      "grpc"
+    ],
+    "gold_decisions": [
+      "partial migration"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "migrate billing module to microservice": "USER_EXPLICIT",
+      "use grpc between services": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-025",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I want a phishing detection system.",
+      "Use BERT.",
+      "Actually don't use BERT.",
+      "Response time must be below 500 ms.",
+      "Use PostgreSQL.",
+      "Actually PostgreSQL is unnecessary. Use SQLite.",
+      "(Follow-up note for variant 24: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "technology",
+      "removal",
+      "replacement",
+      "constraint"
+    ],
+    "variant": 0,
+    "gold_requirements": [
+      "phishing detection system",
+      "response time below 500 ms"
+    ],
+    "gold_constraints": [
+      "use sqlite"
+    ],
+    "gold_technologies": [
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject bert",
+      "replace postgresql with sqlite"
+    ],
+    "rejected": [
+      "use bert",
+      "use postgresql"
+    ],
+    "superseded": [
+      "use postgresql"
+    ],
+    "assertion_origins": {
+      "phishing detection system": "USER_EXPLICIT",
+      "response time below 500 ms": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-026",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a log analyzer for security.",
+      "Include authentication.",
+      "No authentication after all.",
+      "Must support CSV export.",
+      "(Follow-up note for variant 25: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "removal",
+      "multi_turn"
+    ],
+    "variant": 1,
+    "gold_requirements": [
+      "log analyzer for security",
+      "support csv export"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "remove authentication"
+    ],
+    "rejected": [
+      "authentication"
+    ],
+    "superseded": [],
+    "assertion_origins": {
+      "log analyzer for security": "USER_EXPLICIT",
+      "support csv export": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-027",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Student NLP project on spam classification.",
+      "Team of one, four weeks.",
+      "Use TF-IDF first, maybe deep learning later.",
+      "(Follow-up note for variant 26: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 2,
+    "gold_requirements": [
+      "spam classification"
+    ],
+    "gold_constraints": [
+      "team of one",
+      "four weeks",
+      "tf-idf"
+    ],
+    "gold_technologies": [
+      "tf-idf"
+    ],
+    "gold_decisions": [
+      "prefer tf-idf initially"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "spam classification": "USER_EXPLICIT",
+      "tf-idf": "USER_EXPLICIT",
+      "deep learning later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-028",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "We need an inventory API.",
+      "It must support CRUD for products.",
+      "Add rate limiting under 100 requests per minute.",
+      "Wait \u2014 make the rate limit 1000 per minute instead.",
+      "(Follow-up note for variant 27: keep prior decisions.)"
+    ],
+    "tags": [
+      "modification",
+      "constraint",
+      "multi_turn"
+    ],
+    "variant": 3,
+    "gold_requirements": [
+      "inventory api",
+      "crud for products",
+      "rate limiting 1000 per minute"
+    ],
+    "gold_constraints": [
+      "1000 requests per minute"
+    ],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "raise rate limit to 1000"
+    ],
+    "rejected": [
+      "100 requests per minute"
+    ],
+    "superseded": [
+      "rate limiting under 100 requests per minute"
+    ],
+    "assertion_origins": {
+      "inventory api": "USER_EXPLICIT",
+      "crud for products": "USER_EXPLICIT",
+      "rate limiting 1000 per minute": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-029",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Mobile app for expense tracking.",
+      "Use Flutter.",
+      "Offline mode is required.",
+      "Actually drop offline mode; always-online is fine.",
+      "Sync to Firebase.",
+      "(Follow-up note for variant 28: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "removal",
+      "scope_change"
+    ],
+    "variant": 4,
+    "gold_requirements": [
+      "expense tracking",
+      "sync to firebase"
+    ],
+    "gold_constraints": [
+      "always-online"
+    ],
+    "gold_technologies": [
+      "flutter",
+      "firebase"
+    ],
+    "gold_decisions": [
+      "remove offline mode",
+      "use firebase"
+    ],
+    "rejected": [
+      "offline mode"
+    ],
+    "superseded": [
+      "offline mode"
+    ],
+    "assertion_origins": {
+      "expense tracking": "USER_EXPLICIT",
+      "flutter": "USER_EXPLICIT",
+      "sync to firebase": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-030",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Recommend something for document search.",
+      "Perhaps Elasticsearch would be appropriate.",
+      "Must handle PDFs and Word docs.",
+      "Budget is zero; prefer open source only.",
+      "(Follow-up note for variant 29: keep prior decisions.)"
+    ],
+    "tags": [
+      "inferred",
+      "ambiguous",
+      "constraint"
+    ],
+    "variant": 5,
+    "gold_requirements": [
+      "document search",
+      "handle pdfs and word docs"
+    ],
+    "gold_constraints": [
+      "budget zero",
+      "open source only"
+    ],
+    "gold_technologies": [
+      "elasticsearch"
+    ],
+    "gold_decisions": [
+      "prefer open source"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "document search": "USER_EXPLICIT",
+      "elasticsearch": "USER_INFERRED",
+      "handle pdfs and word docs": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-031",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a real-time chat backend.",
+      "Use WebSocket.",
+      "Also support REST polling.",
+      "No \u2014 drop REST polling; WebSocket only.",
+      "Messages must persist in Redis.",
+      "(Follow-up note for variant 30: keep prior decisions.)"
+    ],
+    "tags": [
+      "contradiction",
+      "technology",
+      "replacement"
+    ],
+    "variant": 6,
+    "gold_requirements": [
+      "real-time chat backend",
+      "messages persist in redis"
+    ],
+    "gold_constraints": [
+      "websocket only"
+    ],
+    "gold_technologies": [
+      "websocket",
+      "redis"
+    ],
+    "gold_decisions": [
+      "drop rest polling"
+    ],
+    "rejected": [
+      "rest polling"
+    ],
+    "superseded": [
+      "support rest polling"
+    ],
+    "assertion_origins": {
+      "real-time chat backend": "USER_EXPLICIT",
+      "websocket": "USER_EXPLICIT",
+      "messages persist in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-032",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Academic recommender system for courses.",
+      "Use collaborative filtering.",
+      "Dataset will somehow be collected later.",
+      "Team of three, one semester.",
+      "(Follow-up note for variant 31: keep prior decisions.)"
+    ],
+    "tags": [
+      "ambiguous",
+      "inferred",
+      "constraint"
+    ],
+    "variant": 7,
+    "gold_requirements": [
+      "course recommender system",
+      "collaborative filtering"
+    ],
+    "gold_constraints": [
+      "team of three",
+      "one semester"
+    ],
+    "gold_technologies": [
+      "collaborative filtering"
+    ],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "course recommender system": "USER_EXPLICIT",
+      "collaborative filtering": "USER_EXPLICIT",
+      "dataset collected later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-033",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I need Kubernetes for a student blog.",
+      "Actually Kubernetes is overkill. Use a single VPS.",
+      "Nginx + SQLite is enough.",
+      "Must support Markdown posts.",
+      "(Follow-up note for variant 32: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "scope_change",
+      "removal"
+    ],
+    "variant": 8,
+    "gold_requirements": [
+      "student blog",
+      "support markdown posts"
+    ],
+    "gold_constraints": [
+      "single vps"
+    ],
+    "gold_technologies": [
+      "nginx",
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject kubernetes",
+      "use single vps"
+    ],
+    "rejected": [
+      "kubernetes"
+    ],
+    "superseded": [
+      "kubernetes"
+    ],
+    "assertion_origins": {
+      "student blog": "USER_EXPLICIT",
+      "support markdown posts": "USER_EXPLICIT",
+      "nginx": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-034",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Fraud detection pipeline.",
+      "Latency must be under 200 ms.",
+      "Use Kafka for events.",
+      "Do not use Kafka; use a simple queue.",
+      "Store features in Redis.",
+      "(Follow-up note for variant 33: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "replacement",
+      "contradiction"
+    ],
+    "variant": 9,
+    "gold_requirements": [
+      "fraud detection pipeline",
+      "latency under 200 ms",
+      "store features in redis"
+    ],
+    "gold_constraints": [
+      "latency under 200 ms"
+    ],
+    "gold_technologies": [
+      "redis",
+      "simple queue"
+    ],
+    "gold_decisions": [
+      "replace kafka with simple queue"
+    ],
+    "rejected": [
+      "kafka"
+    ],
+    "superseded": [
+      "use kafka for events"
+    ],
+    "assertion_origins": {
+      "fraud detection pipeline": "USER_EXPLICIT",
+      "latency under 200 ms": "USER_EXPLICIT",
+      "store features in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-035",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build an analytics dashboard.",
+      "Support dark mode maybe.",
+      "Must export CSV and PDF.",
+      "Auth is required.",
+      "(Follow-up note for variant 34: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 10,
+    "gold_requirements": [
+      "analytics dashboard",
+      "export csv and pdf",
+      "auth is required"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "analytics dashboard": "USER_EXPLICIT",
+      "export csv and pdf": "USER_EXPLICIT",
+      "auth is required": "USER_EXPLICIT",
+      "dark mode": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-036",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Migrate from monolith to microservices.",
+      "Start with the billing module only.",
+      "Keep the monolith for everything else.",
+      "Use gRPC between services.",
+      "(Follow-up note for variant 35: keep prior decisions.)"
+    ],
+    "tags": [
+      "scope_change",
+      "technology",
+      "multi_turn"
+    ],
+    "variant": 11,
+    "gold_requirements": [
+      "migrate billing module to microservice",
+      "use grpc between services"
+    ],
+    "gold_constraints": [
+      "billing module only"
+    ],
+    "gold_technologies": [
+      "grpc"
+    ],
+    "gold_decisions": [
+      "partial migration"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "migrate billing module to microservice": "USER_EXPLICIT",
+      "use grpc between services": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-037",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I want a phishing detection system.",
+      "Use BERT.",
+      "Actually don't use BERT.",
+      "Response time must be below 500 ms.",
+      "Use PostgreSQL.",
+      "Actually PostgreSQL is unnecessary. Use SQLite.",
+      "(Follow-up note for variant 36: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "technology",
+      "removal",
+      "replacement",
+      "constraint"
+    ],
+    "variant": 0,
+    "gold_requirements": [
+      "phishing detection system",
+      "response time below 500 ms"
+    ],
+    "gold_constraints": [
+      "use sqlite"
+    ],
+    "gold_technologies": [
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject bert",
+      "replace postgresql with sqlite"
+    ],
+    "rejected": [
+      "use bert",
+      "use postgresql"
+    ],
+    "superseded": [
+      "use postgresql"
+    ],
+    "assertion_origins": {
+      "phishing detection system": "USER_EXPLICIT",
+      "response time below 500 ms": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-038",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a log analyzer for security.",
+      "Include authentication.",
+      "No authentication after all.",
+      "Must support CSV export.",
+      "(Follow-up note for variant 37: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "removal",
+      "multi_turn"
+    ],
+    "variant": 1,
+    "gold_requirements": [
+      "log analyzer for security",
+      "support csv export"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "remove authentication"
+    ],
+    "rejected": [
+      "authentication"
+    ],
+    "superseded": [],
+    "assertion_origins": {
+      "log analyzer for security": "USER_EXPLICIT",
+      "support csv export": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-039",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Student NLP project on spam classification.",
+      "Team of one, four weeks.",
+      "Use TF-IDF first, maybe deep learning later.",
+      "(Follow-up note for variant 38: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 2,
+    "gold_requirements": [
+      "spam classification"
+    ],
+    "gold_constraints": [
+      "team of one",
+      "four weeks",
+      "tf-idf"
+    ],
+    "gold_technologies": [
+      "tf-idf"
+    ],
+    "gold_decisions": [
+      "prefer tf-idf initially"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "spam classification": "USER_EXPLICIT",
+      "tf-idf": "USER_EXPLICIT",
+      "deep learning later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-040",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "We need an inventory API.",
+      "It must support CRUD for products.",
+      "Add rate limiting under 100 requests per minute.",
+      "Wait \u2014 make the rate limit 1000 per minute instead.",
+      "(Follow-up note for variant 39: keep prior decisions.)"
+    ],
+    "tags": [
+      "modification",
+      "constraint",
+      "multi_turn"
+    ],
+    "variant": 3,
+    "gold_requirements": [
+      "inventory api",
+      "crud for products",
+      "rate limiting 1000 per minute"
+    ],
+    "gold_constraints": [
+      "1000 requests per minute"
+    ],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "raise rate limit to 1000"
+    ],
+    "rejected": [
+      "100 requests per minute"
+    ],
+    "superseded": [
+      "rate limiting under 100 requests per minute"
+    ],
+    "assertion_origins": {
+      "inventory api": "USER_EXPLICIT",
+      "crud for products": "USER_EXPLICIT",
+      "rate limiting 1000 per minute": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-041",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Mobile app for expense tracking.",
+      "Use Flutter.",
+      "Offline mode is required.",
+      "Actually drop offline mode; always-online is fine.",
+      "Sync to Firebase.",
+      "(Follow-up note for variant 40: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "removal",
+      "scope_change"
+    ],
+    "variant": 4,
+    "gold_requirements": [
+      "expense tracking",
+      "sync to firebase"
+    ],
+    "gold_constraints": [
+      "always-online"
+    ],
+    "gold_technologies": [
+      "flutter",
+      "firebase"
+    ],
+    "gold_decisions": [
+      "remove offline mode",
+      "use firebase"
+    ],
+    "rejected": [
+      "offline mode"
+    ],
+    "superseded": [
+      "offline mode"
+    ],
+    "assertion_origins": {
+      "expense tracking": "USER_EXPLICIT",
+      "flutter": "USER_EXPLICIT",
+      "sync to firebase": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-042",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Recommend something for document search.",
+      "Perhaps Elasticsearch would be appropriate.",
+      "Must handle PDFs and Word docs.",
+      "Budget is zero; prefer open source only.",
+      "(Follow-up note for variant 41: keep prior decisions.)"
+    ],
+    "tags": [
+      "inferred",
+      "ambiguous",
+      "constraint"
+    ],
+    "variant": 5,
+    "gold_requirements": [
+      "document search",
+      "handle pdfs and word docs"
+    ],
+    "gold_constraints": [
+      "budget zero",
+      "open source only"
+    ],
+    "gold_technologies": [
+      "elasticsearch"
+    ],
+    "gold_decisions": [
+      "prefer open source"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "document search": "USER_EXPLICIT",
+      "elasticsearch": "USER_INFERRED",
+      "handle pdfs and word docs": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-043",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a real-time chat backend.",
+      "Use WebSocket.",
+      "Also support REST polling.",
+      "No \u2014 drop REST polling; WebSocket only.",
+      "Messages must persist in Redis.",
+      "(Follow-up note for variant 42: keep prior decisions.)"
+    ],
+    "tags": [
+      "contradiction",
+      "technology",
+      "replacement"
+    ],
+    "variant": 6,
+    "gold_requirements": [
+      "real-time chat backend",
+      "messages persist in redis"
+    ],
+    "gold_constraints": [
+      "websocket only"
+    ],
+    "gold_technologies": [
+      "websocket",
+      "redis"
+    ],
+    "gold_decisions": [
+      "drop rest polling"
+    ],
+    "rejected": [
+      "rest polling"
+    ],
+    "superseded": [
+      "support rest polling"
+    ],
+    "assertion_origins": {
+      "real-time chat backend": "USER_EXPLICIT",
+      "websocket": "USER_EXPLICIT",
+      "messages persist in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-044",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Academic recommender system for courses.",
+      "Use collaborative filtering.",
+      "Dataset will somehow be collected later.",
+      "Team of three, one semester.",
+      "(Follow-up note for variant 43: keep prior decisions.)"
+    ],
+    "tags": [
+      "ambiguous",
+      "inferred",
+      "constraint"
+    ],
+    "variant": 7,
+    "gold_requirements": [
+      "course recommender system",
+      "collaborative filtering"
+    ],
+    "gold_constraints": [
+      "team of three",
+      "one semester"
+    ],
+    "gold_technologies": [
+      "collaborative filtering"
+    ],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "course recommender system": "USER_EXPLICIT",
+      "collaborative filtering": "USER_EXPLICIT",
+      "dataset collected later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-045",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I need Kubernetes for a student blog.",
+      "Actually Kubernetes is overkill. Use a single VPS.",
+      "Nginx + SQLite is enough.",
+      "Must support Markdown posts.",
+      "(Follow-up note for variant 44: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "scope_change",
+      "removal"
+    ],
+    "variant": 8,
+    "gold_requirements": [
+      "student blog",
+      "support markdown posts"
+    ],
+    "gold_constraints": [
+      "single vps"
+    ],
+    "gold_technologies": [
+      "nginx",
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject kubernetes",
+      "use single vps"
+    ],
+    "rejected": [
+      "kubernetes"
+    ],
+    "superseded": [
+      "kubernetes"
+    ],
+    "assertion_origins": {
+      "student blog": "USER_EXPLICIT",
+      "support markdown posts": "USER_EXPLICIT",
+      "nginx": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-046",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Fraud detection pipeline.",
+      "Latency must be under 200 ms.",
+      "Use Kafka for events.",
+      "Do not use Kafka; use a simple queue.",
+      "Store features in Redis.",
+      "(Follow-up note for variant 45: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "replacement",
+      "contradiction"
+    ],
+    "variant": 9,
+    "gold_requirements": [
+      "fraud detection pipeline",
+      "latency under 200 ms",
+      "store features in redis"
+    ],
+    "gold_constraints": [
+      "latency under 200 ms"
+    ],
+    "gold_technologies": [
+      "redis",
+      "simple queue"
+    ],
+    "gold_decisions": [
+      "replace kafka with simple queue"
+    ],
+    "rejected": [
+      "kafka"
+    ],
+    "superseded": [
+      "use kafka for events"
+    ],
+    "assertion_origins": {
+      "fraud detection pipeline": "USER_EXPLICIT",
+      "latency under 200 ms": "USER_EXPLICIT",
+      "store features in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-047",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build an analytics dashboard.",
+      "Support dark mode maybe.",
+      "Must export CSV and PDF.",
+      "Auth is required.",
+      "(Follow-up note for variant 46: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 10,
+    "gold_requirements": [
+      "analytics dashboard",
+      "export csv and pdf",
+      "auth is required"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "analytics dashboard": "USER_EXPLICIT",
+      "export csv and pdf": "USER_EXPLICIT",
+      "auth is required": "USER_EXPLICIT",
+      "dark mode": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-048",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Migrate from monolith to microservices.",
+      "Start with the billing module only.",
+      "Keep the monolith for everything else.",
+      "Use gRPC between services.",
+      "(Follow-up note for variant 47: keep prior decisions.)"
+    ],
+    "tags": [
+      "scope_change",
+      "technology",
+      "multi_turn"
+    ],
+    "variant": 11,
+    "gold_requirements": [
+      "migrate billing module to microservice",
+      "use grpc between services"
+    ],
+    "gold_constraints": [
+      "billing module only"
+    ],
+    "gold_technologies": [
+      "grpc"
+    ],
+    "gold_decisions": [
+      "partial migration"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "migrate billing module to microservice": "USER_EXPLICIT",
+      "use grpc between services": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-049",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I want a phishing detection system.",
+      "Use BERT.",
+      "Actually don't use BERT.",
+      "Response time must be below 500 ms.",
+      "Use PostgreSQL.",
+      "Actually PostgreSQL is unnecessary. Use SQLite.",
+      "(Follow-up note for variant 48: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "technology",
+      "removal",
+      "replacement",
+      "constraint"
+    ],
+    "variant": 0,
+    "gold_requirements": [
+      "phishing detection system",
+      "response time below 500 ms"
+    ],
+    "gold_constraints": [
+      "use sqlite"
+    ],
+    "gold_technologies": [
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject bert",
+      "replace postgresql with sqlite"
+    ],
+    "rejected": [
+      "use bert",
+      "use postgresql"
+    ],
+    "superseded": [
+      "use postgresql"
+    ],
+    "assertion_origins": {
+      "phishing detection system": "USER_EXPLICIT",
+      "response time below 500 ms": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-050",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a log analyzer for security.",
+      "Include authentication.",
+      "No authentication after all.",
+      "Must support CSV export.",
+      "(Follow-up note for variant 49: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "removal",
+      "multi_turn"
+    ],
+    "variant": 1,
+    "gold_requirements": [
+      "log analyzer for security",
+      "support csv export"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "remove authentication"
+    ],
+    "rejected": [
+      "authentication"
+    ],
+    "superseded": [],
+    "assertion_origins": {
+      "log analyzer for security": "USER_EXPLICIT",
+      "support csv export": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-051",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Student NLP project on spam classification.",
+      "Team of one, four weeks.",
+      "Use TF-IDF first, maybe deep learning later.",
+      "(Follow-up note for variant 50: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 2,
+    "gold_requirements": [
+      "spam classification"
+    ],
+    "gold_constraints": [
+      "team of one",
+      "four weeks",
+      "tf-idf"
+    ],
+    "gold_technologies": [
+      "tf-idf"
+    ],
+    "gold_decisions": [
+      "prefer tf-idf initially"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "spam classification": "USER_EXPLICIT",
+      "tf-idf": "USER_EXPLICIT",
+      "deep learning later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-052",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "We need an inventory API.",
+      "It must support CRUD for products.",
+      "Add rate limiting under 100 requests per minute.",
+      "Wait \u2014 make the rate limit 1000 per minute instead.",
+      "(Follow-up note for variant 51: keep prior decisions.)"
+    ],
+    "tags": [
+      "modification",
+      "constraint",
+      "multi_turn"
+    ],
+    "variant": 3,
+    "gold_requirements": [
+      "inventory api",
+      "crud for products",
+      "rate limiting 1000 per minute"
+    ],
+    "gold_constraints": [
+      "1000 requests per minute"
+    ],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "raise rate limit to 1000"
+    ],
+    "rejected": [
+      "100 requests per minute"
+    ],
+    "superseded": [
+      "rate limiting under 100 requests per minute"
+    ],
+    "assertion_origins": {
+      "inventory api": "USER_EXPLICIT",
+      "crud for products": "USER_EXPLICIT",
+      "rate limiting 1000 per minute": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-053",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Mobile app for expense tracking.",
+      "Use Flutter.",
+      "Offline mode is required.",
+      "Actually drop offline mode; always-online is fine.",
+      "Sync to Firebase.",
+      "(Follow-up note for variant 52: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "removal",
+      "scope_change"
+    ],
+    "variant": 4,
+    "gold_requirements": [
+      "expense tracking",
+      "sync to firebase"
+    ],
+    "gold_constraints": [
+      "always-online"
+    ],
+    "gold_technologies": [
+      "flutter",
+      "firebase"
+    ],
+    "gold_decisions": [
+      "remove offline mode",
+      "use firebase"
+    ],
+    "rejected": [
+      "offline mode"
+    ],
+    "superseded": [
+      "offline mode"
+    ],
+    "assertion_origins": {
+      "expense tracking": "USER_EXPLICIT",
+      "flutter": "USER_EXPLICIT",
+      "sync to firebase": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-054",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Recommend something for document search.",
+      "Perhaps Elasticsearch would be appropriate.",
+      "Must handle PDFs and Word docs.",
+      "Budget is zero; prefer open source only.",
+      "(Follow-up note for variant 53: keep prior decisions.)"
+    ],
+    "tags": [
+      "inferred",
+      "ambiguous",
+      "constraint"
+    ],
+    "variant": 5,
+    "gold_requirements": [
+      "document search",
+      "handle pdfs and word docs"
+    ],
+    "gold_constraints": [
+      "budget zero",
+      "open source only"
+    ],
+    "gold_technologies": [
+      "elasticsearch"
+    ],
+    "gold_decisions": [
+      "prefer open source"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "document search": "USER_EXPLICIT",
+      "elasticsearch": "USER_INFERRED",
+      "handle pdfs and word docs": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-055",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a real-time chat backend.",
+      "Use WebSocket.",
+      "Also support REST polling.",
+      "No \u2014 drop REST polling; WebSocket only.",
+      "Messages must persist in Redis.",
+      "(Follow-up note for variant 54: keep prior decisions.)"
+    ],
+    "tags": [
+      "contradiction",
+      "technology",
+      "replacement"
+    ],
+    "variant": 6,
+    "gold_requirements": [
+      "real-time chat backend",
+      "messages persist in redis"
+    ],
+    "gold_constraints": [
+      "websocket only"
+    ],
+    "gold_technologies": [
+      "websocket",
+      "redis"
+    ],
+    "gold_decisions": [
+      "drop rest polling"
+    ],
+    "rejected": [
+      "rest polling"
+    ],
+    "superseded": [
+      "support rest polling"
+    ],
+    "assertion_origins": {
+      "real-time chat backend": "USER_EXPLICIT",
+      "websocket": "USER_EXPLICIT",
+      "messages persist in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-056",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Academic recommender system for courses.",
+      "Use collaborative filtering.",
+      "Dataset will somehow be collected later.",
+      "Team of three, one semester.",
+      "(Follow-up note for variant 55: keep prior decisions.)"
+    ],
+    "tags": [
+      "ambiguous",
+      "inferred",
+      "constraint"
+    ],
+    "variant": 7,
+    "gold_requirements": [
+      "course recommender system",
+      "collaborative filtering"
+    ],
+    "gold_constraints": [
+      "team of three",
+      "one semester"
+    ],
+    "gold_technologies": [
+      "collaborative filtering"
+    ],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "course recommender system": "USER_EXPLICIT",
+      "collaborative filtering": "USER_EXPLICIT",
+      "dataset collected later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-057",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I need Kubernetes for a student blog.",
+      "Actually Kubernetes is overkill. Use a single VPS.",
+      "Nginx + SQLite is enough.",
+      "Must support Markdown posts.",
+      "(Follow-up note for variant 56: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "scope_change",
+      "removal"
+    ],
+    "variant": 8,
+    "gold_requirements": [
+      "student blog",
+      "support markdown posts"
+    ],
+    "gold_constraints": [
+      "single vps"
+    ],
+    "gold_technologies": [
+      "nginx",
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject kubernetes",
+      "use single vps"
+    ],
+    "rejected": [
+      "kubernetes"
+    ],
+    "superseded": [
+      "kubernetes"
+    ],
+    "assertion_origins": {
+      "student blog": "USER_EXPLICIT",
+      "support markdown posts": "USER_EXPLICIT",
+      "nginx": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-058",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Fraud detection pipeline.",
+      "Latency must be under 200 ms.",
+      "Use Kafka for events.",
+      "Do not use Kafka; use a simple queue.",
+      "Store features in Redis.",
+      "(Follow-up note for variant 57: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "replacement",
+      "contradiction"
+    ],
+    "variant": 9,
+    "gold_requirements": [
+      "fraud detection pipeline",
+      "latency under 200 ms",
+      "store features in redis"
+    ],
+    "gold_constraints": [
+      "latency under 200 ms"
+    ],
+    "gold_technologies": [
+      "redis",
+      "simple queue"
+    ],
+    "gold_decisions": [
+      "replace kafka with simple queue"
+    ],
+    "rejected": [
+      "kafka"
+    ],
+    "superseded": [
+      "use kafka for events"
+    ],
+    "assertion_origins": {
+      "fraud detection pipeline": "USER_EXPLICIT",
+      "latency under 200 ms": "USER_EXPLICIT",
+      "store features in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-059",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build an analytics dashboard.",
+      "Support dark mode maybe.",
+      "Must export CSV and PDF.",
+      "Auth is required.",
+      "(Follow-up note for variant 58: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 10,
+    "gold_requirements": [
+      "analytics dashboard",
+      "export csv and pdf",
+      "auth is required"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "analytics dashboard": "USER_EXPLICIT",
+      "export csv and pdf": "USER_EXPLICIT",
+      "auth is required": "USER_EXPLICIT",
+      "dark mode": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-060",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Migrate from monolith to microservices.",
+      "Start with the billing module only.",
+      "Keep the monolith for everything else.",
+      "Use gRPC between services.",
+      "(Follow-up note for variant 59: keep prior decisions.)"
+    ],
+    "tags": [
+      "scope_change",
+      "technology",
+      "multi_turn"
+    ],
+    "variant": 11,
+    "gold_requirements": [
+      "migrate billing module to microservice",
+      "use grpc between services"
+    ],
+    "gold_constraints": [
+      "billing module only"
+    ],
+    "gold_technologies": [
+      "grpc"
+    ],
+    "gold_decisions": [
+      "partial migration"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "migrate billing module to microservice": "USER_EXPLICIT",
+      "use grpc between services": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-061",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I want a phishing detection system.",
+      "Use BERT.",
+      "Actually don't use BERT.",
+      "Response time must be below 500 ms.",
+      "Use PostgreSQL.",
+      "Actually PostgreSQL is unnecessary. Use SQLite.",
+      "(Follow-up note for variant 60: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "technology",
+      "removal",
+      "replacement",
+      "constraint"
+    ],
+    "variant": 0,
+    "gold_requirements": [
+      "phishing detection system",
+      "response time below 500 ms"
+    ],
+    "gold_constraints": [
+      "use sqlite"
+    ],
+    "gold_technologies": [
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject bert",
+      "replace postgresql with sqlite"
+    ],
+    "rejected": [
+      "use bert",
+      "use postgresql"
+    ],
+    "superseded": [
+      "use postgresql"
+    ],
+    "assertion_origins": {
+      "phishing detection system": "USER_EXPLICIT",
+      "response time below 500 ms": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-062",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a log analyzer for security.",
+      "Include authentication.",
+      "No authentication after all.",
+      "Must support CSV export.",
+      "(Follow-up note for variant 61: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "removal",
+      "multi_turn"
+    ],
+    "variant": 1,
+    "gold_requirements": [
+      "log analyzer for security",
+      "support csv export"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "remove authentication"
+    ],
+    "rejected": [
+      "authentication"
+    ],
+    "superseded": [],
+    "assertion_origins": {
+      "log analyzer for security": "USER_EXPLICIT",
+      "support csv export": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-063",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Student NLP project on spam classification.",
+      "Team of one, four weeks.",
+      "Use TF-IDF first, maybe deep learning later.",
+      "(Follow-up note for variant 62: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 2,
+    "gold_requirements": [
+      "spam classification"
+    ],
+    "gold_constraints": [
+      "team of one",
+      "four weeks",
+      "tf-idf"
+    ],
+    "gold_technologies": [
+      "tf-idf"
+    ],
+    "gold_decisions": [
+      "prefer tf-idf initially"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "spam classification": "USER_EXPLICIT",
+      "tf-idf": "USER_EXPLICIT",
+      "deep learning later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-064",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "We need an inventory API.",
+      "It must support CRUD for products.",
+      "Add rate limiting under 100 requests per minute.",
+      "Wait \u2014 make the rate limit 1000 per minute instead.",
+      "(Follow-up note for variant 63: keep prior decisions.)"
+    ],
+    "tags": [
+      "modification",
+      "constraint",
+      "multi_turn"
+    ],
+    "variant": 3,
+    "gold_requirements": [
+      "inventory api",
+      "crud for products",
+      "rate limiting 1000 per minute"
+    ],
+    "gold_constraints": [
+      "1000 requests per minute"
+    ],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "raise rate limit to 1000"
+    ],
+    "rejected": [
+      "100 requests per minute"
+    ],
+    "superseded": [
+      "rate limiting under 100 requests per minute"
+    ],
+    "assertion_origins": {
+      "inventory api": "USER_EXPLICIT",
+      "crud for products": "USER_EXPLICIT",
+      "rate limiting 1000 per minute": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-065",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Mobile app for expense tracking.",
+      "Use Flutter.",
+      "Offline mode is required.",
+      "Actually drop offline mode; always-online is fine.",
+      "Sync to Firebase.",
+      "(Follow-up note for variant 64: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "removal",
+      "scope_change"
+    ],
+    "variant": 4,
+    "gold_requirements": [
+      "expense tracking",
+      "sync to firebase"
+    ],
+    "gold_constraints": [
+      "always-online"
+    ],
+    "gold_technologies": [
+      "flutter",
+      "firebase"
+    ],
+    "gold_decisions": [
+      "remove offline mode",
+      "use firebase"
+    ],
+    "rejected": [
+      "offline mode"
+    ],
+    "superseded": [
+      "offline mode"
+    ],
+    "assertion_origins": {
+      "expense tracking": "USER_EXPLICIT",
+      "flutter": "USER_EXPLICIT",
+      "sync to firebase": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-066",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Recommend something for document search.",
+      "Perhaps Elasticsearch would be appropriate.",
+      "Must handle PDFs and Word docs.",
+      "Budget is zero; prefer open source only.",
+      "(Follow-up note for variant 65: keep prior decisions.)"
+    ],
+    "tags": [
+      "inferred",
+      "ambiguous",
+      "constraint"
+    ],
+    "variant": 5,
+    "gold_requirements": [
+      "document search",
+      "handle pdfs and word docs"
+    ],
+    "gold_constraints": [
+      "budget zero",
+      "open source only"
+    ],
+    "gold_technologies": [
+      "elasticsearch"
+    ],
+    "gold_decisions": [
+      "prefer open source"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "document search": "USER_EXPLICIT",
+      "elasticsearch": "USER_INFERRED",
+      "handle pdfs and word docs": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-067",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a real-time chat backend.",
+      "Use WebSocket.",
+      "Also support REST polling.",
+      "No \u2014 drop REST polling; WebSocket only.",
+      "Messages must persist in Redis.",
+      "(Follow-up note for variant 66: keep prior decisions.)"
+    ],
+    "tags": [
+      "contradiction",
+      "technology",
+      "replacement"
+    ],
+    "variant": 6,
+    "gold_requirements": [
+      "real-time chat backend",
+      "messages persist in redis"
+    ],
+    "gold_constraints": [
+      "websocket only"
+    ],
+    "gold_technologies": [
+      "websocket",
+      "redis"
+    ],
+    "gold_decisions": [
+      "drop rest polling"
+    ],
+    "rejected": [
+      "rest polling"
+    ],
+    "superseded": [
+      "support rest polling"
+    ],
+    "assertion_origins": {
+      "real-time chat backend": "USER_EXPLICIT",
+      "websocket": "USER_EXPLICIT",
+      "messages persist in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-068",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Academic recommender system for courses.",
+      "Use collaborative filtering.",
+      "Dataset will somehow be collected later.",
+      "Team of three, one semester.",
+      "(Follow-up note for variant 67: keep prior decisions.)"
+    ],
+    "tags": [
+      "ambiguous",
+      "inferred",
+      "constraint"
+    ],
+    "variant": 7,
+    "gold_requirements": [
+      "course recommender system",
+      "collaborative filtering"
+    ],
+    "gold_constraints": [
+      "team of three",
+      "one semester"
+    ],
+    "gold_technologies": [
+      "collaborative filtering"
+    ],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "course recommender system": "USER_EXPLICIT",
+      "collaborative filtering": "USER_EXPLICIT",
+      "dataset collected later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-069",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I need Kubernetes for a student blog.",
+      "Actually Kubernetes is overkill. Use a single VPS.",
+      "Nginx + SQLite is enough.",
+      "Must support Markdown posts.",
+      "(Follow-up note for variant 68: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "scope_change",
+      "removal"
+    ],
+    "variant": 8,
+    "gold_requirements": [
+      "student blog",
+      "support markdown posts"
+    ],
+    "gold_constraints": [
+      "single vps"
+    ],
+    "gold_technologies": [
+      "nginx",
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject kubernetes",
+      "use single vps"
+    ],
+    "rejected": [
+      "kubernetes"
+    ],
+    "superseded": [
+      "kubernetes"
+    ],
+    "assertion_origins": {
+      "student blog": "USER_EXPLICIT",
+      "support markdown posts": "USER_EXPLICIT",
+      "nginx": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-070",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Fraud detection pipeline.",
+      "Latency must be under 200 ms.",
+      "Use Kafka for events.",
+      "Do not use Kafka; use a simple queue.",
+      "Store features in Redis.",
+      "(Follow-up note for variant 69: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "replacement",
+      "contradiction"
+    ],
+    "variant": 9,
+    "gold_requirements": [
+      "fraud detection pipeline",
+      "latency under 200 ms",
+      "store features in redis"
+    ],
+    "gold_constraints": [
+      "latency under 200 ms"
+    ],
+    "gold_technologies": [
+      "redis",
+      "simple queue"
+    ],
+    "gold_decisions": [
+      "replace kafka with simple queue"
+    ],
+    "rejected": [
+      "kafka"
+    ],
+    "superseded": [
+      "use kafka for events"
+    ],
+    "assertion_origins": {
+      "fraud detection pipeline": "USER_EXPLICIT",
+      "latency under 200 ms": "USER_EXPLICIT",
+      "store features in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-071",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build an analytics dashboard.",
+      "Support dark mode maybe.",
+      "Must export CSV and PDF.",
+      "Auth is required.",
+      "(Follow-up note for variant 70: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 10,
+    "gold_requirements": [
+      "analytics dashboard",
+      "export csv and pdf",
+      "auth is required"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "analytics dashboard": "USER_EXPLICIT",
+      "export csv and pdf": "USER_EXPLICIT",
+      "auth is required": "USER_EXPLICIT",
+      "dark mode": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-072",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Migrate from monolith to microservices.",
+      "Start with the billing module only.",
+      "Keep the monolith for everything else.",
+      "Use gRPC between services.",
+      "(Follow-up note for variant 71: keep prior decisions.)"
+    ],
+    "tags": [
+      "scope_change",
+      "technology",
+      "multi_turn"
+    ],
+    "variant": 11,
+    "gold_requirements": [
+      "migrate billing module to microservice",
+      "use grpc between services"
+    ],
+    "gold_constraints": [
+      "billing module only"
+    ],
+    "gold_technologies": [
+      "grpc"
+    ],
+    "gold_decisions": [
+      "partial migration"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "migrate billing module to microservice": "USER_EXPLICIT",
+      "use grpc between services": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-073",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I want a phishing detection system.",
+      "Use BERT.",
+      "Actually don't use BERT.",
+      "Response time must be below 500 ms.",
+      "Use PostgreSQL.",
+      "Actually PostgreSQL is unnecessary. Use SQLite.",
+      "(Follow-up note for variant 72: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "technology",
+      "removal",
+      "replacement",
+      "constraint"
+    ],
+    "variant": 0,
+    "gold_requirements": [
+      "phishing detection system",
+      "response time below 500 ms"
+    ],
+    "gold_constraints": [
+      "use sqlite"
+    ],
+    "gold_technologies": [
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject bert",
+      "replace postgresql with sqlite"
+    ],
+    "rejected": [
+      "use bert",
+      "use postgresql"
+    ],
+    "superseded": [
+      "use postgresql"
+    ],
+    "assertion_origins": {
+      "phishing detection system": "USER_EXPLICIT",
+      "response time below 500 ms": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-074",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a log analyzer for security.",
+      "Include authentication.",
+      "No authentication after all.",
+      "Must support CSV export.",
+      "(Follow-up note for variant 73: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "removal",
+      "multi_turn"
+    ],
+    "variant": 1,
+    "gold_requirements": [
+      "log analyzer for security",
+      "support csv export"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "remove authentication"
+    ],
+    "rejected": [
+      "authentication"
+    ],
+    "superseded": [],
+    "assertion_origins": {
+      "log analyzer for security": "USER_EXPLICIT",
+      "support csv export": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-075",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Student NLP project on spam classification.",
+      "Team of one, four weeks.",
+      "Use TF-IDF first, maybe deep learning later.",
+      "(Follow-up note for variant 74: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 2,
+    "gold_requirements": [
+      "spam classification"
+    ],
+    "gold_constraints": [
+      "team of one",
+      "four weeks",
+      "tf-idf"
+    ],
+    "gold_technologies": [
+      "tf-idf"
+    ],
+    "gold_decisions": [
+      "prefer tf-idf initially"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "spam classification": "USER_EXPLICIT",
+      "tf-idf": "USER_EXPLICIT",
+      "deep learning later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-076",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "We need an inventory API.",
+      "It must support CRUD for products.",
+      "Add rate limiting under 100 requests per minute.",
+      "Wait \u2014 make the rate limit 1000 per minute instead.",
+      "(Follow-up note for variant 75: keep prior decisions.)"
+    ],
+    "tags": [
+      "modification",
+      "constraint",
+      "multi_turn"
+    ],
+    "variant": 3,
+    "gold_requirements": [
+      "inventory api",
+      "crud for products",
+      "rate limiting 1000 per minute"
+    ],
+    "gold_constraints": [
+      "1000 requests per minute"
+    ],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "raise rate limit to 1000"
+    ],
+    "rejected": [
+      "100 requests per minute"
+    ],
+    "superseded": [
+      "rate limiting under 100 requests per minute"
+    ],
+    "assertion_origins": {
+      "inventory api": "USER_EXPLICIT",
+      "crud for products": "USER_EXPLICIT",
+      "rate limiting 1000 per minute": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-077",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Mobile app for expense tracking.",
+      "Use Flutter.",
+      "Offline mode is required.",
+      "Actually drop offline mode; always-online is fine.",
+      "Sync to Firebase.",
+      "(Follow-up note for variant 76: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "removal",
+      "scope_change"
+    ],
+    "variant": 4,
+    "gold_requirements": [
+      "expense tracking",
+      "sync to firebase"
+    ],
+    "gold_constraints": [
+      "always-online"
+    ],
+    "gold_technologies": [
+      "flutter",
+      "firebase"
+    ],
+    "gold_decisions": [
+      "remove offline mode",
+      "use firebase"
+    ],
+    "rejected": [
+      "offline mode"
+    ],
+    "superseded": [
+      "offline mode"
+    ],
+    "assertion_origins": {
+      "expense tracking": "USER_EXPLICIT",
+      "flutter": "USER_EXPLICIT",
+      "sync to firebase": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-078",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Recommend something for document search.",
+      "Perhaps Elasticsearch would be appropriate.",
+      "Must handle PDFs and Word docs.",
+      "Budget is zero; prefer open source only.",
+      "(Follow-up note for variant 77: keep prior decisions.)"
+    ],
+    "tags": [
+      "inferred",
+      "ambiguous",
+      "constraint"
+    ],
+    "variant": 5,
+    "gold_requirements": [
+      "document search",
+      "handle pdfs and word docs"
+    ],
+    "gold_constraints": [
+      "budget zero",
+      "open source only"
+    ],
+    "gold_technologies": [
+      "elasticsearch"
+    ],
+    "gold_decisions": [
+      "prefer open source"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "document search": "USER_EXPLICIT",
+      "elasticsearch": "USER_INFERRED",
+      "handle pdfs and word docs": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-079",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a real-time chat backend.",
+      "Use WebSocket.",
+      "Also support REST polling.",
+      "No \u2014 drop REST polling; WebSocket only.",
+      "Messages must persist in Redis.",
+      "(Follow-up note for variant 78: keep prior decisions.)"
+    ],
+    "tags": [
+      "contradiction",
+      "technology",
+      "replacement"
+    ],
+    "variant": 6,
+    "gold_requirements": [
+      "real-time chat backend",
+      "messages persist in redis"
+    ],
+    "gold_constraints": [
+      "websocket only"
+    ],
+    "gold_technologies": [
+      "websocket",
+      "redis"
+    ],
+    "gold_decisions": [
+      "drop rest polling"
+    ],
+    "rejected": [
+      "rest polling"
+    ],
+    "superseded": [
+      "support rest polling"
+    ],
+    "assertion_origins": {
+      "real-time chat backend": "USER_EXPLICIT",
+      "websocket": "USER_EXPLICIT",
+      "messages persist in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-080",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Academic recommender system for courses.",
+      "Use collaborative filtering.",
+      "Dataset will somehow be collected later.",
+      "Team of three, one semester.",
+      "(Follow-up note for variant 79: keep prior decisions.)"
+    ],
+    "tags": [
+      "ambiguous",
+      "inferred",
+      "constraint"
+    ],
+    "variant": 7,
+    "gold_requirements": [
+      "course recommender system",
+      "collaborative filtering"
+    ],
+    "gold_constraints": [
+      "team of three",
+      "one semester"
+    ],
+    "gold_technologies": [
+      "collaborative filtering"
+    ],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "course recommender system": "USER_EXPLICIT",
+      "collaborative filtering": "USER_EXPLICIT",
+      "dataset collected later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-081",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I need Kubernetes for a student blog.",
+      "Actually Kubernetes is overkill. Use a single VPS.",
+      "Nginx + SQLite is enough.",
+      "Must support Markdown posts.",
+      "(Follow-up note for variant 80: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "scope_change",
+      "removal"
+    ],
+    "variant": 8,
+    "gold_requirements": [
+      "student blog",
+      "support markdown posts"
+    ],
+    "gold_constraints": [
+      "single vps"
+    ],
+    "gold_technologies": [
+      "nginx",
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject kubernetes",
+      "use single vps"
+    ],
+    "rejected": [
+      "kubernetes"
+    ],
+    "superseded": [
+      "kubernetes"
+    ],
+    "assertion_origins": {
+      "student blog": "USER_EXPLICIT",
+      "support markdown posts": "USER_EXPLICIT",
+      "nginx": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-082",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Fraud detection pipeline.",
+      "Latency must be under 200 ms.",
+      "Use Kafka for events.",
+      "Do not use Kafka; use a simple queue.",
+      "Store features in Redis.",
+      "(Follow-up note for variant 81: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "replacement",
+      "contradiction"
+    ],
+    "variant": 9,
+    "gold_requirements": [
+      "fraud detection pipeline",
+      "latency under 200 ms",
+      "store features in redis"
+    ],
+    "gold_constraints": [
+      "latency under 200 ms"
+    ],
+    "gold_technologies": [
+      "redis",
+      "simple queue"
+    ],
+    "gold_decisions": [
+      "replace kafka with simple queue"
+    ],
+    "rejected": [
+      "kafka"
+    ],
+    "superseded": [
+      "use kafka for events"
+    ],
+    "assertion_origins": {
+      "fraud detection pipeline": "USER_EXPLICIT",
+      "latency under 200 ms": "USER_EXPLICIT",
+      "store features in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-083",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build an analytics dashboard.",
+      "Support dark mode maybe.",
+      "Must export CSV and PDF.",
+      "Auth is required.",
+      "(Follow-up note for variant 82: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 10,
+    "gold_requirements": [
+      "analytics dashboard",
+      "export csv and pdf",
+      "auth is required"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "analytics dashboard": "USER_EXPLICIT",
+      "export csv and pdf": "USER_EXPLICIT",
+      "auth is required": "USER_EXPLICIT",
+      "dark mode": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-084",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Migrate from monolith to microservices.",
+      "Start with the billing module only.",
+      "Keep the monolith for everything else.",
+      "Use gRPC between services.",
+      "(Follow-up note for variant 83: keep prior decisions.)"
+    ],
+    "tags": [
+      "scope_change",
+      "technology",
+      "multi_turn"
+    ],
+    "variant": 11,
+    "gold_requirements": [
+      "migrate billing module to microservice",
+      "use grpc between services"
+    ],
+    "gold_constraints": [
+      "billing module only"
+    ],
+    "gold_technologies": [
+      "grpc"
+    ],
+    "gold_decisions": [
+      "partial migration"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "migrate billing module to microservice": "USER_EXPLICIT",
+      "use grpc between services": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-085",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I want a phishing detection system.",
+      "Use BERT.",
+      "Actually don't use BERT.",
+      "Response time must be below 500 ms.",
+      "Use PostgreSQL.",
+      "Actually PostgreSQL is unnecessary. Use SQLite.",
+      "(Follow-up note for variant 84: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "technology",
+      "removal",
+      "replacement",
+      "constraint"
+    ],
+    "variant": 0,
+    "gold_requirements": [
+      "phishing detection system",
+      "response time below 500 ms"
+    ],
+    "gold_constraints": [
+      "use sqlite"
+    ],
+    "gold_technologies": [
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject bert",
+      "replace postgresql with sqlite"
+    ],
+    "rejected": [
+      "use bert",
+      "use postgresql"
+    ],
+    "superseded": [
+      "use postgresql"
+    ],
+    "assertion_origins": {
+      "phishing detection system": "USER_EXPLICIT",
+      "response time below 500 ms": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-086",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a log analyzer for security.",
+      "Include authentication.",
+      "No authentication after all.",
+      "Must support CSV export.",
+      "(Follow-up note for variant 85: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "removal",
+      "multi_turn"
+    ],
+    "variant": 1,
+    "gold_requirements": [
+      "log analyzer for security",
+      "support csv export"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "remove authentication"
+    ],
+    "rejected": [
+      "authentication"
+    ],
+    "superseded": [],
+    "assertion_origins": {
+      "log analyzer for security": "USER_EXPLICIT",
+      "support csv export": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-087",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Student NLP project on spam classification.",
+      "Team of one, four weeks.",
+      "Use TF-IDF first, maybe deep learning later.",
+      "(Follow-up note for variant 86: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 2,
+    "gold_requirements": [
+      "spam classification"
+    ],
+    "gold_constraints": [
+      "team of one",
+      "four weeks",
+      "tf-idf"
+    ],
+    "gold_technologies": [
+      "tf-idf"
+    ],
+    "gold_decisions": [
+      "prefer tf-idf initially"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "spam classification": "USER_EXPLICIT",
+      "tf-idf": "USER_EXPLICIT",
+      "deep learning later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-088",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "We need an inventory API.",
+      "It must support CRUD for products.",
+      "Add rate limiting under 100 requests per minute.",
+      "Wait \u2014 make the rate limit 1000 per minute instead.",
+      "(Follow-up note for variant 87: keep prior decisions.)"
+    ],
+    "tags": [
+      "modification",
+      "constraint",
+      "multi_turn"
+    ],
+    "variant": 3,
+    "gold_requirements": [
+      "inventory api",
+      "crud for products",
+      "rate limiting 1000 per minute"
+    ],
+    "gold_constraints": [
+      "1000 requests per minute"
+    ],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "raise rate limit to 1000"
+    ],
+    "rejected": [
+      "100 requests per minute"
+    ],
+    "superseded": [
+      "rate limiting under 100 requests per minute"
+    ],
+    "assertion_origins": {
+      "inventory api": "USER_EXPLICIT",
+      "crud for products": "USER_EXPLICIT",
+      "rate limiting 1000 per minute": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-089",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Mobile app for expense tracking.",
+      "Use Flutter.",
+      "Offline mode is required.",
+      "Actually drop offline mode; always-online is fine.",
+      "Sync to Firebase.",
+      "(Follow-up note for variant 88: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "removal",
+      "scope_change"
+    ],
+    "variant": 4,
+    "gold_requirements": [
+      "expense tracking",
+      "sync to firebase"
+    ],
+    "gold_constraints": [
+      "always-online"
+    ],
+    "gold_technologies": [
+      "flutter",
+      "firebase"
+    ],
+    "gold_decisions": [
+      "remove offline mode",
+      "use firebase"
+    ],
+    "rejected": [
+      "offline mode"
+    ],
+    "superseded": [
+      "offline mode"
+    ],
+    "assertion_origins": {
+      "expense tracking": "USER_EXPLICIT",
+      "flutter": "USER_EXPLICIT",
+      "sync to firebase": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-090",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Recommend something for document search.",
+      "Perhaps Elasticsearch would be appropriate.",
+      "Must handle PDFs and Word docs.",
+      "Budget is zero; prefer open source only.",
+      "(Follow-up note for variant 89: keep prior decisions.)"
+    ],
+    "tags": [
+      "inferred",
+      "ambiguous",
+      "constraint"
+    ],
+    "variant": 5,
+    "gold_requirements": [
+      "document search",
+      "handle pdfs and word docs"
+    ],
+    "gold_constraints": [
+      "budget zero",
+      "open source only"
+    ],
+    "gold_technologies": [
+      "elasticsearch"
+    ],
+    "gold_decisions": [
+      "prefer open source"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "document search": "USER_EXPLICIT",
+      "elasticsearch": "USER_INFERRED",
+      "handle pdfs and word docs": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-091",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a real-time chat backend.",
+      "Use WebSocket.",
+      "Also support REST polling.",
+      "No \u2014 drop REST polling; WebSocket only.",
+      "Messages must persist in Redis.",
+      "(Follow-up note for variant 90: keep prior decisions.)"
+    ],
+    "tags": [
+      "contradiction",
+      "technology",
+      "replacement"
+    ],
+    "variant": 6,
+    "gold_requirements": [
+      "real-time chat backend",
+      "messages persist in redis"
+    ],
+    "gold_constraints": [
+      "websocket only"
+    ],
+    "gold_technologies": [
+      "websocket",
+      "redis"
+    ],
+    "gold_decisions": [
+      "drop rest polling"
+    ],
+    "rejected": [
+      "rest polling"
+    ],
+    "superseded": [
+      "support rest polling"
+    ],
+    "assertion_origins": {
+      "real-time chat backend": "USER_EXPLICIT",
+      "websocket": "USER_EXPLICIT",
+      "messages persist in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-092",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Academic recommender system for courses.",
+      "Use collaborative filtering.",
+      "Dataset will somehow be collected later.",
+      "Team of three, one semester.",
+      "(Follow-up note for variant 91: keep prior decisions.)"
+    ],
+    "tags": [
+      "ambiguous",
+      "inferred",
+      "constraint"
+    ],
+    "variant": 7,
+    "gold_requirements": [
+      "course recommender system",
+      "collaborative filtering"
+    ],
+    "gold_constraints": [
+      "team of three",
+      "one semester"
+    ],
+    "gold_technologies": [
+      "collaborative filtering"
+    ],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "course recommender system": "USER_EXPLICIT",
+      "collaborative filtering": "USER_EXPLICIT",
+      "dataset collected later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-093",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I need Kubernetes for a student blog.",
+      "Actually Kubernetes is overkill. Use a single VPS.",
+      "Nginx + SQLite is enough.",
+      "Must support Markdown posts.",
+      "(Follow-up note for variant 92: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "scope_change",
+      "removal"
+    ],
+    "variant": 8,
+    "gold_requirements": [
+      "student blog",
+      "support markdown posts"
+    ],
+    "gold_constraints": [
+      "single vps"
+    ],
+    "gold_technologies": [
+      "nginx",
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject kubernetes",
+      "use single vps"
+    ],
+    "rejected": [
+      "kubernetes"
+    ],
+    "superseded": [
+      "kubernetes"
+    ],
+    "assertion_origins": {
+      "student blog": "USER_EXPLICIT",
+      "support markdown posts": "USER_EXPLICIT",
+      "nginx": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-094",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Fraud detection pipeline.",
+      "Latency must be under 200 ms.",
+      "Use Kafka for events.",
+      "Do not use Kafka; use a simple queue.",
+      "Store features in Redis.",
+      "(Follow-up note for variant 93: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "replacement",
+      "contradiction"
+    ],
+    "variant": 9,
+    "gold_requirements": [
+      "fraud detection pipeline",
+      "latency under 200 ms",
+      "store features in redis"
+    ],
+    "gold_constraints": [
+      "latency under 200 ms"
+    ],
+    "gold_technologies": [
+      "redis",
+      "simple queue"
+    ],
+    "gold_decisions": [
+      "replace kafka with simple queue"
+    ],
+    "rejected": [
+      "kafka"
+    ],
+    "superseded": [
+      "use kafka for events"
+    ],
+    "assertion_origins": {
+      "fraud detection pipeline": "USER_EXPLICIT",
+      "latency under 200 ms": "USER_EXPLICIT",
+      "store features in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-095",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build an analytics dashboard.",
+      "Support dark mode maybe.",
+      "Must export CSV and PDF.",
+      "Auth is required.",
+      "(Follow-up note for variant 94: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 10,
+    "gold_requirements": [
+      "analytics dashboard",
+      "export csv and pdf",
+      "auth is required"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "analytics dashboard": "USER_EXPLICIT",
+      "export csv and pdf": "USER_EXPLICIT",
+      "auth is required": "USER_EXPLICIT",
+      "dark mode": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-096",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Migrate from monolith to microservices.",
+      "Start with the billing module only.",
+      "Keep the monolith for everything else.",
+      "Use gRPC between services.",
+      "(Follow-up note for variant 95: keep prior decisions.)"
+    ],
+    "tags": [
+      "scope_change",
+      "technology",
+      "multi_turn"
+    ],
+    "variant": 11,
+    "gold_requirements": [
+      "migrate billing module to microservice",
+      "use grpc between services"
+    ],
+    "gold_constraints": [
+      "billing module only"
+    ],
+    "gold_technologies": [
+      "grpc"
+    ],
+    "gold_decisions": [
+      "partial migration"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "migrate billing module to microservice": "USER_EXPLICIT",
+      "use grpc between services": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-097",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I want a phishing detection system.",
+      "Use BERT.",
+      "Actually don't use BERT.",
+      "Response time must be below 500 ms.",
+      "Use PostgreSQL.",
+      "Actually PostgreSQL is unnecessary. Use SQLite.",
+      "(Follow-up note for variant 96: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "technology",
+      "removal",
+      "replacement",
+      "constraint"
+    ],
+    "variant": 0,
+    "gold_requirements": [
+      "phishing detection system",
+      "response time below 500 ms"
+    ],
+    "gold_constraints": [
+      "use sqlite"
+    ],
+    "gold_technologies": [
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject bert",
+      "replace postgresql with sqlite"
+    ],
+    "rejected": [
+      "use bert",
+      "use postgresql"
+    ],
+    "superseded": [
+      "use postgresql"
+    ],
+    "assertion_origins": {
+      "phishing detection system": "USER_EXPLICIT",
+      "response time below 500 ms": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-098",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a log analyzer for security.",
+      "Include authentication.",
+      "No authentication after all.",
+      "Must support CSV export.",
+      "(Follow-up note for variant 97: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "removal",
+      "multi_turn"
+    ],
+    "variant": 1,
+    "gold_requirements": [
+      "log analyzer for security",
+      "support csv export"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "remove authentication"
+    ],
+    "rejected": [
+      "authentication"
+    ],
+    "superseded": [],
+    "assertion_origins": {
+      "log analyzer for security": "USER_EXPLICIT",
+      "support csv export": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-099",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Student NLP project on spam classification.",
+      "Team of one, four weeks.",
+      "Use TF-IDF first, maybe deep learning later.",
+      "(Follow-up note for variant 98: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 2,
+    "gold_requirements": [
+      "spam classification"
+    ],
+    "gold_constraints": [
+      "team of one",
+      "four weeks",
+      "tf-idf"
+    ],
+    "gold_technologies": [
+      "tf-idf"
+    ],
+    "gold_decisions": [
+      "prefer tf-idf initially"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "spam classification": "USER_EXPLICIT",
+      "tf-idf": "USER_EXPLICIT",
+      "deep learning later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-100",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "We need an inventory API.",
+      "It must support CRUD for products.",
+      "Add rate limiting under 100 requests per minute.",
+      "Wait \u2014 make the rate limit 1000 per minute instead.",
+      "(Follow-up note for variant 99: keep prior decisions.)"
+    ],
+    "tags": [
+      "modification",
+      "constraint",
+      "multi_turn"
+    ],
+    "variant": 3,
+    "gold_requirements": [
+      "inventory api",
+      "crud for products",
+      "rate limiting 1000 per minute"
+    ],
+    "gold_constraints": [
+      "1000 requests per minute"
+    ],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "raise rate limit to 1000"
+    ],
+    "rejected": [
+      "100 requests per minute"
+    ],
+    "superseded": [
+      "rate limiting under 100 requests per minute"
+    ],
+    "assertion_origins": {
+      "inventory api": "USER_EXPLICIT",
+      "crud for products": "USER_EXPLICIT",
+      "rate limiting 1000 per minute": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-101",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Mobile app for expense tracking.",
+      "Use Flutter.",
+      "Offline mode is required.",
+      "Actually drop offline mode; always-online is fine.",
+      "Sync to Firebase.",
+      "(Follow-up note for variant 100: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "removal",
+      "scope_change"
+    ],
+    "variant": 4,
+    "gold_requirements": [
+      "expense tracking",
+      "sync to firebase"
+    ],
+    "gold_constraints": [
+      "always-online"
+    ],
+    "gold_technologies": [
+      "flutter",
+      "firebase"
+    ],
+    "gold_decisions": [
+      "remove offline mode",
+      "use firebase"
+    ],
+    "rejected": [
+      "offline mode"
+    ],
+    "superseded": [
+      "offline mode"
+    ],
+    "assertion_origins": {
+      "expense tracking": "USER_EXPLICIT",
+      "flutter": "USER_EXPLICIT",
+      "sync to firebase": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-102",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Recommend something for document search.",
+      "Perhaps Elasticsearch would be appropriate.",
+      "Must handle PDFs and Word docs.",
+      "Budget is zero; prefer open source only.",
+      "(Follow-up note for variant 101: keep prior decisions.)"
+    ],
+    "tags": [
+      "inferred",
+      "ambiguous",
+      "constraint"
+    ],
+    "variant": 5,
+    "gold_requirements": [
+      "document search",
+      "handle pdfs and word docs"
+    ],
+    "gold_constraints": [
+      "budget zero",
+      "open source only"
+    ],
+    "gold_technologies": [
+      "elasticsearch"
+    ],
+    "gold_decisions": [
+      "prefer open source"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "document search": "USER_EXPLICIT",
+      "elasticsearch": "USER_INFERRED",
+      "handle pdfs and word docs": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-103",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a real-time chat backend.",
+      "Use WebSocket.",
+      "Also support REST polling.",
+      "No \u2014 drop REST polling; WebSocket only.",
+      "Messages must persist in Redis.",
+      "(Follow-up note for variant 102: keep prior decisions.)"
+    ],
+    "tags": [
+      "contradiction",
+      "technology",
+      "replacement"
+    ],
+    "variant": 6,
+    "gold_requirements": [
+      "real-time chat backend",
+      "messages persist in redis"
+    ],
+    "gold_constraints": [
+      "websocket only"
+    ],
+    "gold_technologies": [
+      "websocket",
+      "redis"
+    ],
+    "gold_decisions": [
+      "drop rest polling"
+    ],
+    "rejected": [
+      "rest polling"
+    ],
+    "superseded": [
+      "support rest polling"
+    ],
+    "assertion_origins": {
+      "real-time chat backend": "USER_EXPLICIT",
+      "websocket": "USER_EXPLICIT",
+      "messages persist in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-104",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Academic recommender system for courses.",
+      "Use collaborative filtering.",
+      "Dataset will somehow be collected later.",
+      "Team of three, one semester.",
+      "(Follow-up note for variant 103: keep prior decisions.)"
+    ],
+    "tags": [
+      "ambiguous",
+      "inferred",
+      "constraint"
+    ],
+    "variant": 7,
+    "gold_requirements": [
+      "course recommender system",
+      "collaborative filtering"
+    ],
+    "gold_constraints": [
+      "team of three",
+      "one semester"
+    ],
+    "gold_technologies": [
+      "collaborative filtering"
+    ],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "course recommender system": "USER_EXPLICIT",
+      "collaborative filtering": "USER_EXPLICIT",
+      "dataset collected later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-105",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I need Kubernetes for a student blog.",
+      "Actually Kubernetes is overkill. Use a single VPS.",
+      "Nginx + SQLite is enough.",
+      "Must support Markdown posts.",
+      "(Follow-up note for variant 104: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "scope_change",
+      "removal"
+    ],
+    "variant": 8,
+    "gold_requirements": [
+      "student blog",
+      "support markdown posts"
+    ],
+    "gold_constraints": [
+      "single vps"
+    ],
+    "gold_technologies": [
+      "nginx",
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject kubernetes",
+      "use single vps"
+    ],
+    "rejected": [
+      "kubernetes"
+    ],
+    "superseded": [
+      "kubernetes"
+    ],
+    "assertion_origins": {
+      "student blog": "USER_EXPLICIT",
+      "support markdown posts": "USER_EXPLICIT",
+      "nginx": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-106",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Fraud detection pipeline.",
+      "Latency must be under 200 ms.",
+      "Use Kafka for events.",
+      "Do not use Kafka; use a simple queue.",
+      "Store features in Redis.",
+      "(Follow-up note for variant 105: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "replacement",
+      "contradiction"
+    ],
+    "variant": 9,
+    "gold_requirements": [
+      "fraud detection pipeline",
+      "latency under 200 ms",
+      "store features in redis"
+    ],
+    "gold_constraints": [
+      "latency under 200 ms"
+    ],
+    "gold_technologies": [
+      "redis",
+      "simple queue"
+    ],
+    "gold_decisions": [
+      "replace kafka with simple queue"
+    ],
+    "rejected": [
+      "kafka"
+    ],
+    "superseded": [
+      "use kafka for events"
+    ],
+    "assertion_origins": {
+      "fraud detection pipeline": "USER_EXPLICIT",
+      "latency under 200 ms": "USER_EXPLICIT",
+      "store features in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-107",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build an analytics dashboard.",
+      "Support dark mode maybe.",
+      "Must export CSV and PDF.",
+      "Auth is required.",
+      "(Follow-up note for variant 106: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 10,
+    "gold_requirements": [
+      "analytics dashboard",
+      "export csv and pdf",
+      "auth is required"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "analytics dashboard": "USER_EXPLICIT",
+      "export csv and pdf": "USER_EXPLICIT",
+      "auth is required": "USER_EXPLICIT",
+      "dark mode": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-108",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Migrate from monolith to microservices.",
+      "Start with the billing module only.",
+      "Keep the monolith for everything else.",
+      "Use gRPC between services.",
+      "(Follow-up note for variant 107: keep prior decisions.)"
+    ],
+    "tags": [
+      "scope_change",
+      "technology",
+      "multi_turn"
+    ],
+    "variant": 11,
+    "gold_requirements": [
+      "migrate billing module to microservice",
+      "use grpc between services"
+    ],
+    "gold_constraints": [
+      "billing module only"
+    ],
+    "gold_technologies": [
+      "grpc"
+    ],
+    "gold_decisions": [
+      "partial migration"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "migrate billing module to microservice": "USER_EXPLICIT",
+      "use grpc between services": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-109",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I want a phishing detection system.",
+      "Use BERT.",
+      "Actually don't use BERT.",
+      "Response time must be below 500 ms.",
+      "Use PostgreSQL.",
+      "Actually PostgreSQL is unnecessary. Use SQLite.",
+      "(Follow-up note for variant 108: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "technology",
+      "removal",
+      "replacement",
+      "constraint"
+    ],
+    "variant": 0,
+    "gold_requirements": [
+      "phishing detection system",
+      "response time below 500 ms"
+    ],
+    "gold_constraints": [
+      "use sqlite"
+    ],
+    "gold_technologies": [
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject bert",
+      "replace postgresql with sqlite"
+    ],
+    "rejected": [
+      "use bert",
+      "use postgresql"
+    ],
+    "superseded": [
+      "use postgresql"
+    ],
+    "assertion_origins": {
+      "phishing detection system": "USER_EXPLICIT",
+      "response time below 500 ms": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-110",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a log analyzer for security.",
+      "Include authentication.",
+      "No authentication after all.",
+      "Must support CSV export.",
+      "(Follow-up note for variant 109: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "removal",
+      "multi_turn"
+    ],
+    "variant": 1,
+    "gold_requirements": [
+      "log analyzer for security",
+      "support csv export"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "remove authentication"
+    ],
+    "rejected": [
+      "authentication"
+    ],
+    "superseded": [],
+    "assertion_origins": {
+      "log analyzer for security": "USER_EXPLICIT",
+      "support csv export": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-111",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Student NLP project on spam classification.",
+      "Team of one, four weeks.",
+      "Use TF-IDF first, maybe deep learning later.",
+      "(Follow-up note for variant 110: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 2,
+    "gold_requirements": [
+      "spam classification"
+    ],
+    "gold_constraints": [
+      "team of one",
+      "four weeks",
+      "tf-idf"
+    ],
+    "gold_technologies": [
+      "tf-idf"
+    ],
+    "gold_decisions": [
+      "prefer tf-idf initially"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "spam classification": "USER_EXPLICIT",
+      "tf-idf": "USER_EXPLICIT",
+      "deep learning later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-112",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "We need an inventory API.",
+      "It must support CRUD for products.",
+      "Add rate limiting under 100 requests per minute.",
+      "Wait \u2014 make the rate limit 1000 per minute instead.",
+      "(Follow-up note for variant 111: keep prior decisions.)"
+    ],
+    "tags": [
+      "modification",
+      "constraint",
+      "multi_turn"
+    ],
+    "variant": 3,
+    "gold_requirements": [
+      "inventory api",
+      "crud for products",
+      "rate limiting 1000 per minute"
+    ],
+    "gold_constraints": [
+      "1000 requests per minute"
+    ],
+    "gold_technologies": [],
+    "gold_decisions": [
+      "raise rate limit to 1000"
+    ],
+    "rejected": [
+      "100 requests per minute"
+    ],
+    "superseded": [
+      "rate limiting under 100 requests per minute"
+    ],
+    "assertion_origins": {
+      "inventory api": "USER_EXPLICIT",
+      "crud for products": "USER_EXPLICIT",
+      "rate limiting 1000 per minute": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-113",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Mobile app for expense tracking.",
+      "Use Flutter.",
+      "Offline mode is required.",
+      "Actually drop offline mode; always-online is fine.",
+      "Sync to Firebase.",
+      "(Follow-up note for variant 112: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "removal",
+      "scope_change"
+    ],
+    "variant": 4,
+    "gold_requirements": [
+      "expense tracking",
+      "sync to firebase"
+    ],
+    "gold_constraints": [
+      "always-online"
+    ],
+    "gold_technologies": [
+      "flutter",
+      "firebase"
+    ],
+    "gold_decisions": [
+      "remove offline mode",
+      "use firebase"
+    ],
+    "rejected": [
+      "offline mode"
+    ],
+    "superseded": [
+      "offline mode"
+    ],
+    "assertion_origins": {
+      "expense tracking": "USER_EXPLICIT",
+      "flutter": "USER_EXPLICIT",
+      "sync to firebase": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-114",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Recommend something for document search.",
+      "Perhaps Elasticsearch would be appropriate.",
+      "Must handle PDFs and Word docs.",
+      "Budget is zero; prefer open source only.",
+      "(Follow-up note for variant 113: keep prior decisions.)"
+    ],
+    "tags": [
+      "inferred",
+      "ambiguous",
+      "constraint"
+    ],
+    "variant": 5,
+    "gold_requirements": [
+      "document search",
+      "handle pdfs and word docs"
+    ],
+    "gold_constraints": [
+      "budget zero",
+      "open source only"
+    ],
+    "gold_technologies": [
+      "elasticsearch"
+    ],
+    "gold_decisions": [
+      "prefer open source"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "document search": "USER_EXPLICIT",
+      "elasticsearch": "USER_INFERRED",
+      "handle pdfs and word docs": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-115",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build a real-time chat backend.",
+      "Use WebSocket.",
+      "Also support REST polling.",
+      "No \u2014 drop REST polling; WebSocket only.",
+      "Messages must persist in Redis.",
+      "(Follow-up note for variant 114: keep prior decisions.)"
+    ],
+    "tags": [
+      "contradiction",
+      "technology",
+      "replacement"
+    ],
+    "variant": 6,
+    "gold_requirements": [
+      "real-time chat backend",
+      "messages persist in redis"
+    ],
+    "gold_constraints": [
+      "websocket only"
+    ],
+    "gold_technologies": [
+      "websocket",
+      "redis"
+    ],
+    "gold_decisions": [
+      "drop rest polling"
+    ],
+    "rejected": [
+      "rest polling"
+    ],
+    "superseded": [
+      "support rest polling"
+    ],
+    "assertion_origins": {
+      "real-time chat backend": "USER_EXPLICIT",
+      "websocket": "USER_EXPLICIT",
+      "messages persist in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-116",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Academic recommender system for courses.",
+      "Use collaborative filtering.",
+      "Dataset will somehow be collected later.",
+      "Team of three, one semester.",
+      "(Follow-up note for variant 115: keep prior decisions.)"
+    ],
+    "tags": [
+      "ambiguous",
+      "inferred",
+      "constraint"
+    ],
+    "variant": 7,
+    "gold_requirements": [
+      "course recommender system",
+      "collaborative filtering"
+    ],
+    "gold_constraints": [
+      "team of three",
+      "one semester"
+    ],
+    "gold_technologies": [
+      "collaborative filtering"
+    ],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "course recommender system": "USER_EXPLICIT",
+      "collaborative filtering": "USER_EXPLICIT",
+      "dataset collected later": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-117",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "I need Kubernetes for a student blog.",
+      "Actually Kubernetes is overkill. Use a single VPS.",
+      "Nginx + SQLite is enough.",
+      "Must support Markdown posts.",
+      "(Follow-up note for variant 116: keep prior decisions.)"
+    ],
+    "tags": [
+      "technology",
+      "scope_change",
+      "removal"
+    ],
+    "variant": 8,
+    "gold_requirements": [
+      "student blog",
+      "support markdown posts"
+    ],
+    "gold_constraints": [
+      "single vps"
+    ],
+    "gold_technologies": [
+      "nginx",
+      "sqlite"
+    ],
+    "gold_decisions": [
+      "reject kubernetes",
+      "use single vps"
+    ],
+    "rejected": [
+      "kubernetes"
+    ],
+    "superseded": [
+      "kubernetes"
+    ],
+    "assertion_origins": {
+      "student blog": "USER_EXPLICIT",
+      "support markdown posts": "USER_EXPLICIT",
+      "nginx": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-118",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Fraud detection pipeline.",
+      "Latency must be under 200 ms.",
+      "Use Kafka for events.",
+      "Do not use Kafka; use a simple queue.",
+      "Store features in Redis.",
+      "(Follow-up note for variant 117: keep prior decisions.)"
+    ],
+    "tags": [
+      "constraint",
+      "technology",
+      "replacement",
+      "contradiction"
+    ],
+    "variant": 9,
+    "gold_requirements": [
+      "fraud detection pipeline",
+      "latency under 200 ms",
+      "store features in redis"
+    ],
+    "gold_constraints": [
+      "latency under 200 ms"
+    ],
+    "gold_technologies": [
+      "redis",
+      "simple queue"
+    ],
+    "gold_decisions": [
+      "replace kafka with simple queue"
+    ],
+    "rejected": [
+      "kafka"
+    ],
+    "superseded": [
+      "use kafka for events"
+    ],
+    "assertion_origins": {
+      "fraud detection pipeline": "USER_EXPLICIT",
+      "latency under 200 ms": "USER_EXPLICIT",
+      "store features in redis": "USER_EXPLICIT"
+    }
+  },
+  {
+    "id": "RQ1-119",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Build an analytics dashboard.",
+      "Support dark mode maybe.",
+      "Must export CSV and PDF.",
+      "Auth is required.",
+      "(Follow-up note for variant 118: keep prior decisions.)"
+    ],
+    "tags": [
+      "explicit",
+      "inferred",
+      "ambiguous"
+    ],
+    "variant": 10,
+    "gold_requirements": [
+      "analytics dashboard",
+      "export csv and pdf",
+      "auth is required"
+    ],
+    "gold_constraints": [],
+    "gold_technologies": [],
+    "gold_decisions": [],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "analytics dashboard": "USER_EXPLICIT",
+      "export csv and pdf": "USER_EXPLICIT",
+      "auth is required": "USER_EXPLICIT",
+      "dark mode": "USER_INFERRED"
+    }
+  },
+  {
+    "id": "RQ1-120",
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "synthetic": true,
+    "messages": [
+      "Migrate from monolith to microservices.",
+      "Start with the billing module only.",
+      "Keep the monolith for everything else.",
+      "Use gRPC between services.",
+      "(Follow-up note for variant 119: keep prior decisions.)"
+    ],
+    "tags": [
+      "scope_change",
+      "technology",
+      "multi_turn"
+    ],
+    "variant": 11,
+    "gold_requirements": [
+      "migrate billing module to microservice",
+      "use grpc between services"
+    ],
+    "gold_constraints": [
+      "billing module only"
+    ],
+    "gold_technologies": [
+      "grpc"
+    ],
+    "gold_decisions": [
+      "partial migration"
+    ],
+    "rejected": [],
+    "superseded": [],
+    "assertion_origins": {
+      "migrate billing module to microservice": "USER_EXPLICIT",
+      "use grpc between services": "USER_EXPLICIT"
+    }
+  }
+]

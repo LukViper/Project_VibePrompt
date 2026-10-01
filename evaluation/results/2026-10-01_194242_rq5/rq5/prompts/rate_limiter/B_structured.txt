@@ -1,0 +1,8 @@
+You are a senior software engineer.
+
+REQUIREMENTS
+- limit per key
+- return 429
+CONSTRAINTS
+- python 3.11+
+- no network in tests

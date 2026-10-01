@@ -1,0 +1,5 @@
+You are a senior software engineer.
+
+I need: Parse syslog lines into JSON
+Requirement: parse severity
+Requirement: parse timestamp

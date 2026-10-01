@@ -1,0 +1,5 @@
+You are a senior software engineer.
+
+I need: Build a REST API that echoes JSON payloads
+Requirement: POST /echo returns body
+Requirement: health endpoint

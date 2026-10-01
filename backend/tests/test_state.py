@@ -8,7 +8,7 @@ from app.services.versioning import StateVersioning
 
 def test_empty_state_has_v2_fields_and_technology_shape():
     state = empty_state()
-    assert state["schema_version"] == 2
+    assert state["schema_version"] == 3
     assert state["conversation_stage"] == ConversationStage.DISCOVERY.value
     assert state["state_version"] == 1
     tech = state["technology"]
@@ -45,7 +45,7 @@ def test_migrate_legacy_v1_adds_provenance_and_stage():
         "idea": {"base_idea": None, "user_customizations": [], "alternatives": []},
     }
     migrated = migrate_state(legacy)
-    assert migrated["schema_version"] == 2
+    assert migrated["schema_version"] == 3
     assert migrated["conversation_stage"] == "DISCOVERY"
     assert migrated["project"]["subject"] == "NLP"
     assert migrated["requirements"][0]["provenance"]["source"] == ProvenanceSource.USER.value
@@ -78,7 +78,7 @@ def test_version_snapshot_persists(client):
     msg = client.post(f"/projects/{project_id}/messages", json={"content": "I need a project for NLP."})
     assert msg.status_code == 200
     state = msg.json()["state"]
-    assert state["schema_version"] == 2
+    assert state["schema_version"] == 3
     assert state["state_version"] >= 2
     for decision in state.get("decisions") or []:
         assert "provenance" in decision

@@ -1,0 +1,502 @@
+[
+  {
+    "id": "RQ4-001",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use BERT for classification",
+    "evidence_text": "paper comparing BERT and TF-IDF",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-002",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use Kubernetes",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-003",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use WebSocket",
+    "evidence_text": "latency requires sub-500ms push",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-004",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use PostgreSQL",
+    "evidence_text": "unverified blog post",
+    "evidence_verified": false,
+    "gold_label": "unverified",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-005",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use blockchain for auth",
+    "evidence_text": "contradictory cost analysis opposing blockchain",
+    "evidence_verified": false,
+    "gold_label": "contradicted",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-006",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use BERT for classification",
+    "evidence_text": "paper comparing BERT and TF-IDF",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-007",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use Kubernetes",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-008",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use WebSocket",
+    "evidence_text": "latency requires sub-500ms push",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-009",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use PostgreSQL",
+    "evidence_text": "unverified blog post",
+    "evidence_verified": false,
+    "gold_label": "unverified",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-010",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use blockchain for auth",
+    "evidence_text": "contradictory cost analysis opposing blockchain",
+    "evidence_verified": false,
+    "gold_label": "contradicted",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-011",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use BERT for classification",
+    "evidence_text": "paper comparing BERT and TF-IDF",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-012",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use Kubernetes",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-013",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use WebSocket",
+    "evidence_text": "latency requires sub-500ms push",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-014",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use PostgreSQL",
+    "evidence_text": "unverified blog post",
+    "evidence_verified": false,
+    "gold_label": "unverified",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-015",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use blockchain for auth",
+    "evidence_text": "contradictory cost analysis opposing blockchain",
+    "evidence_verified": false,
+    "gold_label": "contradicted",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-016",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use BERT for classification",
+    "evidence_text": "paper comparing BERT and TF-IDF",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-017",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use Kubernetes",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-018",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use WebSocket",
+    "evidence_text": "latency requires sub-500ms push",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-019",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use PostgreSQL",
+    "evidence_text": "unverified blog post",
+    "evidence_verified": false,
+    "gold_label": "unverified",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-020",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use blockchain for auth",
+    "evidence_text": "contradictory cost analysis opposing blockchain",
+    "evidence_verified": false,
+    "gold_label": "contradicted",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-021",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use BERT for classification",
+    "evidence_text": "paper comparing BERT and TF-IDF",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-022",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use Kubernetes",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-023",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use WebSocket",
+    "evidence_text": "latency requires sub-500ms push",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-024",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use PostgreSQL",
+    "evidence_text": "unverified blog post",
+    "evidence_verified": false,
+    "gold_label": "unverified",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-025",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use blockchain for auth",
+    "evidence_text": "contradictory cost analysis opposing blockchain",
+    "evidence_verified": false,
+    "gold_label": "contradicted",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-026",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use BERT for classification",
+    "evidence_text": "paper comparing BERT and TF-IDF",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-027",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use Kubernetes",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-028",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use WebSocket",
+    "evidence_text": "latency requires sub-500ms push",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-029",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use PostgreSQL",
+    "evidence_text": "unverified blog post",
+    "evidence_verified": false,
+    "gold_label": "unverified",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-030",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use blockchain for auth",
+    "evidence_text": "contradictory cost analysis opposing blockchain",
+    "evidence_verified": false,
+    "gold_label": "contradicted",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-031",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use BERT for classification",
+    "evidence_text": "paper comparing BERT and TF-IDF",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-032",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use Kubernetes",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-033",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use WebSocket",
+    "evidence_text": "latency requires sub-500ms push",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-034",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use PostgreSQL",
+    "evidence_text": "unverified blog post",
+    "evidence_verified": false,
+    "gold_label": "unverified",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-035",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use blockchain for auth",
+    "evidence_text": "contradictory cost analysis opposing blockchain",
+    "evidence_verified": false,
+    "gold_label": "contradicted",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-036",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use BERT for classification",
+    "evidence_text": "paper comparing BERT and TF-IDF",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-037",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use Kubernetes",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-038",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use WebSocket",
+    "evidence_text": "latency requires sub-500ms push",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-039",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use PostgreSQL",
+    "evidence_text": "unverified blog post",
+    "evidence_verified": false,
+    "gold_label": "unverified",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-040",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use blockchain for auth",
+    "evidence_text": "contradictory cost analysis opposing blockchain",
+    "evidence_verified": false,
+    "gold_label": "contradicted",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-041",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use BERT for classification",
+    "evidence_text": "paper comparing BERT and TF-IDF",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-042",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use Kubernetes",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-043",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use WebSocket",
+    "evidence_text": "latency requires sub-500ms push",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-044",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use PostgreSQL",
+    "evidence_text": "unverified blog post",
+    "evidence_verified": false,
+    "gold_label": "unverified",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-045",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use blockchain for auth",
+    "evidence_text": "contradictory cost analysis opposing blockchain",
+    "evidence_verified": false,
+    "gold_label": "contradicted",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-046",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use BERT for classification",
+    "evidence_text": "paper comparing BERT and TF-IDF",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-047",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use Kubernetes",
+    "evidence_text": "",
+    "evidence_verified": false,
+    "gold_label": "unsupported",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-048",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use WebSocket",
+    "evidence_text": "latency requires sub-500ms push",
+    "evidence_verified": true,
+    "gold_label": "supported",
+    "gold_evidence_backed": true
+  },
+  {
+    "id": "RQ4-049",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use PostgreSQL",
+    "evidence_text": "unverified blog post",
+    "evidence_verified": false,
+    "gold_label": "unverified",
+    "gold_evidence_backed": false
+  },
+  {
+    "id": "RQ4-050",
+    "synthetic": true,
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "decision": "Use blockchain for auth",
+    "evidence_text": "contradictory cost analysis opposing blockchain",
+    "evidence_verified": false,
+    "gold_label": "contradicted",
+    "gold_evidence_backed": false
+  }
+]

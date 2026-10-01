@@ -1,0 +1,752 @@
+[
+  {
+    "id": "RQ2-001",
+    "change_type": "requirement_addition",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-002",
+    "change_type": "requirement_modification",
+    "metrics": {
+      "tp": 2.0,
+      "fp": 2.0,
+      "fn": 0.0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "n_predicted": 4.0,
+      "n_gold": 2.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-003",
+    "change_type": "requirement_removal",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-004",
+    "change_type": "technology_change",
+    "metrics": {
+      "tp": 3.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571,
+      "n_predicted": 4.0,
+      "n_gold": 3.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-005",
+    "change_type": "constraint_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-006",
+    "change_type": "architecture_change",
+    "metrics": {
+      "tp": 2.0,
+      "fp": 2.0,
+      "fn": 0.0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "n_predicted": 4.0,
+      "n_gold": 2.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-007",
+    "change_type": "scope_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 4.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 4.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-008",
+    "change_type": "dataset_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-009",
+    "change_type": "deployment_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-010",
+    "change_type": "security_requirement_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 3.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 3.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-011",
+    "change_type": "requirement_addition",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-012",
+    "change_type": "requirement_modification",
+    "metrics": {
+      "tp": 2.0,
+      "fp": 2.0,
+      "fn": 0.0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "n_predicted": 4.0,
+      "n_gold": 2.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-013",
+    "change_type": "requirement_removal",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-014",
+    "change_type": "technology_change",
+    "metrics": {
+      "tp": 3.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571,
+      "n_predicted": 4.0,
+      "n_gold": 3.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-015",
+    "change_type": "constraint_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-016",
+    "change_type": "architecture_change",
+    "metrics": {
+      "tp": 2.0,
+      "fp": 2.0,
+      "fn": 0.0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "n_predicted": 4.0,
+      "n_gold": 2.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-017",
+    "change_type": "scope_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 4.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 4.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-018",
+    "change_type": "dataset_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-019",
+    "change_type": "deployment_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-020",
+    "change_type": "security_requirement_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 3.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 3.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-021",
+    "change_type": "requirement_addition",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-022",
+    "change_type": "requirement_modification",
+    "metrics": {
+      "tp": 2.0,
+      "fp": 2.0,
+      "fn": 0.0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "n_predicted": 4.0,
+      "n_gold": 2.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-023",
+    "change_type": "requirement_removal",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-024",
+    "change_type": "technology_change",
+    "metrics": {
+      "tp": 3.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571,
+      "n_predicted": 4.0,
+      "n_gold": 3.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-025",
+    "change_type": "constraint_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-026",
+    "change_type": "architecture_change",
+    "metrics": {
+      "tp": 2.0,
+      "fp": 2.0,
+      "fn": 0.0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "n_predicted": 4.0,
+      "n_gold": 2.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-027",
+    "change_type": "scope_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 4.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 4.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-028",
+    "change_type": "dataset_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-029",
+    "change_type": "deployment_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-030",
+    "change_type": "security_requirement_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 3.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 3.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-031",
+    "change_type": "requirement_addition",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-032",
+    "change_type": "requirement_modification",
+    "metrics": {
+      "tp": 2.0,
+      "fp": 2.0,
+      "fn": 0.0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "n_predicted": 4.0,
+      "n_gold": 2.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-033",
+    "change_type": "requirement_removal",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-034",
+    "change_type": "technology_change",
+    "metrics": {
+      "tp": 3.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571,
+      "n_predicted": 4.0,
+      "n_gold": 3.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-035",
+    "change_type": "constraint_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-036",
+    "change_type": "architecture_change",
+    "metrics": {
+      "tp": 2.0,
+      "fp": 2.0,
+      "fn": 0.0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "n_predicted": 4.0,
+      "n_gold": 2.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-037",
+    "change_type": "scope_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 4.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 4.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-038",
+    "change_type": "dataset_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-039",
+    "change_type": "deployment_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-040",
+    "change_type": "security_requirement_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 3.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 3.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-041",
+    "change_type": "requirement_addition",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-042",
+    "change_type": "requirement_modification",
+    "metrics": {
+      "tp": 2.0,
+      "fp": 2.0,
+      "fn": 0.0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "n_predicted": 4.0,
+      "n_gold": 2.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-043",
+    "change_type": "requirement_removal",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-044",
+    "change_type": "technology_change",
+    "metrics": {
+      "tp": 3.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571,
+      "n_predicted": 4.0,
+      "n_gold": 3.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-045",
+    "change_type": "constraint_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-046",
+    "change_type": "architecture_change",
+    "metrics": {
+      "tp": 2.0,
+      "fp": 2.0,
+      "fn": 0.0,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "n_predicted": 4.0,
+      "n_gold": 2.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-047",
+    "change_type": "scope_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 4.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 4.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-048",
+    "change_type": "dataset_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-049",
+    "change_type": "deployment_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 1.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 1.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  },
+  {
+    "id": "RQ2-050",
+    "change_type": "security_requirement_change",
+    "metrics": {
+      "tp": 0.0,
+      "fp": 3.0,
+      "fn": 0.0,
+      "precision": 0.0,
+      "recall": 1.0,
+      "f1": 0.0,
+      "n_predicted": 3.0,
+      "n_gold": 0.0
+    },
+    "broken_trace_rate": 0.0
+  }
+]

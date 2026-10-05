@@ -1,0 +1,10 @@
+{
+  "method": "structured_requirements",
+  "provenance": {
+    "pipeline": [
+      "conversation",
+      "structured_requirements_prompt"
+    ]
+  },
+  "state_summary": null
+}

@@ -1,0 +1,17 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python
+cachedir: .pytest_cache
+rootdir: /tmp/vibeprompt_rq5_sci_gby33cey/ws-1fe7f67a735d
+plugins: anyio-4.13.0
+collecting ... collected 2 items
+
+tests/test_echo_api.py::test_echo_returns_payload FAILED                 [ 50%]
+tests/test_echo_api.py::test_health_ok PASSED                            [100%]
+
+=================================== FAILURES ===================================
+E   ConnectionRefusedError: [Errno 111] Connection refused
+/usr/lib64/python3.14/socket.py:859: ConnectionRefusedError: [Errno 111] Connection refused
+- generated xml file: /tmp/vibeprompt_rq5_sci_gby33cey/ws-1fe7f67a735d/junit.xml -
+=========================== short test summary info ============================
+FAILED tests/test_echo_api.py::test_echo_returns_payload - ConnectionRefusedE...
+========================= 1 failed, 1 passed in 0.03s ==========================

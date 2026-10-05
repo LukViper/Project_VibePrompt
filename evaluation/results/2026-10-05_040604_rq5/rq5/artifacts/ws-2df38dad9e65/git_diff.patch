@@ -1,0 +1,48 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..b6e4a27
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,7 @@
++You are a senior software engineer.
++
++I need a simple echo API helper in Python.
++Implement echo(payload) that returns the same dict.
++Must support a health() function returning {'status': 'ok'}.
++Do not add Redis caching.
++Use only the Python standard library.
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..741aca6
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-2df38dad9e65","task_id":"rest_echo_api","variant":"A_raw","seed_commit":"0515424837ec5f052ee86dec981229ada4d48cd1"}
+\ No newline at end of file
+diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc
+new file mode 100644
+index 0000000..0484776
+Binary files /dev/null and b/app/__pycache__/__init__.cpython-314.pyc differ
+diff --git a/app/__pycache__/echo_api.cpython-314.pyc b/app/__pycache__/echo_api.cpython-314.pyc
+new file mode 100644
+index 0000000..1c414c7
+Binary files /dev/null and b/app/__pycache__/echo_api.cpython-314.pyc differ
+diff --git a/app/echo_api.py b/app/echo_api.py
+index a994947..0227df5 100644
+--- a/app/echo_api.py
++++ b/app/echo_api.py
+@@ -1,5 +1,7 @@
+ def echo(payload):
+-    raise NotImplementedError('implement echo')
++    """Return the provided payload unchanged."""
++    return payload
+ 
+ def health():
+-    raise NotImplementedError('implement health')
++    """Return the helper's health status."""
++    return {'status': 'ok'}
+diff --git a/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc b/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc
+new file mode 100644
+index 0000000..707aac4
+Binary files /dev/null and b/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc differ

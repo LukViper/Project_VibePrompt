@@ -1,0 +1,110 @@
+{
+  "workspace_id": "ws-bba15e02c731",
+  "task_id": "csv_filter_cli",
+  "system_variant": "B_structured",
+  "dataset_version": "2.0.0",
+  "seed_commit": "14383bf13358f6d2eb92d48c97a743e407726999",
+  "start_time": "2026-10-01T21:01:32.762642+00:00",
+  "end_time": "2026-10-01T21:02:06.367399+00:00",
+  "exit_code": 0,
+  "duration_seconds": 33.60454486499657,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "structured_requirements",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "structured_requirements_prompt"
+      ]
+    },
+    "state_summary": null
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-bba15e02c731/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-bba15e02c731/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-bba15e02c731/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-bba15e02c731/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-bba15e02c731/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-bba15e02c731/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-bba15e02c731/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/workspaces/ws-bba15e02c731"
+  },
+  "git": {
+    "commit_before": "14383bf13358f6d2eb92d48c97a743e407726999",
+    "seed_commit": "14383bf13358f6d2eb92d48c97a743e407726999",
+    "commit_after": "14383bf13358f6d2eb92d48c97a743e407726999",
+    "changed_files": [
+      "pp/csv_filter.py",
+      "tests/test_csv_filter.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/csv_filter.cpython-314.pyc"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/csv_filter.cpython-314.pyc"
+    ],
+    "status_preview": "M app/csv_filter.py\n M tests/test_csv_filter.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__pycache__/"
+  },
+  "agent_run": {
+    "id": "RUN-0aa3d7dddfac",
+    "project_id": "csv_filter_cli",
+    "prompt_id": null,
+    "agent": "openai",
+    "model": "gpt-5.6-terra",
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_sci__6kbje8d/ws-bba15e02c731",
+    "commit_before": "14383bf13358f6d2eb92d48c97a743e407726999",
+    "commit_after": "14383bf13358f6d2eb92d48c97a743e407726999",
+    "started_at": "2026-10-01T21:01:32.762642+00:00",
+    "completed_at": "2026-10-01T21:02:06.367399+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "Implemented `filter_rows` as a pure equality filter in [app/csv_filter.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-bba15e02c731/app/csv_filter.py:1).\n\nAdded a non-mutation test in [tests/test_csv_filter.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-bba15e02c731/tests/test_csv_filter.py:8).\n\nVerified manually: matching rows are retained, non-matches are omitted, and input remains unchanged. (`pytest` is not installed.)\n",
+    "workspace_id": "ws-bba15e02c731",
+    "task_id": "csv_filter_cli",
+    "system_variant": "B_structured",
+    "exit_code": 0,
+    "duration_seconds": 33.60454486499657,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-bba15e02c731/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-bba15e02c731/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-bba15e02c731/git_diff.patch",
+    "label": "SCIENTIFIC",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-b6d4ed5b5bda",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-0aa3d7dddfac",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_filter_rows",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "filter_rows keeps matching rows",
+        "acceptance_test": "test_filter_rows"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T21:02:06.693094+00:00",
+      "verification_method": "acceptance_test_marker"
+    }
+  ],
+  "unsupported_features": [],
+  "constraint_violations": [],
+  "scope_violations": [],
+  "label": "SCIENTIFIC"
+}

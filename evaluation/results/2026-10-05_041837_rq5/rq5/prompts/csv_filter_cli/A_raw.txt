@@ -1,0 +1,4 @@
+You are a senior software engineer.
+
+Implement filter_rows(rows, column, value) for list-of-dicts CSV rows.
+Do not add SQL database support.

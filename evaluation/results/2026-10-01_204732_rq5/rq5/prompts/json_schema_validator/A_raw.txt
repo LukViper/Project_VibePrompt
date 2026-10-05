@@ -1,0 +1,4 @@
+You are a senior software engineer.
+
+validate(data, required_keys) returns True iff all keys present.
+Do not call a remote schema registry.

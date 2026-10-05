@@ -1,0 +1,3 @@
+Implemented `count_words` with stdlib `Counter`; it returns a plain frequency dictionary for whitespace-delimited words.
+
+Verified: `1 passed` via `python -m pytest -q`.

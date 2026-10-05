@@ -1,0 +1,1851 @@
+OpenAI Codex v0.148.0
+--------
+workdir: /tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: low
+reasoning summaries: none
+session id: 01a0f941-cf46-7612-9d3d-cdc5aa1b5bf4
+--------
+user
+You are a senior software engineer.
+
+Build the following project completely.
+
+ROLE
+You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
+
+PROJECT
+Untitled project
+
+OBJECTIVE
+See the specification.
+
+PROBLEM
+See the specification.
+
+REQUIREMENTS
+Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
+
+FUNCTIONAL REQUIREMENTS
+- None recorded.
+
+NON-FUNCTIONAL REQUIREMENTS
+- None recorded.
+
+CONSTRAINTS
+- Team size: None
+- Duration: None
+- Budget: None
+- Avoid: Do not implement delete_note, Do not use Redis
+
+TECH STACK
+Backend: unspecified
+Model: unspecified
+Database: unspecified
+Frameworks: unspecified
+Hardware: none
+
+ARCHITECTURE
+Use a modular monolith unless ProjectState specifies otherwise.
+
+DATABASE
+Use the database named in TECH STACK.
+
+API
+Implement an operation for every functional requirement.
+
+SECURITY
+Keep secrets in environment variables. Validate input. Do not expose credentials.
+
+TESTING
+Write a test mapped from each requirement ID. Run the tests.
+
+ACCEPTANCE CRITERIA
+[ ] Tests pass
+[ ] Application runs successfully
+
+IMPLEMENTATION PROCESS
+1. Inspect the existing repository.
+2. Understand the requirements.
+3. Create the required architecture.
+4. Implement the components.
+5. Configure dependencies.
+6. Implement database, API, and frontend components.
+7. Write tests.
+8. Run tests.
+9. Fix implementation errors.
+10. Verify every acceptance criterion.
+11. Provide setup instructions.
+
+DELIVERABLES
+- Working implementation of every requirement ID
+- Tests
+- Setup instructions
+- A short note mapping each acceptance criterion to evidence
+
+Do not remove or silently alter required functionality.
+Do not replace required functionality with placeholders.
+
+
+# COMPILATION GATE NOTES
+- project objective is missing
+- no active requirements
+Implement only CONFIRMED requirements listed above.
+codex
+I’ll inspect the repository first. Since the validated specification contains no active functional or non-functional requirements, I’ll preserve the stated constraints and only add what’s necessary for a runnable, verifiable project baseline.
+exec
+/usr/bin/zsh -lc "pwd && rg --files -g '"'!*node_modules*'"' -g '"'!*.lock'"' && git status --short && find . -maxdepth 2 -name AGENTS.md -o -name ProjectState.json -o -name projectstate.json" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488
+ succeeded in 0ms:
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488
+README.md
+app/__init__.py
+app/notes.py
+VIBEPROMPT_META.json
+TASK.md
+tests/test_notes.py
+?? TASK.md
+?? VIBEPROMPT_META.json
+
+exec
+/usr/bin/zsh -lc "sed -n '1,240p' README.md && sed -n '1,260p' TASK.md && sed -n '1,260p' VIBEPROMPT_META.json && sed -n '1,260p' app/__init__.py && sed -n '1,320p' app/notes.py && sed -n '1,320p' tests/test_notes.py && git diff -- app tests README.md" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488
+ succeeded in 0ms:
+# crud_notes
+You are a senior software engineer.
+
+Build the following project completely.
+
+ROLE
+You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
+
+PROJECT
+Untitled project
+
+OBJECTIVE
+See the specification.
+
+PROBLEM
+See the specification.
+
+REQUIREMENTS
+Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
+
+FUNCTIONAL REQUIREMENTS
+- None recorded.
+
+NON-FUNCTIONAL REQUIREMENTS
+- None recorded.
+
+CONSTRAINTS
+- Team size: None
+- Duration: None
+- Budget: None
+- Avoid: Do not implement delete_note, Do not use Redis
+
+TECH STACK
+Backend: unspecified
+Model: unspecified
+Database: unspecified
+Frameworks: unspecified
+Hardware: none
+
+ARCHITECTURE
+Use a modular monolith unless ProjectState specifies otherwise.
+
+DATABASE
+Use the database named in TECH STACK.
+
+API
+Implement an operation for every functional requirement.
+
+SECURITY
+Keep secrets in environment variables. Validate input. Do not expose credentials.
+
+TESTING
+Write a test mapped from each requirement ID. Run the tests.
+
+ACCEPTANCE CRITERIA
+[ ] Tests pass
+[ ] Application runs successfully
+
+IMPLEMENTATION PROCESS
+1. Inspect the existing repository.
+2. Understand the requirements.
+3. Create the required architecture.
+4. Implement the components.
+5. Configure dependencies.
+6. Implement database, API, and frontend components.
+7. Write tests.
+8. Run tests.
+9. Fix implementation errors.
+10. Verify every acceptance criterion.
+11. Provide setup instructions.
+
+DELIVERABLES
+- Working implementation of every requirement ID
+- Tests
+- Setup instructions
+- A short note mapping each acceptance criterion to evidence
+
+Do not remove or silently alter required functionality.
+Do not replace required functionality with placeholders.
+
+
+# COMPILATION GATE NOTES
+- project objective is missing
+- no active requirements
+Implement only CONFIRMED requirements listed above.
+{"workspace_id":"ws-5b45ebf57488","task_id":"crud_notes","variant":"C_vibeprompt","seed_commit":"f4a0510f1a33e82d622e613efede73f7f4a5bd07"}NOTES = {}
+
+def create_note(text):
+    raise NotImplementedError
+
+def list_notes():
+    raise NotImplementedError
+from app import notes
+
+def setup_function():
+    notes.NOTES.clear()
+
+def test_create_and_list():
+    nid = notes.create_note('hello')
+    items = notes.list_notes()
+    assert any(n.get('id') == nid or n.get('text') == 'hello' for n in items)
+
+codex
+The repository is a small Python notes scaffold with one existing test for creating and listing notes. I’ll complete that confirmed behavior with validated input and a minimal standard-library HTTP API; I will not add delete behavior or Redis.
+exec
+/usr/bin/zsh -lc "find . -maxdepth 3 -type f -not -path './.git/*' -print | sort && python --version && pytest --version" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488
+ exited 127 in 0ms:
+./README.md
+./TASK.md
+./VIBEPROMPT_META.json
+./app/__init__.py
+./app/notes.py
+./tests/test_notes.py
+Python 3.14.6
+zsh:1: command not found: pytest
+
+apply patch
+patch: completed
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/README.md
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/app/__main__.py
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/app/api.py
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/app/notes.py
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/tests/test_notes_unittest.py
+diff --git a/README.md b/README.md
+index 573288ffa629866988e404a4fbff632b25e145b2..08ea1ff05d0b3df2898ea31b1dbd6367bd4d8d01
+--- a/README.md
++++ b/README.md
+@@ -1 +1,40 @@
+-# crud_notes
++# Notes API
++
++This project implements the confirmed starter behavior: create and list
++in-memory notes.  There are intentionally no delete routes or functions, and
++it has no Redis dependency.
++
++## Run
++
++Requires Python 3.11 or later. No third-party packages are needed.
++
++```bash
++python -m app
++```
++
++The server listens on `http://127.0.0.1:8000`.
++
++```bash
++curl -X POST http://127.0.0.1:8000/notes \\
++  -H 'Content-Type: application/json' \\
++  -d '{"text":"Study chapter 1"}'
++curl http://127.0.0.1:8000/notes
++```
++
++`POST /notes` accepts `{"text": "..."}` and returns `201`; `GET /notes`
++returns all notes. Text is trimmed and must contain 1 to 10,000 characters.
++
++## Test
++
++```bash
++python -m unittest discover -s tests -p 'test_*.py' -v
++```
++
++The repository's original pytest-style smoke test is retained. The unittest
++suite covers the same confirmed create/list behavior and validation without
++requiring external dependencies.
++
++## Acceptance evidence
++
++- Tests pass: `python -m unittest discover -s tests -p 'test_*.py' -v`.
++- Application runs: `python -m app`, then use the `curl` commands above.
+diff --git a/app/__main__.py b/app/__main__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..329c6513b57c004ea38bc83ff1bcff7bf329d2d8
+--- /dev/null
++++ b/app/__main__.py
+@@ -0,0 +1,7 @@
++"""Run the notes application with ``python -m app``."""
++
++from .api import serve
++
++
++if __name__ == "__main__":
++    serve()
+diff --git a/app/api.py b/app/api.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..1a29476132a7d907f571d62e3fb7bdd6297181f2
+--- /dev/null
++++ b/app/api.py
+@@ -0,0 +1,54 @@
++"""Small dependency-free HTTP interface for the notes service."""
++
++from __future__ import annotations
++
++import json
++from http import HTTPStatus
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++
++from .notes import create_note, list_notes
++
++
++class NotesHandler(BaseHTTPRequestHandler):
++    """Serve the explicitly supported note creation and listing routes."""
++
++    def do_GET(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        self._send_json(HTTPStatus.OK, {"notes": list_notes()})
++
++    def do_POST(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        try:
++            content_length = int(self.headers.get("Content-Length", "0"))
++            if content_length > 10_100:
++                raise ValueError("request body is too large")
++            payload = json.loads(self.rfile.read(content_length))
++            if not isinstance(payload, dict):
++                raise ValueError("body must be a JSON object")
++            note_id = create_note(payload.get("text"))
++        except (UnicodeDecodeError, json.JSONDecodeError, ValueError) as error:
++            self._send_json(HTTPStatus.BAD_REQUEST, {"error": str(error)})
++            return
++        self._send_json(HTTPStatus.CREATED, {"id": note_id})
++
++    def _send_json(self, status: HTTPStatus, payload: dict[str, object]) -> None:
++        body = json.dumps(payload).encode("utf-8")
++        self.send_response(status)
++        self.send_header("Content-Type", "application/json; charset=utf-8")
++        self.send_header("Content-Length", str(len(body)))
++        self.end_headers()
++        self.wfile.write(body)
++
++    def log_message(self, format: str, *args: object) -> None:
++        """Suppress access logs; callers can provide process-level logging."""
++
++
++def serve(host: str = "127.0.0.1", port: int = 8000) -> None:
++    """Run the local development server until interrupted."""
++    server = ThreadingHTTPServer((host, port), NotesHandler)
++    print(f"Notes API listening on http://{host}:{port}")
++    server.serve_forever()
+diff --git a/app/notes.py b/app/notes.py
+index beea953bed627fe2de3e0ec8b3d654b7f2d15c4c..36cea2d46205ee7c85075c77a7bb85db09697df9
+--- a/app/notes.py
++++ b/app/notes.py
+@@ -1,7 +1,42 @@
+-NOTES = {}
++"""In-memory note service.
++
++The module deliberately exposes no delete operation: deletion is outside the
++validated project scope.
++"""
+ 
+-def create_note(text):
+-    raise NotImplementedError
++from __future__ import annotations
+ 
+-def list_notes():
+-    raise NotImplementedError
++from itertools import count
++from threading import Lock
++
++
++NOTES: dict[int, dict[str, object]] = {}
++_NEXT_ID = count(1)
++_LOCK = Lock()
++
++
++def create_note(text: str) -> int:
++    """Create a note and return its identifier.
++
++    Note text must be a non-empty string after trimming whitespace.  The stored
++    value is trimmed so callers get predictable data when listing notes.
++    """
++    if not isinstance(text, str):
++        raise ValueError("text must be a string")
++
++    normalized_text = text.strip()
++    if not normalized_text:
++        raise ValueError("text must not be empty")
++    if len(normalized_text) > 10_000:
++        raise ValueError("text must be 10,000 characters or fewer")
++
++    with _LOCK:
++        note_id = next(_NEXT_ID)
++        NOTES[note_id] = {"id": note_id, "text": normalized_text}
++    return note_id
++
++
++def list_notes() -> list[dict[str, object]]:
++    """Return copies of all notes in creation order."""
++    with _LOCK:
++        return [note.copy() for note in NOTES.values()]
+diff --git a/tests/test_notes_unittest.py b/tests/test_notes_unittest.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..410d09e098a80e4a9c4e767a427fdd9842619890
+--- /dev/null
++++ b/tests/test_notes_unittest.py
+@@ -0,0 +1,28 @@
++"""Regression tests for the confirmed scaffold behavior."""
++
++import unittest
++
++from app import notes
++
++
++class NotesServiceTests(unittest.TestCase):
++    def setUp(self) -> None:
++        notes.NOTES.clear()
++
++    def test_create_and_list_note(self) -> None:
++        note_id = notes.create_note("hello")
++
++        self.assertEqual(notes.list_notes(), [{"id": note_id, "text": "hello"}])
++
++    def test_create_note_rejects_invalid_text(self) -> None:
++        for value in ("", "   ", None, 5):
++            with self.subTest(value=value):
++                with self.assertRaises(ValueError):
++                    notes.create_note(value)  # type: ignore[arg-type]
++
++    def test_list_returns_copies(self) -> None:
++        notes.create_note("private")
++        listed = notes.list_notes()
++        listed[0]["text"] = "changed"
++
++        self.assertEqual(notes.list_notes()[0]["text"], "private")
+
+diff --git a/README.md b/README.md
+index 573288ffa629866988e404a4fbff632b25e145b2..08ea1ff05d0b3df2898ea31b1dbd6367bd4d8d01
+--- a/README.md
++++ b/README.md
+@@ -1 +1,40 @@
+-# crud_notes
++# Notes API
++
++This project implements the confirmed starter behavior: create and list
++in-memory notes.  There are intentionally no delete routes or functions, and
++it has no Redis dependency.
++
++## Run
++
++Requires Python 3.11 or later. No third-party packages are needed.
++
++```bash
++python -m app
++```
++
++The server listens on `http://127.0.0.1:8000`.
++
++```bash
++curl -X POST http://127.0.0.1:8000/notes \\
++  -H 'Content-Type: application/json' \\
++  -d '{"text":"Study chapter 1"}'
++curl http://127.0.0.1:8000/notes
++```
++
++`POST /notes` accepts `{"text": "..."}` and returns `201`; `GET /notes`
++returns all notes. Text is trimmed and must contain 1 to 10,000 characters.
++
++## Test
++
++```bash
++python -m unittest discover -s tests -p 'test_*.py' -v
++```
++
++The repository's original pytest-style smoke test is retained. The unittest
++suite covers the same confirmed create/list behavior and validation without
++requiring external dependencies.
++
++## Acceptance evidence
++
++- Tests pass: `python -m unittest discover -s tests -p 'test_*.py' -v`.
++- Application runs: `python -m app`, then use the `curl` commands above.
+diff --git a/app/__main__.py b/app/__main__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..329c6513b57c004ea38bc83ff1bcff7bf329d2d8
+--- /dev/null
++++ b/app/__main__.py
+@@ -0,0 +1,7 @@
++"""Run the notes application with ``python -m app``."""
++
++from .api import serve
++
++
++if __name__ == "__main__":
++    serve()
+diff --git a/app/api.py b/app/api.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..1a29476132a7d907f571d62e3fb7bdd6297181f2
+--- /dev/null
++++ b/app/api.py
+@@ -0,0 +1,54 @@
++"""Small dependency-free HTTP interface for the notes service."""
++
++from __future__ import annotations
++
++import json
++from http import HTTPStatus
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++
++from .notes import create_note, list_notes
++
++
++class NotesHandler(BaseHTTPRequestHandler):
++    """Serve the explicitly supported note creation and listing routes."""
++
++    def do_GET(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        self._send_json(HTTPStatus.OK, {"notes": list_notes()})
++
++    def do_POST(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        try:
++            content_length = int(self.headers.get("Content-Length", "0"))
++            if content_length > 10_100:
++                raise ValueError("request body is too large")
++            payload = json.loads(self.rfile.read(content_length))
++            if not isinstance(payload, dict):
++                raise ValueError("body must be a JSON object")
++            note_id = create_note(payload.get("text"))
++        except (UnicodeDecodeError, json.JSONDecodeError, ValueError) as error:
++            self._send_json(HTTPStatus.BAD_REQUEST, {"error": str(error)})
++            return
++        self._send_json(HTTPStatus.CREATED, {"id": note_id})
++
++    def _send_json(self, status: HTTPStatus, payload: dict[str, object]) -> None:
++        body = json.dumps(payload).encode("utf-8")
++        self.send_response(status)
++        self.send_header("Content-Type", "application/json; charset=utf-8")
++        self.send_header("Content-Length", str(len(body)))
++        self.end_headers()
++        self.wfile.write(body)
++
++    def log_message(self, format: str, *args: object) -> None:
++        """Suppress access logs; callers can provide process-level logging."""
++
++
++def serve(host: str = "127.0.0.1", port: int = 8000) -> None:
++    """Run the local development server until interrupted."""
++    server = ThreadingHTTPServer((host, port), NotesHandler)
++    print(f"Notes API listening on http://{host}:{port}")
++    server.serve_forever()
+diff --git a/app/notes.py b/app/notes.py
+index beea953bed627fe2de3e0ec8b3d654b7f2d15c4c..36cea2d46205ee7c85075c77a7bb85db09697df9
+--- a/app/notes.py
++++ b/app/notes.py
+@@ -1,7 +1,42 @@
+-NOTES = {}
++"""In-memory note service.
++
++The module deliberately exposes no delete operation: deletion is outside the
++validated project scope.
++"""
+ 
+-def create_note(text):
+-    raise NotImplementedError
++from __future__ import annotations
+ 
+-def list_notes():
+-    raise NotImplementedError
++from itertools import count
++from threading import Lock
++
++
++NOTES: dict[int, dict[str, object]] = {}
++_NEXT_ID = count(1)
++_LOCK = Lock()
++
++
++def create_note(text: str) -> int:
++    """Create a note and return its identifier.
++
++    Note text must be a non-empty string after trimming whitespace.  The stored
++    value is trimmed so callers get predictable data when listing notes.
++    """
++    if not isinstance(text, str):
++        raise ValueError("text must be a string")
++
++    normalized_text = text.strip()
++    if not normalized_text:
++        raise ValueError("text must not be empty")
++    if len(normalized_text) > 10_000:
++        raise ValueError("text must be 10,000 characters or fewer")
++
++    with _LOCK:
++        note_id = next(_NEXT_ID)
++        NOTES[note_id] = {"id": note_id, "text": normalized_text}
++    return note_id
++
++
++def list_notes() -> list[dict[str, object]]:
++    """Return copies of all notes in creation order."""
++    with _LOCK:
++        return [note.copy() for note in NOTES.values()]
+diff --git a/tests/test_notes_unittest.py b/tests/test_notes_unittest.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..410d09e098a80e4a9c4e767a427fdd9842619890
+--- /dev/null
++++ b/tests/test_notes_unittest.py
+@@ -0,0 +1,28 @@
++"""Regression tests for the confirmed scaffold behavior."""
++
++import unittest
++
++from app import notes
++
++
++class NotesServiceTests(unittest.TestCase):
++    def setUp(self) -> None:
++        notes.NOTES.clear()
++
++    def test_create_and_list_note(self) -> None:
++        note_id = notes.create_note("hello")
++
++        self.assertEqual(notes.list_notes(), [{"id": note_id, "text": "hello"}])
++
++    def test_create_note_rejects_invalid_text(self) -> None:
++        for value in ("", "   ", None, 5):
++            with self.subTest(value=value):
++                with self.assertRaises(ValueError):
++                    notes.create_note(value)  # type: ignore[arg-type]
++
++    def test_list_returns_copies(self) -> None:
++        notes.create_note("private")
++        listed = notes.list_notes()
++        listed[0]["text"] = "changed"
++
++        self.assertEqual(notes.list_notes()[0]["text"], "private")
+
+codex
+The implementation is in place: a thread-safe in-memory notes service, `GET /notes` and `POST /notes`, plus standard-library tests so the project remains dependency-free. I’m running the test suite and a live HTTP smoke test now.
+exec
+/usr/bin/zsh -lc "python -m unittest discover -s tests -p 'test_*.py' -v && (python -m app >/tmp/notes-api.log 2>&1 & api_pid="'$!; trap '"'kill "'$api_pid 2>/dev/null'"' EXIT; sleep 1; created="'$(curl -sS -X POST http://127.0.0.1:8000/notes -H '"'Content-Type: application/json' -d '{\"text\":\"API smoke test\"}'); listed="'$(curl -sS http://127.0.0.1:8000/notes); test "$created" = '"'{\"id\": 1}' && test \""'$listed" = '"'{\"notes\": [{\"id\": 1, \"text\": \"API smoke test\"}]}' && echo 'HTTP smoke test passed')" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488
+ exited 1 in 942ms:
+curl: (7) failed to open socket: Operation not permitted
+curl: (7) failed to open socket: Operation not permitted
+
+diff --git a/README.md b/README.md
+index 573288ffa629866988e404a4fbff632b25e145b2..08ea1ff05d0b3df2898ea31b1dbd6367bd4d8d01
+--- a/README.md
++++ b/README.md
+@@ -1 +1,40 @@
+-# crud_notes
++# Notes API
++
++This project implements the confirmed starter behavior: create and list
++in-memory notes.  There are intentionally no delete routes or functions, and
++it has no Redis dependency.
++
++## Run
++
++Requires Python 3.11 or later. No third-party packages are needed.
++
++```bash
++python -m app
++```
++
++The server listens on `http://127.0.0.1:8000`.
++
++```bash
++curl -X POST http://127.0.0.1:8000/notes \\
++  -H 'Content-Type: application/json' \\
++  -d '{"text":"Study chapter 1"}'
++curl http://127.0.0.1:8000/notes
++```
++
++`POST /notes` accepts `{"text": "..."}` and returns `201`; `GET /notes`
++returns all notes. Text is trimmed and must contain 1 to 10,000 characters.
++
++## Test
++
++```bash
++python -m unittest discover -s tests -p 'test_*.py' -v
++```
++
++The repository's original pytest-style smoke test is retained. The unittest
++suite covers the same confirmed create/list behavior and validation without
++requiring external dependencies.
++
++## Acceptance evidence
++
++- Tests pass: `python -m unittest discover -s tests -p 'test_*.py' -v`.
++- Application runs: `python -m app`, then use the `curl` commands above.
+diff --git a/app/__main__.py b/app/__main__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..329c6513b57c004ea38bc83ff1bcff7bf329d2d8
+--- /dev/null
++++ b/app/__main__.py
+@@ -0,0 +1,7 @@
++"""Run the notes application with ``python -m app``."""
++
++from .api import serve
++
++
++if __name__ == "__main__":
++    serve()
+diff --git a/app/api.py b/app/api.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..1a29476132a7d907f571d62e3fb7bdd6297181f2
+--- /dev/null
++++ b/app/api.py
+@@ -0,0 +1,54 @@
++"""Small dependency-free HTTP interface for the notes service."""
++
++from __future__ import annotations
++
++import json
++from http import HTTPStatus
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++
++from .notes import create_note, list_notes
++
++
++class NotesHandler(BaseHTTPRequestHandler):
++    """Serve the explicitly supported note creation and listing routes."""
++
++    def do_GET(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        self._send_json(HTTPStatus.OK, {"notes": list_notes()})
++
++    def do_POST(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        try:
++            content_length = int(self.headers.get("Content-Length", "0"))
++            if content_length > 10_100:
++                raise ValueError("request body is too large")
++            payload = json.loads(self.rfile.read(content_length))
++            if not isinstance(payload, dict):
++                raise ValueError("body must be a JSON object")
++            note_id = create_note(payload.get("text"))
++        except (UnicodeDecodeError, json.JSONDecodeError, ValueError) as error:
++            self._send_json(HTTPStatus.BAD_REQUEST, {"error": str(error)})
++            return
++        self._send_json(HTTPStatus.CREATED, {"id": note_id})
++
++    def _send_json(self, status: HTTPStatus, payload: dict[str, object]) -> None:
++        body = json.dumps(payload).encode("utf-8")
++        self.send_response(status)
++        self.send_header("Content-Type", "application/json; charset=utf-8")
++        self.send_header("Content-Length", str(len(body)))
++        self.end_headers()
++        self.wfile.write(body)
++
++    def log_message(self, format: str, *args: object) -> None:
++        """Suppress access logs; callers can provide process-level logging."""
++
++
++def serve(host: str = "127.0.0.1", port: int = 8000) -> None:
++    """Run the local development server until interrupted."""
++    server = ThreadingHTTPServer((host, port), NotesHandler)
++    print(f"Notes API listening on http://{host}:{port}")
++    server.serve_forever()
+diff --git a/app/notes.py b/app/notes.py
+index beea953bed627fe2de3e0ec8b3d654b7f2d15c4c..36cea2d46205ee7c85075c77a7bb85db09697df9
+--- a/app/notes.py
++++ b/app/notes.py
+@@ -1,7 +1,42 @@
+-NOTES = {}
++"""In-memory note service.
++
++The module deliberately exposes no delete operation: deletion is outside the
++validated project scope.
++"""
+ 
+-def create_note(text):
+-    raise NotImplementedError
++from __future__ import annotations
+ 
+-def list_notes():
+-    raise NotImplementedError
++from itertools import count
++from threading import Lock
++
++
++NOTES: dict[int, dict[str, object]] = {}
++_NEXT_ID = count(1)
++_LOCK = Lock()
++
++
++def create_note(text: str) -> int:
++    """Create a note and return its identifier.
++
++    Note text must be a non-empty string after trimming whitespace.  The stored
++    value is trimmed so callers get predictable data when listing notes.
++    """
++    if not isinstance(text, str):
++        raise ValueError("text must be a string")
++
++    normalized_text = text.strip()
++    if not normalized_text:
++        raise ValueError("text must not be empty")
++    if len(normalized_text) > 10_000:
++        raise ValueError("text must be 10,000 characters or fewer")
++
++    with _LOCK:
++        note_id = next(_NEXT_ID)
++        NOTES[note_id] = {"id": note_id, "text": normalized_text}
++    return note_id
++
++
++def list_notes() -> list[dict[str, object]]:
++    """Return copies of all notes in creation order."""
++    with _LOCK:
++        return [note.copy() for note in NOTES.values()]
+diff --git a/tests/test_notes_unittest.py b/tests/test_notes_unittest.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..410d09e098a80e4a9c4e767a427fdd9842619890
+--- /dev/null
++++ b/tests/test_notes_unittest.py
+@@ -0,0 +1,28 @@
++"""Regression tests for the confirmed scaffold behavior."""
++
++import unittest
++
++from app import notes
++
++
++class NotesServiceTests(unittest.TestCase):
++    def setUp(self) -> None:
++        notes.NOTES.clear()
++
++    def test_create_and_list_note(self) -> None:
++        note_id = notes.create_note("hello")
++
++        self.assertEqual(notes.list_notes(), [{"id": note_id, "text": "hello"}])
++
++    def test_create_note_rejects_invalid_text(self) -> None:
++        for value in ("", "   ", None, 5):
++            with self.subTest(value=value):
++                with self.assertRaises(ValueError):
++                    notes.create_note(value)  # type: ignore[arg-type]
++
++    def test_list_returns_copies(self) -> None:
++        notes.create_note("private")
++        listed = notes.list_notes()
++        listed[0]["text"] = "changed"
++
++        self.assertEqual(notes.list_notes()[0]["text"], "private")
+
+codex
+All service tests pass. The environment blocks local socket connections, so the live curl check cannot run here; I’ll still verify the application module compiles and execute the repository’s original create/list smoke assertion directly.
+exec
+/usr/bin/zsh -lc "python -m py_compile app/*.py && python -c \"from app import notes; notes.NOTES.clear(); note_id = notes.create_note('hello'); items = notes.list_notes(); assert any(note.get('id') == note_id or note.get('text') == 'hello' for note in items); print('Original create/list smoke assertion passed')\" && git diff --check && git status --short && git diff -- README.md app tests" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488
+ succeeded in 0ms:
+Original create/list smoke assertion passed
+ M README.md
+ M app/notes.py
+?? TASK.md
+?? VIBEPROMPT_META.json
+?? app/__main__.py
+?? app/__pycache__/
+?? app/api.py
+?? tests/__pycache__/
+?? tests/test_notes_unittest.py
+diff --git a/README.md b/README.md
+index 573288f..08ea1ff 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,40 @@
+-# crud_notes
++# Notes API
++
++This project implements the confirmed starter behavior: create and list
++in-memory notes.  There are intentionally no delete routes or functions, and
++it has no Redis dependency.
++
++## Run
++
++Requires Python 3.11 or later. No third-party packages are needed.
++
++```bash
++python -m app
++```
++
++The server listens on `http://127.0.0.1:8000`.
++
++```bash
++curl -X POST http://127.0.0.1:8000/notes \\
++  -H 'Content-Type: application/json' \\
++  -d '{"text":"Study chapter 1"}'
++curl http://127.0.0.1:8000/notes
++```
++
++`POST /notes` accepts `{"text": "..."}` and returns `201`; `GET /notes`
++returns all notes. Text is trimmed and must contain 1 to 10,000 characters.
++
++## Test
++
++```bash
++python -m unittest discover -s tests -p 'test_*.py' -v
++```
++
++The repository's original pytest-style smoke test is retained. The unittest
++suite covers the same confirmed create/list behavior and validation without
++requiring external dependencies.
++
++## Acceptance evidence
++
++- Tests pass: `python -m unittest discover -s tests -p 'test_*.py' -v`.
++- Application runs: `python -m app`, then use the `curl` commands above.
+diff --git a/app/notes.py b/app/notes.py
+index beea953..36cea2d 100644
+--- a/app/notes.py
++++ b/app/notes.py
+@@ -1,7 +1,42 @@
+-NOTES = {}
++"""In-memory note service.
+ 
+-def create_note(text):
+-    raise NotImplementedError
++The module deliberately exposes no delete operation: deletion is outside the
++validated project scope.
++"""
+ 
+-def list_notes():
+-    raise NotImplementedError
++from __future__ import annotations
++
++from itertools import count
++from threading import Lock
++
++
++NOTES: dict[int, dict[str, object]] = {}
++_NEXT_ID = count(1)
++_LOCK = Lock()
++
++
++def create_note(text: str) -> int:
++    """Create a note and return its identifier.
++
++    Note text must be a non-empty string after trimming whitespace.  The stored
++    value is trimmed so callers get predictable data when listing notes.
++    """
++    if not isinstance(text, str):
++        raise ValueError("text must be a string")
++
++    normalized_text = text.strip()
++    if not normalized_text:
++        raise ValueError("text must not be empty")
++    if len(normalized_text) > 10_000:
++        raise ValueError("text must be 10,000 characters or fewer")
++
++    with _LOCK:
++        note_id = next(_NEXT_ID)
++        NOTES[note_id] = {"id": note_id, "text": normalized_text}
++    return note_id
++
++
++def list_notes() -> list[dict[str, object]]:
++    """Return copies of all notes in creation order."""
++    with _LOCK:
++        return [note.copy() for note in NOTES.values()]
+
+diff --git a/README.md b/README.md
+index 573288ffa629866988e404a4fbff632b25e145b2..08ea1ff05d0b3df2898ea31b1dbd6367bd4d8d01
+--- a/README.md
++++ b/README.md
+@@ -1 +1,40 @@
+-# crud_notes
++# Notes API
++
++This project implements the confirmed starter behavior: create and list
++in-memory notes.  There are intentionally no delete routes or functions, and
++it has no Redis dependency.
++
++## Run
++
++Requires Python 3.11 or later. No third-party packages are needed.
++
++```bash
++python -m app
++```
++
++The server listens on `http://127.0.0.1:8000`.
++
++```bash
++curl -X POST http://127.0.0.1:8000/notes \\
++  -H 'Content-Type: application/json' \\
++  -d '{"text":"Study chapter 1"}'
++curl http://127.0.0.1:8000/notes
++```
++
++`POST /notes` accepts `{"text": "..."}` and returns `201`; `GET /notes`
++returns all notes. Text is trimmed and must contain 1 to 10,000 characters.
++
++## Test
++
++```bash
++python -m unittest discover -s tests -p 'test_*.py' -v
++```
++
++The repository's original pytest-style smoke test is retained. The unittest
++suite covers the same confirmed create/list behavior and validation without
++requiring external dependencies.
++
++## Acceptance evidence
++
++- Tests pass: `python -m unittest discover -s tests -p 'test_*.py' -v`.
++- Application runs: `python -m app`, then use the `curl` commands above.
+diff --git a/app/__main__.py b/app/__main__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..329c6513b57c004ea38bc83ff1bcff7bf329d2d8
+--- /dev/null
++++ b/app/__main__.py
+@@ -0,0 +1,7 @@
++"""Run the notes application with ``python -m app``."""
++
++from .api import serve
++
++
++if __name__ == "__main__":
++    serve()
+diff --git a/app/api.py b/app/api.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..1a29476132a7d907f571d62e3fb7bdd6297181f2
+--- /dev/null
++++ b/app/api.py
+@@ -0,0 +1,54 @@
++"""Small dependency-free HTTP interface for the notes service."""
++
++from __future__ import annotations
++
++import json
++from http import HTTPStatus
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++
++from .notes import create_note, list_notes
++
++
++class NotesHandler(BaseHTTPRequestHandler):
++    """Serve the explicitly supported note creation and listing routes."""
++
++    def do_GET(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        self._send_json(HTTPStatus.OK, {"notes": list_notes()})
++
++    def do_POST(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        try:
++            content_length = int(self.headers.get("Content-Length", "0"))
++            if content_length > 10_100:
++                raise ValueError("request body is too large")
++            payload = json.loads(self.rfile.read(content_length))
++            if not isinstance(payload, dict):
++                raise ValueError("body must be a JSON object")
++            note_id = create_note(payload.get("text"))
++        except (UnicodeDecodeError, json.JSONDecodeError, ValueError) as error:
++            self._send_json(HTTPStatus.BAD_REQUEST, {"error": str(error)})
++            return
++        self._send_json(HTTPStatus.CREATED, {"id": note_id})
++
++    def _send_json(self, status: HTTPStatus, payload: dict[str, object]) -> None:
++        body = json.dumps(payload).encode("utf-8")
++        self.send_response(status)
++        self.send_header("Content-Type", "application/json; charset=utf-8")
++        self.send_header("Content-Length", str(len(body)))
++        self.end_headers()
++        self.wfile.write(body)
++
++    def log_message(self, format: str, *args: object) -> None:
++        """Suppress access logs; callers can provide process-level logging."""
++
++
++def serve(host: str = "127.0.0.1", port: int = 8000) -> None:
++    """Run the local development server until interrupted."""
++    server = ThreadingHTTPServer((host, port), NotesHandler)
++    print(f"Notes API listening on http://{host}:{port}")
++    server.serve_forever()
+diff --git a/app/notes.py b/app/notes.py
+index beea953bed627fe2de3e0ec8b3d654b7f2d15c4c..36cea2d46205ee7c85075c77a7bb85db09697df9
+--- a/app/notes.py
++++ b/app/notes.py
+@@ -1,7 +1,42 @@
+-NOTES = {}
++"""In-memory note service.
++
++The module deliberately exposes no delete operation: deletion is outside the
++validated project scope.
++"""
+ 
+-def create_note(text):
+-    raise NotImplementedError
++from __future__ import annotations
+ 
+-def list_notes():
+-    raise NotImplementedError
++from itertools import count
++from threading import Lock
++
++
++NOTES: dict[int, dict[str, object]] = {}
++_NEXT_ID = count(1)
++_LOCK = Lock()
++
++
++def create_note(text: str) -> int:
++    """Create a note and return its identifier.
++
++    Note text must be a non-empty string after trimming whitespace.  The stored
++    value is trimmed so callers get predictable data when listing notes.
++    """
++    if not isinstance(text, str):
++        raise ValueError("text must be a string")
++
++    normalized_text = text.strip()
++    if not normalized_text:
++        raise ValueError("text must not be empty")
++    if len(normalized_text) > 10_000:
++        raise ValueError("text must be 10,000 characters or fewer")
++
++    with _LOCK:
++        note_id = next(_NEXT_ID)
++        NOTES[note_id] = {"id": note_id, "text": normalized_text}
++    return note_id
++
++
++def list_notes() -> list[dict[str, object]]:
++    """Return copies of all notes in creation order."""
++    with _LOCK:
++        return [note.copy() for note in NOTES.values()]
+diff --git a/tests/test_notes_unittest.py b/tests/test_notes_unittest.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..410d09e098a80e4a9c4e767a427fdd9842619890
+--- /dev/null
++++ b/tests/test_notes_unittest.py
+@@ -0,0 +1,28 @@
++"""Regression tests for the confirmed scaffold behavior."""
++
++import unittest
++
++from app import notes
++
++
++class NotesServiceTests(unittest.TestCase):
++    def setUp(self) -> None:
++        notes.NOTES.clear()
++
++    def test_create_and_list_note(self) -> None:
++        note_id = notes.create_note("hello")
++
++        self.assertEqual(notes.list_notes(), [{"id": note_id, "text": "hello"}])
++
++    def test_create_note_rejects_invalid_text(self) -> None:
++        for value in ("", "   ", None, 5):
++            with self.subTest(value=value):
++                with self.assertRaises(ValueError):
++                    notes.create_note(value)  # type: ignore[arg-type]
++
++    def test_list_returns_copies(self) -> None:
++        notes.create_note("private")
++        listed = notes.list_notes()
++        listed[0]["text"] = "changed"
++
++        self.assertEqual(notes.list_notes()[0]["text"], "private")
+
+2026-10-01T20:58:44.147302Z ERROR codex_core::tools::router: error=exec_command failed for `/usr/bin/zsh -lc 'rm -rf /tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/app/__pycache__ /tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/tests/__pycache__ && git status --short'`: CreateProcess { message: "Rejected(\"`/usr/bin/zsh -lc 'rm -rf /tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/app/__pycache__ /tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/tests/__pycache__ && git status --short'` rejected: rm -f style commands are not permitted. Use a safer approach\")" }
+diff --git a/README.md b/README.md
+index 573288ffa629866988e404a4fbff632b25e145b2..08ea1ff05d0b3df2898ea31b1dbd6367bd4d8d01
+--- a/README.md
++++ b/README.md
+@@ -1 +1,40 @@
+-# crud_notes
++# Notes API
++
++This project implements the confirmed starter behavior: create and list
++in-memory notes.  There are intentionally no delete routes or functions, and
++it has no Redis dependency.
++
++## Run
++
++Requires Python 3.11 or later. No third-party packages are needed.
++
++```bash
++python -m app
++```
++
++The server listens on `http://127.0.0.1:8000`.
++
++```bash
++curl -X POST http://127.0.0.1:8000/notes \\
++  -H 'Content-Type: application/json' \\
++  -d '{"text":"Study chapter 1"}'
++curl http://127.0.0.1:8000/notes
++```
++
++`POST /notes` accepts `{"text": "..."}` and returns `201`; `GET /notes`
++returns all notes. Text is trimmed and must contain 1 to 10,000 characters.
++
++## Test
++
++```bash
++python -m unittest discover -s tests -p 'test_*.py' -v
++```
++
++The repository's original pytest-style smoke test is retained. The unittest
++suite covers the same confirmed create/list behavior and validation without
++requiring external dependencies.
++
++## Acceptance evidence
++
++- Tests pass: `python -m unittest discover -s tests -p 'test_*.py' -v`.
++- Application runs: `python -m app`, then use the `curl` commands above.
+diff --git a/app/__main__.py b/app/__main__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..329c6513b57c004ea38bc83ff1bcff7bf329d2d8
+--- /dev/null
++++ b/app/__main__.py
+@@ -0,0 +1,7 @@
++"""Run the notes application with ``python -m app``."""
++
++from .api import serve
++
++
++if __name__ == "__main__":
++    serve()
+diff --git a/app/api.py b/app/api.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..1a29476132a7d907f571d62e3fb7bdd6297181f2
+--- /dev/null
++++ b/app/api.py
+@@ -0,0 +1,54 @@
++"""Small dependency-free HTTP interface for the notes service."""
++
++from __future__ import annotations
++
++import json
++from http import HTTPStatus
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++
++from .notes import create_note, list_notes
++
++
++class NotesHandler(BaseHTTPRequestHandler):
++    """Serve the explicitly supported note creation and listing routes."""
++
++    def do_GET(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        self._send_json(HTTPStatus.OK, {"notes": list_notes()})
++
++    def do_POST(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        try:
++            content_length = int(self.headers.get("Content-Length", "0"))
++            if content_length > 10_100:
++                raise ValueError("request body is too large")
++            payload = json.loads(self.rfile.read(content_length))
++            if not isinstance(payload, dict):
++                raise ValueError("body must be a JSON object")
++            note_id = create_note(payload.get("text"))
++        except (UnicodeDecodeError, json.JSONDecodeError, ValueError) as error:
++            self._send_json(HTTPStatus.BAD_REQUEST, {"error": str(error)})
++            return
++        self._send_json(HTTPStatus.CREATED, {"id": note_id})
++
++    def _send_json(self, status: HTTPStatus, payload: dict[str, object]) -> None:
++        body = json.dumps(payload).encode("utf-8")
++        self.send_response(status)
++        self.send_header("Content-Type", "application/json; charset=utf-8")
++        self.send_header("Content-Length", str(len(body)))
++        self.end_headers()
++        self.wfile.write(body)
++
++    def log_message(self, format: str, *args: object) -> None:
++        """Suppress access logs; callers can provide process-level logging."""
++
++
++def serve(host: str = "127.0.0.1", port: int = 8000) -> None:
++    """Run the local development server until interrupted."""
++    server = ThreadingHTTPServer((host, port), NotesHandler)
++    print(f"Notes API listening on http://{host}:{port}")
++    server.serve_forever()
+diff --git a/app/notes.py b/app/notes.py
+index beea953bed627fe2de3e0ec8b3d654b7f2d15c4c..36cea2d46205ee7c85075c77a7bb85db09697df9
+--- a/app/notes.py
++++ b/app/notes.py
+@@ -1,7 +1,42 @@
+-NOTES = {}
++"""In-memory note service.
++
++The module deliberately exposes no delete operation: deletion is outside the
++validated project scope.
++"""
+ 
+-def create_note(text):
+-    raise NotImplementedError
++from __future__ import annotations
+ 
+-def list_notes():
+-    raise NotImplementedError
++from itertools import count
++from threading import Lock
++
++
++NOTES: dict[int, dict[str, object]] = {}
++_NEXT_ID = count(1)
++_LOCK = Lock()
++
++
++def create_note(text: str) -> int:
++    """Create a note and return its identifier.
++
++    Note text must be a non-empty string after trimming whitespace.  The stored
++    value is trimmed so callers get predictable data when listing notes.
++    """
++    if not isinstance(text, str):
++        raise ValueError("text must be a string")
++
++    normalized_text = text.strip()
++    if not normalized_text:
++        raise ValueError("text must not be empty")
++    if len(normalized_text) > 10_000:
++        raise ValueError("text must be 10,000 characters or fewer")
++
++    with _LOCK:
++        note_id = next(_NEXT_ID)
++        NOTES[note_id] = {"id": note_id, "text": normalized_text}
++    return note_id
++
++
++def list_notes() -> list[dict[str, object]]:
++    """Return copies of all notes in creation order."""
++    with _LOCK:
++        return [note.copy() for note in NOTES.values()]
+diff --git a/tests/test_notes_unittest.py b/tests/test_notes_unittest.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..410d09e098a80e4a9c4e767a427fdd9842619890
+--- /dev/null
++++ b/tests/test_notes_unittest.py
+@@ -0,0 +1,28 @@
++"""Regression tests for the confirmed scaffold behavior."""
++
++import unittest
++
++from app import notes
++
++
++class NotesServiceTests(unittest.TestCase):
++    def setUp(self) -> None:
++        notes.NOTES.clear()
++
++    def test_create_and_list_note(self) -> None:
++        note_id = notes.create_note("hello")
++
++        self.assertEqual(notes.list_notes(), [{"id": note_id, "text": "hello"}])
++
++    def test_create_note_rejects_invalid_text(self) -> None:
++        for value in ("", "   ", None, 5):
++            with self.subTest(value=value):
++                with self.assertRaises(ValueError):
++                    notes.create_note(value)  # type: ignore[arg-type]
++
++    def test_list_returns_copies(self) -> None:
++        notes.create_note("private")
++        listed = notes.list_notes()
++        listed[0]["text"] = "changed"
++
++        self.assertEqual(notes.list_notes()[0]["text"], "private")
+
+exec
+/usr/bin/zsh -lc "git diff --check && git status --short && sed -n '1,80p' /tmp/notes-api.log" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488
+ succeeded in 0ms:
+ M README.md
+ M app/notes.py
+?? TASK.md
+?? VIBEPROMPT_META.json
+?? app/__main__.py
+?? app/__pycache__/
+?? app/api.py
+?? tests/__pycache__/
+?? tests/test_notes_unittest.py
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/app/__main__.py", line 7, in <module>
+    serve()
+    ~~~~~^^
+  File "/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/app/api.py", line 52, in serve
+    server = ThreadingHTTPServer((host, port), NotesHandler)
+  File "/usr/lib64/python3.14/socketserver.py", line 453, in __init__
+    self.socket = socket.socket(self.address_family,
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+                                self.socket_type)
+                                ^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/socket.py", line 236, in __init__
+    _socket.socket.__init__(self, family, type, proto, fileno)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+diff --git a/README.md b/README.md
+index 573288ffa629866988e404a4fbff632b25e145b2..08ea1ff05d0b3df2898ea31b1dbd6367bd4d8d01
+--- a/README.md
++++ b/README.md
+@@ -1 +1,40 @@
+-# crud_notes
++# Notes API
++
++This project implements the confirmed starter behavior: create and list
++in-memory notes.  There are intentionally no delete routes or functions, and
++it has no Redis dependency.
++
++## Run
++
++Requires Python 3.11 or later. No third-party packages are needed.
++
++```bash
++python -m app
++```
++
++The server listens on `http://127.0.0.1:8000`.
++
++```bash
++curl -X POST http://127.0.0.1:8000/notes \\
++  -H 'Content-Type: application/json' \\
++  -d '{"text":"Study chapter 1"}'
++curl http://127.0.0.1:8000/notes
++```
++
++`POST /notes` accepts `{"text": "..."}` and returns `201`; `GET /notes`
++returns all notes. Text is trimmed and must contain 1 to 10,000 characters.
++
++## Test
++
++```bash
++python -m unittest discover -s tests -p 'test_*.py' -v
++```
++
++The repository's original pytest-style smoke test is retained. The unittest
++suite covers the same confirmed create/list behavior and validation without
++requiring external dependencies.
++
++## Acceptance evidence
++
++- Tests pass: `python -m unittest discover -s tests -p 'test_*.py' -v`.
++- Application runs: `python -m app`, then use the `curl` commands above.
+diff --git a/app/__main__.py b/app/__main__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..329c6513b57c004ea38bc83ff1bcff7bf329d2d8
+--- /dev/null
++++ b/app/__main__.py
+@@ -0,0 +1,7 @@
++"""Run the notes application with ``python -m app``."""
++
++from .api import serve
++
++
++if __name__ == "__main__":
++    serve()
+diff --git a/app/api.py b/app/api.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..1a29476132a7d907f571d62e3fb7bdd6297181f2
+--- /dev/null
++++ b/app/api.py
+@@ -0,0 +1,54 @@
++"""Small dependency-free HTTP interface for the notes service."""
++
++from __future__ import annotations
++
++import json
++from http import HTTPStatus
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++
++from .notes import create_note, list_notes
++
++
++class NotesHandler(BaseHTTPRequestHandler):
++    """Serve the explicitly supported note creation and listing routes."""
++
++    def do_GET(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        self._send_json(HTTPStatus.OK, {"notes": list_notes()})
++
++    def do_POST(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        try:
++            content_length = int(self.headers.get("Content-Length", "0"))
++            if content_length > 10_100:
++                raise ValueError("request body is too large")
++            payload = json.loads(self.rfile.read(content_length))
++            if not isinstance(payload, dict):
++                raise ValueError("body must be a JSON object")
++            note_id = create_note(payload.get("text"))
++        except (UnicodeDecodeError, json.JSONDecodeError, ValueError) as error:
++            self._send_json(HTTPStatus.BAD_REQUEST, {"error": str(error)})
++            return
++        self._send_json(HTTPStatus.CREATED, {"id": note_id})
++
++    def _send_json(self, status: HTTPStatus, payload: dict[str, object]) -> None:
++        body = json.dumps(payload).encode("utf-8")
++        self.send_response(status)
++        self.send_header("Content-Type", "application/json; charset=utf-8")
++        self.send_header("Content-Length", str(len(body)))
++        self.end_headers()
++        self.wfile.write(body)
++
++    def log_message(self, format: str, *args: object) -> None:
++        """Suppress access logs; callers can provide process-level logging."""
++
++
++def serve(host: str = "127.0.0.1", port: int = 8000) -> None:
++    """Run the local development server until interrupted."""
++    server = ThreadingHTTPServer((host, port), NotesHandler)
++    print(f"Notes API listening on http://{host}:{port}")
++    server.serve_forever()
+diff --git a/app/notes.py b/app/notes.py
+index beea953bed627fe2de3e0ec8b3d654b7f2d15c4c..36cea2d46205ee7c85075c77a7bb85db09697df9
+--- a/app/notes.py
++++ b/app/notes.py
+@@ -1,7 +1,42 @@
+-NOTES = {}
++"""In-memory note service.
++
++The module deliberately exposes no delete operation: deletion is outside the
++validated project scope.
++"""
+ 
+-def create_note(text):
+-    raise NotImplementedError
++from __future__ import annotations
+ 
+-def list_notes():
+-    raise NotImplementedError
++from itertools import count
++from threading import Lock
++
++
++NOTES: dict[int, dict[str, object]] = {}
++_NEXT_ID = count(1)
++_LOCK = Lock()
++
++
++def create_note(text: str) -> int:
++    """Create a note and return its identifier.
++
++    Note text must be a non-empty string after trimming whitespace.  The stored
++    value is trimmed so callers get predictable data when listing notes.
++    """
++    if not isinstance(text, str):
++        raise ValueError("text must be a string")
++
++    normalized_text = text.strip()
++    if not normalized_text:
++        raise ValueError("text must not be empty")
++    if len(normalized_text) > 10_000:
++        raise ValueError("text must be 10,000 characters or fewer")
++
++    with _LOCK:
++        note_id = next(_NEXT_ID)
++        NOTES[note_id] = {"id": note_id, "text": normalized_text}
++    return note_id
++
++
++def list_notes() -> list[dict[str, object]]:
++    """Return copies of all notes in creation order."""
++    with _LOCK:
++        return [note.copy() for note in NOTES.values()]
+diff --git a/tests/test_notes_unittest.py b/tests/test_notes_unittest.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..410d09e098a80e4a9c4e767a427fdd9842619890
+--- /dev/null
++++ b/tests/test_notes_unittest.py
+@@ -0,0 +1,28 @@
++"""Regression tests for the confirmed scaffold behavior."""
++
++import unittest
++
++from app import notes
++
++
++class NotesServiceTests(unittest.TestCase):
++    def setUp(self) -> None:
++        notes.NOTES.clear()
++
++    def test_create_and_list_note(self) -> None:
++        note_id = notes.create_note("hello")
++
++        self.assertEqual(notes.list_notes(), [{"id": note_id, "text": "hello"}])
++
++    def test_create_note_rejects_invalid_text(self) -> None:
++        for value in ("", "   ", None, 5):
++            with self.subTest(value=value):
++                with self.assertRaises(ValueError):
++                    notes.create_note(value)  # type: ignore[arg-type]
++
++    def test_list_returns_copies(self) -> None:
++        notes.create_note("private")
++        listed = notes.list_notes()
++        listed[0]["text"] = "changed"
++
++        self.assertEqual(notes.list_notes()[0]["text"], "private")
+
+codex
+Implemented the confirmed notes baseline.
+
+- Added validated, thread-safe `create_note` and `list_notes` in [app/notes.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/app/notes.py).
+- Added dependency-free HTTP API: `POST /notes`, `GET /notes` in [app/api.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/app/api.py).
+- Added runnable entry point: `python -m app`.
+- Added tests in [tests/test_notes_unittest.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/tests/test_notes_unittest.py).
+- Documented setup and usage in [README.md](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/README.md).
+
+Verification:
+
+- `python -m unittest discover -s tests -p 'test_*.py' -v` — passed (3 tests).
+- Original create/list smoke assertion — passed.
+- `python -m py_compile app/*.py` — passed.
+- Live server socket testing is blocked by this sandbox (`Operation not permitted`); run `python -m app` locally to serve on port 8000.
+
+No delete operation or Redis dependency was added.
+diff --git a/README.md b/README.md
+index 573288ffa629866988e404a4fbff632b25e145b2..08ea1ff05d0b3df2898ea31b1dbd6367bd4d8d01
+--- a/README.md
++++ b/README.md
+@@ -1 +1,40 @@
+-# crud_notes
++# Notes API
++
++This project implements the confirmed starter behavior: create and list
++in-memory notes.  There are intentionally no delete routes or functions, and
++it has no Redis dependency.
++
++## Run
++
++Requires Python 3.11 or later. No third-party packages are needed.
++
++```bash
++python -m app
++```
++
++The server listens on `http://127.0.0.1:8000`.
++
++```bash
++curl -X POST http://127.0.0.1:8000/notes \\
++  -H 'Content-Type: application/json' \\
++  -d '{"text":"Study chapter 1"}'
++curl http://127.0.0.1:8000/notes
++```
++
++`POST /notes` accepts `{"text": "..."}` and returns `201`; `GET /notes`
++returns all notes. Text is trimmed and must contain 1 to 10,000 characters.
++
++## Test
++
++```bash
++python -m unittest discover -s tests -p 'test_*.py' -v
++```
++
++The repository's original pytest-style smoke test is retained. The unittest
++suite covers the same confirmed create/list behavior and validation without
++requiring external dependencies.
++
++## Acceptance evidence
++
++- Tests pass: `python -m unittest discover -s tests -p 'test_*.py' -v`.
++- Application runs: `python -m app`, then use the `curl` commands above.
+diff --git a/app/__main__.py b/app/__main__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..329c6513b57c004ea38bc83ff1bcff7bf329d2d8
+--- /dev/null
++++ b/app/__main__.py
+@@ -0,0 +1,7 @@
++"""Run the notes application with ``python -m app``."""
++
++from .api import serve
++
++
++if __name__ == "__main__":
++    serve()
+diff --git a/app/api.py b/app/api.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..1a29476132a7d907f571d62e3fb7bdd6297181f2
+--- /dev/null
++++ b/app/api.py
+@@ -0,0 +1,54 @@
++"""Small dependency-free HTTP interface for the notes service."""
++
++from __future__ import annotations
++
++import json
++from http import HTTPStatus
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++
++from .notes import create_note, list_notes
++
++
++class NotesHandler(BaseHTTPRequestHandler):
++    """Serve the explicitly supported note creation and listing routes."""
++
++    def do_GET(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        self._send_json(HTTPStatus.OK, {"notes": list_notes()})
++
++    def do_POST(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        try:
++            content_length = int(self.headers.get("Content-Length", "0"))
++            if content_length > 10_100:
++                raise ValueError("request body is too large")
++            payload = json.loads(self.rfile.read(content_length))
++            if not isinstance(payload, dict):
++                raise ValueError("body must be a JSON object")
++            note_id = create_note(payload.get("text"))
++        except (UnicodeDecodeError, json.JSONDecodeError, ValueError) as error:
++            self._send_json(HTTPStatus.BAD_REQUEST, {"error": str(error)})
++            return
++        self._send_json(HTTPStatus.CREATED, {"id": note_id})
++
++    def _send_json(self, status: HTTPStatus, payload: dict[str, object]) -> None:
++        body = json.dumps(payload).encode("utf-8")
++        self.send_response(status)
++        self.send_header("Content-Type", "application/json; charset=utf-8")
++        self.send_header("Content-Length", str(len(body)))
++        self.end_headers()
++        self.wfile.write(body)
++
++    def log_message(self, format: str, *args: object) -> None:
++        """Suppress access logs; callers can provide process-level logging."""
++
++
++def serve(host: str = "127.0.0.1", port: int = 8000) -> None:
++    """Run the local development server until interrupted."""
++    server = ThreadingHTTPServer((host, port), NotesHandler)
++    print(f"Notes API listening on http://{host}:{port}")
++    server.serve_forever()
+diff --git a/app/notes.py b/app/notes.py
+index beea953bed627fe2de3e0ec8b3d654b7f2d15c4c..36cea2d46205ee7c85075c77a7bb85db09697df9
+--- a/app/notes.py
++++ b/app/notes.py
+@@ -1,7 +1,42 @@
+-NOTES = {}
++"""In-memory note service.
++
++The module deliberately exposes no delete operation: deletion is outside the
++validated project scope.
++"""
+ 
+-def create_note(text):
+-    raise NotImplementedError
++from __future__ import annotations
+ 
+-def list_notes():
+-    raise NotImplementedError
++from itertools import count
++from threading import Lock
++
++
++NOTES: dict[int, dict[str, object]] = {}
++_NEXT_ID = count(1)
++_LOCK = Lock()
++
++
++def create_note(text: str) -> int:
++    """Create a note and return its identifier.
++
++    Note text must be a non-empty string after trimming whitespace.  The stored
++    value is trimmed so callers get predictable data when listing notes.
++    """
++    if not isinstance(text, str):
++        raise ValueError("text must be a string")
++
++    normalized_text = text.strip()
++    if not normalized_text:
++        raise ValueError("text must not be empty")
++    if len(normalized_text) > 10_000:
++        raise ValueError("text must be 10,000 characters or fewer")
++
++    with _LOCK:
++        note_id = next(_NEXT_ID)
++        NOTES[note_id] = {"id": note_id, "text": normalized_text}
++    return note_id
++
++
++def list_notes() -> list[dict[str, object]]:
++    """Return copies of all notes in creation order."""
++    with _LOCK:
++        return [note.copy() for note in NOTES.values()]
+diff --git a/tests/test_notes_unittest.py b/tests/test_notes_unittest.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..410d09e098a80e4a9c4e767a427fdd9842619890
+--- /dev/null
++++ b/tests/test_notes_unittest.py
+@@ -0,0 +1,28 @@
++"""Regression tests for the confirmed scaffold behavior."""
++
++import unittest
++
++from app import notes
++
++
++class NotesServiceTests(unittest.TestCase):
++    def setUp(self) -> None:
++        notes.NOTES.clear()
++
++    def test_create_and_list_note(self) -> None:
++        note_id = notes.create_note("hello")
++
++        self.assertEqual(notes.list_notes(), [{"id": note_id, "text": "hello"}])
++
++    def test_create_note_rejects_invalid_text(self) -> None:
++        for value in ("", "   ", None, 5):
++            with self.subTest(value=value):
++                with self.assertRaises(ValueError):
++                    notes.create_note(value)  # type: ignore[arg-type]
++
++    def test_list_returns_copies(self) -> None:
++        notes.create_note("private")
++        listed = notes.list_notes()
++        listed[0]["text"] = "changed"
++
++        self.assertEqual(notes.list_notes()[0]["text"], "private")
+
+tokens used
+29,257

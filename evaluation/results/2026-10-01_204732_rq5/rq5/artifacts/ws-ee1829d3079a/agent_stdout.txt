@@ -1,0 +1,6 @@
+Implemented in-memory todo creation and completion in [app/todos.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-ee1829d3079a/app/todos.py).
+
+- `add_todo(title)` creates a `{title, done: False}` record and returns its ID.
+- `complete_todo(todo_id)` sets `done` to `True`.
+
+Verified add/complete directly with Python. `pytest` is unavailable in this environment.

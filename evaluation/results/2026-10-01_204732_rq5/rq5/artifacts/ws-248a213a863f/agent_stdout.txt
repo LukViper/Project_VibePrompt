@@ -1,0 +1,7 @@
+Implemented the in-memory notes store in [app/notes.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-248a213a863f/app/notes.py).
+
+- `create_note(text)` stores `{id, text}` and returns an integer ID.
+- `list_notes()` returns stored notes in creation order.
+- No delete functionality added.
+
+Verified with `python -m pytest -q`: 1 test passed.

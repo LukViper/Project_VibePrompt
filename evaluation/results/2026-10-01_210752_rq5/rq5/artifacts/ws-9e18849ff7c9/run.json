@@ -1,0 +1,129 @@
+{
+  "workspace_id": "ws-9e18849ff7c9",
+  "task_id": "rest_echo_api",
+  "system_variant": "A_raw",
+  "dataset_version": "2.0.0",
+  "seed_commit": "d78939bb36e3af833132bc86728bdaa269d9bb9c",
+  "start_time": "2026-10-01T21:08:09.212620+00:00",
+  "end_time": "2026-10-01T21:08:33.986709+00:00",
+  "exit_code": 0,
+  "duration_seconds": 24.77387772000293,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "direct_conversation",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "direct_prompt"
+      ]
+    },
+    "state_summary": null
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_210752_rq5/rq5/artifacts/ws-9e18849ff7c9/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_210752_rq5/rq5/artifacts/ws-9e18849ff7c9/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_210752_rq5/rq5/artifacts/ws-9e18849ff7c9/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_210752_rq5/rq5/artifacts/ws-9e18849ff7c9/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_210752_rq5/rq5/artifacts/ws-9e18849ff7c9/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_210752_rq5/rq5/artifacts/ws-9e18849ff7c9/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_210752_rq5/rq5/artifacts/ws-9e18849ff7c9/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_210752_rq5/rq5/artifacts/workspaces/ws-9e18849ff7c9"
+  },
+  "git": {
+    "commit_before": "d78939bb36e3af833132bc86728bdaa269d9bb9c",
+    "seed_commit": "d78939bb36e3af833132bc86728bdaa269d9bb9c",
+    "commit_after": "d78939bb36e3af833132bc86728bdaa269d9bb9c",
+    "changed_files": [
+      "pp/echo_api.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/",
+      "tests/__pycache__/",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/echo_api.cpython-314.pyc",
+      "tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/echo_api.cpython-314.pyc",
+      "tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc"
+    ],
+    "status_preview": "M app/echo_api.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__pycache__/\n?? tests/__pycache__/"
+  },
+  "agent_run": {
+    "id": "RUN-5ebd2519d6bd",
+    "project_id": "rest_echo_api",
+    "prompt_id": null,
+    "agent": "openai",
+    "model": "gpt-5.6-terra",
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_sci_ydysgn96/ws-9e18849ff7c9",
+    "commit_before": "d78939bb36e3af833132bc86728bdaa269d9bb9c",
+    "commit_after": "d78939bb36e3af833132bc86728bdaa269d9bb9c",
+    "started_at": "2026-10-01T21:08:09.212620+00:00",
+    "completed_at": "2026-10-01T21:08:33.986709+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "Implemented [app/echo_api.py](/tmp/vibeprompt_rq5_sci_ydysgn96/ws-9e18849ff7c9/app/echo_api.py).\n\n- `echo(payload)` returns the exact supplied dict.\n- `health()` returns `{\"status\": \"ok\"}`.\n- No caching or non-standard dependencies added.\n\nVerified: `2 passed`.\n",
+    "workspace_id": "ws-9e18849ff7c9",
+    "task_id": "rest_echo_api",
+    "system_variant": "A_raw",
+    "exit_code": 0,
+    "duration_seconds": 24.77387772000293,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_210752_rq5/rq5/artifacts/ws-9e18849ff7c9/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_210752_rq5/rq5/artifacts/ws-9e18849ff7c9/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_210752_rq5/rq5/artifacts/ws-9e18849ff7c9/git_diff.patch",
+    "label": "SCIENTIFIC",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-bfa85d3def21",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-5ebd2519d6bd",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_echo_returns_payload",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "implement echo(payload) returning the same mapping",
+        "acceptance_test": "test_echo_returns_payload"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T21:08:34.323362+00:00",
+      "verification_method": "acceptance_test_marker"
+    },
+    {
+      "id": "VER-e4358511ab50",
+      "requirement_id": "REQ-002",
+      "agent_run_id": "RUN-5ebd2519d6bd",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_health_ok",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "implement health() returning status ok",
+        "acceptance_test": "test_health_ok"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T21:08:34.323399+00:00",
+      "verification_method": "acceptance_test_marker"
+    }
+  ],
+  "unsupported_features": [],
+  "constraint_violations": [],
+  "scope_violations": [],
+  "label": "SCIENTIFIC"
+}

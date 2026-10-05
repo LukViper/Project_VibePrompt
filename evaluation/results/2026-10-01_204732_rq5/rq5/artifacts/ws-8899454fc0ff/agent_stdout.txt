@@ -1,0 +1,8 @@
+Implemented in-memory authentication in [app/auth.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-8899454fc0ff/app/auth.py).
+
+- `register()` stores salted password hashes.
+- `login()` validates credentials and returns a non-empty secure token.
+- Wrong credentials raise `ValueError`.
+- No database or delete endpoint added.
+
+Verified: `python -m pytest -q` → 2 passed.

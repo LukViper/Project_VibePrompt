@@ -1,0 +1,13 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python
+cachedir: .pytest_cache
+rootdir: /tmp/vibeprompt_rq5_sci__6kbje8d/ws-67c671904397
+plugins: anyio-4.13.0
+collecting ... collected 3 items
+
+tests/test_words.py::test_count_words PASSED                             [ 33%]
+tests/test_words.py::test_count_words_uses_whitespace_delimited_tokens PASSED [ 66%]
+tests/test_words.py::test_count_words_rejects_non_string_input PASSED    [100%]
+
+- generated xml file: /tmp/vibeprompt_rq5_sci__6kbje8d/ws-67c671904397/junit.xml -
+============================== 3 passed in 0.02s ===============================

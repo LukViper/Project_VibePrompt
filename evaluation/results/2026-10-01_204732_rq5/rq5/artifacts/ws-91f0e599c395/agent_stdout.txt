@@ -1,0 +1,3 @@
+Implemented `filter_rows` in [app/csv_filter.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-91f0e599c395/app/csv_filter.py:1).
+
+It performs exact matching on list-of-dict rows, ignores missing columns, and does not mutate inputs. Direct Python checks passed; `pytest` is unavailable in this workspace.

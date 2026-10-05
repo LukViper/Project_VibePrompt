@@ -54,11 +54,18 @@ def build_specification(session, project) -> Specification:
 
 def _active(state: dict, kind: str | None = None) -> list[dict]:
     from app.services.assertion_lifecycle import requirement_is_compilable
+    from app.services.project_state import _text_matches_avoid
 
+    avoid = list((state.get("constraints") or {}).get("avoid") or [])
     rows = [
         req
         for req in state.get("requirements") or []
-        if req.get("status") == "active" and requirement_is_compilable(req)
+        if req.get("status") == "active"
+        and requirement_is_compilable(req)
+        and not _text_matches_avoid(req.get("text") or "", avoid)
+        and not (
+            req.get("slot_value") and _text_matches_avoid(str(req.get("slot_value")), avoid)
+        )
     ]
     if kind:
         return [req for req in rows if req.get("type") == kind]
@@ -66,9 +73,18 @@ def _active(state: dict, kind: str | None = None) -> list[dict]:
 
 
 def _structured(state: dict) -> dict:
+    from app.services.project_state import _text_matches_avoid
+
     functional = _active(state, "functional")
     nonfunctional = [req for req in _active(state) if req.get("type") != "functional"]
-    tech = state.get("technology") or {}
+    tech = dict(state.get("technology") or {})
+    avoid = list((state.get("constraints") or {}).get("avoid") or [])
+    # Never surface avoided tech as selected stack in the specification.
+    if tech.get("database") and _text_matches_avoid(str(tech.get("database")), avoid):
+        tech["database"] = None
+    tech["databases"] = [
+        d for d in (tech.get("databases") or []) if not _text_matches_avoid(str(d), avoid)
+    ]
     arch = state.get("architecture") or {}
     database = state.get("database") or {}
     proposed_db = database.get("proposed") if isinstance(database.get("proposed"), dict) else database

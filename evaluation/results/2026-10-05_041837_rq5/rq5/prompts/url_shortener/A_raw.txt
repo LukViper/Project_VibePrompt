@@ -1,0 +1,4 @@
+You are a senior software engineer.
+
+shorten(url) returns a code; resolve(code) returns the url.
+Do not use an external shortening API.

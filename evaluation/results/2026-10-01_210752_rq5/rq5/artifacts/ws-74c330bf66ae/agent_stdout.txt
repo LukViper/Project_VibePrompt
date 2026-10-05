@@ -1,0 +1,8 @@
+Implemented in-memory registration and login in [app/auth.py](/tmp/vibeprompt_rq5_sci_ydysgn96/ws-74c330bf66ae/app/auth.py).
+
+- Passwords are salted and hashed.
+- Successful login returns a fresh non-empty secure token.
+- Wrong credentials raise `ValueError`.
+- No database or delete-user capability added.
+
+Verified: `2 passed`.

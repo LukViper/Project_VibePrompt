@@ -1,0 +1,371 @@
+OpenAI Codex v0.148.0
+--------
+workdir: /tmp/vibeprompt_rq5_sci__6kbje8d/ws-8899454fc0ff
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: low
+reasoning summaries: none
+session id: 01a0f93d-0f7b-7601-a7d8-c8ce72c992be
+--------
+user
+You are a senior software engineer.
+
+REQUIREMENTS
+- register(username, password) stores the user
+- login(username, password) returns a token on success
+
+CONSTRAINTS
+- in-memory only
+- python 3.11+
+
+REJECTED / OUT OF SCOPE
+- Do not expose a DELETE user endpoint
+- Do not use an external database
+
+ACCEPTANCE CRITERIA
+- register then login returns a non-empty token
+- login with wrong password fails
+2026-10-01T20:52:08.557014Z ERROR codex_models_manager::manager: failed to refresh available models: timeout waiting for child process to exit
+2026-10-01T20:52:08.659104Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when Client(HttpRequest(HttpRequest("http/request failed: error sending request for url (https://chatgpt.com/backend-api/ps/mcp)")))
+codex
+I’ll implement the in-memory registration/login flow and add focused tests for the acceptance cases.
+exec
+/usr/bin/zsh -lc "pwd && rg --files -g '"'!*__pycache__*'"' -g '"'!*.pyc'"' | sed -n '1,160p'" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-8899454fc0ff
+ succeeded in 0ms:
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-8899454fc0ff
+VIBEPROMPT_META.json
+README.md
+app/__init__.py
+app/auth.py
+TASK.md
+tests/test_auth.py
+
+exec
+/usr/bin/zsh -lc "sed -n '1,240p' app/auth.py && sed -n '1,240p' tests/test_auth.py && sed -n '1,200p' README.md && sed -n '1,200p' TASK.md" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-8899454fc0ff
+ succeeded in 0ms:
+USERS = {}
+
+def register(username, password):
+    raise NotImplementedError
+
+def login(username, password):
+    raise NotImplementedError
+import pytest
+from app import auth
+
+def setup_function():
+    auth.USERS.clear()
+
+def test_register_and_login():
+    auth.register('ada', 'secret')
+    token = auth.login('ada', 'secret')
+    assert isinstance(token, str) and token
+
+def test_login_rejects_bad_password():
+    auth.register('ada', 'secret')
+    with pytest.raises(Exception):
+        auth.login('ada', 'wrong')
+# auth_token_service
+You are a senior software engineer.
+
+REQUIREMENTS
+- register(username, password) stores the user
+- login(username, password) returns a token on success
+
+CONSTRAINTS
+- in-memory only
+- python 3.11+
+
+REJECTED / OUT OF SCOPE
+- Do not expose a DELETE user endpoint
+- Do not use an external database
+
+ACCEPTANCE CRITERIA
+- register then login returns a non-empty token
+- login with wrong password fails
+exec
+/usr/bin/zsh -lc "git status --short && sed -n '1,80p' app/__init__.py && find . -maxdepth 2 -name 'pyproject.toml' -o -name 'pytest.ini' -o -name 'setup.cfg'" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-8899454fc0ff
+ succeeded in 0ms:
+?? TASK.md
+?? VIBEPROMPT_META.json
+
+apply patch
+patch: completed
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-8899454fc0ff/app/auth.py
+diff --git a/app/auth.py b/app/auth.py
+index 53030ec15f5fd0b303c49c62bdeedf3b61f953af..cab1f88494fe10236bbd366e610b81f19a3d8d2d
+--- a/app/auth.py
++++ b/app/auth.py
+@@ -1,7 +1,53 @@
+-USERS = {}
++"""A small, in-memory authentication service."""
++
++from __future__ import annotations
++
++import hashlib
++import hmac
++import secrets
++
++
++# Deliberately process-local: this module does not persist users anywhere.
++USERS: dict[str, dict[str, bytes]] = {}
++
++_SALT_BYTES = 16
++_PBKDF2_ITERATIONS = 600_000
++
++
++def _validate_credentials(username: str, password: str) -> None:
++    if not isinstance(username, str) or not username:
++        raise ValueError("username must be a non-empty string")
++    if not isinstance(password, str) or not password:
++        raise ValueError("password must be a non-empty string")
++
++
++def _hash_password(password: str, salt: bytes) -> bytes:
++    return hashlib.pbkdf2_hmac(
++        "sha256", password.encode("utf-8"), salt, _PBKDF2_ITERATIONS
++    )
++
++
++def register(username: str, password: str) -> None:
++    """Register ``username`` in the process-local user store.
++
++    Passwords are stored as salted hashes, never as plaintext.
++    """
++    _validate_credentials(username, password)
++    if username in USERS:
++        raise ValueError("username is already registered")
++
++    salt = secrets.token_bytes(_SALT_BYTES)
++    USERS[username] = {"salt": salt, "password_hash": _hash_password(password, salt)}
++
++
+ 
+-def register(username, password):
+-    raise NotImplementedError
++def login(username: str, password: str) -> str:
++    """Return a fresh opaque token when the supplied credentials are valid."""
++    _validate_credentials(username, password)
++    user = USERS.get(username)
++    if user is None or not hmac.compare_digest(
++        user["password_hash"], _hash_password(password, user["salt"])
++    ):
++        raise ValueError("invalid username or password")
+ 
+-def login(username, password):
+-    raise NotImplementedError
++    return secrets.token_urlsafe(32)
+
+diff --git a/app/auth.py b/app/auth.py
+index 53030ec15f5fd0b303c49c62bdeedf3b61f953af..cab1f88494fe10236bbd366e610b81f19a3d8d2d
+--- a/app/auth.py
++++ b/app/auth.py
+@@ -1,7 +1,53 @@
+-USERS = {}
++"""A small, in-memory authentication service."""
++
++from __future__ import annotations
++
++import hashlib
++import hmac
++import secrets
++
++
++# Deliberately process-local: this module does not persist users anywhere.
++USERS: dict[str, dict[str, bytes]] = {}
++
++_SALT_BYTES = 16
++_PBKDF2_ITERATIONS = 600_000
++
++
++def _validate_credentials(username: str, password: str) -> None:
++    if not isinstance(username, str) or not username:
++        raise ValueError("username must be a non-empty string")
++    if not isinstance(password, str) or not password:
++        raise ValueError("password must be a non-empty string")
++
++
++def _hash_password(password: str, salt: bytes) -> bytes:
++    return hashlib.pbkdf2_hmac(
++        "sha256", password.encode("utf-8"), salt, _PBKDF2_ITERATIONS
++    )
++
++
++def register(username: str, password: str) -> None:
++    """Register ``username`` in the process-local user store.
++
++    Passwords are stored as salted hashes, never as plaintext.
++    """
++    _validate_credentials(username, password)
++    if username in USERS:
++        raise ValueError("username is already registered")
++
++    salt = secrets.token_bytes(_SALT_BYTES)
++    USERS[username] = {"salt": salt, "password_hash": _hash_password(password, salt)}
++
++
+ 
+-def register(username, password):
+-    raise NotImplementedError
++def login(username: str, password: str) -> str:
++    """Return a fresh opaque token when the supplied credentials are valid."""
++    _validate_credentials(username, password)
++    user = USERS.get(username)
++    if user is None or not hmac.compare_digest(
++        user["password_hash"], _hash_password(password, user["salt"])
++    ):
++        raise ValueError("invalid username or password")
+ 
+-def login(username, password):
+-    raise NotImplementedError
++    return secrets.token_urlsafe(32)
+
+codex
+The service now keeps only salted password hashes in its process-local store and issues fresh opaque tokens after credential verification. I’m running the test suite now.
+exec
+/usr/bin/zsh -lc 'python -m pytest -q' in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-8899454fc0ff
+ succeeded in 484ms:
+..                                                                       [100%]
+2 passed in 0.38s
+
+diff --git a/app/auth.py b/app/auth.py
+index 53030ec15f5fd0b303c49c62bdeedf3b61f953af..cab1f88494fe10236bbd366e610b81f19a3d8d2d
+--- a/app/auth.py
++++ b/app/auth.py
+@@ -1,7 +1,53 @@
+-USERS = {}
++"""A small, in-memory authentication service."""
++
++from __future__ import annotations
++
++import hashlib
++import hmac
++import secrets
++
++
++# Deliberately process-local: this module does not persist users anywhere.
++USERS: dict[str, dict[str, bytes]] = {}
++
++_SALT_BYTES = 16
++_PBKDF2_ITERATIONS = 600_000
++
++
++def _validate_credentials(username: str, password: str) -> None:
++    if not isinstance(username, str) or not username:
++        raise ValueError("username must be a non-empty string")
++    if not isinstance(password, str) or not password:
++        raise ValueError("password must be a non-empty string")
++
++
++def _hash_password(password: str, salt: bytes) -> bytes:
++    return hashlib.pbkdf2_hmac(
++        "sha256", password.encode("utf-8"), salt, _PBKDF2_ITERATIONS
++    )
++
++
++def register(username: str, password: str) -> None:
++    """Register ``username`` in the process-local user store.
++
++    Passwords are stored as salted hashes, never as plaintext.
++    """
++    _validate_credentials(username, password)
++    if username in USERS:
++        raise ValueError("username is already registered")
++
++    salt = secrets.token_bytes(_SALT_BYTES)
++    USERS[username] = {"salt": salt, "password_hash": _hash_password(password, salt)}
++
++
+ 
+-def register(username, password):
+-    raise NotImplementedError
++def login(username: str, password: str) -> str:
++    """Return a fresh opaque token when the supplied credentials are valid."""
++    _validate_credentials(username, password)
++    user = USERS.get(username)
++    if user is None or not hmac.compare_digest(
++        user["password_hash"], _hash_password(password, user["salt"])
++    ):
++        raise ValueError("invalid username or password")
+ 
+-def login(username, password):
+-    raise NotImplementedError
++    return secrets.token_urlsafe(32)
+
+codex
+Implemented in-memory authentication in [app/auth.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-8899454fc0ff/app/auth.py).
+
+- `register()` stores salted password hashes.
+- `login()` validates credentials and returns a non-empty secure token.
+- Wrong credentials raise `ValueError`.
+- No database or delete endpoint added.
+
+Verified: `python -m pytest -q` → 2 passed.
+diff --git a/app/auth.py b/app/auth.py
+index 53030ec15f5fd0b303c49c62bdeedf3b61f953af..cab1f88494fe10236bbd366e610b81f19a3d8d2d
+--- a/app/auth.py
++++ b/app/auth.py
+@@ -1,7 +1,53 @@
+-USERS = {}
++"""A small, in-memory authentication service."""
++
++from __future__ import annotations
++
++import hashlib
++import hmac
++import secrets
++
++
++# Deliberately process-local: this module does not persist users anywhere.
++USERS: dict[str, dict[str, bytes]] = {}
++
++_SALT_BYTES = 16
++_PBKDF2_ITERATIONS = 600_000
++
++
++def _validate_credentials(username: str, password: str) -> None:
++    if not isinstance(username, str) or not username:
++        raise ValueError("username must be a non-empty string")
++    if not isinstance(password, str) or not password:
++        raise ValueError("password must be a non-empty string")
++
++
++def _hash_password(password: str, salt: bytes) -> bytes:
++    return hashlib.pbkdf2_hmac(
++        "sha256", password.encode("utf-8"), salt, _PBKDF2_ITERATIONS
++    )
++
++
++def register(username: str, password: str) -> None:
++    """Register ``username`` in the process-local user store.
++
++    Passwords are stored as salted hashes, never as plaintext.
++    """
++    _validate_credentials(username, password)
++    if username in USERS:
++        raise ValueError("username is already registered")
++
++    salt = secrets.token_bytes(_SALT_BYTES)
++    USERS[username] = {"salt": salt, "password_hash": _hash_password(password, salt)}
++
++
+ 
+-def register(username, password):
+-    raise NotImplementedError
++def login(username: str, password: str) -> str:
++    """Return a fresh opaque token when the supplied credentials are valid."""
++    _validate_credentials(username, password)
++    user = USERS.get(username)
++    if user is None or not hmac.compare_digest(
++        user["password_hash"], _hash_password(password, user["salt"])
++    ):
++        raise ValueError("invalid username or password")
+ 
+-def login(username, password):
+-    raise NotImplementedError
++    return secrets.token_urlsafe(32)
+
+tokens used
+19,470

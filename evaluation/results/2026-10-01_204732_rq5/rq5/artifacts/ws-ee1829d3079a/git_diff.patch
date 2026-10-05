@@ -1,0 +1,62 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..4ad19fb
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,14 @@
++You are a senior software engineer.
++
++REQUIREMENTS
++- add_todo creates a todo
++- complete_todo marks done
++
++CONSTRAINTS
++- in-memory
++
++REJECTED / OUT OF SCOPE
++- Do not add multi-user auth
++
++ACCEPTANCE CRITERIA
++- add and complete
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..17c0355
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-ee1829d3079a","task_id":"todo_backend","variant":"B_structured","seed_commit":"5e495736aca529fe7211e02f88232f93f7666fa9"}
+\ No newline at end of file
+diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc
+new file mode 100644
+index 0000000..c03d03b
+Binary files /dev/null and b/app/__pycache__/__init__.cpython-314.pyc differ
+diff --git a/app/__pycache__/todos.cpython-314.pyc b/app/__pycache__/todos.cpython-314.pyc
+new file mode 100644
+index 0000000..e29a262
+Binary files /dev/null and b/app/__pycache__/todos.cpython-314.pyc differ
+diff --git a/app/todos.py b/app/todos.py
+index 2af924e..0ec3da0 100644
+--- a/app/todos.py
++++ b/app/todos.py
+@@ -1,7 +1,18 @@
++"""A minimal in-memory todo store."""
++
+ TODOS = {}
+ 
+ def add_todo(title):
+-    raise NotImplementedError
++    """Create a todo and return its identifier.
++
++    The store deliberately lives only in this module-level dictionary, so no
++    persistence or user/authentication layer is involved.
++    """
++    todo_id = max(TODOS, default=0) + 1
++    TODOS[todo_id] = {"title": title, "done": False}
++    return todo_id
+ 
+ def complete_todo(todo_id):
+-    raise NotImplementedError
++    """Mark the todo identified by *todo_id* as complete."""
++    TODOS[todo_id]["done"] = True
++    return TODOS[todo_id]

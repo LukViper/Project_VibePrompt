@@ -1,0 +1,88 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..79e4c49
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,4 @@
++You are a senior software engineer.
++
++shorten(url) returns a code; resolve(code) returns the url.
++Do not use an external shortening API.
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..866caae
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-83c191b52300","task_id":"url_shortener","variant":"A_raw","seed_commit":"44558e5048c6c9b72cd449a5ade4b405e4f5b92f"}
+\ No newline at end of file
+diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc
+new file mode 100644
+index 0000000..37b9d73
+Binary files /dev/null and b/app/__pycache__/__init__.cpython-314.pyc differ
+diff --git a/app/__pycache__/shortener.cpython-314.pyc b/app/__pycache__/shortener.cpython-314.pyc
+new file mode 100644
+index 0000000..5e04869
+Binary files /dev/null and b/app/__pycache__/shortener.cpython-314.pyc differ
+diff --git a/app/shortener.py b/app/shortener.py
+index 3f96036..ec884d5 100644
+--- a/app/shortener.py
++++ b/app/shortener.py
+@@ -1,7 +1,54 @@
++"""A small, in-memory URL shortener.
++
++``STORE`` is deliberately public so an application can replace it with its own
++mapping or clear it between runs/tests.  No network service is involved.
++"""
++
++from threading import RLock
++
++
+ STORE = {}
++_ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
++_lock = RLock()
++
++
++def _encode(number):
++    """Encode a positive integer as a compact base-62 string."""
++    encoded = ""
++    while number:
++        number, remainder = divmod(number, len(_ALPHABET))
++        encoded = _ALPHABET[remainder] + encoded
++    return encoded or _ALPHABET[0]
++
+ 
+ def shorten(url):
+-    raise NotImplementedError
++    """Store *url* locally and return its short code.
++
++    Re-shortening the same URL returns its existing code.  Codes are generated
++    from local state and are unique for as long as ``STORE`` is retained.
++    """
++    if not isinstance(url, str) or not url:
++        raise ValueError("url must be a non-empty string")
++
++    with _lock:
++        for code, stored_url in STORE.items():
++            if stored_url == url:
++                return code
++
++        # Starting at len(STORE) makes a manually cleared STORE start fresh;
++        # the membership check also handles a STORE supplied by a caller.
++        sequence = len(STORE) + 1
++        code = _encode(sequence)
++        while code in STORE:
++            sequence += 1
++            code = _encode(sequence)
++        STORE[code] = url
++        return code
++
+ 
+ def resolve(code):
+-    raise NotImplementedError
++    """Return the URL for *code*, or ``None`` when the code is unknown."""
++    if not isinstance(code, str):
++        return None
++    with _lock:
++        return STORE.get(code)

@@ -1,0 +1,14 @@
+You are a senior software engineer.
+
+REQUIREMENTS
+- add_todo creates a todo
+- complete_todo marks done
+
+CONSTRAINTS
+- in-memory
+
+REJECTED / OUT OF SCOPE
+- Do not add multi-user auth
+
+ACCEPTANCE CRITERIA
+- add and complete

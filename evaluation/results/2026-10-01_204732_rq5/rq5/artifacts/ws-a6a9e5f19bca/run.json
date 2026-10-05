@@ -1,0 +1,130 @@
+{
+  "workspace_id": "ws-a6a9e5f19bca",
+  "task_id": "crud_notes",
+  "system_variant": "B_structured",
+  "dataset_version": "2.0.0",
+  "seed_commit": "f5800d1f53d95f47034e43ad419fc58652f7c028",
+  "start_time": "2026-10-01T20:56:45.388562+00:00",
+  "end_time": "2026-10-01T20:57:14.368844+00:00",
+  "exit_code": 0,
+  "duration_seconds": 28.98011175300053,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "structured_requirements",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "structured_requirements_prompt"
+      ]
+    },
+    "state_summary": null
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-a6a9e5f19bca/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-a6a9e5f19bca/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-a6a9e5f19bca/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-a6a9e5f19bca/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-a6a9e5f19bca/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-a6a9e5f19bca/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-a6a9e5f19bca/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/workspaces/ws-a6a9e5f19bca"
+  },
+  "git": {
+    "commit_before": "f5800d1f53d95f47034e43ad419fc58652f7c028",
+    "seed_commit": "f5800d1f53d95f47034e43ad419fc58652f7c028",
+    "commit_after": "f5800d1f53d95f47034e43ad419fc58652f7c028",
+    "changed_files": [
+      "pp/notes.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/",
+      "tests/__pycache__/",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/notes.cpython-314.pyc",
+      "tests/__pycache__/test_notes.cpython-314-pytest-9.1.1.pyc"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/notes.cpython-314.pyc",
+      "tests/__pycache__/test_notes.cpython-314-pytest-9.1.1.pyc"
+    ],
+    "status_preview": "M app/notes.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__pycache__/\n?? tests/__pycache__/"
+  },
+  "agent_run": {
+    "id": "RUN-455089a510ac",
+    "project_id": "crud_notes",
+    "prompt_id": null,
+    "agent": "openai",
+    "model": "gpt-5.6-terra",
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_sci__6kbje8d/ws-a6a9e5f19bca",
+    "commit_before": "f5800d1f53d95f47034e43ad419fc58652f7c028",
+    "commit_after": "f5800d1f53d95f47034e43ad419fc58652f7c028",
+    "started_at": "2026-10-01T20:56:45.388562+00:00",
+    "completed_at": "2026-10-01T20:57:14.368844+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "Implemented the in-memory note store in [app/notes.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-a6a9e5f19bca/app/notes.py).\n\n- `create_note(text)` creates a UUID-backed note and returns its ID.\n- `list_notes()` returns all created notes.\n- No Redis or delete operation added.\n\nVerified with `python -m pytest -q`: 1 test passed.\n",
+    "workspace_id": "ws-a6a9e5f19bca",
+    "task_id": "crud_notes",
+    "system_variant": "B_structured",
+    "exit_code": 0,
+    "duration_seconds": 28.98011175300053,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-a6a9e5f19bca/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-a6a9e5f19bca/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-a6a9e5f19bca/git_diff.patch",
+    "label": "SCIENTIFIC",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-f14ba1c922ed",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-455089a510ac",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_create_and_list",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "create_note(text) returns an id",
+        "acceptance_test": "test_create_and_list"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:57:14.657381+00:00",
+      "verification_method": "acceptance_test_marker"
+    },
+    {
+      "id": "VER-93fece6ab340",
+      "requirement_id": "REQ-002",
+      "agent_run_id": "RUN-455089a510ac",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "test_results": {
+        "requirement_text": "list_notes() returns created notes",
+        "acceptance_test": null
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:57:14.657410+00:00",
+      "verification_method": "inconclusive"
+    }
+  ],
+  "unsupported_features": [
+    "Do not implement delete_note"
+  ],
+  "constraint_violations": [],
+  "scope_violations": [
+    "Do not implement delete_note"
+  ],
+  "label": "SCIENTIFIC"
+}

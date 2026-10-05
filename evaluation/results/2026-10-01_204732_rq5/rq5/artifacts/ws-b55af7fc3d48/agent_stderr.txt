@@ -1,0 +1,984 @@
+OpenAI Codex v0.148.0
+--------
+workdir: /tmp/vibeprompt_rq5_sci__6kbje8d/ws-b55af7fc3d48
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: low
+reasoning summaries: none
+session id: 01a0f949-7b9e-7bc2-a6f2-c3f849835032
+--------
+user
+You are a senior software engineer.
+
+Build the following project completely.
+
+ROLE
+You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
+
+PROJECT
+Untitled project
+
+OBJECTIVE
+See the specification.
+
+PROBLEM
+See the specification.
+
+REQUIREMENTS
+Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
+
+FUNCTIONAL REQUIREMENTS
+REQ-001:
+Multi-user auth
+  Acceptance: Given a typical input, the system Multi-user auth.
+
+NON-FUNCTIONAL REQUIREMENTS
+- None recorded.
+
+CONSTRAINTS
+- Team size: None
+- Duration: None
+- Budget: None
+- Avoid: Do not add multi-user auth
+
+TECH STACK
+Backend: unspecified
+Model: unspecified
+Database: unspecified
+Frameworks: unspecified
+Hardware: none
+
+ARCHITECTURE
+Use a modular monolith unless ProjectState specifies otherwise.
+
+DATABASE
+Use the database named in TECH STACK.
+
+API
+Implement an operation for every functional requirement.
+
+SECURITY
+Keep secrets in environment variables. Validate input. Do not expose credentials.
+
+TESTING
+Write a test mapped from each requirement ID. Run the tests.
+
+ACCEPTANCE CRITERIA
+[ ] REQ-001: Given a typical input, the system Multi-user auth.
+[ ] Tests pass
+[ ] Application runs successfully
+
+IMPLEMENTATION PROCESS
+1. Inspect the existing repository.
+2. Understand the requirements.
+3. Create the required architecture.
+4. Implement the components.
+5. Configure dependencies.
+6. Implement database, API, and frontend components.
+7. Write tests.
+8. Run tests.
+9. Fix implementation errors.
+10. Verify every acceptance criterion.
+11. Provide setup instructions.
+
+DELIVERABLES
+- Working implementation of every requirement ID
+- Tests
+- Setup instructions
+- A short note mapping each acceptance criterion to evidence
+
+Do not remove or silently alter required functionality.
+Do not replace required functionality with placeholders.
+
+
+# COMPILATION GATE NOTES
+- project objective is missing
+Implement only CONFIRMED requirements listed above.
+codex
+I’ll inspect the repository first. The specification is internally contradictory: REQ-001 asks for multi-user auth, while the constraints explicitly forbid adding it. I’ll preserve the constraint and implement only what is safely confirmed, documenting the resulting blocker rather than silently adding authentication.
+exec
+/usr/bin/zsh -lc "pwd && rg --files -g '"'!node_modules'"' -g '"'!dist'"' | sed -n '1,200p' && git status --short" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-b55af7fc3d48
+ succeeded in 0ms:
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-b55af7fc3d48
+README.md
+app/__init__.py
+app/todos.py
+VIBEPROMPT_META.json
+TASK.md
+tests/test_todos.py
+?? TASK.md
+?? VIBEPROMPT_META.json
+
+exec
+/usr/bin/zsh -lc "sed -n '1,240p' README.md && sed -n '1,260p' app/todos.py && sed -n '1,240p' tests/test_todos.py && sed -n '1,220p' TASK.md && sed -n '1,240p' VIBEPROMPT_META.json && git diff -- app/todos.py tests/test_todos.py README.md" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-b55af7fc3d48
+ succeeded in 0ms:
+# todo_backend
+TODOS = {}
+
+def add_todo(title):
+    raise NotImplementedError
+
+def complete_todo(todo_id):
+    raise NotImplementedError
+from app import todos
+
+def setup_function():
+    todos.TODOS.clear()
+
+def test_add_todo():
+    tid = todos.add_todo('x')
+    assert tid in todos.TODOS or any(True for _ in [tid])
+    assert todos.TODOS
+
+def test_complete_todo():
+    tid = todos.add_todo('x')
+    todos.complete_todo(tid)
+    item = todos.TODOS[tid]
+    assert item.get('done') is True or item.get('completed') is True
+You are a senior software engineer.
+
+Build the following project completely.
+
+ROLE
+You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
+
+PROJECT
+Untitled project
+
+OBJECTIVE
+See the specification.
+
+PROBLEM
+See the specification.
+
+REQUIREMENTS
+Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
+
+FUNCTIONAL REQUIREMENTS
+REQ-001:
+Multi-user auth
+  Acceptance: Given a typical input, the system Multi-user auth.
+
+NON-FUNCTIONAL REQUIREMENTS
+- None recorded.
+
+CONSTRAINTS
+- Team size: None
+- Duration: None
+- Budget: None
+- Avoid: Do not add multi-user auth
+
+TECH STACK
+Backend: unspecified
+Model: unspecified
+Database: unspecified
+Frameworks: unspecified
+Hardware: none
+
+ARCHITECTURE
+Use a modular monolith unless ProjectState specifies otherwise.
+
+DATABASE
+Use the database named in TECH STACK.
+
+API
+Implement an operation for every functional requirement.
+
+SECURITY
+Keep secrets in environment variables. Validate input. Do not expose credentials.
+
+TESTING
+Write a test mapped from each requirement ID. Run the tests.
+
+ACCEPTANCE CRITERIA
+[ ] REQ-001: Given a typical input, the system Multi-user auth.
+[ ] Tests pass
+[ ] Application runs successfully
+
+IMPLEMENTATION PROCESS
+1. Inspect the existing repository.
+2. Understand the requirements.
+3. Create the required architecture.
+4. Implement the components.
+5. Configure dependencies.
+6. Implement database, API, and frontend components.
+7. Write tests.
+8. Run tests.
+9. Fix implementation errors.
+10. Verify every acceptance criterion.
+11. Provide setup instructions.
+
+DELIVERABLES
+- Working implementation of every requirement ID
+- Tests
+- Setup instructions
+- A short note mapping each acceptance criterion to evidence
+
+Do not remove or silently alter required functionality.
+Do not replace required functionality with placeholders.
+
+
+# COMPILATION GATE NOTES
+- project objective is missing
+Implement only CONFIRMED requirements listed above.
+{"workspace_id":"ws-b55af7fc3d48","task_id":"todo_backend","variant":"C_vibeprompt","seed_commit":"3c2bb1588aa5fe5918ce774845baddc65f6e6313"}
+codex
+The repository is a small unfinished Python todo module, with no declared framework or database. I’ll complete that existing local application with validated in-memory todo operations and tests, while deliberately omitting auth because the explicit “Avoid” constraint prohibits it.
+apply patch
+patch: completed
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-b55af7fc3d48/README.md
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-b55af7fc3d48/app/todos.py
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-b55af7fc3d48/tests/test_todos.py
+diff --git a/README.md b/README.md
+index 1f55672e6271ba0ae603e618f4eb74639da6f0b1..6291b6e7ba1b2bc175380f2ad243d8bce566e810
+--- a/README.md
++++ b/README.md
+@@ -1 +1,27 @@
+-# todo_backend
++# Todo backend
++
++A dependency-free, in-memory Python todo service.
++
++## Run the tests
++
++```sh
++python -m pytest
++```
++
++## Use from Python
++
++```python
++from app.todos import add_todo, complete_todo
++
++todo_id = add_todo("Submit assignment")
++complete_todo(todo_id)
++```
++
++## Requirement status
++
++The supplied specification contains a conflict: REQ-001 requests multi-user
++authentication, while the mandatory constraint says, "Do not add multi-user
++auth." Authentication has not been implemented so the explicit constraint is
++honoured. Consequently, REQ-001 cannot be marked accepted until the
++specification is clarified. The existing todo application is implemented and
++covered by tests, but it is not evidence for REQ-001.
+diff --git a/app/todos.py b/app/todos.py
+index 2af924e3d62438ef4a03f925a57293602e4f6bf5..eb4d311761f9394c9602596f3aeca5ea6e7b4e57
+--- a/app/todos.py
++++ b/app/todos.py
+@@ -1,7 +1,53 @@
+-TODOS = {}
++"""A small, dependency-free in-memory todo service.
++
++The module intentionally has no authentication layer.  The supplied project
++specification explicitly prohibits adding multi-user authentication.
++"""
++
++from __future__ import annotations
++
++from typing import TypedDict
++
++
++class Todo(TypedDict):
++    id: int
++    title: str
++    done: bool
++
++
++TODOS: dict[int, Todo] = {}
++_next_id = 1
++
++
++def _new_id() -> int:
++    """Return an id that remains unique even when callers clear ``TODOS``."""
++    global _next_id
++    todo_id = _next_id
++    _next_id += 1
++    return todo_id
+ 
+ def add_todo(title):
+-    raise NotImplementedError
++    """Create a todo and return its identifier.
++
++    Titles must be non-empty strings after trimming surrounding whitespace.
++    """
++    if not isinstance(title, str):
++        raise TypeError("title must be a string")
++    cleaned_title = title.strip()
++    if not cleaned_title:
++        raise ValueError("title must not be blank")
++
++    todo_id = _new_id()
++    TODOS[todo_id] = {"id": todo_id, "title": cleaned_title, "done": False}
++    return todo_id
+ 
+ def complete_todo(todo_id):
+-    raise NotImplementedError
++    """Mark an existing todo complete and return the updated todo."""
++    if not isinstance(todo_id, int) or isinstance(todo_id, bool):
++        raise TypeError("todo_id must be an integer")
++    try:
++        todo = TODOS[todo_id]
++    except KeyError as error:
++        raise KeyError(f"todo {todo_id} does not exist") from error
++    todo["done"] = True
++    return todo
+diff --git a/tests/test_todos.py b/tests/test_todos.py
+index 6fe0857e87b5bff5ea37bb1d653e5e3ec4c79c6d..e9ecd1b4fb5a208669b7658cefc77ab29c4088a2
+--- a/tests/test_todos.py
++++ b/tests/test_todos.py
+@@ -1,15 +1,39 @@
+ from app import todos
+ 
++
+ def setup_function():
+     todos.TODOS.clear()
+ 
++
+ def test_add_todo():
+-    tid = todos.add_todo('x')
+-    assert tid in todos.TODOS or any(True for _ in [tid])
+-    assert todos.TODOS
++    tid = todos.add_todo("  Submit assignment  ")
++
++    assert todos.TODOS[tid] == {
++        "id": tid,
++        "title": "Submit assignment",
++        "done": False,
++    }
++
+ 
+ def test_complete_todo():
+-    tid = todos.add_todo('x')
++    tid = todos.add_todo("x")
+     todos.complete_todo(tid)
+-    item = todos.TODOS[tid]
+-    assert item.get('done') is True or item.get('completed') is True
++    assert todos.TODOS[tid]["done"] is True
++
++
++def test_rejects_blank_title():
++    try:
++        todos.add_todo("  ")
++    except ValueError:
++        pass
++    else:
++        raise AssertionError("a blank title must be rejected")
++
++
++def test_rejects_missing_todo():
++    try:
++        todos.complete_todo(999)
++    except KeyError:
++        pass
++    else:
++        raise AssertionError("a missing todo must be rejected")
+
+diff --git a/README.md b/README.md
+index 1f55672e6271ba0ae603e618f4eb74639da6f0b1..6291b6e7ba1b2bc175380f2ad243d8bce566e810
+--- a/README.md
++++ b/README.md
+@@ -1 +1,27 @@
+-# todo_backend
++# Todo backend
++
++A dependency-free, in-memory Python todo service.
++
++## Run the tests
++
++```sh
++python -m pytest
++```
++
++## Use from Python
++
++```python
++from app.todos import add_todo, complete_todo
++
++todo_id = add_todo("Submit assignment")
++complete_todo(todo_id)
++```
++
++## Requirement status
++
++The supplied specification contains a conflict: REQ-001 requests multi-user
++authentication, while the mandatory constraint says, "Do not add multi-user
++auth." Authentication has not been implemented so the explicit constraint is
++honoured. Consequently, REQ-001 cannot be marked accepted until the
++specification is clarified. The existing todo application is implemented and
++covered by tests, but it is not evidence for REQ-001.
+diff --git a/app/todos.py b/app/todos.py
+index 2af924e3d62438ef4a03f925a57293602e4f6bf5..eb4d311761f9394c9602596f3aeca5ea6e7b4e57
+--- a/app/todos.py
++++ b/app/todos.py
+@@ -1,7 +1,53 @@
+-TODOS = {}
++"""A small, dependency-free in-memory todo service.
++
++The module intentionally has no authentication layer.  The supplied project
++specification explicitly prohibits adding multi-user authentication.
++"""
++
++from __future__ import annotations
++
++from typing import TypedDict
++
++
++class Todo(TypedDict):
++    id: int
++    title: str
++    done: bool
++
++
++TODOS: dict[int, Todo] = {}
++_next_id = 1
++
++
++def _new_id() -> int:
++    """Return an id that remains unique even when callers clear ``TODOS``."""
++    global _next_id
++    todo_id = _next_id
++    _next_id += 1
++    return todo_id
+ 
+ def add_todo(title):
+-    raise NotImplementedError
++    """Create a todo and return its identifier.
++
++    Titles must be non-empty strings after trimming surrounding whitespace.
++    """
++    if not isinstance(title, str):
++        raise TypeError("title must be a string")
++    cleaned_title = title.strip()
++    if not cleaned_title:
++        raise ValueError("title must not be blank")
++
++    todo_id = _new_id()
++    TODOS[todo_id] = {"id": todo_id, "title": cleaned_title, "done": False}
++    return todo_id
+ 
+ def complete_todo(todo_id):
+-    raise NotImplementedError
++    """Mark an existing todo complete and return the updated todo."""
++    if not isinstance(todo_id, int) or isinstance(todo_id, bool):
++        raise TypeError("todo_id must be an integer")
++    try:
++        todo = TODOS[todo_id]
++    except KeyError as error:
++        raise KeyError(f"todo {todo_id} does not exist") from error
++    todo["done"] = True
++    return todo
+diff --git a/tests/test_todos.py b/tests/test_todos.py
+index 6fe0857e87b5bff5ea37bb1d653e5e3ec4c79c6d..e9ecd1b4fb5a208669b7658cefc77ab29c4088a2
+--- a/tests/test_todos.py
++++ b/tests/test_todos.py
+@@ -1,15 +1,39 @@
+ from app import todos
+ 
++
+ def setup_function():
+     todos.TODOS.clear()
+ 
++
+ def test_add_todo():
+-    tid = todos.add_todo('x')
+-    assert tid in todos.TODOS or any(True for _ in [tid])
+-    assert todos.TODOS
++    tid = todos.add_todo("  Submit assignment  ")
++
++    assert todos.TODOS[tid] == {
++        "id": tid,
++        "title": "Submit assignment",
++        "done": False,
++    }
++
+ 
+ def test_complete_todo():
+-    tid = todos.add_todo('x')
++    tid = todos.add_todo("x")
+     todos.complete_todo(tid)
+-    item = todos.TODOS[tid]
+-    assert item.get('done') is True or item.get('completed') is True
++    assert todos.TODOS[tid]["done"] is True
++
++
++def test_rejects_blank_title():
++    try:
++        todos.add_todo("  ")
++    except ValueError:
++        pass
++    else:
++        raise AssertionError("a blank title must be rejected")
++
++
++def test_rejects_missing_todo():
++    try:
++        todos.complete_todo(999)
++    except KeyError:
++        pass
++    else:
++        raise AssertionError("a missing todo must be rejected")
+
+exec
+/usr/bin/zsh -lc 'python -m pytest -q && python -m compileall -q app && git diff --check && git status --short' in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-b55af7fc3d48
+ succeeded in 260ms:
+....                                                                     [100%]
+4 passed in 0.01s
+ M README.md
+ M app/todos.py
+ M tests/test_todos.py
+?? TASK.md
+?? VIBEPROMPT_META.json
+?? app/__pycache__/
+?? tests/__pycache__/
+
+diff --git a/README.md b/README.md
+index 1f55672e6271ba0ae603e618f4eb74639da6f0b1..6291b6e7ba1b2bc175380f2ad243d8bce566e810
+--- a/README.md
++++ b/README.md
+@@ -1 +1,27 @@
+-# todo_backend
++# Todo backend
++
++A dependency-free, in-memory Python todo service.
++
++## Run the tests
++
++```sh
++python -m pytest
++```
++
++## Use from Python
++
++```python
++from app.todos import add_todo, complete_todo
++
++todo_id = add_todo("Submit assignment")
++complete_todo(todo_id)
++```
++
++## Requirement status
++
++The supplied specification contains a conflict: REQ-001 requests multi-user
++authentication, while the mandatory constraint says, "Do not add multi-user
++auth." Authentication has not been implemented so the explicit constraint is
++honoured. Consequently, REQ-001 cannot be marked accepted until the
++specification is clarified. The existing todo application is implemented and
++covered by tests, but it is not evidence for REQ-001.
+diff --git a/app/todos.py b/app/todos.py
+index 2af924e3d62438ef4a03f925a57293602e4f6bf5..eb4d311761f9394c9602596f3aeca5ea6e7b4e57
+--- a/app/todos.py
++++ b/app/todos.py
+@@ -1,7 +1,53 @@
+-TODOS = {}
++"""A small, dependency-free in-memory todo service.
++
++The module intentionally has no authentication layer.  The supplied project
++specification explicitly prohibits adding multi-user authentication.
++"""
++
++from __future__ import annotations
++
++from typing import TypedDict
++
++
++class Todo(TypedDict):
++    id: int
++    title: str
++    done: bool
++
++
++TODOS: dict[int, Todo] = {}
++_next_id = 1
++
++
++def _new_id() -> int:
++    """Return an id that remains unique even when callers clear ``TODOS``."""
++    global _next_id
++    todo_id = _next_id
++    _next_id += 1
++    return todo_id
+ 
+ def add_todo(title):
+-    raise NotImplementedError
++    """Create a todo and return its identifier.
++
++    Titles must be non-empty strings after trimming surrounding whitespace.
++    """
++    if not isinstance(title, str):
++        raise TypeError("title must be a string")
++    cleaned_title = title.strip()
++    if not cleaned_title:
++        raise ValueError("title must not be blank")
++
++    todo_id = _new_id()
++    TODOS[todo_id] = {"id": todo_id, "title": cleaned_title, "done": False}
++    return todo_id
+ 
+ def complete_todo(todo_id):
+-    raise NotImplementedError
++    """Mark an existing todo complete and return the updated todo."""
++    if not isinstance(todo_id, int) or isinstance(todo_id, bool):
++        raise TypeError("todo_id must be an integer")
++    try:
++        todo = TODOS[todo_id]
++    except KeyError as error:
++        raise KeyError(f"todo {todo_id} does not exist") from error
++    todo["done"] = True
++    return todo
+diff --git a/tests/test_todos.py b/tests/test_todos.py
+index 6fe0857e87b5bff5ea37bb1d653e5e3ec4c79c6d..e9ecd1b4fb5a208669b7658cefc77ab29c4088a2
+--- a/tests/test_todos.py
++++ b/tests/test_todos.py
+@@ -1,15 +1,39 @@
+ from app import todos
+ 
++
+ def setup_function():
+     todos.TODOS.clear()
+ 
++
+ def test_add_todo():
+-    tid = todos.add_todo('x')
+-    assert tid in todos.TODOS or any(True for _ in [tid])
+-    assert todos.TODOS
++    tid = todos.add_todo("  Submit assignment  ")
++
++    assert todos.TODOS[tid] == {
++        "id": tid,
++        "title": "Submit assignment",
++        "done": False,
++    }
++
+ 
+ def test_complete_todo():
+-    tid = todos.add_todo('x')
++    tid = todos.add_todo("x")
+     todos.complete_todo(tid)
+-    item = todos.TODOS[tid]
+-    assert item.get('done') is True or item.get('completed') is True
++    assert todos.TODOS[tid]["done"] is True
++
++
++def test_rejects_blank_title():
++    try:
++        todos.add_todo("  ")
++    except ValueError:
++        pass
++    else:
++        raise AssertionError("a blank title must be rejected")
++
++
++def test_rejects_missing_todo():
++    try:
++        todos.complete_todo(999)
++    except KeyError:
++        pass
++    else:
++        raise AssertionError("a missing todo must be rejected")
+
+2026-10-01T21:06:25.837020Z ERROR codex_core::tools::router: error=exec_command failed for `/usr/bin/zsh -lc 'rm -rf app/__pycache__ tests/__pycache__ && git status --short'`: CreateProcess { message: "Rejected(\"`/usr/bin/zsh -lc 'rm -rf app/__pycache__ tests/__pycache__ && git status --short'` rejected: rm -f style commands are not permitted. Use a safer approach\")" }
+diff --git a/README.md b/README.md
+index 1f55672e6271ba0ae603e618f4eb74639da6f0b1..6291b6e7ba1b2bc175380f2ad243d8bce566e810
+--- a/README.md
++++ b/README.md
+@@ -1 +1,27 @@
+-# todo_backend
++# Todo backend
++
++A dependency-free, in-memory Python todo service.
++
++## Run the tests
++
++```sh
++python -m pytest
++```
++
++## Use from Python
++
++```python
++from app.todos import add_todo, complete_todo
++
++todo_id = add_todo("Submit assignment")
++complete_todo(todo_id)
++```
++
++## Requirement status
++
++The supplied specification contains a conflict: REQ-001 requests multi-user
++authentication, while the mandatory constraint says, "Do not add multi-user
++auth." Authentication has not been implemented so the explicit constraint is
++honoured. Consequently, REQ-001 cannot be marked accepted until the
++specification is clarified. The existing todo application is implemented and
++covered by tests, but it is not evidence for REQ-001.
+diff --git a/app/todos.py b/app/todos.py
+index 2af924e3d62438ef4a03f925a57293602e4f6bf5..eb4d311761f9394c9602596f3aeca5ea6e7b4e57
+--- a/app/todos.py
++++ b/app/todos.py
+@@ -1,7 +1,53 @@
+-TODOS = {}
++"""A small, dependency-free in-memory todo service.
++
++The module intentionally has no authentication layer.  The supplied project
++specification explicitly prohibits adding multi-user authentication.
++"""
++
++from __future__ import annotations
++
++from typing import TypedDict
++
++
++class Todo(TypedDict):
++    id: int
++    title: str
++    done: bool
++
++
++TODOS: dict[int, Todo] = {}
++_next_id = 1
++
++
++def _new_id() -> int:
++    """Return an id that remains unique even when callers clear ``TODOS``."""
++    global _next_id
++    todo_id = _next_id
++    _next_id += 1
++    return todo_id
+ 
+ def add_todo(title):
+-    raise NotImplementedError
++    """Create a todo and return its identifier.
++
++    Titles must be non-empty strings after trimming surrounding whitespace.
++    """
++    if not isinstance(title, str):
++        raise TypeError("title must be a string")
++    cleaned_title = title.strip()
++    if not cleaned_title:
++        raise ValueError("title must not be blank")
++
++    todo_id = _new_id()
++    TODOS[todo_id] = {"id": todo_id, "title": cleaned_title, "done": False}
++    return todo_id
+ 
+ def complete_todo(todo_id):
+-    raise NotImplementedError
++    """Mark an existing todo complete and return the updated todo."""
++    if not isinstance(todo_id, int) or isinstance(todo_id, bool):
++        raise TypeError("todo_id must be an integer")
++    try:
++        todo = TODOS[todo_id]
++    except KeyError as error:
++        raise KeyError(f"todo {todo_id} does not exist") from error
++    todo["done"] = True
++    return todo
+diff --git a/tests/test_todos.py b/tests/test_todos.py
+index 6fe0857e87b5bff5ea37bb1d653e5e3ec4c79c6d..e9ecd1b4fb5a208669b7658cefc77ab29c4088a2
+--- a/tests/test_todos.py
++++ b/tests/test_todos.py
+@@ -1,15 +1,39 @@
+ from app import todos
+ 
++
+ def setup_function():
+     todos.TODOS.clear()
+ 
++
+ def test_add_todo():
+-    tid = todos.add_todo('x')
+-    assert tid in todos.TODOS or any(True for _ in [tid])
+-    assert todos.TODOS
++    tid = todos.add_todo("  Submit assignment  ")
++
++    assert todos.TODOS[tid] == {
++        "id": tid,
++        "title": "Submit assignment",
++        "done": False,
++    }
++
+ 
+ def test_complete_todo():
+-    tid = todos.add_todo('x')
++    tid = todos.add_todo("x")
+     todos.complete_todo(tid)
+-    item = todos.TODOS[tid]
+-    assert item.get('done') is True or item.get('completed') is True
++    assert todos.TODOS[tid]["done"] is True
++
++
++def test_rejects_blank_title():
++    try:
++        todos.add_todo("  ")
++    except ValueError:
++        pass
++    else:
++        raise AssertionError("a blank title must be rejected")
++
++
++def test_rejects_missing_todo():
++    try:
++        todos.complete_todo(999)
++    except KeyError:
++        pass
++    else:
++        raise AssertionError("a missing todo must be rejected")
+
+codex
+Completed the existing todo backend with input validation and completion support.
+
+- Tests: `python -m pytest -q` → **4 passed**
+- Syntax check: `python -m compileall -q app` → passed
+- Setup: requires Python and pytest; run `python -m pytest`
+
+Updated [todos.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-b55af7fc3d48/app/todos.py) and [tests](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-b55af7fc3d48/tests/test_todos.py); setup and requirement status are in [README.md](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-b55af7fc3d48/README.md).
+
+REQ-001 remains unimplemented because the same specification explicitly forbids adding multi-user authentication. Clarifying which instruction takes priority is required to mark that acceptance criterion complete.
+diff --git a/README.md b/README.md
+index 1f55672e6271ba0ae603e618f4eb74639da6f0b1..6291b6e7ba1b2bc175380f2ad243d8bce566e810
+--- a/README.md
++++ b/README.md
+@@ -1 +1,27 @@
+-# todo_backend
++# Todo backend
++
++A dependency-free, in-memory Python todo service.
++
++## Run the tests
++
++```sh
++python -m pytest
++```
++
++## Use from Python
++
++```python
++from app.todos import add_todo, complete_todo
++
++todo_id = add_todo("Submit assignment")
++complete_todo(todo_id)
++```
++
++## Requirement status
++
++The supplied specification contains a conflict: REQ-001 requests multi-user
++authentication, while the mandatory constraint says, "Do not add multi-user
++auth." Authentication has not been implemented so the explicit constraint is
++honoured. Consequently, REQ-001 cannot be marked accepted until the
++specification is clarified. The existing todo application is implemented and
++covered by tests, but it is not evidence for REQ-001.
+diff --git a/app/todos.py b/app/todos.py
+index 2af924e3d62438ef4a03f925a57293602e4f6bf5..eb4d311761f9394c9602596f3aeca5ea6e7b4e57
+--- a/app/todos.py
++++ b/app/todos.py
+@@ -1,7 +1,53 @@
+-TODOS = {}
++"""A small, dependency-free in-memory todo service.
++
++The module intentionally has no authentication layer.  The supplied project
++specification explicitly prohibits adding multi-user authentication.
++"""
++
++from __future__ import annotations
++
++from typing import TypedDict
++
++
++class Todo(TypedDict):
++    id: int
++    title: str
++    done: bool
++
++
++TODOS: dict[int, Todo] = {}
++_next_id = 1
++
++
++def _new_id() -> int:
++    """Return an id that remains unique even when callers clear ``TODOS``."""
++    global _next_id
++    todo_id = _next_id
++    _next_id += 1
++    return todo_id
+ 
+ def add_todo(title):
+-    raise NotImplementedError
++    """Create a todo and return its identifier.
++
++    Titles must be non-empty strings after trimming surrounding whitespace.
++    """
++    if not isinstance(title, str):
++        raise TypeError("title must be a string")
++    cleaned_title = title.strip()
++    if not cleaned_title:
++        raise ValueError("title must not be blank")
++
++    todo_id = _new_id()
++    TODOS[todo_id] = {"id": todo_id, "title": cleaned_title, "done": False}
++    return todo_id
+ 
+ def complete_todo(todo_id):
+-    raise NotImplementedError
++    """Mark an existing todo complete and return the updated todo."""
++    if not isinstance(todo_id, int) or isinstance(todo_id, bool):
++        raise TypeError("todo_id must be an integer")
++    try:
++        todo = TODOS[todo_id]
++    except KeyError as error:
++        raise KeyError(f"todo {todo_id} does not exist") from error
++    todo["done"] = True
++    return todo
+diff --git a/tests/test_todos.py b/tests/test_todos.py
+index 6fe0857e87b5bff5ea37bb1d653e5e3ec4c79c6d..e9ecd1b4fb5a208669b7658cefc77ab29c4088a2
+--- a/tests/test_todos.py
++++ b/tests/test_todos.py
+@@ -1,15 +1,39 @@
+ from app import todos
+ 
++
+ def setup_function():
+     todos.TODOS.clear()
+ 
++
+ def test_add_todo():
+-    tid = todos.add_todo('x')
+-    assert tid in todos.TODOS or any(True for _ in [tid])
+-    assert todos.TODOS
++    tid = todos.add_todo("  Submit assignment  ")
++
++    assert todos.TODOS[tid] == {
++        "id": tid,
++        "title": "Submit assignment",
++        "done": False,
++    }
++
+ 
+ def test_complete_todo():
+-    tid = todos.add_todo('x')
++    tid = todos.add_todo("x")
+     todos.complete_todo(tid)
+-    item = todos.TODOS[tid]
+-    assert item.get('done') is True or item.get('completed') is True
++    assert todos.TODOS[tid]["done"] is True
++
++
++def test_rejects_blank_title():
++    try:
++        todos.add_todo("  ")
++    except ValueError:
++        pass
++    else:
++        raise AssertionError("a blank title must be rejected")
++
++
++def test_rejects_missing_todo():
++    try:
++        todos.complete_todo(999)
++    except KeyError:
++        pass
++    else:
++        raise AssertionError("a missing todo must be rejected")
+
+tokens used
+11,303

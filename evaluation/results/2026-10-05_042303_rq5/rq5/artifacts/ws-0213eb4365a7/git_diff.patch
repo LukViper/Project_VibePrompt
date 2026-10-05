@@ -1,0 +1,192 @@
+diff --git a/README.md b/README.md
+index 38340ae..5b23e1c 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,31 @@
+-# rest_echo_api
+-Implement app/echo_api.py
++# Untitled project
++
++A small Python modular-monolith core exposing a health operation.
++
++## Requirements implemented
++
++- **REQ-001:** `app.echo_api.health()` returns `{'status': 'ok'}`.
++- **REQ-002:** The backend is implemented in Python, with no external service
++  calls or Redis dependency.
++
++## Run
++
++The project uses only the Python standard library. From the repository root:
++
++```bash
++python -c "from app.echo_api import health; print(health())"
++```
++
++Expected output:
++
++```text
++{'status': 'ok'}
++```
++
++## Test
++
++```bash
++python -m pytest
++```
++
++`tests/test_echo_api.py::test_health_ok` is the test mapped to REQ-001.
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..f962697
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,88 @@
++You are a senior software engineer.
++
++Build the following project completely.
++
++ROLE
++You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
++
++PROJECT
++Untitled project
++
++OBJECTIVE
++See the specification.
++
++PROBLEM
++See the specification.
++
++REQUIREMENTS
++Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
++
++FUNCTIONAL REQUIREMENTS
++REQ-001:
++Support a health() function returning {'status': 'ok'}
++  Acceptance: Given a typical input, the system Support a health() function returning {'status': 'ok'}.
++
++NON-FUNCTIONAL REQUIREMENTS
++REQ-002:
++The backend must use Python
++
++CONSTRAINTS
++- Team size: None
++- Duration: None
++- Budget: None
++- Avoid: Redis caching, Do not add Redis, Do not call external APIs
++
++TECH STACK
++Backend: Python
++Model: unspecified
++Database: unspecified
++Frameworks: unspecified
++Hardware: none
++
++ARCHITECTURE
++Use a modular monolith unless ProjectState specifies otherwise.
++
++DATABASE
++Use the database named in TECH STACK.
++
++API
++Implement an operation for every functional requirement.
++
++SECURITY
++Keep secrets in environment variables. Validate input. Do not expose credentials.
++
++TESTING
++Write a test mapped from each requirement ID. Run the tests.
++
++ACCEPTANCE CRITERIA
++[ ] REQ-001: Given a typical input, the system Support a health() function returning {'status': 'ok'}.
++[ ] REQ-002 implemented
++[ ] Tests pass
++[ ] Application runs successfully
++
++IMPLEMENTATION PROCESS
++1. Inspect the existing repository.
++2. Understand the requirements.
++3. Create the required architecture.
++4. Implement the components.
++5. Configure dependencies.
++6. Implement database, API, and frontend components.
++7. Write tests.
++8. Run tests.
++9. Fix implementation errors.
++10. Verify every acceptance criterion.
++11. Provide setup instructions.
++
++DELIVERABLES
++- Working implementation of every requirement ID
++- Tests
++- Setup instructions
++- A short note mapping each acceptance criterion to evidence
++
++Do not remove or silently alter required functionality.
++Do not replace required functionality with placeholders.
++
++
++# COMPILATION GATE NOTES
++- project objective is missing
++Implement only CONFIRMED requirements listed above.
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..41410de
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-0213eb4365a7","task_id":"rest_echo_api","variant":"C_vibeprompt","seed_commit":"f590ed1a84a52e7dd9cb1bb40aa70daaf8b8a7a7"}
+\ No newline at end of file
+diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc
+new file mode 100644
+index 0000000..4bf3c54
+Binary files /dev/null and b/app/__pycache__/__init__.cpython-314.pyc differ
+diff --git a/app/__pycache__/echo_api.cpython-314.pyc b/app/__pycache__/echo_api.cpython-314.pyc
+new file mode 100644
+index 0000000..f522784
+Binary files /dev/null and b/app/__pycache__/echo_api.cpython-314.pyc differ
+diff --git a/app/echo_api.py b/app/echo_api.py
+index a994947..771da18 100644
+--- a/app/echo_api.py
++++ b/app/echo_api.py
+@@ -1,5 +1,20 @@
+-def echo(payload):
+-    raise NotImplementedError('implement echo')
++"""Small, dependency-free application operations.
+ 
+-def health():
+-    raise NotImplementedError('implement health')
++The module intentionally exposes plain Python functions so it can be used by a
++web adapter later without coupling the core health check to a framework.
++"""
++
++from typing import Any
++
++
++def echo(payload: Any) -> Any:
++    """Return the supplied payload unchanged.
++
++    This preserves the starter project's existing public operation.
++    """
++    return payload
++
++
++def health() -> dict[str, str]:
++    """Return the application's health status (REQ-001)."""
++    return {"status": "ok"}
+diff --git a/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc b/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc
+new file mode 100644
+index 0000000..1d5cd41
+Binary files /dev/null and b/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc differ
+diff --git a/tests/test_echo_api.py b/tests/test_echo_api.py
+index 89d4bc4..72be786 100644
+--- a/tests/test_echo_api.py
++++ b/tests/test_echo_api.py
+@@ -4,4 +4,5 @@ def test_echo_returns_payload():
+     assert echo({'a': 1}) == {'a': 1}
+ 
+ def test_health_ok():
+-    assert health()['status'] == 'ok'
++    """REQ-001: health reports the required successful status."""
++    assert health() == {'status': 'ok'}

@@ -1,0 +1,14 @@
+You are a senior software engineer.
+
+REQUIREMENTS
+- parse_log extracts severity
+- parse_log extracts timestamp
+
+CONSTRAINTS
+- stdlib only
+
+REJECTED / OUT OF SCOPE
+- Do not call an external log API
+
+ACCEPTANCE CRITERIA
+- parses sample line

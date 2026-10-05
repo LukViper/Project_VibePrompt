@@ -65,6 +65,115 @@ def _set_auth_flag(state: dict, required: bool, reason: str) -> None:
     )
 
 
+def _avoid_tokens(phrase: str) -> set[str]:
+    stop = {
+        "a", "an", "the", "and", "or", "to", "for", "of", "in", "on", "with", "using",
+        "add", "use", "include", "call", "build", "do", "not", "don't", "never", "no",
+    }
+    return {
+        t
+        for t in re.findall(r"[a-z0-9_]{3,}", (phrase or "").lower())
+        if t not in stop
+    }
+
+
+def _text_matches_avoid(text: str, avoid_items: list[str]) -> bool:
+    """True when requirement/tech text is a positive restatement of a rejected feature."""
+    blob = (text or "").lower()
+    if not blob:
+        return False
+    for item in avoid_items or []:
+        tokens = _avoid_tokens(item)
+        if not tokens:
+            continue
+        # Require all distinctive tokens from the avoid phrase to appear.
+        if all(t in blob for t in tokens):
+            return True
+        item_l = (item or "").lower().strip()
+        if item_l and item_l in blob:
+            return True
+    return False
+
+
+def _filter_extraction_polarity(extraction, state: dict):
+    """Drop positive requirements/tech that restate constraints.avoid (polarity guard).
+
+    Uses state avoid + this turn's avoid for filtering, but does not rewrite
+    ``extraction.avoid`` to include prior state avoids (keeps turn provenance clean).
+    """
+    state_avoid = list((state.get("constraints") or {}).get("avoid") or [])
+    new_avoid = list(getattr(extraction, "avoid", None) or [])
+    combined = list(dict.fromkeys([*state_avoid, *new_avoid]))
+    if not combined:
+        return extraction
+
+    kept_reqs = []
+    for req in list(getattr(extraction, "requirements", None) or []):
+        if _text_matches_avoid(getattr(req, "text", "") or "", combined):
+            phrase = (getattr(req, "text", None) or "").strip()
+            if phrase and phrase not in new_avoid:
+                new_avoid.append(phrase)
+            continue
+        if getattr(req, "slot_value", None) and _text_matches_avoid(str(req.slot_value), combined):
+            continue
+        kept_reqs.append(req)
+    extraction.requirements = kept_reqs
+
+    for field in ("databases", "frameworks", "models", "hardware", "technology", "programming_languages"):
+        values = list(getattr(extraction, field, None) or [])
+        setattr(
+            extraction,
+            field,
+            [v for v in values if not _text_matches_avoid(str(v), combined)],
+        )
+    extraction.avoid = new_avoid
+    return extraction
+
+
+def enforce_rejection_polarity(state: dict) -> dict:
+    """Invariant: rejected/avoid features ∩ positive active requirements = ∅.
+
+    Also clears technology slots that restate an explicit avoid. Idempotent.
+    """
+    state = migrate_state(state or {})
+    avoid = list((state.get("constraints") or {}).get("avoid") or [])
+    if not avoid:
+        return state
+    for req in state.get("requirements") or []:
+        if req.get("status") != "active":
+            continue
+        if _text_matches_avoid(req.get("text") or "", avoid) or (
+            req.get("slot_value") and _text_matches_avoid(str(req.get("slot_value")), avoid)
+        ):
+            req["status"] = "removed"
+            req["assertion_status"] = "REJECTED"
+            req["removed_reason"] = req.get("removed_reason") or "rejected_feature_polarity"
+    tech = state.get("technology") or {}
+    for key in ("database", "backend", "model"):
+        value = tech.get(key)
+        if value and _text_matches_avoid(str(value), avoid):
+            tech[key] = None
+    for field in ("databases", "frameworks", "models", "hardware", "other", "languages"):
+        values = list(tech.get(field) or [])
+        tech[field] = [v for v in values if not _text_matches_avoid(str(v), avoid)]
+    return state
+
+
+def active_requirements_respect_avoid(state: dict) -> bool:
+    """Return True when no active requirement restates constraints.avoid."""
+    avoid = list((state.get("constraints") or {}).get("avoid") or [])
+    if not avoid:
+        return True
+    for req in state.get("requirements") or []:
+        if req.get("status") != "active":
+            continue
+        if _text_matches_avoid(req.get("text") or "", avoid):
+            return False
+        if req.get("slot_value") and _text_matches_avoid(str(req.get("slot_value")), avoid):
+            return False
+    return True
+
+
 def apply_constraint_cues(state: dict, message: str) -> dict:
     """Apply explicit auth/platform cues from the raw message into ProjectState."""
     text = (message or "").lower()
@@ -402,12 +511,21 @@ def _new_requirement(
         explicit=resolved_origin == AssertionOrigin.USER_EXPLICIT,
     )
     user_approved = assertion.value in {"CONFIRMED", "LOCKED"}
+    avoid = list((state.get("constraints") or {}).get("avoid") or [])
+    conflicts_avoid = _text_matches_avoid(text, avoid) or (
+        slot_value is not None and _text_matches_avoid(str(slot_value), avoid)
+    )
+    # Invariant: avoid ∩ active positives = ∅ — never create an active conflict.
+    status = "removed" if conflicts_avoid else "active"
+    assertion_value = "REJECTED" if conflicts_avoid else assertion.value
+    if conflicts_avoid:
+        user_approved = False
     item = {
         "id": _next_code(state),
         "type": req_type,
         "text": text,
-        "status": "active",
-        "assertion_status": assertion.value,
+        "status": status,
+        "assertion_status": assertion_value,
         "assertion_origin": resolved_origin.value,
         "version": 1,
         "slot": slot,
@@ -418,8 +536,10 @@ def _new_requirement(
         "capability": capability,
         "origin": "original" if not locked else "added",
         "provenance": make_provenance(source, reason=reason, user_approved=user_approved),
-        "versions": [{"version": 1, "text": text, "status": "active"}],
+        "versions": [{"version": 1, "text": text, "status": status}],
     }
+    if conflicts_avoid:
+        item["removed_reason"] = "rejected_feature_polarity"
     state["requirements"].append(item)
     return item
 
@@ -526,6 +646,11 @@ def apply_analysis_to_state(state: dict, analysis: dict, reason: str = "message"
     relationship = analysis["relationship"]["relationship"]
     conflict = analysis.get("slot_conflict")
 
+    # Polarity guard: rejected/forbidden features must never become positive requirements
+    # or selected technology slots (e.g. "Do not add Redis" → avoid, not REQ/database).
+    extraction = _filter_extraction_polarity(extraction, state)
+    analysis = {**analysis, "extraction": extraction}
+
     if extraction.subject:
         state["academic"]["subject"] = extraction.subject
         state["project"]["subject"] = extraction.subject
@@ -539,6 +664,8 @@ def apply_analysis_to_state(state: dict, analysis: dict, reason: str = "message"
         _append_unique(state["academic"]["required_concepts"], topic)
     for item in extraction.avoid:
         _append_unique(state["constraints"]["avoid"], item)
+    # Enforce avoid ∩ active requirements = ∅ (and clear forbidden tech slots).
+    state = enforce_rejection_polarity(state)
 
     for req in extraction.requirements or []:
         text = (req.text or "").lower()
@@ -689,6 +816,8 @@ def apply_analysis_to_state(state: dict, analysis: dict, reason: str = "message"
             if notice not in notices:
                 notices.append(notice)
             state["notices"] = notices[-5:]
+    # Final polarity pass after requirement merges / tech updates.
+    state = enforce_rejection_polarity(state)
     return StateVersioning.bump(state, reason)
 
 

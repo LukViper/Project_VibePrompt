@@ -1,0 +1,132 @@
+{
+  "workspace_id": "ws-c9ceaeddf4fd",
+  "task_id": "auth_token_service",
+  "system_variant": "A_raw",
+  "dataset_version": "2.0.0",
+  "seed_commit": "4a77a8964d65a1e33a3e315ef3cbee36152096b9",
+  "start_time": "2026-10-01T20:50:52.529574+00:00",
+  "end_time": "2026-10-01T20:52:02.617070+00:00",
+  "exit_code": 0,
+  "duration_seconds": 70.08732082599818,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "direct_conversation",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "direct_prompt"
+      ]
+    },
+    "state_summary": null
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-c9ceaeddf4fd/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-c9ceaeddf4fd/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-c9ceaeddf4fd/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-c9ceaeddf4fd/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-c9ceaeddf4fd/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-c9ceaeddf4fd/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-c9ceaeddf4fd/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/workspaces/ws-c9ceaeddf4fd"
+  },
+  "git": {
+    "commit_before": "4a77a8964d65a1e33a3e315ef3cbee36152096b9",
+    "seed_commit": "4a77a8964d65a1e33a3e315ef3cbee36152096b9",
+    "commit_after": "4a77a8964d65a1e33a3e315ef3cbee36152096b9",
+    "changed_files": [
+      "pp/auth.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/auth.cpython-314.pyc"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/auth.cpython-314.pyc"
+    ],
+    "status_preview": "M app/auth.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__pycache__/"
+  },
+  "agent_run": {
+    "id": "RUN-4efb9d355285",
+    "project_id": "auth_token_service",
+    "prompt_id": null,
+    "agent": "openai",
+    "model": "gpt-5.6-terra",
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_sci__6kbje8d/ws-c9ceaeddf4fd",
+    "commit_before": "4a77a8964d65a1e33a3e315ef3cbee36152096b9",
+    "commit_after": "4a77a8964d65a1e33a3e315ef3cbee36152096b9",
+    "started_at": "2026-10-01T20:50:52.529574+00:00",
+    "completed_at": "2026-10-01T20:52:02.617070+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "Implemented the in-memory auth helper in [app/auth.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-c9ceaeddf4fd/app/auth.py).\n\n- `register()` stores salted, PBKDF2-hashed passwords.\n- `login()` verifies credentials and returns a secure random token string.\n- Invalid credentials and duplicate registrations raise clear exceptions.\n- No database or delete-user endpoint added.\n\nVerified with compilation and equivalent runtime assertions. `pytest` is not installed in this environment.\n",
+    "workspace_id": "ws-c9ceaeddf4fd",
+    "task_id": "auth_token_service",
+    "system_variant": "A_raw",
+    "exit_code": 0,
+    "duration_seconds": 70.08732082599818,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-c9ceaeddf4fd/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-c9ceaeddf4fd/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-c9ceaeddf4fd/git_diff.patch",
+    "label": "SCIENTIFIC",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-48e581a3c4bd",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-4efb9d355285",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_register_and_login",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "register(username, password) stores the user",
+        "acceptance_test": "test_register_and_login"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:52:03.274207+00:00",
+      "verification_method": "acceptance_test_marker"
+    },
+    {
+      "id": "VER-6c7383cd5851",
+      "requirement_id": "REQ-002",
+      "agent_run_id": "RUN-4efb9d355285",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_login_rejects_bad_password",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "login(username, password) returns a token on success",
+        "acceptance_test": "test_login_rejects_bad_password"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:52:03.274234+00:00",
+      "verification_method": "acceptance_test_marker"
+    }
+  ],
+  "unsupported_features": [
+    "Do not expose a DELETE user endpoint",
+    "Do not use an external database"
+  ],
+  "constraint_violations": [],
+  "scope_violations": [
+    "Do not expose a DELETE user endpoint",
+    "Do not use an external database"
+  ],
+  "label": "SCIENTIFIC"
+}

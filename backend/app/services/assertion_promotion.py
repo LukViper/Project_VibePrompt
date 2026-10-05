@@ -62,6 +62,23 @@ def promote_assertion(
             f"Illegal promotion {current_status} → {target.value} for {assertion_id}"
         )
 
+    # Polarity: PROPOSED/CONFIRMED/LOCKED must not activate a rejected feature.
+    if entity_type == "REQUIREMENT" and target in {
+        AssertionStatus.CONFIRMED,
+        AssertionStatus.LOCKED,
+        AssertionStatus.PROPOSED,
+    }:
+        from app.services.project_state import _text_matches_avoid
+
+        avoid = list((state.get("constraints") or {}).get("avoid") or [])
+        if _text_matches_avoid(item.get("text") or "", avoid) or (
+            item.get("slot_value") and _text_matches_avoid(str(item.get("slot_value")), avoid)
+        ):
+            raise ValueError(
+                f"Cannot promote {assertion_id} to {target.value}: conflicts with "
+                "constraints.avoid. Remove the rejection first."
+            )
+
     before = {
         "assertion_status": item.get("assertion_status"),
         "status": item.get("status"),
@@ -132,6 +149,9 @@ def promote_assertion(
         reason=reason or f"promote to {target.value}",
     )
 
+    from app.services.project_state import enforce_rejection_polarity
+
+    state = enforce_rejection_polarity(state)
     state = StateVersioning.bump(state, f"assertion_{target.value.lower()}")
     project.state = public_state(state)
     project.updated_at = utcnow()

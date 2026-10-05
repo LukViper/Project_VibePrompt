@@ -1,0 +1,4 @@
+You are a senior software engineer.
+
+allow(key, limit) returns True until limit exceeded.
+Do not use Redis.

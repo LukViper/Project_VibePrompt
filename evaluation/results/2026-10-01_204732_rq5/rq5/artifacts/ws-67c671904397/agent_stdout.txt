@@ -1,0 +1,12 @@
+Implemented the confirmed repository behavior: `count_words` now counts whitespace-delimited tokens and validates input types.
+
+- Updated [app/words.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-67c671904397/app/words.py)
+- Added coverage in [tests/test_words.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-67c671904397/tests/test_words.py)
+- Added setup, usage, and traceability notes in [README.md](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-67c671904397/README.md)
+
+Verification:
+
+- `python -m pytest` → **3 passed**
+- Application smoke test → outputs `{'a': 2, 'b': 1}`
+
+The supplied specification contains no requirement IDs, so no ID-to-test mapping applies.

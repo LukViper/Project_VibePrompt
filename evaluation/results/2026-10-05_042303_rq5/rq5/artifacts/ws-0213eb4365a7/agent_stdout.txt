@@ -1,0 +1,9 @@
+Implemented and verified.
+
+- REQ-001: `health()` now returns exactly `{"status": "ok"}` in [app/echo_api.py](/tmp/vibeprompt_rq5_sci_pb4oq2gx/ws-0213eb4365a7/app/echo_api.py).
+- REQ-002: Backend remains pure Python with no Redis or external APIs.
+- Preserved and implemented the starter `echo()` operation.
+- Added explicit REQ-001 test mapping in [tests/test_echo_api.py](/tmp/vibeprompt_rq5_sci_pb4oq2gx/ws-0213eb4365a7/tests/test_echo_api.py).
+- Added setup, run, and test instructions in [README.md](/tmp/vibeprompt_rq5_sci_pb4oq2gx/ws-0213eb4365a7/README.md).
+
+Verification passed: `python -m pytest` — 2 tests passed.

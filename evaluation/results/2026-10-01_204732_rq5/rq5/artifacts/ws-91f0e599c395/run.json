@@ -1,0 +1,113 @@
+{
+  "workspace_id": "ws-91f0e599c395",
+  "task_id": "csv_filter_cli",
+  "system_variant": "A_raw",
+  "dataset_version": "2.0.0",
+  "seed_commit": "2b520e82213159e92631b99ba6c0db281d97f537",
+  "start_time": "2026-10-01T21:01:01.688909+00:00",
+  "end_time": "2026-10-01T21:01:32.432461+00:00",
+  "exit_code": 0,
+  "duration_seconds": 30.743374570000015,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "direct_conversation",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "direct_prompt"
+      ]
+    },
+    "state_summary": null
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-91f0e599c395/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-91f0e599c395/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-91f0e599c395/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-91f0e599c395/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-91f0e599c395/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-91f0e599c395/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-91f0e599c395/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/workspaces/ws-91f0e599c395"
+  },
+  "git": {
+    "commit_before": "2b520e82213159e92631b99ba6c0db281d97f537",
+    "seed_commit": "2b520e82213159e92631b99ba6c0db281d97f537",
+    "commit_after": "2b520e82213159e92631b99ba6c0db281d97f537",
+    "changed_files": [
+      "pp/csv_filter.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/csv_filter.cpython-314.pyc"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/csv_filter.cpython-314.pyc"
+    ],
+    "status_preview": "M app/csv_filter.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__pycache__/"
+  },
+  "agent_run": {
+    "id": "RUN-7ca7f92394ac",
+    "project_id": "csv_filter_cli",
+    "prompt_id": null,
+    "agent": "openai",
+    "model": "gpt-5.6-terra",
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_sci__6kbje8d/ws-91f0e599c395",
+    "commit_before": "2b520e82213159e92631b99ba6c0db281d97f537",
+    "commit_after": "2b520e82213159e92631b99ba6c0db281d97f537",
+    "started_at": "2026-10-01T21:01:01.688909+00:00",
+    "completed_at": "2026-10-01T21:01:32.432461+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "Implemented `filter_rows` in [app/csv_filter.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-91f0e599c395/app/csv_filter.py:1).\n\nIt performs exact matching on list-of-dict rows, ignores missing columns, and does not mutate inputs. Direct Python checks passed; `pytest` is unavailable in this workspace.\n",
+    "workspace_id": "ws-91f0e599c395",
+    "task_id": "csv_filter_cli",
+    "system_variant": "A_raw",
+    "exit_code": 0,
+    "duration_seconds": 30.743374570000015,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-91f0e599c395/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-91f0e599c395/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-91f0e599c395/git_diff.patch",
+    "label": "SCIENTIFIC",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-25ddc28e0247",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-7ca7f92394ac",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_filter_rows",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "filter_rows keeps matching rows",
+        "acceptance_test": "test_filter_rows"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T21:01:32.720979+00:00",
+      "verification_method": "acceptance_test_marker"
+    }
+  ],
+  "unsupported_features": [
+    "Do not add SQL database support"
+  ],
+  "constraint_violations": [],
+  "scope_violations": [
+    "Do not add SQL database support"
+  ],
+  "label": "SCIENTIFIC"
+}

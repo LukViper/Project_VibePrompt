@@ -1,0 +1,108 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..5758ee8
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,7 @@
++You are a senior software engineer.
++
++Build a tiny auth helper.
++register(username, password) must store the user.
++login(username, password) must return a token string on success.
++Do not expose a DELETE user endpoint.
++No external database.
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..09aa7c6
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-c9ceaeddf4fd","task_id":"auth_token_service","variant":"A_raw","seed_commit":"4a77a8964d65a1e33a3e315ef3cbee36152096b9"}
+\ No newline at end of file
+diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc
+new file mode 100644
+index 0000000..5c13b5c
+Binary files /dev/null and b/app/__pycache__/__init__.cpython-314.pyc differ
+diff --git a/app/__pycache__/auth.cpython-314.pyc b/app/__pycache__/auth.cpython-314.pyc
+new file mode 100644
+index 0000000..6b6335c
+Binary files /dev/null and b/app/__pycache__/auth.cpython-314.pyc differ
+diff --git a/app/auth.py b/app/auth.py
+index 53030ec..4092c87 100644
+--- a/app/auth.py
++++ b/app/auth.py
+@@ -1,7 +1,68 @@
+-USERS = {}
++"""A small, in-memory authentication helper.
+ 
+-def register(username, password):
+-    raise NotImplementedError
++Users live only for the lifetime of this Python process.  This module
++intentionally exposes registration and login only; it has no user-deletion
++operation or HTTP endpoints.
++"""
+ 
+-def login(username, password):
+-    raise NotImplementedError
++from __future__ import annotations
++
++import hashlib
++import hmac
++import secrets
++
++
++# Kept public for the deliberately tiny helper and for callers that need to
++# reset process-local state in tests.  Passwords are never stored as plaintext.
++USERS: dict[str, dict[str, str]] = {}
++
++_PBKDF2_ITERATIONS = 600_000
++
++
++class AuthenticationError(ValueError):
++    """Raised when credentials cannot be authenticated."""
++
++
++class RegistrationError(ValueError):
++    """Raised when a user cannot be registered."""
++
++
++def _validate_credentials(username: str, password: str) -> None:
++    if not isinstance(username, str) or not username:
++        raise ValueError("username must be a non-empty string")
++    if not isinstance(password, str) or not password:
++        raise ValueError("password must be a non-empty string")
++
++
++def _hash_password(password: str, salt: bytes) -> str:
++    return hashlib.pbkdf2_hmac(
++        "sha256", password.encode("utf-8"), salt, _PBKDF2_ITERATIONS
++    ).hex()
++
++
++def register(username: str, password: str) -> None:
++    """Store a new user in memory.
++
++    A duplicate username is rejected so an existing account cannot be
++    silently overwritten.
++    """
++    _validate_credentials(username, password)
++    if username in USERS:
++        raise RegistrationError("username is already registered")
++
++    salt = secrets.token_bytes(16)
++    USERS[username] = {"salt": salt.hex(), "password_hash": _hash_password(password, salt)}
++
++
++def login(username: str, password: str) -> str:
++    """Authenticate credentials and return a newly generated token string."""
++    _validate_credentials(username, password)
++    user = USERS.get(username)
++    if user is None:
++        raise AuthenticationError("invalid username or password")
++
++    password_hash = _hash_password(password, bytes.fromhex(user["salt"]))
++    if not hmac.compare_digest(password_hash, user["password_hash"]):
++        raise AuthenticationError("invalid username or password")
++
++    return secrets.token_urlsafe(32)

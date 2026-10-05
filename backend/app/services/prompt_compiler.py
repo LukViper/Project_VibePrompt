@@ -136,15 +136,33 @@ def compilation_gate(state: dict) -> dict:
     )
     all_reqs = list(state.get("requirements") or [])
     active = [r for r in all_reqs if r.get("status") == "active"]
-    compilable = [r for r in active if requirement_is_compilable(r)]
+    from app.services.project_state import _text_matches_avoid
+
+    avoid = list((state.get("constraints") or {}).get("avoid") or [])
+
+    def _conflicts_with_avoid(req: dict) -> bool:
+        return _text_matches_avoid(req.get("text") or "", avoid) or (
+            bool(req.get("slot_value")) and _text_matches_avoid(str(req.get("slot_value")), avoid)
+        )
+
+    compilable = [
+        r for r in active if requirement_is_compilable(r) and not _conflicts_with_avoid(r)
+    ]
     excluded = []
     for req in all_reqs:
-        if requirement_is_compilable(req):
+        if req in compilable:
             continue
+        if requirement_is_compilable(req) and req.get("status") == "active" and _conflicts_with_avoid(req):
+            reason = "REJECTED — conflicts with constraints.avoid"
+        elif requirement_is_compilable(req) and req.get("status") == "active":
+            # Should already be in compilable; skip
+            continue
+        else:
+            reason = _exclusion_reason(req)
         excluded.append({
             "id": req.get("id"),
             "text": req.get("text"),
-            "reason": _exclusion_reason(req),
+            "reason": reason,
             "assertion_status": req.get("assertion_status"),
             "status": req.get("status"),
         })
@@ -284,6 +302,14 @@ def _normalize_from_state(state: dict, spec: dict) -> dict:
     # Drop recommendation-only noise from the agent prompt stack block.
     tech.pop("recommendations", None)
     tech.pop("provenance", None)
+    from app.services.project_state import _text_matches_avoid
+
+    avoid_for_tech = list((merged.get("constraints") or {}).get("avoid") or [])
+    if tech.get("database") and _text_matches_avoid(str(tech.get("database")), avoid_for_tech):
+        tech["database"] = None
+    tech["databases"] = [
+        d for d in (tech.get("databases") or []) if not _text_matches_avoid(str(d), avoid_for_tech)
+    ]
     merged["technology"] = tech or merged.get("technology") or {}
     arch = state.get("architecture") or {}
     merged["architecture"] = arch.get("logical") or arch or merged.get("architecture")
@@ -293,11 +319,17 @@ def _normalize_from_state(state: dict, spec: dict) -> dict:
     active = [r for r in (state.get("requirements") or []) if r.get("status") == "active"]
     if active:
         from app.services.assertion_lifecycle import requirement_is_compilable
+        from app.services.project_state import _text_matches_avoid
 
+        avoid = list((merged.get("constraints") or {}).get("avoid") or [])
         functional = []
         nonfunctional = []
         for req in active:
             if not requirement_is_compilable(req):
+                continue
+            if _text_matches_avoid(req.get("text") or "", avoid) or (
+                req.get("slot_value") and _text_matches_avoid(str(req.get("slot_value")), avoid)
+            ):
                 continue
             item = {
                 "id": req.get("id"),

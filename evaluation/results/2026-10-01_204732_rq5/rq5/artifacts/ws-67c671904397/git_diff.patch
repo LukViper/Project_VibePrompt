@@ -1,0 +1,205 @@
+diff --git a/README.md b/README.md
+index 919b6d9..27a6290 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,37 @@
+ # word_count_pipeline
++
++A dependency-free utility that counts whitespace-delimited words in a string.
++It does not download or use remote corpora.
++
++## Setup and use
++
++The project targets Python 3.9 or later and has no runtime dependencies.
++
++```bash
++python -c "from app.words import count_words; print(count_words('a a b'))"
++```
++
++Expected output:
++
++```python
++{'a': 2, 'b': 1}
++```
++
++## Test
++
++```bash
++python -m pytest
++```
++
++## Specification traceability
++
++The supplied ProjectState lists no functional or non-functional requirement
++IDs. The implementation is therefore intentionally limited to the existing
++repository's confirmed `count_words` behavior and input validation. There are
++no requirement IDs to map to individual tests.
++
++Acceptance evidence:
++
++- **Tests pass:** run `python -m pytest` (the included tests cover counting,
++  whitespace tokenisation, and invalid input).
++- **Application runs successfully:** execute the command in “Setup and use”.
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..42b1d85
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,84 @@
++You are a senior software engineer.
++
++Build the following project completely.
++
++ROLE
++You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
++
++PROJECT
++Untitled project
++
++OBJECTIVE
++See the specification.
++
++PROBLEM
++See the specification.
++
++REQUIREMENTS
++Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
++
++FUNCTIONAL REQUIREMENTS
++- None recorded.
++
++NON-FUNCTIONAL REQUIREMENTS
++- None recorded.
++
++CONSTRAINTS
++- Team size: None
++- Duration: None
++- Budget: None
++- Avoid: Do not download remote corpora
++
++TECH STACK
++Backend: unspecified
++Model: unspecified
++Database: unspecified
++Frameworks: unspecified
++Hardware: none
++
++ARCHITECTURE
++Use a modular monolith unless ProjectState specifies otherwise.
++
++DATABASE
++Use the database named in TECH STACK.
++
++API
++Implement an operation for every functional requirement.
++
++SECURITY
++Keep secrets in environment variables. Validate input. Do not expose credentials.
++
++TESTING
++Write a test mapped from each requirement ID. Run the tests.
++
++ACCEPTANCE CRITERIA
++[ ] Tests pass
++[ ] Application runs successfully
++
++IMPLEMENTATION PROCESS
++1. Inspect the existing repository.
++2. Understand the requirements.
++3. Create the required architecture.
++4. Implement the components.
++5. Configure dependencies.
++6. Implement database, API, and frontend components.
++7. Write tests.
++8. Run tests.
++9. Fix implementation errors.
++10. Verify every acceptance criterion.
++11. Provide setup instructions.
++
++DELIVERABLES
++- Working implementation of every requirement ID
++- Tests
++- Setup instructions
++- A short note mapping each acceptance criterion to evidence
++
++Do not remove or silently alter required functionality.
++Do not replace required functionality with placeholders.
++
++
++# COMPILATION GATE NOTES
++- project objective is missing
++- no active requirements
++Implement only CONFIRMED requirements listed above.
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..2b5d812
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-67c671904397","task_id":"word_count_pipeline","variant":"C_vibeprompt","seed_commit":"740bf81db0f94f9aedd62432978a331167877619"}
+\ No newline at end of file
+diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc
+new file mode 100644
+index 0000000..8e37e7e
+Binary files /dev/null and b/app/__pycache__/__init__.cpython-314.pyc differ
+diff --git a/app/__pycache__/words.cpython-314.pyc b/app/__pycache__/words.cpython-314.pyc
+new file mode 100644
+index 0000000..65c21e7
+Binary files /dev/null and b/app/__pycache__/words.cpython-314.pyc differ
+diff --git a/app/words.py b/app/words.py
+index 10d4c84..ee24862 100644
+--- a/app/words.py
++++ b/app/words.py
+@@ -1,2 +1,22 @@
+-def count_words(text):
+-    raise NotImplementedError
++"""Word-frequency utilities.
++
++This module deliberately has no external corpus or service dependency: it
++counts the whitespace-delimited tokens supplied by the caller.
++"""
++
++from collections import Counter
++
++
++def count_words(text: str) -> dict[str, int]:
++    """Return frequencies for whitespace-delimited words in *text*.
++
++    Token spelling and case are preserved so callers can choose any desired
++    normalisation before invoking this small, deterministic utility.
++
++    Raises:
++        TypeError: If ``text`` is not a string.
++    """
++    if not isinstance(text, str):
++        raise TypeError("text must be a string")
++
++    return dict(Counter(text.split()))
+diff --git a/tests/__pycache__/test_words.cpython-314-pytest-9.1.1.pyc b/tests/__pycache__/test_words.cpython-314-pytest-9.1.1.pyc
+new file mode 100644
+index 0000000..b6bc88b
+Binary files /dev/null and b/tests/__pycache__/test_words.cpython-314-pytest-9.1.1.pyc differ
+diff --git a/tests/test_words.py b/tests/test_words.py
+index 0d8edf3..2b4c6ab 100644
+--- a/tests/test_words.py
++++ b/tests/test_words.py
+@@ -1,4 +1,19 @@
+ from app.words import count_words
+ 
++import pytest
++
++
+ def test_count_words():
+     assert count_words('a a b') == {'a': 2, 'b': 1}
++
++
++def test_count_words_uses_whitespace_delimited_tokens():
++    assert count_words('  hello\nhello\tworld  ') == {
++        'hello': 2,
++        'world': 1,
++    }
++
++
++def test_count_words_rejects_non_string_input():
++    with pytest.raises(TypeError, match='text must be a string'):
++        count_words(None)  # type: ignore[arg-type]

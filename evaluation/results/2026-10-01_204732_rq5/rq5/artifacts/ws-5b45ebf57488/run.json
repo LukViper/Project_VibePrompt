@@ -1,0 +1,217 @@
+{
+  "workspace_id": "ws-5b45ebf57488",
+  "task_id": "crud_notes",
+  "system_variant": "C_vibeprompt",
+  "dataset_version": "2.0.0",
+  "seed_commit": "f4a0510f1a33e82d622e613efede73f7f4a5bd07",
+  "start_time": "2026-10-01T20:57:14.707589+00:00",
+  "end_time": "2026-10-01T20:59:01.459819+00:00",
+  "exit_code": 0,
+  "duration_seconds": 106.75206011599948,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "vibeprompt_c_pipeline",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "extract_information",
+        "apply_analysis_to_state",
+        "ProjectState",
+        "grill_attacks",
+        "grill_resolution",
+        "compilation_gate",
+        "specification(_structured/_markdown)",
+        "render_prompt"
+      ],
+      "turns": [
+        {
+          "text": "Create an in-memory notes store.",
+          "intent": "PROJECT_DESCRIPTION",
+          "relationship": "UNRELATED",
+          "n_requirements_extracted": 0
+        },
+        {
+          "text": "create_note(text) returns an id.",
+          "intent": "PROJECT_DESCRIPTION",
+          "relationship": "UNRELATED",
+          "n_requirements_extracted": 0
+        },
+        {
+          "text": "list_notes() returns all notes.",
+          "intent": "PROJECT_DESCRIPTION",
+          "relationship": "UNRELATED",
+          "n_requirements_extracted": 0
+        },
+        {
+          "text": "Do not implement delete_note.",
+          "intent": "PROJECT_DESCRIPTION",
+          "relationship": "UNRELATED",
+          "n_requirements_extracted": 0
+        }
+      ],
+      "gate": {
+        "blocked": true,
+        "can_compile": false,
+        "reasons": [
+          "project objective is missing",
+          "no active requirements"
+        ],
+        "included_requirements": [],
+        "excluded_requirements": []
+      },
+      "compile_mode": "compilable_subset_with_gate_warnings",
+      "n_grill_attacks": 3,
+      "grill_resolved": [
+        {
+          "id": "ATTACK-001",
+          "resolution": "DEFERRED"
+        },
+        {
+          "id": "ATTACK-002",
+          "resolution": "DEFERRED"
+        }
+      ],
+      "n_active_requirements": 0,
+      "n_compilable_requirements": 0,
+      "excluded_non_compilable": [],
+      "assertion_origins": {}
+    },
+    "state_summary": {
+      "n_compilable": 0,
+      "gate": {
+        "blocked": true,
+        "can_compile": false,
+        "reasons": [
+          "project objective is missing",
+          "no active requirements"
+        ],
+        "included_requirements": [],
+        "excluded_requirements": []
+      },
+      "excluded": []
+    }
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-5b45ebf57488/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-5b45ebf57488/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-5b45ebf57488/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-5b45ebf57488/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-5b45ebf57488/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-5b45ebf57488/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-5b45ebf57488/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/workspaces/ws-5b45ebf57488"
+  },
+  "git": {
+    "commit_before": "f4a0510f1a33e82d622e613efede73f7f4a5bd07",
+    "seed_commit": "f4a0510f1a33e82d622e613efede73f7f4a5bd07",
+    "commit_after": "f4a0510f1a33e82d622e613efede73f7f4a5bd07",
+    "changed_files": [
+      "EADME.md",
+      "app/notes.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__main__.py",
+      "app/__pycache__/",
+      "app/api.py",
+      "tests/__pycache__/",
+      "tests/test_notes_unittest.py",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/__main__.cpython-314.pyc",
+      "app/__pycache__/api.cpython-314.pyc",
+      "app/__pycache__/notes.cpython-314.pyc",
+      "tests/__pycache__/test_notes.cpython-314.pyc",
+      "tests/__pycache__/test_notes_unittest.cpython-314.pyc"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__main__.py",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/__main__.cpython-314.pyc",
+      "app/__pycache__/api.cpython-314.pyc",
+      "app/__pycache__/notes.cpython-314.pyc",
+      "app/api.py",
+      "tests/__pycache__/test_notes.cpython-314.pyc",
+      "tests/__pycache__/test_notes_unittest.cpython-314.pyc",
+      "tests/test_notes_unittest.py"
+    ],
+    "status_preview": "M README.md\n M app/notes.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__main__.py\n?? app/__pycache__/\n?? app/api.py\n?? tests/__pycache__/\n?? tests/test_notes_unittest.py"
+  },
+  "agent_run": {
+    "id": "RUN-5373292f6e76",
+    "project_id": "crud_notes",
+    "prompt_id": null,
+    "agent": "openai",
+    "model": "gpt-5.6-terra",
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488",
+    "commit_before": "f4a0510f1a33e82d622e613efede73f7f4a5bd07",
+    "commit_after": "f4a0510f1a33e82d622e613efede73f7f4a5bd07",
+    "started_at": "2026-10-01T20:57:14.707589+00:00",
+    "completed_at": "2026-10-01T20:59:01.459819+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "Implemented the confirmed notes baseline.\n\n- Added validated, thread-safe `create_note` and `list_notes` in [app/notes.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/app/notes.py).\n- Added dependency-free HTTP API: `POST /notes`, `GET /notes` in [app/api.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/app/api.py).\n- Added runnable entry point: `python -m app`.\n- Added tests in [tests/test_notes_unittest.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/tests/test_notes_unittest.py)",
+    "workspace_id": "ws-5b45ebf57488",
+    "task_id": "crud_notes",
+    "system_variant": "C_vibeprompt",
+    "exit_code": 0,
+    "duration_seconds": 106.75206011599948,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-5b45ebf57488/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-5b45ebf57488/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-5b45ebf57488/git_diff.patch",
+    "label": "SCIENTIFIC",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-62cbbb38833b",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-5373292f6e76",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_create_and_list",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "create_note(text) returns an id",
+        "acceptance_test": "test_create_and_list"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:59:01.753118+00:00",
+      "verification_method": "acceptance_test_marker"
+    },
+    {
+      "id": "VER-52c179520c3a",
+      "requirement_id": "REQ-002",
+      "agent_run_id": "RUN-5373292f6e76",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "test_results": {
+        "requirement_text": "list_notes() returns created notes",
+        "acceptance_test": null
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:59:01.753148+00:00",
+      "verification_method": "inconclusive"
+    }
+  ],
+  "unsupported_features": [
+    "Do not implement delete_note"
+  ],
+  "constraint_violations": [
+    "constraint:in-memory possible network usage"
+  ],
+  "scope_violations": [
+    "Do not implement delete_note"
+  ],
+  "label": "SCIENTIFIC"
+}

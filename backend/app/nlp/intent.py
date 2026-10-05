@@ -91,6 +91,15 @@ _RULES: list[tuple[re.Pattern[str], str, float]] = [
         re.I,
     ), "CHANGE_SCOPE", 0.88),
     (re.compile(r"\b(remove|drop|delete|get rid of|scrap)\b", re.I), "REMOVE_REQUIREMENT", 0.92),
+    # Forbid / reject feature polarity — must outrank the generic "add" rule below.
+    (re.compile(
+        r"\b("
+        r"(?:do not|don't|never|must not|shall not)\s+"
+        r"(?:add|use|include|call|build|enable|install|introduce|support|rely on)|"
+        r"avoid\s+(?:using|adding|building|calling|including)"
+        r")\b",
+        re.I,
+    ), "REMOVE_REQUIREMENT", 0.94),
     (re.compile(r"\b(is it feasible|can we actually|is it possible|will it fit)\b", re.I), "ASK_FEASIBILITY", 0.9),
     (re.compile(r"\b(switch|replace|change).{0,40}\b(python|java|react|django|bert|postgres|postgresql|flutter|mysql)\b", re.I), "CHANGE_TECHNOLOGY", 0.9),
     (re.compile(r"\b(use|using|switch to|let's use)\b.{0,40}\b(python|java|bert|postgres|postgresql|react|flutter|mysql|mongodb|fastapi)\b", re.I), "CHANGE_TECHNOLOGY", 0.84),
@@ -168,13 +177,14 @@ class IntentClassifier:
             chosen = "CHANGE_TECHNOLOGY"
             confidence = rule_scores["CHANGE_TECHNOLOGY"]
             method = "rules"
-        if rule_scores["REMOVE_REQUIREMENT"] >= 0.9:
-            chosen = "REMOVE_REQUIREMENT"
-            confidence = rule_scores["REMOVE_REQUIREMENT"]
-            method = "rules"
         if rule_scores["ADD_REQUIREMENT"] >= 0.86:
             chosen = "ADD_REQUIREMENT"
             confidence = rule_scores["ADD_REQUIREMENT"]
+            method = "rules"
+        # Forbid/reject polarity outranks the generic "add" cue ("Do not add X").
+        if rule_scores["REMOVE_REQUIREMENT"] >= 0.9:
+            chosen = "REMOVE_REQUIREMENT"
+            confidence = rule_scores["REMOVE_REQUIREMENT"]
             method = "rules"
         for label in (
             "REQUEST_GRILL",

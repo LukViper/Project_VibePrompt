@@ -1,0 +1,8 @@
+Implemented [app/auth.py](/tmp/vibeprompt_rq5_sci_ydysgn96/ws-47b6452aadfa/app/auth.py).
+
+- `register()` stores in-memory users with salted PBKDF2 password hashes.
+- `login()` validates credentials and returns a fresh secure token string.
+- Duplicate/invalid registrations and invalid logins raise errors.
+- No database or DELETE-user endpoint was added.
+
+Verified with a standard-library smoke test. (`pytest` is not installed in this environment.)

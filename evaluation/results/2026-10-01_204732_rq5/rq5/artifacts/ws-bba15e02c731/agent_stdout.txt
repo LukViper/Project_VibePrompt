@@ -1,0 +1,5 @@
+Implemented `filter_rows` as a pure equality filter in [app/csv_filter.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-bba15e02c731/app/csv_filter.py:1).
+
+Added a non-mutation test in [tests/test_csv_filter.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-bba15e02c731/tests/test_csv_filter.py:8).
+
+Verified manually: matching rows are retained, non-matches are omitted, and input remains unchanged. (`pytest` is not installed.)

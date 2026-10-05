@@ -1,0 +1,10 @@
+{
+  "method": "direct_conversation",
+  "provenance": {
+    "pipeline": [
+      "conversation",
+      "direct_prompt"
+    ]
+  },
+  "state_summary": null
+}

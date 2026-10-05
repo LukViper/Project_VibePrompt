@@ -426,6 +426,9 @@ def respond_to_grill_attack(
             )
 
     state = set_stage(state, ConversationStage.GRILL)
+    from app.services.project_state import enforce_rejection_polarity
+
+    state = enforce_rejection_polarity(state)
     state = StateVersioning.bump(state, "grill_response")
     project.state = public_state(state)
     project.updated_at = utcnow()
@@ -449,14 +452,22 @@ def _create_proposed_requirement(
     reason: str,
 ) -> dict:
     from app.schemas.assertions import AssertionOrigin
-    from app.services.project_state import _next_code
+    from app.services.project_state import _next_code, _text_matches_avoid
 
+    cleaned = text.strip()
+    avoid = list((state.get("constraints") or {}).get("avoid") or [])
+    conflicts_avoid = _text_matches_avoid(cleaned, avoid)
+    # Invariant: avoid ∩ active positives = ∅. Conflicting grill proposals stay REJECTED.
+    status = "removed" if conflicts_avoid else "active"
+    assertion_status = (
+        AssertionStatus.REJECTED.value if conflicts_avoid else AssertionStatus.PROPOSED.value
+    )
     item = {
         "id": _next_code(state),
         "type": req_type,
-        "text": text.strip(),
-        "status": "active",
-        "assertion_status": AssertionStatus.PROPOSED.value,
+        "text": cleaned,
+        "status": status,
+        "assertion_status": assertion_status,
         "assertion_origin": AssertionOrigin.GRILL_DERIVED.value,
         "version": 1,
         "slot": None,
@@ -464,16 +475,18 @@ def _create_proposed_requirement(
         "domain": None,
         "actor": None,
         "acceptance": acceptance,
-        "capability": text.strip(),
+        "capability": cleaned,
         "origin": "grill_response",
         "provenance": make_provenance(
             ProvenanceSource.USER,
             reason=reason,
             user_approved=False,
         ),
-        "versions": [{"version": 1, "text": text.strip(), "status": "active"}],
+        "versions": [{"version": 1, "text": cleaned, "status": status}],
         "lineage": [],
     }
+    if conflicts_avoid:
+        item["removed_reason"] = "rejected_feature_polarity"
     state.setdefault("requirements", []).append(item)
     append_audit_event(
         state,

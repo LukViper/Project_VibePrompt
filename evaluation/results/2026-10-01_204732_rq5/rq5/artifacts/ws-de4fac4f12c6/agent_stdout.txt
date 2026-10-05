@@ -1,0 +1,13 @@
+Implemented the local log parser.
+
+- Parses timestamp, uppercase severity, and message.
+- Validates malformed and non-string inputs.
+- Added tests and setup documentation in [README.md](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-de4fac4f12c6/README.md).
+- Added Python cache ignores.
+
+Verification:
+
+- `python -m pytest -q` → **7 passed**
+- Direct import/run of `parse_log` succeeded.
+
+No API, database, or external log API was added because the supplied specification has no active requirement IDs or API/database requirements.

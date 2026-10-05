@@ -1,0 +1,376 @@
+diff --git a/README.md b/README.md
+index 38340ae..b74bda1 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,28 @@
+-# rest_echo_api
+-Implement app/echo_api.py
++# Redis-backed Python echo API
++
++## Requirements coverage
++
++| Requirement | Evidence |
++| --- | --- |
++| REQ-001 | `app.echo_api.health()` returns `{'status': 'ok'}`. |
++| REQ-002 | `echo()` reads/writes a deterministic Redis cache key. |
++| REQ-003 | `app.redis_store.RedisCache` is the sole persistence adapter and speaks Redis RESP. |
++| REQ-004 | The modular backend is implemented in Python. |
++
++## Run
++
++Start a Redis server separately, then configure it without committing secrets:
++
++```sh
++export REDIS_URL='redis://:password@127.0.0.1:6379/0' # password is optional
++python -c "from app.echo_api import health, echo; print(health()); print(echo({'message': 'hello'}))"
++```
++
++`REDIS_URL` defaults to `redis://127.0.0.1:6379/0`. No third-party Python
++packages are required.
++
++## Test
++
++```sh
++python -m pytest -q
++```
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..e2ab814
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,95 @@
++You are a senior software engineer.
++
++Build the following project completely.
++
++ROLE
++You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
++
++PROJECT
++Untitled project
++
++OBJECTIVE
++See the specification.
++
++PROBLEM
++See the specification.
++
++REQUIREMENTS
++Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
++
++FUNCTIONAL REQUIREMENTS
++REQ-001:
++Support a health() function returning {'status': 'ok'}
++  Acceptance: Given a typical input, the system Support a health() function returning {'status': 'ok'}.
++REQ-002:
++Redis caching
++  Acceptance: Given a typical input, the system Redis caching.
++
++NON-FUNCTIONAL REQUIREMENTS
++REQ-003:
++Use Redis as the database
++REQ-004:
++The backend must use Python
++
++CONSTRAINTS
++- Team size: None
++- Duration: None
++- Budget: None
++- Avoid: Do not add Redis, Do not call external APIs
++
++TECH STACK
++Backend: Python
++Model: unspecified
++Database: Redis
++Frameworks: unspecified
++Hardware: none
++
++ARCHITECTURE
++Use a modular monolith unless ProjectState specifies otherwise.
++
++DATABASE
++Use the database named in TECH STACK.
++
++API
++Implement an operation for every functional requirement.
++
++SECURITY
++Keep secrets in environment variables. Validate input. Do not expose credentials.
++
++TESTING
++Write a test mapped from each requirement ID. Run the tests.
++
++ACCEPTANCE CRITERIA
++[ ] REQ-001: Given a typical input, the system Support a health() function returning {'status': 'ok'}.
++[ ] REQ-002: Given a typical input, the system Redis caching.
++[ ] REQ-003 implemented
++[ ] REQ-004 implemented
++[ ] Tests pass
++[ ] Application runs successfully
++
++IMPLEMENTATION PROCESS
++1. Inspect the existing repository.
++2. Understand the requirements.
++3. Create the required architecture.
++4. Implement the components.
++5. Configure dependencies.
++6. Implement database, API, and frontend components.
++7. Write tests.
++8. Run tests.
++9. Fix implementation errors.
++10. Verify every acceptance criterion.
++11. Provide setup instructions.
++
++DELIVERABLES
++- Working implementation of every requirement ID
++- Tests
++- Setup instructions
++- A short note mapping each acceptance criterion to evidence
++
++Do not remove or silently alter required functionality.
++Do not replace required functionality with placeholders.
++
++
++# COMPILATION GATE NOTES
++- project objective is missing
++Implement only CONFIRMED requirements listed above.
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..9253d35
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-1fe7f67a735d","task_id":"rest_echo_api","variant":"C_vibeprompt","seed_commit":"061ec9498d56d5f8dfa916d9fc0a17459218dd51"}
+\ No newline at end of file
+diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc
+new file mode 100644
+index 0000000..6ba6e6b
+Binary files /dev/null and b/app/__pycache__/__init__.cpython-314.pyc differ
+diff --git a/app/__pycache__/echo_api.cpython-314.pyc b/app/__pycache__/echo_api.cpython-314.pyc
+new file mode 100644
+index 0000000..6fb4026
+Binary files /dev/null and b/app/__pycache__/echo_api.cpython-314.pyc differ
+diff --git a/app/__pycache__/redis_store.cpython-314.pyc b/app/__pycache__/redis_store.cpython-314.pyc
+new file mode 100644
+index 0000000..1dabfe2
+Binary files /dev/null and b/app/__pycache__/redis_store.cpython-314.pyc differ
+diff --git a/app/echo_api.py b/app/echo_api.py
+index a994947..8957c21 100644
+--- a/app/echo_api.py
++++ b/app/echo_api.py
+@@ -1,5 +1,50 @@
+-def echo(payload):
+-    raise NotImplementedError('implement echo')
++"""Application operations.
+ 
+-def health():
+-    raise NotImplementedError('implement health')
++The public functions are deliberately framework-agnostic so they can be used
++from a web route, a CLI, or directly by another Python application.
++"""
++
++from __future__ import annotations
++
++import hashlib
++import json
++from typing import Any, Mapping
++
++from .redis_store import Cache, RedisCache
++
++
++def _cache_key(payload: Mapping[str, Any]) -> str:
++    """Return a stable key without putting user data in a Redis key."""
++    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
++    return "echo:" + hashlib.sha256(encoded.encode("utf-8")).hexdigest()
++
++
++def echo(payload: Mapping[str, Any], cache: Cache | None = None) -> dict[str, Any]:
++    """Return a JSON-object payload, caching the response in Redis.
++
++    ``cache`` is injectable for tests.  When omitted, configuration is read
++    from environment variables by :class:`RedisCache`.
++    """
++    if not isinstance(payload, Mapping):
++        raise ValueError("payload must be a JSON object")
++
++    # Confirm it is safe to serialise before interacting with the database.
++    try:
++        normalized = json.loads(json.dumps(dict(payload), ensure_ascii=False))
++    except (TypeError, ValueError) as exc:
++        raise ValueError("payload must contain JSON-compatible values") from exc
++
++    active_cache = cache or RedisCache.from_environment()
++    key = _cache_key(normalized)
++    cached = active_cache.get(key)
++    if cached is not None:
++        return json.loads(cached)
++
++    result = normalized
++    active_cache.set(key, json.dumps(result, separators=(",", ":")))
++    return result
++
++
++def health() -> dict[str, str]:
++    """Return the liveness response required by REQ-001."""
++    return {"status": "ok"}
+diff --git a/app/redis_store.py b/app/redis_store.py
+new file mode 100644
+index 0000000..8cfc7e2
+--- /dev/null
++++ b/app/redis_store.py
+@@ -0,0 +1,100 @@
++"""Minimal Redis cache adapter using Redis' RESP protocol over a socket.
++
++Using the standard library keeps the project dependency-free while still
++using Redis as its only persistence/cache backend (REQ-003).
++"""
++
++from __future__ import annotations
++
++import os
++import socket
++from dataclasses import dataclass
++from typing import Protocol
++from urllib.parse import unquote, urlparse
++
++
++class Cache(Protocol):
++    def get(self, key: str) -> str | None: ...
++
++    def set(self, key: str, value: str) -> None: ...
++
++
++@dataclass(frozen=True)
++class RedisSettings:
++    host: str
++    port: int
++    password: str | None = None
++    database: int = 0
++    timeout_seconds: float = 2.0
++
++    @classmethod
++    def from_environment(cls) -> "RedisSettings":
++        """Read Redis configuration without ever logging its credentials."""
++        raw_url = os.getenv("REDIS_URL", "redis://127.0.0.1:6379/0")
++        parsed = urlparse(raw_url)
++        if parsed.scheme != "redis" or not parsed.hostname:
++            raise ValueError("REDIS_URL must be a redis:// URL")
++        try:
++            database = int(parsed.path.lstrip("/") or "0")
++            port = parsed.port or 6379
++        except ValueError as exc:
++            raise ValueError("REDIS_URL has an invalid port or database") from exc
++        if database < 0 or port < 1 or port > 65535:
++            raise ValueError("REDIS_URL has an invalid port or database")
++        return cls(parsed.hostname, port, unquote(parsed.password) if parsed.password else None, database)
++
++
++class RedisCache:
++    def __init__(self, settings: RedisSettings):
++        self.settings = settings
++
++    @classmethod
++    def from_environment(cls) -> "RedisCache":
++        return cls(RedisSettings.from_environment())
++
++    def get(self, key: str) -> str | None:
++        response = self._command("GET", key)
++        return None if response is None else str(response)
++
++    def set(self, key: str, value: str) -> None:
++        response = self._command("SET", key, value)
++        if response != "OK":
++            raise RuntimeError("Redis did not confirm cache write")
++
++    def _command(self, *parts: str) -> str | None:
++        with socket.create_connection((self.settings.host, self.settings.port), self.settings.timeout_seconds) as connection:
++            stream = connection.makefile("rwb")
++            if self.settings.password:
++                self._write(stream, "AUTH", self.settings.password)
++                self._read(stream)
++            if self.settings.database:
++                self._write(stream, "SELECT", str(self.settings.database))
++                self._read(stream)
++            self._write(stream, *parts)
++            return self._read(stream)
++
++    @staticmethod
++    def _write(stream: object, *parts: str) -> None:
++        command = [f"*{len(parts)}\r\n".encode()]
++        for part in parts:
++            value = part.encode("utf-8")
++            command.extend((f"${len(value)}\r\n".encode(), value, b"\r\n"))
++        stream.write(b"".join(command))  # type: ignore[attr-defined]
++        stream.flush()  # type: ignore[attr-defined]
++
++    @staticmethod
++    def _read(stream: object) -> str | None:
++        first = stream.read(1)  # type: ignore[attr-defined]
++        line = stream.readline().rstrip(b"\r\n")  # type: ignore[attr-defined]
++        if first == b"+":
++            return line.decode("utf-8")
++        if first == b"$":
++            length = int(line)
++            if length == -1:
++                return None
++            value = stream.read(length)  # type: ignore[attr-defined]
++            stream.read(2)  # type: ignore[attr-defined]
++            return value.decode("utf-8")
++        if first == b"-":
++            raise RuntimeError("Redis error")
++        raise RuntimeError("invalid Redis response")
+diff --git a/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc b/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc
+new file mode 100644
+index 0000000..a5d6dcb
+Binary files /dev/null and b/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc differ
+diff --git a/tests/test_echo_api.py b/tests/test_echo_api.py
+index 89d4bc4..0197058 100644
+--- a/tests/test_echo_api.py
++++ b/tests/test_echo_api.py
+@@ -1,7 +1,43 @@
++import pytest
++
+ from app.echo_api import echo, health
++from app.redis_store import RedisSettings
++
++
++class MemoryCache:
++    def __init__(self):
++        self.values = {}
++        self.get_calls = 0
++        self.set_calls = 0
++
++    def get(self, key):
++        self.get_calls += 1
++        return self.values.get(key)
++
++    def set(self, key, value):
++        self.set_calls += 1
++        self.values[key] = value
+ 
+-def test_echo_returns_payload():
+-    assert echo({'a': 1}) == {'a': 1}
++def test_echo_returns_payload_req_002():
++    cache = MemoryCache()
++    assert echo({'a': 1}, cache=cache) == {'a': 1}
++    assert cache.set_calls == 1
+ 
+-def test_health_ok():
++    assert echo({'a': 1}, cache=cache) == {'a': 1}
++    assert cache.get_calls == 2
++    assert cache.set_calls == 1
++
++def test_health_ok_req_001():
+     assert health()['status'] == 'ok'
++
++
++def test_redis_settings_are_environment_backed_req_003(monkeypatch):
++    monkeypatch.setenv("REDIS_URL", "redis://:secret@cache.example:6380/2")
++    settings = RedisSettings.from_environment()
++    assert (settings.host, settings.port, settings.database) == ("cache.example", 6380, 2)
++    assert settings.password == "secret"
++
++
++def test_echo_validates_input_req_004():
++    with pytest.raises(ValueError, match="JSON object"):
++        echo(["not", "an", "object"], cache=MemoryCache())

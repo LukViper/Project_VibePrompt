@@ -1,0 +1,14 @@
+You are a senior software engineer.
+
+REQUIREMENTS
+- shorten returns a code
+- resolve returns original url
+
+CONSTRAINTS
+- in-memory
+
+REJECTED / OUT OF SCOPE
+- Do not use an external shortening API
+
+ACCEPTANCE CRITERIA
+- roundtrip

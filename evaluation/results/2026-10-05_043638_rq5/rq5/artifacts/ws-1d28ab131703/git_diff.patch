@@ -1,0 +1,69 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..8670e3d
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,18 @@
++You are a senior software engineer.
++
++REQUIREMENTS
++- implement echo(payload) returning the same mapping
++- implement health() returning status ok
++
++CONSTRAINTS
++- python 3.11+
++- stdlib only
++- no network in tests
++
++REJECTED / OUT OF SCOPE
++- Do not add Redis
++- Do not call external APIs
++
++ACCEPTANCE CRITERIA
++- echo({'a': 1}) == {'a': 1}
++- health()['status'] == 'ok'
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..33f4374
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-1d28ab131703","task_id":"rest_echo_api","variant":"B_structured","seed_commit":"eaab086e04120a3091e8cb743181e17dfc11e616"}
+\ No newline at end of file
+diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc
+new file mode 100644
+index 0000000..ef403bd
+Binary files /dev/null and b/app/__pycache__/__init__.cpython-314.pyc differ
+diff --git a/app/__pycache__/echo_api.cpython-314.pyc b/app/__pycache__/echo_api.cpython-314.pyc
+new file mode 100644
+index 0000000..0a47ce2
+Binary files /dev/null and b/app/__pycache__/echo_api.cpython-314.pyc differ
+diff --git a/app/echo_api.py b/app/echo_api.py
+index a994947..6f322c0 100644
+--- a/app/echo_api.py
++++ b/app/echo_api.py
+@@ -1,5 +1,15 @@
+-def echo(payload):
+-    raise NotImplementedError('implement echo')
++from collections.abc import Mapping
++from typing import TypeVar
+ 
+-def health():
+-    raise NotImplementedError('implement health')
++
++MappingType = TypeVar("MappingType", bound=Mapping)
++
++
++def echo(payload: MappingType) -> MappingType:
++    """Return the supplied mapping unchanged."""
++    return payload
++
++
++def health() -> dict[str, str]:
++    """Report that the service is available."""
++    return {"status": "ok"}
+diff --git a/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc b/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc
+new file mode 100644
+index 0000000..fc253c8
+Binary files /dev/null and b/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc differ

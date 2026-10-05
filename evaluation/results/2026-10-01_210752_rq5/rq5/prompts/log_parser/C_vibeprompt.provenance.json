@@ -1,0 +1,76 @@
+{
+  "method": "vibeprompt_c_pipeline",
+  "provenance": {
+    "pipeline": [
+      "conversation",
+      "extract_information",
+      "apply_analysis_to_state",
+      "ProjectState",
+      "grill_attacks",
+      "grill_resolution",
+      "compilation_gate",
+      "specification(_structured/_markdown)",
+      "render_prompt"
+    ],
+    "turns": [
+      {
+        "text": "Parse lines like: '2024-01-01T00:00:00Z INFO boot'.",
+        "intent": "PROJECT_DESCRIPTION",
+        "relationship": "UNRELATED",
+        "n_requirements_extracted": 0
+      },
+      {
+        "text": "parse_log(line) returns dict with severity and timestamp.",
+        "intent": "PROJECT_DESCRIPTION",
+        "relationship": "UNRELATED",
+        "n_requirements_extracted": 0
+      },
+      {
+        "text": "Do not call an external log API.",
+        "intent": "PROJECT_DESCRIPTION",
+        "relationship": "UNRELATED",
+        "n_requirements_extracted": 0
+      }
+    ],
+    "gate": {
+      "blocked": true,
+      "can_compile": false,
+      "reasons": [
+        "project objective is missing",
+        "no active requirements"
+      ],
+      "included_requirements": [],
+      "excluded_requirements": []
+    },
+    "compile_mode": "compilable_subset_with_gate_warnings",
+    "n_grill_attacks": 3,
+    "grill_resolved": [
+      {
+        "id": "ATTACK-001",
+        "resolution": "DEFERRED"
+      },
+      {
+        "id": "ATTACK-002",
+        "resolution": "DEFERRED"
+      }
+    ],
+    "n_active_requirements": 0,
+    "n_compilable_requirements": 0,
+    "excluded_non_compilable": [],
+    "assertion_origins": {}
+  },
+  "state_summary": {
+    "n_compilable": 0,
+    "gate": {
+      "blocked": true,
+      "can_compile": false,
+      "reasons": [
+        "project objective is missing",
+        "no active requirements"
+      ],
+      "included_requirements": [],
+      "excluded_requirements": []
+    },
+    "excluded": []
+  }
+}

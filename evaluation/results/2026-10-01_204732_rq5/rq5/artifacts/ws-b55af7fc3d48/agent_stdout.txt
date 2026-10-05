@@ -1,0 +1,9 @@
+Completed the existing todo backend with input validation and completion support.
+
+- Tests: `python -m pytest -q` → **4 passed**
+- Syntax check: `python -m compileall -q app` → passed
+- Setup: requires Python and pytest; run `python -m pytest`
+
+Updated [todos.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-b55af7fc3d48/app/todos.py) and [tests](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-b55af7fc3d48/tests/test_todos.py); setup and requirement status are in [README.md](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-b55af7fc3d48/README.md).
+
+REQ-001 remains unimplemented because the same specification explicitly forbids adding multi-user authentication. Clarifying which instruction takes priority is required to mark that acceptance criterion complete.

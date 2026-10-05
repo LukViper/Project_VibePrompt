@@ -1,0 +1,8 @@
+Implemented and verified.
+
+- `health()` now returns `{"status": "ok"}` in [app/echo_api.py](/tmp/vibeprompt_rq5_sci_s8aj2vji/ws-daa5616605e2/app/echo_api.py).
+- Kept the starter `echo()` operation working.
+- Added REQ-001 traceability to its test in [tests/test_echo_api.py](/tmp/vibeprompt_rq5_sci_s8aj2vji/ws-daa5616605e2/tests/test_echo_api.py).
+- Added run/test instructions and requirement mapping in [README.md](/tmp/vibeprompt_rq5_sci_s8aj2vji/ws-daa5616605e2/README.md).
+
+Verification: `python -m pytest` passes: **2 passed**.

@@ -1,0 +1,1042 @@
+{
+  "n": 3,
+  "n_planned": 3,
+  "successful_runs": 3,
+  "failed_runs": 0,
+  "unverified_runs": 0,
+  "task_completion_rate": {
+    "n": 3,
+    "mean": 1.0,
+    "std": 0.0,
+    "ci95_low": 1.0,
+    "ci95_high": 1.0,
+    "median": 1.0,
+    "n_complete": 3
+  },
+  "execution_duration_seconds": {
+    "n": 3,
+    "mean": 32.15896832933337,
+    "std": 6.380932552667537,
+    "ci95_low": 24.93826340048501,
+    "ci95_high": 39.379673258181725,
+    "median": 28.868796673999896
+  },
+  "full_execution_grid": {
+    "label": "full_grid_includes_infrastructure_failures",
+    "n": 3,
+    "requirement_satisfaction_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "requirement_coverage": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "requirement_status_counts": {
+      "PASS": 6,
+      "FAIL": 0,
+      "INCONCLUSIVE": 0,
+      "UNVERIFIED": 0,
+      "NOT_APPLICABLE": 0,
+      "PARTIAL": 0,
+      "NOT_TESTED": 0,
+      "conclusive_denominator": 6
+    },
+    "constraint_preservation": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "acceptance_test_pass_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "build_success_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "test_success_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "unsupported_feature_rate": {
+      "n": 3,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "scope_deviation": {
+      "n": 3,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    }
+  },
+  "completed_agent_quality": {
+    "label": "excludes_FAILED_INFRASTRUCTURE",
+    "n": 3,
+    "requirement_satisfaction_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "requirement_coverage": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "requirement_status_counts": {
+      "PASS": 6,
+      "FAIL": 0,
+      "INCONCLUSIVE": 0,
+      "UNVERIFIED": 0,
+      "NOT_APPLICABLE": 0,
+      "PARTIAL": 0,
+      "NOT_TESTED": 0,
+      "conclusive_denominator": 6
+    },
+    "constraint_preservation": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "acceptance_test_pass_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "build_success_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "test_success_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "unsupported_feature_rate": {
+      "n": 3,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "scope_deviation": {
+      "n": 3,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    }
+  },
+  "overall": {
+    "label": "alias_of_completed_agent_quality",
+    "n": 3,
+    "requirement_satisfaction_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "requirement_coverage": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "requirement_status_counts": {
+      "PASS": 6,
+      "FAIL": 0,
+      "INCONCLUSIVE": 0,
+      "UNVERIFIED": 0,
+      "NOT_APPLICABLE": 0,
+      "PARTIAL": 0,
+      "NOT_TESTED": 0,
+      "conclusive_denominator": 6
+    },
+    "constraint_preservation": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "acceptance_test_pass_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "build_success_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "test_success_rate": {
+      "n": 3,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "unsupported_feature_rate": {
+      "n": 3,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "scope_deviation": {
+      "n": 3,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    }
+  },
+  "metric_definitions": {
+    "requirement_satisfaction_rate": "PASS / (PASS + FAIL) among requirements with conclusive verification; INCONCLUSIVE/UNVERIFIED/NOT_APPLICABLE excluded from denominator",
+    "requirement_coverage": "Legacy: PASS / all listed requirements including UNVERIFIED (deflates when evidence missing; retained for continuity)",
+    "task_completion_rate": "Fraction of runs with overall_outcome=TASK_COMPLETE (all conclusive requirements PASS and none inconclusive)",
+    "acceptance_test_pass_rate": "Per-run PASS / (PASS + FAIL) among conclusive verifications; runs with no conclusive assessments omitted (not scored as 0)",
+    "build_success_rate": "PASS builds / (PASS + FAIL builds); NOT_CONFIGURED excluded",
+    "test_success_rate": "PASS tests / (PASS + FAIL tests); NOT_CONFIGURED excluded"
+  },
+  "A_raw": {
+    "n_planned": 1,
+    "n_completed": 1,
+    "failed_runs": 0,
+    "task_completion_rate": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0,
+      "n_complete": 1
+    },
+    "execution_duration_seconds": {
+      "n": 1,
+      "mean": 28.868796673999896,
+      "std": 0.0,
+      "ci95_low": 28.868796673999896,
+      "ci95_high": 28.868796673999896,
+      "median": 28.868796673999896
+    },
+    "full_execution_grid": {
+      "label": "variant_full",
+      "n": 1,
+      "requirement_satisfaction_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "requirement_coverage": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "requirement_status_counts": {
+        "PASS": 2,
+        "FAIL": 0,
+        "INCONCLUSIVE": 0,
+        "UNVERIFIED": 0,
+        "NOT_APPLICABLE": 0,
+        "PARTIAL": 0,
+        "NOT_TESTED": 0,
+        "conclusive_denominator": 2
+      },
+      "constraint_preservation": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "acceptance_test_pass_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "build_success_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "test_success_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "unsupported_feature_rate": {
+        "n": 1,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "scope_deviation": {
+        "n": 1,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      }
+    },
+    "completed_agent_quality": {
+      "label": "variant_quality",
+      "n": 1,
+      "requirement_satisfaction_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "requirement_coverage": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "requirement_status_counts": {
+        "PASS": 2,
+        "FAIL": 0,
+        "INCONCLUSIVE": 0,
+        "UNVERIFIED": 0,
+        "NOT_APPLICABLE": 0,
+        "PARTIAL": 0,
+        "NOT_TESTED": 0,
+        "conclusive_denominator": 2
+      },
+      "constraint_preservation": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "acceptance_test_pass_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "build_success_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "test_success_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "unsupported_feature_rate": {
+        "n": 1,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "scope_deviation": {
+        "n": 1,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      }
+    },
+    "requirement_satisfaction_rate": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "requirement_coverage": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "requirement_status_counts": {
+      "PASS": 2,
+      "FAIL": 0,
+      "INCONCLUSIVE": 0,
+      "UNVERIFIED": 0,
+      "NOT_APPLICABLE": 0,
+      "PARTIAL": 0,
+      "NOT_TESTED": 0,
+      "conclusive_denominator": 2
+    },
+    "constraint_preservation": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "acceptance_test_pass_rate": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "build_success_rate": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "test_success_rate": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "unsupported_feature_rate": {
+      "n": 1,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "scope_deviation": {
+      "n": 1,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    }
+  },
+  "B_structured": {
+    "n_planned": 1,
+    "n_completed": 1,
+    "failed_runs": 0,
+    "task_completion_rate": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0,
+      "n_complete": 1
+    },
+    "execution_duration_seconds": {
+      "n": 1,
+      "mean": 26.52699924300032,
+      "std": 0.0,
+      "ci95_low": 26.52699924300032,
+      "ci95_high": 26.52699924300032,
+      "median": 26.52699924300032
+    },
+    "full_execution_grid": {
+      "label": "variant_full",
+      "n": 1,
+      "requirement_satisfaction_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "requirement_coverage": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "requirement_status_counts": {
+        "PASS": 2,
+        "FAIL": 0,
+        "INCONCLUSIVE": 0,
+        "UNVERIFIED": 0,
+        "NOT_APPLICABLE": 0,
+        "PARTIAL": 0,
+        "NOT_TESTED": 0,
+        "conclusive_denominator": 2
+      },
+      "constraint_preservation": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "acceptance_test_pass_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "build_success_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "test_success_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "unsupported_feature_rate": {
+        "n": 1,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "scope_deviation": {
+        "n": 1,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      }
+    },
+    "completed_agent_quality": {
+      "label": "variant_quality",
+      "n": 1,
+      "requirement_satisfaction_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "requirement_coverage": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "requirement_status_counts": {
+        "PASS": 2,
+        "FAIL": 0,
+        "INCONCLUSIVE": 0,
+        "UNVERIFIED": 0,
+        "NOT_APPLICABLE": 0,
+        "PARTIAL": 0,
+        "NOT_TESTED": 0,
+        "conclusive_denominator": 2
+      },
+      "constraint_preservation": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "acceptance_test_pass_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "build_success_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "test_success_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "unsupported_feature_rate": {
+        "n": 1,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "scope_deviation": {
+        "n": 1,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      }
+    },
+    "requirement_satisfaction_rate": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "requirement_coverage": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "requirement_status_counts": {
+      "PASS": 2,
+      "FAIL": 0,
+      "INCONCLUSIVE": 0,
+      "UNVERIFIED": 0,
+      "NOT_APPLICABLE": 0,
+      "PARTIAL": 0,
+      "NOT_TESTED": 0,
+      "conclusive_denominator": 2
+    },
+    "constraint_preservation": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "acceptance_test_pass_rate": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "build_success_rate": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "test_success_rate": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "unsupported_feature_rate": {
+      "n": 1,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "scope_deviation": {
+      "n": 1,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    }
+  },
+  "C_vibeprompt": {
+    "n_planned": 1,
+    "n_completed": 1,
+    "failed_runs": 0,
+    "task_completion_rate": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0,
+      "n_complete": 1
+    },
+    "execution_duration_seconds": {
+      "n": 1,
+      "mean": 41.0811090709999,
+      "std": 0.0,
+      "ci95_low": 41.0811090709999,
+      "ci95_high": 41.0811090709999,
+      "median": 41.0811090709999
+    },
+    "full_execution_grid": {
+      "label": "variant_full",
+      "n": 1,
+      "requirement_satisfaction_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "requirement_coverage": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "requirement_status_counts": {
+        "PASS": 2,
+        "FAIL": 0,
+        "INCONCLUSIVE": 0,
+        "UNVERIFIED": 0,
+        "NOT_APPLICABLE": 0,
+        "PARTIAL": 0,
+        "NOT_TESTED": 0,
+        "conclusive_denominator": 2
+      },
+      "constraint_preservation": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "acceptance_test_pass_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "build_success_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "test_success_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "unsupported_feature_rate": {
+        "n": 1,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "scope_deviation": {
+        "n": 1,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      }
+    },
+    "completed_agent_quality": {
+      "label": "variant_quality",
+      "n": 1,
+      "requirement_satisfaction_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "requirement_coverage": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "requirement_status_counts": {
+        "PASS": 2,
+        "FAIL": 0,
+        "INCONCLUSIVE": 0,
+        "UNVERIFIED": 0,
+        "NOT_APPLICABLE": 0,
+        "PARTIAL": 0,
+        "NOT_TESTED": 0,
+        "conclusive_denominator": 2
+      },
+      "constraint_preservation": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "acceptance_test_pass_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "build_success_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "test_success_rate": {
+        "n": 1,
+        "mean": 1.0,
+        "std": 0.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "median": 1.0
+      },
+      "unsupported_feature_rate": {
+        "n": 1,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      },
+      "scope_deviation": {
+        "n": 1,
+        "mean": 0.0,
+        "std": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "median": 0.0
+      }
+    },
+    "requirement_satisfaction_rate": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "requirement_coverage": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "requirement_status_counts": {
+      "PASS": 2,
+      "FAIL": 0,
+      "INCONCLUSIVE": 0,
+      "UNVERIFIED": 0,
+      "NOT_APPLICABLE": 0,
+      "PARTIAL": 0,
+      "NOT_TESTED": 0,
+      "conclusive_denominator": 2
+    },
+    "constraint_preservation": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "acceptance_test_pass_rate": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "build_success_rate": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "test_success_rate": {
+      "n": 1,
+      "mean": 1.0,
+      "std": 0.0,
+      "ci95_low": 1.0,
+      "ci95_high": 1.0,
+      "median": 1.0
+    },
+    "unsupported_feature_rate": {
+      "n": 1,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    },
+    "scope_deviation": {
+      "n": 1,
+      "mean": 0.0,
+      "std": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0,
+      "median": 0.0
+    }
+  },
+  "dataset_hash": "sha256:3ef5210642376aab1e86b53660a130b92e76a938885e58ec6d638169ba8bfc87",
+  "run_subset": {
+    "selection_mode": "PILOT_SUBSET",
+    "filter_task_id": "rest_echo_api",
+    "filter_variant": null,
+    "selected_task_ids": [
+      "rest_echo_api"
+    ],
+    "selected_variants": [
+      "A_raw",
+      "B_structured",
+      "C_vibeprompt"
+    ],
+    "n_tasks_selected": 1,
+    "n_variants_selected": 3,
+    "n_runs_planned": 3,
+    "n_runs_full_grid": 36,
+    "is_full_scientific_grid": false,
+    "note": "Pilot subset — not the full 36-run scientific grid."
+  }
+}

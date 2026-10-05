@@ -1,0 +1,18 @@
+You are a senior software engineer.
+
+REQUIREMENTS
+- implement echo(payload) returning the same mapping
+- implement health() returning status ok
+
+CONSTRAINTS
+- python 3.11+
+- stdlib only
+- no network in tests
+
+REJECTED / OUT OF SCOPE
+- Do not add Redis
+- Do not call external APIs
+
+ACCEPTANCE CRITERIA
+- echo({'a': 1}) == {'a': 1}
+- health()['status'] == 'ok'

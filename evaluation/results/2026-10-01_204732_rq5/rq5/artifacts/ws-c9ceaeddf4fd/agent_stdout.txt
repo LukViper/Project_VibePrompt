@@ -1,0 +1,8 @@
+Implemented the in-memory auth helper in [app/auth.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-c9ceaeddf4fd/app/auth.py).
+
+- `register()` stores salted, PBKDF2-hashed passwords.
+- `login()` verifies credentials and returns a secure random token string.
+- Invalid credentials and duplicate registrations raise clear exceptions.
+- No database or delete-user endpoint added.
+
+Verified with compilation and equivalent runtime assertions. `pytest` is not installed in this environment.

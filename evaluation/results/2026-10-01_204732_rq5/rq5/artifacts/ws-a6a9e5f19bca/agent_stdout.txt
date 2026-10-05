@@ -1,0 +1,7 @@
+Implemented the in-memory note store in [app/notes.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-a6a9e5f19bca/app/notes.py).
+
+- `create_note(text)` creates a UUID-backed note and returns its ID.
+- `list_notes()` returns all created notes.
+- No Redis or delete operation added.
+
+Verified with `python -m pytest -q`: 1 test passed.

@@ -1,0 +1,327 @@
+diff --git a/README.md b/README.md
+index 573288f..08ea1ff 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,40 @@
+-# crud_notes
++# Notes API
++
++This project implements the confirmed starter behavior: create and list
++in-memory notes.  There are intentionally no delete routes or functions, and
++it has no Redis dependency.
++
++## Run
++
++Requires Python 3.11 or later. No third-party packages are needed.
++
++```bash
++python -m app
++```
++
++The server listens on `http://127.0.0.1:8000`.
++
++```bash
++curl -X POST http://127.0.0.1:8000/notes \\
++  -H 'Content-Type: application/json' \\
++  -d '{"text":"Study chapter 1"}'
++curl http://127.0.0.1:8000/notes
++```
++
++`POST /notes` accepts `{"text": "..."}` and returns `201`; `GET /notes`
++returns all notes. Text is trimmed and must contain 1 to 10,000 characters.
++
++## Test
++
++```bash
++python -m unittest discover -s tests -p 'test_*.py' -v
++```
++
++The repository's original pytest-style smoke test is retained. The unittest
++suite covers the same confirmed create/list behavior and validation without
++requiring external dependencies.
++
++## Acceptance evidence
++
++- Tests pass: `python -m unittest discover -s tests -p 'test_*.py' -v`.
++- Application runs: `python -m app`, then use the `curl` commands above.
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..0447d0a
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,84 @@
++You are a senior software engineer.
++
++Build the following project completely.
++
++ROLE
++You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
++
++PROJECT
++Untitled project
++
++OBJECTIVE
++See the specification.
++
++PROBLEM
++See the specification.
++
++REQUIREMENTS
++Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
++
++FUNCTIONAL REQUIREMENTS
++- None recorded.
++
++NON-FUNCTIONAL REQUIREMENTS
++- None recorded.
++
++CONSTRAINTS
++- Team size: None
++- Duration: None
++- Budget: None
++- Avoid: Do not implement delete_note, Do not use Redis
++
++TECH STACK
++Backend: unspecified
++Model: unspecified
++Database: unspecified
++Frameworks: unspecified
++Hardware: none
++
++ARCHITECTURE
++Use a modular monolith unless ProjectState specifies otherwise.
++
++DATABASE
++Use the database named in TECH STACK.
++
++API
++Implement an operation for every functional requirement.
++
++SECURITY
++Keep secrets in environment variables. Validate input. Do not expose credentials.
++
++TESTING
++Write a test mapped from each requirement ID. Run the tests.
++
++ACCEPTANCE CRITERIA
++[ ] Tests pass
++[ ] Application runs successfully
++
++IMPLEMENTATION PROCESS
++1. Inspect the existing repository.
++2. Understand the requirements.
++3. Create the required architecture.
++4. Implement the components.
++5. Configure dependencies.
++6. Implement database, API, and frontend components.
++7. Write tests.
++8. Run tests.
++9. Fix implementation errors.
++10. Verify every acceptance criterion.
++11. Provide setup instructions.
++
++DELIVERABLES
++- Working implementation of every requirement ID
++- Tests
++- Setup instructions
++- A short note mapping each acceptance criterion to evidence
++
++Do not remove or silently alter required functionality.
++Do not replace required functionality with placeholders.
++
++
++# COMPILATION GATE NOTES
++- project objective is missing
++- no active requirements
++Implement only CONFIRMED requirements listed above.
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..e42f88b
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-5b45ebf57488","task_id":"crud_notes","variant":"C_vibeprompt","seed_commit":"f4a0510f1a33e82d622e613efede73f7f4a5bd07"}
+\ No newline at end of file
+diff --git a/app/__main__.py b/app/__main__.py
+new file mode 100644
+index 0000000..329c651
+--- /dev/null
++++ b/app/__main__.py
+@@ -0,0 +1,7 @@
++"""Run the notes application with ``python -m app``."""
++
++from .api import serve
++
++
++if __name__ == "__main__":
++    serve()
+diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc
+new file mode 100644
+index 0000000..8b884f9
+Binary files /dev/null and b/app/__pycache__/__init__.cpython-314.pyc differ
+diff --git a/app/__pycache__/__main__.cpython-314.pyc b/app/__pycache__/__main__.cpython-314.pyc
+new file mode 100644
+index 0000000..dd35c41
+Binary files /dev/null and b/app/__pycache__/__main__.cpython-314.pyc differ
+diff --git a/app/__pycache__/api.cpython-314.pyc b/app/__pycache__/api.cpython-314.pyc
+new file mode 100644
+index 0000000..ac2020b
+Binary files /dev/null and b/app/__pycache__/api.cpython-314.pyc differ
+diff --git a/app/__pycache__/notes.cpython-314.pyc b/app/__pycache__/notes.cpython-314.pyc
+new file mode 100644
+index 0000000..7d7d1ab
+Binary files /dev/null and b/app/__pycache__/notes.cpython-314.pyc differ
+diff --git a/app/api.py b/app/api.py
+new file mode 100644
+index 0000000..1a29476
+--- /dev/null
++++ b/app/api.py
+@@ -0,0 +1,54 @@
++"""Small dependency-free HTTP interface for the notes service."""
++
++from __future__ import annotations
++
++import json
++from http import HTTPStatus
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++
++from .notes import create_note, list_notes
++
++
++class NotesHandler(BaseHTTPRequestHandler):
++    """Serve the explicitly supported note creation and listing routes."""
++
++    def do_GET(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        self._send_json(HTTPStatus.OK, {"notes": list_notes()})
++
++    def do_POST(self) -> None:  # noqa: N802 - required by BaseHTTPRequestHandler
++        if self.path != "/notes":
++            self._send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
++            return
++        try:
++            content_length = int(self.headers.get("Content-Length", "0"))
++            if content_length > 10_100:
++                raise ValueError("request body is too large")
++            payload = json.loads(self.rfile.read(content_length))
++            if not isinstance(payload, dict):
++                raise ValueError("body must be a JSON object")
++            note_id = create_note(payload.get("text"))
++        except (UnicodeDecodeError, json.JSONDecodeError, ValueError) as error:
++            self._send_json(HTTPStatus.BAD_REQUEST, {"error": str(error)})
++            return
++        self._send_json(HTTPStatus.CREATED, {"id": note_id})
++
++    def _send_json(self, status: HTTPStatus, payload: dict[str, object]) -> None:
++        body = json.dumps(payload).encode("utf-8")
++        self.send_response(status)
++        self.send_header("Content-Type", "application/json; charset=utf-8")
++        self.send_header("Content-Length", str(len(body)))
++        self.end_headers()
++        self.wfile.write(body)
++
++    def log_message(self, format: str, *args: object) -> None:
++        """Suppress access logs; callers can provide process-level logging."""
++
++
++def serve(host: str = "127.0.0.1", port: int = 8000) -> None:
++    """Run the local development server until interrupted."""
++    server = ThreadingHTTPServer((host, port), NotesHandler)
++    print(f"Notes API listening on http://{host}:{port}")
++    server.serve_forever()
+diff --git a/app/notes.py b/app/notes.py
+index beea953..36cea2d 100644
+--- a/app/notes.py
++++ b/app/notes.py
+@@ -1,7 +1,42 @@
+-NOTES = {}
++"""In-memory note service.
+ 
+-def create_note(text):
+-    raise NotImplementedError
++The module deliberately exposes no delete operation: deletion is outside the
++validated project scope.
++"""
+ 
+-def list_notes():
+-    raise NotImplementedError
++from __future__ import annotations
++
++from itertools import count
++from threading import Lock
++
++
++NOTES: dict[int, dict[str, object]] = {}
++_NEXT_ID = count(1)
++_LOCK = Lock()
++
++
++def create_note(text: str) -> int:
++    """Create a note and return its identifier.
++
++    Note text must be a non-empty string after trimming whitespace.  The stored
++    value is trimmed so callers get predictable data when listing notes.
++    """
++    if not isinstance(text, str):
++        raise ValueError("text must be a string")
++
++    normalized_text = text.strip()
++    if not normalized_text:
++        raise ValueError("text must not be empty")
++    if len(normalized_text) > 10_000:
++        raise ValueError("text must be 10,000 characters or fewer")
++
++    with _LOCK:
++        note_id = next(_NEXT_ID)
++        NOTES[note_id] = {"id": note_id, "text": normalized_text}
++    return note_id
++
++
++def list_notes() -> list[dict[str, object]]:
++    """Return copies of all notes in creation order."""
++    with _LOCK:
++        return [note.copy() for note in NOTES.values()]
+diff --git a/tests/__pycache__/test_notes.cpython-314.pyc b/tests/__pycache__/test_notes.cpython-314.pyc
+new file mode 100644
+index 0000000..6ba0be1
+Binary files /dev/null and b/tests/__pycache__/test_notes.cpython-314.pyc differ
+diff --git a/tests/__pycache__/test_notes_unittest.cpython-314.pyc b/tests/__pycache__/test_notes_unittest.cpython-314.pyc
+new file mode 100644
+index 0000000..0857557
+Binary files /dev/null and b/tests/__pycache__/test_notes_unittest.cpython-314.pyc differ
+diff --git a/tests/test_notes_unittest.py b/tests/test_notes_unittest.py
+new file mode 100644
+index 0000000..410d09e
+--- /dev/null
++++ b/tests/test_notes_unittest.py
+@@ -0,0 +1,28 @@
++"""Regression tests for the confirmed scaffold behavior."""
++
++import unittest
++
++from app import notes
++
++
++class NotesServiceTests(unittest.TestCase):
++    def setUp(self) -> None:
++        notes.NOTES.clear()
++
++    def test_create_and_list_note(self) -> None:
++        note_id = notes.create_note("hello")
++
++        self.assertEqual(notes.list_notes(), [{"id": note_id, "text": "hello"}])
++
++    def test_create_note_rejects_invalid_text(self) -> None:
++        for value in ("", "   ", None, 5):
++            with self.subTest(value=value):
++                with self.assertRaises(ValueError):
++                    notes.create_note(value)  # type: ignore[arg-type]
++
++    def test_list_returns_copies(self) -> None:
++        notes.create_note("private")
++        listed = notes.list_notes()
++        listed[0]["text"] = "changed"
++
++        self.assertEqual(notes.list_notes()[0]["text"], "private")

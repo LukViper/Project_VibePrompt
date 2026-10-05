@@ -1,0 +1,55 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..ca76710
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,14 @@
++You are a senior software engineer.
++
++REQUIREMENTS
++- parse_log extracts severity
++- parse_log extracts timestamp
++
++CONSTRAINTS
++- stdlib only
++
++REJECTED / OUT OF SCOPE
++- Do not call an external log API
++
++ACCEPTANCE CRITERIA
++- parses sample line
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..0c71d6d
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-71f436778ec4","task_id":"log_parser","variant":"B_structured","seed_commit":"7153e8543f77d9f0f410994936ef7543203fb927"}
+\ No newline at end of file
+diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc
+new file mode 100644
+index 0000000..b9218a9
+Binary files /dev/null and b/app/__pycache__/__init__.cpython-314.pyc differ
+diff --git a/app/__pycache__/parser.cpython-314.pyc b/app/__pycache__/parser.cpython-314.pyc
+new file mode 100644
+index 0000000..233e52e
+Binary files /dev/null and b/app/__pycache__/parser.cpython-314.pyc differ
+diff --git a/app/parser.py b/app/parser.py
+index ad6c3c0..3a41d3b 100644
+--- a/app/parser.py
++++ b/app/parser.py
+@@ -1,2 +1,8 @@
+ def parse_log(line):
+-    raise NotImplementedError
++    """Extract the timestamp and severity fields from a log line.
++
++    Log entries begin with whitespace-separated timestamp and severity fields;
++    anything after those fields is the message and is not needed by this parser.
++    """
++    timestamp, severity, *_ = line.split(maxsplit=2)
++    return {"timestamp": timestamp, "severity": severity}
+diff --git a/tests/__pycache__/test_parser.cpython-314-pytest-9.1.1.pyc b/tests/__pycache__/test_parser.cpython-314-pytest-9.1.1.pyc
+new file mode 100644
+index 0000000..1b669e1
+Binary files /dev/null and b/tests/__pycache__/test_parser.cpython-314-pytest-9.1.1.pyc differ

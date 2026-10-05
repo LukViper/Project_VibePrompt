@@ -1,0 +1,7 @@
+You are a senior software engineer.
+
+I need a simple echo API helper in Python.
+Implement echo(payload) that returns the same dict.
+Must support a health() function returning {'status': 'ok'}.
+Do not add Redis caching.
+Use only the Python standard library.

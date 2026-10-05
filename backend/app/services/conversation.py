@@ -458,6 +458,18 @@ def _maybe_accept_decision(session, project, text: str) -> dict | None:
                 "vue": "Vue",
             }
             canonical = canonical_map.get(name, name)
+            from app.services.project_state import _text_matches_avoid, enforce_rejection_polarity
+
+            avoid = list((state.get("constraints") or {}).get("avoid") or [])
+            if _text_matches_avoid(canonical, avoid):
+                return {
+                    "response": (
+                        f"{canonical} is on your avoid list, so I won't activate it. "
+                        "Remove that rejection first if you want to use it."
+                    ),
+                    "state": public_state(state),
+                    "skip_llm": True,
+                }
             decision = propose_decision(
                 kind="technology",
                 summary=f"Use {canonical}",
@@ -473,6 +485,7 @@ def _maybe_accept_decision(session, project, text: str) -> dict | None:
             supersede_slot(state, slot, new_decision_id=decision["id"])
             append_decision(state, decision)
             apply_active_decision_to_state(state, decision)
+            state = enforce_rejection_polarity(state)
             state = refresh_readiness(state)
             state = StateVersioning.bump(state, "nl_technology_confirm")
             project.state = public_state(state)

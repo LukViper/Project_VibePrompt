@@ -1,0 +1,30 @@
+{
+  "selection_mode": "FULL_SCIENTIFIC",
+  "filter_task_id": null,
+  "filter_variant": null,
+  "selected_task_ids": [
+    "rest_echo_api",
+    "auth_token_service",
+    "crud_notes",
+    "log_parser",
+    "csv_filter_cli",
+    "word_count_pipeline",
+    "todo_backend",
+    "url_shortener",
+    "rate_limiter",
+    "file_checksum",
+    "json_schema_validator",
+    "metrics_aggregator"
+  ],
+  "selected_variants": [
+    "A_raw",
+    "B_structured",
+    "C_vibeprompt"
+  ],
+  "n_tasks_selected": 12,
+  "n_variants_selected": 3,
+  "n_runs_planned": 36,
+  "n_runs_full_grid": 36,
+  "is_full_scientific_grid": true,
+  "note": "Full scientific grid (all tasks \u00d7 all variants)."
+}

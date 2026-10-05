@@ -1,0 +1,115 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..39e4f75
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,17 @@
++You are a senior software engineer.
++
++REQUIREMENTS
++- register(username, password) stores the user
++- login(username, password) returns a token on success
++
++CONSTRAINTS
++- in-memory only
++- python 3.11+
++
++REJECTED / OUT OF SCOPE
++- Do not expose a DELETE user endpoint
++- Do not use an external database
++
++ACCEPTANCE CRITERIA
++- register then login returns a non-empty token
++- login with wrong password fails
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..76ca8fa
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-74c330bf66ae","task_id":"auth_token_service","variant":"B_structured","seed_commit":"1dfdf5c6837b40c706a23c14a2a68866e25744e6"}
+\ No newline at end of file
+diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc
+new file mode 100644
+index 0000000..6bdbbf7
+Binary files /dev/null and b/app/__pycache__/__init__.cpython-314.pyc differ
+diff --git a/app/__pycache__/auth.cpython-314.pyc b/app/__pycache__/auth.cpython-314.pyc
+new file mode 100644
+index 0000000..b62d191
+Binary files /dev/null and b/app/__pycache__/auth.cpython-314.pyc differ
+diff --git a/app/auth.py b/app/auth.py
+index 53030ec..aa84157 100644
+--- a/app/auth.py
++++ b/app/auth.py
+@@ -1,7 +1,61 @@
+-USERS = {}
++"""A deliberately small, in-memory authentication store.
+ 
+-def register(username, password):
+-    raise NotImplementedError
++The store is process-local: restarting the Python process clears all users.
++"""
+ 
+-def login(username, password):
+-    raise NotImplementedError
++from __future__ import annotations
++
++import hashlib
++import hmac
++import secrets
++
++
++# Kept public so an embedding application (and tests) can reset the in-memory
++# store.  Passwords are never stored in plaintext.
++USERS: dict[str, tuple[bytes, bytes]] = {}
++_HASH_ITERATIONS = 600_000
++
++
++def _validate_credentials(username: str, password: str) -> None:
++    if not isinstance(username, str) or not username:
++        raise ValueError("username must be a non-empty string")
++    if not isinstance(password, str) or not password:
++        raise ValueError("password must be a non-empty string")
++
++
++def _hash_password(password: str, salt: bytes) -> bytes:
++    return hashlib.pbkdf2_hmac(
++        "sha256", password.encode("utf-8"), salt, _HASH_ITERATIONS
++    )
++
++
++def register(username: str, password: str) -> None:
++    """Create an in-memory user.
++
++    Raises ``ValueError`` for invalid credentials or an already registered
++    username.
++    """
++    _validate_credentials(username, password)
++    if username in USERS:
++        raise ValueError("username is already registered")
++
++    salt = secrets.token_bytes(16)
++    USERS[username] = (salt, _hash_password(password, salt))
++
++
++def login(username: str, password: str) -> str:
++    """Authenticate a user and return a new opaque, non-empty token.
++
++    Raises ``ValueError`` when the credentials do not authenticate.
++    """
++    _validate_credentials(username, password)
++    stored_credentials = USERS.get(username)
++    if stored_credentials is None:
++        raise ValueError("invalid username or password")
++
++    salt, expected_hash = stored_credentials
++    provided_hash = _hash_password(password, salt)
++    if not hmac.compare_digest(provided_hash, expected_hash):
++        raise ValueError("invalid username or password")
++
++    return secrets.token_urlsafe(32)
+diff --git a/tests/__pycache__/test_auth.cpython-314-pytest-9.1.1.pyc b/tests/__pycache__/test_auth.cpython-314-pytest-9.1.1.pyc
+new file mode 100644
+index 0000000..11549b6
+Binary files /dev/null and b/tests/__pycache__/test_auth.cpython-314-pytest-9.1.1.pyc differ

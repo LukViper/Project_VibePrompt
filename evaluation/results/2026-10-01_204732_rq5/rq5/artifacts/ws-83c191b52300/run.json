@@ -1,0 +1,123 @@
+{
+  "workspace_id": "ws-83c191b52300",
+  "task_id": "url_shortener",
+  "system_variant": "A_raw",
+  "dataset_version": "2.0.0",
+  "seed_commit": "44558e5048c6c9b72cd449a5ade4b405e4f5b92f",
+  "start_time": "2026-10-01T21:06:35.004166+00:00",
+  "end_time": "2026-10-01T21:07:25.372093+00:00",
+  "exit_code": 0,
+  "duration_seconds": 50.367752226997254,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "direct_conversation",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "direct_prompt"
+      ]
+    },
+    "state_summary": null
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-83c191b52300/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-83c191b52300/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-83c191b52300/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-83c191b52300/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-83c191b52300/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-83c191b52300/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-83c191b52300/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/workspaces/ws-83c191b52300"
+  },
+  "git": {
+    "commit_before": "44558e5048c6c9b72cd449a5ade4b405e4f5b92f",
+    "seed_commit": "44558e5048c6c9b72cd449a5ade4b405e4f5b92f",
+    "commit_after": "44558e5048c6c9b72cd449a5ade4b405e4f5b92f",
+    "changed_files": [
+      "pp/shortener.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/shortener.cpython-314.pyc"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/shortener.cpython-314.pyc"
+    ],
+    "status_preview": "M app/shortener.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__pycache__/"
+  },
+  "agent_run": {
+    "id": "RUN-52e57a2b5a8f",
+    "project_id": "url_shortener",
+    "prompt_id": null,
+    "agent": "openai",
+    "model": "gpt-5.6-terra",
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_sci__6kbje8d/ws-83c191b52300",
+    "commit_before": "44558e5048c6c9b72cd449a5ade4b405e4f5b92f",
+    "commit_after": "44558e5048c6c9b72cd449a5ade4b405e4f5b92f",
+    "started_at": "2026-10-01T21:06:35.004166+00:00",
+    "completed_at": "2026-10-01T21:07:25.372093+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "Implemented the local URL shortener in [app/shortener.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-83c191b52300/app/shortener.py).\n\n- Generates unique compact base-62 codes locally.\n- `resolve(code)` returns the original URL or `None` if unknown.\n- Reusing a URL returns its existing code.\n- No external API used.\n- Direct behavior verification passed. (`pytest` is not installed in this environment.)\n",
+    "workspace_id": "ws-83c191b52300",
+    "task_id": "url_shortener",
+    "system_variant": "A_raw",
+    "exit_code": 0,
+    "duration_seconds": 50.367752226997254,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-83c191b52300/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-83c191b52300/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-83c191b52300/git_diff.patch",
+    "label": "SCIENTIFIC",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-de99418b0f95",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-52e57a2b5a8f",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_shorten_resolve",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "shorten returns a code",
+        "acceptance_test": "test_shorten_resolve"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T21:07:25.676454+00:00",
+      "verification_method": "acceptance_test_marker"
+    },
+    {
+      "id": "VER-fbe13069e041",
+      "requirement_id": "REQ-002",
+      "agent_run_id": "RUN-52e57a2b5a8f",
+      "status": "UNVERIFIED",
+      "evidence": [],
+      "test_results": {
+        "requirement_text": "resolve returns original url",
+        "acceptance_test": null
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T21:07:25.676495+00:00",
+      "verification_method": "inconclusive"
+    }
+  ],
+  "unsupported_features": [],
+  "constraint_violations": [],
+  "scope_violations": [],
+  "label": "SCIENTIFIC"
+}

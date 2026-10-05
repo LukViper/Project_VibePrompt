@@ -1,0 +1,241 @@
+OpenAI Codex v0.148.0
+--------
+workdir: /tmp/vibeprompt_rq5_sci__6kbje8d/ws-bba15e02c731
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: low
+reasoning summaries: none
+session id: 01a0f945-bf4e-7b53-851a-dd82ed0b355c
+--------
+user
+You are a senior software engineer.
+
+REQUIREMENTS
+- filter_rows keeps matching rows
+
+CONSTRAINTS
+- pure function
+
+REJECTED / OUT OF SCOPE
+- Do not add SQL database support
+
+ACCEPTANCE CRITERIA
+- filters correctly
+codex
+I’ll inspect the existing filtering implementation and tests, then make the smallest pure-function fix and verify it.
+exec
+/usr/bin/zsh -lc "rg -n \"filter_rows|filter rows|filterRows\" . || true && rg --files -g '"'!*node_modules*'"'" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-bba15e02c731
+ succeeded in 0ms:
+./app/csv_filter.py:1:def filter_rows(rows, column, value):
+./tests/test_csv_filter.py:1:from app.csv_filter import filter_rows
+./tests/test_csv_filter.py:3:def test_filter_rows():
+./tests/test_csv_filter.py:5:    assert filter_rows(rows, 'name', 'a') == [{'name': 'a', 'x': 1}]
+./TASK.md:4:- filter_rows keeps matching rows
+README.md
+TASK.md
+VIBEPROMPT_META.json
+app/__init__.py
+app/csv_filter.py
+tests/test_csv_filter.py
+
+exec
+/usr/bin/zsh -lc "sed -n '1,160p' app/csv_filter.py && sed -n '1,160p' tests/test_csv_filter.py && sed -n '1,160p' README.md && git diff -- app/csv_filter.py tests/test_csv_filter.py && git status --short" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-bba15e02c731
+ succeeded in 0ms:
+def filter_rows(rows, column, value):
+    raise NotImplementedError
+from app.csv_filter import filter_rows
+
+def test_filter_rows():
+    rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+    assert filter_rows(rows, 'name', 'a') == [{'name': 'a', 'x': 1}]
+# csv_filter_cli
+?? TASK.md
+?? VIBEPROMPT_META.json
+
+codex
+The function is currently unimplemented. I’ll use a list comprehension so it returns only rows whose requested column equals the value, without mutating the input.
+apply patch
+patch: completed
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-bba15e02c731/app/csv_filter.py
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-bba15e02c731/tests/test_csv_filter.py
+diff --git a/app/csv_filter.py b/app/csv_filter.py
+index e0016558062188443e947dc7c5fa28778e7603d8..fcca08eaaac5ecae6ddfa6603728c55c94f534c2
+--- a/app/csv_filter.py
++++ b/app/csv_filter.py
+@@ -1,2 +1,2 @@
+ def filter_rows(rows, column, value):
+-    raise NotImplementedError
++    return [row for row in rows if row.get(column) == value]
+diff --git a/tests/test_csv_filter.py b/tests/test_csv_filter.py
+index a0504799a4246da7fa9e8aad97f1ca25eead5b05..bc15e4190f232d1f50813d3e9386fbd241adbbc0
+--- a/tests/test_csv_filter.py
++++ b/tests/test_csv_filter.py
+@@ -3,3 +3,11 @@
+ def test_filter_rows():
+     rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+     assert filter_rows(rows, 'name', 'a') == [{'name': 'a', 'x': 1}]
++
++
++def test_filter_rows_does_not_mutate_input():
++    rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
++
++    filter_rows(rows, 'name', 'a')
++
++    assert rows == [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+
+diff --git a/app/csv_filter.py b/app/csv_filter.py
+index e0016558062188443e947dc7c5fa28778e7603d8..fcca08eaaac5ecae6ddfa6603728c55c94f534c2
+--- a/app/csv_filter.py
++++ b/app/csv_filter.py
+@@ -1,2 +1,2 @@
+ def filter_rows(rows, column, value):
+-    raise NotImplementedError
++    return [row for row in rows if row.get(column) == value]
+diff --git a/tests/test_csv_filter.py b/tests/test_csv_filter.py
+index a0504799a4246da7fa9e8aad97f1ca25eead5b05..bc15e4190f232d1f50813d3e9386fbd241adbbc0
+--- a/tests/test_csv_filter.py
++++ b/tests/test_csv_filter.py
+@@ -3,3 +3,11 @@
+ def test_filter_rows():
+     rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+     assert filter_rows(rows, 'name', 'a') == [{'name': 'a', 'x': 1}]
++
++
++def test_filter_rows_does_not_mutate_input():
++    rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
++
++    filter_rows(rows, 'name', 'a')
++
++    assert rows == [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+
+exec
+/usr/bin/zsh -lc 'pytest -q && git diff --check && git diff -- app/csv_filter.py tests/test_csv_filter.py' in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-bba15e02c731
+ exited 127 in 0ms:
+zsh:1: command not found: pytest
+
+diff --git a/app/csv_filter.py b/app/csv_filter.py
+index e0016558062188443e947dc7c5fa28778e7603d8..fcca08eaaac5ecae6ddfa6603728c55c94f534c2
+--- a/app/csv_filter.py
++++ b/app/csv_filter.py
+@@ -1,2 +1,2 @@
+ def filter_rows(rows, column, value):
+-    raise NotImplementedError
++    return [row for row in rows if row.get(column) == value]
+diff --git a/tests/test_csv_filter.py b/tests/test_csv_filter.py
+index a0504799a4246da7fa9e8aad97f1ca25eead5b05..bc15e4190f232d1f50813d3e9386fbd241adbbc0
+--- a/tests/test_csv_filter.py
++++ b/tests/test_csv_filter.py
+@@ -3,3 +3,11 @@
+ def test_filter_rows():
+     rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+     assert filter_rows(rows, 'name', 'a') == [{'name': 'a', 'x': 1}]
++
++
++def test_filter_rows_does_not_mutate_input():
++    rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
++
++    filter_rows(rows, 'name', 'a')
++
++    assert rows == [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+
+codex
+`pytest` isn’t installed in this environment, so I’ll run the test module’s assertions directly and check the diff for formatting issues.
+exec
+/usr/bin/zsh -lc "python - <<'PY'
+from app.csv_filter import filter_rows
+
+rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+assert filter_rows(rows, 'name', 'a') == [{'name': 'a', 'x': 1}]
+assert rows == [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+assert filter_rows(rows, 'name', 'missing') == []
+print('filter_rows checks passed')
+PY
+git diff --check
+git diff -- app/csv_filter.py tests/test_csv_filter.py" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-bba15e02c731
+ succeeded in 0ms:
+filter_rows checks passed
+diff --git a/app/csv_filter.py b/app/csv_filter.py
+index e001655..fcca08e 100644
+--- a/app/csv_filter.py
++++ b/app/csv_filter.py
+@@ -1,2 +1,2 @@
+ def filter_rows(rows, column, value):
+-    raise NotImplementedError
++    return [row for row in rows if row.get(column) == value]
+diff --git a/tests/test_csv_filter.py b/tests/test_csv_filter.py
+index a050479..bc15e41 100644
+--- a/tests/test_csv_filter.py
++++ b/tests/test_csv_filter.py
+@@ -3,3 +3,11 @@ from app.csv_filter import filter_rows
+ def test_filter_rows():
+     rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+     assert filter_rows(rows, 'name', 'a') == [{'name': 'a', 'x': 1}]
++
++
++def test_filter_rows_does_not_mutate_input():
++    rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
++
++    filter_rows(rows, 'name', 'a')
++
++    assert rows == [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+
+diff --git a/app/csv_filter.py b/app/csv_filter.py
+index e0016558062188443e947dc7c5fa28778e7603d8..fcca08eaaac5ecae6ddfa6603728c55c94f534c2
+--- a/app/csv_filter.py
++++ b/app/csv_filter.py
+@@ -1,2 +1,2 @@
+ def filter_rows(rows, column, value):
+-    raise NotImplementedError
++    return [row for row in rows if row.get(column) == value]
+diff --git a/tests/test_csv_filter.py b/tests/test_csv_filter.py
+index a0504799a4246da7fa9e8aad97f1ca25eead5b05..bc15e4190f232d1f50813d3e9386fbd241adbbc0
+--- a/tests/test_csv_filter.py
++++ b/tests/test_csv_filter.py
+@@ -3,3 +3,11 @@
+ def test_filter_rows():
+     rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+     assert filter_rows(rows, 'name', 'a') == [{'name': 'a', 'x': 1}]
++
++
++def test_filter_rows_does_not_mutate_input():
++    rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
++
++    filter_rows(rows, 'name', 'a')
++
++    assert rows == [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+
+codex
+Implemented `filter_rows` as a pure equality filter in [app/csv_filter.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-bba15e02c731/app/csv_filter.py:1).
+
+Added a non-mutation test in [tests/test_csv_filter.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-bba15e02c731/tests/test_csv_filter.py:8).
+
+Verified manually: matching rows are retained, non-matches are omitted, and input remains unchanged. (`pytest` is not installed.)
+diff --git a/app/csv_filter.py b/app/csv_filter.py
+index e0016558062188443e947dc7c5fa28778e7603d8..fcca08eaaac5ecae6ddfa6603728c55c94f534c2
+--- a/app/csv_filter.py
++++ b/app/csv_filter.py
+@@ -1,2 +1,2 @@
+ def filter_rows(rows, column, value):
+-    raise NotImplementedError
++    return [row for row in rows if row.get(column) == value]
+diff --git a/tests/test_csv_filter.py b/tests/test_csv_filter.py
+index a0504799a4246da7fa9e8aad97f1ca25eead5b05..bc15e4190f232d1f50813d3e9386fbd241adbbc0
+--- a/tests/test_csv_filter.py
++++ b/tests/test_csv_filter.py
+@@ -3,3 +3,11 @@
+ def test_filter_rows():
+     rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+     assert filter_rows(rows, 'name', 'a') == [{'name': 'a', 'x': 1}]
++
++
++def test_filter_rows_does_not_mutate_input():
++    rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
++
++    filter_rows(rows, 'name', 'a')
++
++    assert rows == [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+
+tokens used
+8,927

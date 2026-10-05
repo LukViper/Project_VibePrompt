@@ -1,0 +1,16 @@
+Implemented the confirmed notes baseline.
+
+- Added validated, thread-safe `create_note` and `list_notes` in [app/notes.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/app/notes.py).
+- Added dependency-free HTTP API: `POST /notes`, `GET /notes` in [app/api.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/app/api.py).
+- Added runnable entry point: `python -m app`.
+- Added tests in [tests/test_notes_unittest.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/tests/test_notes_unittest.py).
+- Documented setup and usage in [README.md](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-5b45ebf57488/README.md).
+
+Verification:
+
+- `python -m unittest discover -s tests -p 'test_*.py' -v` — passed (3 tests).
+- Original create/list smoke assertion — passed.
+- `python -m py_compile app/*.py` — passed.
+- Live server socket testing is blocked by this sandbox (`Operation not permitted`); run `python -m app` locally to serve on port 8000.
+
+No delete operation or Redis dependency was added.

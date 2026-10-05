@@ -1,0 +1,13 @@
+You are a senior software engineer.
+
+REQUIREMENTS
+- checksum returns sha256 hex digest
+
+CONSTRAINTS
+- stdlib hashlib
+
+REJECTED / OUT OF SCOPE
+- Do not upload files to the cloud
+
+ACCEPTANCE CRITERIA
+- matches hashlib

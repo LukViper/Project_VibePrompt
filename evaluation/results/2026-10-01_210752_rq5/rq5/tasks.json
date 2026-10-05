@@ -1,0 +1,212 @@
+[
+  {
+    "id": "RQ5-V2-001",
+    "task_id": "rest_echo_api",
+    "gold_requirements": [
+      "implement echo(payload) returning the same mapping",
+      "implement health() returning status ok"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "stdlib only",
+      "no network in tests"
+    ],
+    "rejected_features": [
+      "Do not add Redis",
+      "Do not call external APIs"
+    ],
+    "acceptance_tests": [
+      "test_echo_returns_payload",
+      "test_health_ok"
+    ]
+  },
+  {
+    "id": "RQ5-V2-002",
+    "task_id": "auth_token_service",
+    "gold_requirements": [
+      "register(username, password) stores the user",
+      "login(username, password) returns a token on success"
+    ],
+    "constraints": [
+      "in-memory only",
+      "python 3.11+"
+    ],
+    "rejected_features": [
+      "Do not expose a DELETE user endpoint",
+      "Do not use an external database"
+    ],
+    "acceptance_tests": [
+      "test_register_and_login",
+      "test_login_rejects_bad_password"
+    ]
+  },
+  {
+    "id": "RQ5-V2-003",
+    "task_id": "crud_notes",
+    "gold_requirements": [
+      "create_note(text) returns an id",
+      "list_notes() returns created notes"
+    ],
+    "constraints": [
+      "in-memory",
+      "python 3.11+"
+    ],
+    "rejected_features": [
+      "Do not implement delete_note",
+      "Do not use Redis"
+    ],
+    "acceptance_tests": [
+      "test_create_and_list"
+    ]
+  },
+  {
+    "id": "RQ5-V2-004",
+    "task_id": "log_parser",
+    "gold_requirements": [
+      "parse_log extracts severity",
+      "parse_log extracts timestamp"
+    ],
+    "constraints": [
+      "stdlib only"
+    ],
+    "rejected_features": [
+      "Do not call an external log API"
+    ],
+    "acceptance_tests": [
+      "test_parse_severity",
+      "test_parse_timestamp"
+    ]
+  },
+  {
+    "id": "RQ5-V2-005",
+    "task_id": "csv_filter_cli",
+    "gold_requirements": [
+      "filter_rows keeps matching rows"
+    ],
+    "constraints": [
+      "pure function"
+    ],
+    "rejected_features": [
+      "Do not add SQL database support"
+    ],
+    "acceptance_tests": [
+      "test_filter_rows"
+    ]
+  },
+  {
+    "id": "RQ5-V2-006",
+    "task_id": "word_count_pipeline",
+    "gold_requirements": [
+      "count_words returns frequency dict"
+    ],
+    "constraints": [
+      "stdlib only"
+    ],
+    "rejected_features": [
+      "Do not download remote corpora"
+    ],
+    "acceptance_tests": [
+      "test_count_words"
+    ]
+  },
+  {
+    "id": "RQ5-V2-007",
+    "task_id": "todo_backend",
+    "gold_requirements": [
+      "add_todo creates a todo",
+      "complete_todo marks done"
+    ],
+    "constraints": [
+      "in-memory"
+    ],
+    "rejected_features": [
+      "Do not add multi-user auth"
+    ],
+    "acceptance_tests": [
+      "test_add_todo",
+      "test_complete_todo"
+    ]
+  },
+  {
+    "id": "RQ5-V2-008",
+    "task_id": "url_shortener",
+    "gold_requirements": [
+      "shorten returns a code",
+      "resolve returns original url"
+    ],
+    "constraints": [
+      "in-memory"
+    ],
+    "rejected_features": [
+      "Do not use an external shortening API"
+    ],
+    "acceptance_tests": [
+      "test_shorten_resolve"
+    ]
+  },
+  {
+    "id": "RQ5-V2-009",
+    "task_id": "rate_limiter",
+    "gold_requirements": [
+      "allow enforces per-key limit"
+    ],
+    "constraints": [
+      "in-memory"
+    ],
+    "rejected_features": [
+      "Do not use Redis"
+    ],
+    "acceptance_tests": [
+      "test_rate_limit"
+    ]
+  },
+  {
+    "id": "RQ5-V2-010",
+    "task_id": "file_checksum",
+    "gold_requirements": [
+      "checksum returns sha256 hex digest"
+    ],
+    "constraints": [
+      "stdlib hashlib"
+    ],
+    "rejected_features": [
+      "Do not upload files to the cloud"
+    ],
+    "acceptance_tests": [
+      "test_checksum"
+    ]
+  },
+  {
+    "id": "RQ5-V2-011",
+    "task_id": "json_schema_validator",
+    "gold_requirements": [
+      "validate checks required keys"
+    ],
+    "constraints": [
+      "pure function"
+    ],
+    "rejected_features": [
+      "Do not call a remote schema registry"
+    ],
+    "acceptance_tests": [
+      "test_validate_ok",
+      "test_validate_missing"
+    ]
+  },
+  {
+    "id": "RQ5-V2-012",
+    "task_id": "metrics_aggregator",
+    "gold_requirements": [
+      "aggregate returns count and mean"
+    ],
+    "constraints": [
+      "pure function"
+    ],
+    "rejected_features": [
+      "Do not stream metrics to Kafka"
+    ],
+    "acceptance_tests": [
+      "test_aggregate"
+    ]
+  }
+]

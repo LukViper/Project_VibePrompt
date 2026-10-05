@@ -1,0 +1,59 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..8670e3d
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,18 @@
++You are a senior software engineer.
++
++REQUIREMENTS
++- implement echo(payload) returning the same mapping
++- implement health() returning status ok
++
++CONSTRAINTS
++- python 3.11+
++- stdlib only
++- no network in tests
++
++REJECTED / OUT OF SCOPE
++- Do not add Redis
++- Do not call external APIs
++
++ACCEPTANCE CRITERIA
++- echo({'a': 1}) == {'a': 1}
++- health()['status'] == 'ok'
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..26c1910
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-81a5b676781c","task_id":"rest_echo_api","variant":"B_structured","seed_commit":"35aa5f3f53f2c71ebe0931dbd8c40845def7273b"}
+\ No newline at end of file
+diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc
+new file mode 100644
+index 0000000..9af357b
+Binary files /dev/null and b/app/__pycache__/__init__.cpython-314.pyc differ
+diff --git a/app/__pycache__/echo_api.cpython-314.pyc b/app/__pycache__/echo_api.cpython-314.pyc
+new file mode 100644
+index 0000000..f397ba3
+Binary files /dev/null and b/app/__pycache__/echo_api.cpython-314.pyc differ
+diff --git a/app/echo_api.py b/app/echo_api.py
+index a994947..9723010 100644
+--- a/app/echo_api.py
++++ b/app/echo_api.py
+@@ -1,5 +1,7 @@
+ def echo(payload):
+-    raise NotImplementedError('implement echo')
++    """Return the provided payload unchanged."""
++    return payload
+ 
+ def health():
+-    raise NotImplementedError('implement health')
++    """Return the service health status."""
++    return {'status': 'ok'}
+diff --git a/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc b/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc
+new file mode 100644
+index 0000000..effaf44
+Binary files /dev/null and b/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc differ

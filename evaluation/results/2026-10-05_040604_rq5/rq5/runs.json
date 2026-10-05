@@ -1,0 +1,634 @@
+[
+  {
+    "workspace_id": "ws-2df38dad9e65",
+    "experiment_id": "rq5_agent_execution",
+    "task_id": "rest_echo_api",
+    "system_variant": "A_raw",
+    "dataset_version": "2.0.0",
+    "seed_commit": "0515424837ec5f052ee86dec981229ada4d48cd1",
+    "prompt_sha256": "44a51d9bb332707a23414279ecf49be83c2fde5078875a974588687c30967e33",
+    "start_time": "2026-10-05T04:06:19.511991+00:00",
+    "end_time": "2026-10-05T04:06:48.915714+00:00",
+    "exit_code": 0,
+    "duration_seconds": 29.403447919999962,
+    "execution_status": "EXECUTED_WITH_VALIDATION",
+    "overall_outcome": "TASK_COMPLETE",
+    "failure_category": null,
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "build_exit_code": 0,
+    "test_exit_code": 0,
+    "oracle_tests_restored": [
+      "tests/test_echo_api.py"
+    ],
+    "prompt_provenance": {
+      "method": "direct_conversation",
+      "provenance": {
+        "pipeline": [
+          "conversation",
+          "direct_prompt"
+        ]
+      },
+      "state_summary": null,
+      "prompt_sha256": "44a51d9bb332707a23414279ecf49be83c2fde5078875a974588687c30967e33"
+    },
+    "artifacts": {
+      "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-2df38dad9e65/agent_stdout.txt",
+      "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-2df38dad9e65/agent_stderr.txt",
+      "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-2df38dad9e65/git_diff.patch",
+      "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-2df38dad9e65/build_stdout.txt",
+      "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-2df38dad9e65/build_stderr.txt",
+      "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-2df38dad9e65/test_stdout.txt",
+      "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-2df38dad9e65/test_stderr.txt",
+      "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/workspaces/ws-2df38dad9e65"
+    },
+    "git": {
+      "commit_before": "0515424837ec5f052ee86dec981229ada4d48cd1",
+      "seed_commit": "0515424837ec5f052ee86dec981229ada4d48cd1",
+      "commit_after": "0515424837ec5f052ee86dec981229ada4d48cd1",
+      "changed_files": [
+        "pp/echo_api.py"
+      ],
+      "created_files": [
+        "TASK.md",
+        "VIBEPROMPT_META.json",
+        "app/__pycache__/",
+        "tests/__pycache__/",
+        "app/__pycache__/__init__.cpython-314.pyc",
+        "app/__pycache__/echo_api.cpython-314.pyc",
+        "tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc"
+      ],
+      "deleted_files": [],
+      "renamed_files": [],
+      "untracked_files": [
+        "TASK.md",
+        "VIBEPROMPT_META.json",
+        "app/__pycache__/__init__.cpython-314.pyc",
+        "app/__pycache__/echo_api.cpython-314.pyc",
+        "tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc"
+      ],
+      "status_preview": "M app/echo_api.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__pycache__/\n?? tests/__pycache__/"
+    },
+    "agent_run": {
+      "id": "RUN-4679ac1d2e01",
+      "project_id": "rest_echo_api",
+      "prompt_id": null,
+      "agent": "codex",
+      "model": null,
+      "model_version": null,
+      "repository": "/tmp/vibeprompt_rq5_sci_gby33cey/ws-2df38dad9e65",
+      "commit_before": "0515424837ec5f052ee86dec981229ada4d48cd1",
+      "commit_after": "0515424837ec5f052ee86dec981229ada4d48cd1",
+      "started_at": "2026-10-05T04:06:19.511991+00:00",
+      "completed_at": "2026-10-05T04:06:48.915714+00:00",
+      "build_status": "PASS",
+      "test_status": "PASS",
+      "output_summary": "Implemented [app/echo_api.py](/tmp/vibeprompt_rq5_sci_gby33cey/ws-2df38dad9e65/app/echo_api.py).\n\n- `echo(payload)` returns the original payload unchanged.\n- `health()` returns `{'status': 'ok'}`.\n- No Redis or non-standard-library dependencies added.\n\nVerified: `2 passed`.\n",
+      "workspace_id": "ws-2df38dad9e65",
+      "task_id": "rest_echo_api",
+      "system_variant": "A_raw",
+      "exit_code": 0,
+      "duration_seconds": 29.403447919999962,
+      "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-2df38dad9e65/agent_stdout.txt",
+      "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-2df38dad9e65/agent_stderr.txt",
+      "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-2df38dad9e65/git_diff.patch",
+      "label": "SCIENTIFIC",
+      "execution_status": "EXECUTED_WITH_VALIDATION",
+      "experiment_id": "rq5_agent_execution",
+      "prompt_sha256": "44a51d9bb332707a23414279ecf49be83c2fde5078875a974588687c30967e33",
+      "prompt_artifact": "/tmp/vibeprompt_rq5_sci_gby33cey/ws-2df38dad9e65/TASK.md",
+      "seed_commit": "0515424837ec5f052ee86dec981229ada4d48cd1",
+      "dataset_version": "2.0.0",
+      "oracle_tests_restored": [
+        "tests/test_echo_api.py"
+      ],
+      "failure_category": null,
+      "agent_timed_out": false,
+      "execution_config": {
+        "timeout_seconds": 600.0,
+        "build_cmd": "python -m compileall -q .",
+        "test_cmd": "python -m pytest -v --tb=line --junitxml=junit.xml",
+        "agent_cmd_configured": true,
+        "mode": "SCIENTIFIC",
+        "retain_workspace": true
+      },
+      "overall_outcome": "TASK_COMPLETE"
+    },
+    "requirement_verifications": [
+      {
+        "id": "VER-894308b2510e",
+        "requirement_id": "REQ-001",
+        "agent_run_id": "RUN-4679ac1d2e01",
+        "status": "PASS",
+        "evidence": [
+          "acceptance_test:test_echo_returns_payload",
+          "marker_outcome:PASS"
+        ],
+        "test_results": {
+          "requirement_text": "implement echo(payload) returning the same mapping",
+          "acceptance_test": "test_echo_returns_payload",
+          "explanation": null,
+          "marker_outcome": "PASS"
+        },
+        "confidence": null,
+        "verified_at": "2026-10-05T04:06:49.253073+00:00",
+        "verification_method": "acceptance_test_marker"
+      },
+      {
+        "id": "VER-59f9f2b2a913",
+        "requirement_id": "REQ-002",
+        "agent_run_id": "RUN-4679ac1d2e01",
+        "status": "PASS",
+        "evidence": [
+          "acceptance_test:test_health_ok",
+          "marker_outcome:PASS"
+        ],
+        "test_results": {
+          "requirement_text": "implement health() returning status ok",
+          "acceptance_test": "test_health_ok",
+          "explanation": null,
+          "marker_outcome": "PASS"
+        },
+        "confidence": null,
+        "verified_at": "2026-10-05T04:06:49.253108+00:00",
+        "verification_method": "acceptance_test_marker"
+      }
+    ],
+    "unsupported_features": [],
+    "constraint_violations": [],
+    "scope_violations": [],
+    "label": "SCIENTIFIC"
+  },
+  {
+    "workspace_id": "ws-d0b2e2fd9fa1",
+    "experiment_id": "rq5_agent_execution",
+    "task_id": "rest_echo_api",
+    "system_variant": "B_structured",
+    "dataset_version": "2.0.0",
+    "seed_commit": "eab0bf8d6bfd89d23366c903e9987efc468531b0",
+    "prompt_sha256": "9c7a354c65f3259dd922d2fbd0b164f95e2178cc4d6bb19a8f1bb8adc9d9f405",
+    "start_time": "2026-10-05T04:06:49.512388+00:00",
+    "end_time": "2026-10-05T04:07:15.604740+00:00",
+    "exit_code": 0,
+    "duration_seconds": 26.092027618999964,
+    "execution_status": "EXECUTED_WITH_VALIDATION",
+    "overall_outcome": "TASK_COMPLETE",
+    "failure_category": null,
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "build_exit_code": 0,
+    "test_exit_code": 0,
+    "oracle_tests_restored": [
+      "tests/test_echo_api.py"
+    ],
+    "prompt_provenance": {
+      "method": "structured_requirements",
+      "provenance": {
+        "pipeline": [
+          "conversation",
+          "structured_requirements_prompt"
+        ]
+      },
+      "state_summary": null,
+      "prompt_sha256": "9c7a354c65f3259dd922d2fbd0b164f95e2178cc4d6bb19a8f1bb8adc9d9f405"
+    },
+    "artifacts": {
+      "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-d0b2e2fd9fa1/agent_stdout.txt",
+      "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-d0b2e2fd9fa1/agent_stderr.txt",
+      "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-d0b2e2fd9fa1/git_diff.patch",
+      "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-d0b2e2fd9fa1/build_stdout.txt",
+      "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-d0b2e2fd9fa1/build_stderr.txt",
+      "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-d0b2e2fd9fa1/test_stdout.txt",
+      "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-d0b2e2fd9fa1/test_stderr.txt",
+      "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/workspaces/ws-d0b2e2fd9fa1"
+    },
+    "git": {
+      "commit_before": "eab0bf8d6bfd89d23366c903e9987efc468531b0",
+      "seed_commit": "eab0bf8d6bfd89d23366c903e9987efc468531b0",
+      "commit_after": "eab0bf8d6bfd89d23366c903e9987efc468531b0",
+      "changed_files": [
+        "pp/echo_api.py"
+      ],
+      "created_files": [
+        "TASK.md",
+        "VIBEPROMPT_META.json",
+        "app/__pycache__/",
+        "tests/__pycache__/",
+        "app/__pycache__/__init__.cpython-314.pyc",
+        "app/__pycache__/echo_api.cpython-314.pyc",
+        "tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc"
+      ],
+      "deleted_files": [],
+      "renamed_files": [],
+      "untracked_files": [
+        "TASK.md",
+        "VIBEPROMPT_META.json",
+        "app/__pycache__/__init__.cpython-314.pyc",
+        "app/__pycache__/echo_api.cpython-314.pyc",
+        "tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc"
+      ],
+      "status_preview": "M app/echo_api.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__pycache__/\n?? tests/__pycache__/"
+    },
+    "agent_run": {
+      "id": "RUN-45b3771c8b9e",
+      "project_id": "rest_echo_api",
+      "prompt_id": null,
+      "agent": "codex",
+      "model": null,
+      "model_version": null,
+      "repository": "/tmp/vibeprompt_rq5_sci_gby33cey/ws-d0b2e2fd9fa1",
+      "commit_before": "eab0bf8d6bfd89d23366c903e9987efc468531b0",
+      "commit_after": "eab0bf8d6bfd89d23366c903e9987efc468531b0",
+      "started_at": "2026-10-05T04:06:49.512388+00:00",
+      "completed_at": "2026-10-05T04:07:15.604740+00:00",
+      "build_status": "PASS",
+      "test_status": "PASS",
+      "output_summary": "Implemented `echo` and `health` in [app/echo_api.py](/tmp/vibeprompt_rq5_sci_gby33cey/ws-d0b2e2fd9fa1/app/echo_api.py).\n\n- `echo(payload)` returns the same mapping unchanged.\n- `health()` returns `{\"status\": \"ok\"}`.\n\nVerified: `2 passed` with `python3 -m pytest -q`.\n",
+      "workspace_id": "ws-d0b2e2fd9fa1",
+      "task_id": "rest_echo_api",
+      "system_variant": "B_structured",
+      "exit_code": 0,
+      "duration_seconds": 26.092027618999964,
+      "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-d0b2e2fd9fa1/agent_stdout.txt",
+      "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-d0b2e2fd9fa1/agent_stderr.txt",
+      "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-d0b2e2fd9fa1/git_diff.patch",
+      "label": "SCIENTIFIC",
+      "execution_status": "EXECUTED_WITH_VALIDATION",
+      "experiment_id": "rq5_agent_execution",
+      "prompt_sha256": "9c7a354c65f3259dd922d2fbd0b164f95e2178cc4d6bb19a8f1bb8adc9d9f405",
+      "prompt_artifact": "/tmp/vibeprompt_rq5_sci_gby33cey/ws-d0b2e2fd9fa1/TASK.md",
+      "seed_commit": "eab0bf8d6bfd89d23366c903e9987efc468531b0",
+      "dataset_version": "2.0.0",
+      "oracle_tests_restored": [
+        "tests/test_echo_api.py"
+      ],
+      "failure_category": null,
+      "agent_timed_out": false,
+      "execution_config": {
+        "timeout_seconds": 600.0,
+        "build_cmd": "python -m compileall -q .",
+        "test_cmd": "python -m pytest -v --tb=line --junitxml=junit.xml",
+        "agent_cmd_configured": true,
+        "mode": "SCIENTIFIC",
+        "retain_workspace": true
+      },
+      "overall_outcome": "TASK_COMPLETE"
+    },
+    "requirement_verifications": [
+      {
+        "id": "VER-5ed2c03b2905",
+        "requirement_id": "REQ-001",
+        "agent_run_id": "RUN-45b3771c8b9e",
+        "status": "PASS",
+        "evidence": [
+          "acceptance_test:test_echo_returns_payload",
+          "marker_outcome:PASS"
+        ],
+        "test_results": {
+          "requirement_text": "implement echo(payload) returning the same mapping",
+          "acceptance_test": "test_echo_returns_payload",
+          "explanation": null,
+          "marker_outcome": "PASS"
+        },
+        "confidence": null,
+        "verified_at": "2026-10-05T04:07:15.904367+00:00",
+        "verification_method": "acceptance_test_marker"
+      },
+      {
+        "id": "VER-9199d91c039a",
+        "requirement_id": "REQ-002",
+        "agent_run_id": "RUN-45b3771c8b9e",
+        "status": "PASS",
+        "evidence": [
+          "acceptance_test:test_health_ok",
+          "marker_outcome:PASS"
+        ],
+        "test_results": {
+          "requirement_text": "implement health() returning status ok",
+          "acceptance_test": "test_health_ok",
+          "explanation": null,
+          "marker_outcome": "PASS"
+        },
+        "confidence": null,
+        "verified_at": "2026-10-05T04:07:15.904399+00:00",
+        "verification_method": "acceptance_test_marker"
+      }
+    ],
+    "unsupported_features": [],
+    "constraint_violations": [],
+    "scope_violations": [],
+    "label": "SCIENTIFIC"
+  },
+  {
+    "workspace_id": "ws-1fe7f67a735d",
+    "experiment_id": "rq5_agent_execution",
+    "task_id": "rest_echo_api",
+    "system_variant": "C_vibeprompt",
+    "dataset_version": "2.0.0",
+    "seed_commit": "061ec9498d56d5f8dfa916d9fc0a17459218dd51",
+    "prompt_sha256": "c9a7885c2b17dc0bfe6bad1915d4cce829a1bbf5f4e44b465ba3e274f6d76cab",
+    "start_time": "2026-10-05T04:07:16.197133+00:00",
+    "end_time": "2026-10-05T04:08:40.428171+00:00",
+    "exit_code": 0,
+    "duration_seconds": 84.23075893999999,
+    "execution_status": "EXECUTED_WITH_VALIDATION",
+    "overall_outcome": "REQUIREMENTS_FAILED",
+    "failure_category": "tests_failed",
+    "build_status": "PASS",
+    "test_status": "FAIL",
+    "build_exit_code": 0,
+    "test_exit_code": 1,
+    "oracle_tests_restored": [
+      "tests/test_echo_api.py"
+    ],
+    "prompt_provenance": {
+      "method": "vibeprompt_c_pipeline",
+      "provenance": {
+        "pipeline": [
+          "conversation",
+          "extract_information",
+          "apply_analysis_to_state",
+          "ProjectState",
+          "grill_attacks",
+          "grill_resolution",
+          "compilation_gate",
+          "specification(_structured/_markdown)",
+          "render_prompt"
+        ],
+        "turns": [
+          {
+            "text": "I need a simple echo API helper in Python.",
+            "intent": "PROJECT_DESCRIPTION",
+            "relationship": "UNRELATED",
+            "n_requirements_extracted": 0
+          },
+          {
+            "text": "Implement echo(payload) that returns the same dict.",
+            "intent": "PROJECT_DESCRIPTION",
+            "relationship": "UNRELATED",
+            "n_requirements_extracted": 0
+          },
+          {
+            "text": "Must support a health() function returning {'status': 'ok'}.",
+            "intent": "PROJECT_DESCRIPTION",
+            "relationship": "UNRELATED",
+            "n_requirements_extracted": 1
+          },
+          {
+            "text": "Do not add Redis caching.",
+            "intent": "ADD_REQUIREMENT",
+            "relationship": "EXTENDS",
+            "n_requirements_extracted": 2
+          },
+          {
+            "text": "Use only the Python standard library.",
+            "intent": "CHANGE_TECHNOLOGY",
+            "relationship": "CONTRADICTS",
+            "n_requirements_extracted": 1
+          }
+        ],
+        "gate": {
+          "blocked": true,
+          "can_compile": false,
+          "reasons": [
+            "project objective is missing"
+          ],
+          "included_requirements": [
+            {
+              "id": "REQ-001",
+              "text": "Support a health() function returning {'status': 'ok'}",
+              "assertion_status": "CONFIRMED"
+            },
+            {
+              "id": "REQ-002",
+              "text": "Redis caching",
+              "assertion_status": "CONFIRMED"
+            },
+            {
+              "id": "REQ-003",
+              "text": "Use Redis as the database",
+              "assertion_status": "CONFIRMED"
+            },
+            {
+              "id": "REQ-004",
+              "text": "The backend must use Python",
+              "assertion_status": "CONFIRMED"
+            }
+          ],
+          "excluded_requirements": []
+        },
+        "compile_mode": "compilable_subset_with_gate_warnings",
+        "n_grill_attacks": 2,
+        "grill_resolved": [
+          {
+            "id": "ATTACK-001",
+            "resolution": "DEFERRED"
+          }
+        ],
+        "n_active_requirements": 4,
+        "n_compilable_requirements": 4,
+        "excluded_non_compilable": [],
+        "assertion_origins": {
+          "REQ-001": {
+            "text": "Support a health() function returning {'status': 'ok'}",
+            "origin": "USER_EXPLICIT",
+            "status": "CONFIRMED",
+            "compilable": true
+          },
+          "REQ-002": {
+            "text": "Redis caching",
+            "origin": "USER_EXPLICIT",
+            "status": "CONFIRMED",
+            "compilable": true
+          },
+          "REQ-003": {
+            "text": "Use Redis as the database",
+            "origin": "USER_EXPLICIT",
+            "status": "CONFIRMED",
+            "compilable": true
+          },
+          "REQ-004": {
+            "text": "The backend must use Python",
+            "origin": "USER_EXPLICIT",
+            "status": "CONFIRMED",
+            "compilable": true
+          }
+        }
+      },
+      "state_summary": {
+        "n_compilable": 4,
+        "gate": {
+          "blocked": true,
+          "can_compile": false,
+          "reasons": [
+            "project objective is missing"
+          ],
+          "included_requirements": [
+            {
+              "id": "REQ-001",
+              "text": "Support a health() function returning {'status': 'ok'}",
+              "assertion_status": "CONFIRMED"
+            },
+            {
+              "id": "REQ-002",
+              "text": "Redis caching",
+              "assertion_status": "CONFIRMED"
+            },
+            {
+              "id": "REQ-003",
+              "text": "Use Redis as the database",
+              "assertion_status": "CONFIRMED"
+            },
+            {
+              "id": "REQ-004",
+              "text": "The backend must use Python",
+              "assertion_status": "CONFIRMED"
+            }
+          ],
+          "excluded_requirements": []
+        },
+        "excluded": []
+      },
+      "prompt_sha256": "c9a7885c2b17dc0bfe6bad1915d4cce829a1bbf5f4e44b465ba3e274f6d76cab"
+    },
+    "artifacts": {
+      "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-1fe7f67a735d/agent_stdout.txt",
+      "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-1fe7f67a735d/agent_stderr.txt",
+      "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-1fe7f67a735d/git_diff.patch",
+      "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-1fe7f67a735d/build_stdout.txt",
+      "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-1fe7f67a735d/build_stderr.txt",
+      "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-1fe7f67a735d/test_stdout.txt",
+      "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-1fe7f67a735d/test_stderr.txt",
+      "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/workspaces/ws-1fe7f67a735d"
+    },
+    "git": {
+      "commit_before": "061ec9498d56d5f8dfa916d9fc0a17459218dd51",
+      "seed_commit": "061ec9498d56d5f8dfa916d9fc0a17459218dd51",
+      "commit_after": "061ec9498d56d5f8dfa916d9fc0a17459218dd51",
+      "changed_files": [
+        "EADME.md",
+        "app/echo_api.py",
+        "tests/test_echo_api.py"
+      ],
+      "created_files": [
+        "TASK.md",
+        "VIBEPROMPT_META.json",
+        "app/__pycache__/",
+        "app/redis_store.py",
+        "tests/__pycache__/",
+        "app/__pycache__/__init__.cpython-314.pyc",
+        "app/__pycache__/echo_api.cpython-314.pyc",
+        "app/__pycache__/redis_store.cpython-314.pyc",
+        "tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc"
+      ],
+      "deleted_files": [],
+      "renamed_files": [],
+      "untracked_files": [
+        "TASK.md",
+        "VIBEPROMPT_META.json",
+        "app/__pycache__/__init__.cpython-314.pyc",
+        "app/__pycache__/echo_api.cpython-314.pyc",
+        "app/__pycache__/redis_store.cpython-314.pyc",
+        "app/redis_store.py",
+        "tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc"
+      ],
+      "status_preview": "M README.md\n M app/echo_api.py\n M tests/test_echo_api.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__pycache__/\n?? app/redis_store.py\n?? tests/__pycache__/"
+    },
+    "agent_run": {
+      "id": "RUN-9d0f74010011",
+      "project_id": "rest_echo_api",
+      "prompt_id": null,
+      "agent": "codex",
+      "model": null,
+      "model_version": null,
+      "repository": "/tmp/vibeprompt_rq5_sci_gby33cey/ws-1fe7f67a735d",
+      "commit_before": "061ec9498d56d5f8dfa916d9fc0a17459218dd51",
+      "commit_after": "061ec9498d56d5f8dfa916d9fc0a17459218dd51",
+      "started_at": "2026-10-05T04:07:16.197133+00:00",
+      "completed_at": "2026-10-05T04:08:40.428171+00:00",
+      "build_status": "PASS",
+      "test_status": "FAIL",
+      "output_summary": "Implemented the confirmed requirements.\n\n- REQ-001: `health()` now returns `{\"status\": \"ok\"}` in [echo_api.py](/tmp/vibeprompt_rq5_sci_gby33cey/ws-1fe7f67a735d/app/echo_api.py).\n- REQ-002 / REQ-003: `echo()` uses Redis-backed caching via a dependency-free RESP adapter in [redis_store.py](/tmp/vibeprompt_rq5_sci_gby33cey/ws-1fe7f67a735d/app/redis_store.py). Redis credentials are read from `REDIS_URL`.\n- REQ-004: Backend is implemented in Python.\n- Added requirement-mapped tests in [test_echo_api.",
+      "workspace_id": "ws-1fe7f67a735d",
+      "task_id": "rest_echo_api",
+      "system_variant": "C_vibeprompt",
+      "exit_code": 0,
+      "duration_seconds": 84.23075893999999,
+      "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-1fe7f67a735d/agent_stdout.txt",
+      "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-1fe7f67a735d/agent_stderr.txt",
+      "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-1fe7f67a735d/git_diff.patch",
+      "label": "SCIENTIFIC",
+      "execution_status": "EXECUTED_WITH_VALIDATION",
+      "experiment_id": "rq5_agent_execution",
+      "prompt_sha256": "c9a7885c2b17dc0bfe6bad1915d4cce829a1bbf5f4e44b465ba3e274f6d76cab",
+      "prompt_artifact": "/tmp/vibeprompt_rq5_sci_gby33cey/ws-1fe7f67a735d/TASK.md",
+      "seed_commit": "061ec9498d56d5f8dfa916d9fc0a17459218dd51",
+      "dataset_version": "2.0.0",
+      "oracle_tests_restored": [
+        "tests/test_echo_api.py"
+      ],
+      "failure_category": "tests_failed",
+      "agent_timed_out": false,
+      "execution_config": {
+        "timeout_seconds": 600.0,
+        "build_cmd": "python -m compileall -q .",
+        "test_cmd": "python -m pytest -v --tb=line --junitxml=junit.xml",
+        "agent_cmd_configured": true,
+        "mode": "SCIENTIFIC",
+        "retain_workspace": true
+      },
+      "overall_outcome": "REQUIREMENTS_FAILED"
+    },
+    "requirement_verifications": [
+      {
+        "id": "VER-fb3d4a249771",
+        "requirement_id": "REQ-001",
+        "agent_run_id": "RUN-9d0f74010011",
+        "status": "FAIL",
+        "evidence": [
+          "acceptance_test:test_echo_returns_payload",
+          "marker_outcome:FAIL",
+          "stderr_ref:/home/luk_viper/Prompting/evaluation/results/2026-10-05_040604_rq5/rq5/artifacts/ws-1fe7f67a735d/test_stderr.txt"
+        ],
+        "test_results": {
+          "requirement_text": "implement echo(payload) returning the same mapping",
+          "acceptance_test": "test_echo_returns_payload",
+          "explanation": "Acceptance test test_echo_returns_payload failed",
+          "marker_outcome": "FAIL"
+        },
+        "confidence": null,
+        "verified_at": "2026-10-05T04:08:40.790190+00:00",
+        "verification_method": "acceptance_test_marker"
+      },
+      {
+        "id": "VER-31762aafbe7b",
+        "requirement_id": "REQ-002",
+        "agent_run_id": "RUN-9d0f74010011",
+        "status": "PASS",
+        "evidence": [
+          "acceptance_test:test_health_ok",
+          "marker_outcome:PASS"
+        ],
+        "test_results": {
+          "requirement_text": "implement health() returning status ok",
+          "acceptance_test": "test_health_ok",
+          "explanation": null,
+          "marker_outcome": "PASS"
+        },
+        "confidence": null,
+        "verified_at": "2026-10-05T04:08:40.790226+00:00",
+        "verification_method": "acceptance_test_marker"
+      }
+    ],
+    "unsupported_features": [
+      "Do not add Redis"
+    ],
+    "constraint_violations": [
+      "constraint:stdlib only violated by import redis"
+    ],
+    "scope_violations": [
+      "Do not add Redis"
+    ],
+    "label": "SCIENTIFIC"
+  }
+]

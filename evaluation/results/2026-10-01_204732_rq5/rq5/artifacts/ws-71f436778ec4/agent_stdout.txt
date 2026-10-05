@@ -1,0 +1,3 @@
+Implemented `parse_log` to return timestamp and severity from log lines.
+
+Verified with the sample line and test suite: `2 passed`.

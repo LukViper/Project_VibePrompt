@@ -1,0 +1,1196 @@
+OpenAI Codex v0.148.0
+--------
+workdir: /tmp/vibeprompt_rq5_sci__6kbje8d/ws-de4fac4f12c6
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: low
+reasoning summaries: none
+session id: 01a0f944-6855-7690-9d9c-156b01d909cd
+--------
+user
+You are a senior software engineer.
+
+Build the following project completely.
+
+ROLE
+You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
+
+PROJECT
+Untitled project
+
+OBJECTIVE
+See the specification.
+
+PROBLEM
+See the specification.
+
+REQUIREMENTS
+Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
+
+FUNCTIONAL REQUIREMENTS
+- None recorded.
+
+NON-FUNCTIONAL REQUIREMENTS
+- None recorded.
+
+CONSTRAINTS
+- Team size: None
+- Duration: None
+- Budget: None
+- Avoid: Do not call an external log API
+
+TECH STACK
+Backend: unspecified
+Model: unspecified
+Database: unspecified
+Frameworks: unspecified
+Hardware: none
+
+ARCHITECTURE
+Use a modular monolith unless ProjectState specifies otherwise.
+
+DATABASE
+Use the database named in TECH STACK.
+
+API
+Implement an operation for every functional requirement.
+
+SECURITY
+Keep secrets in environment variables. Validate input. Do not expose credentials.
+
+TESTING
+Write a test mapped from each requirement ID. Run the tests.
+
+ACCEPTANCE CRITERIA
+[ ] Tests pass
+[ ] Application runs successfully
+
+IMPLEMENTATION PROCESS
+1. Inspect the existing repository.
+2. Understand the requirements.
+3. Create the required architecture.
+4. Implement the components.
+5. Configure dependencies.
+6. Implement database, API, and frontend components.
+7. Write tests.
+8. Run tests.
+9. Fix implementation errors.
+10. Verify every acceptance criterion.
+11. Provide setup instructions.
+
+DELIVERABLES
+- Working implementation of every requirement ID
+- Tests
+- Setup instructions
+- A short note mapping each acceptance criterion to evidence
+
+Do not remove or silently alter required functionality.
+Do not replace required functionality with placeholders.
+
+
+# COMPILATION GATE NOTES
+- project objective is missing
+- no active requirements
+Implement only CONFIRMED requirements listed above.
+codex
+I’ll inspect the repository first. Since the validated specification contains no active functional or non-functional requirements, I’ll preserve that scope and only add what’s needed for a runnable, testable project if the repository lacks it.
+exec
+/usr/bin/zsh -lc "pwd && rg --files -g '"'!*node_modules*'"' -g '"'!*.lock'"' && git status --short" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-de4fac4f12c6
+ succeeded in 0ms:
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-de4fac4f12c6
+README.md
+TASK.md
+VIBEPROMPT_META.json
+app/__init__.py
+app/parser.py
+tests/test_parser.py
+?? TASK.md
+?? VIBEPROMPT_META.json
+
+exec
+/usr/bin/zsh -lc "sed -n '1,240p' README.md && sed -n '1,260p' TASK.md && sed -n '1,260p' VIBEPROMPT_META.json && sed -n '1,260p' app/parser.py && sed -n '1,260p' tests/test_parser.py && sed -n '1,120p' app/__init__.py" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-de4fac4f12c6
+ succeeded in 0ms:
+# log_parser
+You are a senior software engineer.
+
+Build the following project completely.
+
+ROLE
+You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
+
+PROJECT
+Untitled project
+
+OBJECTIVE
+See the specification.
+
+PROBLEM
+See the specification.
+
+REQUIREMENTS
+Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
+
+FUNCTIONAL REQUIREMENTS
+- None recorded.
+
+NON-FUNCTIONAL REQUIREMENTS
+- None recorded.
+
+CONSTRAINTS
+- Team size: None
+- Duration: None
+- Budget: None
+- Avoid: Do not call an external log API
+
+TECH STACK
+Backend: unspecified
+Model: unspecified
+Database: unspecified
+Frameworks: unspecified
+Hardware: none
+
+ARCHITECTURE
+Use a modular monolith unless ProjectState specifies otherwise.
+
+DATABASE
+Use the database named in TECH STACK.
+
+API
+Implement an operation for every functional requirement.
+
+SECURITY
+Keep secrets in environment variables. Validate input. Do not expose credentials.
+
+TESTING
+Write a test mapped from each requirement ID. Run the tests.
+
+ACCEPTANCE CRITERIA
+[ ] Tests pass
+[ ] Application runs successfully
+
+IMPLEMENTATION PROCESS
+1. Inspect the existing repository.
+2. Understand the requirements.
+3. Create the required architecture.
+4. Implement the components.
+5. Configure dependencies.
+6. Implement database, API, and frontend components.
+7. Write tests.
+8. Run tests.
+9. Fix implementation errors.
+10. Verify every acceptance criterion.
+11. Provide setup instructions.
+
+DELIVERABLES
+- Working implementation of every requirement ID
+- Tests
+- Setup instructions
+- A short note mapping each acceptance criterion to evidence
+
+Do not remove or silently alter required functionality.
+Do not replace required functionality with placeholders.
+
+
+# COMPILATION GATE NOTES
+- project objective is missing
+- no active requirements
+Implement only CONFIRMED requirements listed above.
+{"workspace_id":"ws-de4fac4f12c6","task_id":"log_parser","variant":"C_vibeprompt","seed_commit":"fcc10029f4acc6dd839a0aa4ff3202b79a2ae5ac"}def parse_log(line):
+    raise NotImplementedError
+from app.parser import parse_log
+
+SAMPLE = '2024-01-01T00:00:00Z INFO boot'
+
+def test_parse_severity():
+    assert parse_log(SAMPLE)['severity'] == 'INFO'
+
+def test_parse_timestamp():
+    assert parse_log(SAMPLE)['timestamp'] == '2024-01-01T00:00:00Z'
+
+codex
+The repository is a minimal Python package with an existing `parse_log` stub and two tests that define the only concrete behavior present: extract an ISO timestamp and severity from a log line. I’ll implement that local parser with input validation, add focused tests for malformed input, and document how to run it—without adding an API or external logging calls, since none are specified.
+apply patch
+patch: completed
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-de4fac4f12c6/README.md
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-de4fac4f12c6/app/parser.py
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-de4fac4f12c6/tests/test_parser.py
+diff --git a/README.md b/README.md
+index 697d235b7d306f6131e75970d0617d1e158237b3..d8d81fc398cba929e545cc6e180428ff43ab8f06
+--- a/README.md
++++ b/README.md
+@@ -1 +1,38 @@
+ # log_parser
++
++A small, local Python utility for parsing plain-text log lines. It does not
++call external logging APIs.
++
++## Supported format
++
++```
++<timestamp> <SEVERITY> <message>
++```
++
++For example, `2024-01-01T00:00:00Z INFO boot` becomes:
++
++```python
++{
++    "timestamp": "2024-01-01T00:00:00Z",
++    "severity": "INFO",
++    "message": "boot",
++}
++```
++
++## Run
++
++Requires Python 3.9+.
++
++```bash
++python -m pytest
++```
++
++## Specification status
++
++The supplied ProjectState has no active requirement IDs, objective, API,
++database, or framework. Consequently, no API or database has been added. The
++existing repository tests provide the concrete parser behavior implemented
++here.
++
++Acceptance evidence: `python -m pytest` passes, and importing
++`app.parser.parse_log` provides the runnable application component.
+diff --git a/app/parser.py b/app/parser.py
+index ad6c3c0e9510862f95ae52deaa7d88068591f4b6..a7b190265cef136456cacfd486e0d58c4da9575b
+--- a/app/parser.py
++++ b/app/parser.py
+@@ -1,2 +1,51 @@
+-def parse_log(line):
+-    raise NotImplementedError
++"""Utilities for parsing the project's plain-text log format.
++
++The supported format is ``<timestamp> <severity> <message>``.  Parsing is
++entirely local; this module never sends log data to an external service.
++"""
++
++from __future__ import annotations
++
++import re
++from typing import TypedDict
++
++
++class LogEntry(TypedDict):
++    """A parsed log line."""
++
++    timestamp: str
++    severity: str
++    message: str
++
++
++_LOG_LINE_PATTERN = re.compile(
++    r"^(?P<timestamp>\S+)\s+(?P<severity>[A-Z]+)(?:\s+(?P<message>.*))?$"
++)
++
++
++def parse_log(line: str) -> LogEntry:
++    """Parse one log line into timestamp, severity, and message fields.
++
++    Args:
++        line: A non-empty string in the form
++            ``<timestamp> <severity> <message>``.  The message may be empty.
++
++    Raises:
++        TypeError: If ``line`` is not a string.
++        ValueError: If the line does not include a timestamp and uppercase
++            severity separated by whitespace.
++    """
++    if not isinstance(line, str):
++        raise TypeError("line must be a string")
++
++    match = _LOG_LINE_PATTERN.fullmatch(line.strip())
++    if match is None:
++        raise ValueError(
++            "line must use the format '<timestamp> <SEVERITY> <message>'"
++        )
++
++    return {
++        "timestamp": match.group("timestamp"),
++        "severity": match.group("severity"),
++        "message": match.group("message") or "",
++    }
+diff --git a/tests/test_parser.py b/tests/test_parser.py
+index 4c8bd339f5309f20644398b15dd10b4c3e5898d0..153baeb50be484c67dd392c356fe5634818684f7
+--- a/tests/test_parser.py
++++ b/tests/test_parser.py
+@@ -1,3 +1,5 @@
++import pytest
++
+ from app.parser import parse_log
+ 
+ SAMPLE = '2024-01-01T00:00:00Z INFO boot'
+@@ -7,3 +9,18 @@
+ 
+ def test_parse_timestamp():
+     assert parse_log(SAMPLE)['timestamp'] == '2024-01-01T00:00:00Z'
++
++
++def test_parse_message():
++    assert parse_log(SAMPLE)['message'] == 'boot'
++
++
++@pytest.mark.parametrize('line', ['', 'timestamp info message', 'timestamp'])
++def test_rejects_invalid_log_format(line):
++    with pytest.raises(ValueError):
++        parse_log(line)
++
++
++def test_rejects_non_string_input():
++    with pytest.raises(TypeError):
++        parse_log(None)
+
+diff --git a/README.md b/README.md
+index 697d235b7d306f6131e75970d0617d1e158237b3..d8d81fc398cba929e545cc6e180428ff43ab8f06
+--- a/README.md
++++ b/README.md
+@@ -1 +1,38 @@
+ # log_parser
++
++A small, local Python utility for parsing plain-text log lines. It does not
++call external logging APIs.
++
++## Supported format
++
++```
++<timestamp> <SEVERITY> <message>
++```
++
++For example, `2024-01-01T00:00:00Z INFO boot` becomes:
++
++```python
++{
++    "timestamp": "2024-01-01T00:00:00Z",
++    "severity": "INFO",
++    "message": "boot",
++}
++```
++
++## Run
++
++Requires Python 3.9+.
++
++```bash
++python -m pytest
++```
++
++## Specification status
++
++The supplied ProjectState has no active requirement IDs, objective, API,
++database, or framework. Consequently, no API or database has been added. The
++existing repository tests provide the concrete parser behavior implemented
++here.
++
++Acceptance evidence: `python -m pytest` passes, and importing
++`app.parser.parse_log` provides the runnable application component.
+diff --git a/app/parser.py b/app/parser.py
+index ad6c3c0e9510862f95ae52deaa7d88068591f4b6..a7b190265cef136456cacfd486e0d58c4da9575b
+--- a/app/parser.py
++++ b/app/parser.py
+@@ -1,2 +1,51 @@
+-def parse_log(line):
+-    raise NotImplementedError
++"""Utilities for parsing the project's plain-text log format.
++
++The supported format is ``<timestamp> <severity> <message>``.  Parsing is
++entirely local; this module never sends log data to an external service.
++"""
++
++from __future__ import annotations
++
++import re
++from typing import TypedDict
++
++
++class LogEntry(TypedDict):
++    """A parsed log line."""
++
++    timestamp: str
++    severity: str
++    message: str
++
++
++_LOG_LINE_PATTERN = re.compile(
++    r"^(?P<timestamp>\S+)\s+(?P<severity>[A-Z]+)(?:\s+(?P<message>.*))?$"
++)
++
++
++def parse_log(line: str) -> LogEntry:
++    """Parse one log line into timestamp, severity, and message fields.
++
++    Args:
++        line: A non-empty string in the form
++            ``<timestamp> <severity> <message>``.  The message may be empty.
++
++    Raises:
++        TypeError: If ``line`` is not a string.
++        ValueError: If the line does not include a timestamp and uppercase
++            severity separated by whitespace.
++    """
++    if not isinstance(line, str):
++        raise TypeError("line must be a string")
++
++    match = _LOG_LINE_PATTERN.fullmatch(line.strip())
++    if match is None:
++        raise ValueError(
++            "line must use the format '<timestamp> <SEVERITY> <message>'"
++        )
++
++    return {
++        "timestamp": match.group("timestamp"),
++        "severity": match.group("severity"),
++        "message": match.group("message") or "",
++    }
+diff --git a/tests/test_parser.py b/tests/test_parser.py
+index 4c8bd339f5309f20644398b15dd10b4c3e5898d0..153baeb50be484c67dd392c356fe5634818684f7
+--- a/tests/test_parser.py
++++ b/tests/test_parser.py
+@@ -1,3 +1,5 @@
++import pytest
++
+ from app.parser import parse_log
+ 
+ SAMPLE = '2024-01-01T00:00:00Z INFO boot'
+@@ -7,3 +9,18 @@
+ 
+ def test_parse_timestamp():
+     assert parse_log(SAMPLE)['timestamp'] == '2024-01-01T00:00:00Z'
++
++
++def test_parse_message():
++    assert parse_log(SAMPLE)['message'] == 'boot'
++
++
++@pytest.mark.parametrize('line', ['', 'timestamp info message', 'timestamp'])
++def test_rejects_invalid_log_format(line):
++    with pytest.raises(ValueError):
++        parse_log(line)
++
++
++def test_rejects_non_string_input():
++    with pytest.raises(TypeError):
++        parse_log(None)
+
+exec
+/usr/bin/zsh -lc "python -m pytest -q && python -c \"from app.parser import parse_log; print(parse_log('2024-01-01T00:00:00Z INFO boot'))\" && git diff --check && git status --short" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-de4fac4f12c6
+ succeeded in 145ms:
+.......                                                                  [100%]
+7 passed in 0.01s
+{'timestamp': '2024-01-01T00:00:00Z', 'severity': 'INFO', 'message': 'boot'}
+ M README.md
+ M app/parser.py
+ M tests/test_parser.py
+?? TASK.md
+?? VIBEPROMPT_META.json
+?? app/__pycache__/
+?? tests/__pycache__/
+
+diff --git a/README.md b/README.md
+index 697d235b7d306f6131e75970d0617d1e158237b3..d8d81fc398cba929e545cc6e180428ff43ab8f06
+--- a/README.md
++++ b/README.md
+@@ -1 +1,38 @@
+ # log_parser
++
++A small, local Python utility for parsing plain-text log lines. It does not
++call external logging APIs.
++
++## Supported format
++
++```
++<timestamp> <SEVERITY> <message>
++```
++
++For example, `2024-01-01T00:00:00Z INFO boot` becomes:
++
++```python
++{
++    "timestamp": "2024-01-01T00:00:00Z",
++    "severity": "INFO",
++    "message": "boot",
++}
++```
++
++## Run
++
++Requires Python 3.9+.
++
++```bash
++python -m pytest
++```
++
++## Specification status
++
++The supplied ProjectState has no active requirement IDs, objective, API,
++database, or framework. Consequently, no API or database has been added. The
++existing repository tests provide the concrete parser behavior implemented
++here.
++
++Acceptance evidence: `python -m pytest` passes, and importing
++`app.parser.parse_log` provides the runnable application component.
+diff --git a/app/parser.py b/app/parser.py
+index ad6c3c0e9510862f95ae52deaa7d88068591f4b6..a7b190265cef136456cacfd486e0d58c4da9575b
+--- a/app/parser.py
++++ b/app/parser.py
+@@ -1,2 +1,51 @@
+-def parse_log(line):
+-    raise NotImplementedError
++"""Utilities for parsing the project's plain-text log format.
++
++The supported format is ``<timestamp> <severity> <message>``.  Parsing is
++entirely local; this module never sends log data to an external service.
++"""
++
++from __future__ import annotations
++
++import re
++from typing import TypedDict
++
++
++class LogEntry(TypedDict):
++    """A parsed log line."""
++
++    timestamp: str
++    severity: str
++    message: str
++
++
++_LOG_LINE_PATTERN = re.compile(
++    r"^(?P<timestamp>\S+)\s+(?P<severity>[A-Z]+)(?:\s+(?P<message>.*))?$"
++)
++
++
++def parse_log(line: str) -> LogEntry:
++    """Parse one log line into timestamp, severity, and message fields.
++
++    Args:
++        line: A non-empty string in the form
++            ``<timestamp> <severity> <message>``.  The message may be empty.
++
++    Raises:
++        TypeError: If ``line`` is not a string.
++        ValueError: If the line does not include a timestamp and uppercase
++            severity separated by whitespace.
++    """
++    if not isinstance(line, str):
++        raise TypeError("line must be a string")
++
++    match = _LOG_LINE_PATTERN.fullmatch(line.strip())
++    if match is None:
++        raise ValueError(
++            "line must use the format '<timestamp> <SEVERITY> <message>'"
++        )
++
++    return {
++        "timestamp": match.group("timestamp"),
++        "severity": match.group("severity"),
++        "message": match.group("message") or "",
++    }
+diff --git a/tests/test_parser.py b/tests/test_parser.py
+index 4c8bd339f5309f20644398b15dd10b4c3e5898d0..153baeb50be484c67dd392c356fe5634818684f7
+--- a/tests/test_parser.py
++++ b/tests/test_parser.py
+@@ -1,3 +1,5 @@
++import pytest
++
+ from app.parser import parse_log
+ 
+ SAMPLE = '2024-01-01T00:00:00Z INFO boot'
+@@ -7,3 +9,18 @@
+ 
+ def test_parse_timestamp():
+     assert parse_log(SAMPLE)['timestamp'] == '2024-01-01T00:00:00Z'
++
++
++def test_parse_message():
++    assert parse_log(SAMPLE)['message'] == 'boot'
++
++
++@pytest.mark.parametrize('line', ['', 'timestamp info message', 'timestamp'])
++def test_rejects_invalid_log_format(line):
++    with pytest.raises(ValueError):
++        parse_log(line)
++
++
++def test_rejects_non_string_input():
++    with pytest.raises(TypeError):
++        parse_log(None)
+
+2026-10-01T21:00:49.680737Z ERROR codex_core::tools::router: error=exec_command failed for `/usr/bin/zsh -lc 'rm -rf app/__pycache__ tests/__pycache__ && git status --short'`: CreateProcess { message: "Rejected(\"`/usr/bin/zsh -lc 'rm -rf app/__pycache__ tests/__pycache__ && git status --short'` rejected: rm -f style commands are not permitted. Use a safer approach\")" }
+diff --git a/README.md b/README.md
+index 697d235b7d306f6131e75970d0617d1e158237b3..d8d81fc398cba929e545cc6e180428ff43ab8f06
+--- a/README.md
++++ b/README.md
+@@ -1 +1,38 @@
+ # log_parser
++
++A small, local Python utility for parsing plain-text log lines. It does not
++call external logging APIs.
++
++## Supported format
++
++```
++<timestamp> <SEVERITY> <message>
++```
++
++For example, `2024-01-01T00:00:00Z INFO boot` becomes:
++
++```python
++{
++    "timestamp": "2024-01-01T00:00:00Z",
++    "severity": "INFO",
++    "message": "boot",
++}
++```
++
++## Run
++
++Requires Python 3.9+.
++
++```bash
++python -m pytest
++```
++
++## Specification status
++
++The supplied ProjectState has no active requirement IDs, objective, API,
++database, or framework. Consequently, no API or database has been added. The
++existing repository tests provide the concrete parser behavior implemented
++here.
++
++Acceptance evidence: `python -m pytest` passes, and importing
++`app.parser.parse_log` provides the runnable application component.
+diff --git a/app/parser.py b/app/parser.py
+index ad6c3c0e9510862f95ae52deaa7d88068591f4b6..a7b190265cef136456cacfd486e0d58c4da9575b
+--- a/app/parser.py
++++ b/app/parser.py
+@@ -1,2 +1,51 @@
+-def parse_log(line):
+-    raise NotImplementedError
++"""Utilities for parsing the project's plain-text log format.
++
++The supported format is ``<timestamp> <severity> <message>``.  Parsing is
++entirely local; this module never sends log data to an external service.
++"""
++
++from __future__ import annotations
++
++import re
++from typing import TypedDict
++
++
++class LogEntry(TypedDict):
++    """A parsed log line."""
++
++    timestamp: str
++    severity: str
++    message: str
++
++
++_LOG_LINE_PATTERN = re.compile(
++    r"^(?P<timestamp>\S+)\s+(?P<severity>[A-Z]+)(?:\s+(?P<message>.*))?$"
++)
++
++
++def parse_log(line: str) -> LogEntry:
++    """Parse one log line into timestamp, severity, and message fields.
++
++    Args:
++        line: A non-empty string in the form
++            ``<timestamp> <severity> <message>``.  The message may be empty.
++
++    Raises:
++        TypeError: If ``line`` is not a string.
++        ValueError: If the line does not include a timestamp and uppercase
++            severity separated by whitespace.
++    """
++    if not isinstance(line, str):
++        raise TypeError("line must be a string")
++
++    match = _LOG_LINE_PATTERN.fullmatch(line.strip())
++    if match is None:
++        raise ValueError(
++            "line must use the format '<timestamp> <SEVERITY> <message>'"
++        )
++
++    return {
++        "timestamp": match.group("timestamp"),
++        "severity": match.group("severity"),
++        "message": match.group("message") or "",
++    }
+diff --git a/tests/test_parser.py b/tests/test_parser.py
+index 4c8bd339f5309f20644398b15dd10b4c3e5898d0..153baeb50be484c67dd392c356fe5634818684f7
+--- a/tests/test_parser.py
++++ b/tests/test_parser.py
+@@ -1,3 +1,5 @@
++import pytest
++
+ from app.parser import parse_log
+ 
+ SAMPLE = '2024-01-01T00:00:00Z INFO boot'
+@@ -7,3 +9,18 @@
+ 
+ def test_parse_timestamp():
+     assert parse_log(SAMPLE)['timestamp'] == '2024-01-01T00:00:00Z'
++
++
++def test_parse_message():
++    assert parse_log(SAMPLE)['message'] == 'boot'
++
++
++@pytest.mark.parametrize('line', ['', 'timestamp info message', 'timestamp'])
++def test_rejects_invalid_log_format(line):
++    with pytest.raises(ValueError):
++        parse_log(line)
++
++
++def test_rejects_non_string_input():
++    with pytest.raises(TypeError):
++        parse_log(None)
+
+apply patch
+patch: completed
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-de4fac4f12c6/.gitignore
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000000000000000000000000000000000000..80552fb92312f64eb1f40ee3db4775b7f7d0e40d
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,3 @@
++__pycache__/
++.pytest_cache/
++*.py[cod]
+diff --git a/README.md b/README.md
+index 697d235b7d306f6131e75970d0617d1e158237b3..d8d81fc398cba929e545cc6e180428ff43ab8f06
+--- a/README.md
++++ b/README.md
+@@ -1 +1,38 @@
+ # log_parser
++
++A small, local Python utility for parsing plain-text log lines. It does not
++call external logging APIs.
++
++## Supported format
++
++```
++<timestamp> <SEVERITY> <message>
++```
++
++For example, `2024-01-01T00:00:00Z INFO boot` becomes:
++
++```python
++{
++    "timestamp": "2024-01-01T00:00:00Z",
++    "severity": "INFO",
++    "message": "boot",
++}
++```
++
++## Run
++
++Requires Python 3.9+.
++
++```bash
++python -m pytest
++```
++
++## Specification status
++
++The supplied ProjectState has no active requirement IDs, objective, API,
++database, or framework. Consequently, no API or database has been added. The
++existing repository tests provide the concrete parser behavior implemented
++here.
++
++Acceptance evidence: `python -m pytest` passes, and importing
++`app.parser.parse_log` provides the runnable application component.
+diff --git a/app/parser.py b/app/parser.py
+index ad6c3c0e9510862f95ae52deaa7d88068591f4b6..a7b190265cef136456cacfd486e0d58c4da9575b
+--- a/app/parser.py
++++ b/app/parser.py
+@@ -1,2 +1,51 @@
+-def parse_log(line):
+-    raise NotImplementedError
++"""Utilities for parsing the project's plain-text log format.
++
++The supported format is ``<timestamp> <severity> <message>``.  Parsing is
++entirely local; this module never sends log data to an external service.
++"""
++
++from __future__ import annotations
++
++import re
++from typing import TypedDict
++
++
++class LogEntry(TypedDict):
++    """A parsed log line."""
++
++    timestamp: str
++    severity: str
++    message: str
++
++
++_LOG_LINE_PATTERN = re.compile(
++    r"^(?P<timestamp>\S+)\s+(?P<severity>[A-Z]+)(?:\s+(?P<message>.*))?$"
++)
++
++
++def parse_log(line: str) -> LogEntry:
++    """Parse one log line into timestamp, severity, and message fields.
++
++    Args:
++        line: A non-empty string in the form
++            ``<timestamp> <severity> <message>``.  The message may be empty.
++
++    Raises:
++        TypeError: If ``line`` is not a string.
++        ValueError: If the line does not include a timestamp and uppercase
++            severity separated by whitespace.
++    """
++    if not isinstance(line, str):
++        raise TypeError("line must be a string")
++
++    match = _LOG_LINE_PATTERN.fullmatch(line.strip())
++    if match is None:
++        raise ValueError(
++            "line must use the format '<timestamp> <SEVERITY> <message>'"
++        )
++
++    return {
++        "timestamp": match.group("timestamp"),
++        "severity": match.group("severity"),
++        "message": match.group("message") or "",
++    }
+diff --git a/tests/test_parser.py b/tests/test_parser.py
+index 4c8bd339f5309f20644398b15dd10b4c3e5898d0..153baeb50be484c67dd392c356fe5634818684f7
+--- a/tests/test_parser.py
++++ b/tests/test_parser.py
+@@ -1,3 +1,5 @@
++import pytest
++
+ from app.parser import parse_log
+ 
+ SAMPLE = '2024-01-01T00:00:00Z INFO boot'
+@@ -7,3 +9,18 @@
+ 
+ def test_parse_timestamp():
+     assert parse_log(SAMPLE)['timestamp'] == '2024-01-01T00:00:00Z'
++
++
++def test_parse_message():
++    assert parse_log(SAMPLE)['message'] == 'boot'
++
++
++@pytest.mark.parametrize('line', ['', 'timestamp info message', 'timestamp'])
++def test_rejects_invalid_log_format(line):
++    with pytest.raises(ValueError):
++        parse_log(line)
++
++
++def test_rejects_non_string_input():
++    with pytest.raises(TypeError):
++        parse_log(None)
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000000000000000000000000000000000000..80552fb92312f64eb1f40ee3db4775b7f7d0e40d
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,3 @@
++__pycache__/
++.pytest_cache/
++*.py[cod]
+diff --git a/README.md b/README.md
+index 697d235b7d306f6131e75970d0617d1e158237b3..d8d81fc398cba929e545cc6e180428ff43ab8f06
+--- a/README.md
++++ b/README.md
+@@ -1 +1,38 @@
+ # log_parser
++
++A small, local Python utility for parsing plain-text log lines. It does not
++call external logging APIs.
++
++## Supported format
++
++```
++<timestamp> <SEVERITY> <message>
++```
++
++For example, `2024-01-01T00:00:00Z INFO boot` becomes:
++
++```python
++{
++    "timestamp": "2024-01-01T00:00:00Z",
++    "severity": "INFO",
++    "message": "boot",
++}
++```
++
++## Run
++
++Requires Python 3.9+.
++
++```bash
++python -m pytest
++```
++
++## Specification status
++
++The supplied ProjectState has no active requirement IDs, objective, API,
++database, or framework. Consequently, no API or database has been added. The
++existing repository tests provide the concrete parser behavior implemented
++here.
++
++Acceptance evidence: `python -m pytest` passes, and importing
++`app.parser.parse_log` provides the runnable application component.
+diff --git a/app/parser.py b/app/parser.py
+index ad6c3c0e9510862f95ae52deaa7d88068591f4b6..a7b190265cef136456cacfd486e0d58c4da9575b
+--- a/app/parser.py
++++ b/app/parser.py
+@@ -1,2 +1,51 @@
+-def parse_log(line):
+-    raise NotImplementedError
++"""Utilities for parsing the project's plain-text log format.
++
++The supported format is ``<timestamp> <severity> <message>``.  Parsing is
++entirely local; this module never sends log data to an external service.
++"""
++
++from __future__ import annotations
++
++import re
++from typing import TypedDict
++
++
++class LogEntry(TypedDict):
++    """A parsed log line."""
++
++    timestamp: str
++    severity: str
++    message: str
++
++
++_LOG_LINE_PATTERN = re.compile(
++    r"^(?P<timestamp>\S+)\s+(?P<severity>[A-Z]+)(?:\s+(?P<message>.*))?$"
++)
++
++
++def parse_log(line: str) -> LogEntry:
++    """Parse one log line into timestamp, severity, and message fields.
++
++    Args:
++        line: A non-empty string in the form
++            ``<timestamp> <severity> <message>``.  The message may be empty.
++
++    Raises:
++        TypeError: If ``line`` is not a string.
++        ValueError: If the line does not include a timestamp and uppercase
++            severity separated by whitespace.
++    """
++    if not isinstance(line, str):
++        raise TypeError("line must be a string")
++
++    match = _LOG_LINE_PATTERN.fullmatch(line.strip())
++    if match is None:
++        raise ValueError(
++            "line must use the format '<timestamp> <SEVERITY> <message>'"
++        )
++
++    return {
++        "timestamp": match.group("timestamp"),
++        "severity": match.group("severity"),
++        "message": match.group("message") or "",
++    }
+diff --git a/tests/test_parser.py b/tests/test_parser.py
+index 4c8bd339f5309f20644398b15dd10b4c3e5898d0..153baeb50be484c67dd392c356fe5634818684f7
+--- a/tests/test_parser.py
++++ b/tests/test_parser.py
+@@ -1,3 +1,5 @@
++import pytest
++
+ from app.parser import parse_log
+ 
+ SAMPLE = '2024-01-01T00:00:00Z INFO boot'
+@@ -7,3 +9,18 @@
+ 
+ def test_parse_timestamp():
+     assert parse_log(SAMPLE)['timestamp'] == '2024-01-01T00:00:00Z'
++
++
++def test_parse_message():
++    assert parse_log(SAMPLE)['message'] == 'boot'
++
++
++@pytest.mark.parametrize('line', ['', 'timestamp info message', 'timestamp'])
++def test_rejects_invalid_log_format(line):
++    with pytest.raises(ValueError):
++        parse_log(line)
++
++
++def test_rejects_non_string_input():
++    with pytest.raises(TypeError):
++        parse_log(None)
+
+codex
+Implemented the local log parser.
+
+- Parses timestamp, uppercase severity, and message.
+- Validates malformed and non-string inputs.
+- Added tests and setup documentation in [README.md](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-de4fac4f12c6/README.md).
+- Added Python cache ignores.
+
+Verification:
+
+- `python -m pytest -q` → **7 passed**
+- Direct import/run of `parse_log` succeeded.
+
+No API, database, or external log API was added because the supplied specification has no active requirement IDs or API/database requirements.
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000000000000000000000000000000000000..80552fb92312f64eb1f40ee3db4775b7f7d0e40d
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,3 @@
++__pycache__/
++.pytest_cache/
++*.py[cod]
+diff --git a/README.md b/README.md
+index 697d235b7d306f6131e75970d0617d1e158237b3..d8d81fc398cba929e545cc6e180428ff43ab8f06
+--- a/README.md
++++ b/README.md
+@@ -1 +1,38 @@
+ # log_parser
++
++A small, local Python utility for parsing plain-text log lines. It does not
++call external logging APIs.
++
++## Supported format
++
++```
++<timestamp> <SEVERITY> <message>
++```
++
++For example, `2024-01-01T00:00:00Z INFO boot` becomes:
++
++```python
++{
++    "timestamp": "2024-01-01T00:00:00Z",
++    "severity": "INFO",
++    "message": "boot",
++}
++```
++
++## Run
++
++Requires Python 3.9+.
++
++```bash
++python -m pytest
++```
++
++## Specification status
++
++The supplied ProjectState has no active requirement IDs, objective, API,
++database, or framework. Consequently, no API or database has been added. The
++existing repository tests provide the concrete parser behavior implemented
++here.
++
++Acceptance evidence: `python -m pytest` passes, and importing
++`app.parser.parse_log` provides the runnable application component.
+diff --git a/app/parser.py b/app/parser.py
+index ad6c3c0e9510862f95ae52deaa7d88068591f4b6..a7b190265cef136456cacfd486e0d58c4da9575b
+--- a/app/parser.py
++++ b/app/parser.py
+@@ -1,2 +1,51 @@
+-def parse_log(line):
+-    raise NotImplementedError
++"""Utilities for parsing the project's plain-text log format.
++
++The supported format is ``<timestamp> <severity> <message>``.  Parsing is
++entirely local; this module never sends log data to an external service.
++"""
++
++from __future__ import annotations
++
++import re
++from typing import TypedDict
++
++
++class LogEntry(TypedDict):
++    """A parsed log line."""
++
++    timestamp: str
++    severity: str
++    message: str
++
++
++_LOG_LINE_PATTERN = re.compile(
++    r"^(?P<timestamp>\S+)\s+(?P<severity>[A-Z]+)(?:\s+(?P<message>.*))?$"
++)
++
++
++def parse_log(line: str) -> LogEntry:
++    """Parse one log line into timestamp, severity, and message fields.
++
++    Args:
++        line: A non-empty string in the form
++            ``<timestamp> <severity> <message>``.  The message may be empty.
++
++    Raises:
++        TypeError: If ``line`` is not a string.
++        ValueError: If the line does not include a timestamp and uppercase
++            severity separated by whitespace.
++    """
++    if not isinstance(line, str):
++        raise TypeError("line must be a string")
++
++    match = _LOG_LINE_PATTERN.fullmatch(line.strip())
++    if match is None:
++        raise ValueError(
++            "line must use the format '<timestamp> <SEVERITY> <message>'"
++        )
++
++    return {
++        "timestamp": match.group("timestamp"),
++        "severity": match.group("severity"),
++        "message": match.group("message") or "",
++    }
+diff --git a/tests/test_parser.py b/tests/test_parser.py
+index 4c8bd339f5309f20644398b15dd10b4c3e5898d0..153baeb50be484c67dd392c356fe5634818684f7
+--- a/tests/test_parser.py
++++ b/tests/test_parser.py
+@@ -1,3 +1,5 @@
++import pytest
++
+ from app.parser import parse_log
+ 
+ SAMPLE = '2024-01-01T00:00:00Z INFO boot'
+@@ -7,3 +9,18 @@
+ 
+ def test_parse_timestamp():
+     assert parse_log(SAMPLE)['timestamp'] == '2024-01-01T00:00:00Z'
++
++
++def test_parse_message():
++    assert parse_log(SAMPLE)['message'] == 'boot'
++
++
++@pytest.mark.parametrize('line', ['', 'timestamp info message', 'timestamp'])
++def test_rejects_invalid_log_format(line):
++    with pytest.raises(ValueError):
++        parse_log(line)
++
++
++def test_rejects_non_string_input():
++    with pytest.raises(TypeError):
++        parse_log(None)
+
+tokens used
+25,706

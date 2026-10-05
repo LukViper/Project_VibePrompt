@@ -1,0 +1,24 @@
+{
+  "dataset_id": "vibeprompt-synthetic-bench/rq5",
+  "dataset_version": "2.0.0",
+  "dataset_hash": "sha256:3ef5210642376aab1e86b53660a130b92e76a938885e58ec6d638169ba8bfc87",
+  "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+  "n_tasks": 12,
+  "task_ids": [
+    "rest_echo_api",
+    "auth_token_service",
+    "crud_notes",
+    "log_parser",
+    "csv_filter_cli",
+    "word_count_pipeline",
+    "todo_backend",
+    "url_shortener",
+    "rate_limiter",
+    "file_checksum",
+    "json_schema_validator",
+    "metrics_aggregator"
+  ],
+  "path": "evaluation/datasets/rq5/tasks_v2.json",
+  "frozen": true,
+  "note": "Do not modify during a registered scientific RQ5 study."
+}

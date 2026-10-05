@@ -2,8 +2,10 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
+import shutil
 from pathlib import Path
 from typing import Any
 
@@ -33,6 +35,74 @@ def _pythonpath_with_repo_root() -> str:
     return os.pathsep.join(parts)
 
 
+def restore_seed_oracle_tests(workspace: Workspace, seed_files: dict[str, str] | None) -> list[str]:
+    """Rewrite seed `tests/` into the workspace before verification.
+
+    Agents may rewrite or delete acceptance tests. Oracle tests must come from the
+    frozen task seed so exit-code-0 / invented tests cannot silently inflate scores.
+    """
+    restored: list[str] = []
+    if not seed_files:
+        return restored
+    tests_root = workspace.path / "tests"
+    if tests_root.exists():
+        shutil.rmtree(tests_root)
+    for rel, content in seed_files.items():
+        if not rel.startswith("tests/"):
+            continue
+        target = workspace.path / rel
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(content, encoding="utf-8")
+        restored.append(rel)
+    return restored
+
+
+def _failure_category(
+    *,
+    agent_exit_code: int | None,
+    agent_timed_out: bool,
+    build_status: str | None,
+    test_status: str | None,
+    execution_status: str,
+) -> str | None:
+    if agent_timed_out:
+        return "agent_timeout"
+    if agent_exit_code is None:
+        return "agent_not_started"
+    if agent_exit_code != 0:
+        return "agent_nonzero_exit"
+    if build_status == "FAIL":
+        return "build_failed"
+    if test_status == "FAIL":
+        return "tests_failed"
+    if execution_status == "FAILED_INFRASTRUCTURE":
+        return "infrastructure"
+    return None
+
+
+def _overall_outcome(
+    *,
+    execution_status: str,
+    verifications: list[Any],
+) -> str:
+    if execution_status == "FAILED_INFRASTRUCTURE":
+        return "EXECUTION_FAILED"
+    if execution_status == "NOT_EXECUTED":
+        return "NOT_EXECUTED"
+    statuses = [getattr(v, "status", None) for v in verifications]
+    values = [s.value if hasattr(s, "value") else s for s in statuses]
+    conclusive = [s for s in values if s in {"PASS", "FAIL"}]
+    if not conclusive:
+        return "INCONCLUSIVE"
+    if all(s == "PASS" for s in conclusive) and not any(
+        s in {"UNVERIFIED", "INCONCLUSIVE", "PARTIAL"} for s in values
+    ):
+        return "TASK_COMPLETE"
+    if any(s == "FAIL" for s in values):
+        return "REQUIREMENTS_FAILED"
+    return "PARTIAL_OR_INCONCLUSIVE"
+
+
 def run_single(
     *,
     task: dict,
@@ -41,6 +111,7 @@ def run_single(
     work_root: Path,
     artifact_root: Path,
     label: str | None = None,
+    experiment_id: str | None = None,
 ) -> dict[str, Any]:
     """Execute one task/variant in an isolated workspace.
 
@@ -59,10 +130,12 @@ def run_single(
         raise ValueError(f"unknown variant: {variant}")
     prompt_bundle = prompts[variant]
     prompt_text = prompt_bundle["prompt"]
+    prompt_hash = hashlib.sha256(prompt_text.encode("utf-8")).hexdigest()
     prompt_provenance = {
         "method": prompt_bundle.get("method"),
         "provenance": prompt_bundle.get("provenance"),
         "state_summary": prompt_bundle.get("state_summary"),
+        "prompt_sha256": prompt_hash,
     }
 
     work_root.mkdir(parents=True, exist_ok=True)
@@ -97,7 +170,9 @@ def run_single(
         label="agent",
     )
     workspace.mark_finished(agent_res.exit_code)
-    git_state = capture_git_state(workspace)
+    # Capture agent-produced tree before oracle restoration mutates tests/
+    git_state_agent = capture_git_state(workspace)
+    oracle_restored = restore_seed_oracle_tests(workspace, task.get("seed_files"))
 
     build_res = run_command(
         build_cmd,
@@ -113,6 +188,7 @@ def run_single(
         timeout_seconds=min(config.timeout_seconds, 300),
         label="test",
     )
+    git_state = git_state_agent
     # Prefer junit if the test command produced one
     junit_path = workspace.path / "junit.xml"
     junit_text = junit_path.read_text(encoding="utf-8") if junit_path.exists() else ""
@@ -142,7 +218,15 @@ def run_single(
         build_status=build_res.status,
         test_status=test_res.status,
     ).value
+    failure_category = _failure_category(
+        agent_exit_code=agent_res.exit_code,
+        agent_timed_out=agent_res.timed_out,
+        build_status=build_res.status,
+        test_status=test_res.status,
+        execution_status=execution_status,
+    )
 
+    # Provisional AgentRun id for verification linkage; enriched after verification.
     agent_run = build_agent_run(
         project_id=task.get("task_id", "unknown"),
         agent=config.agent_provider or "external_cmd",
@@ -158,6 +242,7 @@ def run_single(
         workspace_id=workspace.workspace_id,
         task_id=task["task_id"],
         system_variant=variant,
+        prompt_id=str(workspace.prompt_path),
         exit_code=agent_res.exit_code,
         duration_seconds=agent_res.duration_seconds,
         stdout_artifact=str(stdout_path),
@@ -165,6 +250,22 @@ def run_single(
         git_diff_artifact=str(diff_path),
         label=label,
         execution_status=execution_status,
+        experiment_id=experiment_id,
+        prompt_sha256=prompt_hash,
+        prompt_artifact=str(workspace.prompt_path),
+        seed_commit=workspace.seed_commit,
+        dataset_version=task.get("dataset_version"),
+        oracle_tests_restored=oracle_restored,
+        failure_category=failure_category,
+        agent_timed_out=agent_res.timed_out,
+        execution_config={
+            "timeout_seconds": config.timeout_seconds,
+            "build_cmd": build_cmd,
+            "test_cmd": test_cmd,
+            "agent_cmd_configured": bool(config.agent_cmd),
+            "mode": config.mode,
+            "retain_workspace": config.retain_workspace,
+        },
     )
 
     verifications = verify_requirements(
@@ -176,9 +277,21 @@ def run_single(
             "stdout": test_stdout_for_verify,
             "configured": test_res.configured,
             "stderr_artifact": str(test_err),
+            # Agent infrastructure failure must not turn seed-stub test FAILs into
+            # conclusive requirement FAILs in the quality interpretation path.
+            "agent_execution_failed": execution_status == "FAILED_INFRASTRUCTURE",
         },
         build_result={"status": build_res.status, "configured": build_res.configured},
     )
+    overall_outcome = _overall_outcome(
+        execution_status=execution_status,
+        verifications=verifications,
+    )
+    # Attach outcome onto the mutable AgentRun extras
+    agent_run_dict = agent_run.as_dict()
+    agent_run_dict["overall_outcome"] = overall_outcome
+    agent_run_dict["failure_category"] = failure_category
+
     unsupported = unsupported_feature_signals(
         task, git_state["git_diff"], git_state["created_files"]
     )
@@ -197,19 +310,24 @@ def run_single(
 
     run_record = {
         "workspace_id": workspace.workspace_id,
+        "experiment_id": experiment_id,
         "task_id": task["task_id"],
         "system_variant": variant,
         "dataset_version": task.get("dataset_version"),
         "seed_commit": workspace.seed_commit,
+        "prompt_sha256": prompt_hash,
         "start_time": workspace.start_time,
         "end_time": workspace.end_time,
         "exit_code": agent_res.exit_code,
         "duration_seconds": agent_res.duration_seconds,
         "execution_status": execution_status,
+        "overall_outcome": overall_outcome,
+        "failure_category": failure_category,
         "build_status": build_res.status,
         "test_status": test_res.status,
         "build_exit_code": build_res.exit_code,
         "test_exit_code": test_res.exit_code,
+        "oracle_tests_restored": oracle_restored,
         "prompt_provenance": prompt_provenance,
         "artifacts": {
             "stdout": str(stdout_path),
@@ -232,7 +350,7 @@ def run_single(
             "untracked_files": git_state.get("untracked_files") or [],
             "status_preview": (git_state["git_status"] or "")[:2000],
         },
-        "agent_run": agent_run.as_dict(),
+        "agent_run": agent_run_dict,
         "requirement_verifications": [v.as_dict() for v in verifications],
         "unsupported_features": unsupported,
         "constraint_violations": constraint_violations,

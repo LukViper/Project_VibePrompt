@@ -1,0 +1,7 @@
+Implemented [app/todos.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-582c6e77e4eb/app/todos.py).
+
+- `add_todo(title)` validates titles, stores `{title, done: False}`, and returns an integer ID.
+- `complete_todo(id)` marks the todo done and returns it.
+- No multi-user/auth logic added.
+
+Verified with a local Python smoke test.

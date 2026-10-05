@@ -1,0 +1,7 @@
+Implemented [app/echo_api.py](/tmp/vibeprompt_rq5_sci_ydysgn96/ws-9e18849ff7c9/app/echo_api.py).
+
+- `echo(payload)` returns the exact supplied dict.
+- `health()` returns `{"status": "ok"}`.
+- No caching or non-standard dependencies added.
+
+Verified: `2 passed`.

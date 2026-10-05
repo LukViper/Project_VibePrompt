@@ -1,0 +1,16 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python
+cachedir: .pytest_cache
+rootdir: /tmp/vibeprompt_rq5_sci__6kbje8d/ws-24873400842e
+plugins: anyio-4.13.0
+collecting ... collected 1 item
+
+tests/test_csv_filter.py::test_filter_rows FAILED                        [100%]
+
+=================================== FAILURES ===================================
+E   NotImplementedError
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-24873400842e/app/csv_filter.py:2: NotImplementedError
+- generated xml file: /tmp/vibeprompt_rq5_sci__6kbje8d/ws-24873400842e/junit.xml -
+=========================== short test summary info ============================
+FAILED tests/test_csv_filter.py::test_filter_rows - NotImplementedError
+============================== 1 failed in 0.02s ===============================

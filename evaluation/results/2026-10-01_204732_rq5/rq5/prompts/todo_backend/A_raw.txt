@@ -1,0 +1,4 @@
+You are a senior software engineer.
+
+add_todo(title) and complete_todo(id).
+Do not add multi-user auth.

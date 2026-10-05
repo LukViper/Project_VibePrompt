@@ -1,0 +1,15 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python
+cachedir: .pytest_cache
+rootdir: /tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364
+plugins: anyio-4.13.0
+collecting ... collected 5 items
+
+tests/test_auth.py::test_req_001_register_stores_user_without_plaintext_password PASSED [ 20%]
+tests/test_auth.py::test_req_002_login_returns_a_non_empty_token_string PASSED [ 40%]
+tests/test_auth.py::test_api_register_and_login_operations PASSED        [ 60%]
+tests/test_auth.py::test_login_rejects_bad_password PASSED               [ 80%]
+tests/test_auth.py::test_api_does_not_expose_delete_user_endpoint PASSED [100%]
+
+- generated xml file: /tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/junit.xml -
+============================== 5 passed in 0.67s ===============================

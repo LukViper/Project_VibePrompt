@@ -1,0 +1,22 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..b6e4a27
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,7 @@
++You are a senior software engineer.
++
++I need a simple echo API helper in Python.
++Implement echo(payload) that returns the same dict.
++Must support a health() function returning {'status': 'ok'}.
++Do not add Redis caching.
++Use only the Python standard library.
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..9b7b78e
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-7f92f3fb1f8a","task_id":"rest_echo_api","variant":"A_raw","seed_commit":"970a2b0f1b4a9796ef14feb5736070bae0b670fd"}
+\ No newline at end of file

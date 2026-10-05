@@ -1,0 +1,112 @@
+{
+  "workspace_id": "ws-cc2da3b12739",
+  "task_id": "word_count_pipeline",
+  "system_variant": "B_structured",
+  "dataset_version": "2.0.0",
+  "seed_commit": "02981429d5071018855f7014428bc2c4e3b706be",
+  "start_time": "2026-10-01T21:03:04.677012+00:00",
+  "end_time": "2026-10-01T21:03:30.858363+00:00",
+  "exit_code": 0,
+  "duration_seconds": 26.181182111999078,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "structured_requirements",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "structured_requirements_prompt"
+      ]
+    },
+    "state_summary": null
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-cc2da3b12739/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-cc2da3b12739/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-cc2da3b12739/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-cc2da3b12739/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-cc2da3b12739/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-cc2da3b12739/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-cc2da3b12739/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/workspaces/ws-cc2da3b12739"
+  },
+  "git": {
+    "commit_before": "02981429d5071018855f7014428bc2c4e3b706be",
+    "seed_commit": "02981429d5071018855f7014428bc2c4e3b706be",
+    "commit_after": "02981429d5071018855f7014428bc2c4e3b706be",
+    "changed_files": [
+      "pp/words.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/",
+      "tests/__pycache__/",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/words.cpython-314.pyc",
+      "tests/__pycache__/test_words.cpython-314-pytest-9.1.1.pyc"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/words.cpython-314.pyc",
+      "tests/__pycache__/test_words.cpython-314-pytest-9.1.1.pyc"
+    ],
+    "status_preview": "M app/words.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__pycache__/\n?? tests/__pycache__/"
+  },
+  "agent_run": {
+    "id": "RUN-3c379b563bb3",
+    "project_id": "word_count_pipeline",
+    "prompt_id": null,
+    "agent": "openai",
+    "model": "gpt-5.6-terra",
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_sci__6kbje8d/ws-cc2da3b12739",
+    "commit_before": "02981429d5071018855f7014428bc2c4e3b706be",
+    "commit_after": "02981429d5071018855f7014428bc2c4e3b706be",
+    "started_at": "2026-10-01T21:03:04.677012+00:00",
+    "completed_at": "2026-10-01T21:03:30.858363+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "Implemented `count_words` with stdlib `Counter`; it returns a plain frequency dictionary for whitespace-delimited words.\n\nVerified: `1 passed` via `python -m pytest -q`.\n",
+    "workspace_id": "ws-cc2da3b12739",
+    "task_id": "word_count_pipeline",
+    "system_variant": "B_structured",
+    "exit_code": 0,
+    "duration_seconds": 26.181182111999078,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-cc2da3b12739/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-cc2da3b12739/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-cc2da3b12739/git_diff.patch",
+    "label": "SCIENTIFIC",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-92eb1f36787e",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-3c379b563bb3",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_count_words",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "count_words returns frequency dict",
+        "acceptance_test": "test_count_words"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T21:03:31.147861+00:00",
+      "verification_method": "acceptance_test_marker"
+    }
+  ],
+  "unsupported_features": [],
+  "constraint_violations": [],
+  "scope_violations": [],
+  "label": "SCIENTIFIC"
+}

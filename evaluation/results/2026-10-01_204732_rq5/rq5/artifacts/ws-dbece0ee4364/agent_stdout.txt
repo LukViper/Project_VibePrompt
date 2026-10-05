@@ -1,0 +1,9 @@
+Implemented the authentication service.
+
+- REQ-001: `register(username, password)` validates and stores hashed user records in memory. Covered by [tests/test_auth.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/tests/test_auth.py).
+- REQ-002: `login(username, password)` authenticates and returns a signed token string.
+- Added JSON API: `POST /register` and `POST /login`; no delete-user endpoint.
+- Added environment-based token secret support via `AUTH_TOKEN_SECRET`.
+- Setup and API usage are documented in [README.md](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/README.md).
+
+Verification: `python -m pytest -q` → **5 passed**. Compilation/import checks also pass. The sandbox disallows binding local sockets, so the live server startup could not be socket-tested here; run locally with `python -m app`.

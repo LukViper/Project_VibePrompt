@@ -1,0 +1,252 @@
+{
+  "workspace_id": "ws-dbece0ee4364",
+  "task_id": "auth_token_service",
+  "system_variant": "C_vibeprompt",
+  "dataset_version": "2.0.0",
+  "seed_commit": "9d0f71fd1cd03f50907812cc50804c21aad8e51c",
+  "start_time": "2026-10-01T20:53:07.713707+00:00",
+  "end_time": "2026-10-01T20:55:56.033728+00:00",
+  "exit_code": 0,
+  "duration_seconds": 168.31984386800104,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "vibeprompt_c_pipeline",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "extract_information",
+        "apply_analysis_to_state",
+        "ProjectState",
+        "grill_attacks",
+        "grill_resolution",
+        "compilation_gate",
+        "specification(_structured/_markdown)",
+        "render_prompt"
+      ],
+      "turns": [
+        {
+          "text": "Build a tiny auth helper.",
+          "intent": "PROJECT_DESCRIPTION",
+          "relationship": "UNRELATED",
+          "n_requirements_extracted": 0
+        },
+        {
+          "text": "register(username, password) must store the user.",
+          "intent": "PROJECT_DESCRIPTION",
+          "relationship": "UNRELATED",
+          "n_requirements_extracted": 1
+        },
+        {
+          "text": "login(username, password) must return a token string on success.",
+          "intent": "PROJECT_DESCRIPTION",
+          "relationship": "UNRELATED",
+          "n_requirements_extracted": 1
+        },
+        {
+          "text": "Do not expose a DELETE user endpoint.",
+          "intent": "REMOVE_REQUIREMENT",
+          "relationship": "MODIFIES",
+          "n_requirements_extracted": 0
+        },
+        {
+          "text": "No external database.",
+          "intent": "PROJECT_DESCRIPTION",
+          "relationship": "CONTRADICTS",
+          "n_requirements_extracted": 0
+        }
+      ],
+      "gate": {
+        "blocked": true,
+        "can_compile": false,
+        "reasons": [
+          "project objective is missing"
+        ],
+        "included_requirements": [
+          {
+            "id": "REQ-001",
+            "text": "Register(username, password) must store the user",
+            "assertion_status": "CONFIRMED"
+          },
+          {
+            "id": "REQ-002",
+            "text": "Login(username, password) must return a token string on success",
+            "assertion_status": "CONFIRMED"
+          }
+        ],
+        "excluded_requirements": []
+      },
+      "compile_mode": "compilable_subset_with_gate_warnings",
+      "n_grill_attacks": 3,
+      "grill_resolved": [
+        {
+          "id": "ATTACK-001",
+          "resolution": "DEFERRED"
+        }
+      ],
+      "n_active_requirements": 2,
+      "n_compilable_requirements": 2,
+      "excluded_non_compilable": [],
+      "assertion_origins": {
+        "REQ-001": {
+          "text": "Register(username, password) must store the user",
+          "origin": "USER_EXPLICIT",
+          "status": "CONFIRMED",
+          "compilable": true
+        },
+        "REQ-002": {
+          "text": "Login(username, password) must return a token string on success",
+          "origin": "USER_EXPLICIT",
+          "status": "CONFIRMED",
+          "compilable": true
+        }
+      }
+    },
+    "state_summary": {
+      "n_compilable": 2,
+      "gate": {
+        "blocked": true,
+        "can_compile": false,
+        "reasons": [
+          "project objective is missing"
+        ],
+        "included_requirements": [
+          {
+            "id": "REQ-001",
+            "text": "Register(username, password) must store the user",
+            "assertion_status": "CONFIRMED"
+          },
+          {
+            "id": "REQ-002",
+            "text": "Login(username, password) must return a token string on success",
+            "assertion_status": "CONFIRMED"
+          }
+        ],
+        "excluded_requirements": []
+      },
+      "excluded": []
+    }
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-dbece0ee4364/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-dbece0ee4364/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-dbece0ee4364/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-dbece0ee4364/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-dbece0ee4364/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-dbece0ee4364/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-dbece0ee4364/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/workspaces/ws-dbece0ee4364"
+  },
+  "git": {
+    "commit_before": "9d0f71fd1cd03f50907812cc50804c21aad8e51c",
+    "seed_commit": "9d0f71fd1cd03f50907812cc50804c21aad8e51c",
+    "commit_after": "9d0f71fd1cd03f50907812cc50804c21aad8e51c",
+    "changed_files": [
+      "EADME.md",
+      "app/__init__.py",
+      "app/auth.py",
+      "tests/test_auth.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__main__.py",
+      "app/__pycache__/",
+      "app/api.py",
+      "tests/__pycache__/",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/__main__.cpython-314.pyc",
+      "app/__pycache__/api.cpython-314.pyc",
+      "app/__pycache__/auth.cpython-314.pyc",
+      "tests/__pycache__/test_auth.cpython-314-pytest-9.1.1.pyc"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__main__.py",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/__main__.cpython-314.pyc",
+      "app/__pycache__/api.cpython-314.pyc",
+      "app/__pycache__/auth.cpython-314.pyc",
+      "app/api.py",
+      "tests/__pycache__/test_auth.cpython-314-pytest-9.1.1.pyc"
+    ],
+    "status_preview": "M README.md\n M app/__init__.py\n M app/auth.py\n M tests/test_auth.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__main__.py\n?? app/__pycache__/\n?? app/api.py\n?? tests/__pycache__/"
+  },
+  "agent_run": {
+    "id": "RUN-98dcc5683828",
+    "project_id": "auth_token_service",
+    "prompt_id": null,
+    "agent": "openai",
+    "model": "gpt-5.6-terra",
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364",
+    "commit_before": "9d0f71fd1cd03f50907812cc50804c21aad8e51c",
+    "commit_after": "9d0f71fd1cd03f50907812cc50804c21aad8e51c",
+    "started_at": "2026-10-01T20:53:07.713707+00:00",
+    "completed_at": "2026-10-01T20:55:56.033728+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "Implemented the authentication service.\n\n- REQ-001: `register(username, password)` validates and stores hashed user records in memory. Covered by [tests/test_auth.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/tests/test_auth.py).\n- REQ-002: `login(username, password)` authenticates and returns a signed token string.\n- Added JSON API: `POST /register` and `POST /login`; no delete-user endpoint.\n- Added environment-based token secret support via `AUTH_TOKEN_SECRET`.\n- Setup and API usage ar",
+    "workspace_id": "ws-dbece0ee4364",
+    "task_id": "auth_token_service",
+    "system_variant": "C_vibeprompt",
+    "exit_code": 0,
+    "duration_seconds": 168.31984386800104,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-dbece0ee4364/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-dbece0ee4364/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-dbece0ee4364/git_diff.patch",
+    "label": "SCIENTIFIC",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-ac6cef752925",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-98dcc5683828",
+      "status": "UNVERIFIED",
+      "evidence": [
+        "missing_marker:test_register_and_login"
+      ],
+      "test_results": {
+        "requirement_text": "register(username, password) stores the user",
+        "acceptance_test": "test_register_and_login"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:55:56.981079+00:00",
+      "verification_method": "acceptance_test_marker_missing"
+    },
+    {
+      "id": "VER-13e0123fa4f8",
+      "requirement_id": "REQ-002",
+      "agent_run_id": "RUN-98dcc5683828",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_login_rejects_bad_password",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "login(username, password) returns a token on success",
+        "acceptance_test": "test_login_rejects_bad_password"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T20:55:56.981110+00:00",
+      "verification_method": "acceptance_test_marker"
+    }
+  ],
+  "unsupported_features": [
+    "Do not expose a DELETE user endpoint"
+  ],
+  "constraint_violations": [
+    "constraint:in-memory only possible network usage"
+  ],
+  "scope_violations": [
+    "Do not expose a DELETE user endpoint"
+  ],
+  "label": "SCIENTIFIC"
+}

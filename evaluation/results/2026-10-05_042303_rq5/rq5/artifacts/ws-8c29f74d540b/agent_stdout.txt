@@ -1,0 +1,6 @@
+Implemented in [app/echo_api.py](/tmp/vibeprompt_rq5_sci_pb4oq2gx/ws-8c29f74d540b/app/echo_api.py).
+
+- `echo(payload)` returns the provided mapping.
+- `health()` returns `{'status': 'ok'}`.
+
+Verified: `2 passed`.

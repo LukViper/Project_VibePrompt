@@ -1,0 +1,20 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python
+cachedir: .pytest_cache
+rootdir: /tmp/vibeprompt_rq5_sci_pkpfmk19/ws-7129991a239a
+plugins: anyio-4.13.0
+collecting ... collected 2 items
+
+tests/test_echo_api.py::test_echo_returns_payload FAILED                 [ 50%]
+tests/test_echo_api.py::test_health_ok FAILED                            [100%]
+
+=================================== FAILURES ===================================
+E   NotImplementedError: implement echo
+/tmp/vibeprompt_rq5_sci_pkpfmk19/ws-7129991a239a/app/echo_api.py:2: NotImplementedError: implement echo
+E   NotImplementedError: implement health
+/tmp/vibeprompt_rq5_sci_pkpfmk19/ws-7129991a239a/app/echo_api.py:5: NotImplementedError: implement health
+- generated xml file: /tmp/vibeprompt_rq5_sci_pkpfmk19/ws-7129991a239a/junit.xml -
+=========================== short test summary info ============================
+FAILED tests/test_echo_api.py::test_echo_returns_payload - NotImplementedErro...
+FAILED tests/test_echo_api.py::test_health_ok - NotImplementedError: implemen...
+============================== 2 failed in 0.02s ===============================

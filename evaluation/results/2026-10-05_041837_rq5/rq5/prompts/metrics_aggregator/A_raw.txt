@@ -1,0 +1,4 @@
+You are a senior software engineer.
+
+aggregate(values) returns {'count': n, 'mean': m}.
+Do not stream metrics to Kafka.

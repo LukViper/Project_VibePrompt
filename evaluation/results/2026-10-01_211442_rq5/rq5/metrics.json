@@ -1,0 +1,33 @@
+{
+  "n": 0,
+  "successful_runs": 0,
+  "failed_runs": 0,
+  "unverified_runs": 0,
+  "requirement_coverage": null,
+  "constraint_preservation": null,
+  "acceptance_test_pass_rate": null,
+  "build_success_rate": null,
+  "test_success_rate": null,
+  "unsupported_feature_rate": null,
+  "scope_deviation": null,
+  "dataset_hash": "sha256:3ef5210642376aab1e86b53660a130b92e76a938885e58ec6d638169ba8bfc87",
+  "run_subset": {
+    "selection_mode": "PILOT_SUBSET",
+    "filter_task_id": "rest_echo_api",
+    "filter_variant": null,
+    "selected_task_ids": [
+      "rest_echo_api"
+    ],
+    "selected_variants": [
+      "A_raw",
+      "B_structured",
+      "C_vibeprompt"
+    ],
+    "n_tasks_selected": 1,
+    "n_variants_selected": 3,
+    "n_runs_planned": 3,
+    "is_full_scientific_grid": false,
+    "note": "Pilot subset — not the full 36-run scientific grid."
+  },
+  "note": "RQ5 NOT EXECUTED — Reason: agent command unavailable. Null metrics mean not measured, not zero performance."
+}

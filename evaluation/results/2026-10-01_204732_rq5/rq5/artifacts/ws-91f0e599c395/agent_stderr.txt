@@ -1,0 +1,162 @@
+OpenAI Codex v0.148.0
+--------
+workdir: /tmp/vibeprompt_rq5_sci__6kbje8d/ws-91f0e599c395
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: low
+reasoning summaries: none
+session id: 01a0f945-45ef-7cc0-8f4d-cb963601bd5e
+--------
+user
+You are a senior software engineer.
+
+Implement filter_rows(rows, column, value) for list-of-dicts CSV rows.
+Do not add SQL database support.
+codex
+I’ll locate the existing implementation and tests, then add the requested list-of-dicts filtering behavior without introducing any database support.
+exec
+/usr/bin/zsh -lc "rg -n \"filter_rows|CSV|csv\" . || true && rg --files -g '"'!*node_modules*'"'" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-91f0e599c395
+ succeeded in 0ms:
+./README.md:1:# csv_filter_cli
+./app/csv_filter.py:1:def filter_rows(rows, column, value):
+./TASK.md:3:Implement filter_rows(rows, column, value) for list-of-dicts CSV rows.
+./VIBEPROMPT_META.json:1:{"workspace_id":"ws-91f0e599c395","task_id":"csv_filter_cli","variant":"A_raw","seed_commit":"2b520e82213159e92631b99ba6c0db281d97f537"}
+./tests/test_csv_filter.py:1:from app.csv_filter import filter_rows
+./tests/test_csv_filter.py:3:def test_filter_rows():
+./tests/test_csv_filter.py:5:    assert filter_rows(rows, 'name', 'a') == [{'name': 'a', 'x': 1}]
+README.md
+TASK.md
+VIBEPROMPT_META.json
+app/csv_filter.py
+app/__init__.py
+tests/test_csv_filter.py
+
+exec
+/usr/bin/zsh -lc "sed -n '1,160p' app/csv_filter.py && sed -n '1,160p' tests/test_csv_filter.py && sed -n '1,160p' README.md && git status --short" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-91f0e599c395
+ succeeded in 0ms:
+def filter_rows(rows, column, value):
+    raise NotImplementedError
+from app.csv_filter import filter_rows
+
+def test_filter_rows():
+    rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}]
+    assert filter_rows(rows, 'name', 'a') == [{'name': 'a', 'x': 1}]
+# csv_filter_cli
+?? TASK.md
+?? VIBEPROMPT_META.json
+
+apply patch
+patch: completed
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-91f0e599c395/app/csv_filter.py
+diff --git a/app/csv_filter.py b/app/csv_filter.py
+index e0016558062188443e947dc7c5fa28778e7603d8..eca22bac078831c5d77fff98c51f9b9bc1f75dc9
+--- a/app/csv_filter.py
++++ b/app/csv_filter.py
+@@ -1,2 +1,7 @@
+ def filter_rows(rows, column, value):
+-    raise NotImplementedError
++    """Return rows whose ``column`` value exactly matches ``value``.
++
++    Rows that do not contain the requested column are ignored.  The input
++    collection and its row dictionaries are left unchanged.
++    """
++    return [row for row in rows if row.get(column) == value]
+
+diff --git a/app/csv_filter.py b/app/csv_filter.py
+index e0016558062188443e947dc7c5fa28778e7603d8..eca22bac078831c5d77fff98c51f9b9bc1f75dc9
+--- a/app/csv_filter.py
++++ b/app/csv_filter.py
+@@ -1,2 +1,7 @@
+ def filter_rows(rows, column, value):
+-    raise NotImplementedError
++    """Return rows whose ``column`` value exactly matches ``value``.
++
++    Rows that do not contain the requested column are ignored.  The input
++    collection and its row dictionaries are left unchanged.
++    """
++    return [row for row in rows if row.get(column) == value]
+
+exec
+/usr/bin/zsh -lc 'pytest -q' in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-91f0e599c395
+ exited 127 in 0ms:
+zsh:1: command not found: pytest
+
+diff --git a/app/csv_filter.py b/app/csv_filter.py
+index e0016558062188443e947dc7c5fa28778e7603d8..eca22bac078831c5d77fff98c51f9b9bc1f75dc9
+--- a/app/csv_filter.py
++++ b/app/csv_filter.py
+@@ -1,2 +1,7 @@
+ def filter_rows(rows, column, value):
+-    raise NotImplementedError
++    """Return rows whose ``column`` value exactly matches ``value``.
++
++    Rows that do not contain the requested column are ignored.  The input
++    collection and its row dictionaries are left unchanged.
++    """
++    return [row for row in rows if row.get(column) == value]
+
+codex
+The implementation is in place. The usual test runner isn’t installed in this workspace, so I’m verifying the behavior directly with Python.
+exec
+/usr/bin/zsh -lc "python - <<'PY'
+from app.csv_filter import filter_rows
+
+rows = [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}, {'x': 3}]
+assert filter_rows(rows, 'name', 'a') == [{'name': 'a', 'x': 1}]
+assert filter_rows(rows, 'name', 'missing') == []
+assert rows == [{'name': 'a', 'x': 1}, {'name': 'b', 'x': 2}, {'x': 3}]
+print('direct checks passed')
+PY
+git diff --check && git diff" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-91f0e599c395
+ succeeded in 0ms:
+direct checks passed
+diff --git a/app/csv_filter.py b/app/csv_filter.py
+index e001655..eca22ba 100644
+--- a/app/csv_filter.py
++++ b/app/csv_filter.py
+@@ -1,2 +1,7 @@
+ def filter_rows(rows, column, value):
+-    raise NotImplementedError
++    """Return rows whose ``column`` value exactly matches ``value``.
++
++    Rows that do not contain the requested column are ignored.  The input
++    collection and its row dictionaries are left unchanged.
++    """
++    return [row for row in rows if row.get(column) == value]
+
+diff --git a/app/csv_filter.py b/app/csv_filter.py
+index e0016558062188443e947dc7c5fa28778e7603d8..eca22bac078831c5d77fff98c51f9b9bc1f75dc9
+--- a/app/csv_filter.py
++++ b/app/csv_filter.py
+@@ -1,2 +1,7 @@
+ def filter_rows(rows, column, value):
+-    raise NotImplementedError
++    """Return rows whose ``column`` value exactly matches ``value``.
++
++    Rows that do not contain the requested column are ignored.  The input
++    collection and its row dictionaries are left unchanged.
++    """
++    return [row for row in rows if row.get(column) == value]
+
+codex
+Implemented `filter_rows` in [app/csv_filter.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-91f0e599c395/app/csv_filter.py:1).
+
+It performs exact matching on list-of-dict rows, ignores missing columns, and does not mutate inputs. Direct Python checks passed; `pytest` is unavailable in this workspace.
+diff --git a/app/csv_filter.py b/app/csv_filter.py
+index e0016558062188443e947dc7c5fa28778e7603d8..eca22bac078831c5d77fff98c51f9b9bc1f75dc9
+--- a/app/csv_filter.py
++++ b/app/csv_filter.py
+@@ -1,2 +1,7 @@
+ def filter_rows(rows, column, value):
+-    raise NotImplementedError
++    """Return rows whose ``column`` value exactly matches ``value``.
++
++    Rows that do not contain the requested column are ignored.  The input
++    collection and its row dictionaries are left unchanged.
++    """
++    return [row for row in rows if row.get(column) == value]
+
+tokens used
+22,230

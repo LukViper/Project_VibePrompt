@@ -1,0 +1,85 @@
+You are a senior software engineer.
+
+Build the following project completely.
+
+ROLE
+You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
+
+PROJECT
+Untitled project
+
+OBJECTIVE
+See the specification.
+
+PROBLEM
+See the specification.
+
+REQUIREMENTS
+Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
+
+FUNCTIONAL REQUIREMENTS
+- None recorded.
+
+NON-FUNCTIONAL REQUIREMENTS
+REQ-001:
+Use Redis as the database
+
+CONSTRAINTS
+- Team size: None
+- Duration: None
+- Budget: None
+- Avoid: Do not use Redis
+
+TECH STACK
+Backend: unspecified
+Model: unspecified
+Database: Redis
+Frameworks: unspecified
+Hardware: none
+
+ARCHITECTURE
+Use a modular monolith unless ProjectState specifies otherwise.
+
+DATABASE
+Use the database named in TECH STACK.
+
+API
+Implement an operation for every functional requirement.
+
+SECURITY
+Keep secrets in environment variables. Validate input. Do not expose credentials.
+
+TESTING
+Write a test mapped from each requirement ID. Run the tests.
+
+ACCEPTANCE CRITERIA
+[ ] REQ-001 implemented
+[ ] Tests pass
+[ ] Application runs successfully
+
+IMPLEMENTATION PROCESS
+1. Inspect the existing repository.
+2. Understand the requirements.
+3. Create the required architecture.
+4. Implement the components.
+5. Configure dependencies.
+6. Implement database, API, and frontend components.
+7. Write tests.
+8. Run tests.
+9. Fix implementation errors.
+10. Verify every acceptance criterion.
+11. Provide setup instructions.
+
+DELIVERABLES
+- Working implementation of every requirement ID
+- Tests
+- Setup instructions
+- A short note mapping each acceptance criterion to evidence
+
+Do not remove or silently alter required functionality.
+Do not replace required functionality with placeholders.
+
+
+# COMPILATION GATE NOTES
+- project objective is missing
+Implement only CONFIRMED requirements listed above.

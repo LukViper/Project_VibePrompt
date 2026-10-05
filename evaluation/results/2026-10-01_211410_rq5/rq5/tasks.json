@@ -1,0 +1,23 @@
+[
+  {
+    "id": "RQ5-V2-001",
+    "task_id": "rest_echo_api",
+    "gold_requirements": [
+      "implement echo(payload) returning the same mapping",
+      "implement health() returning status ok"
+    ],
+    "constraints": [
+      "python 3.11+",
+      "stdlib only",
+      "no network in tests"
+    ],
+    "rejected_features": [
+      "Do not add Redis",
+      "Do not call external APIs"
+    ],
+    "acceptance_tests": [
+      "test_echo_returns_payload",
+      "test_health_ok"
+    ]
+  }
+]

@@ -61,6 +61,16 @@ def approve_decision(session: Session, project: Project, decision_id: str) -> di
     if target.get("status") == DecisionStatus.ACTIVE.value and target.get("user_approved"):
         return public_state(state)
 
+    from app.services.project_state import _text_matches_avoid, enforce_rejection_polarity
+
+    avoid = list((state.get("constraints") or {}).get("avoid") or [])
+    value = target.get("value")
+    if value is not None and _text_matches_avoid(str(value), avoid):
+        raise ValueError(
+            f"Cannot approve decision {decision_id}: value conflicts with "
+            "constraints.avoid. Remove the rejection first."
+        )
+
     slot = target.get("slot")
     if slot:
         supersede_slot(state, slot, new_decision_id=decision_id)
@@ -75,6 +85,7 @@ def approve_decision(session: Session, project: Project, decision_id: str) -> di
     target["provenance"] = prov
 
     _apply_active_decision_to_state(state, target)
+    state = enforce_rejection_polarity(state)
     state = StateVersioning.bump(state, "approve_decision")
     project.state = public_state(state)
     StateVersioning.snapshot(session, project, "approve_decision")
@@ -108,9 +119,15 @@ def apply_active_decision_to_state(state: dict, decision: dict) -> None:
 
 def _apply_active_decision_to_state(state: dict, decision: dict) -> None:
     """Apply approved tech/platform/database decisions into ProjectState slots."""
+    from app.services.project_state import _text_matches_avoid
+
     slot = decision.get("slot")
     value = decision.get("value")
     details = decision.get("details") or {}
+    avoid = list((state.get("constraints") or {}).get("avoid") or [])
+    # Never write rejected features into technology/platform slots.
+    if value is not None and _text_matches_avoid(str(value), avoid):
+        return
     tech = state.setdefault("technology", {})
     if slot in {"frontend_framework", "framework"} and value:
         tech["framework"] = value if isinstance(value, str) else str(value)

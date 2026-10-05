@@ -1,0 +1,178 @@
+{
+  "workspace_id": "ws-67c671904397",
+  "task_id": "word_count_pipeline",
+  "system_variant": "C_vibeprompt",
+  "dataset_version": "2.0.0",
+  "seed_commit": "740bf81db0f94f9aedd62432978a331167877619",
+  "start_time": "2026-10-01T21:03:31.180800+00:00",
+  "end_time": "2026-10-01T21:04:22.516816+00:00",
+  "exit_code": 0,
+  "duration_seconds": 51.33584499100107,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "vibeprompt_c_pipeline",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "extract_information",
+        "apply_analysis_to_state",
+        "ProjectState",
+        "grill_attacks",
+        "grill_resolution",
+        "compilation_gate",
+        "specification(_structured/_markdown)",
+        "render_prompt"
+      ],
+      "turns": [
+        {
+          "text": "Implement count_words(text) returning a dict of word\u2192count.",
+          "intent": "PROJECT_DESCRIPTION",
+          "relationship": "UNRELATED",
+          "n_requirements_extracted": 0
+        },
+        {
+          "text": "Do not download remote corpora.",
+          "intent": "PROJECT_DESCRIPTION",
+          "relationship": "UNRELATED",
+          "n_requirements_extracted": 0
+        }
+      ],
+      "gate": {
+        "blocked": true,
+        "can_compile": false,
+        "reasons": [
+          "project objective is missing",
+          "no active requirements"
+        ],
+        "included_requirements": [],
+        "excluded_requirements": []
+      },
+      "compile_mode": "compilable_subset_with_gate_warnings",
+      "n_grill_attacks": 3,
+      "grill_resolved": [
+        {
+          "id": "ATTACK-001",
+          "resolution": "DEFERRED"
+        },
+        {
+          "id": "ATTACK-002",
+          "resolution": "DEFERRED"
+        }
+      ],
+      "n_active_requirements": 0,
+      "n_compilable_requirements": 0,
+      "excluded_non_compilable": [],
+      "assertion_origins": {}
+    },
+    "state_summary": {
+      "n_compilable": 0,
+      "gate": {
+        "blocked": true,
+        "can_compile": false,
+        "reasons": [
+          "project objective is missing",
+          "no active requirements"
+        ],
+        "included_requirements": [],
+        "excluded_requirements": []
+      },
+      "excluded": []
+    }
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-67c671904397/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-67c671904397/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-67c671904397/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-67c671904397/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-67c671904397/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-67c671904397/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-67c671904397/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/workspaces/ws-67c671904397"
+  },
+  "git": {
+    "commit_before": "740bf81db0f94f9aedd62432978a331167877619",
+    "seed_commit": "740bf81db0f94f9aedd62432978a331167877619",
+    "commit_after": "740bf81db0f94f9aedd62432978a331167877619",
+    "changed_files": [
+      "EADME.md",
+      "app/words.py",
+      "tests/test_words.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/",
+      "tests/__pycache__/",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/words.cpython-314.pyc",
+      "tests/__pycache__/test_words.cpython-314-pytest-9.1.1.pyc"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/words.cpython-314.pyc",
+      "tests/__pycache__/test_words.cpython-314-pytest-9.1.1.pyc"
+    ],
+    "status_preview": "M README.md\n M app/words.py\n M tests/test_words.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__pycache__/\n?? tests/__pycache__/"
+  },
+  "agent_run": {
+    "id": "RUN-3dbd741b2590",
+    "project_id": "word_count_pipeline",
+    "prompt_id": null,
+    "agent": "openai",
+    "model": "gpt-5.6-terra",
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_sci__6kbje8d/ws-67c671904397",
+    "commit_before": "740bf81db0f94f9aedd62432978a331167877619",
+    "commit_after": "740bf81db0f94f9aedd62432978a331167877619",
+    "started_at": "2026-10-01T21:03:31.180800+00:00",
+    "completed_at": "2026-10-01T21:04:22.516816+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "Implemented the confirmed repository behavior: `count_words` now counts whitespace-delimited tokens and validates input types.\n\n- Updated [app/words.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-67c671904397/app/words.py)\n- Added coverage in [tests/test_words.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-67c671904397/tests/test_words.py)\n- Added setup, usage, and traceability notes in [README.md](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-67c671904397/README.md)\n\nVerification:\n\n- `python -m pytest` \u2192 **3 passed**\n",
+    "workspace_id": "ws-67c671904397",
+    "task_id": "word_count_pipeline",
+    "system_variant": "C_vibeprompt",
+    "exit_code": 0,
+    "duration_seconds": 51.33584499100107,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-67c671904397/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-67c671904397/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-67c671904397/git_diff.patch",
+    "label": "SCIENTIFIC",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-86399f242915",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-3dbd741b2590",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_count_words",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "count_words returns frequency dict",
+        "acceptance_test": "test_count_words"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T21:04:22.805765+00:00",
+      "verification_method": "acceptance_test_marker"
+    }
+  ],
+  "unsupported_features": [
+    "Do not download remote corpora"
+  ],
+  "constraint_violations": [],
+  "scope_violations": [
+    "Do not download remote corpora"
+  ],
+  "label": "SCIENTIFIC"
+}

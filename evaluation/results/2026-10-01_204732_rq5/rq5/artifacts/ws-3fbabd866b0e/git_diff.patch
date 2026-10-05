@@ -1,0 +1,387 @@
+diff --git a/README.md b/README.md
+index 38340ae..1277f8e 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,32 @@
+-# rest_echo_api
+-Implement app/echo_api.py
++# Redis-backed Python echo API
++
++## Setup and run
++
++This project uses Python and a Redis server already available to the runtime;
++it does not provision or add a Redis service. Configure Redis with an
++environment variable (never commit credentials):
++
++```sh
++export REDIS_URL='redis://:password@localhost:6379/0'
++export REDIS_CACHE_TTL_SECONDS=300
++python -c "from app.echo_api import health, echo; print(health()); print(echo({'message': 'hello'}))"
++```
++
++`echo()` validates that its input is a mapping and JSON serializable. It reads
++and writes a deterministic Redis cache key. If Redis is temporarily
++unavailable, the operation still returns the echo response.
++
++Run tests with:
++
++```sh
++python -m pytest
++```
++
++## Requirement evidence
++
++| Requirement | Evidence |
++| --- | --- |
++| REQ-001 | `health()` returns `{'status': 'ok'}`; `test_req_001_health_ok` verifies it. |
++| REQ-002 | `RedisCache.get_or_set()` sends Redis `GET`/`SET EX`; `test_req_002_echo_uses_redis_cache` verifies the API delegates to the cache. |
++| REQ-003 | `app/redis_cache.py` uses `REDIS_URL` and the Redis RESP protocol as the configured cache/database adapter. |
++| REQ-004 | The backend implementation and tests are Python. |
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..e2ab814
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,95 @@
++You are a senior software engineer.
++
++Build the following project completely.
++
++ROLE
++You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
++
++PROJECT
++Untitled project
++
++OBJECTIVE
++See the specification.
++
++PROBLEM
++See the specification.
++
++REQUIREMENTS
++Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
++
++FUNCTIONAL REQUIREMENTS
++REQ-001:
++Support a health() function returning {'status': 'ok'}
++  Acceptance: Given a typical input, the system Support a health() function returning {'status': 'ok'}.
++REQ-002:
++Redis caching
++  Acceptance: Given a typical input, the system Redis caching.
++
++NON-FUNCTIONAL REQUIREMENTS
++REQ-003:
++Use Redis as the database
++REQ-004:
++The backend must use Python
++
++CONSTRAINTS
++- Team size: None
++- Duration: None
++- Budget: None
++- Avoid: Do not add Redis, Do not call external APIs
++
++TECH STACK
++Backend: Python
++Model: unspecified
++Database: Redis
++Frameworks: unspecified
++Hardware: none
++
++ARCHITECTURE
++Use a modular monolith unless ProjectState specifies otherwise.
++
++DATABASE
++Use the database named in TECH STACK.
++
++API
++Implement an operation for every functional requirement.
++
++SECURITY
++Keep secrets in environment variables. Validate input. Do not expose credentials.
++
++TESTING
++Write a test mapped from each requirement ID. Run the tests.
++
++ACCEPTANCE CRITERIA
++[ ] REQ-001: Given a typical input, the system Support a health() function returning {'status': 'ok'}.
++[ ] REQ-002: Given a typical input, the system Redis caching.
++[ ] REQ-003 implemented
++[ ] REQ-004 implemented
++[ ] Tests pass
++[ ] Application runs successfully
++
++IMPLEMENTATION PROCESS
++1. Inspect the existing repository.
++2. Understand the requirements.
++3. Create the required architecture.
++4. Implement the components.
++5. Configure dependencies.
++6. Implement database, API, and frontend components.
++7. Write tests.
++8. Run tests.
++9. Fix implementation errors.
++10. Verify every acceptance criterion.
++11. Provide setup instructions.
++
++DELIVERABLES
++- Working implementation of every requirement ID
++- Tests
++- Setup instructions
++- A short note mapping each acceptance criterion to evidence
++
++Do not remove or silently alter required functionality.
++Do not replace required functionality with placeholders.
++
++
++# COMPILATION GATE NOTES
++- project objective is missing
++Implement only CONFIRMED requirements listed above.
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..7e97fbd
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-3fbabd866b0e","task_id":"rest_echo_api","variant":"C_vibeprompt","seed_commit":"32a286ef521e06fde44468a5a02872063824d132"}
+\ No newline at end of file
+diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc
+new file mode 100644
+index 0000000..f16e70a
+Binary files /dev/null and b/app/__pycache__/__init__.cpython-314.pyc differ
+diff --git a/app/__pycache__/echo_api.cpython-314.pyc b/app/__pycache__/echo_api.cpython-314.pyc
+new file mode 100644
+index 0000000..6bf610a
+Binary files /dev/null and b/app/__pycache__/echo_api.cpython-314.pyc differ
+diff --git a/app/__pycache__/redis_cache.cpython-314.pyc b/app/__pycache__/redis_cache.cpython-314.pyc
+new file mode 100644
+index 0000000..464dbbf
+Binary files /dev/null and b/app/__pycache__/redis_cache.cpython-314.pyc differ
+diff --git a/app/echo_api.py b/app/echo_api.py
+index a994947..04fb45e 100644
+--- a/app/echo_api.py
++++ b/app/echo_api.py
+@@ -1,5 +1,43 @@
+-def echo(payload):
+-    raise NotImplementedError('implement echo')
++"""Public operations for the application.
+ 
+-def health():
+-    raise NotImplementedError('implement health')
++The module is deliberately framework-independent: these functions can be
++mounted in any Python web framework without coupling the domain logic to it.
++"""
++
++from __future__ import annotations
++
++from collections.abc import Mapping
++from typing import Any
++
++from app.redis_cache import RedisCache
++
++
++_cache: RedisCache | None = None
++
++
++def _get_cache() -> RedisCache:
++    """Create the process-wide Redis cache only when it is first needed."""
++    global _cache
++    if _cache is None:
++        _cache = RedisCache.from_environment()
++    return _cache
++
++
++def echo(payload: Mapping[str, Any], *, cache: RedisCache | None = None) -> dict[str, Any]:
++    """Return a JSON-compatible payload, using Redis to cache repeated calls.
++
++    A mapping is required to make the API contract explicit.  Redis failures
++    do not change the response: caching is an optimisation, while callers
++    still receive a valid echo response during a Redis outage.
++    """
++    if not isinstance(payload, Mapping):
++        raise ValueError("payload must be a mapping")
++
++    result = dict(payload)
++    selected_cache = cache or _get_cache()
++    return selected_cache.get_or_set(result)
++
++
++def health() -> dict[str, str]:
++    """REQ-001 liveness operation."""
++    return {"status": "ok"}
+diff --git a/app/redis_cache.py b/app/redis_cache.py
+new file mode 100644
+index 0000000..b893d50
+--- /dev/null
++++ b/app/redis_cache.py
+@@ -0,0 +1,111 @@
++"""Small Redis cache adapter using Redis' RESP protocol.
++
++No credentials are hard-coded: connection details are read from REDIS_URL.
++This avoids coupling the project to a particular web framework or Redis
++client package while keeping Redis as the configured data store.
++"""
++
++from __future__ import annotations
++
++import hashlib
++import json
++import os
++import socket
++from dataclasses import dataclass
++from typing import Any
++from urllib.parse import unquote, urlparse
++
++
++class RedisUnavailable(RuntimeError):
++    """Raised internally when Redis cannot service a cache operation."""
++
++
++@dataclass(frozen=True)
++class RedisSettings:
++    host: str
++    port: int
++    password: str | None
++    database: int
++    ttl_seconds: int
++
++    @classmethod
++    def from_environment(cls) -> "RedisSettings":
++        raw_url = os.environ.get("REDIS_URL", "redis://localhost:6379/0")
++        parsed = urlparse(raw_url)
++        if parsed.scheme != "redis" or not parsed.hostname:
++            raise ValueError("REDIS_URL must be a redis:// URL")
++        try:
++            database = int(parsed.path.lstrip("/") or "0")
++            ttl_seconds = int(os.environ.get("REDIS_CACHE_TTL_SECONDS", "300"))
++        except ValueError as exc:
++            raise ValueError("Redis database and cache TTL must be integers") from exc
++        if database < 0 or ttl_seconds <= 0:
++            raise ValueError("Redis database must be non-negative and TTL must be positive")
++        return cls(parsed.hostname, parsed.port or 6379, parsed.password, database, ttl_seconds)
++
++
++class RedisCache:
++    """A Redis-backed JSON cache with graceful cache-miss/outage handling."""
++
++    key_prefix = "untitled-project:echo:"
++
++    def __init__(self, settings: RedisSettings) -> None:
++        self.settings = settings
++
++    @classmethod
++    def from_environment(cls) -> "RedisCache":
++        return cls(RedisSettings.from_environment())
++
++    def get_or_set(self, payload: dict[str, Any]) -> dict[str, Any]:
++        try:
++            encoded = json.dumps(payload, sort_keys=True, separators=(",", ":"))
++        except (TypeError, ValueError) as exc:
++            raise ValueError("payload must be JSON serializable") from exc
++        key = self.key_prefix + hashlib.sha256(encoded.encode()).hexdigest()
++        try:
++            cached = self._command("GET", key)
++            if cached is not None:
++                value = json.loads(cached)
++                if isinstance(value, dict):
++                    return value
++            self._command("SET", key, encoded, "EX", str(self.settings.ttl_seconds))
++        except (OSError, RedisUnavailable, json.JSONDecodeError):
++            # Echo remains available even when an optional cache operation fails.
++            pass
++        return payload
++
++    def _command(self, *parts: str) -> str | None:
++        with socket.create_connection((self.settings.host, self.settings.port), timeout=1.0) as connection:
++            connection.sendall(self._encode_command(*parts))
++            if self.settings.password:
++                connection.sendall(self._encode_command("AUTH", self.settings.password))
++                self._read_response(connection)
++            if self.settings.database:
++                connection.sendall(self._encode_command("SELECT", str(self.settings.database)))
++                self._read_response(connection)
++            return self._read_response(connection)
++
++    @staticmethod
++    def _encode_command(*parts: str) -> bytes:
++        encoded = [part.encode("utf-8") for part in parts]
++        return b"*%d\r\n" % len(encoded) + b"".join(
++            b"$%d\r\n%s\r\n" % (len(part), part) for part in encoded
++        )
++
++    @staticmethod
++    def _read_response(connection: socket.socket) -> str | None:
++        stream = connection.makefile("rb")
++        prefix = stream.read(1)
++        line = stream.readline().rstrip(b"\r\n")
++        if prefix == b"+":
++            return line.decode("utf-8")
++        if prefix == b"-":
++            raise RedisUnavailable(line.decode("utf-8", errors="replace"))
++        if prefix == b"$":
++            length = int(line)
++            if length == -1:
++                return None
++            data = stream.read(length)
++            stream.read(2)
++            return data.decode("utf-8")
++        raise RedisUnavailable("unexpected Redis response")
+diff --git a/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc b/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc
+new file mode 100644
+index 0000000..105bfe1
+Binary files /dev/null and b/tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc differ
+diff --git a/tests/test_echo_api.py b/tests/test_echo_api.py
+index 89d4bc4..4e51a30 100644
+--- a/tests/test_echo_api.py
++++ b/tests/test_echo_api.py
+@@ -1,7 +1,45 @@
++import inspect
++
++import pytest
++
+ from app.echo_api import echo, health
++from app.redis_cache import RedisSettings
++
++
++class FakeRedisCache:
++    def __init__(self):
++        self.calls = []
++
++    def get_or_set(self, payload):
++        self.calls.append(payload)
++        return {**payload, "cached": True}
++
++
++def test_echo_returns_payload_when_cache_is_unavailable():
++    assert echo({"a": 1}) == {"a": 1}
++
++
++def test_req_001_health_ok():
++    assert health()["status"] == "ok"
++
++
++def test_req_002_echo_uses_redis_cache():
++    cache = FakeRedisCache()
++    assert echo({"a": 1}, cache=cache) == {"a": 1, "cached": True}
++    assert cache.calls == [{"a": 1}]
++
++
++def test_req_003_redis_is_configured_from_environment(monkeypatch):
++    monkeypatch.setenv("REDIS_URL", "redis://:secret@cache.internal:6380/2")
++    settings = RedisSettings.from_environment()
++    assert (settings.host, settings.port, settings.database) == ("cache.internal", 6380, 2)
++    assert settings.password == "secret"
++
++
++def test_req_004_backend_is_python():
++    assert inspect.getsourcefile(echo).endswith(".py")
+ 
+-def test_echo_returns_payload():
+-    assert echo({'a': 1}) == {'a': 1}
+ 
+-def test_health_ok():
+-    assert health()['status'] == 'ok'
++def test_input_validation_rejects_non_mapping_payloads():
++    with pytest.raises(ValueError, match="mapping"):
++        echo(["not", "a", "mapping"])

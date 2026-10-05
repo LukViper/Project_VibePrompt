@@ -1,0 +1,160 @@
+{
+  "workspace_id": "ws-1d28ab131703",
+  "experiment_id": "rq5_agent_execution",
+  "task_id": "rest_echo_api",
+  "system_variant": "B_structured",
+  "dataset_version": "2.0.0",
+  "seed_commit": "eaab086e04120a3091e8cb743181e17dfc11e616",
+  "prompt_sha256": "9c7a354c65f3259dd922d2fbd0b164f95e2178cc4d6bb19a8f1bb8adc9d9f405",
+  "start_time": "2026-10-05T04:37:22.715174+00:00",
+  "end_time": "2026-10-05T04:37:49.242437+00:00",
+  "exit_code": 0,
+  "duration_seconds": 26.52699924300032,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "overall_outcome": "TASK_COMPLETE",
+  "failure_category": null,
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "oracle_tests_restored": [
+    "tests/test_echo_api.py"
+  ],
+  "prompt_provenance": {
+    "method": "structured_requirements",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "structured_requirements_prompt"
+      ]
+    },
+    "state_summary": null,
+    "prompt_sha256": "9c7a354c65f3259dd922d2fbd0b164f95e2178cc4d6bb19a8f1bb8adc9d9f405"
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_043638_rq5/rq5/artifacts/ws-1d28ab131703/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_043638_rq5/rq5/artifacts/ws-1d28ab131703/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_043638_rq5/rq5/artifacts/ws-1d28ab131703/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_043638_rq5/rq5/artifacts/ws-1d28ab131703/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_043638_rq5/rq5/artifacts/ws-1d28ab131703/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_043638_rq5/rq5/artifacts/ws-1d28ab131703/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_043638_rq5/rq5/artifacts/ws-1d28ab131703/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_043638_rq5/rq5/artifacts/workspaces/ws-1d28ab131703"
+  },
+  "git": {
+    "commit_before": "eaab086e04120a3091e8cb743181e17dfc11e616",
+    "seed_commit": "eaab086e04120a3091e8cb743181e17dfc11e616",
+    "commit_after": "eaab086e04120a3091e8cb743181e17dfc11e616",
+    "changed_files": [
+      "pp/echo_api.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/",
+      "tests/__pycache__/",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/echo_api.cpython-314.pyc",
+      "tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/echo_api.cpython-314.pyc",
+      "tests/__pycache__/test_echo_api.cpython-314-pytest-9.1.1.pyc"
+    ],
+    "status_preview": "M app/echo_api.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__pycache__/\n?? tests/__pycache__/"
+  },
+  "agent_run": {
+    "id": "RUN-e2dd7a617d89",
+    "project_id": "rest_echo_api",
+    "prompt_id": "/tmp/vibeprompt_rq5_sci_s8aj2vji/ws-1d28ab131703/TASK.md",
+    "agent": "codex",
+    "model": null,
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_sci_s8aj2vji/ws-1d28ab131703",
+    "commit_before": "eaab086e04120a3091e8cb743181e17dfc11e616",
+    "commit_after": "eaab086e04120a3091e8cb743181e17dfc11e616",
+    "started_at": "2026-10-05T04:37:22.715174+00:00",
+    "completed_at": "2026-10-05T04:37:49.242437+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "Implemented both functions in [app/echo_api.py](/tmp/vibeprompt_rq5_sci_s8aj2vji/ws-1d28ab131703/app/echo_api.py).\n\n- `echo(payload)` returns the original mapping unchanged.\n- `health()` returns `{\"status\": \"ok\"}`.\n\nVerified: `2 passed` with pytest.\n",
+    "workspace_id": "ws-1d28ab131703",
+    "task_id": "rest_echo_api",
+    "system_variant": "B_structured",
+    "exit_code": 0,
+    "duration_seconds": 26.52699924300032,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_043638_rq5/rq5/artifacts/ws-1d28ab131703/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_043638_rq5/rq5/artifacts/ws-1d28ab131703/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-05_043638_rq5/rq5/artifacts/ws-1d28ab131703/git_diff.patch",
+    "label": "SCIENTIFIC",
+    "execution_status": "EXECUTED_WITH_VALIDATION",
+    "experiment_id": "rq5_agent_execution",
+    "prompt_sha256": "9c7a354c65f3259dd922d2fbd0b164f95e2178cc4d6bb19a8f1bb8adc9d9f405",
+    "prompt_artifact": "/tmp/vibeprompt_rq5_sci_s8aj2vji/ws-1d28ab131703/TASK.md",
+    "seed_commit": "eaab086e04120a3091e8cb743181e17dfc11e616",
+    "dataset_version": "2.0.0",
+    "oracle_tests_restored": [
+      "tests/test_echo_api.py"
+    ],
+    "failure_category": null,
+    "agent_timed_out": false,
+    "execution_config": {
+      "timeout_seconds": 600.0,
+      "build_cmd": "python -m compileall -q .",
+      "test_cmd": "python -m pytest -v --tb=line --junitxml=junit.xml",
+      "agent_cmd_configured": true,
+      "mode": "SCIENTIFIC",
+      "retain_workspace": true
+    },
+    "overall_outcome": "TASK_COMPLETE"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-fce6e74fdfbb",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-e2dd7a617d89",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_echo_returns_payload",
+        "marker_outcome:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "implement echo(payload) returning the same mapping",
+        "acceptance_test": "test_echo_returns_payload",
+        "explanation": null,
+        "marker_outcome": "PASS"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-05T04:37:49.542627+00:00",
+      "verification_method": "acceptance_test_marker"
+    },
+    {
+      "id": "VER-49228127c55c",
+      "requirement_id": "REQ-002",
+      "agent_run_id": "RUN-e2dd7a617d89",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_health_ok",
+        "marker_outcome:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "implement health() returning status ok",
+        "acceptance_test": "test_health_ok",
+        "explanation": null,
+        "marker_outcome": "PASS"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-05T04:37:49.542679+00:00",
+      "verification_method": "acceptance_test_marker"
+    }
+  ],
+  "unsupported_features": [],
+  "constraint_violations": [],
+  "scope_violations": [],
+  "label": "SCIENTIFIC"
+}

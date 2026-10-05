@@ -1,0 +1,33 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..8670e3d
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,18 @@
++You are a senior software engineer.
++
++REQUIREMENTS
++- implement echo(payload) returning the same mapping
++- implement health() returning status ok
++
++CONSTRAINTS
++- python 3.11+
++- stdlib only
++- no network in tests
++
++REJECTED / OUT OF SCOPE
++- Do not add Redis
++- Do not call external APIs
++
++ACCEPTANCE CRITERIA
++- echo({'a': 1}) == {'a': 1}
++- health()['status'] == 'ok'
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..9fe541d
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-924fdd41ab9e","task_id":"rest_echo_api","variant":"B_structured","seed_commit":"970a2b0f1b4a9796ef14feb5736070bae0b670fd"}
+\ No newline at end of file

@@ -164,6 +164,7 @@ Do not run scientific RQ5 until:
 [ ] tasks_v2 hash verified against manifest
 [ ] C provenance inspected for a sample task
 [ ] This protocol v2 acknowledged
+[ ] Pilot subset reviewed (see §9.1)
 ```
 
 Until then:
@@ -171,3 +172,28 @@ Until then:
 ```text
 RQ5 scientific execution = NOT EXECUTED
 ```
+
+### 9.1 Pilot subset vs full grid
+
+Pilot (recommended first — e.g. one task × three variants):
+
+```bash
+export VIBEPROMPT_AGENT_CMD="$PWD/evaluation/agent_execution/codex_rq5.sh"
+export VIBEPROMPT_AGENT_PROVIDER=codex
+export VIBEPROMPT_BUILD_CMD='python -m compileall -q .'
+export VIBEPROMPT_TEST_CMD='python -m pytest -v --tb=line --junitxml=junit.xml'
+
+backend/.venv/bin/python -m evaluation.rq5_agent_execution.run --task-id rest_echo_api
+```
+
+Filtered runs write `run_subset.json` with `is_full_scientific_grid: false` and
+`config.json` `mode: PILOT_SUBSET`. Do **not** cite them as the full scientific study.
+
+Full 36-run grid requires explicit operator ack:
+
+```bash
+export VIBEPROMPT_RQ5_ALLOW_FULL_GRID=1
+backend/.venv/bin/python -m evaluation.rq5_agent_execution.run
+```
+
+Interpret metrics only together with `run_subset.is_full_scientific_grid`.

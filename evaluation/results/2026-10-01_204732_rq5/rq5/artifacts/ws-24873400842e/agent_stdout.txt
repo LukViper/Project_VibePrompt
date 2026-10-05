@@ -1,0 +1,10 @@
+I’m blocked by a specification contradiction:
+
+- REQ-001 requires SQL database support.
+- Constraint says: “Avoid: Do not add SQL database support.”
+- The tech stack does not name a database.
+
+Please confirm one of these:
+
+1. Authorize SQL support and specify a database (SQLite is a sensible default).
+2. Remove/replace REQ-001 with the intended CSV-filter requirement.

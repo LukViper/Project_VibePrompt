@@ -1,0 +1,48 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..3ac2751
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,5 @@
++You are a senior software engineer.
++
++Parse lines like: '2024-01-01T00:00:00Z INFO boot'.
++parse_log(line) returns dict with severity and timestamp.
++Do not call an external log API.
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..aaf262a
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-c35a3f108a7d","task_id":"log_parser","variant":"A_raw","seed_commit":"6b1b83ac4d365ecff7561a674e9c273d7648dccf"}
+\ No newline at end of file
+diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc
+new file mode 100644
+index 0000000..888019d
+Binary files /dev/null and b/app/__pycache__/__init__.cpython-314.pyc differ
+diff --git a/app/__pycache__/parser.cpython-314.pyc b/app/__pycache__/parser.cpython-314.pyc
+new file mode 100644
+index 0000000..1eb9348
+Binary files /dev/null and b/app/__pycache__/parser.cpython-314.pyc differ
+diff --git a/app/parser.py b/app/parser.py
+index ad6c3c0..6803fc0 100644
+--- a/app/parser.py
++++ b/app/parser.py
+@@ -1,2 +1,14 @@
+ def parse_log(line):
+-    raise NotImplementedError
++    """Extract the timestamp and severity from a whitespace-delimited log line.
++
++    The remainder of the line is the message and is intentionally not included
++    in the result.
++    """
++    if not isinstance(line, str):
++        raise TypeError("line must be a string")
++
++    fields = line.split(maxsplit=2)
++    if len(fields) < 2:
++        raise ValueError("line must contain a timestamp and severity")
++
++    return {"timestamp": fields[0], "severity": fields[1]}

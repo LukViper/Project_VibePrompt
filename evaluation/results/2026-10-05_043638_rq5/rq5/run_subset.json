@@ -1,0 +1,19 @@
+{
+  "selection_mode": "PILOT_SUBSET",
+  "filter_task_id": "rest_echo_api",
+  "filter_variant": null,
+  "selected_task_ids": [
+    "rest_echo_api"
+  ],
+  "selected_variants": [
+    "A_raw",
+    "B_structured",
+    "C_vibeprompt"
+  ],
+  "n_tasks_selected": 1,
+  "n_variants_selected": 3,
+  "n_runs_planned": 3,
+  "n_runs_full_grid": 36,
+  "is_full_scientific_grid": false,
+  "note": "Pilot subset \u2014 not the full 36-run scientific grid."
+}

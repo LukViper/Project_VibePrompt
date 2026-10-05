@@ -1,0 +1,113 @@
+{
+  "workspace_id": "ws-68a4527d3a76",
+  "task_id": "word_count_pipeline",
+  "system_variant": "A_raw",
+  "dataset_version": "2.0.0",
+  "seed_commit": "f1e3a09f21655e50a66a08561ef1290cd5c8a33d",
+  "start_time": "2026-10-01T21:02:31.272481+00:00",
+  "end_time": "2026-10-01T21:03:04.350309+00:00",
+  "exit_code": 0,
+  "duration_seconds": 33.07760829900144,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "direct_conversation",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "direct_prompt"
+      ]
+    },
+    "state_summary": null
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-68a4527d3a76/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-68a4527d3a76/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-68a4527d3a76/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-68a4527d3a76/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-68a4527d3a76/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-68a4527d3a76/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-68a4527d3a76/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/workspaces/ws-68a4527d3a76"
+  },
+  "git": {
+    "commit_before": "f1e3a09f21655e50a66a08561ef1290cd5c8a33d",
+    "seed_commit": "f1e3a09f21655e50a66a08561ef1290cd5c8a33d",
+    "commit_after": "f1e3a09f21655e50a66a08561ef1290cd5c8a33d",
+    "changed_files": [
+      "pp/words.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/words.cpython-314.pyc"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/words.cpython-314.pyc"
+    ],
+    "status_preview": "M app/words.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__pycache__/"
+  },
+  "agent_run": {
+    "id": "RUN-f41298767b45",
+    "project_id": "word_count_pipeline",
+    "prompt_id": null,
+    "agent": "openai",
+    "model": "gpt-5.6-terra",
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_sci__6kbje8d/ws-68a4527d3a76",
+    "commit_before": "f1e3a09f21655e50a66a08561ef1290cd5c8a33d",
+    "commit_after": "f1e3a09f21655e50a66a08561ef1290cd5c8a33d",
+    "started_at": "2026-10-01T21:02:31.272481+00:00",
+    "completed_at": "2026-10-01T21:03:04.350309+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "Implemented `count_words` in [app/words.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-68a4527d3a76/app/words.py:1).\n\nIt counts whitespace-delimited words and returns a dictionary. Direct checks passed. `pytest` is not installed in the environment.\n",
+    "workspace_id": "ws-68a4527d3a76",
+    "task_id": "word_count_pipeline",
+    "system_variant": "A_raw",
+    "exit_code": 0,
+    "duration_seconds": 33.07760829900144,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-68a4527d3a76/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-68a4527d3a76/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-68a4527d3a76/git_diff.patch",
+    "label": "SCIENTIFIC",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-3d26f6e0a2a4",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-f41298767b45",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_count_words",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "count_words returns frequency dict",
+        "acceptance_test": "test_count_words"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T21:03:04.643951+00:00",
+      "verification_method": "acceptance_test_marker"
+    }
+  ],
+  "unsupported_features": [
+    "Do not download remote corpora"
+  ],
+  "constraint_violations": [],
+  "scope_violations": [
+    "Do not download remote corpora"
+  ],
+  "label": "SCIENTIFIC"
+}

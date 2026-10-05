@@ -1,0 +1,3 @@
+Implemented `count_words` in [app/words.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-68a4527d3a76/app/words.py:1).
+
+It counts whitespace-delimited words and returns a dictionary. Direct checks passed. `pytest` is not installed in the environment.

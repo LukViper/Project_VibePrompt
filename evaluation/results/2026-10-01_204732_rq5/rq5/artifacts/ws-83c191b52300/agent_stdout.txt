@@ -1,0 +1,7 @@
+Implemented the local URL shortener in [app/shortener.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-83c191b52300/app/shortener.py).
+
+- Generates unique compact base-62 codes locally.
+- `resolve(code)` returns the original URL or `None` if unknown.
+- Reusing a URL returns its existing code.
+- No external API used.
+- Direct behavior verification passed. (`pytest` is not installed in this environment.)

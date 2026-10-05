@@ -1,0 +1,54 @@
+{
+  "experiment_id": "rq5_agent_execution",
+  "experiment_version": "4.0.0",
+  "dataset_id": "vibeprompt-synthetic-bench/rq5",
+  "dataset_version": "2.0.0",
+  "random_seed": 42,
+  "model": "gpt-5.6-terra",
+  "embedding_provider": "n/a",
+  "embedding_model": "n/a",
+  "parameters": {
+    "dataset_label": "SYNTHETIC CONTROLLED BENCHMARK",
+    "dataset_hash": "sha256:3ef5210642376aab1e86b53660a130b92e76a938885e58ec6d638169ba8bfc87",
+    "n_tasks": 12,
+    "task_ids": [
+      "rest_echo_api",
+      "auth_token_service",
+      "crud_notes",
+      "log_parser",
+      "csv_filter_cli",
+      "word_count_pipeline",
+      "todo_backend",
+      "url_shortener",
+      "rate_limiter",
+      "file_checksum",
+      "json_schema_validator",
+      "metrics_aggregator"
+    ],
+    "rq5_config": {
+      "agent_cmd": "/home/luk_viper/Prompting/evaluation/agent_execution/codex_rq5.sh",
+      "build_cmd": "python -m compileall -q .",
+      "test_cmd": "backend/.venv/bin/python -m pytest -q backend/tests",
+      "timeout_seconds": 600.0,
+      "retain_workspace": true,
+      "mode": "SCIENTIFIC",
+      "agent_model": "gpt-5.6-terra",
+      "agent_provider": "openai",
+      "agent_available": true,
+      "environment": {
+        "python": "3.13.14",
+        "platform": "Linux-7.1.8-200.fc44.x86_64-x86_64-with-glibc2.43",
+        "cwd_note": "each run uses an isolated temp workspace"
+      },
+      "scientific": true
+    },
+    "variants": [
+      "A_raw",
+      "B_structured",
+      "C_vibeprompt"
+    ],
+    "mode": "SCIENTIFIC",
+    "protocol": "RQ5_PROTOCOL_v2"
+  },
+  "timestamp": "2026-10-01T20:47:32.010323+00:00"
+}

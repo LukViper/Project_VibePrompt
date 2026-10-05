@@ -1,0 +1,126 @@
+{
+  "workspace_id": "ws-582c6e77e4eb",
+  "task_id": "todo_backend",
+  "system_variant": "A_raw",
+  "dataset_version": "2.0.0",
+  "seed_commit": "347cfdcdc8aae75c7e051a9141c9ce43ad98d642",
+  "start_time": "2026-10-01T21:04:22.848241+00:00",
+  "end_time": "2026-10-01T21:05:01.282722+00:00",
+  "exit_code": 0,
+  "duration_seconds": 38.43428404899896,
+  "execution_status": "EXECUTED_WITH_VALIDATION",
+  "build_status": "PASS",
+  "test_status": "PASS",
+  "build_exit_code": 0,
+  "test_exit_code": 0,
+  "prompt_provenance": {
+    "method": "direct_conversation",
+    "provenance": {
+      "pipeline": [
+        "conversation",
+        "direct_prompt"
+      ]
+    },
+    "state_summary": null
+  },
+  "artifacts": {
+    "stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-582c6e77e4eb/agent_stdout.txt",
+    "stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-582c6e77e4eb/agent_stderr.txt",
+    "git_diff": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-582c6e77e4eb/git_diff.patch",
+    "build_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-582c6e77e4eb/build_stdout.txt",
+    "build_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-582c6e77e4eb/build_stderr.txt",
+    "test_stdout": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-582c6e77e4eb/test_stdout.txt",
+    "test_stderr": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-582c6e77e4eb/test_stderr.txt",
+    "workspace_copy": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/workspaces/ws-582c6e77e4eb"
+  },
+  "git": {
+    "commit_before": "347cfdcdc8aae75c7e051a9141c9ce43ad98d642",
+    "seed_commit": "347cfdcdc8aae75c7e051a9141c9ce43ad98d642",
+    "commit_after": "347cfdcdc8aae75c7e051a9141c9ce43ad98d642",
+    "changed_files": [
+      "pp/todos.py"
+    ],
+    "created_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/todos.cpython-314.pyc"
+    ],
+    "deleted_files": [],
+    "renamed_files": [],
+    "untracked_files": [
+      "TASK.md",
+      "VIBEPROMPT_META.json",
+      "app/__pycache__/__init__.cpython-314.pyc",
+      "app/__pycache__/todos.cpython-314.pyc"
+    ],
+    "status_preview": "M app/todos.py\n?? TASK.md\n?? VIBEPROMPT_META.json\n?? app/__pycache__/"
+  },
+  "agent_run": {
+    "id": "RUN-4054d7d52106",
+    "project_id": "todo_backend",
+    "prompt_id": null,
+    "agent": "openai",
+    "model": "gpt-5.6-terra",
+    "model_version": null,
+    "repository": "/tmp/vibeprompt_rq5_sci__6kbje8d/ws-582c6e77e4eb",
+    "commit_before": "347cfdcdc8aae75c7e051a9141c9ce43ad98d642",
+    "commit_after": "347cfdcdc8aae75c7e051a9141c9ce43ad98d642",
+    "started_at": "2026-10-01T21:04:22.848241+00:00",
+    "completed_at": "2026-10-01T21:05:01.282722+00:00",
+    "build_status": "PASS",
+    "test_status": "PASS",
+    "output_summary": "Implemented [app/todos.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-582c6e77e4eb/app/todos.py).\n\n- `add_todo(title)` validates titles, stores `{title, done: False}`, and returns an integer ID.\n- `complete_todo(id)` marks the todo done and returns it.\n- No multi-user/auth logic added.\n\nVerified with a local Python smoke test.\n",
+    "workspace_id": "ws-582c6e77e4eb",
+    "task_id": "todo_backend",
+    "system_variant": "A_raw",
+    "exit_code": 0,
+    "duration_seconds": 38.43428404899896,
+    "stdout_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-582c6e77e4eb/agent_stdout.txt",
+    "stderr_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-582c6e77e4eb/agent_stderr.txt",
+    "git_diff_artifact": "/home/luk_viper/Prompting/evaluation/results/2026-10-01_204732_rq5/rq5/artifacts/ws-582c6e77e4eb/git_diff.patch",
+    "label": "SCIENTIFIC",
+    "execution_status": "EXECUTED_WITH_VALIDATION"
+  },
+  "requirement_verifications": [
+    {
+      "id": "VER-304e46d14636",
+      "requirement_id": "REQ-001",
+      "agent_run_id": "RUN-4054d7d52106",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_add_todo",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "add_todo creates a todo",
+        "acceptance_test": "test_add_todo"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T21:05:01.577604+00:00",
+      "verification_method": "acceptance_test_marker"
+    },
+    {
+      "id": "VER-20963bea2c83",
+      "requirement_id": "REQ-002",
+      "agent_run_id": "RUN-4054d7d52106",
+      "status": "PASS",
+      "evidence": [
+        "acceptance_test:test_complete_todo",
+        "test_status:PASS"
+      ],
+      "test_results": {
+        "requirement_text": "complete_todo marks done",
+        "acceptance_test": "test_complete_todo"
+      },
+      "confidence": null,
+      "verified_at": "2026-10-01T21:05:01.577631+00:00",
+      "verification_method": "acceptance_test_marker"
+    }
+  ],
+  "unsupported_features": [],
+  "constraint_violations": [],
+  "scope_violations": [],
+  "label": "SCIENTIFIC"
+}

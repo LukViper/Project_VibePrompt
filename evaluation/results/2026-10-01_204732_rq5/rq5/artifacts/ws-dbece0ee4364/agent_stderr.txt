@@ -1,0 +1,2084 @@
+OpenAI Codex v0.148.0
+--------
+workdir: /tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364
+model: gpt-5.6-terra
+provider: openai
+approval: never
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: low
+reasoning summaries: none
+session id: 01a0f93e-0a7a-7661-bba4-0c5008d9057a
+--------
+user
+You are a senior software engineer.
+
+Build the following project completely.
+
+ROLE
+You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
+
+PROJECT
+Untitled project
+
+OBJECTIVE
+See the specification.
+
+PROBLEM
+See the specification.
+
+REQUIREMENTS
+Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
+
+FUNCTIONAL REQUIREMENTS
+REQ-001:
+Register(username, password) must store the user
+  Acceptance: Given a typical input, the system store the user.
+REQ-002:
+Login(username, password) must return a token string on success
+  Acceptance: Given a typical input, the system return a token string on success.
+
+NON-FUNCTIONAL REQUIREMENTS
+- None recorded.
+
+CONSTRAINTS
+- Team size: None
+- Duration: None
+- Budget: None
+- Avoid: Do not expose a DELETE user endpoint, Do not use an external database
+
+TECH STACK
+Backend: unspecified
+Model: unspecified
+Database: unspecified
+Frameworks: unspecified
+Hardware: none
+
+ARCHITECTURE
+Use a modular monolith unless ProjectState specifies otherwise.
+
+DATABASE
+Use the database named in TECH STACK.
+
+API
+Implement an operation for every functional requirement.
+
+SECURITY
+Keep secrets in environment variables. Validate input. Do not expose credentials.
+
+TESTING
+Write a test mapped from each requirement ID. Run the tests.
+
+ACCEPTANCE CRITERIA
+[ ] REQ-001: Given a typical input, the system store the user.
+[ ] REQ-002: Given a typical input, the system return a token string on success.
+[ ] Tests pass
+[ ] Application runs successfully
+
+IMPLEMENTATION PROCESS
+1. Inspect the existing repository.
+2. Understand the requirements.
+3. Create the required architecture.
+4. Implement the components.
+5. Configure dependencies.
+6. Implement database, API, and frontend components.
+7. Write tests.
+8. Run tests.
+9. Fix implementation errors.
+10. Verify every acceptance criterion.
+11. Provide setup instructions.
+
+DELIVERABLES
+- Working implementation of every requirement ID
+- Tests
+- Setup instructions
+- A short note mapping each acceptance criterion to evidence
+
+Do not remove or silently alter required functionality.
+Do not replace required functionality with placeholders.
+
+
+# COMPILATION GATE NOTES
+- project objective is missing
+Implement only CONFIRMED requirements listed above.
+codex
+I’ll inspect the repository first, then implement only the confirmed registration and login requirements with tests and run them.
+exec
+/usr/bin/zsh -lc "pwd && rg --files -g '"'!node_modules'"' -g '"'!dist'"' -g '"'!build'"' && git status --short" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364
+ succeeded in 0ms:
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364
+README.md
+TASK.md
+VIBEPROMPT_META.json
+app/auth.py
+app/__init__.py
+tests/test_auth.py
+?? TASK.md
+?? VIBEPROMPT_META.json
+
+exec
+/usr/bin/zsh -lc "sed -n '1,240p' README.md && sed -n '1,260p' TASK.md && sed -n '1,260p' app/auth.py && sed -n '1,260p' app/__init__.py && sed -n '1,260p' tests/test_auth.py" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364
+ succeeded in 0ms:
+# auth_token_service
+You are a senior software engineer.
+
+Build the following project completely.
+
+ROLE
+You are a senior software engineer implementing a student project from a validated ProjectState specification. Inspect the existing repository before writing code.
+
+PROJECT
+Untitled project
+
+OBJECTIVE
+See the specification.
+
+PROBLEM
+See the specification.
+
+REQUIREMENTS
+Functional and non-functional requirements below are mandatory. Preserve every requirement ID.
+
+FUNCTIONAL REQUIREMENTS
+REQ-001:
+Register(username, password) must store the user
+  Acceptance: Given a typical input, the system store the user.
+REQ-002:
+Login(username, password) must return a token string on success
+  Acceptance: Given a typical input, the system return a token string on success.
+
+NON-FUNCTIONAL REQUIREMENTS
+- None recorded.
+
+CONSTRAINTS
+- Team size: None
+- Duration: None
+- Budget: None
+- Avoid: Do not expose a DELETE user endpoint, Do not use an external database
+
+TECH STACK
+Backend: unspecified
+Model: unspecified
+Database: unspecified
+Frameworks: unspecified
+Hardware: none
+
+ARCHITECTURE
+Use a modular monolith unless ProjectState specifies otherwise.
+
+DATABASE
+Use the database named in TECH STACK.
+
+API
+Implement an operation for every functional requirement.
+
+SECURITY
+Keep secrets in environment variables. Validate input. Do not expose credentials.
+
+TESTING
+Write a test mapped from each requirement ID. Run the tests.
+
+ACCEPTANCE CRITERIA
+[ ] REQ-001: Given a typical input, the system store the user.
+[ ] REQ-002: Given a typical input, the system return a token string on success.
+[ ] Tests pass
+[ ] Application runs successfully
+
+IMPLEMENTATION PROCESS
+1. Inspect the existing repository.
+2. Understand the requirements.
+3. Create the required architecture.
+4. Implement the components.
+5. Configure dependencies.
+6. Implement database, API, and frontend components.
+7. Write tests.
+8. Run tests.
+9. Fix implementation errors.
+10. Verify every acceptance criterion.
+11. Provide setup instructions.
+
+DELIVERABLES
+- Working implementation of every requirement ID
+- Tests
+- Setup instructions
+- A short note mapping each acceptance criterion to evidence
+
+Do not remove or silently alter required functionality.
+Do not replace required functionality with placeholders.
+
+
+# COMPILATION GATE NOTES
+- project objective is missing
+Implement only CONFIRMED requirements listed above.
+USERS = {}
+
+def register(username, password):
+    raise NotImplementedError
+
+def login(username, password):
+    raise NotImplementedError
+import pytest
+from app import auth
+
+def setup_function():
+    auth.USERS.clear()
+
+def test_register_and_login():
+    auth.register('ada', 'secret')
+    token = auth.login('ada', 'secret')
+    assert isinstance(token, str) and token
+
+def test_login_rejects_bad_password():
+    auth.register('ada', 'secret')
+    with pytest.raises(Exception):
+        auth.login('ada', 'wrong')
+
+codex
+The repository is a minimal Python stub with direct `register`/`login` functions and two incomplete tests. I’ll keep that public interface, use an in-memory store, hash passwords, and add a small standard-library JSON HTTP API (`POST /register`, `POST /login`) without adding external dependencies.
+2026-10-01T20:54:31.377972Z ERROR codex_core::tools::router: error=apply_patch verification failed: invalid patch: multiple operations target /tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/app/auth.py
+apply patch
+patch: completed
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/app/__init__.py
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/app/auth.py
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/tests/test_auth.py
+diff --git a/app/__init__.py b/app/__init__.py
+deleted file mode 100644
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..0000000000000000000000000000000000000000
+diff --git a/app/auth.py b/app/auth.py
+deleted file mode 100644
+index 53030ec15f5fd0b303c49c62bdeedf3b61f953af..0000000000000000000000000000000000000000
+--- a/app/auth.py
++++ /dev/null
+@@ -1,7 +0,0 @@
+-USERS = {}
+-
+-def register(username, password):
+-    raise NotImplementedError
+-
+-def login(username, password):
+-    raise NotImplementedError
+diff --git a/tests/test_auth.py b/tests/test_auth.py
+deleted file mode 100644
+index b5b916861081f5785d4f5752e1a650783da46eea..0000000000000000000000000000000000000000
+--- a/tests/test_auth.py
++++ /dev/null
+@@ -1,15 +0,0 @@
+-import pytest
+-from app import auth
+-
+-def setup_function():
+-    auth.USERS.clear()
+-
+-def test_register_and_login():
+-    auth.register('ada', 'secret')
+-    token = auth.login('ada', 'secret')
+-    assert isinstance(token, str) and token
+-
+-def test_login_rejects_bad_password():
+-    auth.register('ada', 'secret')
+-    with pytest.raises(Exception):
+-        auth.login('ada', 'wrong')
+
+diff --git a/app/__init__.py b/app/__init__.py
+deleted file mode 100644
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..0000000000000000000000000000000000000000
+diff --git a/app/auth.py b/app/auth.py
+deleted file mode 100644
+index 53030ec15f5fd0b303c49c62bdeedf3b61f953af..0000000000000000000000000000000000000000
+--- a/app/auth.py
++++ /dev/null
+@@ -1,7 +0,0 @@
+-USERS = {}
+-
+-def register(username, password):
+-    raise NotImplementedError
+-
+-def login(username, password):
+-    raise NotImplementedError
+diff --git a/tests/test_auth.py b/tests/test_auth.py
+deleted file mode 100644
+index b5b916861081f5785d4f5752e1a650783da46eea..0000000000000000000000000000000000000000
+--- a/tests/test_auth.py
++++ /dev/null
+@@ -1,15 +0,0 @@
+-import pytest
+-from app import auth
+-
+-def setup_function():
+-    auth.USERS.clear()
+-
+-def test_register_and_login():
+-    auth.register('ada', 'secret')
+-    token = auth.login('ada', 'secret')
+-    assert isinstance(token, str) and token
+-
+-def test_login_rejects_bad_password():
+-    auth.register('ada', 'secret')
+-    with pytest.raises(Exception):
+-        auth.login('ada', 'wrong')
+
+apply patch
+patch: completed
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/README.md
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/app/__init__.py
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/app/__main__.py
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/app/api.py
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/app/auth.py
+/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/tests/test_auth.py
+diff --git a/README.md b/README.md
+index b39ebe0efb37d874e49581009c248af409433a06..3e963bd2b324976d200148ec8b260787b823a254
+--- a/README.md
++++ b/README.md
+@@ -1 +1,32 @@
+-# auth_token_service
++# Auth token service
++
++An in-memory Python authentication service with registration and signed-token login. User records are not persisted between process restarts; this intentionally satisfies the no-external-database constraint.
++
++## Run
++
++Requires Python 3.10+ and `pytest` for the test suite.
++
++```bash
++export AUTH_TOKEN_SECRET='replace-with-a-long-random-secret'
++python -m app
++```
++
++The service listens on `http://127.0.0.1:8000`.
++
++```bash
++curl -X POST http://127.0.0.1:8000/register -H 'Content-Type: application/json' -d '{"username":"ada","password":"secret"}'
++curl -X POST http://127.0.0.1:8000/login -H 'Content-Type: application/json' -d '{"username":"ada","password":"secret"}'
++```
++
++Only `POST /register` and `POST /login` are implemented. There is deliberately no user-deletion endpoint.
++
++## Test
++
++```bash
++python -m pytest
++```
++
++## Requirement evidence
++
++- **REQ-001:** `test_req_001_register_stores_user_without_plaintext_password` verifies registration stores a user record.
++- **REQ-002:** `test_req_002_login_returns_a_non_empty_token_string` verifies successful login returns a token string.
+diff --git a/app/__init__.py b/app/__init__.py
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..3ffac65f7f4b452504a9844039d8f1ff5c71d21b
+--- a/app/__init__.py
++++ b/app/__init__.py
+@@ -0,0 +1,4 @@
++"""Authentication token service package."""
++from .auth import login, register
++
++__all__ = ["login", "register"]
+diff --git a/app/__main__.py b/app/__main__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..f2022b3e039a058efcc4f38de592fa6a5d5911a3
+--- /dev/null
++++ b/app/__main__.py
+@@ -0,0 +1,8 @@
++from wsgiref.simple_server import make_server
++
++from .api import application
++
++if __name__ == "__main__":
++    with make_server("127.0.0.1", 8000, application) as server:
++        print("Authentication API listening at http://127.0.0.1:8000")
++        server.serve_forever()
+diff --git a/app/api.py b/app/api.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..bdf3867f10c6e9b6dea73a73642611cee2bfcf76
+--- /dev/null
++++ b/app/api.py
+@@ -0,0 +1,48 @@
++"""Dependency-free WSGI JSON API for the authentication service."""
++from __future__ import annotations
++
++import json
++from typing import Callable
++
++from .auth import AuthenticationError, UserAlreadyExistsError, ValidationError, login, register
++
++
++def _response(start_response: Callable, status: str, body: dict) -> list[bytes]:
++    data = json.dumps(body).encode("utf-8")
++    start_response(status, [("Content-Type", "application/json"), ("Content-Length", str(len(data)))])
++    return [data]
++
++
++def _request_json(environ: dict) -> dict:
++    try:
++        content_length = int(environ.get("CONTENT_LENGTH") or 0)
++    except ValueError as error:
++        raise ValidationError("invalid Content-Length") from error
++    if content_length > 16_384:
++        raise ValidationError("request body is too large")
++    raw_body = environ["wsgi.input"].read(content_length)
++    try:
++        body = json.loads(raw_body.decode("utf-8"))
++    except (UnicodeDecodeError, json.JSONDecodeError) as error:
++        raise ValidationError("request body must be valid JSON") from error
++    if not isinstance(body, dict):
++        raise ValidationError("request body must be a JSON object")
++    return body
++
++
++def application(environ: dict, start_response: Callable) -> list[bytes]:
++    """Serve POST /register and POST /login; no deletion operation exists."""
++    path, method = environ.get("PATH_INFO"), environ.get("REQUEST_METHOD")
++    if method != "POST" or path not in {"/register", "/login"}:
++        return _response(start_response, "404 Not Found", {"error": "not found"})
++    try:
++        body = _request_json(environ)
++        username, password = body.get("username"), body.get("password")
++        if path == "/register":
++            register(username, password)
++            return _response(start_response, "201 Created", {"username": username})
++        return _response(start_response, "200 OK", {"token": login(username, password)})
++    except (ValidationError, UserAlreadyExistsError) as error:
++        return _response(start_response, "400 Bad Request", {"error": str(error)})
++    except AuthenticationError:
++        return _response(start_response, "401 Unauthorized", {"error": "invalid username or password"})
+diff --git a/app/auth.py b/app/auth.py
+index 53030ec15f5fd0b303c49c62bdeedf3b61f953af..9ae4dea07fef3366719ce55bd43299c71beb5d17
+--- a/app/auth.py
++++ b/app/auth.py
+@@ -1,7 +1,89 @@
+-USERS = {}
++"""In-memory authentication service."""
++from __future__ import annotations
++
++import base64
++import hashlib
++import hmac
++import os
++import re
++import secrets
++import threading
++import time
++from dataclasses import dataclass
++
++_USERNAME_PATTERN = re.compile(r"^[A-Za-z0-9_.-]{3,64}$")
++_MAX_PASSWORD_LENGTH = 1024
++_PBKDF2_ITERATIONS = 600_000
++_STORE_LOCK = threading.RLock()
++
++
++class ValidationError(ValueError):
++    """Raised when registration input is malformed."""
++
++
++class AuthenticationError(ValueError):
++    """Raised when credentials cannot be authenticated."""
++
++
++class UserAlreadyExistsError(ValueError):
++    """Raised when a username is already registered."""
++
++
++@dataclass(frozen=True)
++class User:
++    username: str
++    password_salt: bytes
++    password_hash: bytes
++
++
++# Public for the original project API and deterministic test setup. Plaintext
++# passwords are never stored.
++USERS: dict[str, User] = {}
++
++
++def _validate_credentials(username: str, password: str) -> None:
++    if not isinstance(username, str) or not _USERNAME_PATTERN.fullmatch(username):
++        raise ValidationError("username must be 3-64 characters using letters, numbers, '.', '_' or '-'")
++    if not isinstance(password, str) or not password or len(password) > _MAX_PASSWORD_LENGTH:
++        raise ValidationError("password must be between 1 and 1024 characters")
++
++
++def _password_hash(password: str, salt: bytes) -> bytes:
++    return hashlib.pbkdf2_hmac("sha256", password.encode("utf-8"), salt, _PBKDF2_ITERATIONS)
++
++
++def register(username: str, password: str) -> None:
++    """Store a new validated user. (REQ-001)"""
++    _validate_credentials(username, password)
++    with _STORE_LOCK:
++        if username in USERS:
++            raise UserAlreadyExistsError("username is already registered")
++        salt = secrets.token_bytes(16)
++        USERS[username] = User(username, salt, _password_hash(password, salt))
++
++
++_EPHEMERAL_TOKEN_SECRET = secrets.token_bytes(32)
++
++
++def _token_secret() -> bytes:
++    """Use the deployment secret or a process-local secret when none is set."""
++    configured_secret = os.getenv("AUTH_TOKEN_SECRET")
++    return configured_secret.encode("utf-8") if configured_secret else _EPHEMERAL_TOKEN_SECRET
+ 
+-def register(username, password):
+-    raise NotImplementedError
+ 
+-def login(username, password):
+-    raise NotImplementedError
++def _create_token(username: str) -> str:
++    payload = f"{username}.{int(time.time())}".encode("utf-8")
++    signature = hmac.new(_token_secret(), payload, hashlib.sha256).digest()
++    encoded_payload = base64.urlsafe_b64encode(payload).rstrip(b"=")
++    encoded_signature = base64.urlsafe_b64encode(signature).rstrip(b"=")
++    return f"{encoded_payload.decode('ascii')}.{encoded_signature.decode('ascii')}"
++
++
++def login(username: str, password: str) -> str:
++    """Authenticate a user and return a signed opaque token string. (REQ-002)"""
++    _validate_credentials(username, password)
++    with _STORE_LOCK:
++        user = USERS.get(username)
++    if user is None or not hmac.compare_digest(_password_hash(password, user.password_salt), user.password_hash):
++        raise AuthenticationError("invalid username or password")
++    return _create_token(username)
+diff --git a/tests/test_auth.py b/tests/test_auth.py
+index b5b916861081f5785d4f5752e1a650783da46eea..5f67fe7c7c3744148275227597ae04a4135daec8
+--- a/tests/test_auth.py
++++ b/tests/test_auth.py
+@@ -1,15 +1,58 @@
++import io
++import json
++
+ import pytest
++
+ from app import auth
++from app.api import application
++
+ 
+ def setup_function():
+     auth.USERS.clear()
+ 
+-def test_register_and_login():
+-    auth.register('ada', 'secret')
+-    token = auth.login('ada', 'secret')
++
++def _api_request(path, payload):
++    response = {}
++    def start_response(status, headers):
++        response["status"] = status
++    body = json.dumps(payload).encode()
++    result = application({"REQUEST_METHOD": "POST", "PATH_INFO": path, "CONTENT_LENGTH": str(len(body)), "wsgi.input": io.BytesIO(body)}, start_response)
++    return response["status"], json.loads(b"".join(result))
++
++
++def test_req_001_register_stores_user_without_plaintext_password():
++    """REQ-001: normal registration persists a user record."""
++    auth.register("ada", "secret")
++    assert "ada" in auth.USERS
++    assert auth.USERS["ada"].password_hash != b"secret"
++
++
++def test_req_002_login_returns_a_non_empty_token_string():
++    """REQ-002: valid credentials receive a token string."""
++    auth.register("ada", "secret")
++    token = auth.login("ada", "secret")
+     assert isinstance(token, str) and token
+ 
++
++def test_api_register_and_login_operations():
++    status, registration = _api_request("/register", {"username": "ada", "password": "secret"})
++    assert status == "201 Created"
++    assert registration == {"username": "ada"}
++    status, login_response = _api_request("/login", {"username": "ada", "password": "secret"})
++    assert status == "200 OK"
++    assert isinstance(login_response["token"], str) and login_response["token"]
++
++
+ def test_login_rejects_bad_password():
+-    auth.register('ada', 'secret')
+-    with pytest.raises(Exception):
+-        auth.login('ada', 'wrong')
++    auth.register("ada", "secret")
++    with pytest.raises(auth.AuthenticationError):
++        auth.login("ada", "wrong")
++
++
++def test_api_does_not_expose_delete_user_endpoint():
++    response = {}
++    def start_response(status, headers):
++        response["status"] = status
++    result = application({"REQUEST_METHOD": "DELETE", "PATH_INFO": "/users/ada", "wsgi.input": io.BytesIO()}, start_response)
++    assert response["status"] == "404 Not Found"
++    assert json.loads(b"".join(result)) == {"error": "not found"}
+
+diff --git a/README.md b/README.md
+index b39ebe0efb37d874e49581009c248af409433a06..3e963bd2b324976d200148ec8b260787b823a254
+--- a/README.md
++++ b/README.md
+@@ -1 +1,32 @@
+-# auth_token_service
++# Auth token service
++
++An in-memory Python authentication service with registration and signed-token login. User records are not persisted between process restarts; this intentionally satisfies the no-external-database constraint.
++
++## Run
++
++Requires Python 3.10+ and `pytest` for the test suite.
++
++```bash
++export AUTH_TOKEN_SECRET='replace-with-a-long-random-secret'
++python -m app
++```
++
++The service listens on `http://127.0.0.1:8000`.
++
++```bash
++curl -X POST http://127.0.0.1:8000/register -H 'Content-Type: application/json' -d '{"username":"ada","password":"secret"}'
++curl -X POST http://127.0.0.1:8000/login -H 'Content-Type: application/json' -d '{"username":"ada","password":"secret"}'
++```
++
++Only `POST /register` and `POST /login` are implemented. There is deliberately no user-deletion endpoint.
++
++## Test
++
++```bash
++python -m pytest
++```
++
++## Requirement evidence
++
++- **REQ-001:** `test_req_001_register_stores_user_without_plaintext_password` verifies registration stores a user record.
++- **REQ-002:** `test_req_002_login_returns_a_non_empty_token_string` verifies successful login returns a token string.
+diff --git a/app/__init__.py b/app/__init__.py
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..3ffac65f7f4b452504a9844039d8f1ff5c71d21b
+--- a/app/__init__.py
++++ b/app/__init__.py
+@@ -0,0 +1,4 @@
++"""Authentication token service package."""
++from .auth import login, register
++
++__all__ = ["login", "register"]
+diff --git a/app/__main__.py b/app/__main__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..f2022b3e039a058efcc4f38de592fa6a5d5911a3
+--- /dev/null
++++ b/app/__main__.py
+@@ -0,0 +1,8 @@
++from wsgiref.simple_server import make_server
++
++from .api import application
++
++if __name__ == "__main__":
++    with make_server("127.0.0.1", 8000, application) as server:
++        print("Authentication API listening at http://127.0.0.1:8000")
++        server.serve_forever()
+diff --git a/app/api.py b/app/api.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..bdf3867f10c6e9b6dea73a73642611cee2bfcf76
+--- /dev/null
++++ b/app/api.py
+@@ -0,0 +1,48 @@
++"""Dependency-free WSGI JSON API for the authentication service."""
++from __future__ import annotations
++
++import json
++from typing import Callable
++
++from .auth import AuthenticationError, UserAlreadyExistsError, ValidationError, login, register
++
++
++def _response(start_response: Callable, status: str, body: dict) -> list[bytes]:
++    data = json.dumps(body).encode("utf-8")
++    start_response(status, [("Content-Type", "application/json"), ("Content-Length", str(len(data)))])
++    return [data]
++
++
++def _request_json(environ: dict) -> dict:
++    try:
++        content_length = int(environ.get("CONTENT_LENGTH") or 0)
++    except ValueError as error:
++        raise ValidationError("invalid Content-Length") from error
++    if content_length > 16_384:
++        raise ValidationError("request body is too large")
++    raw_body = environ["wsgi.input"].read(content_length)
++    try:
++        body = json.loads(raw_body.decode("utf-8"))
++    except (UnicodeDecodeError, json.JSONDecodeError) as error:
++        raise ValidationError("request body must be valid JSON") from error
++    if not isinstance(body, dict):
++        raise ValidationError("request body must be a JSON object")
++    return body
++
++
++def application(environ: dict, start_response: Callable) -> list[bytes]:
++    """Serve POST /register and POST /login; no deletion operation exists."""
++    path, method = environ.get("PATH_INFO"), environ.get("REQUEST_METHOD")
++    if method != "POST" or path not in {"/register", "/login"}:
++        return _response(start_response, "404 Not Found", {"error": "not found"})
++    try:
++        body = _request_json(environ)
++        username, password = body.get("username"), body.get("password")
++        if path == "/register":
++            register(username, password)
++            return _response(start_response, "201 Created", {"username": username})
++        return _response(start_response, "200 OK", {"token": login(username, password)})
++    except (ValidationError, UserAlreadyExistsError) as error:
++        return _response(start_response, "400 Bad Request", {"error": str(error)})
++    except AuthenticationError:
++        return _response(start_response, "401 Unauthorized", {"error": "invalid username or password"})
+diff --git a/app/auth.py b/app/auth.py
+index 53030ec15f5fd0b303c49c62bdeedf3b61f953af..9ae4dea07fef3366719ce55bd43299c71beb5d17
+--- a/app/auth.py
++++ b/app/auth.py
+@@ -1,7 +1,89 @@
+-USERS = {}
++"""In-memory authentication service."""
++from __future__ import annotations
++
++import base64
++import hashlib
++import hmac
++import os
++import re
++import secrets
++import threading
++import time
++from dataclasses import dataclass
++
++_USERNAME_PATTERN = re.compile(r"^[A-Za-z0-9_.-]{3,64}$")
++_MAX_PASSWORD_LENGTH = 1024
++_PBKDF2_ITERATIONS = 600_000
++_STORE_LOCK = threading.RLock()
++
++
++class ValidationError(ValueError):
++    """Raised when registration input is malformed."""
++
++
++class AuthenticationError(ValueError):
++    """Raised when credentials cannot be authenticated."""
++
++
++class UserAlreadyExistsError(ValueError):
++    """Raised when a username is already registered."""
++
++
++@dataclass(frozen=True)
++class User:
++    username: str
++    password_salt: bytes
++    password_hash: bytes
++
++
++# Public for the original project API and deterministic test setup. Plaintext
++# passwords are never stored.
++USERS: dict[str, User] = {}
++
++
++def _validate_credentials(username: str, password: str) -> None:
++    if not isinstance(username, str) or not _USERNAME_PATTERN.fullmatch(username):
++        raise ValidationError("username must be 3-64 characters using letters, numbers, '.', '_' or '-'")
++    if not isinstance(password, str) or not password or len(password) > _MAX_PASSWORD_LENGTH:
++        raise ValidationError("password must be between 1 and 1024 characters")
++
++
++def _password_hash(password: str, salt: bytes) -> bytes:
++    return hashlib.pbkdf2_hmac("sha256", password.encode("utf-8"), salt, _PBKDF2_ITERATIONS)
++
++
++def register(username: str, password: str) -> None:
++    """Store a new validated user. (REQ-001)"""
++    _validate_credentials(username, password)
++    with _STORE_LOCK:
++        if username in USERS:
++            raise UserAlreadyExistsError("username is already registered")
++        salt = secrets.token_bytes(16)
++        USERS[username] = User(username, salt, _password_hash(password, salt))
++
++
++_EPHEMERAL_TOKEN_SECRET = secrets.token_bytes(32)
++
++
++def _token_secret() -> bytes:
++    """Use the deployment secret or a process-local secret when none is set."""
++    configured_secret = os.getenv("AUTH_TOKEN_SECRET")
++    return configured_secret.encode("utf-8") if configured_secret else _EPHEMERAL_TOKEN_SECRET
+ 
+-def register(username, password):
+-    raise NotImplementedError
+ 
+-def login(username, password):
+-    raise NotImplementedError
++def _create_token(username: str) -> str:
++    payload = f"{username}.{int(time.time())}".encode("utf-8")
++    signature = hmac.new(_token_secret(), payload, hashlib.sha256).digest()
++    encoded_payload = base64.urlsafe_b64encode(payload).rstrip(b"=")
++    encoded_signature = base64.urlsafe_b64encode(signature).rstrip(b"=")
++    return f"{encoded_payload.decode('ascii')}.{encoded_signature.decode('ascii')}"
++
++
++def login(username: str, password: str) -> str:
++    """Authenticate a user and return a signed opaque token string. (REQ-002)"""
++    _validate_credentials(username, password)
++    with _STORE_LOCK:
++        user = USERS.get(username)
++    if user is None or not hmac.compare_digest(_password_hash(password, user.password_salt), user.password_hash):
++        raise AuthenticationError("invalid username or password")
++    return _create_token(username)
+diff --git a/tests/test_auth.py b/tests/test_auth.py
+index b5b916861081f5785d4f5752e1a650783da46eea..5f67fe7c7c3744148275227597ae04a4135daec8
+--- a/tests/test_auth.py
++++ b/tests/test_auth.py
+@@ -1,15 +1,58 @@
++import io
++import json
++
+ import pytest
++
+ from app import auth
++from app.api import application
++
+ 
+ def setup_function():
+     auth.USERS.clear()
+ 
+-def test_register_and_login():
+-    auth.register('ada', 'secret')
+-    token = auth.login('ada', 'secret')
++
++def _api_request(path, payload):
++    response = {}
++    def start_response(status, headers):
++        response["status"] = status
++    body = json.dumps(payload).encode()
++    result = application({"REQUEST_METHOD": "POST", "PATH_INFO": path, "CONTENT_LENGTH": str(len(body)), "wsgi.input": io.BytesIO(body)}, start_response)
++    return response["status"], json.loads(b"".join(result))
++
++
++def test_req_001_register_stores_user_without_plaintext_password():
++    """REQ-001: normal registration persists a user record."""
++    auth.register("ada", "secret")
++    assert "ada" in auth.USERS
++    assert auth.USERS["ada"].password_hash != b"secret"
++
++
++def test_req_002_login_returns_a_non_empty_token_string():
++    """REQ-002: valid credentials receive a token string."""
++    auth.register("ada", "secret")
++    token = auth.login("ada", "secret")
+     assert isinstance(token, str) and token
+ 
++
++def test_api_register_and_login_operations():
++    status, registration = _api_request("/register", {"username": "ada", "password": "secret"})
++    assert status == "201 Created"
++    assert registration == {"username": "ada"}
++    status, login_response = _api_request("/login", {"username": "ada", "password": "secret"})
++    assert status == "200 OK"
++    assert isinstance(login_response["token"], str) and login_response["token"]
++
++
+ def test_login_rejects_bad_password():
+-    auth.register('ada', 'secret')
+-    with pytest.raises(Exception):
+-        auth.login('ada', 'wrong')
++    auth.register("ada", "secret")
++    with pytest.raises(auth.AuthenticationError):
++        auth.login("ada", "wrong")
++
++
++def test_api_does_not_expose_delete_user_endpoint():
++    response = {}
++    def start_response(status, headers):
++        response["status"] = status
++    result = application({"REQUEST_METHOD": "DELETE", "PATH_INFO": "/users/ada", "wsgi.input": io.BytesIO()}, start_response)
++    assert response["status"] == "404 Not Found"
++    assert json.loads(b"".join(result)) == {"error": "not found"}
+
+codex
+Implementation is in place, including hashed in-memory credentials, environment-backed token signing, input validation, and the two required POST operations. I’m running the requirement-mapped tests and a startup smoke check now.
+exec
+/usr/bin/zsh -lc 'python -m pytest -q && timeout 2s python -m app' in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364
+ exited 1 in 835ms:
+.....                                                                    [100%]
+5 passed in 0.66s
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/app/__main__.py", line 6, in <module>
+    with make_server("127.0.0.1", 8000, application) as server:
+         ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/wsgiref/simple_server.py", line 150, in make_server
+    server = server_class((host, port), handler_class)
+  File "/usr/lib64/python3.14/socketserver.py", line 453, in __init__
+    self.socket = socket.socket(self.address_family,
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+                                self.socket_type)
+                                ^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.14/socket.py", line 236, in __init__
+    _socket.socket.__init__(self, family, type, proto, fileno)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 1] Operation not permitted
+
+diff --git a/README.md b/README.md
+index b39ebe0efb37d874e49581009c248af409433a06..3e963bd2b324976d200148ec8b260787b823a254
+--- a/README.md
++++ b/README.md
+@@ -1 +1,32 @@
+-# auth_token_service
++# Auth token service
++
++An in-memory Python authentication service with registration and signed-token login. User records are not persisted between process restarts; this intentionally satisfies the no-external-database constraint.
++
++## Run
++
++Requires Python 3.10+ and `pytest` for the test suite.
++
++```bash
++export AUTH_TOKEN_SECRET='replace-with-a-long-random-secret'
++python -m app
++```
++
++The service listens on `http://127.0.0.1:8000`.
++
++```bash
++curl -X POST http://127.0.0.1:8000/register -H 'Content-Type: application/json' -d '{"username":"ada","password":"secret"}'
++curl -X POST http://127.0.0.1:8000/login -H 'Content-Type: application/json' -d '{"username":"ada","password":"secret"}'
++```
++
++Only `POST /register` and `POST /login` are implemented. There is deliberately no user-deletion endpoint.
++
++## Test
++
++```bash
++python -m pytest
++```
++
++## Requirement evidence
++
++- **REQ-001:** `test_req_001_register_stores_user_without_plaintext_password` verifies registration stores a user record.
++- **REQ-002:** `test_req_002_login_returns_a_non_empty_token_string` verifies successful login returns a token string.
+diff --git a/app/__init__.py b/app/__init__.py
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..3ffac65f7f4b452504a9844039d8f1ff5c71d21b
+--- a/app/__init__.py
++++ b/app/__init__.py
+@@ -0,0 +1,4 @@
++"""Authentication token service package."""
++from .auth import login, register
++
++__all__ = ["login", "register"]
+diff --git a/app/__main__.py b/app/__main__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..f2022b3e039a058efcc4f38de592fa6a5d5911a3
+--- /dev/null
++++ b/app/__main__.py
+@@ -0,0 +1,8 @@
++from wsgiref.simple_server import make_server
++
++from .api import application
++
++if __name__ == "__main__":
++    with make_server("127.0.0.1", 8000, application) as server:
++        print("Authentication API listening at http://127.0.0.1:8000")
++        server.serve_forever()
+diff --git a/app/api.py b/app/api.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..bdf3867f10c6e9b6dea73a73642611cee2bfcf76
+--- /dev/null
++++ b/app/api.py
+@@ -0,0 +1,48 @@
++"""Dependency-free WSGI JSON API for the authentication service."""
++from __future__ import annotations
++
++import json
++from typing import Callable
++
++from .auth import AuthenticationError, UserAlreadyExistsError, ValidationError, login, register
++
++
++def _response(start_response: Callable, status: str, body: dict) -> list[bytes]:
++    data = json.dumps(body).encode("utf-8")
++    start_response(status, [("Content-Type", "application/json"), ("Content-Length", str(len(data)))])
++    return [data]
++
++
++def _request_json(environ: dict) -> dict:
++    try:
++        content_length = int(environ.get("CONTENT_LENGTH") or 0)
++    except ValueError as error:
++        raise ValidationError("invalid Content-Length") from error
++    if content_length > 16_384:
++        raise ValidationError("request body is too large")
++    raw_body = environ["wsgi.input"].read(content_length)
++    try:
++        body = json.loads(raw_body.decode("utf-8"))
++    except (UnicodeDecodeError, json.JSONDecodeError) as error:
++        raise ValidationError("request body must be valid JSON") from error
++    if not isinstance(body, dict):
++        raise ValidationError("request body must be a JSON object")
++    return body
++
++
++def application(environ: dict, start_response: Callable) -> list[bytes]:
++    """Serve POST /register and POST /login; no deletion operation exists."""
++    path, method = environ.get("PATH_INFO"), environ.get("REQUEST_METHOD")
++    if method != "POST" or path not in {"/register", "/login"}:
++        return _response(start_response, "404 Not Found", {"error": "not found"})
++    try:
++        body = _request_json(environ)
++        username, password = body.get("username"), body.get("password")
++        if path == "/register":
++            register(username, password)
++            return _response(start_response, "201 Created", {"username": username})
++        return _response(start_response, "200 OK", {"token": login(username, password)})
++    except (ValidationError, UserAlreadyExistsError) as error:
++        return _response(start_response, "400 Bad Request", {"error": str(error)})
++    except AuthenticationError:
++        return _response(start_response, "401 Unauthorized", {"error": "invalid username or password"})
+diff --git a/app/auth.py b/app/auth.py
+index 53030ec15f5fd0b303c49c62bdeedf3b61f953af..9ae4dea07fef3366719ce55bd43299c71beb5d17
+--- a/app/auth.py
++++ b/app/auth.py
+@@ -1,7 +1,89 @@
+-USERS = {}
++"""In-memory authentication service."""
++from __future__ import annotations
++
++import base64
++import hashlib
++import hmac
++import os
++import re
++import secrets
++import threading
++import time
++from dataclasses import dataclass
++
++_USERNAME_PATTERN = re.compile(r"^[A-Za-z0-9_.-]{3,64}$")
++_MAX_PASSWORD_LENGTH = 1024
++_PBKDF2_ITERATIONS = 600_000
++_STORE_LOCK = threading.RLock()
++
++
++class ValidationError(ValueError):
++    """Raised when registration input is malformed."""
++
++
++class AuthenticationError(ValueError):
++    """Raised when credentials cannot be authenticated."""
++
++
++class UserAlreadyExistsError(ValueError):
++    """Raised when a username is already registered."""
++
++
++@dataclass(frozen=True)
++class User:
++    username: str
++    password_salt: bytes
++    password_hash: bytes
++
++
++# Public for the original project API and deterministic test setup. Plaintext
++# passwords are never stored.
++USERS: dict[str, User] = {}
++
++
++def _validate_credentials(username: str, password: str) -> None:
++    if not isinstance(username, str) or not _USERNAME_PATTERN.fullmatch(username):
++        raise ValidationError("username must be 3-64 characters using letters, numbers, '.', '_' or '-'")
++    if not isinstance(password, str) or not password or len(password) > _MAX_PASSWORD_LENGTH:
++        raise ValidationError("password must be between 1 and 1024 characters")
++
++
++def _password_hash(password: str, salt: bytes) -> bytes:
++    return hashlib.pbkdf2_hmac("sha256", password.encode("utf-8"), salt, _PBKDF2_ITERATIONS)
++
++
++def register(username: str, password: str) -> None:
++    """Store a new validated user. (REQ-001)"""
++    _validate_credentials(username, password)
++    with _STORE_LOCK:
++        if username in USERS:
++            raise UserAlreadyExistsError("username is already registered")
++        salt = secrets.token_bytes(16)
++        USERS[username] = User(username, salt, _password_hash(password, salt))
++
++
++_EPHEMERAL_TOKEN_SECRET = secrets.token_bytes(32)
++
++
++def _token_secret() -> bytes:
++    """Use the deployment secret or a process-local secret when none is set."""
++    configured_secret = os.getenv("AUTH_TOKEN_SECRET")
++    return configured_secret.encode("utf-8") if configured_secret else _EPHEMERAL_TOKEN_SECRET
+ 
+-def register(username, password):
+-    raise NotImplementedError
+ 
+-def login(username, password):
+-    raise NotImplementedError
++def _create_token(username: str) -> str:
++    payload = f"{username}.{int(time.time())}".encode("utf-8")
++    signature = hmac.new(_token_secret(), payload, hashlib.sha256).digest()
++    encoded_payload = base64.urlsafe_b64encode(payload).rstrip(b"=")
++    encoded_signature = base64.urlsafe_b64encode(signature).rstrip(b"=")
++    return f"{encoded_payload.decode('ascii')}.{encoded_signature.decode('ascii')}"
++
++
++def login(username: str, password: str) -> str:
++    """Authenticate a user and return a signed opaque token string. (REQ-002)"""
++    _validate_credentials(username, password)
++    with _STORE_LOCK:
++        user = USERS.get(username)
++    if user is None or not hmac.compare_digest(_password_hash(password, user.password_salt), user.password_hash):
++        raise AuthenticationError("invalid username or password")
++    return _create_token(username)
+diff --git a/tests/test_auth.py b/tests/test_auth.py
+index b5b916861081f5785d4f5752e1a650783da46eea..5f67fe7c7c3744148275227597ae04a4135daec8
+--- a/tests/test_auth.py
++++ b/tests/test_auth.py
+@@ -1,15 +1,58 @@
++import io
++import json
++
+ import pytest
++
+ from app import auth
++from app.api import application
++
+ 
+ def setup_function():
+     auth.USERS.clear()
+ 
+-def test_register_and_login():
+-    auth.register('ada', 'secret')
+-    token = auth.login('ada', 'secret')
++
++def _api_request(path, payload):
++    response = {}
++    def start_response(status, headers):
++        response["status"] = status
++    body = json.dumps(payload).encode()
++    result = application({"REQUEST_METHOD": "POST", "PATH_INFO": path, "CONTENT_LENGTH": str(len(body)), "wsgi.input": io.BytesIO(body)}, start_response)
++    return response["status"], json.loads(b"".join(result))
++
++
++def test_req_001_register_stores_user_without_plaintext_password():
++    """REQ-001: normal registration persists a user record."""
++    auth.register("ada", "secret")
++    assert "ada" in auth.USERS
++    assert auth.USERS["ada"].password_hash != b"secret"
++
++
++def test_req_002_login_returns_a_non_empty_token_string():
++    """REQ-002: valid credentials receive a token string."""
++    auth.register("ada", "secret")
++    token = auth.login("ada", "secret")
+     assert isinstance(token, str) and token
+ 
++
++def test_api_register_and_login_operations():
++    status, registration = _api_request("/register", {"username": "ada", "password": "secret"})
++    assert status == "201 Created"
++    assert registration == {"username": "ada"}
++    status, login_response = _api_request("/login", {"username": "ada", "password": "secret"})
++    assert status == "200 OK"
++    assert isinstance(login_response["token"], str) and login_response["token"]
++
++
+ def test_login_rejects_bad_password():
+-    auth.register('ada', 'secret')
+-    with pytest.raises(Exception):
+-        auth.login('ada', 'wrong')
++    auth.register("ada", "secret")
++    with pytest.raises(auth.AuthenticationError):
++        auth.login("ada", "wrong")
++
++
++def test_api_does_not_expose_delete_user_endpoint():
++    response = {}
++    def start_response(status, headers):
++        response["status"] = status
++    result = application({"REQUEST_METHOD": "DELETE", "PATH_INFO": "/users/ada", "wsgi.input": io.BytesIO()}, start_response)
++    assert response["status"] == "404 Not Found"
++    assert json.loads(b"".join(result)) == {"error": "not found"}
+
+codex
+All five tests pass. The only startup smoke-check limitation is this sandbox forbids opening a network socket (`PermissionError` on port binding), so I’ll perform a compilation/import check instead; the WSGI API is already exercised directly by the tests.
+exec
+/usr/bin/zsh -lc "python -m compileall -q app && python -c 'from app.api import application; from app import auth; auth.register(\"ada\", \"secret\"); assert isinstance(auth.login(\"ada\", \"secret\"), str)' && git diff --check && git status --short" in /tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364
+ succeeded in 147ms:
+ M README.md
+ M app/__init__.py
+ M app/auth.py
+ M tests/test_auth.py
+?? TASK.md
+?? VIBEPROMPT_META.json
+?? app/__main__.py
+?? app/__pycache__/
+?? app/api.py
+?? tests/__pycache__/
+
+diff --git a/README.md b/README.md
+index b39ebe0efb37d874e49581009c248af409433a06..3e963bd2b324976d200148ec8b260787b823a254
+--- a/README.md
++++ b/README.md
+@@ -1 +1,32 @@
+-# auth_token_service
++# Auth token service
++
++An in-memory Python authentication service with registration and signed-token login. User records are not persisted between process restarts; this intentionally satisfies the no-external-database constraint.
++
++## Run
++
++Requires Python 3.10+ and `pytest` for the test suite.
++
++```bash
++export AUTH_TOKEN_SECRET='replace-with-a-long-random-secret'
++python -m app
++```
++
++The service listens on `http://127.0.0.1:8000`.
++
++```bash
++curl -X POST http://127.0.0.1:8000/register -H 'Content-Type: application/json' -d '{"username":"ada","password":"secret"}'
++curl -X POST http://127.0.0.1:8000/login -H 'Content-Type: application/json' -d '{"username":"ada","password":"secret"}'
++```
++
++Only `POST /register` and `POST /login` are implemented. There is deliberately no user-deletion endpoint.
++
++## Test
++
++```bash
++python -m pytest
++```
++
++## Requirement evidence
++
++- **REQ-001:** `test_req_001_register_stores_user_without_plaintext_password` verifies registration stores a user record.
++- **REQ-002:** `test_req_002_login_returns_a_non_empty_token_string` verifies successful login returns a token string.
+diff --git a/app/__init__.py b/app/__init__.py
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..3ffac65f7f4b452504a9844039d8f1ff5c71d21b
+--- a/app/__init__.py
++++ b/app/__init__.py
+@@ -0,0 +1,4 @@
++"""Authentication token service package."""
++from .auth import login, register
++
++__all__ = ["login", "register"]
+diff --git a/app/__main__.py b/app/__main__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..f2022b3e039a058efcc4f38de592fa6a5d5911a3
+--- /dev/null
++++ b/app/__main__.py
+@@ -0,0 +1,8 @@
++from wsgiref.simple_server import make_server
++
++from .api import application
++
++if __name__ == "__main__":
++    with make_server("127.0.0.1", 8000, application) as server:
++        print("Authentication API listening at http://127.0.0.1:8000")
++        server.serve_forever()
+diff --git a/app/api.py b/app/api.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..bdf3867f10c6e9b6dea73a73642611cee2bfcf76
+--- /dev/null
++++ b/app/api.py
+@@ -0,0 +1,48 @@
++"""Dependency-free WSGI JSON API for the authentication service."""
++from __future__ import annotations
++
++import json
++from typing import Callable
++
++from .auth import AuthenticationError, UserAlreadyExistsError, ValidationError, login, register
++
++
++def _response(start_response: Callable, status: str, body: dict) -> list[bytes]:
++    data = json.dumps(body).encode("utf-8")
++    start_response(status, [("Content-Type", "application/json"), ("Content-Length", str(len(data)))])
++    return [data]
++
++
++def _request_json(environ: dict) -> dict:
++    try:
++        content_length = int(environ.get("CONTENT_LENGTH") or 0)
++    except ValueError as error:
++        raise ValidationError("invalid Content-Length") from error
++    if content_length > 16_384:
++        raise ValidationError("request body is too large")
++    raw_body = environ["wsgi.input"].read(content_length)
++    try:
++        body = json.loads(raw_body.decode("utf-8"))
++    except (UnicodeDecodeError, json.JSONDecodeError) as error:
++        raise ValidationError("request body must be valid JSON") from error
++    if not isinstance(body, dict):
++        raise ValidationError("request body must be a JSON object")
++    return body
++
++
++def application(environ: dict, start_response: Callable) -> list[bytes]:
++    """Serve POST /register and POST /login; no deletion operation exists."""
++    path, method = environ.get("PATH_INFO"), environ.get("REQUEST_METHOD")
++    if method != "POST" or path not in {"/register", "/login"}:
++        return _response(start_response, "404 Not Found", {"error": "not found"})
++    try:
++        body = _request_json(environ)
++        username, password = body.get("username"), body.get("password")
++        if path == "/register":
++            register(username, password)
++            return _response(start_response, "201 Created", {"username": username})
++        return _response(start_response, "200 OK", {"token": login(username, password)})
++    except (ValidationError, UserAlreadyExistsError) as error:
++        return _response(start_response, "400 Bad Request", {"error": str(error)})
++    except AuthenticationError:
++        return _response(start_response, "401 Unauthorized", {"error": "invalid username or password"})
+diff --git a/app/auth.py b/app/auth.py
+index 53030ec15f5fd0b303c49c62bdeedf3b61f953af..9ae4dea07fef3366719ce55bd43299c71beb5d17
+--- a/app/auth.py
++++ b/app/auth.py
+@@ -1,7 +1,89 @@
+-USERS = {}
++"""In-memory authentication service."""
++from __future__ import annotations
++
++import base64
++import hashlib
++import hmac
++import os
++import re
++import secrets
++import threading
++import time
++from dataclasses import dataclass
++
++_USERNAME_PATTERN = re.compile(r"^[A-Za-z0-9_.-]{3,64}$")
++_MAX_PASSWORD_LENGTH = 1024
++_PBKDF2_ITERATIONS = 600_000
++_STORE_LOCK = threading.RLock()
++
++
++class ValidationError(ValueError):
++    """Raised when registration input is malformed."""
++
++
++class AuthenticationError(ValueError):
++    """Raised when credentials cannot be authenticated."""
++
++
++class UserAlreadyExistsError(ValueError):
++    """Raised when a username is already registered."""
++
++
++@dataclass(frozen=True)
++class User:
++    username: str
++    password_salt: bytes
++    password_hash: bytes
++
++
++# Public for the original project API and deterministic test setup. Plaintext
++# passwords are never stored.
++USERS: dict[str, User] = {}
++
++
++def _validate_credentials(username: str, password: str) -> None:
++    if not isinstance(username, str) or not _USERNAME_PATTERN.fullmatch(username):
++        raise ValidationError("username must be 3-64 characters using letters, numbers, '.', '_' or '-'")
++    if not isinstance(password, str) or not password or len(password) > _MAX_PASSWORD_LENGTH:
++        raise ValidationError("password must be between 1 and 1024 characters")
++
++
++def _password_hash(password: str, salt: bytes) -> bytes:
++    return hashlib.pbkdf2_hmac("sha256", password.encode("utf-8"), salt, _PBKDF2_ITERATIONS)
++
++
++def register(username: str, password: str) -> None:
++    """Store a new validated user. (REQ-001)"""
++    _validate_credentials(username, password)
++    with _STORE_LOCK:
++        if username in USERS:
++            raise UserAlreadyExistsError("username is already registered")
++        salt = secrets.token_bytes(16)
++        USERS[username] = User(username, salt, _password_hash(password, salt))
++
++
++_EPHEMERAL_TOKEN_SECRET = secrets.token_bytes(32)
++
++
++def _token_secret() -> bytes:
++    """Use the deployment secret or a process-local secret when none is set."""
++    configured_secret = os.getenv("AUTH_TOKEN_SECRET")
++    return configured_secret.encode("utf-8") if configured_secret else _EPHEMERAL_TOKEN_SECRET
+ 
+-def register(username, password):
+-    raise NotImplementedError
+ 
+-def login(username, password):
+-    raise NotImplementedError
++def _create_token(username: str) -> str:
++    payload = f"{username}.{int(time.time())}".encode("utf-8")
++    signature = hmac.new(_token_secret(), payload, hashlib.sha256).digest()
++    encoded_payload = base64.urlsafe_b64encode(payload).rstrip(b"=")
++    encoded_signature = base64.urlsafe_b64encode(signature).rstrip(b"=")
++    return f"{encoded_payload.decode('ascii')}.{encoded_signature.decode('ascii')}"
++
++
++def login(username: str, password: str) -> str:
++    """Authenticate a user and return a signed opaque token string. (REQ-002)"""
++    _validate_credentials(username, password)
++    with _STORE_LOCK:
++        user = USERS.get(username)
++    if user is None or not hmac.compare_digest(_password_hash(password, user.password_salt), user.password_hash):
++        raise AuthenticationError("invalid username or password")
++    return _create_token(username)
+diff --git a/tests/test_auth.py b/tests/test_auth.py
+index b5b916861081f5785d4f5752e1a650783da46eea..5f67fe7c7c3744148275227597ae04a4135daec8
+--- a/tests/test_auth.py
++++ b/tests/test_auth.py
+@@ -1,15 +1,58 @@
++import io
++import json
++
+ import pytest
++
+ from app import auth
++from app.api import application
++
+ 
+ def setup_function():
+     auth.USERS.clear()
+ 
+-def test_register_and_login():
+-    auth.register('ada', 'secret')
+-    token = auth.login('ada', 'secret')
++
++def _api_request(path, payload):
++    response = {}
++    def start_response(status, headers):
++        response["status"] = status
++    body = json.dumps(payload).encode()
++    result = application({"REQUEST_METHOD": "POST", "PATH_INFO": path, "CONTENT_LENGTH": str(len(body)), "wsgi.input": io.BytesIO(body)}, start_response)
++    return response["status"], json.loads(b"".join(result))
++
++
++def test_req_001_register_stores_user_without_plaintext_password():
++    """REQ-001: normal registration persists a user record."""
++    auth.register("ada", "secret")
++    assert "ada" in auth.USERS
++    assert auth.USERS["ada"].password_hash != b"secret"
++
++
++def test_req_002_login_returns_a_non_empty_token_string():
++    """REQ-002: valid credentials receive a token string."""
++    auth.register("ada", "secret")
++    token = auth.login("ada", "secret")
+     assert isinstance(token, str) and token
+ 
++
++def test_api_register_and_login_operations():
++    status, registration = _api_request("/register", {"username": "ada", "password": "secret"})
++    assert status == "201 Created"
++    assert registration == {"username": "ada"}
++    status, login_response = _api_request("/login", {"username": "ada", "password": "secret"})
++    assert status == "200 OK"
++    assert isinstance(login_response["token"], str) and login_response["token"]
++
++
+ def test_login_rejects_bad_password():
+-    auth.register('ada', 'secret')
+-    with pytest.raises(Exception):
+-        auth.login('ada', 'wrong')
++    auth.register("ada", "secret")
++    with pytest.raises(auth.AuthenticationError):
++        auth.login("ada", "wrong")
++
++
++def test_api_does_not_expose_delete_user_endpoint():
++    response = {}
++    def start_response(status, headers):
++        response["status"] = status
++    result = application({"REQUEST_METHOD": "DELETE", "PATH_INFO": "/users/ada", "wsgi.input": io.BytesIO()}, start_response)
++    assert response["status"] == "404 Not Found"
++    assert json.loads(b"".join(result)) == {"error": "not found"}
+
+2026-10-01T20:55:44.958514Z ERROR codex_core::tools::router: error=exec_command failed for `/usr/bin/zsh -lc 'rm -rf app/__pycache__ tests/__pycache__ && git status --short'`: CreateProcess { message: "Rejected(\"`/usr/bin/zsh -lc 'rm -rf app/__pycache__ tests/__pycache__ && git status --short'` rejected: rm -f style commands are not permitted. Use a safer approach\")" }
+diff --git a/README.md b/README.md
+index b39ebe0efb37d874e49581009c248af409433a06..3e963bd2b324976d200148ec8b260787b823a254
+--- a/README.md
++++ b/README.md
+@@ -1 +1,32 @@
+-# auth_token_service
++# Auth token service
++
++An in-memory Python authentication service with registration and signed-token login. User records are not persisted between process restarts; this intentionally satisfies the no-external-database constraint.
++
++## Run
++
++Requires Python 3.10+ and `pytest` for the test suite.
++
++```bash
++export AUTH_TOKEN_SECRET='replace-with-a-long-random-secret'
++python -m app
++```
++
++The service listens on `http://127.0.0.1:8000`.
++
++```bash
++curl -X POST http://127.0.0.1:8000/register -H 'Content-Type: application/json' -d '{"username":"ada","password":"secret"}'
++curl -X POST http://127.0.0.1:8000/login -H 'Content-Type: application/json' -d '{"username":"ada","password":"secret"}'
++```
++
++Only `POST /register` and `POST /login` are implemented. There is deliberately no user-deletion endpoint.
++
++## Test
++
++```bash
++python -m pytest
++```
++
++## Requirement evidence
++
++- **REQ-001:** `test_req_001_register_stores_user_without_plaintext_password` verifies registration stores a user record.
++- **REQ-002:** `test_req_002_login_returns_a_non_empty_token_string` verifies successful login returns a token string.
+diff --git a/app/__init__.py b/app/__init__.py
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..3ffac65f7f4b452504a9844039d8f1ff5c71d21b
+--- a/app/__init__.py
++++ b/app/__init__.py
+@@ -0,0 +1,4 @@
++"""Authentication token service package."""
++from .auth import login, register
++
++__all__ = ["login", "register"]
+diff --git a/app/__main__.py b/app/__main__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..f2022b3e039a058efcc4f38de592fa6a5d5911a3
+--- /dev/null
++++ b/app/__main__.py
+@@ -0,0 +1,8 @@
++from wsgiref.simple_server import make_server
++
++from .api import application
++
++if __name__ == "__main__":
++    with make_server("127.0.0.1", 8000, application) as server:
++        print("Authentication API listening at http://127.0.0.1:8000")
++        server.serve_forever()
+diff --git a/app/api.py b/app/api.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..bdf3867f10c6e9b6dea73a73642611cee2bfcf76
+--- /dev/null
++++ b/app/api.py
+@@ -0,0 +1,48 @@
++"""Dependency-free WSGI JSON API for the authentication service."""
++from __future__ import annotations
++
++import json
++from typing import Callable
++
++from .auth import AuthenticationError, UserAlreadyExistsError, ValidationError, login, register
++
++
++def _response(start_response: Callable, status: str, body: dict) -> list[bytes]:
++    data = json.dumps(body).encode("utf-8")
++    start_response(status, [("Content-Type", "application/json"), ("Content-Length", str(len(data)))])
++    return [data]
++
++
++def _request_json(environ: dict) -> dict:
++    try:
++        content_length = int(environ.get("CONTENT_LENGTH") or 0)
++    except ValueError as error:
++        raise ValidationError("invalid Content-Length") from error
++    if content_length > 16_384:
++        raise ValidationError("request body is too large")
++    raw_body = environ["wsgi.input"].read(content_length)
++    try:
++        body = json.loads(raw_body.decode("utf-8"))
++    except (UnicodeDecodeError, json.JSONDecodeError) as error:
++        raise ValidationError("request body must be valid JSON") from error
++    if not isinstance(body, dict):
++        raise ValidationError("request body must be a JSON object")
++    return body
++
++
++def application(environ: dict, start_response: Callable) -> list[bytes]:
++    """Serve POST /register and POST /login; no deletion operation exists."""
++    path, method = environ.get("PATH_INFO"), environ.get("REQUEST_METHOD")
++    if method != "POST" or path not in {"/register", "/login"}:
++        return _response(start_response, "404 Not Found", {"error": "not found"})
++    try:
++        body = _request_json(environ)
++        username, password = body.get("username"), body.get("password")
++        if path == "/register":
++            register(username, password)
++            return _response(start_response, "201 Created", {"username": username})
++        return _response(start_response, "200 OK", {"token": login(username, password)})
++    except (ValidationError, UserAlreadyExistsError) as error:
++        return _response(start_response, "400 Bad Request", {"error": str(error)})
++    except AuthenticationError:
++        return _response(start_response, "401 Unauthorized", {"error": "invalid username or password"})
+diff --git a/app/auth.py b/app/auth.py
+index 53030ec15f5fd0b303c49c62bdeedf3b61f953af..9ae4dea07fef3366719ce55bd43299c71beb5d17
+--- a/app/auth.py
++++ b/app/auth.py
+@@ -1,7 +1,89 @@
+-USERS = {}
++"""In-memory authentication service."""
++from __future__ import annotations
++
++import base64
++import hashlib
++import hmac
++import os
++import re
++import secrets
++import threading
++import time
++from dataclasses import dataclass
++
++_USERNAME_PATTERN = re.compile(r"^[A-Za-z0-9_.-]{3,64}$")
++_MAX_PASSWORD_LENGTH = 1024
++_PBKDF2_ITERATIONS = 600_000
++_STORE_LOCK = threading.RLock()
++
++
++class ValidationError(ValueError):
++    """Raised when registration input is malformed."""
++
++
++class AuthenticationError(ValueError):
++    """Raised when credentials cannot be authenticated."""
++
++
++class UserAlreadyExistsError(ValueError):
++    """Raised when a username is already registered."""
++
++
++@dataclass(frozen=True)
++class User:
++    username: str
++    password_salt: bytes
++    password_hash: bytes
++
++
++# Public for the original project API and deterministic test setup. Plaintext
++# passwords are never stored.
++USERS: dict[str, User] = {}
++
++
++def _validate_credentials(username: str, password: str) -> None:
++    if not isinstance(username, str) or not _USERNAME_PATTERN.fullmatch(username):
++        raise ValidationError("username must be 3-64 characters using letters, numbers, '.', '_' or '-'")
++    if not isinstance(password, str) or not password or len(password) > _MAX_PASSWORD_LENGTH:
++        raise ValidationError("password must be between 1 and 1024 characters")
++
++
++def _password_hash(password: str, salt: bytes) -> bytes:
++    return hashlib.pbkdf2_hmac("sha256", password.encode("utf-8"), salt, _PBKDF2_ITERATIONS)
++
++
++def register(username: str, password: str) -> None:
++    """Store a new validated user. (REQ-001)"""
++    _validate_credentials(username, password)
++    with _STORE_LOCK:
++        if username in USERS:
++            raise UserAlreadyExistsError("username is already registered")
++        salt = secrets.token_bytes(16)
++        USERS[username] = User(username, salt, _password_hash(password, salt))
++
++
++_EPHEMERAL_TOKEN_SECRET = secrets.token_bytes(32)
++
++
++def _token_secret() -> bytes:
++    """Use the deployment secret or a process-local secret when none is set."""
++    configured_secret = os.getenv("AUTH_TOKEN_SECRET")
++    return configured_secret.encode("utf-8") if configured_secret else _EPHEMERAL_TOKEN_SECRET
+ 
+-def register(username, password):
+-    raise NotImplementedError
+ 
+-def login(username, password):
+-    raise NotImplementedError
++def _create_token(username: str) -> str:
++    payload = f"{username}.{int(time.time())}".encode("utf-8")
++    signature = hmac.new(_token_secret(), payload, hashlib.sha256).digest()
++    encoded_payload = base64.urlsafe_b64encode(payload).rstrip(b"=")
++    encoded_signature = base64.urlsafe_b64encode(signature).rstrip(b"=")
++    return f"{encoded_payload.decode('ascii')}.{encoded_signature.decode('ascii')}"
++
++
++def login(username: str, password: str) -> str:
++    """Authenticate a user and return a signed opaque token string. (REQ-002)"""
++    _validate_credentials(username, password)
++    with _STORE_LOCK:
++        user = USERS.get(username)
++    if user is None or not hmac.compare_digest(_password_hash(password, user.password_salt), user.password_hash):
++        raise AuthenticationError("invalid username or password")
++    return _create_token(username)
+diff --git a/tests/test_auth.py b/tests/test_auth.py
+index b5b916861081f5785d4f5752e1a650783da46eea..5f67fe7c7c3744148275227597ae04a4135daec8
+--- a/tests/test_auth.py
++++ b/tests/test_auth.py
+@@ -1,15 +1,58 @@
++import io
++import json
++
+ import pytest
++
+ from app import auth
++from app.api import application
++
+ 
+ def setup_function():
+     auth.USERS.clear()
+ 
+-def test_register_and_login():
+-    auth.register('ada', 'secret')
+-    token = auth.login('ada', 'secret')
++
++def _api_request(path, payload):
++    response = {}
++    def start_response(status, headers):
++        response["status"] = status
++    body = json.dumps(payload).encode()
++    result = application({"REQUEST_METHOD": "POST", "PATH_INFO": path, "CONTENT_LENGTH": str(len(body)), "wsgi.input": io.BytesIO(body)}, start_response)
++    return response["status"], json.loads(b"".join(result))
++
++
++def test_req_001_register_stores_user_without_plaintext_password():
++    """REQ-001: normal registration persists a user record."""
++    auth.register("ada", "secret")
++    assert "ada" in auth.USERS
++    assert auth.USERS["ada"].password_hash != b"secret"
++
++
++def test_req_002_login_returns_a_non_empty_token_string():
++    """REQ-002: valid credentials receive a token string."""
++    auth.register("ada", "secret")
++    token = auth.login("ada", "secret")
+     assert isinstance(token, str) and token
+ 
++
++def test_api_register_and_login_operations():
++    status, registration = _api_request("/register", {"username": "ada", "password": "secret"})
++    assert status == "201 Created"
++    assert registration == {"username": "ada"}
++    status, login_response = _api_request("/login", {"username": "ada", "password": "secret"})
++    assert status == "200 OK"
++    assert isinstance(login_response["token"], str) and login_response["token"]
++
++
+ def test_login_rejects_bad_password():
+-    auth.register('ada', 'secret')
+-    with pytest.raises(Exception):
+-        auth.login('ada', 'wrong')
++    auth.register("ada", "secret")
++    with pytest.raises(auth.AuthenticationError):
++        auth.login("ada", "wrong")
++
++
++def test_api_does_not_expose_delete_user_endpoint():
++    response = {}
++    def start_response(status, headers):
++        response["status"] = status
++    result = application({"REQUEST_METHOD": "DELETE", "PATH_INFO": "/users/ada", "wsgi.input": io.BytesIO()}, start_response)
++    assert response["status"] == "404 Not Found"
++    assert json.loads(b"".join(result)) == {"error": "not found"}
+
+codex
+Implemented the authentication service.
+
+- REQ-001: `register(username, password)` validates and stores hashed user records in memory. Covered by [tests/test_auth.py](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/tests/test_auth.py).
+- REQ-002: `login(username, password)` authenticates and returns a signed token string.
+- Added JSON API: `POST /register` and `POST /login`; no delete-user endpoint.
+- Added environment-based token secret support via `AUTH_TOKEN_SECRET`.
+- Setup and API usage are documented in [README.md](/tmp/vibeprompt_rq5_sci__6kbje8d/ws-dbece0ee4364/README.md).
+
+Verification: `python -m pytest -q` → **5 passed**. Compilation/import checks also pass. The sandbox disallows binding local sockets, so the live server startup could not be socket-tested here; run locally with `python -m app`.
+diff --git a/README.md b/README.md
+index b39ebe0efb37d874e49581009c248af409433a06..3e963bd2b324976d200148ec8b260787b823a254
+--- a/README.md
++++ b/README.md
+@@ -1 +1,32 @@
+-# auth_token_service
++# Auth token service
++
++An in-memory Python authentication service with registration and signed-token login. User records are not persisted between process restarts; this intentionally satisfies the no-external-database constraint.
++
++## Run
++
++Requires Python 3.10+ and `pytest` for the test suite.
++
++```bash
++export AUTH_TOKEN_SECRET='replace-with-a-long-random-secret'
++python -m app
++```
++
++The service listens on `http://127.0.0.1:8000`.
++
++```bash
++curl -X POST http://127.0.0.1:8000/register -H 'Content-Type: application/json' -d '{"username":"ada","password":"secret"}'
++curl -X POST http://127.0.0.1:8000/login -H 'Content-Type: application/json' -d '{"username":"ada","password":"secret"}'
++```
++
++Only `POST /register` and `POST /login` are implemented. There is deliberately no user-deletion endpoint.
++
++## Test
++
++```bash
++python -m pytest
++```
++
++## Requirement evidence
++
++- **REQ-001:** `test_req_001_register_stores_user_without_plaintext_password` verifies registration stores a user record.
++- **REQ-002:** `test_req_002_login_returns_a_non_empty_token_string` verifies successful login returns a token string.
+diff --git a/app/__init__.py b/app/__init__.py
+index e69de29bb2d1d6434b8b29ae775ad8c2e48c5391..3ffac65f7f4b452504a9844039d8f1ff5c71d21b
+--- a/app/__init__.py
++++ b/app/__init__.py
+@@ -0,0 +1,4 @@
++"""Authentication token service package."""
++from .auth import login, register
++
++__all__ = ["login", "register"]
+diff --git a/app/__main__.py b/app/__main__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..f2022b3e039a058efcc4f38de592fa6a5d5911a3
+--- /dev/null
++++ b/app/__main__.py
+@@ -0,0 +1,8 @@
++from wsgiref.simple_server import make_server
++
++from .api import application
++
++if __name__ == "__main__":
++    with make_server("127.0.0.1", 8000, application) as server:
++        print("Authentication API listening at http://127.0.0.1:8000")
++        server.serve_forever()
+diff --git a/app/api.py b/app/api.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..bdf3867f10c6e9b6dea73a73642611cee2bfcf76
+--- /dev/null
++++ b/app/api.py
+@@ -0,0 +1,48 @@
++"""Dependency-free WSGI JSON API for the authentication service."""
++from __future__ import annotations
++
++import json
++from typing import Callable
++
++from .auth import AuthenticationError, UserAlreadyExistsError, ValidationError, login, register
++
++
++def _response(start_response: Callable, status: str, body: dict) -> list[bytes]:
++    data = json.dumps(body).encode("utf-8")
++    start_response(status, [("Content-Type", "application/json"), ("Content-Length", str(len(data)))])
++    return [data]
++
++
++def _request_json(environ: dict) -> dict:
++    try:
++        content_length = int(environ.get("CONTENT_LENGTH") or 0)
++    except ValueError as error:
++        raise ValidationError("invalid Content-Length") from error
++    if content_length > 16_384:
++        raise ValidationError("request body is too large")
++    raw_body = environ["wsgi.input"].read(content_length)
++    try:
++        body = json.loads(raw_body.decode("utf-8"))
++    except (UnicodeDecodeError, json.JSONDecodeError) as error:
++        raise ValidationError("request body must be valid JSON") from error
++    if not isinstance(body, dict):
++        raise ValidationError("request body must be a JSON object")
++    return body
++
++
++def application(environ: dict, start_response: Callable) -> list[bytes]:
++    """Serve POST /register and POST /login; no deletion operation exists."""
++    path, method = environ.get("PATH_INFO"), environ.get("REQUEST_METHOD")
++    if method != "POST" or path not in {"/register", "/login"}:
++        return _response(start_response, "404 Not Found", {"error": "not found"})
++    try:
++        body = _request_json(environ)
++        username, password = body.get("username"), body.get("password")
++        if path == "/register":
++            register(username, password)
++            return _response(start_response, "201 Created", {"username": username})
++        return _response(start_response, "200 OK", {"token": login(username, password)})
++    except (ValidationError, UserAlreadyExistsError) as error:
++        return _response(start_response, "400 Bad Request", {"error": str(error)})
++    except AuthenticationError:
++        return _response(start_response, "401 Unauthorized", {"error": "invalid username or password"})
+diff --git a/app/auth.py b/app/auth.py
+index 53030ec15f5fd0b303c49c62bdeedf3b61f953af..9ae4dea07fef3366719ce55bd43299c71beb5d17
+--- a/app/auth.py
++++ b/app/auth.py
+@@ -1,7 +1,89 @@
+-USERS = {}
++"""In-memory authentication service."""
++from __future__ import annotations
++
++import base64
++import hashlib
++import hmac
++import os
++import re
++import secrets
++import threading
++import time
++from dataclasses import dataclass
++
++_USERNAME_PATTERN = re.compile(r"^[A-Za-z0-9_.-]{3,64}$")
++_MAX_PASSWORD_LENGTH = 1024
++_PBKDF2_ITERATIONS = 600_000
++_STORE_LOCK = threading.RLock()
++
++
++class ValidationError(ValueError):
++    """Raised when registration input is malformed."""
++
++
++class AuthenticationError(ValueError):
++    """Raised when credentials cannot be authenticated."""
++
++
++class UserAlreadyExistsError(ValueError):
++    """Raised when a username is already registered."""
++
++
++@dataclass(frozen=True)
++class User:
++    username: str
++    password_salt: bytes
++    password_hash: bytes
++
++
++# Public for the original project API and deterministic test setup. Plaintext
++# passwords are never stored.
++USERS: dict[str, User] = {}
++
++
++def _validate_credentials(username: str, password: str) -> None:
++    if not isinstance(username, str) or not _USERNAME_PATTERN.fullmatch(username):
++        raise ValidationError("username must be 3-64 characters using letters, numbers, '.', '_' or '-'")
++    if not isinstance(password, str) or not password or len(password) > _MAX_PASSWORD_LENGTH:
++        raise ValidationError("password must be between 1 and 1024 characters")
++
++
++def _password_hash(password: str, salt: bytes) -> bytes:
++    return hashlib.pbkdf2_hmac("sha256", password.encode("utf-8"), salt, _PBKDF2_ITERATIONS)
++
++
++def register(username: str, password: str) -> None:
++    """Store a new validated user. (REQ-001)"""
++    _validate_credentials(username, password)
++    with _STORE_LOCK:
++        if username in USERS:
++            raise UserAlreadyExistsError("username is already registered")
++        salt = secrets.token_bytes(16)
++        USERS[username] = User(username, salt, _password_hash(password, salt))
++
++
++_EPHEMERAL_TOKEN_SECRET = secrets.token_bytes(32)
++
++
++def _token_secret() -> bytes:
++    """Use the deployment secret or a process-local secret when none is set."""
++    configured_secret = os.getenv("AUTH_TOKEN_SECRET")
++    return configured_secret.encode("utf-8") if configured_secret else _EPHEMERAL_TOKEN_SECRET
+ 
+-def register(username, password):
+-    raise NotImplementedError
+ 
+-def login(username, password):
+-    raise NotImplementedError
++def _create_token(username: str) -> str:
++    payload = f"{username}.{int(time.time())}".encode("utf-8")
++    signature = hmac.new(_token_secret(), payload, hashlib.sha256).digest()
++    encoded_payload = base64.urlsafe_b64encode(payload).rstrip(b"=")
++    encoded_signature = base64.urlsafe_b64encode(signature).rstrip(b"=")
++    return f"{encoded_payload.decode('ascii')}.{encoded_signature.decode('ascii')}"
++
++
++def login(username: str, password: str) -> str:
++    """Authenticate a user and return a signed opaque token string. (REQ-002)"""
++    _validate_credentials(username, password)
++    with _STORE_LOCK:
++        user = USERS.get(username)
++    if user is None or not hmac.compare_digest(_password_hash(password, user.password_salt), user.password_hash):
++        raise AuthenticationError("invalid username or password")
++    return _create_token(username)
+diff --git a/tests/test_auth.py b/tests/test_auth.py
+index b5b916861081f5785d4f5752e1a650783da46eea..5f67fe7c7c3744148275227597ae04a4135daec8
+--- a/tests/test_auth.py
++++ b/tests/test_auth.py
+@@ -1,15 +1,58 @@
++import io
++import json
++
+ import pytest
++
+ from app import auth
++from app.api import application
++
+ 
+ def setup_function():
+     auth.USERS.clear()
+ 
+-def test_register_and_login():
+-    auth.register('ada', 'secret')
+-    token = auth.login('ada', 'secret')
++
++def _api_request(path, payload):
++    response = {}
++    def start_response(status, headers):
++        response["status"] = status
++    body = json.dumps(payload).encode()
++    result = application({"REQUEST_METHOD": "POST", "PATH_INFO": path, "CONTENT_LENGTH": str(len(body)), "wsgi.input": io.BytesIO(body)}, start_response)
++    return response["status"], json.loads(b"".join(result))
++
++
++def test_req_001_register_stores_user_without_plaintext_password():
++    """REQ-001: normal registration persists a user record."""
++    auth.register("ada", "secret")
++    assert "ada" in auth.USERS
++    assert auth.USERS["ada"].password_hash != b"secret"
++
++
++def test_req_002_login_returns_a_non_empty_token_string():
++    """REQ-002: valid credentials receive a token string."""
++    auth.register("ada", "secret")
++    token = auth.login("ada", "secret")
+     assert isinstance(token, str) and token
+ 
++
++def test_api_register_and_login_operations():
++    status, registration = _api_request("/register", {"username": "ada", "password": "secret"})
++    assert status == "201 Created"
++    assert registration == {"username": "ada"}
++    status, login_response = _api_request("/login", {"username": "ada", "password": "secret"})
++    assert status == "200 OK"
++    assert isinstance(login_response["token"], str) and login_response["token"]
++
++
+ def test_login_rejects_bad_password():
+-    auth.register('ada', 'secret')
+-    with pytest.raises(Exception):
+-        auth.login('ada', 'wrong')
++    auth.register("ada", "secret")
++    with pytest.raises(auth.AuthenticationError):
++        auth.login("ada", "wrong")
++
++
++def test_api_does_not_expose_delete_user_endpoint():
++    response = {}
++    def start_response(status, headers):
++        response["status"] = status
++    result = application({"REQUEST_METHOD": "DELETE", "PATH_INFO": "/users/ada", "wsgi.input": io.BytesIO()}, start_response)
++    assert response["status"] == "404 Not Found"
++    assert json.loads(b"".join(result)) == {"error": "not found"}
+
+tokens used
+23,881

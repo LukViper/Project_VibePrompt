@@ -1,0 +1,17 @@
+You are a senior software engineer.
+
+REQUIREMENTS
+- register(username, password) stores the user
+- login(username, password) returns a token on success
+
+CONSTRAINTS
+- in-memory only
+- python 3.11+
+
+REJECTED / OUT OF SCOPE
+- Do not expose a DELETE user endpoint
+- Do not use an external database
+
+ACCEPTANCE CRITERIA
+- register then login returns a non-empty token
+- login with wrong password fails

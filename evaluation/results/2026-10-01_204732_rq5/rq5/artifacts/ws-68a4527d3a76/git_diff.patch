@@ -1,0 +1,39 @@
+diff --git a/TASK.md b/TASK.md
+new file mode 100644
+index 0000000..6fea461
+--- /dev/null
++++ b/TASK.md
+@@ -0,0 +1,4 @@
++You are a senior software engineer.
++
++Implement count_words(text) returning a dict of word→count.
++Do not download remote corpora.
+\ No newline at end of file
+diff --git a/VIBEPROMPT_META.json b/VIBEPROMPT_META.json
+new file mode 100644
+index 0000000..cce2792
+--- /dev/null
++++ b/VIBEPROMPT_META.json
+@@ -0,0 +1 @@
++{"workspace_id":"ws-68a4527d3a76","task_id":"word_count_pipeline","variant":"A_raw","seed_commit":"f1e3a09f21655e50a66a08561ef1290cd5c8a33d"}
+\ No newline at end of file
+diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc
+new file mode 100644
+index 0000000..a4afbc7
+Binary files /dev/null and b/app/__pycache__/__init__.cpython-314.pyc differ
+diff --git a/app/__pycache__/words.cpython-314.pyc b/app/__pycache__/words.cpython-314.pyc
+new file mode 100644
+index 0000000..3cb7fa0
+Binary files /dev/null and b/app/__pycache__/words.cpython-314.pyc differ
+diff --git a/app/words.py b/app/words.py
+index 10d4c84..f998ab7 100644
+--- a/app/words.py
++++ b/app/words.py
+@@ -1,2 +1,6 @@
+ def count_words(text):
+-    raise NotImplementedError
++    """Return the number of whitespace-delimited occurrences of each word."""
++    counts = {}
++    for word in text.split():
++        counts[word] = counts.get(word, 0) + 1
++    return counts

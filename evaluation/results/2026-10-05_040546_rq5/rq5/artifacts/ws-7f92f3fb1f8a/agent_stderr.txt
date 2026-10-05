@@ -1,0 +1,3 @@
+WARNING: failed to clean up stale arg0 temp dirs: Permission denied (os error 13)
+WARNING: proceeding, even though we could not create PATH aliases: Permission denied (os error 13) at path "/home/luk_viper/.codex/tmp/arg0/codex-arg00ikkIT"
+Error: failed to initialize in-process app-server client: Permission denied (os error 13)

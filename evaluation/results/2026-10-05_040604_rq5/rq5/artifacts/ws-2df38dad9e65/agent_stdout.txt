@@ -1,0 +1,7 @@
+Implemented [app/echo_api.py](/tmp/vibeprompt_rq5_sci_gby33cey/ws-2df38dad9e65/app/echo_api.py).
+
+- `echo(payload)` returns the original payload unchanged.
+- `health()` returns `{'status': 'ok'}`.
+- No Redis or non-standard-library dependencies added.
+
+Verified: `2 passed`.

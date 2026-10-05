@@ -1,0 +1,7 @@
+You are a senior software engineer.
+
+Build a tiny auth helper.
+register(username, password) must store the user.
+login(username, password) must return a token string on success.
+Do not expose a DELETE user endpoint.
+No external database.

@@ -221,25 +221,86 @@ def _split_items(blob: str) -> list[str]:
     return items
 
 
+def _normalize_avoid_phrase(phrase: str) -> str:
+    phrase = phrase.strip(" .;:")
+    phrase = re.sub(r"[-_]", " ", phrase)
+    phrase = re.sub(r"^(?:using|adding|building|calling|including)\s+", "", phrase, flags=re.I)
+    phrase = re.sub(r"\b(application|app|system|project)$", "", phrase, flags=re.I).strip()
+    phrase = re.sub(r"^(a|an|the)\s+", "", phrase, flags=re.I)
+    return phrase.strip(" .")
+
+
+def _is_rejection_utterance(text: str) -> bool:
+    """True when the utterance forbids/rejects a feature rather than requiring it."""
+    return bool(
+        re.search(
+            r"(?:"
+            r"(?:don't|do not|never|must not|shall not)\s+"
+            r"(?:add|use|include|call|build|enable|install|introduce|support|rely on)|"
+            r"\bavoid\s+(?:using|adding|building|calling|including)|"
+            r"(?:don't|do not)\s+want\s+to\s+(?:build|make|do|use|add)|"
+            r"\bnot\s+(?:a|an)\s+"
+            r")\b",
+            text,
+            re.I,
+        )
+    )
+
+
 def _avoid(text: str) -> list[str]:
     patterns = [
         r"(?:don't|do not) want to (?:build|make|do)\s+(.+)",
         r"(?:don't|do not) want\s+(.+)",
         r"\bavoid(?: building)?\s+(.+)",
         r"\bnot (?:a|an)\s+(.+)",
+        # Explicit forbid polarity: "do not add X", "never use Y", "avoid using Z"
+        r"(?:don't|do not|never|must not|shall not)\s+"
+        r"(?:add|use|include|call|build|enable|install|introduce|support|rely on)\s+(.+)",
+        r"\bavoid\s+(?:using|adding|building|calling|including)\s+(.+)",
+        r"\bno\s+(?:adding|using)\s+(.+)",
     ]
     found = []
     for pattern in patterns:
         match = re.search(pattern, text, re.I)
         if not match:
             continue
-        phrase = match.group(1).strip(" .")
-        phrase = re.sub(r"[-_]", " ", phrase)
-        phrase = re.sub(r"\b(application|app|system|project)$", "", phrase, flags=re.I).strip()
-        phrase = re.sub(r"^(a|an|the)\s+", "", phrase, flags=re.I)
+        phrase = _normalize_avoid_phrase(match.group(1))
         if phrase and phrase not in found:
             found.append(phrase)
     return found
+
+
+def _split_polarity_sentences(sentences: list[str]) -> tuple[list[str], list[str]]:
+    """Partition sentences into positive (may yield requirements) vs rejection (avoid only)."""
+    positive: list[str] = []
+    avoid_items: list[str] = []
+    for sentence in sentences:
+        sent_avoid = _avoid(sentence)
+        if sent_avoid or _is_rejection_utterance(sentence):
+            for item in sent_avoid:
+                if item not in avoid_items:
+                    avoid_items.append(item)
+            # If patterns missed the object, keep a cleaned remnant for avoid.
+            if not sent_avoid and _is_rejection_utterance(sentence):
+                cleaned = re.sub(
+                    r"^(?:please\s+)?(?:don't|do not|never|must not|shall not)\s+"
+                    r"(?:add|use|include|call|build|enable|install|introduce|support|rely on)\s+",
+                    "",
+                    sentence,
+                    flags=re.I,
+                )
+                cleaned = re.sub(
+                    r"^(?:please\s+)?avoid\s+(?:using|adding|building|calling|including)\s+",
+                    "",
+                    cleaned,
+                    flags=re.I,
+                )
+                phrase = _normalize_avoid_phrase(cleaned)
+                if phrase and phrase not in avoid_items:
+                    avoid_items.append(phrase)
+        else:
+            positive.append(sentence)
+    return positive, avoid_items
 
 
 def _required_topics(text: str) -> list[str]:
@@ -340,12 +401,23 @@ def _propose_core_idea(text: str, domains: list[str]) -> tuple[str | None, str |
 def extract_information(text: str) -> ExtractionResult:
     prepared = preprocess(text)
     body = prepared["text"]
-    languages = _scan_lexicon(body, LANGUAGES)
-    frameworks = _scan_lexicon(body, FRAMEWORKS)
-    databases = _scan_lexicon(body, DATABASES)
-    hardware = _scan_lexicon(body, HARDWARE)
-    models = _scan_lexicon(body, MODELS)
-    domains = detect_domains(body)
+    positive_sentences, avoid_items = _split_polarity_sentences(prepared["sentences"] or [body])
+    # Also catch whole-utterance avoid patterns (single-sentence preprocess edge cases).
+    for item in _avoid(body):
+        if item not in avoid_items:
+            avoid_items.append(item)
+
+    # Lexicon / tech adoption only from non-rejection sentences so forbidden tech
+    # (e.g. "Do not add Redis") is never treated as selected stack.
+    positive_body = " ".join(positive_sentences).strip() or (
+        "" if (_is_rejection_utterance(body) or avoid_items) else body
+    )
+    languages = _scan_lexicon(positive_body, LANGUAGES) if positive_body else []
+    frameworks = _scan_lexicon(positive_body, FRAMEWORKS) if positive_body else []
+    databases = _scan_lexicon(positive_body, DATABASES) if positive_body else []
+    hardware = _scan_lexicon(positive_body, HARDWARE) if positive_body else []
+    models = _scan_lexicon(positive_body, MODELS) if positive_body else []
+    domains = detect_domains(positive_body) if positive_body else detect_domains(body)
     technology = []
     for item in languages + frameworks + databases + models + hardware:
         if item not in technology:
@@ -353,8 +425,9 @@ def extract_information(text: str) -> ExtractionResult:
 
     requirements: list[ExtractedRequirement] = []
     removal = _removal_target(body)
-    if not removal:
-        for sentence in prepared["sentences"]:
+    # Rejection-only utterances must not invent positive requirements or tech slots.
+    if not removal and positive_body:
+        for sentence in positive_sentences:
             for clause in _functional_clauses(sentence, technology):
                 if any(req.text.lower() == clause.lower() for req in requirements):
                     continue
@@ -364,8 +437,8 @@ def extract_information(text: str) -> ExtractionResult:
                     text=clause,
                     domain=domain[0] if domain else None,
                 )))
-        add_match = re.search(r"\b(?:add|include)\s+(?:a|an|the)?\s*(.+)", body, re.I)
-        if add_match and not requirements:
+        add_match = re.search(r"\b(?:add|include)\s+(?:a|an|the)?\s*(.+)", positive_body, re.I)
+        if add_match and not requirements and not _is_rejection_utterance(positive_body):
             phrase = _clean_requirement(add_match.group(1))
             domain = detect_domains(phrase)
             requirements.append(enrich_requirement_structure(ExtractedRequirement(
@@ -373,9 +446,18 @@ def extract_information(text: str) -> ExtractionResult:
                 text=phrase,
                 domain=domain[0] if domain else (domains[0] if len(domains) == 1 else None),
             )))
-        requirements.extend(_slot_assignments(body, languages, databases, frameworks, models))
+        requirements.extend(_slot_assignments(positive_body, languages, databases, frameworks, models))
+
+    # If the utterance only forbids something, treat the avoid phrase as removal target
+    # so ProjectState can deactivate a prior positive match of the same feature.
+    if not removal and avoid_items and not positive_sentences:
+        removal = avoid_items[0]
 
     problem, objective, proposed = _propose_core_idea(body, domains)
+    # Do not propose a core idea from a pure rejection utterance.
+    if avoid_items and not positive_sentences:
+        problem, objective, proposed = None, None, False
+
     result = ExtractionResult(
         requirements=requirements,
         technology=technology,
@@ -384,12 +466,12 @@ def extract_information(text: str) -> ExtractionResult:
         databases=databases,
         hardware=hardware,
         models=models,
-        subject=_subject(body),
+        subject=_subject(body if not (_is_rejection_utterance(body) and not positive_body) else positive_body or body),
         team_size=_team_size(body),
         duration=_duration(body),
         budget=_budget(body),
         required_topics=_required_topics(body),
-        avoid=_avoid(body),
+        avoid=avoid_items,
         domains=domains,
         problem=problem,
         objective=objective,
@@ -427,5 +509,32 @@ def merge_validated_llm(base: ExtractionResult, payload: dict) -> ExtractionResu
     for req in extra.requirements:
         if req.text.lower() not in existing:
             data["requirements"].append(req.model_dump())
+    # Polarity: LLM positives must not restate avoid (lazy import avoids cycle with project_state).
+    avoid = list(data.get("avoid") or [])
+    if avoid:
+        from app.services.project_state import _text_matches_avoid
+
+        kept_reqs = []
+        for req in data["requirements"]:
+            text = req.get("text") or ""
+            slot_value = req.get("slot_value")
+            if _text_matches_avoid(text, avoid):
+                continue
+            if slot_value and _text_matches_avoid(str(slot_value), avoid):
+                continue
+            kept_reqs.append(req)
+        data["requirements"] = kept_reqs
+        for field in (
+            "technology",
+            "programming_languages",
+            "frameworks",
+            "databases",
+            "hardware",
+            "models",
+        ):
+            data[field] = [
+                item for item in (data.get(field) or [])
+                if not _text_matches_avoid(str(item), avoid)
+            ]
     data["method"] = base.method + "+llm_validated"
     return ExtractionResult.model_validate(data)

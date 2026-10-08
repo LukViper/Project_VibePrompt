@@ -258,7 +258,7 @@ class ConversationManager:
         ):
             return OrchestratorAction.EXPLORE
         if intent == "ASK_QUESTION":
-            return OrchestratorAction.ASK_CLARIFICATION
+            return OrchestratorAction.RESPOND
         return OrchestratorAction.RESPOND
 
     def advance_after_message(self, state: dict, intent: str, message: str) -> ManagerResult:

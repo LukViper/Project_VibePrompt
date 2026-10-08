@@ -7,90 +7,98 @@ import '../features/chat/chat_screen.dart';
 import '../features/project_state/project_state_panel.dart';
 import '../services/project_service.dart';
 
-/// Chat-first workspace. Ideas / Grill / Spec / Prompt are capabilities, not mandatory tabs.
+/// Professional tab-based workspace.
 class AppShell extends StatelessWidget {
   const AppShell({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final wide = MediaQuery.sizeOf(context).width >= 960;
-    return wide ? const _DesktopWorkspace() : const _MobileWorkspace();
-  }
-}
-
-class _DesktopWorkspace extends StatelessWidget {
-  const _DesktopWorkspace();
-
-  @override
-  Widget build(BuildContext context) {
-    final session = context.watch<SessionController>();
-    return Scaffold(
-      body: Column(
-        children: [
-          _ContextStrip(session: session),
-          if (session.error != null)
-            ColoredBox(
-              color: AppTheme.rust,
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: Text(session.error!, style: const TextStyle(color: Colors.white)),
-              ),
-            ),
-          Expanded(
-            child: Row(
-              children: [
-                SizedBox(
-                  width: 220,
-                  child: ColoredBox(
-                    color: AppTheme.ink,
-                    child: DefaultTextStyle(
-                      style: const TextStyle(color: AppTheme.paper),
-                      child: _ProjectColumn(state: session.state, stage: session.stage),
-                    ),
-                  ),
-                ),
-                const VerticalDivider(width: 1),
-                const Expanded(child: ChatScreen()),
-                const VerticalDivider(width: 1),
-                SizedBox(
-                  width: 320,
-                  child: _SideInsight(session: session),
-                ),
-              ],
-            ),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('VibePrompt'),
+          bottom: const TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.chat_bubble_outline), text: 'Conversation'),
+              Tab(icon: Icon(Icons.account_tree_outlined), text: 'Architecture & State'),
+              Tab(icon: Icon(Icons.description_outlined), text: 'Agent Prompt'),
+            ],
+            indicatorColor: AppTheme.copper,
+            labelColor: AppTheme.copper,
+            unselectedLabelColor: AppTheme.pine,
           ),
-          _CapabilityBar(session: session),
-        ],
+        ),
+        body: _WorkspaceContent(),
       ),
     );
   }
 }
 
-class _MobileWorkspace extends StatelessWidget {
-  const _MobileWorkspace();
-
+class _WorkspaceContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final session = context.watch<SessionController>();
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('VibePrompt'),
-        actions: [
-          IconButton(
-            tooltip: 'Project state',
-            onPressed: () => _openSheet(context, 'State', ProjectStatePanel(state: session.state)),
-            icon: const Icon(Icons.account_tree_outlined),
+    final wide = MediaQuery.sizeOf(context).width >= 960;
+
+    return Column(
+      children: [
+        _ContextStrip(session: session),
+        if (session.error != null)
+          ColoredBox(
+            color: AppTheme.rust,
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: Text(session.error!, style: const TextStyle(color: Colors.white)),
+            ),
           ),
-        ],
-      ),
-      body: Column(
-        children: [
-          _ContextStrip(session: session),
-          if (session.error != null) Text(session.error!, style: const TextStyle(color: AppTheme.rust)),
-          const Expanded(child: ChatScreen()),
-          _CapabilityBar(session: session),
-        ],
-      ),
+        Expanded(
+          child: TabBarView(
+            children: [
+              // Tab 1: Conversation
+              Column(
+                children: [
+                  const Expanded(child: ChatScreen()),
+                  _CapabilityBar(session: session),
+                ],
+              ),
+              
+              // Tab 2: Architecture & State
+              wide
+                  ? Row(
+                      children: [
+                        SizedBox(
+                          width: 250,
+                          child: ColoredBox(
+                            color: AppTheme.ink,
+                            child: DefaultTextStyle(
+                              style: const TextStyle(color: AppTheme.paper),
+                              child: _ProjectColumn(state: session.state, stage: session.stage),
+                            ),
+                          ),
+                        ),
+                        const VerticalDivider(width: 1),
+                        Expanded(child: ProjectStatePanel(state: session.state)),
+                        const VerticalDivider(width: 1),
+                        SizedBox(
+                          width: 350,
+                          child: _SideInsight(session: session),
+                        ),
+                      ],
+                    )
+                  : Column(
+                      children: [
+                        _SideInsight(session: session),
+                        Expanded(child: ProjectStatePanel(state: session.state)),
+                      ],
+                    ),
+                    
+              // Tab 3: Agent Prompt
+              _PromptPane(session: session),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
@@ -111,9 +119,9 @@ class _ContextStrip extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         child: Row(
           children: [
-            Text('VibePrompt', style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w800)),
+            Text('Workspace', style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w800, color: AppTheme.ink)),
             const SizedBox(width: 12),
-            Chip(label: Text(stage), visualDensity: VisualDensity.compact),
+            Chip(label: Text(stage), visualDensity: VisualDensity.compact, backgroundColor: AppTheme.copper.withOpacity(0.2)),
             if (guest) ...[
               const SizedBox(width: 8),
               const Chip(label: Text('Guest'), visualDensity: VisualDensity.compact),
@@ -123,7 +131,7 @@ class _ContextStrip extends StatelessWidget {
               child: Text(
                 title?.isNotEmpty == true ? title! : 'Untitled project',
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(color: AppTheme.ink),
+                style: const TextStyle(color: AppTheme.ink, fontWeight: FontWeight.bold),
               ),
             ),
           ],
@@ -143,10 +151,11 @@ class _CapabilityBar extends StatelessWidget {
     return Material(
       color: AppTheme.ink,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _cap(context, 'Summary', Icons.summarize_outlined, () {
                 session.loadSummary();
@@ -160,29 +169,18 @@ class _CapabilityBar extends StatelessWidget {
               _cap(context, 'Grill', Icons.whatshot_outlined, () async {
                 await session.runGrill();
                 if (context.mounted) {
-                  _openSheet(
-                    context,
-                    'Grill',
-                    _TextBlock(text: session.grillReport?['narrative']?.toString() ?? session.grillReport.toString()),
-                  );
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Grill completed. Check state.')));
                 }
               }),
               _cap(context, 'Architecture', Icons.schema_outlined, () {
                 session.send('Propose an architecture and tech stack');
               }),
-              _cap(context, 'Compile prompt', Icons.description_outlined, () async {
+              _cap(context, 'Compile Prompt', Icons.build_circle_outlined, () async {
                 await session.buildPrompt();
                 if (context.mounted) {
-                  _openSheet(
-                    context,
-                    'Agent prompt',
-                    _PromptPane(session: session),
-                  );
+                   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Prompt compiled! Check the Agent Prompt tab.')));
                 }
-              }),
-              _cap(context, 'State', Icons.account_tree_outlined, () {
-                _openSheet(context, 'Project state', ProjectStatePanel(state: session.state));
-              }),
+              }, isPrimary: true),
             ],
           ),
         ),
@@ -190,15 +188,22 @@ class _CapabilityBar extends StatelessWidget {
     );
   }
 
-  Widget _cap(BuildContext context, String label, IconData icon, VoidCallback onTap) {
+  Widget _cap(BuildContext context, String label, IconData icon, VoidCallback onTap, {bool isPrimary = false}) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 4),
-      child: TextButton.icon(
-        onPressed: session.busy ? null : onTap,
-        style: TextButton.styleFrom(foregroundColor: AppTheme.paper),
-        icon: Icon(icon, size: 18, color: AppTheme.copper),
-        label: Text(label),
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 6),
+      child: isPrimary 
+        ? FilledButton.icon(
+            onPressed: session.busy ? null : onTap,
+            style: FilledButton.styleFrom(backgroundColor: AppTheme.copper),
+            icon: Icon(icon, size: 18),
+            label: Text(label),
+          )
+        : TextButton.icon(
+            onPressed: session.busy ? null : onTap,
+            style: TextButton.styleFrom(foregroundColor: AppTheme.paper),
+            icon: Icon(icon, size: 18, color: AppTheme.copper),
+            label: Text(label),
+          ),
     );
   }
 }
@@ -210,91 +215,63 @@ class _SideInsight extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final promptPreview = session.prompt;
-    final validation = session.promptValidation;
     final proposed = session.proposedDecisions;
+    if (proposed.isEmpty) {
+       return const Center(child: Text("No pending decisions.", style: TextStyle(color: Colors.grey)));
+    }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        if (proposed.isNotEmpty)
-          SizedBox(
-            height: 220,
-            child: ColoredBox(
-              color: Colors.white,
-              child: ListView(
-                padding: const EdgeInsets.all(12),
-                children: [
-                  const Text('Your decision', style: TextStyle(fontWeight: FontWeight.w700)),
-                  const SizedBox(height: 4),
-                  Text(
-                    'PROPOSED items need your approval before they become ACTIVE.',
-                    style: TextStyle(fontSize: 12, color: AppTheme.ink.withValues(alpha: 0.7)),
-                  ),
-                  const SizedBox(height: 8),
-                  for (final item in proposed.take(6))
-                    Card(
-                      margin: const EdgeInsets.only(bottom: 8),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(item['summary']?.toString() ?? '', style: const TextStyle(fontSize: 13)),
-                            const SizedBox(height: 6),
-                            Row(
-                              children: [
-                                FilledButton(
-                                  onPressed: session.busy
-                                      ? null
-                                      : () => session.approveProposedDecision(item['id'].toString()),
+        Expanded(
+          child: ColoredBox(
+            color: Colors.white,
+            child: ListView(
+              padding: const EdgeInsets.all(16),
+              children: [
+                const Text('Pending Decisions', style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18)),
+                const SizedBox(height: 8),
+                Text(
+                  'PROPOSED items need your approval before they become ACTIVE.',
+                  style: TextStyle(fontSize: 13, color: AppTheme.ink.withOpacity(0.7)),
+                ),
+                const SizedBox(height: 16),
+                for (final item in proposed)
+                  Card(
+                    elevation: 2,
+                    margin: const EdgeInsets.only(bottom: 12),
+                    child: Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(item['summary']?.toString() ?? '', style: const TextStyle(fontSize: 14)),
+                          const SizedBox(height: 12),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: FilledButton(
+                                  onPressed: session.busy ? null : () => session.approveProposedDecision(item['id'].toString()),
                                   style: FilledButton.styleFrom(backgroundColor: AppTheme.pine),
                                   child: const Text('Accept'),
                                 ),
-                                const SizedBox(width: 8),
-                                OutlinedButton(
-                                  onPressed: session.busy
-                                      ? null
-                                      : () => session.rejectProposedDecision(item['id'].toString()),
+                              ),
+                              const SizedBox(width: 8),
+                              Expanded(
+                                child: OutlinedButton(
+                                  onPressed: session.busy ? null : () => session.rejectProposedDecision(item['id'].toString()),
                                   child: const Text('Reject'),
                                 ),
-                              ],
-                            ),
-                          ],
-                        ),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
-                ],
-              ),
+                  ),
+              ],
             ),
           ),
-        Expanded(child: ProjectStatePanel(state: session.state)),
-        if (promptPreview.isNotEmpty)
-          SizedBox(
-            height: 180,
-            child: ColoredBox(
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(12),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text('Prompt preview', style: TextStyle(fontWeight: FontWeight.w700)),
-                    if (validation != null)
-                      Text(
-                        'Coverage ${(validation['metrics'] as Map?)?['requirement_coverage'] ?? '-'}',
-                        style: const TextStyle(fontSize: 12, color: AppTheme.pine),
-                      ),
-                    const SizedBox(height: 6),
-                    Expanded(
-                      child: SingleChildScrollView(
-                        child: Text(promptPreview, maxLines: 12, overflow: TextOverflow.ellipsis),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
+        ),
       ],
     );
   }
@@ -312,20 +289,22 @@ class _ProjectColumn extends StatelessWidget {
     final core = state?['core_idea'] as Map?;
     final constraints = state?['constraints'] as Map? ?? {};
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('PROJECT', style: TextStyle(letterSpacing: 1.1, fontWeight: FontWeight.w800)),
+          const Text('PROJECT', style: TextStyle(letterSpacing: 1.2, fontWeight: FontWeight.w900, fontSize: 16)),
           const SizedBox(height: 8),
-          Text(stage ?? 'DISCOVERY', style: const TextStyle(color: AppTheme.copper)),
-          const SizedBox(height: 16),
+          Text(stage ?? 'DISCOVERY', style: const TextStyle(color: AppTheme.copper, fontWeight: FontWeight.bold)),
+          const Divider(color: Colors.white24, height: 32),
           const Text('Core Idea', style: TextStyle(color: AppTheme.copper, fontWeight: FontWeight.w700)),
-          Text(core?['primary_objective']?.toString() ?? project['objective']?.toString() ?? 'Not locked'),
-          const SizedBox(height: 16),
+          const SizedBox(height: 4),
+          Text(core?['primary_objective']?.toString() ?? project['objective']?.toString() ?? 'Not locked', style: const TextStyle(height: 1.4)),
+          const Divider(color: Colors.white24, height: 32),
           const Text('Constraints', style: TextStyle(color: AppTheme.copper, fontWeight: FontWeight.w700)),
-          Text('Team ${constraints['team_size'] ?? '-'}'),
-          Text(constraints['duration']?.toString() ?? 'Duration not set'),
+          const SizedBox(height: 4),
+          Text('Team: ${constraints['team_size'] ?? '-'}'),
+          Text('Duration: ${constraints['duration']?.toString() ?? '-'}'),
         ],
       ),
     );
@@ -339,67 +318,64 @@ class _PromptPane extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (session.prompt.isEmpty) {
+      return Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.description_outlined, size: 64, color: AppTheme.copper.withOpacity(0.5)),
+            const SizedBox(height: 16),
+            const Text("No prompt compiled yet.", style: TextStyle(fontSize: 18, color: AppTheme.pine)),
+            const SizedBox(height: 8),
+            const Text("Use the 'Compile Prompt' action to generate it.", style: TextStyle(color: Colors.grey)),
+          ],
+        ),
+      );
+    }
+
+    final validation = session.promptValidation;
+
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(12),
+        Container(
+          color: AppTheme.ink,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           child: Row(
             children: [
-              OutlinedButton(
-                onPressed: session.prompt.isEmpty
-                    ? null
-                    : () async {
-                        await Clipboard.setData(ClipboardData(text: session.prompt));
-                        if (context.mounted) {
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Prompt copied')));
-                        }
-                      },
-                child: const Text('Copy'),
+              if (validation != null)
+                Text(
+                  'Quality Score: ${(validation['metrics'] as Map?)?['requirement_coverage'] ?? '-'}',
+                  style: const TextStyle(color: AppTheme.copper, fontWeight: FontWeight.bold),
+                ),
+              const Spacer(),
+              FilledButton.icon(
+                onPressed: () async {
+                  await Clipboard.setData(ClipboardData(text: session.prompt));
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Prompt copied to clipboard!')));
+                  }
+                },
+                icon: const Icon(Icons.copy, size: 18),
+                label: const Text('Copy Prompt'),
+                style: FilledButton.styleFrom(backgroundColor: AppTheme.pine),
               ),
             ],
           ),
         ),
         Expanded(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.all(16),
-            child: SelectableText(session.prompt),
+          child: Container(
+            color: Colors.white,
+            width: double.infinity,
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(24),
+              child: SelectableText(
+                session.prompt,
+                style: const TextStyle(fontFamily: 'monospace', fontSize: 13, height: 1.5, color: Colors.black87),
+              ),
+            ),
           ),
         ),
       ],
     );
   }
-}
-
-class _TextBlock extends StatelessWidget {
-  const _TextBlock({required this.text});
-
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(padding: const EdgeInsets.all(16), child: SelectableText(text));
-  }
-}
-
-void _openSheet(BuildContext context, String title, Widget child) {
-  showModalBottomSheet<void>(
-    context: context,
-    isScrollControlled: true,
-    builder: (context) {
-      return SizedBox(
-        height: MediaQuery.sizeOf(context).height * 0.75,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Text(title, style: Theme.of(context).textTheme.titleLarge),
-            ),
-            const Divider(height: 1),
-            Expanded(child: child),
-          ],
-        ),
-      );
-    },
-  );
 }

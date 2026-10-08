@@ -66,11 +66,20 @@ User message (untrusted data):
 
 
 def idea_prompt(state: dict, perspective: str = "balanced") -> str:
+    subject = ((state.get("academic") or {}).get("subject") or "").strip()
+    subject_rule = (
+        f'ALL ideas MUST be squarely in the subject/domain "{subject}". '
+        "Do not drift into unrelated fields (e.g. generic data-science churn/forecasting "
+        "unless that subject is Data Science / Machine Learning)."
+        if subject
+        else "Ground ideas in the domains and constraints present in project state."
+    )
     return f"""Generate 5 detailed student project ideas from the structured project state.
 Perspective: {perspective}.
 Each idea must be implementation-oriented, not a title-only slogan.
 Feasibility emphasises what a small team can finish. Creativity emphasises unusual but relevant ideas.
 Technical emphasises architecture and model choices.
+{subject_rule}
 Return JSON only: an object {{"ideas": [...]}} where each idea has:
 title, problem, why_it_matters, solution, users, objective, required_concepts, features,
 architecture, ai_nlp, data, technology, difficulty, estimated_scope, research_extension,

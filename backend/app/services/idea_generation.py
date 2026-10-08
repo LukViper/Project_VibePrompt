@@ -193,16 +193,23 @@ def _templates(state: dict) -> list[IdeaDraft]:
     objective = (state.get("project") or {}).get("objective") or ""
     problem = (state.get("project") or {}).get("problem") or ""
     direction = ((state.get("exploration") or {}).get("current_direction") or "")
-    blob = f"{subject} {objective} {problem} {direction} {concepts}".lower()
+    domains = " ".join(str(d) for d in (state.get("domains") or []))
+    blob = f"{subject} {objective} {problem} {direction} {concepts} {domains}".lower()
     phishing = "phish" in blob
-    cyber = "cyber" in blob or phishing or "security" in blob
+    networks = bool(
+        re.search(r"\b(computer\s+networks?|computer\s+networking|networking|sdn|tcp/?ip)\b", blob)
+    )
+    cyber = ("cyber" in blob or phishing or "security" in blob) and not networks
     data_science = bool(
         re.search(r"\b(data\s*science|foundation of data|churn|forecast|segment|fraud detection)\b", blob)
     )
     nlp = bool(re.search(r"\bnlp\b|natural language|text classif|misinfo", blob))
     ideas: list[IdeaDraft] = []
 
-    if phishing or (cyber and not data_science):
+    if networks:
+        ideas.extend(_networking_ideas(concepts, duration))
+
+    if phishing or (cyber and not data_science and not networks):
         ideas.append(IdeaDraft(
             title="Context-aware phishing email analyzer",
             problem="Phishing emails imitate legitimate context and bypass keyword filters.",
@@ -263,10 +270,10 @@ def _templates(state: dict) -> list[IdeaDraft]:
             ),
         ])
 
-    if data_science or "churn" in blob:
+    if (data_science or "churn" in blob) and not networks:
         ideas.extend(_data_science_ideas(concepts, duration))
 
-    if nlp and not phishing:
+    if nlp and not phishing and not networks:
         ideas.extend([
             IdeaDraft(
                 title="Fake citation detector",
@@ -328,8 +335,10 @@ def _templates(state: dict) -> list[IdeaDraft]:
         ])
 
     if not ideas:
-        # Generic but natural starter set — never paste raw subject into "X project prototype".
-        ideas.extend(_data_science_ideas(concepts, duration)[:3])
+        # Prefer subject-aware starters. Only use data-science defaults when that is the subject
+        # (or the subject is still unknown) — never override Computer Networks / NLP / etc.
+        if data_science or not subject:
+            ideas.extend(_data_science_ideas(concepts, duration)[:3])
         ideas.append(IdeaDraft(
             title="Academic requirement analyzer",
             problem="Project briefs hide requirements in unstructured prose.",
@@ -350,6 +359,106 @@ def _templates(state: dict) -> list[IdeaDraft]:
             extensions=["Conflict report"],
         ))
     return ideas
+
+
+def _networking_ideas(concepts: list[str], duration: str) -> list[IdeaDraft]:
+    return [
+        IdeaDraft(
+            title="Network Traffic Analyzer with Anomaly Detection",
+            problem="Students and small labs lack a simple way to inspect packet flows and spot unusual traffic.",
+            why_it_matters="Hands-on traffic analysis teaches protocol behavior and basic network defense skills.",
+            solution="Capture or replay PCAP traffic, summarize flows, and flag anomalies with rule + lightweight ML checks.",
+            users="Networking students and lab instructors",
+            objective="Analyze packet captures, summarize protocol mix, and highlight anomalous flows.",
+            required_concepts=concepts or ["TCP/IP", "packet capture", "flow analysis", "anomaly detection"],
+            features=["PCAP ingest", "Flow table", "Protocol breakdown", "Anomaly alerts"],
+            architecture="PCAP/live capture → flow aggregator → analyzer → dashboard",
+            ai_nlp="Optional lightweight classifier on flow features; not text-centric",
+            data="Public PCAP samples or lab-generated captures",
+            technology=["Python", "Scapy", "Wireshark/tshark", "FastAPI"],
+            difficulty="medium",
+            estimated_scope="medium",
+            research_extension="Compare threshold rules vs unsupervised anomaly scoring on the same traces",
+            risks=["Noisy baselines", "Privacy of captured traffic"],
+            extensions=["Live interface monitoring"],
+        ),
+        IdeaDraft(
+            title="SDN Routing / Congestion Control Simulator",
+            problem="Textbook routing and congestion ideas are hard to see without an interactive topology.",
+            why_it_matters="Simulation makes protocol trade-offs visible before touching production gear.",
+            solution="Build a small SDN or Mininet-style simulator that lets users change topology and watch routing/congestion metrics.",
+            users="Computer networks course students",
+            objective=f"Simulate routing and congestion scenarios within {duration} and report latency/loss metrics.",
+            required_concepts=concepts or ["routing", "SDN", "congestion control", "topology"],
+            features=["Topology editor", "Routing visualization", "Congestion metrics", "Scenario replay"],
+            architecture="Controller/sim core → topology model → metrics collector → UI",
+            ai_nlp="Not required",
+            data="Synthetic topologies and traffic matrices",
+            technology=["Python", "Mininet or custom simulator", "matplotlib/Plotly"],
+            difficulty="medium",
+            estimated_scope="medium",
+            research_extension="Compare shortest-path vs load-aware routing under the same traffic matrix",
+            risks=["Simulator fidelity limits", "Scope creep into full OS networking"],
+            extensions=["Export lab worksheets"],
+        ),
+        IdeaDraft(
+            title="Wireless / IoT Network Performance Monitor",
+            problem="Wi-Fi and IoT deployments fail silently when latency, loss, or interference spike.",
+            why_it_matters="A small monitoring stack teaches measurement, reliability, and wireless constraints.",
+            solution="Collect RSSI/latency/loss from access points or IoT nodes and surface a health dashboard with alerts.",
+            users="Campus lab admins and IoT project teams",
+            objective="Monitor wireless/IoT link quality and alert when performance drops below thresholds.",
+            required_concepts=concepts or ["wireless networking", "latency", "packet loss", "monitoring"],
+            features=["Node registry", "Latency/loss charts", "Threshold alerts", "History export"],
+            architecture="Agents/probes → collector API → time-series store → dashboard",
+            ai_nlp="Not required",
+            data="Probe measurements from a lab WLAN or simulated IoT mesh",
+            technology=["Python", "MQTT or HTTP probes", "SQLite/Influx-style store"],
+            difficulty="medium",
+            estimated_scope="medium",
+            research_extension="Correlate interference windows with throughput drops",
+            risks=["Hardware availability", "Unstable campus Wi-Fi baselines"],
+            extensions=["Simple remediation suggestions"],
+        ),
+        IdeaDraft(
+            title="Network Protocol Visual Learning Lab",
+            problem="Three-way handshake, retransmission, and DNS resolution are abstract without a step-by-step visual.",
+            why_it_matters="Visual labs improve protocol intuition for computer networks coursework.",
+            solution="Animate selected protocol exchanges from a scripted or captured trace with pause/step controls.",
+            users="Students learning TCP/IP and application-layer protocols",
+            objective="Visualize key protocol exchanges and quiz students on each step.",
+            required_concepts=concepts or ["TCP handshake", "DNS", "HTTP", "retransmission"],
+            features=["Protocol picker", "Step animation", "Packet field callouts", "Quiz mode"],
+            architecture="Trace/script loader → state machine → animation UI",
+            ai_nlp="Optional generated explanations of each step",
+            data="Curated protocol scripts plus optional short PCAPs",
+            technology=["Python", "JavaScript/Flutter front end"],
+            difficulty="low",
+            estimated_scope="small",
+            research_extension="Measure learning gains with/without interactive quizzes",
+            risks=["Oversimplifying real protocol edge cases"],
+            extensions=["Instructor custom scenario upload"],
+        ),
+        IdeaDraft(
+            title="Campus Network Inventory & Path Tracer",
+            problem="Small teams lose track of devices, subnets, and paths between services.",
+            why_it_matters="Inventory plus path tracing grounds networking theory in operable infrastructure.",
+            solution="Maintain a device/subnet inventory and trace logical paths with latency snapshots between endpoints.",
+            users="Student sysadmins and networking project teams",
+            objective="Map devices/subnets and report path latency between selected endpoints.",
+            required_concepts=concepts or ["IP addressing", "subnetting", "traceroute", "inventory"],
+            features=["Device inventory", "Subnet map", "Path trace", "Latency history"],
+            architecture="Inventory DB → discovery/trace workers → map UI",
+            ai_nlp="Not required",
+            data="Lab network inventory and traceroute samples",
+            technology=["Python", "Nmap/traceroute wrappers", "PostgreSQL"],
+            difficulty="medium",
+            estimated_scope="medium",
+            research_extension="Compare scheduled vs on-demand path freshness",
+            risks=["Scanning permissions", "Incomplete inventories"],
+            extensions=["Change detection alerts"],
+        ),
+    ]
 
 
 def _data_science_ideas(concepts: list[str], duration: str) -> list[IdeaDraft]:

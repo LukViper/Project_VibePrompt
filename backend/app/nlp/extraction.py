@@ -123,13 +123,65 @@ def _scan_lexicon(text: str, lexicon: dict[str, str]) -> list[str]:
     return found
 
 
+def _normalize_domain_text(text: str) -> str:
+    """Correct common domain typos before lexicon matching."""
+    lowered = (text or "").lower()
+    replacements = [
+        (r"\bdata\s*scienc\w*\b", "data science"),
+        (r"\bdatascienc\w*\b", "data science"),
+        (r"\bcompu\w{0,4}ter\s*netw\w*\b", "computer networks"),
+        (r"\bcompu\w{0,4}ter\s*net\b", "computer networks"),
+        (r"\bnetwroks?\b", "networks"),
+        (r"\bcyber\s*secu?r?i?ty\b", "cybersecurity"),
+        (r"\bciber\b", "cyber"),
+    ]
+    for pattern, repl in replacements:
+        lowered = re.sub(pattern, repl, lowered, flags=re.I)
+    return lowered
+
+
 def detect_domains(text: str) -> list[str]:
-    lowered = text.lower()
+    lowered = _normalize_domain_text(text)
     found = []
     for domain, patterns in DOMAIN_PATTERNS.items():
         if any(pattern in lowered for pattern in patterns) and domain not in found:
             found.append(domain)
+    # Informal combo: "Cyber and Computer" / "Cyber + Computer" ⇒ networks too.
+    if (
+        "cybersecurity" in found
+        and "computer_networks" not in found
+        and re.search(r"\bcomputers?\b", lowered)
+        and "vision" not in lowered
+    ):
+        found.append("computer_networks")
     return found
+
+
+def compose_subject_label(domains: list[str], *, fallback: str | None = None) -> str | None:
+    """Build a stable multi-domain subject like 'Cybersecurity + Computer Networks'."""
+    from app.nlp.lexicon import DOMAIN_LABELS
+
+    order = [
+        "data_science",
+        "cybersecurity",
+        "computer_networks",
+        "nlp",
+        "computer_vision",
+        "blockchain",
+        "mobile",
+        "drone",
+    ]
+    labels = [DOMAIN_LABELS[d] for d in order if d in domains and d in DOMAIN_LABELS]
+    # Preserve any extra domains not in the preferred order.
+    for domain in domains:
+        label = DOMAIN_LABELS.get(domain)
+        if label and label not in labels:
+            labels.append(label)
+    if len(labels) >= 2:
+        return " + ".join(labels)
+    if len(labels) == 1:
+        return labels[0]
+    return fallback
 
 
 def _duration(text: str) -> str | None:
@@ -172,14 +224,57 @@ _SUBJECT_STOP = {
 
 
 def _subject(text: str) -> str | None:
+    # Prefer composed multi-domain subjects so "Cyber + Computer Networks" does not
+    # collapse to whichever single label is checked first.
+    domains = detect_domains(text)
+    composed = compose_subject_label(domains)
+    if composed and (" + " in composed or len(domains) == 1):
+        # Single known domain from lexicon, or an explicit multi-domain combo.
+        if len(domains) >= 2:
+            return composed
+    normalized = _normalize_domain_text(text)
     if re.search(r"\bNLP\b|natural language processing", text, re.I):
-        return "NLP"
-    if re.search(r"\bcyber(?:security)?\b", text, re.I):
-        return "Cybersecurity"
-    if re.search(r"\b(data\s*science|foundation(?:s)? of data science)\b", text, re.I):
+        domains = list(dict.fromkeys([*domains, "nlp"]))
+    if re.search(r"\bcyber(?:security)?\b", normalized, re.I):
+        domains = list(dict.fromkeys([*domains, "cybersecurity"]))
+    if re.search(
+        r"\b(computer\s+networks?|computer\s+networking|networking)\b",
+        normalized,
+        re.I,
+    ):
+        domains = list(dict.fromkeys([*domains, "computer_networks"]))
+    if re.search(r"\b(data\s*science|foundation(?:s)? of data science)\b", normalized, re.I):
+        domains = list(dict.fromkeys([*domains, "data_science"]))
+    composed = compose_subject_label(domains)
+    if composed and " + " in composed:
+        return composed
+    if "data_science" in domains:
         return "Data Science"
     if re.search(r"\bmachine learning\b", text, re.I):
         return "Machine Learning"
+    if composed:
+        return composed
+    # Short subject-only turns: "for computer networks?", "about NLP", "in cybersecurity"
+    short = re.search(
+        r"^\s*(?:for|about|in|on|regarding)\s+([A-Za-z][A-Za-z0-9 +/\-]{1,40})\s*\??\s*$",
+        text.strip(),
+        re.I,
+    )
+    if short:
+        value = short.group(1).strip(" .?")
+        if value and value.lower() not in _SUBJECT_STOP and len(value.split()) <= 5:
+            short_domains = detect_domains(value)
+            short_label = compose_subject_label(short_domains)
+            if short_label:
+                return short_label
+            # Only accept bare short subjects when they look like a course topic,
+            # not conversational filler ("for ideas", "about something").
+            if not re.search(
+                r"\b(ideas?|project|something|help|me|this|that|please|suggest)\b",
+                value,
+                re.I,
+            ):
+                return value.title() if value.islower() else value
     match = re.search(
         r"\b(?:project|course|subject|class) (?:is |for |in |on |about )?"
         r"([A-Za-z][A-Za-z0-9 +/]{1,40})",
@@ -197,17 +292,56 @@ def _subject(text: str) -> str | None:
         value = re.sub(r"^(on|about|for|in)\s+", "", value, flags=re.I).strip()
         if value and value.lower() not in _SUBJECT_STOP:
             lowered = value.lower()
+            value_domains = detect_domains(value)
+            value_label = compose_subject_label(value_domains)
+            if value_label:
+                return value_label
             if lowered in {"nlp", "natural language processing"}:
                 return "NLP"
+            if re.search(r"\bcomputer\s+networks?\b", lowered):
+                return "Computer Networks"
             if "data science" in lowered or "foundation" in lowered and "data" in lowered:
                 return "Data Science"
             if lowered.startswith("on ") or lowered in {"on", "about", "something"}:
                 return None
             return value
-    domains = detect_domains(text)
-    if domains:
-        return domains[0].replace("_", " ").title()
     return None
+
+
+def merge_subject_labels(existing: str | None, incoming: str | None) -> str | None:
+    """Union subject labels so later turns do not erase a prior domain."""
+    if not incoming:
+        return existing
+    if not existing:
+        return incoming
+    if existing.strip().lower() == incoming.strip().lower():
+        return existing
+
+    def _parts(label: str) -> list[str]:
+        return [p.strip() for p in re.split(r"\s*\+\s*", label) if p.strip()]
+
+    merged: list[str] = []
+    for part in _parts(existing) + _parts(incoming):
+        if not any(part.lower() == m.lower() for m in merged):
+            merged.append(part)
+    # Map known labels back through domain ids for stable ordering.
+    from app.nlp.lexicon import DOMAIN_LABELS
+
+    reverse = {v.lower(): k for k, v in DOMAIN_LABELS.items()}
+    domain_ids = []
+    extras = []
+    for part in merged:
+        key = reverse.get(part.lower())
+        if key:
+            domain_ids.append(key)
+        else:
+            extras.append(part)
+    composed = compose_subject_label(list(dict.fromkeys(domain_ids)))
+    if composed and extras:
+        return " + ".join([composed, *extras])
+    if composed:
+        return composed
+    return " + ".join(merged)
 
 
 def _split_items(blob: str) -> list[str]:

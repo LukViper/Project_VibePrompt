@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 
 import '../core/api/api_client.dart';
+import '../core/api/api_exception.dart';
 import '../models/idea.dart';
 import '../models/message.dart';
 
@@ -102,11 +103,74 @@ class SessionController extends ChangeNotifier {
     });
   }
 
-  Future<void> requestIdeas() => send('Suggest detailed project ideas');
+  Future<void> requestIdeas() async {
+    final id = projectId;
+    if (id == null) return;
+    await _run(() async {
+      messages.add(const ChatMessage(role: 'user', content: 'Suggest detailed project ideas'));
+      try {
+        final rows = await api.generateIdeas(id);
+        final cards = ProjectIdeaCard.listFrom(rows);
+        ideas = rows
+            .whereType<Map>()
+            .map((row) => ProjectIdea.fromJson(Map<String, dynamic>.from(row)))
+            .toList();
+        state = await api.getState(id);
+        stage = state?['conversation_stage']?.toString() ?? stage;
+        final buffer = StringBuffer('Here are detailed project ideas you can customize or select:');
+        for (var i = 0; i < ideas.length; i++) {
+          final idea = ideas[i];
+          buffer.writeln('\n${i + 1}. ${idea.title}');
+          if (idea.problem.isNotEmpty) buffer.writeln('   Problem: ${idea.problem}');
+          if (idea.objective.isNotEmpty) buffer.writeln('   Objective: ${idea.objective}');
+        }
+        messages.add(ChatMessage(role: 'assistant', content: buffer.toString(), ideas: cards));
+      } on ApiException catch (err) {
+        messages.add(ChatMessage(role: 'assistant', content: _capabilityGateMessage(err)));
+      }
+    });
+  }
 
-  Future<void> requestMoreIdeas() => send('Give me more project ideas');
+  Future<void> requestMoreIdeas() => requestIdeas();
 
   Future<void> loadIdeas() => requestIdeas();
+
+  Future<void> requestArchitecture() async {
+    final id = projectId;
+    if (id == null) return;
+    await _run(() async {
+      messages.add(const ChatMessage(role: 'user', content: 'Propose an architecture and tech stack'));
+      try {
+        final result = await api.proposeArchitecture(id);
+        if (result['state'] is Map) {
+          state = Map<String, dynamic>.from(result['state'] as Map);
+        } else {
+          state = await api.getState(id);
+        }
+        stage = state?['conversation_stage']?.toString() ?? stage;
+        final narrative = result['narrative']?.toString() ?? 'Architecture proposed.';
+        messages.add(ChatMessage(role: 'assistant', content: narrative));
+      } on ApiException catch (err) {
+        messages.add(ChatMessage(role: 'assistant', content: _capabilityGateMessage(err)));
+      }
+    });
+  }
+
+  String _capabilityGateMessage(ApiException err) {
+    final body = err.message;
+    final guidanceMatch = RegExp(r'"guidance"\s*:\s*"([^"]+)"').firstMatch(body);
+    if (guidanceMatch != null) return guidanceMatch.group(1)!;
+    if (body.contains('missing_domain')) {
+      return 'Tell me the course or domain first before I suggest project ideas.';
+    }
+    if (body.contains('missing_core_idea')) {
+      return 'Pick or describe a concrete project direction first, then I can propose architecture.';
+    }
+    if (body.contains('missing_project_to_grill')) {
+      return 'Share a direction or requirements first — grilling needs a real project to challenge.';
+    }
+    return 'That capability is gated until ProjectState is ready. $body';
+  }
 
   Future<void> selectIdeaCard(ProjectIdeaCard idea) async {
     final id = projectId;
@@ -226,16 +290,24 @@ class SessionController extends ChangeNotifier {
     final id = projectId;
     if (id == null) return;
     await _run(() async {
-      grillReport = await api.grill(id);
-      grillListing = await api.listGrill(id);
-      if (grillReport?['state'] is Map) {
-        state = Map<String, dynamic>.from(grillReport!['state'] as Map);
-      } else {
-        state = await api.getState(id);
+      messages.add(const ChatMessage(role: 'user', content: 'Grill this project'));
+      try {
+        grillReport = await api.grill(id);
+        grillListing = await api.listGrill(id);
+        if (grillReport?['state'] is Map) {
+          state = Map<String, dynamic>.from(grillReport!['state'] as Map);
+        } else {
+          state = await api.getState(id);
+        }
+        pendingGrillPreview = null;
+        selectedAttackId = null;
+        mode = WorkspaceMode.grill;
+        final narrative = grillReport?['narrative']?.toString()
+            ?? 'Grill completed. Review attacks in the Grill panel.';
+        messages.add(ChatMessage(role: 'assistant', content: narrative));
+      } on ApiException catch (err) {
+        messages.add(ChatMessage(role: 'assistant', content: _capabilityGateMessage(err)));
       }
-      pendingGrillPreview = null;
-      selectedAttackId = null;
-      mode = WorkspaceMode.grill;
     });
   }
 

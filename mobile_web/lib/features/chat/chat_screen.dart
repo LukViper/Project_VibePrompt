@@ -59,18 +59,33 @@ class _ChatScreenState extends State<ChatScreen> {
           padding: const EdgeInsets.fromLTRB(12, 8, 12, 0),
           child: Row(
             children: [
-              for (final tip in const [
-                ('Suggest ideas', 'Suggest detailed project ideas'),
-                ('Grill this project', 'Grill this project'),
-                ('Find existing systems', 'Are there any existing systems or datasets for this project?'),
-                ('Propose architecture', 'Propose an architecture and tech stack'),
-                ('Compile the final prompt', 'Compile the final prompt'),
+              for (final tip in [
+                (
+                  'Suggest ideas',
+                  () => session.requestIdeas(),
+                ),
+                (
+                  'Grill this project',
+                  () => session.runGrill(),
+                ),
+                (
+                  'Find existing systems',
+                  () => _send('Are there any existing systems or datasets for this project?'),
+                ),
+                (
+                  'Propose architecture',
+                  () => session.requestArchitecture(),
+                ),
+                (
+                  'Compile the final prompt',
+                  () => _send('Compile the final prompt'),
+                ),
               ])
                 Padding(
                   padding: const EdgeInsets.only(right: 8),
                   child: ActionChip(
                     label: Text(tip.$1),
-                    onPressed: session.busy ? null : () => _send(tip.$2),
+                    onPressed: session.busy ? null : tip.$2,
                   ),
                 ),
             ],

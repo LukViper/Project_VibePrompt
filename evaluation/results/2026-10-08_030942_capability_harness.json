@@ -1,0 +1,116 @@
+{
+  "harness": "capability_harness",
+  "timestamp": "2026-10-08T03:09:42.209248+00:00",
+  "cases": 4,
+  "passed": 4,
+  "results": [
+    {
+      "case": "computer_networks",
+      "seed": "for computer networks ?",
+      "subject": "computer networks",
+      "checks": {
+        "ideas_http_ok": true,
+        "ideas_count": true,
+        "no_forbidden": true,
+        "has_domain_signal": true,
+        "architecture_ok": true,
+        "architecture_harness": true,
+        "grill_ok": true,
+        "grill_harness": true,
+        "blank_ideas_gated": true,
+        "blank_architecture_gated": true,
+        "blank_grill_gated": true
+      },
+      "idea_titles": [
+        "Network Traffic Analyzer with Anomaly Detection",
+        "SDN Routing / Congestion Control Simulator",
+        "Wireless / IoT Network Performance Monitor",
+        "Network Protocol Visual Learning Lab",
+        "Campus Network Inventory & Path Tracer"
+      ],
+      "passed": true,
+      "arch_probe": null,
+      "grill_probe": null
+    },
+    {
+      "case": "nlp",
+      "seed": "I need a project for NLP.",
+      "subject": "nlp",
+      "checks": {
+        "ideas_http_ok": true,
+        "ideas_count": true,
+        "no_forbidden": true,
+        "has_domain_signal": true,
+        "architecture_ok": true,
+        "architecture_harness": true,
+        "grill_ok": true,
+        "grill_harness": true,
+        "blank_ideas_gated": true,
+        "blank_architecture_gated": true,
+        "blank_grill_gated": true
+      },
+      "idea_titles": [
+        "Fake citation detector",
+        "Academic requirement analyzer",
+        "Course-forum question classifier"
+      ],
+      "passed": true,
+      "arch_probe": null,
+      "grill_probe": null
+    },
+    {
+      "case": "cybersecurity",
+      "seed": "I need a cybersecurity project.",
+      "subject": "cybersecurity",
+      "checks": {
+        "ideas_http_ok": true,
+        "ideas_count": true,
+        "no_forbidden": true,
+        "has_domain_signal": true,
+        "architecture_ok": true,
+        "architecture_harness": true,
+        "grill_ok": true,
+        "grill_harness": true,
+        "blank_ideas_gated": true,
+        "blank_architecture_gated": true,
+        "blank_grill_gated": true
+      },
+      "idea_titles": [
+        "Context-aware phishing email analyzer",
+        "Automated security log analysis",
+        "Semantic vulnerability assistant"
+      ],
+      "passed": true,
+      "arch_probe": null,
+      "grill_probe": null
+    },
+    {
+      "case": "data_science",
+      "seed": "I want a data science project.",
+      "subject": "data science",
+      "checks": {
+        "ideas_http_ok": true,
+        "ideas_count": true,
+        "no_forbidden": true,
+        "has_domain_signal": true,
+        "architecture_ok": true,
+        "architecture_harness": true,
+        "grill_ok": true,
+        "grill_harness": true,
+        "blank_ideas_gated": true,
+        "blank_architecture_gated": true,
+        "blank_grill_gated": true
+      },
+      "idea_titles": [
+        "Customer Churn Prediction with Explainable AI",
+        "Sales Forecasting System",
+        "Customer Segmentation using Clustering",
+        "Fraud Detection using Machine Learning",
+        "Demand Prediction System"
+      ],
+      "passed": true,
+      "arch_probe": null,
+      "grill_probe": null
+    }
+  ]
+}

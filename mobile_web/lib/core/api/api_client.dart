@@ -79,6 +79,8 @@ class ApiClient {
 
   Future<Map<String, dynamic>> getSummary(String id) => _map('GET', '/projects/$id/summary');
 
+  Future<Map<String, dynamic>> proposeArchitecture(String id) => _map('POST', '/projects/$id/architecture');
+
   Future<Map<String, dynamic>> grill(String id) => _map('POST', '/projects/$id/grill');
 
   Future<Map<String, dynamic>> listGrill(String id) => _map('GET', '/projects/$id/grill');

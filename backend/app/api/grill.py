@@ -12,8 +12,8 @@ from app.database.session import get_db
 from app.schemas.grill_entities import GrillResolutionType
 from app.schemas.state import migrate_state
 from app.services.analytics import track
+from app.services.capability_harness import CapabilityKind, gate_capability, run_grill
 from app.services.grill_session import (
-    create_grill_session,
     get_next_grill_attack,
     list_grill_attacks,
     respond_to_grill_attack,
@@ -33,14 +33,25 @@ class GrillRespondBody(BaseModel):
 
 
 @router.post("/projects/{project_id}/grill")
-def run_grill(
+def start_grill(
     project_id: str,
     db: Session = Depends(get_db),
     auth: AuthContext = Depends(get_auth_context),
 ):
     project = get_project(project_id, db, auth)
+    gate_capability(project.state or {}, CapabilityKind.GRILL).raise_if_blocked()
     track("grill_started")
-    report = create_grill_session(db, project)
+    report = run_grill(db, project)
+    if isinstance(report, dict) and report.get("blocked"):
+        raise HTTPException(
+            status_code=400,
+            detail={
+                "error": "capability_gated",
+                "reason": "missing_project_to_grill",
+                "guidance": report.get("response"),
+                "provenance": report.get("provenance") or {},
+            },
+        )
     db.commit()
     track("grill_completed")
     return report

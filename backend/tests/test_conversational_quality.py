@@ -160,6 +160,21 @@ def test_idea_templates_no_raw_subject_prototype():
     assert any("churn" in title for title in titles)
 
 
+def test_computer_networks_subject_not_data_science_ideas():
+    from app.nlp.extraction import _subject, detect_domains
+
+    assert _subject("for computer networks ?") == "Computer Networks"
+    assert "computer_networks" in detect_domains("for computer networks ?")
+
+    state = empty_state_dict()
+    state["academic"]["subject"] = "Computer Networks"
+    titles = [idea.title.lower() for idea in _templates(state)]
+    blob = " ".join(titles)
+    assert "churn" not in blob
+    assert "sales forecasting" not in blob
+    assert any("network" in title or "sdn" in title or "traffic" in title or "protocol" in title for title in titles)
+
+
 def test_architecture_chat_format_hides_internal_labels():
     state = empty_state_dict()
     state["architecture"] = {

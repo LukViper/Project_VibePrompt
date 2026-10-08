@@ -96,6 +96,21 @@ _ML_FOCUS = (
     "Within machine learning, do you want to emphasize supervised prediction, "
     "clustering/segmentation, anomaly detection, or something else?"
 )
+_NETWORKS_FOCUS = (
+    "Within computer networks, are you more interested in protocol simulation, "
+    "traffic analysis, SDN/controller tooling, wireless/IoT networking, "
+    "or network security monitoring?"
+)
+_CYBER_NETWORKS_FOCUS = (
+    "At the intersection of cybersecurity and computer networks, are you more interested in "
+    "network traffic analysis / intrusion detection, secure routing or SDN, "
+    "wireless/IoT security, or protocol abuse detection?"
+)
+_DS_CYBER_NETWORKS_FOCUS = (
+    "Across data science, cybersecurity, and computer networks, do you want to lean toward "
+    "ML-based traffic anomaly detection, network intrusion analytics, "
+    "or a secure networking tool that uses data analysis?"
+)
 
 
 class ConversationManager:
@@ -181,17 +196,49 @@ class ConversationManager:
             return _pick(_LOG_FOCUS)
         if re.search(r"\bphish(ing)?\b", blob):
             return _pick(_PHISHING_FOCUS)
-        if re.search(r"\b(data\s*science|foundation of data|fds)\b", blob):
+
+        has_networks = bool(
+            re.search(r"\b(computer\s+networks?|computer\s+networking|networking)\b", blob)
+            or "computer networks" in academic.lower()
+        )
+        has_cyber = bool(
+            re.search(r"\b(cyber(?:security)?|infosec)\b", blob)
+            or "cybersecurity" in academic.lower()
+        )
+        has_ds = bool(
+            re.search(r"\b(data\s*science|foundation of data|fds)\b", blob)
+            or "data science" in academic.lower()
+        )
+        # Intersection first — do not flip-flop between single-domain prompts.
+        if has_ds and has_networks and has_cyber:
+            return _pick(_DS_CYBER_NETWORKS_FOCUS)
+        if has_networks and has_cyber:
+            if re.search(
+                r"\b(ids|intrusion|traffic|secure routing|sdn|wireless|iot|protocol abuse|packet)\b",
+                lowered,
+            ):
+                pass
+            else:
+                return _pick(_CYBER_NETWORKS_FOCUS)
+        elif has_networks:
+            if re.search(
+                r"\b(protocol|traffic|sdn|routing|packet|wireless|iot|congestion)\b",
+                lowered,
+            ):
+                pass
+            else:
+                return _pick(_NETWORKS_FOCUS)
+        if has_ds and not (has_networks or has_cyber):
             # If they already named churn / fraud / forecast, dig into that instead.
             if re.search(r"\b(churn|fraud|forecast|segment|recommend|anomal)\b", lowered):
                 pass
             else:
                 return _pick(_DATA_SCIENCE_FOCUS)
         if re.search(r"\b(machine learning|\bml\b|supervised learning|clustering)\b", blob) and not re.search(
-            r"\b(nlp|cyber|phish|log)\b", blob
+            r"\b(nlp|cyber|phish|log|network)\b", blob
         ):
             return _pick(_ML_FOCUS)
-        if re.search(r"\bcryptography|cyber\s*security|cybersecurity|infosec\b", blob) and not re.search(
+        if has_cyber and not has_networks and not re.search(
             r"\b(phish|malware|forensic|threat detection|network security|log)\b", lowered
         ):
             return _pick(_CYBER_INTEREST)
@@ -204,6 +251,12 @@ class ConversationManager:
         if intent in {"PROJECT_DESCRIPTION", "CHANGE_SCOPE"} and not (objective or problem or direction):
             if re.search(r"\b(project|something|idea)\b", lowered):
                 topic = _soft_topic_label(lowered, academic)
+                if topic == "data science + cybersecurity + computer networks":
+                    return _pick(_DS_CYBER_NETWORKS_FOCUS)
+                if topic == "cybersecurity + computer networks":
+                    return _pick(_CYBER_NETWORKS_FOCUS)
+                if topic == "computer networks":
+                    return _pick(_NETWORKS_FOCUS)
                 if topic:
                     return _pick(
                         f"Within {topic}, which direction feels most interesting—"
@@ -368,16 +421,31 @@ class ConversationManager:
 
 
 def _soft_topic_label(lowered: str, academic: str) -> str | None:
-    if re.search(r"\bdata\s*science|foundation of data\b", lowered) or re.search(
-        r"\bdata\s*science\b", (academic or "").lower()
-    ):
+    academic_l = (academic or "").lower()
+    has_networks = bool(
+        re.search(r"\bcomputer\s+networks?|computer\s+networking|networking\b", lowered)
+        or "computer networks" in academic_l
+    )
+    has_cyber = bool(re.search(r"\bcyber(?:security)?|infosec\b", lowered) or "cybersecurity" in academic_l)
+    has_ds = bool(
+        re.search(r"\bdata\s*science|foundation of data\b", lowered) or "data science" in academic_l
+    )
+    if has_ds and has_networks and has_cyber:
+        return "data science + cybersecurity + computer networks"
+    if has_networks and has_cyber:
+        return "cybersecurity + computer networks"
+    if has_networks:
+        return "computer networks"
+    if has_cyber:
+        return "cybersecurity"
+    if has_ds:
         return "data science"
     if re.search(r"\bmachine learning|\bml\b", lowered):
         return "machine learning"
     if academic and academic.lower() not in {"the course", "course"}:
         # Avoid dumping raw "on foundation of…" subjects into the question.
         cleaned = re.sub(r"^(on|about|for|in)\s+", "", academic.strip(), flags=re.I)
-        if cleaned and len(cleaned.split()) <= 4 and "foundation of" not in cleaned.lower():
+        if cleaned and len(cleaned.split()) <= 6 and "foundation of" not in cleaned.lower():
             return cleaned
     return None
 

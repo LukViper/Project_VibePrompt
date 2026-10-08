@@ -8,6 +8,12 @@ python -m evaluation.run_all
 python -m evaluation.generate_report
 ```
 
+Capability harness (ideas / architecture / grill gated across domains):
+
+```bash
+python -m evaluation.capability_harness.run
+```
+
 Legacy NLP scripts remain:
 
 ```bash

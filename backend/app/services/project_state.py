@@ -652,8 +652,14 @@ def apply_analysis_to_state(state: dict, analysis: dict, reason: str = "message"
     analysis = {**analysis, "extraction": extraction}
 
     if extraction.subject:
-        state["academic"]["subject"] = extraction.subject
-        state["project"]["subject"] = extraction.subject
+        from app.nlp.extraction import merge_subject_labels
+
+        merged = merge_subject_labels(
+            (state.get("academic") or {}).get("subject"),
+            extraction.subject,
+        )
+        state["academic"]["subject"] = merged
+        state["project"]["subject"] = merged
     if extraction.team_size is not None:
         state["constraints"]["team_size"] = extraction.team_size
     if extraction.duration:

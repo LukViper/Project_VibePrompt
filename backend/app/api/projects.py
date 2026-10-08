@@ -15,7 +15,7 @@ from app.database.session import get_db
 from app.models import Project
 from app.schemas.state import ProjectStateModel
 from app.services.analytics import track
-from app.services.architecture import propose_architecture
+from app.services.capability_harness import CapabilityKind, gate_capability, run_architecture
 from app.services.conversation import ensure_conversation, post_message
 from app.services.grill import professional_review
 from app.services.project_state import empty_state, public_state
@@ -208,13 +208,24 @@ def read_summary(
 
 
 @router.post("/projects/{project_id}/architecture")
-def run_architecture(
+def propose_project_architecture(
     project_id: str,
     db: Session = Depends(get_db),
     auth: AuthContext = Depends(get_auth_context),
 ):
     project = get_project(project_id, db, auth)
-    result = propose_architecture(db, project)
+    gate_capability(project.state or {}, CapabilityKind.ARCHITECTURE).raise_if_blocked()
+    result = run_architecture(db, project)
+    if result.get("blocked"):
+        raise HTTPException(
+            status_code=400,
+            detail={
+                "error": "capability_gated",
+                "reason": "missing_core_idea",
+                "guidance": result.get("response"),
+                "provenance": result.get("provenance") or {},
+            },
+        )
     db.commit()
     return result
 

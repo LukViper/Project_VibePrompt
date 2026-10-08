@@ -25,7 +25,6 @@ from app.nlp.preprocessing import preprocess
 from app.nlp.similarity import cosine_similarity, find_related_requirements
 from app.orchestration.conversation_manager import ConversationManager, OrchestratorAction
 from app.services import idea_generation, prompt_compiler, specification
-from app.services.architecture import propose_architecture
 from app.services.grill import conversational_challenge, grill, professional_review
 from app.database.base import utcnow
 from app.schemas.state import migrate_state
@@ -310,6 +309,16 @@ def _special_actions(session, project, text, intent, *, action: OrchestratorActi
 
     resolved = action or OrchestratorAction.RESPOND
     if resolved == OrchestratorAction.GRILL or intent in {"REQUEST_GRILL", "ASK_FEASIBILITY"}:
+        from app.services.capability_harness import CapabilityKind, gate_capability, gated_message
+
+        grill_gate = gate_capability(project.state or {}, CapabilityKind.GRILL)
+        if not grill_gate.allowed:
+            return {
+                "response": gated_message(CapabilityKind.GRILL, grill_gate),
+                "state": public_state(project.state or {}),
+                "skip_llm": True,
+                "provenance": grill_gate.provenance,
+            }
         # Prefer a single conversational challenge; full grill report on explicit grill request.
         if intent == "REQUEST_GRILL" and re.search(r"\bgrill\b", text, re.I):
             report = grill(project.state, persist_on_project=project, session=session)
@@ -326,12 +335,29 @@ def _special_actions(session, project, text, intent, *, action: OrchestratorActi
         result = run_research(session, project, text)
         return {"response": result["narrative"], "state": result["state"]}
     if resolved == OrchestratorAction.GENERATE_IDEAS or intent == "GENERATE_IDEAS" or wants_ideation(text, project.state or {}):
-        rows = idea_generation.generate_ideas(session, project)
+        from app.services.capability_harness import run_ideation
+
+        result = run_ideation(session, project)
+        if result.get("blocked"):
+            return {
+                "response": result["response"],
+                "state": result.get("state") or public_state(project.state or {}),
+                "skip_llm": True,
+                "provenance": result.get("provenance"),
+            }
+        rows = result.get("ideas") or []
         payloads = [_idea_payload(row, index + 1) for index, row in enumerate(rows)]
+        state = dict(result.get("state") or public_state(project.state or {}))
+        provenance = dict(state.get("capability_provenance") or {})
+        provenance["IDEATION"] = result.get("provenance") or {}
+        state["capability_provenance"] = provenance
+        project.state = state
+        session.flush()
         return {
-            "response": format_ideas_for_chat(rows),
-            "state": public_state(project.state or {}),
+            "response": result.get("response") or format_ideas_for_chat(rows),
+            "state": public_state(state),
             "ideas": payloads,
+            "provenance": result.get("provenance"),
         }
     if resolved == OrchestratorAction.APPLY_RESEARCH or intent == "APPLY_RESEARCH":
         result = apply_research_findings(session, project)
@@ -341,8 +367,17 @@ def _special_actions(session, project, text, intent, *, action: OrchestratorActi
         or intent == "REQUEST_ARCHITECTURE"
         or ConversationManager()._wants_architecture(text)
     ):
-        result = propose_architecture(session, project)
-        return {"response": result["narrative"], "state": result["state"]}
+        from app.services.capability_harness import run_architecture
+
+        result = run_architecture(session, project)
+        if result.get("blocked"):
+            return {
+                "response": result["response"],
+                "state": result.get("state") or public_state(project.state or {}),
+                "skip_llm": True,
+                "provenance": result.get("provenance"),
+            }
+        return {"response": result["narrative"], "state": result["state"], "provenance": result.get("provenance")}
     if resolved == OrchestratorAction.COMPILE_PROMPT or intent == "GENERATE_PROMPT":
         try:
             prompt = prompt_compiler.compile_prompt(session, project)
@@ -569,6 +604,7 @@ def _conversational_response(text, intent, relationship, drift, scope, state, sl
     """Natural partner-style reply. Never dumps 'I captured…' or missing-field lists."""
     parts: list[str] = []
     lowered = (text or "").lower()
+    intent_label = intent.get("intent") if isinstance(intent, dict) else intent
     constraints = state.get("constraints") or {}
     core = state.get("core_idea") or {}
     project = state.get("project") or {}
@@ -621,16 +657,37 @@ def _conversational_response(text, intent, relationship, drift, scope, state, sl
         return " ".join(parts)
 
     if action == OrchestratorAction.EXPLORE:
-        subject = ((state.get("academic") or {}).get("subject") or "").lower()
+        subject = ((state.get("academic") or {}).get("subject") or "").strip()
         direction = ((state.get("exploration") or {}).get("current_direction") or "").lower()
-        blob = f"{lowered} {subject} {direction}"
+        blob = f"{lowered} {subject.lower()} {direction}"
+        from app.nlp.extraction import compose_subject_label, detect_domains
+
+        domain_ids = list(
+            dict.fromkeys(
+                [
+                    *detect_domains(blob),
+                    *[
+                        d
+                        for d in (state.get("domains") or [])
+                        if isinstance(d, str)
+                    ],
+                ]
+            )
+        )
+        composed = compose_subject_label(domain_ids) or subject
         if re.search(r"\bchurn\b", blob):
             parts.append("Got it — churn prediction is a concrete direction.")
-        elif re.search(r"\b(data\s*science|foundation of data)\b", blob):
+        elif composed and " + " in composed:
+            parts.append(f"Got it — you're thinking about a {composed} project.")
+        elif re.search(r"\b(computer\s+networks?|computer\s+networking|networking)\b", blob) or (
+            "computer networks" in subject.lower()
+        ):
+            parts.append("Got it — you're thinking about a computer networks project.")
+        elif re.search(r"\b(data\s*science|foundation of data)\b", blob) or "data science" in subject.lower():
             parts.append("Got it — you're thinking about a data science project.")
         elif re.search(r"\bnlp\b|natural language", blob):
             parts.append("Got it — you're looking for an NLP project.")
-        elif re.search(r"\bcyber|security\b", blob):
+        elif re.search(r"\b(cyber(?:security)?|infosec)\b", blob) or "cybersecurity" in subject.lower():
             parts.append("Got it — something in cybersecurity.")
         elif re.search(r"\blog\b", blob):
             parts.append("A Linux log analyzer is a solid direction.")
@@ -639,7 +696,7 @@ def _conversational_response(text, intent, relationship, drift, scope, state, sl
         elif re.search(r"\bmachine learning|\bml\b", blob):
             parts.append("Got it — a machine-learning project.")
         else:
-            topic = _soft_ack_topic(lowered, subject)
+            topic = _soft_ack_topic(lowered, subject.lower())
             if topic:
                 parts.append(f"Got it — you're thinking about {topic}.")
             else:
@@ -667,6 +724,16 @@ def _conversational_response(text, intent, relationship, drift, scope, state, sl
     if scope.get("detected") and scope.get("message"):
         parts.append(scope["message"])
         return " ".join(parts)
+
+    # Answer how/users questions about the locked idea instead of a one-line ack.
+    if intent_label in {"ASK_QUESTION", "ASK_FEASIBILITY"} or re.search(
+        r"^\s*(how|what|who|why)\b",
+        lowered,
+    ):
+        explained = _explain_locked_idea(state, lowered)
+        if explained:
+            parts.append(explained)
+            return " ".join(parts)
 
     objective = project.get("objective") or core.get("primary_objective")
     if objective:
@@ -708,12 +775,79 @@ def _direction_focus(text: str) -> str | None:
 
 
 def _soft_ack_topic(lowered: str, subject: str) -> str | None:
-    if re.search(r"\bdata\s*science|foundation of data\b", lowered):
+    subject_l = (subject or "").lower()
+    has_networks = bool(
+        re.search(r"\bcomputer\s+networks?|computer\s+networking|networking\b", lowered)
+        or "computer networks" in subject_l
+    )
+    has_cyber = bool(
+        re.search(r"\bcyber(?:security)?|infosec\b", lowered) or "cybersecurity" in subject_l
+    )
+    has_ds = bool(re.search(r"\bdata\s*science|foundation of data\b", lowered) or "data science" in subject_l)
+    if has_ds and has_networks and has_cyber:
+        return "a Data Science + Cybersecurity + Computer Networks project"
+    if has_networks and has_cyber:
+        return "a cybersecurity + computer networks project"
+    if has_networks:
+        return "a computer networks project"
+    if has_cyber:
+        return "a cybersecurity project"
+    if has_ds:
         return "a data science project"
     if subject and "foundation of" not in subject and subject not in {"the course", "course"}:
         cleaned = re.sub(r"^(on|about|for|in)\s+", "", subject.strip(), flags=re.I)
-        if cleaned and len(cleaned.split()) <= 5:
+        # Allow multi-domain subjects like "Cybersecurity + Computer Networks".
+        if cleaned and len(cleaned.split()) <= 10:
             return f"a {cleaned} project"
+    return None
+
+
+def _explain_locked_idea(state: dict, lowered: str) -> str | None:
+    """Deterministic how/users explanation when the chat LLM is unavailable."""
+    core = state.get("core_idea") or {}
+    project = state.get("project") or {}
+    if not (core.get("locked") or project.get("title") or core.get("primary_objective")):
+        return None
+    title = project.get("title") or core.get("title") or "this project"
+    problem = project.get("problem") or core.get("problem") or ""
+    objective = project.get("objective") or core.get("primary_objective") or ""
+    features = [
+        str(f)
+        for f in (project.get("features") or core.get("features") or state.get("features") or [])
+        if f
+    ][:5]
+    users_hint = ""
+    alts = (state.get("idea") or {}).get("alternatives") or []
+    for alt in alts:
+        if isinstance(alt, dict) and title.lower() in str(alt.get("title") or "").lower():
+            users_hint = str(alt.get("users") or "")
+            if not problem:
+                problem = str(alt.get("problem") or "")
+            if not objective:
+                objective = str(alt.get("objective") or "")
+            if not features:
+                features = [str(f) for f in (alt.get("features") or []) if f][:5]
+            break
+
+    asks_users = bool(re.search(r"\b(user|users|end[- ]?user)\b", lowered))
+    asks_how = bool(re.search(r"\bhow\b", lowered))
+    if asks_users:
+        who = users_hint or "students, instructors, or operators working with the project’s domain"
+        return (
+            f"For “{title}”, the common end users are {who}. "
+            "They typically open the tool, pick a scenario or input (capture, topology, or dataset), "
+            "run the analysis/visualization, and use the result to learn, debug, or decide what to fix next."
+        )
+    if asks_how:
+        feat_text = (", ".join(features) + ". ") if features else ""
+        return (
+            f"Here’s how “{title}” works in practice: "
+            f"{(problem + ' ') if problem else ''}"
+            f"{('The system aims to ' + objective + '. ') if objective else ''}"
+            f"{feat_text}"
+            "A user provides input, the backend processes it through the analysis pipeline, "
+            "and the UI shows step-by-step results they can inspect or export."
+        )
     return None
 
 

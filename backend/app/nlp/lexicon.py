@@ -75,13 +75,37 @@ DOMAIN_PATTERNS: dict[str, list[str]] = {
         "text classification",
         "language model",
     ],
+    "data_science": [
+        "data science",
+        "data-science",
+        "datascience",
+        "foundation of data science",
+        "foundations of data science",
+    ],
     "cybersecurity": [
         "cybersecurity",
         "cyber security",
+        "cyber",
+        "infosec",
         "phishing",
         "malware",
         "vulnerability",
         "intrusion",
+    ],
+    "computer_networks": [
+        "computer network",
+        "computer networks",
+        "computer networking",
+        "networking course",
+        "network protocol",
+        "network protocols",
+        "tcp/ip",
+        "sdn",
+        "software defined network",
+        "packet sniff",
+        "network topology",
+        "routing protocol",
+        "congestion control",
     ],
     "computer_vision": [
         "computer vision",
@@ -113,7 +137,9 @@ DOMAIN_PATTERNS: dict[str, list[str]] = {
 
 DOMAIN_LABELS = {
     "nlp": "NLP",
+    "data_science": "Data Science",
     "cybersecurity": "Cybersecurity",
+    "computer_networks": "Computer Networks",
     "computer_vision": "Computer Vision",
     "mobile": "Mobile development",
     "blockchain": "Blockchain",
@@ -131,10 +157,14 @@ UNRELATED_DOMAIN_PAIRS = {
     frozenset({"nlp", "computer_vision"}),
     frozenset({"nlp", "drone"}),
     frozenset({"nlp", "blockchain"}),
+    frozenset({"nlp", "computer_networks"}),
     frozenset({"cybersecurity", "computer_vision"}),
     frozenset({"cybersecurity", "drone"}),
     frozenset({"cybersecurity", "blockchain"}),
     frozenset({"computer_vision", "blockchain"}),
+    frozenset({"computer_networks", "nlp"}),
+    frozenset({"computer_networks", "computer_vision"}),
+    frozenset({"computer_networks", "blockchain"}),
 }
 
 

@@ -107,7 +107,23 @@ _RULES: list[tuple[re.Pattern[str], str, float]] = [
     (re.compile(r"\b(instead of|change the|modify the|update the|make it)\b", re.I), "MODIFY_REQUIREMENT", 0.82),
     (re.compile(r"\b(add|also include|let's add|and let's add|we should also|include a)\b", re.I), "ADD_REQUIREMENT", 0.86),
     (re.compile(r"\b(related to|move toward|pivot toward|change direction)\b", re.I), "CHANGE_SCOPE", 0.7),
+    # Questions often omit '?'. Match these before the PROJECT_DESCRIPTION default.
+    (re.compile(
+        r"^\s*how (does |do |will |can |would )?(it|this|that)\s+works?\b",
+        re.I,
+    ), "ASK_QUESTION", 0.9),
+    (re.compile(
+        r"\bhow (will|does|do|can|would|is|are) .{0,60}(work|used|use|help)\b",
+        re.I,
+    ), "ASK_QUESTION", 0.86),
+    (re.compile(
+        r"\b(what|who) (is|are) .{0,40}(end[- ]?)?users?\b|"
+        r"\bwhat is common for .{0,40}users?\b|"
+        r"\b(end[- ]?user|user experience|how (?:do|will) users)\b",
+        re.I,
+    ), "ASK_QUESTION", 0.86),
     (re.compile(r"\b(what|how|why|when|where|which)\b.+\?", re.I), "ASK_QUESTION", 0.72),
+    (re.compile(r"^\s*(how|what|why|who|when|where|which)\b.{0,80}$", re.I), "ASK_QUESTION", 0.7),
     (re.compile(r"\?$", re.I), "ASK_QUESTION", 0.55),
 ]
 

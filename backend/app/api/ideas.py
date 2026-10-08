@@ -8,7 +8,7 @@ from app.api.projects import get_project
 from app.auth.deps import AuthContext, get_auth_context
 from app.database.session import get_db
 from app.models import Idea
-from app.services.idea_generation import generate_ideas
+from app.services.capability_harness import CapabilityKind, gate_capability, run_ideation
 from app.services.project_state import reject_idea, select_idea
 
 router = APIRouter(tags=["ideas"])
@@ -60,9 +60,33 @@ def create_ideas(
     db: Session = Depends(get_db),
     auth: AuthContext = Depends(get_auth_context),
 ):
+    """Generate ideas through the capability harness (domain-gated).
+
+    Response remains a JSON list for client compatibility. Provenance is
+    attached on project.state['capability_provenance']['IDEATION'].
+    """
     project = get_project(project_id, db, auth)
-    rows = generate_ideas(db, project)
+    gate_capability(project.state or {}, CapabilityKind.IDEATION).raise_if_blocked()
+    result = run_ideation(db, project)
+    if result.get("blocked"):
+        from fastapi import HTTPException
+
+        raise HTTPException(
+            status_code=400,
+            detail={
+                "error": "capability_gated",
+                "reason": "missing_domain",
+                "guidance": result.get("response"),
+                "provenance": result.get("provenance") or {},
+            },
+        )
+    state = dict(project.state or {})
+    provenance = dict(state.get("capability_provenance") or {})
+    provenance["IDEATION"] = result.get("provenance") or {}
+    state["capability_provenance"] = provenance
+    project.state = state
     db.commit()
+    rows = result.get("ideas") or []
     return [idea_payload(row, index + 1) for index, row in enumerate(rows)]
 
 
